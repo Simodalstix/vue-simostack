@@ -7,17 +7,19 @@
       </h2>
       <div class="flex flex-col items-center space-y-4">
         <img
-          src="/images/certifications/python-associate.png"
-          alt="python-associate"
+          src="/images/certifications/terraform003-2.png"
+          alt="Terraform Associate"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           onclick="openModal('pythonModal')"
         />
+        <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
         <img
           src="/images/certifications/Solutions_Architect.png"
           alt="Solutions Architect"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
-          onclick="openModal('architectModal')"
+          @click="showArchitectModal = true"
         />
+
         <img
           src="/images/certifications/Developer.png"
           alt="Developer"
@@ -36,14 +38,9 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ColumnPanel',
-  emits: ['action'], // This defines the custom event
-  methods: {
-    emitAction() {
-      this.$emit('action') // Emit event to parent when button is clicked
-    },
-  },
-}
+<script setup>
+import { ref } from 'vue'
+import AWSArchitect from './modals/AWSArchitect.vue'
+
+const showArchitectModal = ref(false)
 </script>
