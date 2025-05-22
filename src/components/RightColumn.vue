@@ -5,20 +5,34 @@
       <h2 class="text-xl font-semibold text-center border-b-2 border-indigo-500 pb-1 mb-4">
         Certifications
       </h2>
-      <div class="flex flex-col items-center space-y-4">
-        <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
+      <div class="grid grid-cols-2 gap-4 place-items-center">
+        <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
         <img
-          src="/images/certifications/terraform003-2.png"
-          alt="Terraform Associate"
+          src="/images/certifications/Cloud_Practitioner.png"
+          alt="Cloud Practitioner"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
-          @click="showTerraformModal = true"
+          @click="showPractitionerModal = true"
         />
+        <PythonModal :visible="showPythonModal" @close="showPythonModal = false" />
+        <img
+          src="/images/certifications/python-associate.png"
+          alt="Python Associate"
+          class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
+          @click="showPythonModal = true"
+        />
+
         <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
         <img
           src="/images/certifications/Solutions_Architect.png"
           alt="Solutions Architect"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showArchitectModal = true"
+        /><TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
+        <img
+          src="/images/certifications/terraform003-2.png"
+          alt="Terraform Associate"
+          class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
+          @click="showTerraformModal = true"
         />
         <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
         <img
@@ -29,13 +43,6 @@
         />
       </div>
     </div>
-
-    <!-- BOTTOM BLOCK: visitor count -->
-    <div class="text-sm text-gray-400 text-center">
-      Visited
-      <span id="visitor-count" class="font-bold text-purple-400">?</span>
-      times.
-    </div>
   </div>
 </template>
 
@@ -44,6 +51,10 @@ import { ref } from 'vue'
 import AWSArchitect from './modals/AWSArchitect.vue'
 import AWSDeveloper from './modals/AWSDeveloper.vue'
 import TerraformModal from './modals/TerraformModal.vue'
+import AWSPractioner from './modals/AWSPractioner.vue'
+import PythonModal from './modals/PythonModal.vue'
+const showPythonModal = ref(false)
+const showPractitionerModal = ref(false)
 const showTerraformModal = ref(false)
 const showDeveloperModal = ref(false)
 const showArchitectModal = ref(false)

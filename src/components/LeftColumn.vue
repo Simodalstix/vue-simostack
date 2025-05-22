@@ -52,48 +52,69 @@
             src="/images/aws-icons/SimpleStorageService.png"
             alt="S3"
             class="w-10 cursor-pointer rounded-md hover:opacity-80"
-            onmouseover="updateAwsInfo('Amazon Simple Storage Service (S3) stores and serves all the static content for this website, including HTML, images, and assets.')"
-            onmouseout="resetAwsInfo()"
+            @mouseover="
+              awsInfo =
+                'Amazon Simple Storage Service (S3) stores and serves all the static content for this website, including HTML, images, and assets.'
+            "
+            @mouseout="awsInfo = defaultAwsInfo"
           />
           <img
             src="/images/aws-icons/CloudFront.png"
             alt="CloudFront"
             class="w-10 cursor-pointer rounded-md hover:opacity-80"
-            onmouseover="updateAwsInfo('Amazon CloudFront is a global Content Delivery Network (CDN) that caches and delivers this website quickly from edge locations.')"
-            onmouseout="resetAwsInfo()"
+            @mouseover="
+              awsInfo =
+                'Amazon CloudFront is a global Content Delivery Network (CDN) that caches and delivers this website quickly from edge locations.'
+            "
+            @mouseout="awsInfo = defaultAwsInfo"
           />
           <img
             src="/images/aws-icons/Route53.png"
             alt="Route53"
             class="w-10 cursor-pointer rounded-md hover:opacity-80"
-            onmouseover="updateAwsInfo('Amazon Route 53 provides DNS routing, directing traffic from my custom domain to the CloudFront distribution')"
-            onmouseout="resetAwsInfo()"
+            @mouseover="
+              awsInfo =
+                'Amazon Route 53 provides DNS routing, directing traffic from my custom domain to the CloudFront distribution'
+            "
+            @mouseout="awsInfo = defaultAwsInfo"
           />
           <img
             src="/images/aws-icons/CertificateManager.png"
             alt="ACM"
             class="w-10 cursor-pointer rounded-md hover:opacity-80"
-            onmouseover="updateAwsInfo('AWS Certificate Manager (ACM) provisions and manages the free SSL certificate to enable secure HTTPS connections.')"
-            onmouseout="resetAwsInfo()"
+            @mouseover="
+              awsInfo =
+                'AWS Certificate Manager (ACM) provisions and manages the free SSL certificate to enable secure HTTPS connections.'
+            "
+            @mouseout="awsInfo = defaultAwsInfo"
           /><img
             src="/images/aws-icons/APIGateway.svg"
             alt="S3"
             class="w-10 cursor-pointer rounded-md hover:opacity-80"
-            onmouseover="updateAwsInfo('Amazon API Gateway securely handles all API requests and routes them to backend services.')"
-            onmouseout="resetAwsInfo()"
+            @mouseover="
+              awsInfo =
+                'Amazon API Gateway securely handles all API requests and routes them to backend services.'
+            "
+            @mouseout="awsInfo = defaultAwsInfo"
           /><img
             src="/images/aws-icons/Lambda.svg"
             alt="S3"
             class="w-10 cursor-pointer rounded-md hover:opacity-80"
-            onmouseover="updateAwsInfo('AWS Lambda runs backend code automatically in response to events — no servers to manage.')"
-            onmouseout="resetAwsInfo()"
+            @mouseover="
+              awsInfo =
+                'AWS Lambda runs backend code automatically in response to events — no servers to manage.'
+            "
+            @mouseout="awsInfo = defaultAwsInfo"
           />
           <img
             src="/images/aws-icons/DynamoDB.svg"
             alt="S3"
             class="w-10 cursor-pointer rounded-md hover:opacity-80"
-            onmouseover="updateAwsInfo('Amazon DynamoDB is a fast, serverless NoSQL database used to store API data reliably.')"
-            onmouseout="resetAwsInfo()"
+            @mouseover="
+              awsInfo =
+                'Amazon DynamoDB is a fast, serverless NoSQL database used to store API data reliably.'
+            "
+            @mouseout="awsInfo = defaultAwsInfo"
           />
         </div>
         <!-- Fixed-height info box to prevent layout shift -->
@@ -101,7 +122,7 @@
           id="awsInfoBox"
           class="mt-4 text-center text-sm font-semibold text-gray-200 h-10 flex items-center justify-center"
         >
-          Hover over an icon to learn more.
+          {{ awsInfo }}
         </div>
       </section>
     </div>
@@ -111,6 +132,7 @@
 <script setup>
 import { ref } from 'vue'
 import StrongRoomModal from './modals/StrongRoomModal.vue'
-
+const defaultAwsInfo = 'Hover over an icon to learn more.'
+const awsInfo = ref(defaultAwsInfo)
 const showRole = ref(false)
 </script>

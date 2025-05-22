@@ -4,18 +4,20 @@
       class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-purple-600 gap-6"
     >
       <!-- Column 1 -->
-      <div class="flex flex-col items-center text-center justify-between space-y-4 p-3">
+      <div class="flex flex-col items-center text-center justify-between space-y-4 p-1">
         <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Certifications in Progress</h3>
+          <h3 class="text-lg font-semibold text-white m-3">Certifications in Progress</h3>
           <div class="text-sm text-gray-300 space-y-3 leading-relaxed">
             <p>
-              Currently focused on Terraform and RHCSA as my primary study goals. I've been living
-              inside the Terraform docs and tutorials, wiring it into project after project — and
-              I’m finally ready to sit the exam within the next week.
+              I'm currently focused on earning the Microsoft Azure Administrator (AZ-104)
+              certification, with the goal of building fluency in Azure resource management,
+              networking, identity, and governance. Azure is now my primary focus, and I’m on track
+              to sit the exam soon.
             </p>
             <p>
-              Alongside that, I’m steadily progressing through the RHCSA course by Sander van Vugt
-              to sharpen my practical Linux skills. Loving it. Genuinely.
+              Alongside this, I’m gradually preparing for the AWS SysOps Administrator certification
+              to reinforce my foundation in AWS operations and monitoring. It’s running in the
+              background while I go deep on Azure.
             </p>
           </div>
         </div>
@@ -27,18 +29,20 @@
       </div>
 
       <!-- Column 2 -->
-      <div class="flex flex-col items-center text-center justify-between space-y-4 px-2">
+      <div class="flex flex-col items-center text-center justify-between space-y-4 p-1">
         <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Target Certifications</h3>
+          <h3 class="text-lg font-semibold text-white m-3">Target Certifications</h3>
           <div class="text-sm text-gray-300 space-y-3 leading-relaxed">
             <p>
-              My priority is landing a Junior Cloud or DevOps role in a strong technical
-              environment. I’m not chasing every cert — I’m looking for a role where I can flourish,
-              apply what I’ve learned, and build experience.
+              My long-term ambition is to become highly proficient in DevOps and cloud platform
+              engineering — work that requires orchestration, resilience, automation, and
+              scalability.
             </p>
             <p>
-              AWS or Google Cloud would be ideal. The next certs I choose will depend on the team I
-              join — whether it’s AWS-heavy, Azure-leaning, or GCP-native.
+              I'm intentionally building skill in real-world infrastructure challenges: designing
+              deployments, managing production issues, and automating infrastructure with tools like
+              Terraform, Kubernetes, and Helm. My goal is to be the kind of engineer teams rely on
+              when things get tough.
             </p>
           </div>
         </div>
@@ -49,9 +53,9 @@
       </div>
 
       <!-- Column 3 -->
-      <div class="flex flex-col items-center text-center justify-between space-y-4 px-2">
+      <div class="flex flex-col items-center text-center justify-between space-y-4 p-1">
         <div>
-          <h3 class="text-lg font-semibold text-white mb-2">Exploration</h3>
+          <h3 class="text-lg font-semibold text-white m-3">Exploration</h3>
           <div class="text-sm text-gray-300 space-y-3 leading-relaxed">
             <p>
               My goal is to become deeply skilled in DevOps and cloud platform engineering — the
