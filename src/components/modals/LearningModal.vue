@@ -4,7 +4,7 @@
       class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-purple-600 gap-6"
     >
       <!-- Column 1 -->
-      <div class="flex flex-col items-center text-center justify-between space-y-4 px-2">
+      <div class="flex flex-col items-center text-center justify-between space-y-4 p-3">
         <div>
           <h3 class="text-lg font-semibold text-white mb-2">Certifications in Progress</h3>
           <div class="text-sm text-gray-300 space-y-3 leading-relaxed">
@@ -17,16 +17,11 @@
               Alongside that, I’m steadily progressing through the RHCSA course by Sander van Vugt
               to sharpen my practical Linux skills. Loving it. Genuinely.
             </p>
-            <p>
-              Once these are done, I'm eyeing the Google Cloud Associate Engineer certification —
-              it's a practical, well-structured cert with great value in terms of both cost and
-              duration.
-            </p>
           </div>
         </div>
         <div class="flex justify-center gap-3">
-          <img src="/images/skills-in-progress/terraform003.png" class="h-28 object-contain" />
-          <img src="/images/skills-in-progress/rhcsa.png" class="h-28 object-contain" />
+          <img src="/images/skills-in-progress/sysops.png" class="h-28 object-contain" />
+
           <img src="/images/skills-in-progress/azure-admin.png" class="h-28 object-contain" />
         </div>
       </div>
@@ -49,8 +44,7 @@
         </div>
         <div class="flex justify-center gap-3 flex-wrap">
           <img src="/images/skills-in-progress/aws-devops.png" class="h-28 object-contain" />
-          <img src="/images/career-pathways/Security.png" class="h-28 object-contain" />
-          <img src="/images/skills-in-progress/ace2.webp" class="h-28 object-contain" />
+          <img src="/images/skills-in-progress/rhcsa.png" class="h-28 object-contain" />
         </div>
       </div>
 
@@ -72,7 +66,7 @@
         </div>
         <div class="flex justify-center gap-3">
           <img src="/images/skills-in-progress/kubernetes.svg" class="h-28 object-contain" />
-          <img src="/images/skills-in-progress/helm.svg" class="h-28 object-contain" />
+          <img src="/images/k8s-icons/helm2.png" class="h-28 object-contain" />
         </div>
       </div>
     </div>

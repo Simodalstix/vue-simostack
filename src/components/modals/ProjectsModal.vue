@@ -1,13 +1,9 @@
 <template>
-  <BaseModal :visible="visible" @close="$emit('close')" title="Projects"
-    ><div
-      class="bg-gray-800 p-3 rounded w-full md:w-[88%] h-[92vh] max-h-screen overflow-y-auto text-gray-200 relative"
-    >
-      <h2 class="text-2xl font-extrabold text-cyan-400 mb-2 text-center">Recent Projects</h2>
-
+  <BaseModal :visible="visible" @close="$emit('close')"
+    ><div class="bg-gray-700 p-3 rounded text-gray-200 relative">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <!-- Project 1: Modern layout -->
-        <div class="p-4 border border-gray-600 rounded bg-gray-700 text-gray-200">
+        <div class="p-4 border border-gray-500 rounded bg-gray-700 text-gray-200">
           <div class="grid grid-cols-[auto_1fr] gap-4 h-full">
             <!-- LEFT COLUMN: Tight 2-column grid of icons -->
             <div class="flex flex-col h-full">
@@ -90,7 +86,7 @@
         </div>
 
         <!-- Project 2: Refactored layout to match Project 3 -->
-        <div class="p-4 border border-gray-600 rounded bg-gray-700 text-gray-200">
+        <div class="p-4 border border-gray-500 rounded bg-gray-700 text-gray-200">
           <div class="grid grid-cols-[auto_1fr] gap-4 h-full">
             <!-- LEFT COLUMN: 2-wide icon grid -->
             <div class="flex flex-col h-full">
@@ -165,7 +161,7 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="p-4 border border-gray-600 rounded bg-gray-700 text-gray-200">
+        <div class="p-4 border border-gray-500 rounded bg-gray-700 text-gray-200">
           <div class="grid grid-cols-[auto_1fr] gap-4 h-full">
             <!-- LEFT COLUMN: 2-wide icon grid -->
             <div class="flex flex-col h-full">
@@ -244,7 +240,7 @@
         </div>
 
         <!-- Project 4 -->
-        <div class="p-4 border border-gray-600 rounded bg-gray-700 text-gray-200">
+        <div class="p-4 border border-gray-500 rounded bg-gray-700 text-gray-200">
           <div class="grid grid-cols-[auto_1fr] gap-4 h-full">
             <!-- LEFT COLUMN: 2-wide icon grid -->
             <div class="flex flex-col h-full">
@@ -278,6 +274,10 @@
                 /><img
                   src="/images/project-icons/postgresqlSVG.svg"
                   alt="PostgreSQL "
+                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
+                /><img
+                  src="/images/project-icons/duckdns.png"
+                  alt="DuckDNS"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 />
               </div>

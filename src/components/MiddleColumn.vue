@@ -16,7 +16,13 @@
 
     <div class="mt-6 flex gap-2">
       <!-- This is your trigger button -->
-      <LearningModal :visible="showFocus" @close="showFocus = false" />
+      <LearningModal
+        :visible="showFocus"
+        @close="showFocus = false"
+        width="max-w-[1100px]"
+        height="max-h-[92vh]"
+        title="Learning"
+      />
       <button
         @click="showFocus = true"
         class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition"
@@ -24,7 +30,15 @@
         Learning Focus
       </button>
 
-      <ProjectsModal :visible="showProjects" @close="showProjects = false" />
+      <ProjectsModal
+        :visible="showProjects"
+        @close="showProjects = false"
+        title="Recent Projects"
+        width="max-w-[1250px]"
+        height="max-h-[92vh]"
+        alignment="items-start"
+      />
+
       <button
         @click="showProjects = true"
         class="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 transition"
@@ -32,11 +46,19 @@
         Projects
       </button>
 
+      <KubernetesModal
+        :visible="showKubernetes"
+        @close="showKubernetes = false"
+        title="Kubernetes"
+        width="max-w-[1100px]"
+        height="max-h-[92vh]"
+      />
+
       <button
-        onclick="openModal('k8sModal')"
-        class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition"
+        @click="showKubernetes = true"
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
       >
-        Kubernetes Journey
+        Kubernetes
       </button>
 
       <button
@@ -72,9 +94,9 @@
 import { ref } from 'vue'
 import LearningModal from './modals/LearningModal.vue'
 import ProjectsModal from './modals/ProjectsModal.vue'
-// import K8sModal from './modals/K8sModal.vue'
+import KubernetesModal from './modals/KubernetesModal.vue'
+
 const showProjects = ref(false)
 const showFocus = ref(false)
-// const showProjects = ref(false)
-// const showK8s = ref(false)
+const showKubernetes = ref(false)
 </script>

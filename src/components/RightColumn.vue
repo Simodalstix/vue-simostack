@@ -6,11 +6,12 @@
         Certifications
       </h2>
       <div class="flex flex-col items-center space-y-4">
+        <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
         <img
           src="/images/certifications/terraform003-2.png"
           alt="Terraform Associate"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
-          onclick="openModal('pythonModal')"
+          @click="showTerraformModal = true"
         />
         <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
         <img
@@ -19,12 +20,12 @@
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showArchitectModal = true"
         />
-
+        <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
         <img
           src="/images/certifications/Developer.png"
           alt="Developer"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
-          onclick="openModal('developerModal')"
+          @click="showDeveloperModal = true"
         />
       </div>
     </div>
@@ -41,6 +42,9 @@
 <script setup>
 import { ref } from 'vue'
 import AWSArchitect from './modals/AWSArchitect.vue'
-
+import AWSDeveloper from './modals/AWSDeveloper.vue'
+import TerraformModal from './modals/TerraformModal.vue'
+const showTerraformModal = ref(false)
+const showDeveloperModal = ref(false)
 const showArchitectModal = ref(false)
 </script>

@@ -5,11 +5,12 @@ import BaseModal from './BaseModal.vue'
 </script>
 
 <template>
-  <BaseModal :visible="visible" @close="$emit('close')" title="AWS Solutions Architect"
-    ><div class="bg-gray-800 p-6 rounded w-11/12 md:w-3/4 relative">
-      <h2 class="text-xl font-bold border-b-2 border-indigo-500 pb-1 mb-4">
-        AWS Certified Solutions Architect – Associate
-      </h2>
+  <BaseModal
+    :visible="visible"
+    @close="$emit('close')"
+    title="AWS Certified Solutions Architect – Associate"
+    width="max-w-3xl"
+    ><div class="bg-gray-700 p-3 rounded">
       <p class="text-sm text-gray-300 mb-2">
         Issued by Amazon Web Services Training and Certification
       </p>

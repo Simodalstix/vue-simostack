@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://www.google.com/
+HostUrl=https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/duckdns.png

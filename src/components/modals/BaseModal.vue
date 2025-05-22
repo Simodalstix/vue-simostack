@@ -1,12 +1,13 @@
 <template>
   <div
     v-if="visible"
-    class="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center items-center px-4"
+    class="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center px-4"
+    :class="alignment"
     @click.self="$emit('close')"
   >
     <div
-      class="bg-gray-800 text-gray-200 p-6 rounded relative shadow-lg overflow-y-auto"
-      :class="modalClasses"
+      class="bg-gray-700 text-gray-200 p-3 rounded relative shadow-lg overflow-y-auto w-full"
+      :class="width"
       :style="maxHeightStyle"
     >
       <!-- Close button -->
@@ -16,13 +17,16 @@
       >
         &times;
       </button>
-
-      <!-- Optional Title -->
-      <h2 v-if="title" class="text-xl font-bold border-b-2 border-indigo-500 pb-1 mb-4">
-        {{ title }}
-      </h2>
-
       <div>
+        <slot name="header">
+          <h2
+            v-if="title"
+            :class="`text-xl font-bold border-b-2 border-purple-500 pb-2  text-center ${titleColor}`"
+          >
+            {{ title }}
+          </h2>
+        </slot>
+
         <slot />
       </div>
     </div>
@@ -33,9 +37,13 @@
 const props = defineProps({
   visible: Boolean,
   title: String,
+  titleColor: {
+    type: String,
+    default: 'text-cyan-400',
+  },
   width: {
     type: String,
-    default: 'max-w-md', // you can override with e.g. 'max-w-4xl'
+    default: 'max-w-md', // e.g. 'max-w-4xl'
   },
   height: {
     type: String,
@@ -45,10 +53,9 @@ const props = defineProps({
     type: String,
     default: 'items-center', // or 'items-start'
   },
-});
+})
 
-defineEmits(['close']);
+defineEmits(['close'])
 
-const modalClasses = `${props.width} w-full ${props.alignment}`;
-const maxHeightStyle = { maxHeight: props.height };
+const maxHeightStyle = { maxHeight: props.height }
 </script>
