@@ -38,7 +38,7 @@ import BaseModal from './BaseModal.vue'
               target="_blank"
               class="block hover:underline"
             >
-              Youtube Course Link
+              Youtube Course Link - Check it out
             </a>
           </div>
         </div>
