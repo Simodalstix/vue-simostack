@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-gray-800 p-6 rounded shadow flex flex-col justify-between h-full">
+  <div class="bg-gray-800 p-4 rounded shadow flex flex-col justify-between h-full">
     <!-- TOP BLOCK: heading + icons -->
     <div>
-      <h2 class="text-xl font-semibold text-center border-b-2 border-indigo-500 pb-1 mb-4">
+      <h1 class="text-2xl font-bold border-b-2 border-indigo-500 pb-1 mb-4 text-center">
         Certifications
-      </h2>
+      </h1>
       <div class="grid grid-cols-2 gap-4 place-items-center">
         <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
         <img

@@ -1,0 +1,14 @@
+<template>
+  <div class="bg-slate-800 rounded-xl p-4 shadow space-y-4">
+    <h3 v-if="title" class="text-lg font-semibold text-white">
+      {{ title }}
+    </h3>
+    <slot />
+  </div>
+</template>
+
+<script setup>
+defineProps({
+  title: String,
+})
+</script>

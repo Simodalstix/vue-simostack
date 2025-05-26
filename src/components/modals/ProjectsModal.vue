@@ -1,58 +1,51 @@
 <template>
   <BaseModal :visible="visible" @close="$emit('close')"
     ><div class="bg-gray-700 p-3 rounded text-gray-200 relative">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <!-- Project 1: Modern layout -->
         <div class="p-4 border border-gray-500 rounded bg-gray-700 text-gray-200">
           <div class="grid grid-cols-[auto_1fr] gap-4 h-full">
-            <!-- LEFT COLUMN: Tight 2-column grid of icons -->
+            <!-- LEFT COLUMN: 2-wide icon grid -->
             <div class="flex flex-col h-full">
-              <div class="grid grid-cols-2 gap-2 place-items-center">
+              <div class="grid grid-cols-2 gap-2">
                 <img
-                  src="/images/career-pathways/terraform.svg"
-                  alt="Terraform"
+                  src="/images/project-icons/nodejs.svg"
+                  alt="Node.js"
+                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
+                /><img
+                  src="/images/project-icons/express.svg"
+                  alt="Express"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 />
-                <img
-                  src="/images/project-icons/google-cloud.svg"
-                  alt="Google"
-                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
-                /><img
-                  src="/images/project-icons/gcp/compute_engine.svg"
-                  alt="compute engine"
-                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
-                /><img
-                  src="/images/project-icons/gcp/secret_manager.svg"
-                  alt="Secrets Manager"
-                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
-                /><img
-                  src="/images/project-icons/gcp/artifact_registry.svg"
-                  alt="artifact registry"
-                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
-                />
-
                 <img
                   src="/images/project-icons/dockerSVG.svg"
                   alt="Docker"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 />
-
                 <img
-                  src="/images/project-icons/mongodb-icon.svg"
-                  alt="MongoDB"
+                  src="/images/project-icons/nginxSVG.svg"
+                  alt="NGINX"
+                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
+                /><img
+                  src="/images/project-icons/raspberry-pi.svg"
+                  alt="raspberry-pi"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 /><img
                   src="/images/project-icons/github-actions.svg"
-                  alt="github actions"
+                  alt="Github Actions"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 /><img
-                  src="/images/project-icons/cloudflare-svgrepo-com.svg"
-                  alt="Cloudflare"
+                  src="/images/project-icons/postgresqlSVG.svg"
+                  alt="PostgreSQL "
+                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
+                /><img
+                  src="/images/project-icons/duckdns.png"
+                  alt="DuckDNS"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 />
               </div>
               <a
-                href="https://github.com/Simodalstix/storybooks"
+                href="https://github.com/Simodalstix/raspberry-pi-backend"
                 target="_blank"
                 class="mt-auto self-end text-cyan-400 hover:underline text-xs"
               >
@@ -60,26 +53,31 @@
               </a>
             </div>
 
-            <!-- RIGHT COLUMN: Description + badges + GitHub -->
+            <!-- RIGHT COLUMN: Description + reflection -->
             <div class="flex flex-col">
-              <div class="space-y-3">
-                <h3 class="text-white text-base text-center font-semibold">
-                  Devops Google-Cloud Atlas MongoDB
+              <div class="space-y-2">
+                <h3 class="text-white text-md text-center font-semibold">
+                  Raspberry Pi Backend with CI/CD & NGINX Proxy
                 </h3>
-                <p class="space-y-3 text-sm text-gray-300">
-                  Storybooks began as a fork of a finished app, which I used to follow along with a
-                  DevOps expert while we transformed it into a fully infrastructure-as-code project.
-                  We started by running the app locally in Docker Compose, then provisioned all
-                  cloud resources using Terraform — including subdomains via Cloudflare and a
-                  production-ready MongoDB Atlas cluster on GCP.
-                </p>
+                <div class="space-y-3 text-sm text-gray-300">
+                  <p class="text-sm text-gray-300 mt-2">
+                    This project powers the blog backend for <strong>this website</strong>, using a
+                    Raspberry Pi for a zero-cost, self-hosted deployment. I containerized a Node.js
+                    + PostgreSQL API with Docker Compose and configured GitHub Actions to
+                    auto-deploy via SSH on every push. To expose the API securely, I set up NGINX
+                    Proxy Manager in Docker and routed traffic from
+                    <code>api.simostack.com</code> using DuckDNS with Let’s Encrypt SSL. A cron job
+                    on the Pi keeps DuckDNS updated with the current IP, so the domain always
+                    resolves correctly.
+                  </p>
 
-                <p class="text-sm text-gray-300">
-                  The project uses a custom Makefile to manage environments, making it easy to
-                  switch between staging and production. It also includes GitHub Actions for
-                  automated deployment, giving me real experience with modern CI/CD and
-                  multi-environment workflows.
-                </p>
+                  <p class="text-sm text-gray-300 mt-2">
+                    Persistent volumes ensure data durability, and the whole setup mimics a
+                    lightweight cloud deployment. This project was a great way to dive deeper into
+                    DNS, SSL, container networking, and CI/CD workflows—while keeping infrastructure
+                    simple and cost-free.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -242,47 +240,54 @@
         <!-- Project 4 -->
         <div class="p-4 border border-gray-500 rounded bg-gray-700 text-gray-200">
           <div class="grid grid-cols-[auto_1fr] gap-4 h-full">
-            <!-- LEFT COLUMN: 2-wide icon grid -->
+            <!-- LEFT COLUMN: Tight 2-column grid of icons -->
             <div class="flex flex-col h-full">
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-2 place-items-center">
                 <img
-                  src="/images/project-icons/nodejs.svg"
-                  alt="Node.js"
-                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
-                /><img
-                  src="/images/project-icons/express.svg"
-                  alt="Express"
+                  src="/images/career-pathways/terraform.svg"
+                  alt="Terraform"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 />
+                <img
+                  src="/images/project-icons/google-cloud.svg"
+                  alt="Google"
+                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
+                /><img
+                  src="/images/project-icons/gcp/compute_engine.svg"
+                  alt="compute engine"
+                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
+                /><img
+                  src="/images/project-icons/gcp/secret_manager.svg"
+                  alt="Secrets Manager"
+                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
+                /><img
+                  src="/images/project-icons/gcp/artifact_registry.svg"
+                  alt="artifact registry"
+                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
+                />
+
                 <img
                   src="/images/project-icons/dockerSVG.svg"
                   alt="Docker"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 />
+
                 <img
-                  src="/images/project-icons/nginxSVG.svg"
-                  alt="NGINX"
-                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
-                /><img
-                  src="/images/project-icons/raspberry-pi.svg"
-                  alt="raspberry-pi"
+                  src="/images/project-icons/mongodb-icon.svg"
+                  alt="MongoDB"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 /><img
                   src="/images/project-icons/github-actions.svg"
-                  alt="Github Actions"
+                  alt="github actions"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 /><img
-                  src="/images/project-icons/postgresqlSVG.svg"
-                  alt="PostgreSQL "
-                  class="w-10 cursor-pointer rounded-md hover:opacity-80"
-                /><img
-                  src="/images/project-icons/duckdns.png"
-                  alt="DuckDNS"
+                  src="/images/project-icons/cloudflare-svgrepo-com.svg"
+                  alt="Cloudflare"
                   class="w-10 cursor-pointer rounded-md hover:opacity-80"
                 />
               </div>
               <a
-                href="https://github.com/Simodalstix/raspberry-pi-backend"
+                href="https://github.com/Simodalstix/storybooks"
                 target="_blank"
                 class="mt-auto self-end text-cyan-400 hover:underline text-xs"
               >
@@ -290,26 +295,25 @@
               </a>
             </div>
 
-            <!-- RIGHT COLUMN: Description + reflection -->
+            <!-- RIGHT COLUMN: Description + badges + GitHub -->
             <div class="flex flex-col">
-              <div class="space-y-2">
-                <h3 class="text-white text-md text-center font-semibold">
-                  Raspberry Pi Backend with CI/CD & NGINX Proxy
+              <div class="space-y-3">
+                <h3 class="text-white text-base text-center font-semibold">
+                  Devops Google-Cloud Atlas MongoDB
                 </h3>
-                <div class="space-y-3 text-sm text-gray-300">
-                  <p>
-                    This project explores a cost-effective backend deployment using a Raspberry Pi.
-                    I containerized a Node.js + PostgreSQL API with Docker Compose and used GitHub
-                    Actions to auto-deploy on push via SSH. To expose the API securely, I configured
-                    NGINX Proxy Manager in Docker, routing traffic from a custom subdomain
-                    (api.simostack.com) via DuckDNS with SSL from Let’s Encrypt.
-                  </p>
-                  <p>
-                    Persistent volumes handle data durability. The result is a cloud-style
-                    deployment — self-hosted for zero cost — and a great way to build practical
-                    skills in Docker, CI/CD, and network routing.
-                  </p>
-                </div>
+                <p class="space-y-3 text-sm text-gray-300">
+                  I took a finished app — Storybooks — and used it as a platform to deepen my DevOps
+                  skills. Starting with local Docker Compose setup, I then provisioned a full cloud
+                  environment using Terraform, including DNS via Cloudflare and a production-ready
+                  MongoDB Atlas cluster on GCP.
+                </p>
+
+                <p class="text-sm text-gray-300">
+                  I created a Makefile to manage staging and production environments, and set up
+                  GitHub Actions for CI/CD. This project gave me hands-on experience transforming a
+                  legacy app into an infrastructure-as-code setup and automating its deployment
+                  using modern CI/CD practices.
+                </p>
               </div>
             </div>
           </div>

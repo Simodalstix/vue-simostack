@@ -17,22 +17,20 @@ import BaseModal from './BaseModal.vue'
         <!-- Column 1: Learning Journey -->
         <div class="text-gray-300 text-sm leading-relaxed">
           <p class="mb-4">
-            I'm diving into Kubernetes through by learning and following along with a project-based
-            course — by an expert. I'm curious, excited, and ready to explore a technology that
-            feels like a rite of passage for modern DevOps. This is my first serious step into
-            container orchestration, and I'm treating it as a long-term investment in my backend and
-            cloud infrastructure skills.
+            I'm starting to explore Kubernetes gradually, using a hands-on project-based course as a
+            reference. It's early days, but I’m getting more familiar with the concepts—especially
+            how container orchestration, services, and deployment models work together.
           </p>
           <p class="mb-4">
-            I've set up a clean environment using Devbox and I'll start working through a guided
-            project as time permits. Every tool is new, but every challenge brings insight. My goal
-            isn’t to rush — it's to build confidence and fluency by understanding the ecosystem from
-            the inside out.
+            I’ve set up a clean environment with Devbox and have been poking around with some of the
+            core tools. I’m not in a rush—Kubernetes is complex, and I’m balancing this learning
+            with certifications and other higher-priority projects. My approach is to build a solid
+            understanding at a sustainable pace.
           </p>
           <p>
-            I'm approaching this with curiosity and patience — I want to truly understand how
-            infrastructure, configuration, and application delivery fit together in Kubernetes, and
-            use this lab as a springboard for future projects.
+            This Kubernetes lab acts as a side project and a learning sandbox, where I can test
+            ideas, build fluency, and gradually connect the dots between infrastructure, delivery
+            pipelines, and application configuration.
           </p>
           <div class="mt-6 text-sm text-cyan-400 text-left">
             <a

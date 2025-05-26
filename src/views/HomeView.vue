@@ -1,9 +1,15 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="bg-gray-900 text-gray-200">
+    <div class="mx-auto grid grid-cols-1 md:grid-cols-[1.6fr_2.5fr_1.4fr] gap-6 p-3">
+      <Left class="min-w-0" />
+      <Middle class="min-w-0" />
+      <Right class="min-w-0" />
+    </div>
+  </div>
 </template>
+
+<script setup>
+import Left from '../components/LeftColumn.vue'
+import Middle from '../components/MiddleColumn.vue'
+import Right from '../components/RightColumn.vue'
+</script>
