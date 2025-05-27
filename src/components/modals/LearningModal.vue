@@ -4,32 +4,31 @@
       class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-purple-600 gap-6"
     >
       <!-- Column 1 -->
-      <div class="flex flex-col items-center text-center justify-between space-y-4 p-1">
+      <div class="flex flex-col items-center text-center justify-between space-y-4 pr-4">
         <div>
           <h3 class="text-lg font-semibold text-white m-3">Certifications in Progress</h3>
           <div class="text-sm text-gray-300 space-y-3 leading-relaxed">
             <p>
               I'm currently focused on earning the Microsoft Azure Administrator (AZ-104)
               certification, with the goal of building fluency in Azure resource management,
-              networking, identity, and governance. Azure is now my primary focus, and I’m on track
+              networking, identity, and governance. Azure is now my primary focus, and I'm on track
               to sit the exam soon.
             </p>
             <p>
-              Alongside this, I’m gradually preparing for the AWS SysOps Administrator certification
-              to reinforce my foundation in AWS operations and monitoring. It’s running in the
+              Alongside this, I'm gradually preparing for the AWS SysOps Administrator certification
+              to reinforce my foundation in AWS operations and monitoring. It's running in the
               background while I go deep on Azure.
             </p>
           </div>
         </div>
         <div class="flex justify-center gap-3">
           <img src="/images/skills-in-progress/sysops.png" class="h-28 object-contain" />
-
           <img src="/images/skills-in-progress/azure-admin.png" class="h-28 object-contain" />
         </div>
       </div>
 
       <!-- Column 2 -->
-      <div class="flex flex-col items-center text-center justify-between space-y-4 p-1">
+      <div class="flex flex-col items-center text-center justify-between space-y-4 pl-4">
         <div>
           <h3 class="text-lg font-semibold text-white m-3">Target Certifications</h3>
           <div class="text-sm text-gray-300 space-y-3 leading-relaxed">

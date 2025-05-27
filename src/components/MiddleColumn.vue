@@ -3,17 +3,16 @@
     <h1 class="text-2xl text-gray-300 font-bold border-b-2 border-indigo-500 pb-1">
       Junior DevOps &amp; Cloud Engineer
     </h1>
-    <p>
-      Right now I’m deep in Azure, building real-world, production-style environments. I'm working
+    <p class="text-base">
+      Right now I'm deep in Azure, building real-world, production-style environments. I'm working
       on App Services, databases, and a secure hub-and-spoke network with a VPN gateway — all
       defined with infrastructure as code and deployed via CI/CD. These projects are grounded in
       what hiring teams care about: scalable, secure, automated delivery.
     </p>
-    <p class="mt-2">
-      I’m also integrating tools like Kubernetes, Jenkins, AD, and Dynatrace — all part of my
+    <p class="text-base">
+      I'm also integrating tools like Kubernetes, Jenkins, AD, and Dynatrace — all part of my
       hands-on push to master monitoring, automation, and platform engineering. This isn't just
-      study — it's applied learning, tied directly to the AZ-104 certification and real
-      architectural challenges.
+      study — it's applied learning tied directly to AZ-104 and real architectural challenges.
     </p>
 
     <div class="mt-6 flex gap-2">
