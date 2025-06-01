@@ -59,7 +59,7 @@
             />
             <button
               @click="showLearn = true"
-              class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition"
+              class="bg-purple-600 border-2 border-white text-white px-4 py-2 rounded hover:bg-purple-700 transition"
             >
               Learning Focus
             </button>
