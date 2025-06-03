@@ -94,7 +94,7 @@
         </p>
       </div>
       <div>
-        <h4 class="font-semibold text-indigo-300">Azure App Service Project (In Progress)</h4>
+        <h4 class="font-semibold text-indigo-300">Azure App Service Project</h4>
         <p>
           Building a full stack deployment pipeline for an Express API with PostgreSQL on App
           Service and Azure Database for PostgreSQL. CI/CD enabled via GitHub.
