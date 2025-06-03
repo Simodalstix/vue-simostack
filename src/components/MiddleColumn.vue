@@ -88,9 +88,7 @@
         <p>
           Designing a secure Azure hub-and-spoke network with VNet peering, a VPN Gateway, NSGs, and
           custom routing. Will deploy via Terraform and GitHub Actions.
-          <a
-            href="https://github.com/Simodalstix/azure-hub-spoke-vpn"
-            class="text-cyan-400 underline"
+          <a href="https://github.com/Simodalstix/az-hub-spoke-vpn" class="text-cyan-400 underline"
             >GitHub →</a
           >
         </p>
