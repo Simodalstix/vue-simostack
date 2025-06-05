@@ -47,9 +47,9 @@
           </div>
         </div>
         <div class="flex justify-center gap-3 flex-wrap">
-          <img src="/images/skills-in-progress/vault-associate.png" class="h-28 object-contain" />
-          <img src="/images/skills-in-progress/rhcsa.png" class="h-28 object-contain" />
+          <img src="/images/skills-in-progress/aws-devops.png" class="h-28 object-contain" />
           <img src="/images/skills-in-progress/azure-devops.png" class="h-28 object-contain" />
+          <img src="/images/skills-in-progress/rhcsa.png" class="h-28 object-contain" />
         </div>
       </div>
     </div>

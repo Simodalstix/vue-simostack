@@ -84,17 +84,17 @@
     </div>
     <div class="mt-4 space-y-2 text-sm text-gray-300">
       <div>
-        <h4 class="font-semibold text-indigo-300">Hub & Spoke Networking Lab (In Progress)</h4>
+        <h4 class="font-semibold text-indigo-300">Hub & Spoke Networking Lab</h4>
         <p>
-          Designing a secure Azure hub-and-spoke network with VNet peering, a VPN Gateway, NSGs, and
-          custom routing. Will deploy via Terraform and GitHub Actions.
+          Designed secure Azure hub-and-spoke network with VNet peering, a VPN Gateway, NSGs, and
+          custom routing - infrastructure managed via Terraform. Connection tested with AWS EC2.
           <a href="https://github.com/Simodalstix/az-hub-spoke-vpn" class="text-cyan-400 underline"
             >GitHub →</a
           >
         </p>
       </div>
       <div>
-        <h4 class="font-semibold text-indigo-300">Azure App Service Project</h4>
+        <h4 class="font-semibold text-indigo-300">Azure App Service Project (In Progress)</h4>
         <p>
           Building a full stack deployment pipeline for an Express API with PostgreSQL on App
           Service and Azure Database for PostgreSQL. CI/CD enabled via GitHub.
