@@ -17,61 +17,22 @@
       <h2 class="text-lg font-semibold text-indigo-300 m-2 pt-2">Strengths I Bring With Me</h2>
       <ul class="list-disc list-inside space-y-1">
         <li>Clear communication under pressure</li>
+        <li>Instinctive diagnosis and triage</li>
         <li>Technical troubleshooting for non-technical users</li>
         <li>Building trust with diverse teams and customers</li>
         <li>Managing regulated workflows with precision</li>
       </ul>
 
-      <div>
-        <div class="mt-4 bg-slate-700 rounded-md">
-          <h3
-            class="text-sm font-semibold text-ellipsis white uppercase tracking-wide my-2 text-center"
-          >
-            Currently Learning &amp; Building With
-          </h3>
-          <div class="flex justify-center items-center gap-2">
-            <img
-              src="/images/left-column/terraform-icon.svg"
-              alt="Terraform"
-              class="h-12 w-auto transition-transform duration-100 hover:scale-110"
-            />
-            <img
-              src="/images/left-column/azure-icon.svg"
-              alt="Azure"
-              class="h-12 w-auto transition-transform duration-100 hover:scale-110"
-            />
-            <img
-              src="/images/left-column/aws-icon.svg"
-              alt="AWS"
-              class="h-12 w-auto transition-transform duration-100 hover:scale-110"
-            />
-            <img
-              src="/images/left-column/vue-icon.svg"
-              alt="Vue"
-              class="h-12 w-auto transition-transform duration-100 hover:scale-110"
-            />
-            <LearningModal
-              :visible="showLearn"
-              @close="showLearn = false"
-              width="max-w-[1100px]"
-              height="max-h-[92vh]"
-              title="Learning Focus"
-            />
-            <button
-              @click="showLearn = true"
-              class="bg-purple-600 border-2 border-white text-white px-4 py-2 rounded hover:bg-purple-700 transition"
-            >
-              Learning Focus
-            </button>
-          </div>
-        </div>
+      <div class="mt-4 flex justify-center">
+        <router-link
+          to="/blog"
+          class="bg-cyan-600 text-white text-lg px-6 py-3 rounded-lg hover:bg-cyan-700 transition shadow-md"
+        >
+          Raspblog - Thought Space
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
-import LearningModal from './modals/LearningModal.vue'
-const showLearn = ref(false)
-</script>
+<script setup></script>
