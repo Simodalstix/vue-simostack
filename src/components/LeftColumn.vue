@@ -1,38 +1,59 @@
 <template>
   <div class="bg-gray-800 p-4 rounded shadow space-y-4">
-    <h1 class="text-2xl font-bold border-b-2 border-indigo-500 pb-1">From Pharmacy to Cloud</h1>
+    <h1 class="text-2xl font-bold text-center border-b-2 border-indigo-500 pb-1">
+      Pharmacist to Engineer
+    </h1>
     <div class="flex flex-col h-full">
-      <p class="text-lg font-semibold text-indigo-300 mb-2">~/scientist/pharmacist/engineer</p>
+      <p class="text-lg font-semibold text-white mb-2">
+        ~/scientist/pharmacist/engineer |
+        <a
+          href="https://github.com/Simodalstix"
+          class="shadow-sm text-indigo-500 hover:bg-blue-700 transition duration-200"
+          target="_blank"
+        >
+          GitHub
+        </a>
+      </p>
 
       <p class="text-base">
-        I’ve made the leap from healthcare to cloud, backed by a decade of solving high-pressure
-        problems and helping people navigate complexity. Whether supporting pharmacists or deploying
-        infrastructure, I bring clarity, empathy, and curiosity to everything I do. After years of
-        guiding patients through regulations and medications, I saw my strengths in communication
-        and troubleshooting fit naturally in tech. I’d hit a ceiling in pharmacy — now I’m all-in on
-        cloud, DevOps, and automation.
+        I’m an Australian citizen pivoting from healthcare into infrastructure, DevOps, and cloud
+        engineering — aiming to support government or defence environments where reliability and
+        trust matter. I bring calm under pressure, instinctive triage skills, and years of
+        experience translating complex systems for people from all walks of life.
       </p>
-      <div class="border-t border-indigo-500 mt-3"></div>
+      <span class="text-indigo-500">Key Strength: Relentless Focus, Relentless Learning</span>
+      <p>
+        I move fast because I care — not just about understanding systems, but mastering them. I
+        bring sharp attention to detail and a deep drive to learn, build, and improve. Now I channel
+        that into platforms, automation, and infrastructure using tools like AWS, Azure, Terraform,
+        Docker, VMware, and Ansible — and I’m just getting started.
+      </p>
 
-      <h2 class="text-lg font-semibold text-indigo-300 m-2 pt-2">Strengths I Bring With Me</h2>
-      <ul class="list-disc list-inside space-y-1">
-        <li>Clear communication under pressure</li>
-        <li>Instinctive diagnosis and triage</li>
-        <li>Technical troubleshooting for non-technical users</li>
-        <li>Building trust with diverse teams and customers</li>
-        <li>Managing regulated workflows with precision</li>
-      </ul>
-
-      <div class="mt-4 flex justify-center">
-        <router-link
-          to="/blog"
-          class="bg-cyan-600 text-white text-lg px-6 py-3 rounded-lg hover:bg-cyan-700 transition shadow-md"
-        >
-          Raspblog - Thought Space
-        </router-link>
-      </div>
+      <BaseCard
+        @click="showTargetCertsModal = true"
+        class="bg-blue-900 background border-l-4 text-center border-blue-500 border mt-4 p-4 rounded-md border-radius shadow cursor-pointer hover:bg-blue-800 duration-200"
+      >
+        <div class="flex justify-center items-center gap-10">
+          <img
+            src="/images/skills-in-progress/aws-devops.png"
+            alt="AWS DevOps Badge"
+            class="w-36"
+          />
+          <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-36" />
+        </div>
+        <div></div>
+      </BaseCard>
     </div>
   </div>
+
+  <TargetCertsModal :visible="showTargetCertsModal" @close="showTargetCertsModal = false" />
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+import BaseCard from './ui/BaseCard.vue' // Adjust path based on your file structure
+import TargetCertsModal from './modals/TargetCerts.vue' // Adjust path based on your file structure
+
+// State for your Target Certs Modal
+const showTargetCertsModal = ref(false)
+</script>

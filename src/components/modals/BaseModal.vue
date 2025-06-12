@@ -39,7 +39,7 @@ const props = defineProps({
   title: String,
   titleColor: {
     type: String,
-    default: 'text-cyan-400',
+    default: 'text-white',
   },
   width: {
     type: String,

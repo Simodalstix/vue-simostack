@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800 p-4 rounded shadow space-y-4">
+  <div class="bg-gray-800 p-4 rounded shadow space-y-3">
     <h1 class="text-2xl text-center text-gray-300 font-bold border-b-2 border-indigo-500 pb-1">
       Cloud | Platform | DevOps
     </h1>
@@ -8,142 +8,96 @@
       pfSense, and Active Directory to simulate enterprise networking and identity services. I’m
       integrating Ansible automation, centralized monitoring with Prometheus, Grafana, and Splunk,
       and deploying tools that mirror real-world infrastructure — all with an emphasis on hands-on
-      use, observability, and secure architecture.
+      use, observability, and secure architecture. I'm also developing an Azure IaaS platform using
+      Terraform, with Dynatrace, Update Manager, and RBAC-driven governance.
     </p>
-    <div class="mt-4 bg-purple-900 p-4 rounded shadow border-l-4 border-orange-400">
-      <div class="flex items-center gap-3">
-        <img src="/images/focus/jenkins.svg" alt="Jenkins Badge" class="w-24" />
-        <div>
-          <h3 class="text-lg font-bold text-white">Kubernetes + CI/CD Stack</h3>
-          <p class="text-sm text-gray-300">
-            Planning a Kubernetes-based lab featuring Helm for templating and Jenkins for automated
-            deployments. Will be hosted on VMware and integrated with logging, secrets, and GitHub
-            workflows.
-          </p>
-        </div>
+
+    <BaseCard
+      @click="showDynatraceProject = true"
+      class="bg-blue-800 text-white p-4 border-l-4 border-cyan-600 rounded shadow cursor-pointer hover:bg-blue-700 transition flex items-center gap-5"
+    >
+      <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Badge" class="w-20" />
+      <div>
+        <h3 class="text-lg font-bold text-white">
+          Azure IaaS: Patching & Observability (In Progress)
+        </h3>
+        <p class="text-sm text-gray-300">
+          Building a robust Azure IaaS platform with Terraform, featuring RHEL/Windows VMs,
+          automated patching via Azure Update Manager, Load Balancing, and HA. Azure Monitor &
+          Dynatrace for observability, using RBAC and Azure best practices.
+        </p>
       </div>
-    </div>
+    </BaseCard>
 
-    <div class="mt-6 flex gap-2">
-      <!-- This is your trigger button -->
-
-      <LearningModal
-        :visible="showLearn"
-        @close="showLearn = false"
-        width="max-w-[1100px]"
-        height="max-h-[92vh]"
-        title="Learning Focus"
-      />
-      <button
-        @click="showLearn = true"
-        class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition"
-      >
-        Certifications
-      </button>
-      <!-- <FocusModal
-        :visible="showFocus"
-        @close="showFocus = false"
-        width="max-w-[1100px]"
-        height="max-h-[92vh]"
-        title="Actively Exploring"
-      />
-      <button
-        @click="showFocus = true"
-        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-      >
-        Exploration
-      </button> -->
-
-      <AzureHubSpokeModal
-        :visible="showAzureProject"
-        @close="showAzureProject = false"
-        width="max-w-[1100px]"
-        height="max-h-[92vh]"
-      />
-
-      <button
+    <div class="grid grid-cols-2 gap-4">
+      <BaseCard
         @click="showAzureProject = true"
-        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+        class="bg-zinc-700 text-white p-3 border-l-4 border-cyan-600 rounded shadow cursor-pointer hover:bg-zinc-600 transition text-center font-medium flex items-center justify-center min-h-[50px]"
       >
-        Azure Hub VPN
-      </button>
+        <span>Azure Hub-Spoke + VPN</span>
+        <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 ml-4" /><img
+          src="/images/main-tools/terraform.svg"
+          alt="Terraform Icon"
+          class="w-8 ml-2"
+        />
+      </BaseCard>
 
-      <AwsMigrationModal
-        :visible="showAwsProject"
-        @close="showAwsProject = false"
-        width="max-w-[1100px]"
-        height="max-h-[92vh]"
-      />
-
-      <button
+      <BaseCard
         @click="showAwsProject = true"
-        class="bg-cyan-600 text-white px-4 py-2 rounded hover:bg-cyan-700 transition"
+        class="bg-zinc-700 text-white border-l-4 border-orange-500 p-3 rounded shadow cursor-pointer hover:bg-zinc-600 transition text-center font-medium flex items-center justify-center min-h-[50px]"
       >
-        AWS Database Migration
-      </button>
+        <span>AWS Database Migration</span
+        ><img src="/images/main-tools/aws-icon.svg" alt="AWS Icon" class="w-8 ml-4" /><img
+          src="/images/main-tools/terraform.svg"
+          alt="Terraform Icon"
+          class="w-8 ml-2"
+        />
+      </BaseCard>
 
-      <VmwareMonitoringModal
-        :visible="showVmwareProject"
-        @close="showVmwareProject = false"
-        width="max-w-[1100px]"
-        height="max-h-[92vh]"
-      />
-
-      <button
+      <BaseCard
         @click="showVmwareProject = true"
-        class="bg-purple-700 text-white px-4 py-2 rounded hover:bg-purple-800 transition"
+        class="bg-zinc-700 text-white border-l-4 border-blue-600 p-3 rounded shadow cursor-pointer hover:bg-zinc-600 transition text-center font-medium flex items-center justify-center min-h-[50px]"
       >
-        VMware + Ansible
-      </button>
-
-      <!-- <ProjectsModal
-        :visible="showProjects"
-        @close="showProjects = false"
-        title="Recent Projects"
-        width="max-w-[1250px]"
-        height="max-h-[92vh]"
-        alignment="items-start"
-      />
-
-      <button
-        @click="showProjects = true"
-        class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition"
-      >
-        Projects
-      </button> -->
-
-      <KubernetesModal
-        :visible="showKubernetes"
-        @close="showKubernetes = false"
-        title="Kubernetes"
-        width="max-w-[1100px]"
-        height="max-h-[92vh]"
-      />
-
-      <!-- <button
-        @click="showKubernetes = true"
-        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-      >
-        Kubernetes
-      </button> -->
+        <span>VMware Monitoring Suite</span>
+        <img src="/images/main-tools/vmware.svg" alt="VMware Icon" class="w-8 ml-4" /><img
+          src="/images/main-tools/ansible.svg"
+          alt="Ansible Icon"
+          class="w-8 ml-2"
+        />
+      </BaseCard>
     </div>
-    <div class="mt-6 bg-blue-900 p-4 rounded shadow border-l-4 border-indigo-500">
-      <div class="flex items-center gap-4">
-        <img src="/images/skills-in-progress/azure-admin.png" alt="AZ-104 Badge" class="w-24" />
-        <div>
-          <h3 class="text-lg font-bold text-white">AZ-104 + Azure Projects</h3>
-          <p class="text-sm text-gray-300">
-            Study and revision complete, concepts learned and applied. Comfortable with practice
-            exams and ready to sit at a moment’s notice — once my house occupants leave on holiday
-            on the 17th.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="mt-4 space-y-2 text-sm text-gray-300">
+    <DynatraceModal
+      :visible="showDynatraceProject"
+      @close="showDynatraceProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+    <AzureHubSpokeModal
+      :visible="showAzureProject"
+      @close="showAzureProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+    <AwsMigrationModal
+      :visible="showAwsProject"
+      @close="showAwsProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+    <VmwareMonitoringModal
+      :visible="showVmwareProject"
+      @close="showVmwareProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+
+    <h2 class="text-2xl text-center text-gray-300 font-bold border-b-2 border-indigo-500 pb-1">
+      Infrastructure and Platform Stack
+    </h2>
+    <div class="mt-4 space-y-4 text-sm text-gray-300">
       <div>
         <div class="mt-1">
-          <div class="flex flex-wrap gap-3 justify-center items-center">
+          <div class="flex flex-wrap gap-6 justify-center items-center">
             <div class="transition duration-200 hover:scale-110 hover:brightness-110">
               <img
                 src="/images/main-tools/terraform.svg"
@@ -160,7 +114,9 @@
                 title="VMware"
               />
             </div>
-            <div class="transition duration-200 hover:scale-110 hover:brightness-110">
+            <div
+              class="transition brightness-110 duration-200 hover:scale-110 hover:brightness-120"
+            >
               <img
                 src="/images/main-tools/aws-icon.svg"
                 alt="AWS"
@@ -194,27 +150,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <h4 class="font-semibold text-indigo-300">Hub & Spoke Networking Lab</h4>
-        <p>
-          Designed secure Azure hub-and-spoke network with VNet peering, a VPN Gateway, NSGs, and
-          custom routing - infrastructure managed via Terraform. Connection tested with AWS EC2.
-          <a href="https://github.com/Simodalstix/az-hub-spoke-vpn" class="text-cyan-400 underline"
-            >GitHub →</a
-          >
-        </p>
-      </div>
-      <div>
-        <h4 class="font-semibold text-indigo-300">Azure App Service Project (In Progress)</h4>
-        <p>
-          Building a full stack deployment pipeline for an Express API with PostgreSQL on App
-          Service and Azure Database for PostgreSQL. CI/CD enabled via GitHub.
-          <a
-            href="https://github.com/Simodalstix/azure-app-database"
-            class="text-cyan-400 underline"
-            >GitHub →</a
-          >
-        </p> -->
       </div>
     </div>
   </div>
@@ -222,20 +157,12 @@
 
 <script setup>
 import { ref } from 'vue'
-
-// import ProjectsModal from './modals/ProjectsModal.vue'
-import KubernetesModal from './modals/KubernetesModal.vue'
-// import FocusModal from './modals/FocusModal.vue'
-import LearningModal from './modals/LearningModal.vue'
+import DynatraceModal from './modals/Project-Dynatrace.vue'
 import AwsMigrationModal from './modals/Project-Migration.vue'
 import AzureHubSpokeModal from './modals/Project-Azure-Hub.vue'
 import VmwareMonitoringModal from './modals/Project-VMware-Ansible.vue'
 const showVmwareProject = ref(false)
-
+const showDynatraceProject = ref(false)
 const showAzureProject = ref(false)
 const showAwsProject = ref(false)
-const showLearn = ref(false)
-// const showProjects = ref(false)
-// const showFocus = ref(false)
-const showKubernetes = ref(false)
 </script>

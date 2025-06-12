@@ -26,14 +26,14 @@
           validated connectivity from an AWS EC2 instance over the site-to-site VPN, simulating
           hybrid or multi-cloud scenarios.
         </p>
-        <div class="flex gap-3">
+        <div class="flex gap-3 items-center">
           <img src="/images/main-tools/terraform.svg" class="h-24" title="Terraform" />
           <a
             href="https://github.com/Simodalstix/az-hub-spoke-vpn"
-            class="text-cyan-400 underline text-base"
+            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
             target="_blank"
           >
-            View on GitHub →
+            View on GitHub
           </a>
         </div>
       </div>

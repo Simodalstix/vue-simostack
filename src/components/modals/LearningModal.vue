@@ -7,22 +7,21 @@
       <div class="flex flex-col items-center text-center justify-between space-y-4 pr-4">
         <div>
           <h3 class="text-lg font-semibold text-white m-3">Certifications in Progress</h3>
-          <div class="text-sm text-gray-300 space-y-3 leading-relaxed">
+          <div class="text-base text-gray-300 space-y-3 leading-relaxed">
             <p>
-              I'm currently focused on earning the Microsoft Azure Administrator (AZ-104)
-              certification, with the goal of building fluency in Azure resource management,
-              networking, identity, and governance. Azure is now my primary focus, and I'm on track
-              to sit the exam soon.
+              My Azure Administrator (AZ-104) study is complete — concepts learned, skills applied,
+              and I’m ready to sit the exam within the next week. This covered resource management,
+              networking, identity, and governance in production-style deployments.
             </p>
             <p>
-              Alongside this, I'm gradually preparing for the AWS SysOps Administrator certification
-              to reinforce my foundation in AWS operations and monitoring. It's running in the
-              background while I go deep on Azure.
+              I’m now shifting focus to the AWS DevOps Engineer certification to deepen my
+              understanding of CI/CD pipelines, automation workflows, and multi-service
+              orchestration across cloud platforms.
             </p>
           </div>
         </div>
         <div class="flex justify-center gap-3">
-          <img src="/images/skills-in-progress/sysops.png" class="h-28 object-contain" />
+          <img src="/images/skills-in-progress/aws-devops.png" class="h-28 object-contain" />
           <img src="/images/skills-in-progress/azure-admin.png" class="h-28 object-contain" />
         </div>
       </div>
@@ -31,23 +30,22 @@
       <div class="flex flex-col items-center text-center justify-between space-y-4 pl-4">
         <div>
           <h3 class="text-lg font-semibold text-white m-3">Target Certifications</h3>
-          <div class="text-sm text-gray-300 space-y-3 leading-relaxed">
+          <div class="text-base text-gray-300 space-y-3 leading-relaxed">
             <p>
-              My long-term ambition is to become highly proficient in DevOps and cloud platform
-              engineering — the kind of work that focuses on reliability, automation, scalability,
-              and secure infrastructure. I'm actively building real-world skills in system
-              orchestration, infrastructure automation, and incident response.
+              My long-term goal is to become highly proficient in DevOps and platform engineering —
+              focused on reliability, automation, scalability, and secure infrastructure design. I’m
+              actively sharpening real-world skills in system orchestration, configuration
+              management, and incident response.
             </p>
             <p>
-              This includes designing resilient deployments, automating with tools like Terraform
-              and Ansible, and implementing monitoring practices using Azure Monitor and Dynatrace.
-              My goal is to become the kind of engineer teams rely on when stability and uptime
-              matter most.
+              Earning the RHCSA certification is a key milestone on this path. Azure DevOps
+              certification remains on my radar if it's relevant to future team environments. I’m
+              continuing to build expertise through tools like Ansible, Terraform, and
+              enterprise-ready monitoring stacks across hybrid infrastructure.
             </p>
           </div>
         </div>
         <div class="flex justify-center gap-3 flex-wrap">
-          <img src="/images/skills-in-progress/aws-devops.png" class="h-28 object-contain" />
           <img src="/images/skills-in-progress/azure-devops.png" class="h-28 object-contain" />
           <img src="/images/skills-in-progress/rhcsa.png" class="h-28 object-contain" />
         </div>

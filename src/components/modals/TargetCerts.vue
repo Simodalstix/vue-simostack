@@ -1,0 +1,74 @@
+<script setup>
+defineProps({
+  visible: Boolean,
+})
+defineEmits(['close'])
+
+import BaseModal from './BaseModal.vue'
+</script>
+
+<template>
+  <BaseModal
+    :visible="visible"
+    @close="$emit('close')"
+    title="Target Certs: AWS DevOps & RHCSA Study Details"
+    width="max-w-3xl"
+  >
+    <div class="bg-gray-700 p-3 rounded">
+      <p class="text-base text-white mb-4">
+        An overview of my current study plans and progress toward the AWS Certified DevOps Engineer
+        – Professional and Red Hat Certified System Administrator (RHCSA) certifications.
+      </p>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold text-indigo-400 mb-2">
+            AWS Certified DevOps Engineer – Professional
+          </h3>
+          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+            <li>
+              <span class="font-semibold">Status:</span> In progress — currently focused on CI/CD
+              with services like CodePipeline, CodeBuild, CodeDeploy, and CloudFormation.
+            </li>
+            <li>
+              <span class="font-semibold">Resources:</span> A Cloud Guru, Stephane Maarek’s Udemy
+              course, AWS documentation, hands-on labs, and Whizlabs for review.
+            </li>
+            <li>
+              <span class="font-semibold">Key Areas:</span> Automation, CI/CD, monitoring & logging,
+              security, high availability, fault tolerance, and disaster recovery.
+            </li>
+            <li><span class="font-semibold">Expected Completion:</span> Q3 2025</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-indigo-400 mb-2">
+            Red Hat Certified System Administrator (RHCSA)
+          </h3>
+          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
+            <li>
+              <span class="font-semibold">Status:</span> Linux Essentials complete — now 18% through
+              Sander van Vugt’s course on O’Reilly, covering CLI, user/group management, and
+              systemd.
+            </li>
+            <li>
+              <span class="font-semibold">Resources:</span> Sander van Vugt’s on-demand course
+              (O’Reilly), official Red Hat docs, WSL for daily work, and Ubuntu/RHEL VMs in VMware
+              for practice.
+            </li>
+            <li>
+              <span class="font-semibold">Key Areas:</span> System and file management, software
+              installation (dnf/yum), network setup, user/group administration, and basic security.
+            </li>
+            <li><span class="font-semibold">Expected Completion:</span> Q4 2025</li>
+          </ul>
+        </div>
+
+        <p class="text-base text-gray-300 mt-4">
+          Once I have these certifications, I’ll be dangerous in the best way.
+        </p>
+      </div>
+    </div>
+  </BaseModal>
+</template>

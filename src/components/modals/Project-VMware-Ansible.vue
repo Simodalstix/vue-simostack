@@ -1,5 +1,9 @@
 <template>
-  <BaseModal :visible="visible" @close="$emit('close')" title="VMware + Monitoring Lab">
+  <BaseModal
+    :visible="visible"
+    @close="$emit('close')"
+    title="VMware + Monitoring Lab (In Progress)"
+  >
     <div class="grid grid-cols-1 md:grid-cols-[5fr,2fr] mx-3 gap-5 text-gray-200">
       <!-- Left: Diagram + summary -->
       <div class="mt-3">
@@ -28,14 +32,14 @@
           the DHCP and DNS gateway, with a Windows Server AD VM optionally integrated for directory
           service telemetry.
         </p>
-        <div class="flex gap-3">
+        <div class="flex gap-3 items-center">
           <!-- <img src="/images/main-tools/ansible.svg" class="h-24" title="Ansible" /> -->
           <a
             href="https://github.com/Simodalstix/ansible-splunk-setup"
-            class="text-cyan-400 underline text-base"
+            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
             target="_blank"
           >
-            View on GitHub →
+            View on GitHub
           </a>
         </div>
       </div>
