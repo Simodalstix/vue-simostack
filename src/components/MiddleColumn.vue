@@ -63,7 +63,13 @@
           src="/images/main-tools/ansible.svg"
           alt="Ansible Icon"
           class="w-8 ml-2"
-        />
+        /> </BaseCard
+      ><BaseCard
+        @click="showRaspberry = true"
+        class="bg-zinc-700 text-white border-l-4 border-cyan-600 p-3 rounded shadow cursor-pointer hover:bg-zinc-600 transition text-center font-medium flex items-center justify-center min-h-[50px]"
+      >
+        <span>Pi Backend API (Docker + DB)</span>
+        <img src="/images/main-tools/docker-mark-blue.svg" alt="Ansible Icon" class="w-8 ml-4" />
       </BaseCard>
     </div>
     <DynatraceModal
@@ -90,7 +96,12 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
-
+    <RaspberryPiModal
+      :visible="showRaspberry"
+      @close="showRaspberry = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <h2 class="text-2xl text-center text-gray-300 font-bold border-b-2 border-indigo-500 pb-1">
       Infrastructure and Platform Stack
     </h2>
@@ -161,6 +172,8 @@ import DynatraceModal from './modals/Project-Dynatrace.vue'
 import AwsMigrationModal from './modals/Project-Migration.vue'
 import AzureHubSpokeModal from './modals/Project-Azure-Hub.vue'
 import VmwareMonitoringModal from './modals/Project-VMware-Ansible.vue'
+import RaspberryPiModal from './modals/Project-Raspberry.vue'
+const showRaspberry = ref(false)
 const showVmwareProject = ref(false)
 const showDynatraceProject = ref(false)
 const showAzureProject = ref(false)
