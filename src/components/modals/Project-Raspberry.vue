@@ -5,7 +5,6 @@
     title="Raspberry Pi Backend API – Node.js + Docker"
   >
     <div class="grid grid-cols-1 md:grid-cols-[5fr,2fr] mx-3 gap-5 text-gray-200">
-      <!-- Left: Diagram + summary -->
       <div class="mt-3">
         <img
           src="/images/project-modal-images/rasp-api-image.png"
