@@ -6,11 +6,11 @@
   >
     <div class="grid grid-cols-1 md:grid-cols-[5fr,2fr] mx-3 gap-6 text-gray-200">
       <div class="mt-3">
-        <!-- <img
-          src="/images/project-modal-images/azure-iaas-ops.svg"
+        <img
+          src="/images/project-modal-images/azure-console.png"
           alt="Azure IaaS Operations Diagram"
           class="object-contain rounded shadow"
-        /> -->
+        />
 
         <p class="italic text-base text-orange-300 mt-3">
           A robust Azure IaaS project demonstrating automated VM provisioning, patching, and
