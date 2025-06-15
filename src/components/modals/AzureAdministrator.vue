@@ -21,11 +21,14 @@ import BaseModal from './BaseModal.vue'
         size, monitor, and adjust resources, when needed.
       </p>
       <div class="mt-4">
-        <span
-          class="inline-block bg-cyan-600 text-white font-medium py-2 px-4 rounded-md shadow-sm cursor-default"
+        <a
+          href="https://learn.microsoft.com/api/credentials/share/en-us/SimonParker-8212/8AEDB76D7A75F066?sharingId=F0664CD37994DC5D"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
         >
-          Verification link coming as soon as Credly delivers the badge (~ Sunday)
-        </span>
+          Verify Certification on Microsoft Learn
+        </a>
       </div>
     </div>
   </BaseModal>
