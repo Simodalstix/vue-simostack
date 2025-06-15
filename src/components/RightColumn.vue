@@ -48,12 +48,25 @@
           @click="showAzureAmin = true"
         />
       </div>
+      <div
+        class="bg-purple-800 hover:bg-purple-700 text-white p-2 mt-8 rounded-md text-center shadow"
+      >
+        <a
+          href="https://github.com/Simodalstix"
+          target="_blank"
+          class="flex items-center justify-center gap-2 text-white hover:text-white transition"
+        >
+          <Github class="text-gray-800 w-10 h-10" />
+          GitHub.com/Simodalstix
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { Github } from 'lucide-vue-next'
 import AWSArchitect from './modals/AWSArchitect.vue'
 import AWSDeveloper from './modals/AWSDeveloper.vue'
 import TerraformModal from './modals/TerraformModal.vue'

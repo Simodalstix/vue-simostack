@@ -40,7 +40,7 @@
           <img src="/images/main-tools/docker-mark-blue.svg" class="h-24" title="Docker" />
           <a
             href="https://github.com/Simodalstix/raspberry-pi-backend"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+            class="inline-block bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
             target="_blank"
           >
             View on GitHub

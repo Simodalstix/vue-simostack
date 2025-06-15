@@ -14,7 +14,7 @@
 
     <BaseCard
       @click="showDynatraceProject = true"
-      class="bg-indigo-800 text-white p-4 border-l-4 border-cyan-600 rounded shadow cursor-pointer hover:bg-indigo-700 transition flex items-center gap-5"
+      class="bg-indigo-800 text-white p-4 border-l-4 border-indigo-500 rounded shadow cursor-pointer hover:bg-indigo-700 transition flex items-center gap-5"
     >
       <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Badge" class="w-20" />
       <div>
@@ -30,7 +30,7 @@
     <div class="grid grid-cols-2 gap-4">
       <BaseCard
         @click="showAzureProject = true"
-        class="bg-zinc-700 text-white p-3 border-l-4 border-cyan-600 rounded shadow cursor-pointer hover:bg-zinc-600 transition text-center font-medium flex items-center justify-center min-h-[50px]"
+        class="bg-purple-800 text-white p-3 border-l-4 border-indigo-500 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"
       >
         <span>Azure Hub-Spoke + VPN</span>
         <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 ml-4" /><img
@@ -42,7 +42,7 @@
 
       <BaseCard
         @click="showAwsProject = true"
-        class="bg-zinc-700 text-white border-l-4 border-orange-500 p-3 rounded shadow cursor-pointer hover:bg-zinc-600 transition text-center font-medium flex items-center justify-center min-h-[50px]"
+        class="bg-purple-800 text-white border-l-4 border-indigo-500 p-3 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"
       >
         <span>AWS Database Migration</span
         ><img src="/images/main-tools/aws-icon.svg" alt="AWS Icon" class="w-8 ml-4" /><img
@@ -54,7 +54,7 @@
 
       <BaseCard
         @click="showVmwareProject = true"
-        class="bg-zinc-700 text-white border-l-4 border-blue-600 p-3 rounded shadow cursor-pointer hover:bg-zinc-600 transition text-center font-medium flex items-center justify-center min-h-[50px]"
+        class="bg-purple-800 text-white border-l-4 border-indigo-500 p-3 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"
       >
         <span>VMware Monitoring Suite</span>
         <img src="/images/main-tools/vmware.svg" alt="VMware Icon" class="w-8 ml-4" /><img
@@ -64,7 +64,7 @@
         /> </BaseCard
       ><BaseCard
         @click="showRaspberry = true"
-        class="bg-zinc-700 text-white border-l-4 border-cyan-600 p-3 rounded shadow cursor-pointer hover:bg-zinc-600 transition text-center font-medium flex items-center justify-center min-h-[50px]"
+        class="bg-purple-800 text-white border-l-4 border-indigo-500 p-3 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"
       >
         <span>Pi Backend API (Docker + DB)</span>
         <img src="/images/main-tools/docker-mark-blue.svg" alt="Ansible Icon" class="w-8 ml-4" />

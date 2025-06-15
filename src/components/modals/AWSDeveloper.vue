@@ -26,7 +26,7 @@ import BaseModal from './BaseModal.vue'
           href="https://www.credly.com/badges/e90f09fd-d161-465a-93e1-bcfb7375635a"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+          class="inline-block bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
         >
           Verify Certification on Credly
         </a>

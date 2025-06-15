@@ -37,7 +37,7 @@
 
           <a
             href="https://github.com/Simodalstix/az-patching-dynatrace"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+            class="inline-block bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
             target="_blank"
           >
             View on GitHub

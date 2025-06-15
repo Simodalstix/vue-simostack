@@ -26,7 +26,7 @@ PCAP™ – Certified Associate Python Programmer"
           href="https://www.credly.com/badges/dd32e128-d849-40fa-b39c-e4b77b3480cd"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+          class="inline-block bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
         >
           → Verify Certification on Credly
         </a>

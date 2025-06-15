@@ -22,7 +22,7 @@ import BaseModal from './BaseModal.vue'
 
       <div class="space-y-6">
         <div>
-          <h3 class="text-xl font-bold text-indigo-400 mb-2">
+          <h3 class="text-xl font-bold text-indigo-500 mb-2">
             AWS Certified DevOps Engineer – Professional
           </h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
@@ -43,14 +43,13 @@ import BaseModal from './BaseModal.vue'
         </div>
 
         <div>
-          <h3 class="text-xl font-bold text-indigo-400 mb-2">
+          <h3 class="text-xl font-bold text-indigo-500 mb-2">
             Red Hat Certified System Administrator (RHCSA)
           </h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
             <li>
-              <span class="font-semibold">Status:</span> Linux Essentials complete — now 18% through
-              Sander van Vugt’s course on O’Reilly, covering CLI, user/group management, and
-              systemd.
+              <span class="font-semibold">Status:</span> Already familiar with Linux — now 18%
+              through Sander's content, covering CLI, user/group management, and systemd.
             </li>
             <li>
               <span class="font-semibold">Resources:</span> Sander van Vugt’s on-demand course
@@ -65,9 +64,7 @@ import BaseModal from './BaseModal.vue'
           </ul>
         </div>
 
-        <p class="text-base text-gray-300 mt-4">
-          Once I have these certifications, I’ll be dangerous in the best way.
-        </p>
+        <p class="text-base text-gray-300 mt-4">Just a matter of time</p>
       </div>
     </div>
   </BaseModal>

@@ -21,7 +21,7 @@
         <slot name="header">
           <h2
             v-if="title"
-            :class="`text-xl font-bold border-b-2 border-purple-500 pb-2  text-center ${titleColor}`"
+            :class="`text-xl font-bold border-b-2 border-indigo-500 pb-2  text-center ${titleColor}`"
           >
             {{ title }}
           </h2>
