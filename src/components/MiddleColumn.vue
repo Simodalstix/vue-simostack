@@ -14,17 +14,15 @@
 
     <BaseCard
       @click="showDynatraceProject = true"
-      class="bg-blue-800 text-white p-4 border-l-4 border-cyan-600 rounded shadow cursor-pointer hover:bg-blue-700 transition flex items-center gap-5"
+      class="bg-indigo-800 text-white p-4 border-l-4 border-cyan-600 rounded shadow cursor-pointer hover:bg-indigo-700 transition flex items-center gap-5"
     >
       <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Badge" class="w-20" />
       <div>
-        <h3 class="text-lg font-bold text-white">
-          Azure IaaS: Patching & Observability (In Progress)
-        </h3>
+        <h3 class="text-lg font-bold text-white">Azure IaaS: Patching & Observability (Recent)</h3>
         <p class="text-sm text-gray-300">
-          Building a robust Azure IaaS platform with Terraform, featuring RHEL/Windows VMs,
-          automated patching via Azure Update Manager, Load Balancing, and HA. Azure Monitor &
-          Dynatrace for observability, using RBAC and Azure best practices.
+          Built a resilient Azure IaaS lab with Terraform, featuring RHEL/Windows VMs, automated
+          patching with Update Manager, load balancing, and full-stack observability via Azure
+          Monitor and Dynatrace
         </p>
       </div>
     </BaseCard>

@@ -31,7 +31,7 @@
 
       <BaseCard
         @click="showTargetCertsModal = true"
-        class="bg-blue-900 background border-l-4 text-center border-blue-500 border mt-4 p-4 rounded-md border-radius shadow cursor-pointer hover:bg-blue-800 duration-200"
+        class="bg-indigo-800 background border-l-4 text-center border-indigo-500 border mt-4 p-4 rounded-md border-radius shadow cursor-pointer hover:bg-blue-800 duration-200"
       >
         <div class="flex justify-center items-center gap-10">
           <img
