@@ -56,7 +56,7 @@
         @click="showVmwareProject = true"
         class="bg-purple-800 bg-opacity-60 text-white border-l-4 border-purple-800 p-3 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"
       >
-        <span>VMware Monitoring Suite</span>
+        <span>VMware Monitoring</span>
         <img src="/images/main-tools/vmware.svg" alt="VMware Icon" class="w-8 ml-4" /><img
           src="/images/main-tools/ansible.svg"
           alt="Ansible Icon"
@@ -111,7 +111,7 @@
               <img
                 src="/images/main-tools/terraform.svg"
                 alt="Terraform"
-                class="h-20 w-auto"
+                class="h-[72px] w-auto"
                 title="Terraform"
               />
             </div>
@@ -119,7 +119,7 @@
               <img
                 src="/images/main-tools/vmware.svg"
                 alt="VMware"
-                class="h-20 w-auto"
+                class="h-[72px] w-auto"
                 title="VMware"
               />
             </div>
@@ -129,7 +129,7 @@
               <img
                 src="/images/main-tools/aws-icon.svg"
                 alt="AWS"
-                class="h-20 w-auto"
+                class="h-[72px] w-auto"
                 title="AWS"
               />
             </div>
@@ -137,7 +137,7 @@
               <img
                 src="/images/main-tools/azure-icon.svg"
                 alt="Azure"
-                class="h-20 w-auto"
+                class="h-[72px] w-auto"
                 title="Azure"
               />
             </div>
@@ -145,7 +145,7 @@
               <img
                 src="/images/main-tools/ansible.svg"
                 alt="Ansible"
-                class="h-20 w-auto"
+                class="h-[72px] w-auto"
                 title="Ansible"
               />
             </div>
@@ -153,7 +153,7 @@
               <img
                 src="/images/main-tools/docker-mark-blue.svg"
                 alt="Docker"
-                class="h-20 w-auto"
+                class="h-[72px] w-auto"
                 title="Docker"
               />
             </div>
