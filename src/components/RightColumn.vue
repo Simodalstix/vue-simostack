@@ -12,13 +12,12 @@
           alt="AWS Cloud Practitioner Badge"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showPractitionerModal = true"
-        />
-        <PythonModal :visible="showPythonModal" @close="showPythonModal = false" />
+        /><AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
         <img
-          src="/images/certifications/python-associate.png"
-          alt="Python Associate Badge"
+          src="/images/certifications/azure-admin.png"
+          alt="Azure Admin Badge"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
-          @click="showPythonModal = true"
+          @click="showAzureAmin = true"
         />
 
         <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
@@ -40,14 +39,15 @@
           alt="AWS Developer Badge"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showDeveloperModal = true"
-        /><AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
+        /><PythonModal :visible="showPythonModal" @close="showPythonModal = false" />
         <img
-          src="/images/certifications/azure-admin.png"
-          alt="Azure Admin Badge"
+          src="/images/certifications/python-associate.png"
+          alt="Python Associate Badge"
           class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
-          @click="showAzureAmin = true"
+          @click="showPythonModal = true"
         />
       </div>
+
       <div
         class="bg-purple-800 hover:bg-purple-700 text-white p-2 mt-8 rounded-md text-center shadow"
       >

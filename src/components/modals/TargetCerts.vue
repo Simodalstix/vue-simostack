@@ -48,7 +48,7 @@ import BaseModal from './BaseModal.vue'
           </h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
             <li>
-              <span class="font-semibold">Status:</span> Already familiar with Linux — now 18%
+              <span class="font-semibold">Status:</span> Already familiar with Linux — already 25%
               through Sander's content, covering CLI, user/group management, and systemd.
             </li>
             <li>
