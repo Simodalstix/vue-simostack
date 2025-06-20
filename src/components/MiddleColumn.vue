@@ -4,12 +4,12 @@
       Cloud | Platform | DevOps
     </h1>
     <p class="text-base">
-      I’m wrapping up a hands-on enterprise lab built with VMware Workstation, pfSense, Ansible,
-      Splunk, and Active Directory — designed to simulate real-world networking, centralized
-      monitoring, and identity services in a secure environment. This project emphasizes automation,
-      observability, and access control. Next, I’m planning a fully serverless, event-driven AWS
-      architecture using EventBridge, Lambda, and DynamoDB — built to reflect the resilience and
-      modularity found in modern cloud-native systems.
+      I’m wrapping up a hands-on enterprise lab using VMware Workstation, pfSense, Ansible, Splunk,
+      and Active Directory — simulating real-world networking, monitoring, and identity services.
+      Now, I’m building a resilient, production-style AWS architecture with VPC networking, VPN
+      access, secure EC2 and RDS tiers, backups, DR planning, and IAM best practices. This project
+      focuses on infrastructure design, automation, and operational readiness — reflecting the kind
+      of real-world cloud foundations seen in government and enterprise environments.
     </p>
 
     <BaseCard
@@ -105,7 +105,7 @@
     </h2>
     <div class="mt-4 space-y-4 text-sm text-gray-300">
       <div>
-        <div class="mt-1">
+        <div class="mt-5">
           <div class="flex flex-wrap gap-6 justify-center items-center">
             <div class="transition duration-200 hover:scale-110 hover:brightness-110">
               <img

@@ -49,7 +49,7 @@
       </div>
 
       <div
-        class="bg-purple-800 hover:bg-purple-700 text-white p-2 mt-8 rounded-md text-center shadow"
+        class="bg-purple-800 hover:bg-purple-700 text-white p-2 mt-12 rounded-md text-center shadow"
       >
         <a
           href="https://github.com/Simodalstix"

@@ -27,8 +27,14 @@ import BaseModal from './BaseModal.vue'
           </h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
             <li>
-              <span class="font-semibold">Status:</span> In progress — currently focused on CI/CD
-              with services like CodePipeline, CodeBuild, CodeDeploy, and CloudFormation.
+              <span class="font-semibold">Status:</span> In progress — right now, I’m digging into
+              CI/CD, CloudFormation, SSM, and all the “tricks and traps” that come with real AWS
+              environments.
+            </li>
+            <li>
+              <span class="font-semibold">Learning Focus:</span> I’m taking time to understand how
+              AWS services actually work together—so I can accurately troubleshoot and build
+              solutions that work in practice, not just theory.
             </li>
             <li>
               <span class="font-semibold">Resources:</span> A Cloud Guru, Stephane Maarek’s Udemy
@@ -36,7 +42,8 @@ import BaseModal from './BaseModal.vue'
             </li>
             <li>
               <span class="font-semibold">Key Areas:</span> Automation, CI/CD, monitoring & logging,
-              security, high availability, fault tolerance, and disaster recovery.
+              security, high availability, fault tolerance, disaster recovery, and operational
+              gotchas.
             </li>
             <li><span class="font-semibold">Expected Completion:</span> Q3 2025</li>
           </ul>
