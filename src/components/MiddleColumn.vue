@@ -4,12 +4,11 @@
       Cloud | Platform | DevOps
     </h1>
     <p class="text-base">
-      I’m wrapping up a hands-on enterprise lab using VMware Workstation, pfSense, Ansible, Splunk,
-      and Active Directory — simulating real-world networking, monitoring, and identity services.
-      Now, I’m building a resilient, production-style AWS architecture with VPC networking, VPN
-      access, secure EC2 and RDS tiers, backups, DR planning, and IAM best practices. This project
-      focuses on infrastructure design, automation, and operational readiness — reflecting the kind
-      of real-world cloud foundations seen in government and enterprise environments.
+      Recently, I’ve been building hands-on experience with monitoring tools like Splunk and Ansible
+      as part of real-world enterprise labs. As I expand my skills, I’m eager to take on more data
+      pipeline projects—automating data flows, working with event-driven cloud architectures, and
+      exploring scalable integrations. I’m also keen to dive into AI services like AWS Bedrock,
+      bringing together modern cloud infrastructure with practical machine learning and automation.
     </p>
 
     <BaseCard

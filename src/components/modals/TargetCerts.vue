@@ -27,9 +27,9 @@ import BaseModal from './BaseModal.vue'
           </h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
             <li>
-              <span class="font-semibold">Status:</span> In progress — right now, I’m digging into
-              CI/CD, CloudFormation, SSM, and all the “tricks and traps” that come with real AWS
-              environments.
+              <span class="font-semibold">Status:</span> 52% through my content — right now, I’m
+              digging into CI/CD, CloudFormation, SSM, and all the “tricks and traps” that come with
+              real AWS environments.
             </li>
             <li>
               <span class="font-semibold">Learning Focus:</span> I’m taking time to understand how
