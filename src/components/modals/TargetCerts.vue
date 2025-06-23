@@ -27,14 +27,15 @@ import BaseModal from './BaseModal.vue'
           </h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
             <li>
-              <span class="font-semibold">Status:</span> 52% through my content — right now, I’m
-              digging into CI/CD, CloudFormation, SSM, and all the “tricks and traps” that come with
-              real AWS environments.
+              <span class="font-semibold">Status:</span> 67% through my content — really enjoying
+              GuardDuty, Control Tower, Config, and SSM. Encountering the “tricks and traps” that
+              come with real AWS environments.
             </li>
             <li>
-              <span class="font-semibold">Learning Focus:</span> I’m taking time to understand how
-              AWS services actually work together—so I can accurately troubleshoot and build
-              solutions that work in practice, not just theory.
+              <span class="font-semibold">Learning Focus:</span> Taking time to understand how AWS
+              environments work at the organizational level, especially around automating compliance
+              and security. Focusing on which services or aggregators to use for troubleshooting
+              different issues.
             </li>
             <li>
               <span class="font-semibold">Resources:</span> A Cloud Guru, Stephane Maarek’s Udemy
