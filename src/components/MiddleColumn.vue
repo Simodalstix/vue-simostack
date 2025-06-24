@@ -12,16 +12,22 @@
     </p>
 
     <BaseCard
-      @click="showDynatraceProject = true"
+      @click="showEventBridgeProject = true"
       class="bg-indigo-800 text-white p-4 border-l-4 border-indigo-500 rounded shadow cursor-pointer hover:bg-indigo-700 transition flex items-center gap-5"
     >
-      <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Badge" class="w-20" />
+      <img
+        src="/images/project-icons/eventbridge.svg"
+        alt="EventBridge Badge"
+        class="w-20 rounded-md"
+      />
       <div>
-        <h3 class="text-lg font-bold text-white">Azure IaaS: Patching & Observability (Recent)</h3>
+        <h3 class="text-lg font-bold text-white">
+          AWS EventBridge: Event-Driven CDK Pipeline (Next)
+        </h3>
         <p class="text-sm text-gray-300">
-          Built a resilient Azure IaaS lab with Terraform, featuring RHEL/Windows VMs, automated
-          patching with Update Manager, load balancing, and full-stack observability via Azure
-          Monitor and Dynatrace
+          I’m building an event-driven AWS architecture using CDK, EventBridge, and CodePipeline.
+          This project automates deployments and routes events for a real-world, serverless
+          workflow—showcasing practical use of modern AWS services and infrastructure as code.
         </p>
       </div>
     </BaseCard>
