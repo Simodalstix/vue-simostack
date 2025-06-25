@@ -10,13 +10,13 @@
         <img
           src="/images/certifications/Cloud_Practitioner.png"
           alt="AWS Cloud Practitioner Badge"
-          class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
+          class="w-24 sm:w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showPractitionerModal = true"
         /><AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
         <img
           src="/images/certifications/azure-admin.png"
           alt="Azure Admin Badge"
-          class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
+          class="w-24 sm:w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showAzureAmin = true"
         />
 
@@ -24,26 +24,26 @@
         <img
           src="/images/certifications/Solutions_Architect.png"
           alt="AWS Solutions Architect Badge"
-          class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
+          class="w-24 sm:w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showArchitectModal = true"
         /><TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
         <img
           src="/images/certifications/terraform003-2.png"
           alt="Terraform Associate Badge"
-          class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
+          class="w-24 sm:w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showTerraformModal = true"
         />
         <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
         <img
           src="/images/certifications/Developer.png"
           alt="AWS Developer Badge"
-          class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
+          class="w-24 sm:w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showDeveloperModal = true"
         /><PythonModal :visible="showPythonModal" @close="showPythonModal = false" />
         <img
           src="/images/certifications/python-associate.png"
           alt="Python Associate Badge"
-          class="w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
+          class="w-24 sm:w-36 hover:border-2 hover:border-indigo-500 transition rounded cursor-pointer"
           @click="showPythonModal = true"
         />
       </div>

@@ -32,7 +32,7 @@
       </div>
     </BaseCard>
 
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
       <BaseCard
         @click="showAzureProject = true"
         class="bg-purple-800 bg-opacity-60 text-white p-3 border-l-4 border-purple-800 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"

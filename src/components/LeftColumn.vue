@@ -30,9 +30,9 @@
           <img
             src="/images/skills-in-progress/aws-devops.png"
             alt="AWS DevOps Badge"
-            class="w-36"
+            class="w-24 sm:w-36"
           />
-          <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-36" />
+          <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-24 sm:w-36" />
         </div>
         <div></div>
       </BaseCard>
