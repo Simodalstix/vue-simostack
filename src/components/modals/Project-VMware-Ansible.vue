@@ -13,7 +13,7 @@
           class="object-contain rounded shadow"
         />
 
-        <p class="italic text-base text-amber-300 mt-3">
+        <p class="italic text-base text-orange-300 mt-5">
           A fully automated, self-contained monitoring lab built with Ansible, Splunk, Prometheus,
           and pfSense — running on VMware.
         </p>

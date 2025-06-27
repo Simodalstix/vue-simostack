@@ -12,7 +12,7 @@
           class="object-contain rounded shadow"
         />
 
-        <p class="italic text-base text-amber-300 mt-3">
+        <p class="italic text-base text-orange-300 mt-5">
           A self-hosted Node.js API with PostgreSQL, deployed on a Raspberry Pi using Docker. Powers
           dynamic content on simostack.com.
         </p>

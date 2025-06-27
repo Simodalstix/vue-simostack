@@ -12,7 +12,7 @@
     </p>
 
     <BaseCard
-      @click="showEventBridgeProject = true"
+      @click="showMultiregionProject = true"
       class="bg-indigo-800 text-white p-4 border-l-4 border-indigo-500 rounded shadow cursor-pointer hover:bg-indigo-700 transition flex items-center gap-5"
     >
       <img
@@ -21,13 +21,11 @@
         class="w-20 rounded-md"
       />
       <div>
-        <h3 class="text-lg font-bold text-white">
-          AWS EventBridge: Event-Driven CDK Pipeline (Next)
-        </h3>
+        <h3 class="text-lg font-bold text-white">AWS Multiregion E-commerce Platform (CDK)</h3>
         <p class="text-sm text-gray-300">
-          I’m building an event-driven AWS architecture using CDK, EventBridge, and CodePipeline.
-          This project automates deployments and routes events for a real-world, serverless
-          workflow—showcasing practical use of modern AWS services and infrastructure as code.
+          I built a resilient e-commerce backend across multiple AWS regions using EventBridge,
+          CodePipeline, and global DynamoDB. This project demonstrates a production-grade,
+          event-driven foundation, ready for automated failover and future expansion.
         </p>
       </div>
     </BaseCard>
@@ -75,6 +73,12 @@
         <img src="/images/main-tools/docker-mark-blue.svg" alt="Ansible Icon" class="w-8 ml-4" />
       </BaseCard>
     </div>
+    <Project-Multiregion
+      :visible="showMultiregionProject"
+      @close="showMultiregionProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <DynatraceModal
       :visible="showDynatraceProject"
       @close="showDynatraceProject = false"
@@ -176,6 +180,8 @@ import AwsMigrationModal from './modals/Project-Migration.vue'
 import AzureHubSpokeModal from './modals/Project-Azure-Hub.vue'
 import VmwareMonitoringModal from './modals/Project-VMware-Ansible.vue'
 import RaspberryPiModal from './modals/Project-Raspberry.vue'
+import ProjectMultiregion from './modals/Project-Multiregion.vue'
+const showMultiregionProject = ref(false)
 const showRaspberry = ref(false)
 const showVmwareProject = ref(false)
 const showDynatraceProject = ref(false)
