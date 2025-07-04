@@ -11,69 +11,37 @@ import BaseModal from './BaseModal.vue'
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Target Certs: AWS DevOps & RHCSA Study Details"
-    width="max-w-3xl"
+    title="Target Certs: AWS DevOps & RHCSA"
+    width="max-w-2xl"
   >
-    <div class="bg-gray-700 p-3 rounded">
-      <p class="text-base text-white mb-4">
-        An overview of my current study plans and progress toward the AWS Certified DevOps Engineer
-        – Professional and Red Hat Certified System Administrator (RHCSA) certifications.
-      </p>
+    <div class="bg-gray-700 p-3 rounded space-y-5">
+      <p class="text-base text-white mb-2">Certifications in Progress</p>
 
-      <div class="space-y-6">
+      <div class="space-y-4">
         <div>
-          <h3 class="text-xl font-bold text-indigo-500 mb-2">
-            AWS Certified DevOps Engineer – Professional
-          </h3>
-          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
-            <li>
-              <span class="font-semibold">Status:</span> 67% through my content — really enjoying
-              GuardDuty, Control Tower, Config, and SSM. Encountering the “tricks and traps” that
-              come with real AWS environments.
-            </li>
-            <li>
-              <span class="font-semibold">Learning Focus:</span> Taking time to understand how AWS
-              environments work at the organizational level, especially around automating compliance
-              and security. Focusing on which services or aggregators to use for troubleshooting
-              different issues.
-            </li>
-            <li>
-              <span class="font-semibold">Resources:</span> A Cloud Guru, Stephane Maarek’s Udemy
-              course, AWS documentation, hands-on labs, and Whizlabs for review.
-            </li>
-            <li>
-              <span class="font-semibold">Key Areas:</span> Automation, CI/CD, monitoring & logging,
-              security, high availability, fault tolerance, disaster recovery, and operational
-              gotchas.
-            </li>
-            <li><span class="font-semibold">Expected Completion:</span> Q3 2025</li>
+          <h3 class="text-lg font-bold text-indigo-400 mb-1">AWS DevOps Engineer – Professional</h3>
+          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
+            <li><b>Status:</b> 76% complete - now in exam prep (Early Q3 2025 target)</li>
+            <li><b>Focus:</b> Automation, CI/CD, IaC, monitoring, and resilience</li>
+            <li><b>Motivation:</b> Deepen expertise for real-world, enterprise AWS</li>
           </ul>
         </div>
 
         <div>
-          <h3 class="text-xl font-bold text-indigo-500 mb-2">
+          <h3 class="text-lg font-bold text-indigo-400 mb-1">
             Red Hat Certified System Administrator (RHCSA)
           </h3>
-          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-1">
-            <li>
-              <span class="font-semibold">Status:</span> Already familiar with Linux — already 25%
-              through Sander's content, covering CLI, user/group management, and systemd.
-            </li>
-            <li>
-              <span class="font-semibold">Resources:</span> Sander van Vugt’s on-demand course
-              (O’Reilly), official Red Hat docs, WSL for daily work, and Ubuntu/RHEL VMs in VMware
-              for practice.
-            </li>
-            <li>
-              <span class="font-semibold">Key Areas:</span> System and file management, software
-              installation (dnf/yum), network setup, user/group administration, and basic security.
-            </li>
-            <li><span class="font-semibold">Expected Completion:</span> Q4 2025</li>
+          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
+            <li><b>Status:</b> 41% complete (Late Q3 2025 target)</li>
+            <li><b>Focus:</b> Linux systems, automation, security basics</li>
+            <li><b>Motivation:</b> Prove hands-on Linux admin ability for platform roles</li>
           </ul>
         </div>
-
-        <p class="text-base text-gray-300 mt-4">Just a matter of time</p>
       </div>
+
+      <p class="text-sm text-gray-400 mt-2">
+        “We are what we repeatedly do. Excellence, then, is not an act but a habit.”
+      </p>
     </div>
   </BaseModal>
 </template>
