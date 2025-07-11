@@ -5,7 +5,7 @@
       <router-link to="/blog">Blog</router-link>
     </nav>
 
-    <!-- ✅ Constrained content wrapper -->
+    <!-- Constrained content wrapper -->
     <div class="max-w-screen-2xl mx-auto px-4">
       <router-view />
     </div>
