@@ -32,7 +32,7 @@ import BaseModal from './BaseModal.vue'
             Red Hat Certified System Administrator (RHCSA)
           </h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
-            <li><b>Status:</b> 61% complete (Aiming to sit exam in August)</li>
+            <li><b>Status:</b> 66% complete (Aiming to sit exam in August)</li>
             <li><b>Focus:</b> Linux systems, automation, security basics</li>
             <li><b>Motivation:</b> Prove hands-on Linux admin ability for platform roles</li>
           </ul>

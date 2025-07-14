@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-800 p-4 rounded shadow space-y-3">
     <h1 class="text-2xl text-center text-gray-300 font-bold border-b-2 border-indigo-500 pb-1">
-      Cloud | Platform | DevOps
+      Linux | Cloud | DevOps
     </h1>
     <p class="text-base">
       Recently, I’ve been building hands-on experience with monitoring tools like Splunk and Ansible
