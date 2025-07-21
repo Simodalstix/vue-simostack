@@ -4,11 +4,14 @@
       Linux | Cloud | DevOps
     </h1>
     <p class="text-base">
-      Recently, I’ve been building hands-on experience with monitoring tools like Splunk and Ansible
-      as part of real-world enterprise labs. As I expand my skills, I’m eager to take on more data
-      pipeline projects—automating data flows, working with event-driven cloud architectures, and
-      exploring scalable integrations. I’m also keen to dive into AI services like AWS Bedrock,
-      bringing together modern cloud infrastructure with practical machine learning and automation.
+      I’m currently focused on completing my RHCSA Linux certification while ramping up on
+      real-world, fullstack cloud projects. My goal is to build production-grade systems that
+      reflect what’s actually used in the industry, from microservices and event-driven
+      architectures to infrastructure as code, observability, and security best practices. I’m
+      especially interested in how DevOps, platform engineering, and cloud-native tools like
+      Kubernetes, Terraform, and CI/CD pipelines come together to support scalable, reliable
+      systems. Every project I build now is designed to feel like a slice of a real platform, not
+      just a demo.
     </p>
 
     <BaseCard
