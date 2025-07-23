@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Azure Patch Management & Observability Lab"
+    title="Azure Patch Management & Monitoring Agent Lab"
   >
     <div class="grid grid-cols-1 md:grid-cols-[5fr,2fr] mx-3 gap-6 text-gray-200">
       <div class="mt-3">
@@ -13,27 +13,25 @@
         />
 
         <p class="italic text-base text-orange-300 mt-3">
-          A robust Azure IaaS project demonstrating automated VM provisioning, patching, and
-          comprehensive observability.
+          Deployed and configured a hybrid monitoring and infrastructure lab using Splunk, Node
+          Exporter, and Dynatrace.
         </p>
       </div>
 
       <div class="text-base space-y-4 mt-3">
         <p>
-          I recently built an Azure-based infrastructure platform using Terraform. This lab
-          provisions highly available RHEL and Windows Server VMs within a secure network
-          architecture, leveraging Load Balancers and Availability Sets for resilience.
+          Deployed and configured a hybrid monitoring and infrastructure lab using Splunk, Node
+          Exporter, and Dynatrace. Provisioned VMs (RHEL, Ubuntu, Windows) behind a pfSense firewall
+          and set up automated patching workflows using Azure Update Management.
         </p>
         <p>
-          Key components include automated patching via Azure Update Management Center, granular
-          RBAC, and policy enforcement. For observability, I integrated Azure Monitor (Log
-          Analytics) alongside Dynatrace OneAgent deployments. This project solidified my skills in
-          IaC, cloud operations, security, and advanced monitoring practices.
+          Installed Splunk Universal Forwarder and Node Exporter via custom Bash scripts to simulate
+          basic telemetry and log forwarding. The lab focused on VM provisioning, network routing,
+          patch automation, and agent-based monitoring—without relying on advanced observability
+          stacks.
         </p>
         <div class="flex gap-3 items-center">
-          <!-- <img src="/images/main-tools/terraform.svg" class="h-24" title="Terraform" />
-          <img src="/images/main-tools/azure.svg" class="h-24" title="Azure" />
-          <img src="/images/main-tools/dynatrace.svg" class="h-24" title="Dynatrace" /> -->
+          <img src="/images/main-tools/terraform.svg" class="h-24" title="Terraform" />
 
           <a
             href="https://github.com/Simodalstix/az-patching-dynatrace"

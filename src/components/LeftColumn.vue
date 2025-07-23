@@ -10,21 +10,23 @@
       </p>
 
       <p class="text-base">
-        I’m an Australian citizen pivoting from healthcare into infrastructure, DevOps, and cloud
-        engineering — aiming to support government or defence environments where reliability and
-        trust matter. I bring calm under pressure, instinctive triage skills, and years of
-        experience translating complex systems for people from all walks of life.
+        I’m an Australian citizen pivoting from healthcare into Linux, cloud, and security
+        engineering—focused on supporting high-trust environments like government and defence, where
+        reliability and accountability matter. I bring calm under pressure, strong triage instincts,
+        and years of experience translating complex systems for people from all walks of life.
       </p>
       <span class="text-indigo-500">Standout Quality: Relentless Focus, Relentless Learning</span>
       <p>
-        I’m driven to learn, build, and improve — not just to understand systems, but to master
-        them. Certifications have validated that commitment and signaled my readiness to support
-        high-trust environments.
+        I’m building cloud and on-prem environments, automating what matters, and getting hands-on
+        with real security tooling. I’m targeting certifications that bring the most credibility,
+        but the trajectory I’m on is what really counts. I’ll be a killer addition to any
+        engineering team.
       </p>
+
       <h1 class="text-2xl mt-4 font-bold text-center pb-1">Target Certifications</h1>
       <BaseCard
         @click="showTargetCertsModal = true"
-        class="bg-indigo-800 background border-l-4 text-center border-indigo-500 border mt-2 p-4 rounded-md border-radius shadow cursor-pointer hover:bg-blue-800 duration-200"
+        class="bg-indigo-800 background border-2 text-center border-indigo-500 border mt-2 p-4 rounded-md border-radius shadow cursor-pointer hover:bg-blue-800 duration-200"
       >
         <div class="flex justify-center items-center gap-10">
           <img

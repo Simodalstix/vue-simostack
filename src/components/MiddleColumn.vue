@@ -1,39 +1,60 @@
 <template>
   <div class="bg-gray-800 p-4 rounded shadow space-y-3">
     <h1 class="text-2xl text-center text-gray-300 font-bold border-b-2 border-indigo-500 pb-1">
-      Linux | Cloud | DevOps
+      Linux | Cloud | DevOps | Security
     </h1>
     <p class="text-base">
-      I’m currently focused on completing my RHCSA Linux certification while ramping up on
-      real-world, fullstack cloud projects. My goal is to build production-grade systems that
-      reflect what’s actually used in the industry, from microservices and event-driven
-      architectures to infrastructure as code, observability, and security best practices. I’m
-      especially interested in how DevOps, platform engineering, and cloud-native tools like
-      Kubernetes, Terraform, and CI/CD pipelines come together to support scalable, reliable
-      systems. Every project I build now is designed to feel like a slice of a real platform, not
-      just a demo.
+      My current focus is on building real-world infrastructure and security labs that reflect how
+      things work in the enterprise. I’m deploying cloud and on-prem environments with automation,
+      monitoring, and threat detection built in from the start. These projects are about more than
+      just tooling — they’re teaching me how systems behave, how attackers move, and how engineers
+      can respond.
     </p>
 
-    <BaseCard
-      @click="showMultiregionProject = true"
-      class="bg-indigo-800 text-white p-4 border-l-4 border-indigo-500 rounded shadow cursor-pointer hover:bg-indigo-700 transition flex items-center gap-5"
+    <a
+      href="https://github.com/Simodalstix/wazuh-soc-lab"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      <img
-        src="/images/project-icons/eventbridge.svg"
-        alt="EventBridge Badge"
-        class="w-20 rounded-md"
-      />
-      <div>
-        <h3 class="text-lg font-bold text-white">AWS Multiregion E-commerce Platform (CDK)</h3>
-        <p class="text-sm text-gray-300">
-          I built a resilient e-commerce backend across multiple AWS regions using EventBridge,
-          CodePipeline, and global DynamoDB. This project demonstrates a production-grade,
-          event-driven foundation, ready for automated failover and future expansion.
-        </p>
-      </div>
-    </BaseCard>
+      <BaseCard
+        @click="showWazuhLabProject = true"
+        class="bg-gray-800 text-white mt-3 p-4 border-2 border-indigo-500 rounded shadow cursor-pointer hover:bg-indigo-800 transition flex items-center gap-5"
+      >
+        <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh Logo" class="w-20 rounded-xl" />
+        <div>
+          <h3 class="text-lg font-bold text-white">SOC Lab: Wazuh + ELK Stack on VMware</h3>
+          <p class="text-sm text-gray-300">
+            I’m building a home lab simulating real SOC operations using Wazuh, ELK Stack, and
+            Ansible. Hosted on VMware, this lab features log ingestion from Linux, Windows, and
+            pfSense systems with alerting, dashboarding, and threat detection mapped to MITRE
+            ATT&CK.
+          </p>
+        </div>
+      </BaseCard></a
+    >
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <BaseCard
+        @click="showMultiregionProject = true"
+        class="bg-purple-800 bg-opacity-60 text-white p-3 border-l-4 border-purple-800 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"
+      >
+        <span>AWS Multiregion CI/CD</span>
+        <img src="/images/main-tools/aws-icon.svg" alt="AWS Icon" class="w-8 ml-4" /><img
+          src="/images/project-icons/eventbridge.svg"
+          alt="Terraform Icon"
+          class="w-8 ml-2 rounded-md"
+        /> </BaseCard
+      ><BaseCard
+        @click="showDynatraceProject = true"
+        class="bg-purple-800 bg-opacity-60 text-white p-3 border-l-4 border-purple-800 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"
+      >
+        <span>Azure Monitoring Agents</span>
+        <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 ml-4" /><img
+          src="/images/focus/dynatrace-icon.svg"
+          alt="Dynatrace Icon"
+          class="w-8 ml-2"
+        />
+      </BaseCard>
       <BaseCard
         @click="showAzureProject = true"
         class="bg-purple-800 bg-opacity-60 text-white p-3 border-l-4 border-purple-800 rounded shadow cursor-pointer hover:bg-purple-700 transition text-center font-medium flex items-center justify-center min-h-[50px]"

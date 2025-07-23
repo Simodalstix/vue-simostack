@@ -36,7 +36,7 @@ import BaseModal from './BaseModal.vue'
           </h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
             <li>
-              <b>Status:</b> 81% complete (Aiming to sit exam in August), actively doing practice
+              <b>Status:</b> 85% complete (Aiming to sit exam in August), actively doing practice
               exams
             </li>
             <li><b>Focus:</b> Linux systems, partitions, mounts, Systemd networking, SELinux</li>
