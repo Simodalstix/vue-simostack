@@ -11,7 +11,7 @@ import BaseModal from './BaseModal.vue'
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Target Certs: AWS DevOps & RHCSA"
+    title="Target Certs: AWS DevOps, RHCSA, and Security+"
     width="max-w-2xl"
   >
     <div class="bg-gray-700 p-3 rounded space-y-5">
@@ -22,7 +22,7 @@ import BaseModal from './BaseModal.vue'
           <h3 class="text-lg font-bold text-indigo-400 mb-1">AWS DevOps Engineer – Professional</h3>
           <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
             <li>
-              <b>Status:</b> 76% complete - now in exam prep (Early Q3 2025 target) paused until
+              <b>Status:</b> 76% complete - now in exam prep (Early Q3 2025 target), paused until
               RHCSA finished
             </li>
             <li><b>Focus:</b> Automation, CI/CD, IaC, monitoring, and resilience</li>
@@ -41,6 +41,20 @@ import BaseModal from './BaseModal.vue'
             </li>
             <li><b>Focus:</b> Linux systems, partitions, mounts, Systemd networking, SELinux</li>
             <li><b>Motivation:</b> Prove hands-on Linux admin ability for platform roles</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold text-indigo-400 mb-1">CompTIA Security+</h3>
+          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
+            <li><b>Status:</b> Early stages — I'm going to smash this out very fast</li>
+            <li>
+              <b>Focus:</b> Core security concepts, network architecture, identity & access control
+            </li>
+            <li>
+              <b>Motivation:</b> Primarily for HR filters — then shifting focus to more practical
+              certs like SSCP or Blue Team Level 1 (BTL1)
+            </li>
           </ul>
         </div>
       </div>

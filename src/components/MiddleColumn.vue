@@ -1,14 +1,16 @@
 <template>
-  <div class="bg-gray-800 p-4 rounded shadow space-y-3">
-    <h1 class="text-2xl text-center text-gray-300 font-bold border-b-2 border-indigo-500 pb-1">
+  <div class="bg-gray-800 p-4 rounded shadow space-y-5">
+    <h1 class="text-2xl text-center text-white font-bold border-b-2 border-indigo-500 pb-1">
       Linux | Cloud | DevOps | Security
     </h1>
     <p class="text-base">
-      My current focus is on building real-world infrastructure and security labs that reflect how
-      things work in the enterprise. I’m deploying cloud and on-prem environments with automation,
+      My current focus is building real-world infrastructure and security labs that reflect how
+      things work in enterprise. I’m deploying both cloud and on-prem environments with automation,
       monitoring, and threat detection built in from the start. These projects are about more than
       just tooling — they’re teaching me how systems behave, how attackers move, and how engineers
-      can respond.
+      can detect and respond under pressure. To complement the blue team side, I’m also working
+      through red team challenges on Hack The Box to build practical, hands-on experience with
+      attack techniques — so I can better understand, anticipate, and defend against them.
     </p>
 
     <a
@@ -133,12 +135,13 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
-    <h2 class="text-2xl text-center text-gray-300 font-bold border-b-2 border-indigo-500 pb-1">
-      Infrastructure and Platform Stack
-    </h2>
-    <div class="mt-4 space-y-4 text-sm text-gray-300">
+
+    <div class="space-y-4 text-sm text-gray-300">
+      <h2 class="text-2xl text-center text-white font-bold border-b-2 border-indigo-500 pb-1">
+        Core Tech Stack
+      </h2>
       <div>
-        <div class="mt-5">
+        <div class="mt-7">
           <div class="flex flex-wrap gap-6 justify-center items-center">
             <div class="transition duration-200 hover:scale-110 hover:brightness-110">
               <img
@@ -184,10 +187,10 @@
             </div>
             <div class="transition duration-200 hover:scale-110 hover:brightness-110">
               <img
-                src="/images/main-tools/docker-mark-blue.svg"
-                alt="Docker"
+                src="/images/project-icons/python.svg"
+                alt="Python"
                 class="h-[72px] w-auto"
-                title="Docker"
+                title="Python"
               />
             </div>
           </div>

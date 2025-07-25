@@ -11,32 +11,39 @@
 
       <p class="text-base">
         I’m an Australian citizen pivoting from healthcare into Linux, cloud, and security
-        engineering—focused on supporting high-trust environments like government and defence, where
+        engineering—focused on high-trust environments like government and defence, where
         reliability and accountability matter. I bring calm under pressure, strong triage instincts,
         and years of experience translating complex systems for people from all walks of life.
       </p>
       <span class="text-indigo-500">Standout Quality: Relentless Focus, Relentless Learning</span>
       <p>
         I’m building cloud and on-prem environments, automating what matters, and getting hands-on
-        with real security tooling. I’m targeting certifications that bring the most credibility,
-        but the trajectory I’m on is what really counts. I’ll be a killer addition to any
-        engineering team.
+        with real security tooling. I’m targeting certifications that bring credibility, but the
+        trajectory I’m on is what really counts. I’ll be a killer addition to any engineering team.
       </p>
 
-      <h1 class="text-2xl mt-4 font-bold text-center pb-1">Target Certifications</h1>
+      <h1 class="text-2xl mt-3 font-bold text-center pb-1">Target Certifications</h1>
       <BaseCard
         @click="showTargetCertsModal = true"
-        class="bg-indigo-800 background border-2 text-center border-indigo-500 border mt-2 p-4 rounded-md border-radius shadow cursor-pointer hover:bg-blue-800 duration-200"
+        class="bg-indigo-800 background border-2 text-center border-indigo-500 mt-2 p-3 rounded-md border-radius shadow cursor-pointer hover:bg-blue-800 duration-200"
       >
-        <div class="flex justify-center items-center gap-10">
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
           <img
             src="/images/skills-in-progress/aws-devops.png"
             alt="AWS DevOps Badge"
             class="w-24 sm:w-36"
           />
-          <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-24 sm:w-36" />
+
+          <img
+            src="/images/skills-in-progress/rhcsa.png"
+            alt="RHCSA Badge"
+            class="w-24 sm:w-36"
+          /><img
+            src="/images/certifications/security+.png"
+            alt="Security+ Badge"
+            class="w-24 sm:w-36"
+          />
         </div>
-        <div></div>
       </BaseCard>
     </div>
   </div>
