@@ -32,3 +32,4 @@ import BaseModal from './BaseModal.vue'
     </div>
   </BaseModal>
 </template>
+#build phase
