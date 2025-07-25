@@ -11,7 +11,7 @@
 
       <p class="text-base">
         I’m an Australian citizen pivoting from healthcare into Linux, cloud, and security
-        engineering—focused on high-trust environments like government and defence, where
+        engineering—focused on high-trust environments like government, defence and finance, where
         reliability and accountability matter. I bring calm under pressure, strong triage instincts,
         and years of experience translating complex systems for people from all walks of life.
       </p>

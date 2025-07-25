@@ -4,13 +4,13 @@
       Linux | Cloud | DevOps | Security
     </h1>
     <p class="text-base">
-      My current focus is building real-world infrastructure and security labs that reflect how
-      things work in enterprise. I’m deploying both cloud and on-prem environments with automation,
-      monitoring, and threat detection built in from the start. These projects are about more than
-      just tooling — they’re teaching me how systems behave, how attackers move, and how engineers
-      can detect and respond under pressure. To complement the blue team side, I’m also working
-      through red team challenges on Hack The Box to build practical, hands-on experience with
-      attack techniques — so I can better understand, anticipate, and defend against them.
+      My current focus is building real world infrastructure and security labs that reflect how
+      things work in enterprise. I’m deploying both cloud and on premises environments with
+      automation, monitoring, and threat detection built in from the start. These projects are about
+      more than just tooling. They’re teaching me how systems behave, how attackers move, and how
+      engineers can detect and respond under pressure. To complement the blue team side, I’m also
+      working through red team challenges on Hack The Box to build practical, hands on experience
+      with attack techniques—so I can better understand, anticipate, and defend against them.
     </p>
 
     <a
