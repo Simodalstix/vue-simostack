@@ -39,7 +39,7 @@
             alt="RHCSA Badge"
             class="w-24 sm:w-36"
           /><img
-            src="/images/certifications/security+.png"
+            src="/images/certifications/securityplus.png"
             alt="Security+ Badge"
             class="w-24 sm:w-36"
           />
