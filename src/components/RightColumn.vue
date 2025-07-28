@@ -66,28 +66,32 @@
       </h1>
 
       <div
-        class="bg-purple-800 hover:bg-purple-700 text-white p-2 mt-2 rounded-md text-center shadow"
+        class="bg-grey-800 border-2 border-indigo-500 hover:bg-purple-700 text-white p-2 mt-2 rounded-md text-center shadow"
       >
         <a
           href="https://github.com/Simodalstix"
           target="_blank"
           class="flex items-center justify-center gap-2 text-white hover:text-white transition"
         >
-          <Github class="text-gray-800 w-10 h-10" />
+          <img
+            src="/images/project-icons/githubwhite.png"
+            alt="Hack The Box Logo"
+            class="w-10 h-10"
+          />
           GitHub.com/Simodalstix
         </a>
       </div>
 
       <div
-        class="bg-[#9FEF00] hover:bg-[#85d900] text-black p-2 mt-2 rounded-md text-center shadow"
+        class="border-[#9FEF00] border-2 hover:bg-[#85d900] text-black p-2 mt-2 rounded-md text-center shadow"
       >
         <a
           href="https://app.hackthebox.com/user/HTB-D6ACA7E9C8"
           target="_blank"
-          class="flex items-center justify-center gap-2 text-black hover:text-black transition"
+          class="flex items-center justify-center gap-2 text-white"
         >
           <img
-            src="/images/project-icons/hackthebox.svg"
+            src="/images/project-icons/hackthebox-green.svg"
             alt="Hack The Box Logo"
             class="w-10 h-10"
           />
@@ -100,7 +104,6 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Github } from 'lucide-vue-next'
 import AWSArchitect from './modals/AWSArchitect.vue'
 import AWSDeveloper from './modals/AWSDeveloper.vue'
 import TerraformModal from './modals/TerraformModal.vue'

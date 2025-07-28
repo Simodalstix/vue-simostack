@@ -11,55 +11,84 @@ import BaseModal from './BaseModal.vue'
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Target Certs: AWS DevOps, RHCSA, and Security+"
-    width="max-w-2xl"
+    title="Certifications in Progress"
+    width="max-w-6xl"
   >
-    <div class="bg-gray-700 p-3 rounded space-y-5">
-      <p class="text-base text-white mb-2">Certifications in Progress</p>
-
-      <div class="space-y-4">
-        <div>
-          <h3 class="text-lg font-bold text-indigo-400 mb-1">AWS DevOps Engineer – Professional</h3>
-          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
-            <li>
-              <b>Status:</b> 76% complete - now in exam prep (Early Q3 2025 target), paused until
-              RHCSA finished
-            </li>
-            <li><b>Focus:</b> Automation, CI/CD, IaC, monitoring, and resilience</li>
-            <li><b>Motivation:</b> Deepen expertise for real-world, enterprise AWS</li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="text-lg font-bold text-indigo-400 mb-1">
+    <div class="bg-gray-700 p-6 rounded space-y-6 text-white">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- RHCSA -->
+        <div class="space-y-3">
+          <h3 class="text-lg font-bold text-indigo-500 mb-2">
             Red Hat Certified System Administrator (RHCSA)
           </h3>
-          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
-            <li>
-              <b>Status:</b> 88% complete (Aiming to sit exam in August), actively doing practice
-              exams
-            </li>
-            <li><b>Focus:</b> Linux systems, partitions, mounts, Systemd networking, SELinux</li>
-            <li><b>Motivation:</b> Prove hands-on Linux admin ability for platform roles</li>
-          </ul>
+          <p><b>Status:</b> Current main focus. Exam to sit very soon.</p>
+          <p>
+            <b>Motivation:</b> Foundation for success — to gain the necessary administration skills
+            to feel at home piloting Linux environments and be effective across cloud,
+            infrastructure, DevOps, and security roles.
+          </p>
+          <p>
+            <b>Outcome / Up next:</b> This certification lays the groundwork for Red Hat Certified
+            Engineer (RHCE), where I’ll deepen my automation skills with Ansible. It also sets the
+            path toward Kubernetes and OpenShift.
+          </p>
         </div>
 
-        <div>
-          <h3 class="text-lg font-bold text-indigo-400 mb-1">CompTIA Security+</h3>
-          <ul class="list-disc list-inside text-gray-300 ml-4 space-y-0.5">
-            <li><b>Status:</b> Early stages — I'm going to smash this out very fast</li>
-            <li>
-              <b>Focus:</b> Core security concepts, network architecture, identity & access control
-            </li>
-            <li>
-              <b>Motivation:</b> Primarily for HR filters — then shifting focus to more practical
-              certs like SSCP or Blue Team Level 1 (BTL1)
-            </li>
-          </ul>
+        <!-- Security+ -->
+        <div class="space-y-3">
+          <h3 class="text-lg font-bold text-indigo-500 mb-2">CompTIA Security+</h3>
+          <p><b>Status:</b> Blitzing through, aiming to sit immediately after RHCSA.</p>
+          <p>
+            <b>Motivation:</b> Gain a necessary HR/recruiter tick box. I also genuinely want to
+            understand the security landscape at a high level — critical for diving deeper and
+            specializing.
+          </p>
+          <p>
+            <b>Outcome / Up next:</b> Once complete, I’ll move onto more technical and hands-on
+            certifications like HTB's CDSA. That will position me for real-world SOC Analyst roles.
+          </p>
+        </div>
+
+        <!-- AWS DevOps Pro -->
+        <div class="space-y-3">
+          <h3 class="text-lg font-bold text-indigo-500 mb-2">AWS DevOps Engineer – Professional</h3>
+          <p><b>Status:</b> Mostly finished — currently paused for RHCSA.</p>
+          <p>
+            <b>Motivation:</b> I’ve been drawn to this certification ever since I started with AWS
+            Cloud Practitioner. It felt like the natural endpoint — the cert that covers what
+            actually matters in the field. It pushes you to know the full lifecycle: pipelines, IaC,
+            automation, and monitoring — the kind of skills needed to build scalable, self-healing
+            infrastructure. It signals my readiness to step into a serious cloud engineering role.
+          </p>
+          <p>
+            <b>Outcome / Up next:</b> This certification proves credibility for cloud engineering
+            roles. Targeting Solutions Architect Professional and Security Specialty next for true
+            mastery
+          </p>
+        </div>
+
+        <!-- HTB CDSA -->
+        <div class="space-y-3">
+          <h3 class="text-lg font-bold text-indigo-500 mb-2">
+            HTB Certified Defensive Security Analyst (CDSA)
+          </h3>
+          <p><b>Status:</b> Underway, occasionally stealing focus from RHCSA</p>
+          <p>
+            <b>Motivation:</b> This is a non-conventional, trailblazing choice — I deliberately
+            sought out HTB CDSA because it offers one of the most respected, hands-on security
+            training experiences available. The exam tests real-world incident response across
+            complex environments, with no multiple-choice questions. It aligns with my drive to
+            train like a true analyst and pursue work grounded in real detection and response.
+          </p>
+          <p>
+            <b>Outcome / Up next:</b> I’m aiming to build toward SOC Analyst readiness and pursue
+            the SSCP certification. This cert is my launchpad into professional blue team
+            operations.
+          </p>
         </div>
       </div>
 
-      <p class="text-sm text-gray-400 mt-2">
+      <p class="text-sm text-center text-gray-400 italic mt-4">
         “We are what we repeatedly do. Excellence, then, is not an act but a habit.”
       </p>
     </div>

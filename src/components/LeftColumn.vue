@@ -42,7 +42,7 @@
             src="/images/certifications/securityplus.png"
             alt="Security+ Badge"
             class="w-24 sm:w-36"
-          />
+          /><img src="/images/certifications/cdsa.png" alt="Security+ Badge" class="w-24 sm:w-36" />
         </div>
       </BaseCard>
     </div>

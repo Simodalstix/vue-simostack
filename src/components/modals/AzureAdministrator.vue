@@ -25,7 +25,7 @@ import BaseModal from './BaseModal.vue'
           href="https://learn.microsoft.com/api/credentials/share/en-us/SimonParker-8212/8AEDB76D7A75F066?sharingId=F0664CD37994DC5D"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+          class="inline-block bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
         >
           Verify Certification on Microsoft Learn
         </a>
