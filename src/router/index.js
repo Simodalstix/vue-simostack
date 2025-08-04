@@ -8,6 +8,21 @@ const routes = [
     component: () => import('../views/HomeView.vue'),
   },
   { path: '/blog', name: 'Blog', component: RaspBlog },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: () => import('../views/ProjectsView.vue'),
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/AboutView.vue'),
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/ContactView.vue'),
+  },
 ]
 
 const router = createRouter({

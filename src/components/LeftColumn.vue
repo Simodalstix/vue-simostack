@@ -1,12 +1,12 @@
 <template>
   <div class="bg-gray-800 p-4 rounded shadow space-y-4">
-    <h1 class="text-2xl font-bold text-center border-b-2 border-indigo-500 pb-1">
+    <h1 class="text-2xl font-bold text-center border-b-2 border-slate-500 pb-1">
       Pharmacist to Engineer
     </h1>
     <div class="flex flex-col h-full">
-      <p class="text-lg font-semibold text-white mb-2">
+      <p class="text-md font-semibold text-white mb-2">
         ~/scientist/pharmacist/engineer |
-        <span class="text-indigo-500">Melbourne</span>
+        <span class="text-purple-600">Melbourne</span>
       </p>
 
       <p class="text-base">
@@ -15,7 +15,7 @@
         reliability and accountability matter. I bring calm under pressure, strong triage instincts,
         and years of experience translating complex systems for people from all walks of life.
       </p>
-      <span class="text-indigo-500">Standout Quality: Relentless Focus, Relentless Learning</span>
+      <span class="text-purple-600">Standout Quality: Relentless Focus, Relentless Learning</span>
       <p>
         I’m building cloud and on-prem environments, automating what matters, and getting hands-on
         with real security tooling. I’m targeting certifications that bring credibility, but the
@@ -25,7 +25,7 @@
       <h1 class="text-2xl mt-3 font-bold text-center pb-1">Target Certifications</h1>
       <BaseCard
         @click="showTargetCertsModal = true"
-        class="bg-indigo-800 background border-2 text-center border-indigo-500 mt-2 p-3 rounded-md border-radius shadow cursor-pointer hover:bg-blue-800 duration-200"
+        class="border-2 text-center border-slate-500 mt-2 p-3 rounded-md border-radius shadow cursor-pointer hover:bg-indigo-800 transition"
       >
         <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
           <img
