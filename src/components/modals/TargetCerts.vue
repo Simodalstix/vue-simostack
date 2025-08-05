@@ -18,7 +18,7 @@ import BaseModal from './BaseModal.vue'
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- RHCSA -->
         <div class="space-y-3">
-          <h3 class="text-lg font-bold text-indigo-500 mb-2">
+          <h3 class="font-bold text-xl mb-2 text-orange-300">
             Red Hat Certified System Administrator (RHCSA)
           </h3>
           <p><b>Status:</b> Current main focus. Exam to sit very soon.</p>
@@ -36,7 +36,7 @@ import BaseModal from './BaseModal.vue'
 
         <!-- Security+ -->
         <div class="space-y-3">
-          <h3 class="text-lg font-bold text-indigo-500 mb-2">CompTIA Security+</h3>
+          <h3 class="font-bold text-xl mb-2 text-orange-300">CompTIA Security+</h3>
           <p><b>Status:</b> Blitzing through, aiming to sit immediately after RHCSA.</p>
           <p>
             <b>Motivation:</b> Gain a necessary HR/recruiter tick box. I also genuinely want to
@@ -51,7 +51,7 @@ import BaseModal from './BaseModal.vue'
 
         <!-- AWS DevOps Pro -->
         <div class="space-y-3">
-          <h3 class="text-lg font-bold text-indigo-500 mb-2">AWS DevOps Engineer – Professional</h3>
+          <h3 class="font-bold text-xl mb-2 text-orange-300">AWS DevOps Engineer – Professional</h3>
           <p><b>Status:</b> Mostly finished — currently paused for RHCSA.</p>
           <p>
             <b>Motivation:</b> I’ve been drawn to this certification ever since I started with AWS
@@ -69,7 +69,7 @@ import BaseModal from './BaseModal.vue'
 
         <!-- HTB CDSA -->
         <div class="space-y-3">
-          <h3 class="text-lg font-bold text-indigo-500 mb-2">
+          <h3 class="font-bold text-xl mb-2 text-orange-300">
             HTB Certified Defensive Security Analyst (CDSA)
           </h3>
           <p><b>Status:</b> Underway, occasionally stealing focus from RHCSA</p>

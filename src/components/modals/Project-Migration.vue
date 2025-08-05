@@ -1,45 +1,53 @@
 <template>
   <BaseModal :visible="visible" @close="$emit('close')" title="AWS PostgreSQL Migration">
-    <div class="grid grid-cols-1 md:grid-cols-[5fr,2fr] mx-3 gap-6 text-gray-200">
-      <!-- Left: Diagram + summary -->
-      <div class="mt-3">
+    <div class="flex flex-col md:flex-row text-gray-200">
+      <!-- Main Content: Diagram -->
+      <div class="md:w-2/3 p-6 flex-grow">
         <img
           src="/images/project-modal-images/db-migration.svg"
           alt="AWS Migration Diagram"
-          class="object-contain rounded shadow"
+          class="object-contain rounded-lg w-full h-full"
         />
-
-        <p class="italic text-base text-orange-300 mt-3">
-          A realistic database migration project using Terraform, RDS, and secure AWS infrastructure
-          practices.
-        </p>
       </div>
 
-      <!-- Right: Description + GitHub + Badges -->
-      <div class="text-base space-y-4 mt-3">
-        <p>
-          This project simulates a production-style migration of a local PostgreSQL database into
-          AWS RDS. I used Terraform to provision a secure network architecture with public/private
-          subnets, SSM-based Bastion access, and credential management via Secrets Manager.
-        </p>
-        <p>
-          The database was staged via S3 and restored using <code>psql</code> to mirror a real-world
-          handover. I also avoided direct SSH by using Systems Manager for admin access. The project
-          strengthened my skills in infrastructure-as-code, secure credential handling, and cloud
-          migration planning.
-        </p>
-        <div class="flex gap-3 items-center">
-          <img src="/images/main-tools/terraform.svg" class="h-24" title="Terraform" />
-          <a
-            href="https://github.com/Simodalstix/terraform-postgres-rds-migration"
-            class="inline-block bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
-            target="_blank"
-          >
-            View on GitHub
-          </a>
+      <!-- Right-Hand Sidebar -->
+      <aside class="w-full md:w-1/3 bg-gray-700 p-6 space-y-5 overflow-y-auto">
+        <div>
+          <h3 class="font-bold text-xl mb-2 text-orange-300">Key Features</h3>
+          <ul class="list-disc list-inside space-y-1 text-base">
+            <li>Secure Database Migration</li>
+            <li>Infrastructure as Code (Terraform)</li>
+            <li>Secure Bastion Access (SSM)</li>
+            <li>Credential Management (Secrets Manager)</li>
+          </ul>
         </div>
-      </div>
+
+        <div>
+          <h3 class="font-bold text-xl mb-2 text-orange-300">Technologies Used</h3>
+          <ul class="list-disc list-inside space-y-1 text-base">
+            <li>Cloud: AWS (RDS, S3, VPC)</li>
+            <li>IaC: Terraform</li>
+            <li>Database: PostgreSQL</li>
+            <li>Security: Secrets Manager, Systems Manager</li>
+          </ul>
+        </div>
+      </aside>
     </div>
+    <!-- Footer -->
+    <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
+      <p class="text-gray-400 italic w-2/3">
+        This project simulates a production-style migration of a local PostgreSQL database into AWS
+        RDS, using Terraform to provision a secure network architecture with public/private subnets,
+        SSM-based Bastion access, and credential management via Secrets Manager.
+      </p>
+      <a
+        href="https://github.com/Simodalstix/terraform-postgres-rds-migration"
+        target="_blank"
+        class="bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+      >
+        View on GitHub
+      </a>
+    </footer>
   </BaseModal>
 </template>
 

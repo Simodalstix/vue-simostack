@@ -4,45 +4,55 @@
     @close="$emit('close')"
     title="Azure Patch Management & Monitoring Agent Lab"
   >
-    <div class="grid grid-cols-1 md:grid-cols-[5fr,2fr] mx-3 gap-6 text-gray-200">
-      <div class="mt-3">
+    <div class="flex flex-col md:flex-row text-gray-200">
+      <!-- Main Content: Diagram -->
+      <div class="md:w-2/3 p-6 flex flex-col">
         <img
           src="/images/project-modal-images/dynatrace-console.png"
           alt="Azure IaaS Operations Diagram"
-          class="object-contain rounded shadow"
+          class="object-contain rounded-lg w-full"
         />
-
-        <p class="italic text-base text-orange-300 mt-3">
-          Deployed and configured a hybrid monitoring and infrastructure lab using Splunk, Node
-          Exporter, and Dynatrace.
-        </p>
       </div>
 
-      <div class="text-base space-y-4 mt-3">
-        <p>
-          Deployed and configured a hybrid monitoring and infrastructure lab using Splunk, Node
-          Exporter, and Dynatrace. Provisioned VMs (RHEL, Ubuntu, Windows) behind a pfSense firewall
-          and set up automated patching workflows using Azure Update Management.
-        </p>
-        <p>
-          Installed Splunk Universal Forwarder and Node Exporter via custom Bash scripts to simulate
-          basic telemetry and log forwarding. The lab focused on VM provisioning, network routing,
-          patch automation, and agent-based monitoring—without relying on advanced observability
-          stacks.
-        </p>
-        <div class="flex gap-3 items-center">
-          <img src="/images/main-tools/terraform.svg" class="h-24" title="Terraform" />
-
-          <a
-            href="https://github.com/Simodalstix/az-patching-dynatrace"
-            class="inline-block bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
-            target="_blank"
-          >
-            View on GitHub
-          </a>
+      <!-- Right-Hand Sidebar -->
+      <aside class="w-full md:w-1/3 bg-gray-700 p-6 space-y-6 overflow-y-auto">
+        <div>
+          <h3 class="font-bold text-xl mb-2 text-orange-300">Key Features</h3>
+          <ul class="list-disc list-inside space-y-1 text-base">
+            <li>Hybrid Monitoring Setup</li>
+            <li>Automated Patch Management</li>
+            <li>Multi-OS VM Provisioning</li>
+            <li>Log Forwarding and Telemetry</li>
+            <li>Network Security with pfSense</li>
+          </ul>
         </div>
-      </div>
+
+        <div>
+          <h3 class="font-bold text-xl mb-2 text-orange-300">Technologies Used</h3>
+          <ul class="list-disc list-inside space-y-1 text-base">
+            <li>Monitoring: Splunk, Dynatrace, Node Exporter</li>
+            <li>IaaS: Azure (VMs, Update Management)</li>
+            <li>Firewall: pfSense</li>
+            <li>Scripting: Bash</li>
+          </ul>
+        </div>
+      </aside>
     </div>
+    <!-- Footer -->
+    <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
+      <p class="text-gray-400 italic w-2/3">
+        Deployed and configured a hybrid monitoring and infrastructure lab using Splunk, Node
+        Exporter, and Dynatrace. Provisioned VMs (RHEL, Ubuntu, Windows) behind a pfSense firewall
+        and set up automated patching workflows using Azure Update Management.
+      </p>
+      <a
+        href="https://github.com/Simodalstix/az-patching-dynatrace"
+        target="_blank"
+        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+      >
+        View on GitHub
+      </a>
+    </footer>
   </BaseModal>
 </template>
 
