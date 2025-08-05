@@ -4,13 +4,11 @@
       <div class="md:col-span-2">
         <h1 class="text-3xl font-bold mb-4">My Projects & Labs</h1>
         <p class="text-lg">
-          My current focus is building real world infrastructure and security labs that reflect how
-          things work in enterprise. I’m deploying both cloud and on premises environments with
-          automation, monitoring, and threat detection built in from the start. These projects are
-          about more than just tooling. They’re teaching me how systems behave, how attackers move,
-          and how engineers can detect and respond under pressure. To complement the blue team side,
-          I’m also working through red team challenges on Hack The Box to build practical, hands on
-          experience with attack techniques—so I can better understand, anticipate, and defend
+          My current focus is building real-world infrastructure and security labs that reflect how
+          things work in enterprise environments. I deploy cloud and on-premises systems with
+          integrated automation, monitoring, and threat detection. To complement this blue team
+          experience, I also work through red team challenges on Hack The Box. This hands-on
+          practice with attack techniques allows me to better understand, anticipate, and defend
           against them.
         </p>
       </div>
@@ -154,6 +152,21 @@
         </h3>
         <div class="flex items-center gap-3">
           <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
+        </div>
+      </BaseCard>
+      <BaseCard
+        @click="showFullstackBlogProject = true"
+        class="cursor-pointer p-4 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
+      >
+        <h3 class="text-md font-bold text-white mb-3">
+          Full-Stack Blog on Raspberry Pi with Docker & AWS S3
+        </h3>
+        <div class="flex items-center gap-3">
+          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon.svg" alt="AWS S3 Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/react-2.svg" alt="React Icon" class="w-8 h-8" />
         </div>
       </BaseCard>
 
