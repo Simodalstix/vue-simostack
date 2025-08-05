@@ -43,7 +43,7 @@
       <a
         href="https://github.com/Simodalstix/terraform-postgres-rds-migration"
         target="_blank"
-        class="bg-purple-800 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
       >
         View on GitHub
       </a>

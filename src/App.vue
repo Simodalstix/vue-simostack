@@ -9,6 +9,10 @@
           <router-link to="/" class="hover:text-purple-300 transition-colors">Home</router-link>
 
           <router-link to="/blog" class="hover:text-purple-300 transition-colors">Blog</router-link>
+          <router-link to="/skills" class="text-white mx-2">Skills</router-link>
+          <router-link to="/projects" class="hover:text-purple-300 transition-colors"
+            >Projects</router-link
+          >
           <router-link to="/about" class="hover:text-purple-300 transition-colors"
             >About</router-link
           >
@@ -27,7 +31,7 @@
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="md:col-span-2">
-            <h3 class="text-lg font-bold mb-4">Cloud, Infrastructure and Automation Tools</h3>
+            <h3 class="text-lg font-bold mb-4">Technologies & Tools</h3>
             <div class="flex flex-wrap gap-4">
               <img
                 src="/images/main-tools/terraform.svg"
@@ -49,17 +53,13 @@
                 alt="Python"
                 class="h-12"
                 title="Python"
-              /><img
+              />
+              <img
                 src="/images/main-tools/docker-mark-blue.svg"
                 alt="Docker"
                 class="h-12"
                 title="Python"
               />
-            </div>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold mb-4">Monitoring & Observability Tools</h3>
-            <div class="flex flex-wrap gap-4">
               <img
                 src="/images/main-tools/elastic.png"
                 alt="Elastic"
@@ -71,20 +71,14 @@
                 alt="Logstash"
                 class="h-12"
                 title="Logstash"
-              /><img src="/images/main-tools/kibana.png" alt="Kibana" class="h-12" title="Kibana" />
-              <img
-                src="/images/main-tools/prometheus.png"
-                alt="Prometheusa"
-                class="h-12"
-                title="Prometheus"
               />
-              <img
-                src="/images/main-tools/grafana.png"
-                alt="Grafana"
-                class="h-12"
-                title="Grafana"
-              />
+              <img src="/images/main-tools/kibana.png" alt="Kibana" class="h-12" title="Kibana" />
             </div>
+          </div>
+          <div class="flex items-center justify-center text-center">
+            <h2 class="text-xl font-bold text-slate-300">
+              Focused on Cloud Infrastructure, Systems Automation, and Security.
+            </h2>
           </div>
         </div>
         <div class="mt-8 border-t-2 border-slate-500 pt-6 text-center text-slate-400">

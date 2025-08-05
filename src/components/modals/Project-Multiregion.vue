@@ -28,7 +28,7 @@
           <ul class="list-disc list-inside space-y-1 text-base">
             <li>Cloud: AWS</li>
             <li>IaC: AWS CDK (Python)</li>
-            <li>Services: API Gateway, Lambda, DynamoDB, S3</li>
+            <li>Services: API Gateway, Lambda, DynamoDB, S3, Code-Pipeline</li>
           </ul>
         </div>
       </aside>

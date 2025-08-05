@@ -6,7 +6,7 @@
     <div class="flex flex-col h-full">
       <p class="text-md font-semibold text-white mb-2">
         ~/scientist/pharmacist/engineer |
-        <span class="text-purple-600">Melbourne</span>
+        <span class="text-orange-300">Melbourne</span>
       </p>
 
       <p class="text-base">

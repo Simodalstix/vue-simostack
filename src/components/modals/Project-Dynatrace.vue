@@ -41,9 +41,10 @@
     <!-- Footer -->
     <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
       <p class="text-gray-400 italic w-2/3">
-        Deployed and configured a hybrid monitoring and infrastructure lab using Splunk, Node
-        Exporter, and Dynatrace. Provisioned VMs (RHEL, Ubuntu, Windows) behind a pfSense firewall
-        and set up automated patching workflows using Azure Update Management.
+        Deployed a hybrid Azure lab for patching and monitoring with Terraform. Provisioned Linux
+        and Windows VMs, integrated Azure Monitor with DCRs and Log Analytics, and automated
+        Dynatrace and Splunk agent installs via cloud-init and PowerShell. Configured secure access,
+        load balancing, and update workflows using Azure Update Management.
       </p>
       <a
         href="https://github.com/Simodalstix/az-patching-dynatrace"

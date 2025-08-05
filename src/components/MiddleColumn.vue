@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-800 p-4 rounded shadow space-y-5">
     <h1 class="text-2xl text-center text-white font-bold border-b-2 border-slate-500 pb-1">
-      Linux | Cloud | DevOps | Security
+      Projects
     </h1>
     <p class="text-base">
       My current focus is building real world infrastructure and security labs that reflect how
