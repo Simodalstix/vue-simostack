@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white container mx-auto px-6 py-10 md:py-10">
+  <div class="text-white container mx-auto px-6 py-8 md:py-8">
     <section class="mb-12 text-center max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold mb-4">My Skills & Certifications</h1>
     </section>
@@ -56,7 +56,7 @@
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Web & Networking</h2>
           <ul class="list-disc space-y-1 text-lg">
             <li>HTTP, NGINX, Let's Encrypt – SSL/TLS and reverse proxy setup</li>
-            <li>JavaScript, Vue.js – Frontend for internal tools and dashboards</li>
+            <li>JavaScript, Vue.js, React</li>
             <li>xfreerdp, RDP, TeamViewer – Remote access tooling</li>
           </ul>
         </div>
@@ -66,7 +66,7 @@
         <div class="grid grid-cols-3 gap-6">
           <div class="col-span-2">
             <div class="rounded-t-lg border border-purple-700 bg-purple-700">
-              <h2 class="text-2xl font-bold py-4 text-center">Completed Certifications</h2>
+              <h2 class="text-2xl font-bold py-3 text-center">Completed Certifications</h2>
             </div>
             <div
               class="border-l-2 border-r-2 border-b-2 border-purple-700 p-8 grid grid-cols-2 gap-8 place-items-center"
@@ -130,7 +130,7 @@
               </div>
             </div>
             <div class="rounded-b-lg border-l border-r border-b border-purple-700 bg-purple-700">
-              <h2 class="text-2xl font-bold py-4 text-center">&nbsp;</h2>
+              <h2 class="text-2xl font-bold py-3 text-center">&nbsp;</h2>
             </div>
           </div>
 
@@ -139,7 +139,7 @@
             class="col-span-1 flex flex-col cursor-pointer transition duration-300 hover:bg-orange-400/30 rounded-lg"
           >
             <div class="rounded-t-lg border border-orange-300 bg-orange-300">
-              <h2 class="text-2xl font-bold py-4 text-center text-gray-900">In Progress</h2>
+              <h2 class="text-2xl font-bold py-3 text-center text-gray-900">In Progress</h2>
             </div>
             <div
               class="border-l-2 border-r-2 border-b-2 border-orange-300 p-8 flex flex-col justify-between items-center text-center flex-grow"
@@ -164,7 +164,7 @@
               </div>
             </div>
             <div class="rounded-b-lg border border-orange-300 bg-orange-300">
-              <h2 class="text-2xl font-bold py-4 text-center text-gray-900">How Soon?</h2>
+              <h2 class="text-2xl font-bold py-3 text-center text-gray-900">How Soon?</h2>
             </div>
           </div>
         </div>

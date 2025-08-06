@@ -5,7 +5,12 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/HomeView.vue'),
+    component: () => import('../views/NewHomeView.vue'),
+  },
+  {
+    path: '/certifications',
+    name: 'Certifications',
+    component: () => import('../views/CertificationsView.vue'),
   },
   { path: '/blog', name: 'Blog', component: RaspBlog },
 

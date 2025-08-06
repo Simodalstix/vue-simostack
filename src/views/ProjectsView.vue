@@ -170,8 +170,8 @@
       </BaseCard>
 
       <BaseCard class="bg-gray-800 p-4 rounded-md border-2 border-slate-500 text-gray-400">
-        <h3 class="text-md font-bold mb-3">New Project Coming Soon</h3>
-        <p class="text-sm">A new project is currently in the works.</p>
+        <h3 class="text-md font-bold mb-3">More to edit when I get a chance</h3>
+        <p class="text-sm"></p>
       </BaseCard>
     </div>
 
