@@ -40,20 +40,21 @@
                 title="Terraform"
               />
               <img src="/images/main-tools/vmware.svg" alt="VMware" class="h-12" title="VMware" />
-              <img src="/images/main-tools/aws-icon.svg" alt="AWS" class="h-12" title="AWS" />
+              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="h-12" title="AWS" />
               <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="h-12" title="Azure" />
               <img
                 src="/images/main-tools/ansible.svg"
                 alt="Ansible"
                 class="h-12"
                 title="Ansible"
-              />
+              /><img src="/images/project-icons/vue-icon.svg" alt="Vue" class="h-12" title="Vue" />
               <img
                 src="/images/project-icons/python.svg"
                 alt="Python"
                 class="h-12"
                 title="Python"
               />
+
               <img
                 src="/images/main-tools/docker-mark-blue.svg"
                 alt="Docker"

@@ -2,12 +2,12 @@
   <div class="text-white">
     <div class="container mx-auto px-6 py-12 md:py-20">
       <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div>
-          <!-- <img
-            src="/images/your-professional-headshot.jpg"
-            alt="Simon Parker - Professional Headshot"
-            class="rounded-full w-64 h-64 mx-auto md:mx-0 object-cover"
-          /> -->
+        <div class="mx-auto">
+          <img
+            src="/images/landscapes/desertworld.jpg"
+            alt="Inviting forest path"
+            class="rounded-full w-[40rem] h-[40rem]] mx-auto md:mx-0 object-cover"
+          />
         </div>
 
         <div>

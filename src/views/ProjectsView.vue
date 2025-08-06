@@ -28,7 +28,7 @@
         </div>
 
         <div
-          class="bg-[#1b2f21] border-2 border-[#9FEF00] hover:bg-[#2a4833] text-white p-3 mt-2 rounded-lg text-center shadow-md transition-colors duration-300 mt-4"
+          class="bg-[#1b2f21] border-2 border-[#9FEF00] hover:bg-[#2a4833] text-white p-3 mt-4 rounded-lg text-center shadow-md transition-colors duration-300"
         >
           <a
             href="https://app.hackthebox.com/user/HTB-D6ACA7E9C8"
@@ -46,7 +46,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
       <a
         href="https://github.com/Simodalstix/wazuh-soc-lab"
         target="_blank"
@@ -55,7 +55,7 @@
       >
         <BaseCard
           @click="showWazuhLabProject = true"
-          class="bg-900 text-white p-4 border-2 border-slate-500 rounded shadow cursor-pointer hover:bg-indigo-800 transition flex items-center gap-5"
+          class="bg-900 text-white p-4 border-2 bg-slate-800 border-slate-500 rounded shadow cursor-pointer hover:bg-indigo-800 transition flex items-center gap-5"
         >
           <img
             src="/images/project-icons/wazuh-icon.png"
@@ -66,9 +66,8 @@
             <h3 class="text-lg font-bold text-white">SOC Lab: Wazuh + ELK Stack on VMware</h3>
             <p class="text-sm text-gray-300">
               I’m building a home lab simulating real SOC operations using Wazuh, ELK Stack, and
-              Ansible. Hosted on VMware, this lab features log ingestion from Linux, Windows, and
-              pfSense systems with alerting, dashboarding, and threat detection mapped to MITRE
-              ATT&CK.
+              Ansible. Hosted on VMware, this lab features log ingestion from Linux and Windows
+              systems with alerting, dashboarding, and threat detection mapped to MITRE ATT&CK.
             </p>
           </div>
         </BaseCard>
@@ -76,13 +75,13 @@
 
       <BaseCard
         @click="showMultiregionProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
       >
         <h3 class="text-md font-bold text-white mb-3">
           Implementing a Multi-Region CI/CD Pipeline in AWS
         </h3>
         <div class="flex items-center gap-3">
-          <img src="/images/main-tools/aws-icon.svg" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img
             src="/images/project-icons/eventbridge.svg"
             alt="EventBridge Icon"
@@ -93,7 +92,7 @@
 
       <BaseCard
         @click="showDynatraceProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
       >
         <h3 class="text-md font-bold text-white mb-3">
           Deploying Dynatrace Monitoring Agents in Azure
@@ -106,7 +105,7 @@
 
       <BaseCard
         @click="showAzureProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
       >
         <h3 class="text-md font-bold text-white mb-3">
           Creating a Hub-Spoke Network in Azure with a VPN Gateway
@@ -119,20 +118,20 @@
 
       <BaseCard
         @click="showAwsProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
       >
         <h3 class="text-md font-bold text-white mb-3">
           Executing a Database Migration to AWS with Terraform
         </h3>
         <div class="flex items-center gap-3">
-          <img src="/images/main-tools/aws-icon.svg" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
         </div>
       </BaseCard>
 
       <BaseCard
         @click="showVmwareProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
       >
         <h3 class="text-md font-bold text-white mb-3">
           Automating VMware Monitoring and Alerting with Ansible
@@ -145,7 +144,7 @@
 
       <BaseCard
         @click="showRaspberry = true"
-        class="cursor-pointer p-4 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
       >
         <h3 class="text-md font-bold text-white mb-3">
           Deploying a Containerized Backend API on a Raspberry Pi
@@ -157,7 +156,7 @@
       </BaseCard>
       <BaseCard
         @click="showFullstackBlogProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
       >
         <h3 class="text-md font-bold text-white mb-3">
           Full-Stack Blog on Raspberry Pi with Docker & AWS S3

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-slate-800 rounded-xl p-4 shadow space-y-2">
+  <div class="rounded-xl p-4 shadow space-y-2">
     <h3 v-if="title" class="text-lg font-semibold text-white">
       {{ title }}
     </h3>
