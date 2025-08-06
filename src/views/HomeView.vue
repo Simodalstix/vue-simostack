@@ -1,8 +1,6 @@
 <template>
   <div class="bg-gray-900 text-gray-200">
-    <!-- 👇 Outer wrapper to limit width and center content -->
     <div class="w-full xl:max-w-screen-2xl mx-auto px-4">
-      <!-- 👇 Responsive column layout -->
       <div class="grid grid-cols-1 md:grid-cols-[1.6fr_2.5fr_1.3fr] gap-6 py-6">
         <Left class="min-w-0" />
         <Middle class="min-w-0" />

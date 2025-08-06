@@ -6,19 +6,46 @@
           >Simon Parker</router-link
         >
         <div class="flex space-x-6">
-          <router-link to="/" class="hover:text-purple-300 transition-colors">Home</router-link>
-
-          <router-link to="/blog" class="hover:text-purple-300 transition-colors">Blog</router-link>
-          <router-link to="/skills" class="text-white mx-2">Skills</router-link>
-          <router-link to="/projects" class="hover:text-purple-300 transition-colors"
+          <router-link
+            :to="{ name: 'Home' }"
+            class="hover:text-purple-300 transition-colors duration-200"
+            >Home</router-link
+          >
+          <router-link
+            :to="{ name: 'Blog' }"
+            class="hover:text-purple-300 transition-colors duration-200"
+            >Blog</router-link
+          >
+          <router-link
+            :to="{ name: 'Skills' }"
+            class="hover:text-purple-300 transition-colors duration-200"
+            >Skills</router-link
+          >
+          <router-link
+            :to="{ name: 'Projects' }"
+            class="hover:text-purple-300 transition-colors duration-200"
             >Projects</router-link
           >
-          <router-link to="/about" class="hover:text-purple-300 transition-colors"
+          <router-link
+            :to="{ name: 'About' }"
+            class="hover:text-purple-300 transition-colors duration-200"
             >About</router-link
           >
-          <router-link to="/contact" class="hover:text-purple-300 transition-colors"
+          <router-link
+            :to="{ name: 'Contact' }"
+            class="hover:text-purple-300 transition-colors duration-200"
             >Contact</router-link
           >
+          <router-link
+            :to="{ name: 'Elephant' }"
+            class="hover:opacity-80 transition-opacity duration-200"
+          >
+            <img
+              src="/images/project-icons/elephant-icon.png"
+              alt="Elephant Icon"
+              class="h-8 w-8"
+            />
+          </router-link>
         </div>
       </nav>
     </header>

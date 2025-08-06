@@ -112,10 +112,4 @@
   </div>
 </template>
 
-<script setup>
-// This can be an empty script block for a static page
-</script>
-
-<style scoped>
-/* Scoped styles can go here if needed */
-</style>
+<script setup></script>

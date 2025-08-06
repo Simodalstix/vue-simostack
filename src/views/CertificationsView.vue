@@ -96,7 +96,3 @@ const showDeveloperModal = ref(false)
 const showArchitectModal = ref(false)
 const showTargetCertsModal = ref(false)
 </script>
-
-<style scoped>
-/* Scoped styles here if needed */
-</style>

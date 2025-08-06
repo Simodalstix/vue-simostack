@@ -6,7 +6,7 @@
     @click.self="$emit('close')"
   >
     <div
-      class="bg-gray-700 text-gray-200 p-3 rounded relative shadow-lg overflow-y-auto w-full"
+      class="bg-gray-700 text-gray-200 p-3 rounded-lg relative shadow-lg overflow-y-auto w-full"
       :class="width"
       :style="maxHeightStyle"
     >
