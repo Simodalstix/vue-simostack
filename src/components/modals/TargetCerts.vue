@@ -13,7 +13,7 @@
 
         <div class="col-span-2 space-y-3">
           <h3 class="font-bold text-xl text-orange-300">CompTIA Security+</h3>
-          <p class="text-sm"><b>Status:</b> Ready to sit - need an empty house</p>
+          <p class="text-sm"><b>Status:</b> Exam booked for 12:30pm 8/8/25</p>
           <p class="text-sm">
             <b>Why:</b> To gain a necessary HR/recruiter tick box and understand the high-level
             security landscape. It's critical for specializing and diving deeper into the field.

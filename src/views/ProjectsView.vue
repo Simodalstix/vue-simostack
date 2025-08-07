@@ -4,12 +4,12 @@
       <div class="md:col-span-2">
         <h1 class="text-3xl font-bold mb-4">My Projects & Labs</h1>
         <p class="text-lg">
-          My current focus is building real-world infrastructure and security labs that reflect how
-          things work in enterprise environments. I deploy cloud and on-premises systems with
-          integrated automation, monitoring, and threat detection. To complement this blue team
-          experience, I also work through red team challenges on Hack The Box. This hands-on
-          practice with attack techniques allows me to better understand, anticipate, and defend
-          against them.
+          My projects are a testament to my hands-on approach to learning and building. I focus on
+          creating real-world infrastructure that mirrors enterprise environments, with a strong
+          emphasis on Infrastructure as Code (IaC), automation, and monitoring. I also build
+          full-stack web applications to gain a deeper understanding of the entire technology stack.
+          The labs and projects I create are designed to be reproducible and scalable, showcasing my
+          ability to tackle modern infrastructure challenges.
         </p>
       </div>
 
@@ -73,14 +73,15 @@
         </BaseCard>
       </a>
 
+      <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
       <BaseCard
         @click="showMultiregionProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-md font-bold text-white mb-3">
+        <h3 class="text-lg font-bold text-white mb-3">
           Implementing a Multi-Region CI/CD Pipeline in AWS
         </h3>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img
             src="/images/project-icons/eventbridge.svg"
@@ -88,84 +89,192 @@
             class="w-8 h-8 rounded-md"
           />
         </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >AWS</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >IaC</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Automation</span
+          >
+        </div>
       </BaseCard>
 
+      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
       <BaseCard
         @click="showDynatraceProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-md font-bold text-white mb-3">
+        <h3 class="text-lg font-bold text-white mb-3">
           Deploying Dynatrace Monitoring Agents in Azure
         </h3>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
           <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
         </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Azure</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Monitoring</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Automation</span
+          >
+        </div>
       </BaseCard>
 
+      <!-- Creating a Hub-Spoke Network in Azure with a VPN Gateway -->
       <BaseCard
         @click="showAzureProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-md font-bold text-white mb-3">
+        <h3 class="text-lg font-bold text-white mb-3">
           Creating a Hub-Spoke Network in Azure with a VPN Gateway
         </h3>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/azure-vpn.png" alt="Terraform Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Azure</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >IaC</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Networking</span
+          >
         </div>
       </BaseCard>
 
+      <!-- Executing a Database Migration to AWS with Terraform -->
       <BaseCard
         @click="showAwsProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-md font-bold text-white mb-3">
+        <h3 class="text-lg font-bold text-white mb-3">
           Executing a Database Migration to AWS with Terraform
         </h3>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >AWS</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >IaC</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Migration</span
+          >
         </div>
       </BaseCard>
 
+      <!-- Automating VMware Monitoring and Alerting with Ansible -->
       <BaseCard
         @click="showVmwareProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-md font-bold text-white mb-3">
+        <h3 class="text-lg font-bold text-white mb-3">
           Automating VMware Monitoring and Alerting with Ansible
         </h3>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/vmware.svg" alt="VMware Icon" class="w-8 h-8" />
           <img src="/images/main-tools/ansible.svg" alt="Ansible Icon" class="w-8 h-8" />
         </div>
-      </BaseCard>
-
-      <BaseCard
-        @click="showRaspberry = true"
-        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
-      >
-        <h3 class="text-md font-bold text-white mb-3">
-          Deploying a Containerized Backend API on a Raspberry Pi
-        </h3>
-        <div class="flex items-center gap-3">
-          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >VMware</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Automation</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Monitoring</span
+          >
         </div>
       </BaseCard>
+
+      <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
       <BaseCard
-        @click="showFullstackBlogProject = true"
-        class="cursor-pointer p-4 rounded-md border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition"
+        @click="showRaspberry = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-md font-bold text-white mb-3">
-          Full-Stack Blog on Raspberry Pi with Docker & AWS S3
+        <h3 class="text-lg font-bold text-white mb-3">
+          Deploying a Containerized Backend API on a Raspberry Pi
         </h3>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
           <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/aws-icon.svg" alt="AWS S3 Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Full-Stack</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Docker</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Backend</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3 -->
+      <BaseCard
+        @click="showFullstackBlogProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Full-Stack Blog on Raspberry Pi with Docker & AWS S3
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS S3 Icon" class="w-8 h-8" />
           <img src="/images/project-icons/react-2.svg" alt="React Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Full-Stack</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Docker</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >AWS</span
+          >
         </div>
       </BaseCard>
 

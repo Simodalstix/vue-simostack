@@ -19,7 +19,7 @@
           <router-link
             :to="{ name: 'Skills' }"
             class="hover:text-purple-300 transition-colors duration-200"
-            >Skills</router-link
+            >Skills & Certs</router-link
           >
           <router-link
             :to="{ name: 'Projects' }"

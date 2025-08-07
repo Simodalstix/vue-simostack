@@ -13,7 +13,7 @@
             experience translating complex systems for people from all walks of life.
           </p>
           <p class="mt-4 font-bold text-lg text-orange-300">
-            My Standout Quality: Relentless Focus, Relentless Learning.
+            Standout qualities: Relentless Focus, Unwavering Curiosity & Self-Driven Learning
           </p>
         </div>
 
@@ -29,12 +29,12 @@
             infrastructure challenges.
           </p>
           <p class="text-lg mt-4">
-            With a broad understanding of both front-end and back-end technologies, I can
-            troubleshoot issues from the application layer down. I am proficient with support
-            ticketing and collaboration software, and I understand troubleshooting methodologies,
-            including using tools like Event Viewer and SIEM solutions such as Wazuh. I am confident
-            my communication skills, problem-solving instincts, and eagerness to learn from
-            experienced engineers will make me a high-impact addition to any team.
+            With a broad understanding of both front-end and back-end technologies, I'm uniquely
+            positioned to troubleshoot issues holistically, from the application layer down. I am
+            proficient with support ticketing and collaboration software and have a practical grasp
+            of systematic troubleshooting methodologies. I am confident that my strong communication
+            skills, problem-solving instincts, and eagerness to learn from experienced engineers
+            will make me a high-impact addition to any team.
           </p>
         </div>
       </div>

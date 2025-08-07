@@ -16,7 +16,7 @@
       >
         <router-link
           :to="{ name: 'Projects' }"
-          class="bg-purple-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:scale-105 w-full md:w-auto"
+          class="bg-purple-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 hover:bg-purple-500 w-full md:w-auto"
         >
           View My Projects
         </router-link>

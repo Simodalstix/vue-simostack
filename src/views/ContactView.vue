@@ -26,12 +26,14 @@
               My journey from healthcare and how my unique skills translate to an engineering role.
             </li>
             <li>A deep dive into one of my projects and the technical challenges I overcame.</li>
-            <li>How my focus on automation and security can immediately benefit your team.</li>
+            <li>
+              How my focus on automation and infrastructure can immediately benefit your team.
+            </li>
             <li>The next steps for my career and where I can add the most value.</li>
           </ul>
 
           <p class="font-bold text-xl mb-2">Get in touch:</p>
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center text-xl space-x-4">
             <a href="mailto:Lastpolar@gmail.com" class="text-orange-300 hover:underline">
               Lastpolar@gmail.com
             </a>
