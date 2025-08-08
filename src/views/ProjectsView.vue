@@ -51,11 +51,11 @@
         href="https://github.com/Simodalstix/wazuh-soc-lab"
         target="_blank"
         rel="noopener noreferrer"
-        class="md:col-span-2"
+        class="md:col-span-2 h-full"
       >
         <BaseCard
           @click="showWazuhLabProject = true"
-          class="bg-900 text-white p-4 border-2 bg-slate-800 border-slate-500 rounded shadow cursor-pointer hover:bg-indigo-800 transition flex items-center gap-5"
+          class="bg-900 text-white p-4 border-2 bg-slate-800 border-slate-500 rounded shadow cursor-pointer hover:bg-indigo-800 transition flex items-center gap-5 h-full"
         >
           <img
             src="/images/project-icons/wazuh-icon.png"
@@ -231,6 +231,7 @@
           <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
           <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
           <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
           <span
@@ -250,18 +251,28 @@
 
       <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3 -->
       <BaseCard
-        @click="showFullstackBlogProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden"
       >
+        <!-- Clickable overlay ON TOP -->
+        <a
+          href="https://github.com/Simodalstix/react-prisma-pg1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute inset-0 z-50 block"
+          aria-label="Open GitHub repo: Full-Stack Blog on Raspberry Pi with Docker & AWS S3"
+        ></a>
         <h3 class="text-lg font-bold text-white mb-3">
           Full-Stack Blog on Raspberry Pi with Docker & AWS S3
         </h3>
+
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
           <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
           <img src="/images/main-tools/aws-icon2.png" alt="AWS S3 Icon" class="w-8 h-8" />
           <img src="/images/project-icons/react-2.svg" alt="React Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
         </div>
+
         <div class="flex flex-wrap gap-2">
           <span
             class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"

@@ -20,15 +20,14 @@ import BaseModal from './BaseModal.vue'
         threat management and intrusion detection.
       </p>
       <div class="mt-4">
-        <!-- <a
-          href="https://www.credly.com/badges/7eea6cbf-d1ac-4006-b031-896c63f04041"
+        <a
+          href="https://www.credly.com/badges/6966dceb-e004-4e7f-a0e2-690f3eb43f2e/public_url"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-block bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
         >
           Verify Certification on Credly
-        </a> -->
-        Just achieved 8th August! Badge coming soon!
+        </a>
       </div>
     </div>
   </BaseModal>
