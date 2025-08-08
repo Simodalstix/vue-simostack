@@ -69,7 +69,7 @@
               <h2 class="text-2xl font-bold py-3 text-center">Completed Certifications</h2>
             </div>
             <div
-              class="border-l-2 border-r-2 border-b-2 border-purple-700 p-8 grid grid-cols-2 gap-8"
+              class="border-l-2 border-r-2 border-b-2 border-purple-700 p-8 grid grid-cols-2 gap-8 place-items-center"
             >
               <div>
                 <AWSPractioner
