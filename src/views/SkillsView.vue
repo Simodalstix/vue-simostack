@@ -69,7 +69,7 @@
               <h2 class="text-2xl font-bold py-3 text-center">Completed Certifications</h2>
             </div>
             <div
-              class="border-l-2 border-r-2 border-b-2 border-purple-700 p-8 grid grid-cols-2 gap-8 place-items-center"
+              class="border-l-2 border-r-2 border-b-2 border-purple-700 p-8 grid grid-cols-2 gap-8"
             >
               <div>
                 <AWSPractioner
@@ -84,14 +84,18 @@
                 />
               </div>
               <div>
-                <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
+                <SecurityPlus
+                  :visible="showSecurityPlusModal"
+                  @close="showSecurityPlusModal = false"
+                />
                 <img
-                  src="/images/certifications/azure-admin.png"
-                  alt="Azure Admin Badge"
+                  src="/images/certifications/securityplus.png"
+                  alt="Comptia Security+ Badge"
                   class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
-                  @click="showAzureAmin = true"
+                  @click="showSecurityPlusModal = true"
                 />
               </div>
+
               <div>
                 <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
                 <img
@@ -120,6 +124,15 @@
                 />
               </div>
               <div>
+                <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
+                <img
+                  src="/images/certifications/azure-admin.png"
+                  alt="Azure Admin Badge"
+                  class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  @click="showAzureAmin = true"
+                />
+              </div>
+              <div>
                 <PythonModal :visible="showPythonModal" @close="showPythonModal = false" />
                 <img
                   src="/images/certifications/python-associate.png"
@@ -136,7 +149,7 @@
 
           <div
             @click="showTargetCertsModal = true"
-            class="col-span-1 flex flex-col cursor-pointer transition duration-300 hover:bg-orange-400/30 rounded-lg"
+            class="col-span-1 flex flex-col cursor-pointer transition duration-300 hover:bg-orange-400/40 rounded-lg"
           >
             <div class="rounded-t-lg border border-orange-300 bg-orange-300">
               <h2 class="text-2xl font-bold py-3 text-center text-gray-900">In Progress</h2>
@@ -146,8 +159,8 @@
             >
               <div class="flex flex-col gap-8 mb-auto">
                 <img
-                  src="/images/certifications/securityplus.png"
-                  alt="Security+ Badge"
+                  src="/images/certifications/cdsa.png"
+                  alt="HTB CDSA Badge"
                   class="w-24 sm:w-36 mx-auto"
                 />
 
@@ -173,12 +186,14 @@
   </div>
 
   <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
-  <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
+  <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
+
   <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
   <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
   <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
   <PythonModal :visible="showPythonModal" @close="showPythonModal = false" />
   <TargetCertifications :visible="showTargetCertsModal" @close="showTargetCertsModal = false" />
+  <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
 </template>
 
 <script setup>
@@ -190,7 +205,8 @@ import AWSPractioner from '../components/modals/AWSPractioner.vue'
 import PythonModal from '../components/modals/PythonModal.vue'
 import AzureAdministrator from '../components/modals/AzureAdministrator.vue'
 import TargetCertifications from '../components/modals/TargetCerts.vue'
-
+import SecurityPlus from '../components/modals/SecurityPlus.vue'
+const showSecurityPlusModal = ref(false)
 const showAzureAmin = ref(false)
 const showPythonModal = ref(false)
 const showPractitionerModal = ref(false)

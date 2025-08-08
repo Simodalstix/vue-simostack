@@ -20,8 +20,8 @@
       <div>
         <slot name="header">
           <h2
-            v-if="title"
-            :class="`text-xl font-bold border-b-2 border-slate-500 pb-2  text-center ${titleColor}`"
+            v-if="title && !hideTitleBorder"
+            :class="`text-xl font-bold border-b-2 border-slate-500 pb-2 text-center ${titleColor}`"
           >
             {{ title }}
           </h2>
@@ -53,6 +53,7 @@ const props = defineProps({
     type: String,
     default: 'items-center', // or 'items-start'
   },
+  hideTitleBorder: { type: Boolean, default: false }, // NEW
 })
 
 defineEmits(['close'])
