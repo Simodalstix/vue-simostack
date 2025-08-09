@@ -23,16 +23,15 @@
             <li>Automated Patch Management</li>
             <li>Multi-OS VM Provisioning</li>
             <li>Log Forwarding and Telemetry</li>
-            <li>Network Security with pfSense</li>
           </ul>
         </div>
 
         <div>
           <h3 class="font-bold text-xl mb-2 text-orange-300">Technologies Used</h3>
           <ul class="list-disc list-inside space-y-1 text-base">
-            <li>Monitoring: Splunk, Dynatrace, Node Exporter</li>
+            <li>Monitoring: Azure Monitor, Dynatrace, Node Exporter</li>
             <li>IaaS: Azure (VMs, Update Management)</li>
-            <li>Firewall: pfSense</li>
+
             <li>Scripting: Bash</li>
           </ul>
         </div>
@@ -43,8 +42,8 @@
       <p class="text-gray-400 italic w-2/3">
         Deployed a hybrid Azure lab for patching and monitoring with Terraform. Provisioned Linux
         and Windows VMs, integrated Azure Monitor with DCRs and Log Analytics, and automated
-        Dynatrace and Splunk agent installs via cloud-init and PowerShell. Configured secure access,
-        load balancing, and update workflows using Azure Update Management.
+        Dynatrace and Azure Monitor agent installs via cloud-init and PowerShell. Configured secure
+        access, load balancing, and update workflows using Azure Update Management.
       </p>
       <a
         href="https://github.com/Simodalstix/az-patching-dynatrace"

@@ -34,10 +34,8 @@
 
       <!-- Middle content — no cyan border here -->
       <div class="col-span-3 space-y-2 p-4 border-t-2 border-slate-500">
-        <h3 class="font-bold text-xl text-orange-300">
-          HTB - Certified Defensive Security Analyst
-        </h3>
-        <p class="text-sm"><b>Status:</b> In Progress - 25%</p>
+        <h3 class="font-bold text-xl text-white">HTB - Certified Defensive Security Analyst</h3>
+        <p class="text-sm"><b>Status:</b> In Progress - 19%</p>
         <p class="text-sm">
           <b>Why:</b> To build advanced, hands-on blue team skills in log analysis, threat
           detection, and incident handling. This certification bridges the gap between foundational
@@ -58,15 +56,13 @@
 
       <!-- ===================== ROW 2 ===================== -->
       <div
-        class="col-span-1 flex items-center justify-center border-l-2 border-r-2 border-orange-300 py-4"
+        class="col-span-1 flex items-center justify-center border-l-2 border-r-2 border-orange-300 py-4 border-t-slate-500"
       >
         <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-36" />
       </div>
 
       <div class="col-span-3 space-y-2 p-4 border-slate-500 border-t-2">
-        <h3 class="font-bold text-xl text-orange-300">
-          Red Hat Certified System Administrator (RHCSA)
-        </h3>
+        <h3 class="font-bold text-xl text-white">Red Hat Certified System Administrator (RHCSA)</h3>
         <p class="text-sm"><b>Status:</b> Ready to sit - within the next week</p>
         <p class="text-sm">
           <b>Why:</b> To gain the necessary administration skills to feel at home piloting Linux
@@ -96,8 +92,10 @@
       </div>
 
       <div class="col-span-3 space-y-2 p-4 border-slate-500 border-t-2 border-b-2">
-        <h3 class="font-bold text-xl text-orange-300">AWS DevOps Engineer – Professional</h3>
-        <p class="text-sm"><b>Status:</b> Content needs revision.</p>
+        <h3 class="font-bold text-xl text-white">AWS DevOps Engineer – Professional</h3>
+        <p class="text-sm">
+          <b>Status:</b> Actually close, I've done practice exams. But content needs revision.
+        </p>
         <p class="text-sm">
           <b>Why:</b> This cert covers the full lifecycle: pipelines, IaC, automation, and
           monitoring. It signals my readiness to step into a serious cloud engineering role.

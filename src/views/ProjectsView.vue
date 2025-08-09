@@ -87,6 +87,19 @@
             src="/images/project-icons/eventbridge.svg"
             alt="EventBridge Icon"
             class="w-8 h-8 rounded-md"
+          /><img src="/images/aws-icons/lambda.svg" alt="Lambda Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/dynamodb.svg"
+            alt="DynamoDB Icon"
+            class="w-8 h-8 rounded-md"
+          /><img
+            src="/images/aws-icons/apigateway.svg"
+            alt="API Gateway Icon"
+            class="w-8 h-8 rounded-md"
+          /><img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
           />
         </div>
         <div class="flex flex-wrap gap-2">
@@ -101,6 +114,9 @@
           <span
             class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Automation</span
+          ><span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Serverless</span
           >
         </div>
       </BaseCard>
@@ -174,6 +190,7 @@
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
         </div>
         <div class="flex flex-wrap gap-2">
           <span
@@ -202,6 +219,7 @@
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/vmware.svg" alt="VMware Icon" class="w-8 h-8" />
           <img src="/images/main-tools/ansible.svg" alt="Ansible Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
           <span
