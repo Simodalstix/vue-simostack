@@ -27,22 +27,19 @@
           </a>
         </div>
 
-        <div
-          class="bg-[#1b2f21] border-2 border-[#9FEF00] hover:bg-[#2a4833] text-white p-3 mt-4 rounded-lg text-center shadow-md transition-colors duration-300"
+        <button
+          type="button"
+          class="bg-[#1b2f21] border-2 border-[#9FEF00] hover:bg-[#2a4833] text-white p-3 mt-4 rounded-lg text-center shadow-md transition-colors duration-300 w-full"
         >
-          <a
-            href="https://app.hackthebox.com/user/HTB-D6ACA7E9C8"
-            target="_blank"
-            class="flex items-center justify-center gap-2 text-white font-semibold"
-          >
+          <span class="flex items-center justify-center gap-2 text-white font-semibold">
             <img
               src="/images/project-icons/hackthebox-green.svg"
               alt="Hack The Box Logo"
               class="w-8 h-8"
             />
             Hack The Box
-          </a>
-        </div>
+          </span>
+        </button>
       </div>
     </div>
 
@@ -105,6 +102,7 @@
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/project-icons/azure-vpn.png" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/azure-vm.png" alt="Azure VNet Icon" class="w-8 h-8" />
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
@@ -129,7 +127,7 @@
         class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Full-Stack Blog with Jenkins-Powered AWS & Raspberry Pi Deployment
+          Full-Stack Blog with Jenkins CI/CD on AWS & Raspberry Pi
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
@@ -167,7 +165,7 @@
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+
           <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
         </div>
@@ -233,6 +231,7 @@
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
           <img src="/images/project-icons/azure-vm.png" alt="Azure VM Icon" class="w-8 h-8" />
         </div>
@@ -365,6 +364,12 @@
       width="max-w-[1200px]"
       height="max-h-[92vh]"
     />
+    <HtbModal
+      :visible="showHtbModal"
+      @close="showHtbModal = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
   </div>
 </template>
 
@@ -378,6 +383,8 @@ import RaspberryPiModal from '../components/modals/Project-Raspberry.vue'
 import PrismaModal from '../components/modals/Project-Prisma.vue'
 import ProjectMultiregion from '../components/modals/Project-Multiregion.vue'
 import WazuhSOClab from '../components/modals/Projects-Wazuh.vue'
+import HtbModal from '../components/modals/HackTheBox.vue'
+const showHtbModal = ref(false)
 const showPrismaModal = ref(false)
 const showWazuhLabProject = ref(false)
 const showMultiregionProject = ref(false)

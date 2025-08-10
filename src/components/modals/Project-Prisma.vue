@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Full-Stack Blog Platform with Automated Hybrid Deployment"
+    title="Full-Stack Blog with Jenkins CI/CD on AWS & Raspberry Pi"
   >
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Main Content: Screenshot -->
