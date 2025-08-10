@@ -8,7 +8,7 @@
       <!-- Main Content: Diagram -->
       <div class="md:w-2/3 p-6 flex-grow">
         <img
-          src="/images/project-modal-images/ansible-vmware.svg"
+          src="/images/project-modal-images/ansible-vmware.jpg"
           alt="VMware Monitoring Lab Diagram"
           class="object-contain rounded-lg w-full h-full"
         />

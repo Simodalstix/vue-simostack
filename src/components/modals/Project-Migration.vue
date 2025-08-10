@@ -4,7 +4,7 @@
       <!-- Main Content: Diagram -->
       <div class="md:w-2/3 p-6 flex-grow">
         <img
-          src="/images/project-modal-images/db-migration.svg"
+          src="/images/project-modal-images/db-migration.jpg"
           alt="AWS Migration Diagram"
           class="object-contain rounded-lg w-full h-full"
         />

@@ -100,6 +100,10 @@
             src="/images/project-icons/python.svg"
             alt="Python Icon"
             class="w-8 h-8 rounded-md"
+          /><img
+            src="/images/project-icons/jenkins.svg"
+            alt="Jenkins Icon"
+            class="w-8 h-8 rounded-md"
           />
         </div>
         <div class="flex flex-wrap gap-2">
@@ -269,18 +273,11 @@
 
       <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3 -->
       <BaseCard
-        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden"
+        @click="showPrismaModal = true"
+        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
       >
-        <!-- Clickable overlay ON TOP -->
-        <a
-          href="https://github.com/Simodalstix/react-prisma-pg1"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="absolute inset-0 z-50 block"
-          aria-label="Open GitHub repo: Full-Stack Blog on Raspberry Pi with Docker & AWS S3"
-        ></a>
         <h3 class="text-lg font-bold text-white mb-3">
-          Full-Stack Blog on Raspberry Pi with Docker & AWS S3
+          Full-Stack Blog with Jenkins-Powered AWS & Raspberry Pi Deployment
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
@@ -289,6 +286,7 @@
           <img src="/images/main-tools/aws-icon2.png" alt="AWS S3 Icon" class="w-8 h-8" />
           <img src="/images/project-icons/react-2.svg" alt="React Icon" class="w-8 h-8" />
           <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="h-8" />
         </div>
 
         <div class="flex flex-wrap gap-2">
@@ -349,6 +347,13 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
+
+    <PrismaModal
+      :visible="showPrismaModal"
+      @close="showPrismaModal = false"
+      width="max-w-[1200px]"
+      height="max-h-[92vh]"
+    />
   </div>
 </template>
 
@@ -359,7 +364,10 @@ import AwsMigrationModal from '../components/modals/Project-Migration.vue'
 import AzureHubSpokeModal from '../components/modals/Project-Azure-Hub.vue'
 import VmwareMonitoringModal from '../components/modals/Project-VMware-Ansible.vue'
 import RaspberryPiModal from '../components/modals/Project-Raspberry.vue'
+import PrismaModal from '../components/modals/Project-Prisma.vue'
 import ProjectMultiregion from '../components/modals/Project-Multiregion.vue'
+const showPrismaModal = ref(false)
+
 const showMultiregionProject = ref(false)
 const showRaspberry = ref(false)
 const showVmwareProject = ref(false)

@@ -8,7 +8,7 @@
       <!-- Main Content: Diagram -->
       <div class="md:w-2/3 p-6 flex-grow">
         <img
-          src="/images/project-modal-images/rasp-api-image.png"
+          src="/images/project-modal-images/rasp-api-image.jpg"
           alt="Raspberry Pi Backend Diagram"
           class="object-contain rounded-lg w-full h-full"
         />

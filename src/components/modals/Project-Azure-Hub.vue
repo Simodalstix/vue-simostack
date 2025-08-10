@@ -8,7 +8,7 @@
       <!-- Main Content: Diagram and Overview -->
       <div class="md:w-2/3 p-6 flex flex-col">
         <img
-          src="/images/project-modal-images/azure-hub-spoke-vpn.svg"
+          src="/images/project-modal-images/azure-hub-spoke-vpn.jpg"
           alt="Azure Hub & Spoke VPN Diagram"
           class="object-contain rounded-lg w-full"
         />

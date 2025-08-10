@@ -4,7 +4,7 @@
       <!-- Main Content: Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
         <img
-          src="/images/project-modal-images/AWS-multiregion-ecommerce.png"
+          src="/images/project-modal-images/AWS-multiregion-ecommerce.jpg"
           alt="AWS Multiregion Ecommerce Diagram"
           class="object-contain rounded-lg w-full"
         />
