@@ -5,12 +5,13 @@
         <div>
           <h1 class="text-3xl font-bold mb-4">My Story: The Pivot</h1>
           <p class="text-lg">
-            I’m an Australian citizen pivoting from a career in healthcare into technology. I’m
-            passionate about the intersection of Linux, cloud platforms, infrastructure, and DevOps,
-            and I'm leveraging these skills to build a career in engineering, with a keen interest
-            in security and technical support roles. My background as a pharmacist has uniquely
-            prepared me to bring calm under pressure, strong triage instincts, and years of
-            experience translating complex systems for people from all walks of life.
+            I’m pivoting from a career in healthcare into technology, with a passion for Linux,
+            cloud platforms, infrastructure, and DevOps. Over the past year, I’ve built a strong
+            foundation in AWS, Azure, and Terraform, focusing on Infrastructure as Code, CI/CD
+            pipelines, and developer tooling. My background as a pharmacist has honed my ability to
+            stay calm under pressure, triage complex situations, and translate intricate systems
+            into clear, actionable steps — skills I now apply to solving engineering challenges and
+            improving developer workflows.
           </p>
           <p class="mt-4 font-bold text-lg text-orange-300">
             Standout qualities: Relentless Focus, Unwavering Curiosity & Self-Driven Learning
@@ -20,21 +21,16 @@
         <div>
           <h2 class="text-3xl font-bold mb-4">Why I'm a Good Hire</h2>
           <p class="text-lg">
-            I am actively seeking technical support positions where I can bring my well-rounded
-            skill set to a team. I possess a strong foundation in
-            <span class="font-bold">Linux administration</span>, cloud technologies including
-            <span class="font-bold">AWS and Azure</span>, and a solid understanding of
-            <span class="font-bold">networking, firewalls, and subnets</span>. My experience with
-            virtualization (VMware) and automation (Ansible) ensures I'm ready for modern
-            infrastructure challenges.
+            I specialise in building secure, automated cloud infrastructure through Infrastructure
+            as Code (IaC), CI/CD pipelines, and modern DevOps tooling. My projects focus on creating
+            reproducible, enterprise-style environments that improve developer workflows, enable
+            automation, and strengthen reliability.
           </p>
           <p class="text-lg mt-4">
-            With a broad understanding of both front-end and back-end technologies, I'm uniquely
-            positioned to troubleshoot issues holistically, from the application layer down. I am
-            proficient with support ticketing and collaboration software and have a practical grasp
-            of systematic troubleshooting methodologies. I am confident that my strong communication
-            skills, problem-solving instincts, and eagerness to learn from experienced engineers
-            will make me a high-impact addition to any team.
+            With certifications in AWS, Azure, and Terraform, and hands-on experience with developer
+            tooling, monitoring, and automation, I bridge the gap between infrastructure and
+            developer enablement. I thrive in collaborative environments where improving internal
+            tooling and workflows directly empowers teams to deliver better software faster.
           </p>
         </div>
       </div>
@@ -44,7 +40,7 @@
         <div class="relative pl-6 md:pl-12">
           <div class="absolute left-0 md:left-6 top-0 bottom-0 w-1 bg-gray-600 rounded-full"></div>
 
-          <ul class="relative space-y-8">
+          <ul class="relative space-y-7">
             <li class="relative">
               <div
                 class="bg-purple-500 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
