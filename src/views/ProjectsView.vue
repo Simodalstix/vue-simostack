@@ -47,40 +47,12 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <a
-        href="https://github.com/Simodalstix/wazuh-soc-lab"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="md:col-span-2 h-full"
-      >
-        <BaseCard
-          @click="showWazuhLabProject = true"
-          class="bg-900 text-white p-4 border-2 bg-slate-800 border-slate-500 rounded shadow cursor-pointer hover:bg-indigo-800 transition flex items-center gap-5 h-full"
-        >
-          <img
-            src="/images/project-icons/wazuh-icon.png"
-            alt="Wazuh Logo"
-            class="w-20 rounded-xl"
-          />
-          <div>
-            <h3 class="text-lg font-bold text-white">SOC Lab: Wazuh + ELK Stack on VMware</h3>
-            <p class="text-sm text-gray-300">
-              I’m building a home lab simulating real SOC operations using Wazuh, ELK Stack, and
-              Ansible. Hosted on VMware, this lab features log ingestion from Linux and Windows
-              systems with alerting, dashboarding, and threat detection mapped to MITRE ATT&CK.
-            </p>
-          </div>
-        </BaseCard>
-      </a>
-
       <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
       <BaseCard
         @click="showMultiregionProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Implementing a Multi-Region CI/CD Pipeline in AWS
-        </h3>
+        <h3 class="text-lg font-bold text-white mb-3">Serverless Multi-Region AWS Platform</h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img
@@ -99,10 +71,6 @@
           /><img
             src="/images/project-icons/python.svg"
             alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          /><img
-            src="/images/project-icons/jenkins.svg"
-            alt="Jenkins Icon"
             class="w-8 h-8 rounded-md"
           />
         </div>
@@ -125,34 +93,6 @@
         </div>
       </BaseCard>
 
-      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
-      <BaseCard
-        @click="showDynatraceProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Deploying Dynatrace Monitoring Agents in Azure
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
-          <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Azure</span
-          >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Monitoring</span
-          >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Automation</span
-          >
-        </div>
-      </BaseCard>
-
       <!-- Creating a Hub-Spoke Network in Azure with a VPN Gateway -->
       <BaseCard
         @click="showAzureProject = true"
@@ -165,6 +105,7 @@
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/project-icons/azure-vpn.png" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
           <span
@@ -178,6 +119,40 @@
           <span
             class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Networking</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3 -->
+      <BaseCard
+        @click="showPrismaModal = true"
+        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Full-Stack Blog with Jenkins-Powered AWS & Raspberry Pi Deployment
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS S3 Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/react-2.svg" alt="React Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="h-8" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Full-Stack</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Docker</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >AWS</span
           >
         </div>
       </BaseCard>
@@ -208,6 +183,71 @@
           <span
             class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Migration</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- SOC Lab: Wazuh + ELK on VMware -->
+      <BaseCard
+        @click="showWazuhLabProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">SOC Lab: Wazuh + ELK on VMware</h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/elastic.png" alt="Elastic" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/logstash.png" alt="Linux" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/kibana.png" alt="Windows" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >VMware</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >SIEM</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Monitoring</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Automation</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
+      <BaseCard
+        @click="showDynatraceProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Deploying Dynatrace Monitoring Agents in Azure
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/azure-vm.png" alt="Azure VM Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Azure</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Monitoring</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Automation</span
           >
         </div>
       </BaseCard>
@@ -270,41 +310,6 @@
           >
         </div>
       </BaseCard>
-
-      <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3 -->
-      <BaseCard
-        @click="showPrismaModal = true"
-        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Full-Stack Blog with Jenkins-Powered AWS & Raspberry Pi Deployment
-        </h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS S3 Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/react-2.svg" alt="React Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
-          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="h-8" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Full-Stack</span
-          >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Docker</span
-          >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >AWS</span
-          >
-        </div>
-      </BaseCard>
-
       <BaseCard class="bg-gray-800 p-4 rounded-md border-2 border-slate-500 text-gray-400">
         <h3 class="text-md font-bold mb-3">More to edit when I get a chance</h3>
         <p class="text-sm"></p>
@@ -326,7 +331,7 @@
     <AzureHubSpokeModal
       :visible="showAzureProject"
       @close="showAzureProject = false"
-      width="max-w-[1100px]"
+      width="max-w-[1200px]"
       height="max-h-[92vh]"
     />
     <AwsMigrationModal
@@ -354,6 +359,12 @@
       width="max-w-[1200px]"
       height="max-h-[92vh]"
     />
+    <WazuhSOClab
+      :visible="showWazuhLabProject"
+      @close="showWazuhLabProject = false"
+      width="max-w-[1200px]"
+      height="max-h-[92vh]"
+    />
   </div>
 </template>
 
@@ -366,8 +377,9 @@ import VmwareMonitoringModal from '../components/modals/Project-VMware-Ansible.v
 import RaspberryPiModal from '../components/modals/Project-Raspberry.vue'
 import PrismaModal from '../components/modals/Project-Prisma.vue'
 import ProjectMultiregion from '../components/modals/Project-Multiregion.vue'
+import WazuhSOClab from '../components/modals/Projects-Wazuh.vue'
 const showPrismaModal = ref(false)
-
+const showWazuhLabProject = ref(false)
 const showMultiregionProject = ref(false)
 const showRaspberry = ref(false)
 const showVmwareProject = ref(false)

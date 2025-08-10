@@ -1,5 +1,9 @@
 <template>
-  <BaseModal :visible="visible" @close="$emit('close')" title="AWS Multiregion E-commerce Platform">
+  <BaseModal
+    :visible="visible"
+    @close="$emit('close')"
+    title="Serverless Multi-Region AWS Platform"
+  >
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Main Content: Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
@@ -36,8 +40,9 @@
     <!-- Footer -->
     <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
       <p class="text-gray-400 italic w-2/3">
-        A resilient, scalable e-commerce architecture leveraging multi-region AWS infrastructure,
-        IaC, and automation. Core services are provisioned using AWS CDK (Python).
+        A multi-region, serverless AWS architecture with automated CI/CD pipelines, global routing,
+        and high availability. Designed as a flexible, real-world reference for modern cloud
+        deployments.
       </p>
       <a
         href="https://github.com/Simodalstix/AWS-multiregion-ecommerce"

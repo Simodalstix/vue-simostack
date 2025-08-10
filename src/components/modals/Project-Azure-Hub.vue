@@ -20,9 +20,10 @@
           <h3 class="font-bold text-xl mb-2 text-orange-300">Key Features</h3>
           <ul class="list-disc list-inside space-y-1 text-base">
             <li>Hub-and-Spoke Network</li>
-            <li>Hybrid Cloud connection with VPN</li>
+            <li>Hybrid cloud connectivity between Azure and AWS via site-to-site VPN</li>
             <li>Infrastructure as Code (IaC)</li>
-            <li>Cross-Cloud Connectivity</li>
+            <li>Cross-cloud integration with secure routing and access controls</li>
+            <li>Hybrid cloud connectivity between Azure and AWS via site-to-site VPN</li>
           </ul>
         </div>
 
@@ -39,9 +40,13 @@
     <!-- Footer -->
     <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
       <p class="text-gray-400 italic w-2/3">
-        This project implements a production-style Azure network using a hub-and-spoke VNet design.
-        The hub contains a VPN gateway and shared services, while each spoke is isolated for
-        independent workloads — ideal for multi-subnet architecture.
+        This project implements a production-style Azure network using a hub-and-spoke VNet
+        architecture for scalable and secure connectivity. The hub hosts a VPN gateway, shared
+        services, and centralized routing, enabling secure communication between spokes and
+        extending the network to AWS for hybrid cloud integration. Each spoke is fully isolated to
+        support independent workloads, enforce network security boundaries, and simplify
+        multi-subnet application deployments. This design mirrors real-world enterprise environments
+        where centralized control, segmentation, and cross-cloud connectivity are critical.
       </p>
       <a
         href="https://github.com/Simodalstix/az-hub-spoke-vpn"
