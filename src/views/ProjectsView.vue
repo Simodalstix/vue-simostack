@@ -263,6 +263,8 @@
           <img src="/images/main-tools/vmware.svg" alt="VMware Icon" class="w-8 h-8" />
           <img src="/images/main-tools/ansible.svg" alt="Ansible Icon" class="w-8 h-8" />
           <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/prometheus.png" alt="Prometheus Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/grafana.png" alt="Grafana Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
           <span
