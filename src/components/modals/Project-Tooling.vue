@@ -7,11 +7,11 @@
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Main Content: Diagram -->
       <div class="md:w-2/3 p-6 flex flex-col">
-        <!-- <img
-          src="/images/project-modal-images/aws-devops-toolchain.png"
+        <img
+          src="/images/project-modal-images/sonarqube.jpg"
           alt="AWS DevOps Toolchain Diagram"
           class="object-contain rounded-lg w-full"
-        /> -->
+        />
       </div>
 
       <!-- Right-Hand Sidebar -->
@@ -20,9 +20,10 @@
           <h3 class="font-bold text-xl mb-2 text-orange-300">Key Features</h3>
           <ul class="list-disc list-inside space-y-1 text-base">
             <li>Infrastructure as Code with Terraform</li>
-            <li>CI/CD with GitHub Actions</li>
-            <li>Jenkins orchestration from bare metal to deploy</li>
-            <li>Multi-stage pipelines with approvals</li>
+            <li>GitHub Actions pipeline</li>
+            <li>SonarQube quality gates block merges on failed checks</li>
+            <li>Playwright E2E tests validate flagged behavior and endpoints</li>
+            <li>LaunchDarkly feature flags for safe, gradual releases</li>
           </ul>
         </div>
 
@@ -30,9 +31,10 @@
           <h3 class="font-bold text-xl mb-2 text-orange-300">Technologies Used</h3>
           <ul class="list-disc list-inside space-y-1 text-base">
             <li>IaC: Terraform</li>
-            <li>CI/CD: GitHub Actions, Jenkins</li>
+            <li>CI/CD: GitHub Actions</li>
             <li>Cloud: AWS core services</li>
-            <li>Containers: Docker</li>
+            <li>Code Quality: SonarQube</li>
+            <li>Feature Flags: LaunchDarkly</li>
           </ul>
         </div>
       </aside>
@@ -41,9 +43,10 @@
     <!-- Footer -->
     <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
       <p class="text-gray-400 italic w-2/3">
-        Provisions AWS environments with Terraform and runs end-to-end automation. GitHub Actions
-        handles build and test; Jenkins coordinates the full bootstrap and deployment so the stack
-        can be recreated from zero with minimal manual steps.
+        Provisions AWS with Terraform and runs a full CI flow in GitHub Actions. The .NET 8 API is
+        scanned by SonarQube (quality gates), feature-toggled with LaunchDarkly, and validated
+        end-to-end with Playwright. The entire toolchain is reproducible from zero with minimal
+        manual steps.
       </p>
       <a
         href="https://github.com/Simodalstix/terraform-aws-devops-toolchain"

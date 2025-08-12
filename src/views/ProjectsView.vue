@@ -127,7 +127,7 @@
         class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Full-Stack Blog with Jenkins CI/CD on AWS & Raspberry Pi
+          Full-Stack Blog CI/CD on AWS & Raspberry Pi - With Jenkins
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
@@ -316,12 +316,10 @@
       </BaseCard>
 
       <BaseCard
-        @click="showToolchain = true"
+        @click="showToolingProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Terraform-Driven AWS DevOps Toolchain (In Progress)
-        </h3>
+        <h3 class="text-lg font-bold text-white mb-3">Terraform-Driven AWS DevOps Toolchain</h3>
 
         <div class="flex items-center gap-3 mb-3">
           <!-- Update icon paths to match your assets -->
@@ -333,7 +331,11 @@
             alt="GitHub Actions Icon"
             class="w-8 h-8"
           />
-          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/launchdarkly.svg"
+            alt="LaunchDarkly Icon"
+            class="w-8 h-8"
+          /><img src="/images/project-icons/sonarqube.png" alt="SonarQube Icon" class="h-8" />
         </div>
 
         <div class="flex flex-wrap gap-2">
@@ -367,13 +369,20 @@
             src="/images/project-icons/bedrock.png"
             alt="Bedrock Icon"
             class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/slack.png" alt="Slack Icon" class="w-8 h-8" />
-          <img
+          /><img
             src="/images/project-icons/eventbridge.svg"
             alt="EventBridge Icon"
             class="w-8 h-8 rounded-md"
+          /><img
+            src="/images/project-icons/DynamoDB.svg"
+            alt="EventBridge Icon"
+            class="w-8 h-8 rounded-md"
+          /><img
+            src="/images/project-icons/ssm.png"
+            alt="EventBridge Icon"
+            class="w-8 h-8 rounded-md"
           />
+          <img src="/images/project-icons/slack.png" alt="Slack Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
           <span
