@@ -96,7 +96,7 @@
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Creating a Hub-Spoke Network in Azure with a VPN Gateway
+          Azure Hub-Spoke Network with a VPN Gateway
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
@@ -151,6 +151,9 @@
           <span
             class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >AWS</span
+          ><span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Automation</span
           >
         </div>
       </BaseCard>
@@ -299,18 +302,134 @@
         <div class="flex flex-wrap gap-2">
           <span
             class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Full-Stack</span
-          >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Docker</span
           >
           <span
             class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Backend</span
           >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >CI/CD</span
+          >
         </div>
       </BaseCard>
+
+      <BaseCard
+        @click="showToolchain = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Terraform-Driven AWS DevOps Toolchain (In Progress)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <!-- Update icon paths to match your assets -->
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/csharp.png" alt="Csharp Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/github-actions.svg"
+            alt="GitHub Actions Icon"
+            class="w-8 h-8"
+          />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Terraform</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >AWS</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >CI/CD</span
+          >
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Jenkins</span
+          >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showBedrock = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">AWS Bedrock Ops Copilot (In Progress)</h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/bedrock.png"
+            alt="Bedrock Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/slack.png" alt="Slack Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/eventbridge.svg"
+            alt="EventBridge Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          >
+            AWS Bedrock
+          </span>
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          >
+            EventBridge
+          </span>
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          >
+            IR
+          </span>
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showEcsMicroservices = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          ECS Asynchronous Microservices Platform (In Progress)
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/ecs.png" alt="ECS Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/sqs.png" alt="SQS Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/DynamoDB.svg"
+            alt="DynamoDB Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          >
+            ECS Fargate
+          </span>
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          >
+            SQS
+          </span>
+          <span
+            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          >
+            Step Functions
+          </span>
+        </div>
+      </BaseCard>
+
       <BaseCard class="bg-gray-800 p-4 rounded-md border-2 border-slate-500 text-gray-400">
         <h3 class="text-md font-bold mb-3">More to edit when I get a chance</h3>
         <p class="text-sm"></p>
@@ -372,6 +491,12 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
+    <DeveloperTooling
+      :visible="showToolingProject"
+      @close="showToolingProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
   </div>
 </template>
 
@@ -386,6 +511,8 @@ import PrismaModal from '../components/modals/Project-Prisma.vue'
 import ProjectMultiregion from '../components/modals/Project-Multiregion.vue'
 import WazuhSOClab from '../components/modals/Projects-Wazuh.vue'
 import HtbModal from '../components/modals/HackTheBox.vue'
+import DeveloperTooling from '../components/modals/Project-Tooling.vue'
+const showToolingProject = ref(false)
 const showHtbModal = ref(false)
 const showPrismaModal = ref(false)
 const showWazuhLabProject = ref(false)

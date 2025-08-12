@@ -41,14 +41,12 @@
     <!-- Footer -->
     <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
       <p class="text-gray-400 italic w-2/3">
-        Built a blog platform with a Raspberry Pi backend and AWS-hosted frontend, supported by an
-        end-to-end Jenkins CI/CD pipeline. Infrastructure is provisioned via Terraform, including
-        S3/CloudFront hosting with DNS and TLS. Jenkins handles multi-architecture Docker builds for
-        the ARM64 backend, pushing images to Amazon ECR. Ansible playbooks provision and deploy the
-        backend to the Pi, pulling environment variables from AWS SSM Parameter Store. Frontend
-        assets are built and synced to S3 with CloudFront cache invalidation. The pipeline includes
-        manual approval gates, health checks, and smoke testing to ensure reliability and security
-        across both deployment targets.
+        Built a blog platform with a Raspberry Pi backend and AWS-hosted frontend, deployed via a
+        Jenkins CI/CD pipeline. Infrastructure is provisioned with Terraform (S3/CloudFront +
+        DNS/TLS). Jenkins builds multi-arch Docker images for the ARM64 backend, pushes to ECR, and
+        uses Ansible to deploy to the Pi with secrets from AWS SSM Parameter Store. Frontend assets
+        are built and synced to S3 with automated cache invalidation, with pipeline gates, health
+        checks, and smoke tests ensuring reliability.
       </p>
       <a
         href="https://github.com/Simodalstix/react-prisma-pg1"
