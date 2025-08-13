@@ -47,9 +47,11 @@
       <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
       <BaseCard
         @click="showMultiregionProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">Serverless Multi-Region AWS Platform</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          Serverless Multi-Region Platform with Security and Monitoring
+        </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img
@@ -72,19 +74,15 @@
           />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >AWS</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >IaC</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Automation</span
-          ><span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          ><span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Serverless</span
           >
         </div>
@@ -93,7 +91,7 @@
       <!-- Creating a Hub-Spoke Network in Azure with a VPN Gateway -->
       <BaseCard
         @click="showAzureProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Azure Hub-Spoke Network with a VPN Gateway
@@ -106,16 +104,13 @@
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Azure</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >IaC</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Networking</span
           >
         </div>
@@ -124,7 +119,7 @@
       <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3 -->
       <BaseCard
         @click="showPrismaModal = true"
-        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
+        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Full-Stack Blog CI/CD on AWS & Raspberry Pi - With Jenkins
@@ -140,19 +135,15 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Full-Stack</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Docker</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >AWS</span
-          ><span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          ><span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Automation</span
           >
         </div>
@@ -161,7 +152,7 @@
       <!-- Executing a Database Migration to AWS with Terraform -->
       <BaseCard
         @click="showAwsProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Executing a Database Migration to AWS with Terraform
@@ -173,16 +164,13 @@
           <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >AWS</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >IaC</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Migration</span
           >
         </div>
@@ -191,9 +179,11 @@
       <!-- SOC Lab: Wazuh + ELK on VMware -->
       <BaseCard
         @click="showWazuhLabProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">SOC Lab: Wazuh + ELK on VMware</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          SOC Lab: Wazuh + ELK on VMware with Ansible
+        </h3>
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh" class="w-8 h-8 rounded-md" />
@@ -205,20 +195,14 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >VMware</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >SIEM</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Monitoring</span
-          >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Automation</span
           >
         </div>
@@ -227,10 +211,10 @@
       <!-- Deploying Dynatrace Monitoring Agents in Azure -->
       <BaseCard
         @click="showDynatraceProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Deploying Dynatrace Monitoring Agents in Azure
+          Deploying Dynatrace & Azure Monitoring Agents in Azure
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
@@ -239,16 +223,13 @@
           <img src="/images/project-icons/azure-vm.png" alt="Azure VM Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Azure</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Monitoring</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Automation</span
           >
         </div>
@@ -257,7 +238,7 @@
       <!-- Automating VMware Monitoring and Alerting with Ansible -->
       <BaseCard
         @click="showVmwareProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Automating VMware Monitoring and Alerting with Ansible
@@ -268,18 +249,16 @@
           <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu Icon" class="w-8 h-8" />
           <img src="/images/project-icons/prometheus.png" alt="Prometheus Icon" class="w-8 h-8" />
           <img src="/images/project-icons/grafana.png" alt="Grafana Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/splunk.png" alt="Grafana Icon" class="h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >VMware</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Automation</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Monitoring</span
           >
         </div>
@@ -288,10 +267,10 @@
       <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
       <BaseCard
         @click="showRaspberry = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Deploying a Containerized Backend API on a Raspberry Pi
+          Github actions CI/CD Backend API on a Raspberry Pi & Docker
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
@@ -300,16 +279,13 @@
           <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Docker</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Backend</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >CI/CD</span
           >
         </div>
@@ -317,9 +293,11 @@
 
       <BaseCard
         @click="showToolingProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">Terraform-Driven AWS DevOps Toolchain</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          Terraform-AWS DevOps Toolchain SonarQube & LaunchDarkly
+        </h3>
 
         <div class="flex items-center gap-3 mb-3">
           <!-- Update icon paths to match your assets -->
@@ -339,20 +317,16 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Terraform</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >AWS</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >CI/CD</span
           >
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Jenkins</span
           >
         </div>
@@ -360,7 +334,7 @@
 
       <BaseCard
         @click="showBedrock = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">AWS Bedrock Ops Copilot (In Progress)</h3>
         <div class="flex items-center gap-3 mb-3">
@@ -385,19 +359,13 @@
           <img src="/images/project-icons/slack.png" alt="Slack Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">
             AWS Bedrock
           </span>
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">
             EventBridge
           </span>
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">
             IR
           </span>
         </div>
@@ -405,7 +373,7 @@
 
       <BaseCard
         @click="showEcsMicroservices = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-800 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           ECS Asynchronous Microservices Platform (In Progress)
@@ -421,19 +389,13 @@
           />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">
             ECS Fargate
           </span>
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">
             SQS
           </span>
-          <span
-            class="bg-purple-600 text-indigo-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-purple-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded-full">
             Step Functions
           </span>
         </div>

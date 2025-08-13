@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Serverless Multi-Region AWS Platform"
+    title="Serverless Multi-Region AWS Platform - (Expansion Underway)"
   >
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Main Content: Diagram -->
