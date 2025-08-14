@@ -342,6 +342,7 @@
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+
           <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
           <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
@@ -371,6 +372,11 @@
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
           <img src="/images/aws-icons/backup.svg" alt="AWS Backup" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/rds.svg" alt="RDS" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/ebs.svg" alt="EBS" class="w-8 h-8 rounded-md" />
@@ -403,6 +409,11 @@
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
           <img src="/images/aws-icons/s3.svg" alt="S3" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/cloudfront.svg" alt="CloudFront" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/waf.svg" alt="AWS WAF" class="w-8 h-8 rounded-md" />
@@ -435,6 +446,11 @@
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
           <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/sqs.svg" alt="SQS" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
@@ -466,6 +482,11 @@
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
           <img src="/images/aws-icons/ecs.svg" alt="ECR" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/fargate.svg" alt="ECS" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-8 h-8 rounded-md" />
@@ -496,6 +517,11 @@
         <h3 class="text-lg font-bold text-white mb-3">AWS Bedrock Ops Copilot (In Progress)</h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
           <img
             src="/images/project-icons/bedrock.png"
             alt="Bedrock Icon"
@@ -543,6 +569,11 @@
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
           <img src="/images/project-icons/ecs.png" alt="ECS Icon" class="w-8 h-8 rounded-md" />
           <img src="/images/project-icons/sqs.png" alt="SQS Icon" class="w-8 h-8 rounded-md" />
           <img
@@ -567,6 +598,44 @@
           >
             Step Functions
           </span>
+        </div>
+      </BaseCard>
+
+      <!-- BaseCard: Amazon Managed Grafana + Okta (CDK) -->
+      <BaseCard
+        @click="showAwsAmgOktaCdk = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">Amazon Managed Grafana + Okta (CDK)</h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/project-icons/grafana.png"
+            alt="Amazon Managed Grafana"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/okta-logo.svg" alt="Okta" class="h-4 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Observability</span
+          >
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >SSO</span
+          >
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >CDK</span
+          >
         </div>
       </BaseCard>
 
