@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-gray-800 p-4 rounded shadow flex flex-col h-full">
+  <div class="bg-gray-800 p-3 sm:p-4 rounded shadow flex flex-col h-full">
     <!-- Top Section: Certifications -->
     <div>
       <h1 class="text-2xl font-bold border-b-2 border-slate-500 pb-1 mb-4 text-center">
         Certifications
       </h1>
-      <div class="grid grid-cols-2 gap-4 space-y-3 place-items-center">
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 place-items-center">
         <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
         <img
           src="/images/certifications/Cloud_Practitioner.png"

@@ -4,7 +4,7 @@
       <h1 class="text-4xl font-bold mb-4">My Skills & Certifications</h1>
     </section>
 
-    <div class="grid md:grid-cols-4 gap-12 md:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-8">
       <div class="col-span-1">
         <div class="mb-8">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Infrastructure & DevOps</h2>
@@ -63,7 +63,7 @@
       </div>
 
       <div class="col-span-2">
-        <div class="grid grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="col-span-2">
             <div class="rounded-t-lg border border-purple-700 bg-purple-700">
               <h2 class="text-2xl font-bold py-3 text-center">Completed Certifications</h2>

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-900 min-h-screen flex flex-col justify-center text-white">
-    <div class="text-center p-8 md:p-12 lg:p-20" style="padding-bottom: 10rem">
+    <div class="text-center p-6 sm:p-8 md:p-12 lg:p-20" style="padding-bottom: 10rem">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
         From Pharmacist to <span class="text-purple-400">Cloud Engineer</span>
       </h1>
@@ -12,7 +12,7 @@
       </p>
 
       <div
-        class="mt-10 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6"
+        class="mt-8 sm:mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
       >
         <router-link
           :to="{ name: 'Projects' }"

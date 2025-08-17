@@ -1,12 +1,12 @@
 <template>
   <div class="text-white bg-gray-900 min-h-screen">
-    <div class="container mx-auto px-6 py-10 md:py-20">
-      <section class="mb-12 text-center max-w-4xl mx-auto">
+    <div class="container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-20">
+      <section class="mb-8 sm:mb-12 text-center max-w-4xl mx-auto">
         <h1 class="text-4xl font-extrabold mb-4 text-orange-400">The Elephant in the Room</h1>
         <p class="text-xl text-gray-300">Addressing the most common questions head-on.</p>
       </section>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 md:gap-10">
         <div
           class="bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-700 hover:border-orange-500 transition-all duration-300"
         >

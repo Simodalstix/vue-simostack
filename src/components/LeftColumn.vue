@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800 p-4 rounded shadow space-y-4">
+  <div class="bg-gray-800 p-3 sm:p-4 rounded shadow space-y-4">
     <h1 class="text-2xl font-bold text-center border-b-2 border-slate-500 pb-1">
       Pharmacist to Engineer
     </h1>

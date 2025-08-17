@@ -1,6 +1,6 @@
 <template>
-  <div class="text-white container mx-auto px-6 py-10 md:py-10">
-    <div class="grid md:grid-cols-3 gap-12 md:gap-20">
+  <div class="text-white container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
       <div class="md:col-span-2 flex flex-col space-y-8">
         <div>
           <h1 class="text-3xl font-bold mb-4">My Story: The Pivot</h1>

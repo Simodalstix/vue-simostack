@@ -144,9 +144,9 @@ n d
       <router-view />
     </main>
 
-    <footer class="bg-gray-800 text-white py-10">
-      <div class="container mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer class="bg-gray-800 text-white py-8 sm:py-10">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           <div class="md:col-span-2">
             <h3 class="text-lg font-bold mb-4">Technologies & Tools</h3>
             <div class="flex flex-wrap gap-4 justify-center md:justify-start">

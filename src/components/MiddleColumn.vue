@@ -40,7 +40,7 @@
         </BaseCard></a
       >
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
         <BaseCard
           @click="showMultiregionProject = true"
           class="cursor-pointer p-2 rounded-md border-2 border-slate-500 hover:bg-indigo-800 transition"
