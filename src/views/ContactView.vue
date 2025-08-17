@@ -6,7 +6,7 @@
           <img
             src="/images/landscapes/desertworld.jpg"
             alt="Inviting forest path"
-            class="rounded-full w-[40rem] h-[40rem]] mx-auto md:mx-0 object-cover"
+            class="rounded-full w-64 h-64 md:w-[40rem] md:h-[40rem] mx-auto md:mx-0 object-cover"
           />
         </div>
 

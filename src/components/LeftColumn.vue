@@ -31,7 +31,7 @@
           <img
             src="/images/skills-in-progress/aws-devops.png"
             alt="AWS DevOps Badge"
-            class="w-24 sm:w-36"
+            class="w-20 sm:w-36"
           />
 
           <img

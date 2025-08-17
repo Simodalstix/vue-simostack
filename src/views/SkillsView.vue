@@ -79,7 +79,7 @@
                 <img
                   src="/images/certifications/Cloud_Practitioner.png"
                   alt="AWS Cloud Practitioner Badge"
-                  class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
                   @click="showPractitionerModal = true"
                 />
               </div>
@@ -91,7 +91,7 @@
                 <img
                   src="/images/certifications/securityplus.png"
                   alt="Comptia Security+ Badge"
-                  class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
                   @click="showSecurityPlusModal = true"
                 />
               </div>
@@ -101,7 +101,7 @@
                 <img
                   src="/images/certifications/Solutions_Architect.png"
                   alt="AWS Solutions Architect Badge"
-                  class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
                   @click="showArchitectModal = true"
                 />
               </div>
@@ -110,7 +110,7 @@
                 <img
                   src="/images/certifications/terraform003-2.png"
                   alt="Terraform Associate Badge"
-                  class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
                   @click="showTerraformModal = true"
                 />
               </div>
@@ -119,7 +119,7 @@
                 <img
                   src="/images/certifications/Developer.png"
                   alt="AWS Developer Badge"
-                  class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
                   @click="showDeveloperModal = true"
                 />
               </div>
@@ -128,7 +128,7 @@
                 <img
                   src="/images/certifications/azure-admin.png"
                   alt="Azure Admin Badge"
-                  class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
                   @click="showAzureAmin = true"
                 />
               </div>
@@ -137,7 +137,7 @@
                 <img
                   src="/images/certifications/python-associate.png"
                   alt="Python Associate Badge"
-                  class="w-24 md:w-32 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
                   @click="showPythonModal = true"
                 />
               </div>
@@ -161,18 +161,18 @@
                 <img
                   src="/images/certifications/cdsa.png"
                   alt="HTB CDSA Badge"
-                  class="w-24 sm:w-36 mx-auto"
+                  class="w-20 sm:w-36 mx-auto"
                 />
 
                 <img
                   src="/images/skills-in-progress/rhcsa.png"
                   alt="RHCSA Badge"
-                  class="w-24 sm:w-36 mx-auto"
+                  class="w-20 sm:w-36 mx-auto"
                 />
                 <img
                   src="/images/skills-in-progress/aws-devops.png"
                   alt="AWS DevOps Badge"
-                  class="w-24 sm:w-36 mx-auto"
+                  class="w-20 sm:w-36 mx-auto"
                 />
               </div>
             </div>

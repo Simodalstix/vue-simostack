@@ -1,6 +1,6 @@
 <template>
-  <div class="text-white container mx-auto px-6 py-12 md:py-10">
-    <div class="grid md:grid-cols-3 gap-12 md:gap-10 mb-10">
+  <div class="text-white container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-10">
       <div class="md:col-span-2">
         <h1 class="text-3xl font-bold mb-4">My Projects & Labs</h1>
         <p class="text-lg">
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
       <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
       <BaseCard
         @click="showMultiregionProject = true"
