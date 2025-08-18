@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="AWS Disaster Recovery Lab – Backup & Restore Pattern"
+    title="AWS Disaster Recovery - Backup & Restore With Rapid Recovery"
   >
     <!-- Top row: diagram + sidebar (unchanged proportions) -->
     <div class="flex flex-col md:flex-row text-gray-200">

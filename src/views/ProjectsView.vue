@@ -83,6 +83,7 @@
           >
         </div>
       </BaseCard>
+
       <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
       <BaseCard
         @click="showMultiregionProject = true"
@@ -93,6 +94,11 @@
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
           <img
             src="/images/project-icons/eventbridge.svg"
             alt="EventBridge Icon"
@@ -106,10 +112,6 @@
             src="/images/aws-icons/apigateway.svg"
             alt="API Gateway Icon"
             class="w-8 h-8 rounded-md"
-          /><img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
           />
         </div>
         <div class="flex flex-wrap gap-2">
@@ -119,7 +121,7 @@
           >
           <span
             class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >IaC</span
+            >CDK</span
           >
           <span
             class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
@@ -127,6 +129,47 @@
           ><span
             class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
             >Serverless</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- AWS Lambda + SQS + DLQ -->
+      <BaseCard
+        @click="showAwsLambdaSqsDlq = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Resilient Serverless Ingestion Pipeline on AWS (SQS + DLQ)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/sqs.svg" alt="SQS" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/iam.svg" alt="IAM" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Serverless</span
+          >
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Queues</span
+          >
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Reliability</span
+          ><span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >CDK</span
           >
         </div>
       </BaseCard>
@@ -439,42 +482,6 @@
         </div>
       </BaseCard>
 
-      <!-- AWS Lambda + SQS + DLQ -->
-      <BaseCard
-        @click="showAwsLambdaSqsDlq = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">AWS Lambda + SQS + DLQ (In Progress)</h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/sqs.svg" alt="SQS" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/iam.svg" alt="IAM" class="w-8 h-8 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Serverless</span
-          >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Queues</span
-          >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Reliability</span
-          >
-        </div>
-      </BaseCard>
-
       <!-- AWS Fargate Golden Path -->
       <BaseCard
         @click="showAwsFargateGoldenPath = true"
@@ -659,6 +666,13 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
+
+    <Project-LambdaSqsDlq
+      :visible="showAwsLambdaSqsDlq"
+      @close="showAwsLambdaSqsDlq = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <DynatraceModal
       :visible="showDynatraceProject"
       @close="showDynatraceProject = false"
@@ -730,6 +744,7 @@ import WazuhSOClab from '../components/modals/Projects-Wazuh.vue'
 import HtbModal from '../components/modals/HackTheBox.vue'
 import DeveloperTooling from '../components/modals/Project-Tooling.vue'
 import ProjectDRbackup from '@/components/modals/Project-DRbackup.vue'
+import ProjectLambdaSqsDlq from '@/components/modals/Project-LambdaSQSDLQ.vue'
 const showAwsDrBackupLab = ref(false)
 const showAwsSecureStaticSite = ref(false)
 const showAwsLambdaSqsDlq = ref(false)
