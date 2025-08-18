@@ -28,13 +28,13 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-xl mb-2 text-orange-300">Reliability & Fault Tolerance</h3>
+          <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability & Fault Tolerance</h3>
           <div class="text-sm text-gray-300 space-y-3">
-            <p class="text-base text-gray-300">
+            <p class="text-sm text-gray-300">
               Implements resilience mechanisms: DLQ with controlled redrive, idempotency in
               DynamoDB, partial batch retries, and circuit breakers for external calls. Backoff with
               jitter prevents storms, while single-responsibility Lambdas limit blast radius and
-              ease scaling—together forming a modern resilience posture.
+              simplify scaling—together forming a modern resilience posture.
             </p>
           </div>
         </div>

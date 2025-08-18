@@ -27,19 +27,13 @@
 
         <div>
           <h3 class="font-bold text-lg mb-2 text-orange-300">Key decisions & trade-offs</h3>
-          <ul class="list-disc list-inside space-y-1 text-sm">
-            <li>
-              DynamoDB Global Tables over Aurora — simpler ops; eventual consistency acceptable with
-              idempotency.
-            </li>
-            <li>
-              API Gateway + Lambda — pay-per-use; provisioned concurrency only on checkout path.
-            </li>
-            <li>
-              Route 53 failover over active-active writes — lower cost/complexity; brief propagation
-              delay accepted.
-            </li>
-          </ul>
+          <p class="text-sm text-gray-300">
+            Chose DynamoDB Global Tables over Aurora for simpler operations, with eventual
+            consistency offset by idempotency. API Gateway with Lambda provides pay-per-use scaling,
+            with provisioned concurrency only on the checkout path. Route 53 failover was preferred
+            over active-active writes to reduce cost and complexity, accepting a brief propagation
+            delay.
+          </p>
         </div>
       </aside>
     </div>
