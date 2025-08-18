@@ -202,7 +202,7 @@
           >
           <span
             class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Jenkins</span
+            >Tooling</span
           >
         </div>
       </BaseCard>

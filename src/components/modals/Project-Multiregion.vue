@@ -18,7 +18,7 @@
       <!-- Right: Description + Key decisions (description added above) -->
       <aside class="w-full md:w-1/3 bg-gray-700 p-4 space-y-5 overflow-y-auto">
         <div>
-          <h3 class="font-semibold text-lg text-orange-300">What this is</h3>
+          <h3 class="font-semibold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
             A multi-region, serverless ecommerce backend focused on low-ops, pay-per-use, and
             regional resilience. Optimised for simplicity over active-active write complexity.
@@ -26,7 +26,7 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-xl mb-2 text-orange-300">Key decisions & trade-offs</h3>
+          <h3 class="font-bold text-lg mb-2 text-orange-300">Key decisions & trade-offs</h3>
           <ul class="list-disc list-inside space-y-1 text-sm">
             <li>
               DynamoDB Global Tables over Aurora — simpler ops; eventual consistency acceptable with

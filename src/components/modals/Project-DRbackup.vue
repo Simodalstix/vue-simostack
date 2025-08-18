@@ -18,7 +18,7 @@
       <!-- Right: Description + Key decisions (paragraph style) -->
       <aside class="w-full md:w-1/3 bg-gray-700 p-4 space-y-5 overflow-y-auto">
         <div>
-          <h3 class="font-semibold text-lg text-orange-300">What this is</h3>
+          <h3 class="font-semibold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
             Hands-on DR lab using the Backup &amp; Restore pattern: daily backups with cross-region
             copy, automated recovery via CloudFormation/CDK and Lambda runbooks, and DNS failover
@@ -27,7 +27,7 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-xl mb-2 text-orange-300">Key decisions &amp; trade-offs</h3>
+          <h3 class="font-bold text-lg mb-2 text-orange-300">Key decisions &amp; trade-offs</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
               Chose Backup &amp; Restore over Warm Standby/Pilot Light to minimise steady-state
