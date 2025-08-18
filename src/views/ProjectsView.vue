@@ -15,12 +15,12 @@
 
       <div class="flex flex-col justify-end">
         <div
-          class="bg-purple-700 border-2 border-purple-600 hover:bg-purple-600 text-white p-3 mt-2 rounded-lg text-center shadow-md transition-colors duration-300"
+          class="bg-purple-700 border-2 border-purple-600 hover:bg-purple-600 text-white p-4 mt-2 rounded-lg text-center shadow-md transition-colors duration-300"
         >
           <a
             href="https://github.com/Simodalstix"
             target="_blank"
-            class="flex items-center justify-center gap-2 text-white font-semibold"
+            class="flex items-center justify-center gap-2 text-white font-semibold py-2"
           >
             <img src="/images/project-icons/githubwhite.png" alt="GitHub Logo" class="w-8 h-8" />
             GitHub
@@ -29,9 +29,9 @@
 
         <button
           type="button"
-          class="bg-[#1b2f21] border-2 border-[#9FEF00] hover:bg-[#2a4833] text-white p-3 mt-4 rounded-lg text-center shadow-md transition-colors duration-300 w-full"
+          class="bg-[#1b2f21] border-2 border-[#9FEF00] hover:bg-[#2a4833] text-white p-4 mt-4 rounded-lg text-center shadow-md transition-colors duration-300 w-full"
         >
-          <span class="flex items-center justify-center gap-2 text-white font-semibold">
+          <span class="flex items-center justify-center gap-2 text-white font-semibold py-2">
             <img
               src="/images/project-icons/hackthebox-green.svg"
               alt="Hack The Box Logo"
@@ -43,11 +43,11 @@
       </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
       <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
       <BaseCard
         @click="showMultiregionProject = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Serverless Multi-Region Platform with Security and Monitoring
@@ -95,7 +95,7 @@
       <!-- Creating a Hub-Spoke Network in Azure with a VPN Gateway -->
       <BaseCard
         @click="showAzureProject = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Azure Hub-Spoke Network with a VPN Gateway
@@ -125,7 +125,7 @@
 
       <BaseCard
         @click="showToolingProject = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Terraform-AWS DevOps Toolchain SonarQube & LaunchDarkly
@@ -171,7 +171,7 @@
       <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3 -->
       <BaseCard
         @click="showPrismaModal = true"
-        class="relative rounded-xl p-3 sm:p-4 shadow space-y-2 border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
+        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Full-Stack Blog CI/CD on AWS & Raspberry Pi - With Jenkins
@@ -208,7 +208,7 @@
       <!-- Executing a Database Migration to AWS with Terraform -->
       <BaseCard
         @click="showAwsProject = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Executing a Database Migration to AWS with Terraform
@@ -238,7 +238,7 @@
       <!-- SOC Lab: Wazuh + ELK on VMware -->
       <BaseCard
         @click="showWazuhLabProject = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           SOC Lab: Wazuh + ELK on VMware with Ansible
@@ -273,7 +273,7 @@
       <!-- Deploying Dynatrace Monitoring Agents in Azure -->
       <BaseCard
         @click="showDynatraceProject = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Deploying Dynatrace & Azure Monitoring Agents in Azure
@@ -303,7 +303,7 @@
       <!-- Automating VMware Monitoring and Alerting with Ansible -->
       <BaseCard
         @click="showVmwareProject = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Automating VMware Monitoring and Alerting with Ansible
@@ -335,7 +335,7 @@
       <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
       <BaseCard
         @click="showRaspberry = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Github actions CI/CD Backend API on a Raspberry Pi & Docker
@@ -366,7 +366,7 @@
       <!-- AWS DR & Backup Lab -->
       <BaseCard
         @click="showAwsDrBackupLab = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">AWS DR & Backup Lab (In Progress)</h3>
 
@@ -403,7 +403,7 @@
       <!-- AWS Secure Static Site -->
       <BaseCard
         @click="showAwsSecureStaticSite = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">AWS Secure Static Site (In Progress)</h3>
 
@@ -440,7 +440,7 @@
       <!-- AWS Lambda + SQS + DLQ -->
       <BaseCard
         @click="showAwsLambdaSqsDlq = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">AWS Lambda + SQS + DLQ (In Progress)</h3>
 
@@ -476,7 +476,7 @@
       <!-- AWS Fargate Golden Path -->
       <BaseCard
         @click="showAwsFargateGoldenPath = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">AWS Fargate Golden Path (In Progress)</h3>
 
@@ -512,7 +512,7 @@
 
       <BaseCard
         @click="showBedrock = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">AWS Bedrock Ops Copilot (In Progress)</h3>
         <div class="flex items-center gap-3 mb-3">
@@ -562,7 +562,7 @@
 
       <BaseCard
         @click="showEcsMicroservices = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           ECS Asynchronous Microservices Platform (In Progress)
@@ -604,7 +604,7 @@
       <!-- BaseCard: Amazon Managed Grafana + Okta (CDK) -->
       <BaseCard
         @click="showAwsAmgOktaCdk = true"
-        class="cursor-pointer p-3 sm:p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">Amazon Managed Grafana + Okta (CDK)</h3>
 
@@ -639,7 +639,7 @@
         </div>
       </BaseCard>
 
-      <BaseCard class="bg-gray-800 p-3 sm:p-4 rounded-md border-2 border-slate-500 text-gray-400">
+      <BaseCard class="bg-gray-800 p-4 rounded-md border-2 border-slate-500 text-gray-400">
         <h3 class="text-md font-bold mb-3">More to edit when I get a chance</h3>
         <p class="text-sm"></p>
       </BaseCard>
