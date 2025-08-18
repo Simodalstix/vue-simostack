@@ -4,11 +4,12 @@
       <h1 class="text-4xl font-bold mb-4">My Skills & Certifications</h1>
     </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-8">
-      <div class="col-span-1">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- First column: Infrastructure & DevOps -->
+      <div class="md:col-span-1">
         <div class="mb-8">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Infrastructure & DevOps</h2>
-          <ul class="list-disc space-y-1 text-lg">
+          <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Terraform, CloudFormation – Infrastructure as Code (IaC) for AWS & Azure</li>
             <li>Ansible, GitHub Actions – Provisioning and CI/CD automation</li>
             <li>Docker, VMware – Containerization and virtual lab environments</li>
@@ -17,7 +18,7 @@
 
         <div class="mb-8">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Cloud Platforms</h2>
-          <ul class="list-disc space-y-1 text-lg">
+          <ul class="list-disc space-y-1 text-lg pl-5">
             <li>AWS (EC2, IAM, S3, Lambda, ACM, CloudWatch)</li>
             <li>Azure (App Services, VNets, Key Vault, Log Analytics, Update Mgmt)</li>
           </ul>
@@ -25,7 +26,7 @@
 
         <div class="mb-8">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Scripting & Automation</h2>
-          <ul class="list-disc space-y-1 text-lg">
+          <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Bash, PowerShell, Python – Automation and admin tooling</li>
             <li>Cron, systemd timers – Task scheduling and service control</li>
             <li>JSON, YAML – Config formats for cloud, IaC, and CI/CD</li>
@@ -33,10 +34,11 @@
         </div>
       </div>
 
-      <div class="col-span-1">
+      <!-- Second column: Systems Administration -->
+      <div class="md:col-span-1">
         <div class="mb-8">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Systems Administration</h2>
-          <ul class="list-disc space-y-1 text-lg">
+          <ul class="list-disc space-y-1 text-lg pl-5">
             <li>RHEL, Ubuntu, Windows Server – Multi-platform environments</li>
             <li>Active Directory, Group Policy (GPO), pfSense, DNS</li>
             <li>DHCP, NAT, SSH hardening, access control</li>
@@ -45,7 +47,7 @@
 
         <div class="mb-8">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Security & Monitoring</h2>
-          <ul class="list-disc space-y-1 text-lg">
+          <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Sysmon, ELK Stack, Wazuh, Splunk, CloudWatch, Azure Monitor</li>
             <li>Log Analytics, Data Collection Rules (DCR), Dynatrace OneAgent</li>
             <li>PKI, OpenVPN, IPSec (Strongswan), SSH key-based auth</li>
@@ -54,7 +56,7 @@
 
         <div class="mb-8">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Web & Networking</h2>
-          <ul class="list-disc space-y-1 text-lg">
+          <ul class="list-disc space-y-1 text-lg pl-5">
             <li>HTTP, NGINX, Let's Encrypt – SSL/TLS and reverse proxy setup</li>
             <li>JavaScript, Vue.js, React</li>
             <li>xfreerdp, RDP, TeamViewer – Remote access tooling</li>
@@ -62,7 +64,8 @@
         </div>
       </div>
 
-      <div class="col-span-2">
+      <!-- Third column: Certifications -->
+      <div class="md:col-span-2">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="col-span-2">
             <div class="rounded-t-lg border border-purple-700 bg-purple-700">
