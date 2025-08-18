@@ -44,6 +44,45 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      <!-- AWS DR & Backup Lab -->
+      <BaseCard
+        @click="showAwsDrBackupLab = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">AWS DR & Backup - Rapid Recovery</h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/aws-icons/backup.svg" alt="AWS Backup" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/rds.svg" alt="RDS" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/ebs.svg" alt="EBS" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/route53.svg" alt="Route 53" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Backup</span
+          >
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >DR</span
+          >
+          <span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >Automation</span
+          ><span
+            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+            >CDK</span
+          >
+        </div>
+      </BaseCard>
       <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
       <BaseCard
         @click="showMultiregionProject = true"
@@ -363,43 +402,6 @@
         </div>
       </BaseCard>
 
-      <!-- AWS DR & Backup Lab -->
-      <BaseCard
-        @click="showAwsDrBackupLab = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">AWS DR & Backup Lab (In Progress)</h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/aws-icons/backup.svg" alt="AWS Backup" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/rds.svg" alt="RDS" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/ebs.svg" alt="EBS" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/route53.svg" alt="Route 53" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Backup</span
-          >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >DR</span
-          >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-            >Automation</span
-          >
-        </div>
-      </BaseCard>
-
       <!-- AWS Secure Static Site -->
       <BaseCard
         @click="showAwsSecureStaticSite = true"
@@ -645,6 +647,12 @@
       </BaseCard>
     </div>
 
+    <ProjectDRbackup
+      :visible="showAwsDrBackupLab"
+      @close="showAwsDrBackupLab = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <Project-Multiregion
       :visible="showMultiregionProject"
       @close="showMultiregionProject = false"
@@ -721,6 +729,7 @@ import ProjectMultiregion from '../components/modals/Project-Multiregion.vue'
 import WazuhSOClab from '../components/modals/Projects-Wazuh.vue'
 import HtbModal from '../components/modals/HackTheBox.vue'
 import DeveloperTooling from '../components/modals/Project-Tooling.vue'
+import ProjectDRbackup from '@/components/modals/Project-DRbackup.vue'
 const showAwsDrBackupLab = ref(false)
 const showAwsSecureStaticSite = ref(false)
 const showAwsLambdaSqsDlq = ref(false)

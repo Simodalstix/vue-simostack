@@ -46,7 +46,7 @@
 
     <!-- New Row: Reliability, Cost, Observability (concise + accurate today) -->
     <div
-      class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-gray-800 text-gray-200 border-t border-gray-700"
+      class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
