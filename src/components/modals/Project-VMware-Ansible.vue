@@ -6,7 +6,7 @@
   >
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Main Content: Diagram -->
-      <div class="md:w-2/3 p-6 flex-grow">
+      <div class="md:w-2/3 p-4 sm:p-6 flex-grow">
         <img
           src="/images/project-modal-images/ansible-vmware.jpg"
           alt="VMware Monitoring Lab Diagram"
@@ -15,7 +15,7 @@
       </div>
 
       <!-- Right-Hand Sidebar -->
-      <aside class="w-full md:w-1/3 bg-gray-700 p-6 space-y-5 overflow-y-auto">
+      <aside class="w-full md:w-1/3 bg-gray-700 p-4 sm:p-6 space-y-4 sm:space-y-5 overflow-y-auto">
         <div>
           <h3 class="font-bold text-xl mb-2 text-orange-300">Key Features</h3>
           <ul class="list-disc list-inside space-y-1 text-base">
@@ -38,8 +38,10 @@
       </aside>
     </div>
     <!-- Footer -->
-    <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
-      <p class="text-gray-400 italic w-2/3">
+    <footer
+      class="border-t border-gray-700 p-4 flex flex-col sm:flex-row justify-between items-center text-sm gap-4"
+    >
+      <p class="text-gray-400 italic w-full sm:w-2/3">
         This project builds a realistic enterprise monitoring lab using VMware Workstation, with
         automated provisioning and configuration of Linux and Windows VMs using Ansible playbooks
         and roles.
@@ -47,7 +49,7 @@
       <a
         href="https://github.com/Simodalstix/ansible-splunk-setup"
         target="_blank"
-        class="inline-block bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+        class="inline-block bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 w-full sm:w-auto text-center"
       >
         View on GitHub
       </a>

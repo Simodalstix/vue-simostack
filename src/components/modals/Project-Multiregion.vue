@@ -38,8 +38,10 @@
       </aside>
     </div>
     <!-- Footer -->
-    <footer class="border-t border-gray-700 p-4 flex justify-between items-center text-sm">
-      <p class="text-gray-400 italic w-2/3">
+    <footer
+      class="border-t border-gray-700 p-4 flex flex-col sm:flex-row justify-between items-center text-sm gap-4"
+    >
+      <p class="text-gray-400 italic w-full sm:w-2/3">
         A multi-region, serverless AWS architecture with automated CI/CD pipelines, global routing,
         and high availability. Designed as a flexible, real-world reference for modern cloud
         deployments.
@@ -47,7 +49,7 @@
       <a
         href="https://github.com/Simodalstix/AWS-multiregion-ecommerce"
         target="_blank"
-        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 w-full sm:w-auto text-center"
       >
         View on GitHub
       </a>
