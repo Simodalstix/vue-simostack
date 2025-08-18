@@ -38,7 +38,7 @@
               Lastpolar@gmail.com
             </a>
             <a
-              href="https://linkedin.com/in/yourprofile"
+              href="https://www.linkedin.com/in/simonparker-dev/"
               target="_blank"
               class="text-orange-300 hover:underline"
             >
