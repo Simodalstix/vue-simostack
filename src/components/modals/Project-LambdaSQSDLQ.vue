@@ -18,7 +18,7 @@
       <!-- Right: Description + Key patterns -->
       <aside class="w-full md:w-1/3 bg-gray-700 p-4 space-y-5 overflow-y-auto">
         <div>
-          <h3 class="font-semibold text-lg text-orange-300">Description</h3>
+          <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
             A production-ready, event-driven ingestion pipeline on AWS using API Gateway, Lambda,
             SQS, DynamoDB, and EventBridge. It demonstrates how platform teams can embed resilience,
@@ -28,7 +28,7 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability & Fault Tolerance</h3>
+          <h3 class="font-bold text-lg text-orange-300">Reliability & Fault Tolerance</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-sm text-gray-300">
               Implements resilience mechanisms: DLQ with controlled redrive, idempotency in
@@ -66,7 +66,7 @@
         <ul class="list-disc list-inside space-y-1 text-sm">
           <li>CloudWatch dashboards + alarms preconfigured.</li>
           <li>Structured JSON logging with correlation IDs.</li>
-          <li>X-Ray tracing + Log Insights queries for troubleshooting.</li>
+          <li>X-Ray tracing + Log Insights for debugging</li>
         </ul>
       </div>
     </div>

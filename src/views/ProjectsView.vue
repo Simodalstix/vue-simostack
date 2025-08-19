@@ -66,19 +66,15 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Backup</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >DR</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
-          ><span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CDK</span
           >
         </div>
@@ -115,19 +111,15 @@
           />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >AWS</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CDK</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
-          ><span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Serverless</span
           >
         </div>
@@ -156,19 +148,15 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Serverless</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Queues</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Reliability</span
-          ><span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CDK</span
           >
         </div>
@@ -190,18 +178,57 @@
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Azure</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >IaC</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Networking</span
           >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showBedrockLandingzone = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">AWS Bedrock Landing Zone Architecture</h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img
+            src="/images/main-tools/terraform.svg"
+            alt="Terraform Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/aws-icons/bedrock.png" alt="Bedrock Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/organizations.svg"
+            alt="Organizations Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/cloudtrail.svg"
+            alt="CloudTrail Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/guardduty.svg"
+            alt="GuardDuty Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Multi-Account
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Landing Zone
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Enterprise AI
+          </span>
         </div>
       </BaseCard>
 
@@ -231,20 +258,16 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Terraform</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >AWS</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CI/CD</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Tooling</span
           >
         </div>
@@ -269,19 +292,15 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Full-Stack</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Docker</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >AWS</span
-          ><span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
           >
         </div>
@@ -302,16 +321,13 @@
           <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >AWS</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >IaC</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Migration</span
           >
         </div>
@@ -336,17 +352,14 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >VMware</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >SIEM</span
           >
 
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
           >
         </div>
@@ -367,16 +380,13 @@
           <img src="/images/project-icons/azure-vm.png" alt="Azure VM Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Azure</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Monitoring</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
           >
         </div>
@@ -399,16 +409,13 @@
           <img src="/images/project-icons/splunk2.png" alt="Grafana Icon" class="h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >VMware</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Monitoring</span
           >
         </div>
@@ -430,16 +437,13 @@
           <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Docker</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Backend</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CI/CD</span
           >
         </div>
@@ -467,16 +471,13 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >S3</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CDN</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Security</span
           >
         </div>
@@ -504,68 +505,15 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Containers</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Fargate</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Observability</span
           >
-        </div>
-      </BaseCard>
-
-      <BaseCard
-        @click="showBedrock = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">AWS Bedrock Ops Copilot (In Progress)</h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img
-            src="/images/project-icons/bedrock.png"
-            alt="Bedrock Icon"
-            class="w-8 h-8 rounded-md"
-          /><img
-            src="/images/project-icons/eventbridge.svg"
-            alt="EventBridge Icon"
-            class="w-8 h-8 rounded-md"
-          /><img
-            src="/images/project-icons/DynamoDB.svg"
-            alt="EventBridge Icon"
-            class="w-8 h-8 rounded-md"
-          /><img
-            src="/images/project-icons/ssm.png"
-            alt="EventBridge Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/slack.png" alt="Slack Icon" class="w-8 h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
-            AWS Bedrock
-          </span>
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
-            EventBridge
-          </span>
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
-            IR
-          </span>
         </div>
       </BaseCard>
 
@@ -592,19 +540,13 @@
           />
         </div>
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
             ECS Fargate
           </span>
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
             SQS
           </span>
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
-          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
             Step Functions
           </span>
         </div>
@@ -633,16 +575,13 @@
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Observability</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >SSO</span
           >
-          <span
-            class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CDK</span
           >
         </div>
@@ -663,6 +602,12 @@
     <Project-Multiregion
       :visible="showMultiregionProject"
       @close="showMultiregionProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+    <Project-Bedrock-Landingzone
+      :visible="showBedrockLandingzone"
+      @close="showBedrockLandingzone = false"
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
@@ -745,11 +690,12 @@ import HtbModal from '../components/modals/HackTheBox.vue'
 import DeveloperTooling from '../components/modals/Project-Tooling.vue'
 import ProjectDRbackup from '@/components/modals/Project-DRbackup.vue'
 import ProjectLambdaSqsDlq from '@/components/modals/Project-LambdaSQSDLQ.vue'
+import ProjectBedrockLandingzone from '@/components/modals/Project-Bedrock-Landingzone.vue'
 const showAwsDrBackupLab = ref(false)
 const showAwsSecureStaticSite = ref(false)
 const showAwsLambdaSqsDlq = ref(false)
 const showAwsFargateGoldenPath = ref(false)
-
+const showBedrockLandingzone = ref(false)
 const showToolingProject = ref(false)
 const showHtbModal = ref(false)
 const showPrismaModal = ref(false)
