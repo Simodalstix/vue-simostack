@@ -271,34 +271,40 @@
       </BaseCard>
 
       <BaseCard
-        @click="showPilotLightDR = true"
+        @click="showAwsGitopsGP = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">E-commerce Pilot Light Disaster Recovery</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          Enterprise EKS Multi-Tier Application with GitOps
+        </h3>
+
         <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/eks.svg" alt="EKS" class="w-8 h-8 rounded-md" />
+
+          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/helm2.png" alt="Helm" class="w-8 h-8 rounded-md" />
           <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          /><img src="/images/aws-icons/alb.svg" alt="ALB Icon" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/route53.svg" alt="Route 53 Icon" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/aws-icons/step-functions.svg"
-            alt="Step Functions Icon"
+            src="/images/project-icons/prometheus.png"
+            alt="Prometheus"
             class="w-8 h-8 rounded-md"
           />
+          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
         </div>
+
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Pilot Light
+            GitOps
           </span>
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Cross-Region DR
+            Kubernetes
           </span>
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Auto Failover
+            Monitoring
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            IaC
           </span>
         </div>
       </BaseCard>
@@ -341,6 +347,39 @@
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Tooling</span
           >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showPilotLightDR = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">E-commerce Pilot Light Disaster Recovery</h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          /><img src="/images/aws-icons/alb.svg" alt="ALB Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/route53.svg" alt="Route 53 Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/step-functions.svg"
+            alt="Step Functions Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Pilot Light
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Cross-Region DR
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Auto Failover
+          </span>
         </div>
       </BaseCard>
 
@@ -520,40 +559,6 @@
         </div>
       </BaseCard>
 
-      <!-- AWS Secure Static Site -->
-      <BaseCard
-        @click="showAwsSecureStaticSite = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">AWS Secure Static Site (In Progress)</h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/aws-icons/s3.svg" alt="S3" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/cloudfront.svg" alt="CloudFront" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/waf.svg" alt="AWS WAF" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/acm.svg" alt="ACM" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/route53.svg" alt="Route 53" class="w-8 h-8 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >S3</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CDN</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Security</span
-          >
-        </div>
-      </BaseCard>
-
       <!-- BaseCard: Amazon Managed Grafana + Okta (CDK) -->
       <BaseCard
         @click="showAwsAmgOktaCdk = true"
@@ -634,6 +639,14 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
+
+    <ProjectEKSGitopsGP
+      :visible="showAwsGitopsGP"
+      @close="showAwsGitopsGP = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+
     <DynatraceModal
       :visible="showDynatraceProject"
       @close="showDynatraceProject = false"
@@ -709,9 +722,10 @@ import ProjectLambdaSqsDlq from '@/components/modals/Project-LambdaSQSDLQ.vue'
 import ProjectBedrockLandingzone from '@/components/modals/Project-Bedrock-Landingzone.vue'
 import ProjectFargateGoldenPath from '@/components/modals/Project-FargateGoldenPath.vue'
 import ProjectPilotLight from '@/components/modals/Project-Pilot-Light.vue'
+import ProjectEKSGitopsGP from '@/components/modals/Project-EKS-Gitops-GP.vue'
+const showAwsGitopsGP = ref(false)
 const showPilotLightDR = ref(false)
 const showAwsDrBackupLab = ref(false)
-const showAwsSecureStaticSite = ref(false)
 const showAwsLambdaSqsDlq = ref(false)
 const showAwsFargateGoldenPath = ref(false)
 const showBedrockLandingzone = ref(false)
