@@ -232,6 +232,42 @@
         </div>
       </BaseCard>
 
+      <!-- AWS Fargate Golden Path -->
+      <BaseCard
+        @click="showAwsFargateGoldenPath = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          ECS Fargate Golden Path + Chaos & Recovery
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/aws-icons/ecs.svg" alt="ECR" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/code-deploy.svg" alt="ECS" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/ssm.svg" alt="SSM" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Containers</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Fargate</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Observability</span
+          >
+        </div>
+      </BaseCard>
+
       <BaseCard
         @click="showToolingProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
@@ -483,40 +519,6 @@
         </div>
       </BaseCard>
 
-      <!-- AWS Fargate Golden Path -->
-      <BaseCard
-        @click="showAwsFargateGoldenPath = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">AWS Fargate Golden Path (In Progress)</h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/aws-icons/ecs.svg" alt="ECR" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/fargate.svg" alt="ECS" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/ssm.svg" alt="SSM" class="w-8 h-8 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Containers</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Fargate</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Observability</span
-          >
-        </div>
-      </BaseCard>
-
       <BaseCard
         @click="showEcsMicroservices = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
@@ -618,6 +620,13 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
+
+    <ProjectFargateGoldenPath
+      :visible="showAwsFargateGoldenPath"
+      @close="showAwsFargateGoldenPath = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <DynatraceModal
       :visible="showDynatraceProject"
       @close="showDynatraceProject = false"
@@ -691,6 +700,7 @@ import DeveloperTooling from '../components/modals/Project-Tooling.vue'
 import ProjectDRbackup from '@/components/modals/Project-DRbackup.vue'
 import ProjectLambdaSqsDlq from '@/components/modals/Project-LambdaSQSDLQ.vue'
 import ProjectBedrockLandingzone from '@/components/modals/Project-Bedrock-Landingzone.vue'
+import ProjectFargateGoldenPath from '@/components/modals/Project-FargateGoldenPath.vue'
 const showAwsDrBackupLab = ref(false)
 const showAwsSecureStaticSite = ref(false)
 const showAwsLambdaSqsDlq = ref(false)
