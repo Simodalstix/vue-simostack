@@ -238,7 +238,7 @@
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          ECS Fargate Golden Path + Chaos & Recovery
+          ECS Fargate Golden Path + Resilience Scenarios
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
@@ -249,10 +249,10 @@
             class="w-8 h-8 rounded-md"
           />
           <img src="/images/aws-icons/ecs.svg" alt="ECR" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/fargate.svg" alt="SSM" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/code-deploy.svg" alt="ECS" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-8 h-8 rounded-md" />
           <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/ssm.svg" alt="SSM" class="w-8 h-8 rounded-md" />
         </div>
 
         <div class="flex flex-wrap gap-2">
@@ -264,7 +264,42 @@
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Observability</span
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CDK</span
           >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showPilotLightDR = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">E-commerce Pilot Light Disaster Recovery</h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          /><img src="/images/aws-icons/alb.svg" alt="ALB Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/route53.svg" alt="Route 53 Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/step-functions.svg"
+            alt="Step Functions Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Pilot Light
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Cross-Region DR
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Auto Failover
+          </span>
         </div>
       </BaseCard>
 
@@ -519,41 +554,6 @@
         </div>
       </BaseCard>
 
-      <BaseCard
-        @click="showEcsMicroservices = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          ECS Asynchronous Microservices Platform (In Progress)
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/ecs.png" alt="ECS Icon" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/sqs.png" alt="SQS Icon" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/DynamoDB.svg"
-            alt="DynamoDB Icon"
-            class="w-8 h-8 rounded-md"
-          />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            ECS Fargate
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            SQS
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Step Functions
-          </span>
-        </div>
-      </BaseCard>
-
       <!-- BaseCard: Amazon Managed Grafana + Okta (CDK) -->
       <BaseCard
         @click="showAwsAmgOktaCdk = true"
@@ -624,6 +624,13 @@
     <ProjectFargateGoldenPath
       :visible="showAwsFargateGoldenPath"
       @close="showAwsFargateGoldenPath = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+
+    <ProjectPilotLight
+      :visible="showPilotLightDR"
+      @close="showPilotLightDR = false"
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
@@ -701,6 +708,8 @@ import ProjectDRbackup from '@/components/modals/Project-DRbackup.vue'
 import ProjectLambdaSqsDlq from '@/components/modals/Project-LambdaSQSDLQ.vue'
 import ProjectBedrockLandingzone from '@/components/modals/Project-Bedrock-Landingzone.vue'
 import ProjectFargateGoldenPath from '@/components/modals/Project-FargateGoldenPath.vue'
+import ProjectPilotLight from '@/components/modals/Project-Pilot-Light.vue'
+const showPilotLightDR = ref(false)
 const showAwsDrBackupLab = ref(false)
 const showAwsSecureStaticSite = ref(false)
 const showAwsLambdaSqsDlq = ref(false)

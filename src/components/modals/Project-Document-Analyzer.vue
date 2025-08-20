@@ -2,17 +2,17 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="ECS Fargate Golden Path + Resilience Scenarios"
+    title="Intelligent Document Contract Analyzer"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Left: Architecture Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
-        <img
-          src="/images/project-modal-images/ecs-golden-path-diagram.svg"
-          alt="ECS Fargate Golden Path Architecture Diagram"
+        <!-- <img
+          src="/images/project-modal-images/document-analyzer-diagram.svg"
+          alt="Document Contract Analyzer Architecture Diagram"
           class="object-contain rounded-lg w-full"
-        />
+        /> -->
       </div>
 
       <!-- Right: Description + Key decisions -->
@@ -20,9 +20,9 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Production-ready ECS Fargate web service with comprehensive observability, blue/green
-            deployments, and built-in chaos engineering scenarios for incident response training.
-            Deploy once, break things safely, learn how to fix them.
+            AI-powered legal contract analysis system using Amazon Bedrock (Claude) and Textract.
+            Upload contracts, get intelligent risk assessment, key term extraction, and compliance
+            checking in under 60 seconds. Built with full TypeScript stack for production use.
           </p>
         </div>
 
@@ -30,9 +30,10 @@
           <h3 class="font-bold text-lg text-orange-300">Key decisions & trade-offs</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Chose Fargate over EC2 for no server management, accepting higher per-task cost for
-              simplicity. Blue/green via CodeDeploy delivers zero-downtime updates with
-              auto-rollback. One NAT Gateway cuts cost while keeping HA across AZs.
+              Chose serverless Lambda over containers for cost efficiency and auto-scaling. Bedrock
+              Claude provides superior legal analysis vs other AI models. Direct S3 uploads via
+              presigned URLs reduce Lambda costs. 90-day lifecycle balances compliance with storage
+              costs.
             </p>
           </div>
         </div>
@@ -46,31 +47,28 @@
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Multi-AZ: 2 tasks across availability zones</li>
-          <li>Auto-rollback: CodeDeploy on ALB 5xx alarms</li>
-          <li>Health checks: ALB monitors /healthz endpoint</li>
-          <li>
-            Break/fix scenarios: Safe failure injection via SSM parameters (todo: add Fault
-            Injection Simulator)
-          </li>
+          <li>Multi-region: Deploy in AWS Sydney for data residency</li>
+          <li>Error handling: Retry logic with dead letter queues</li>
+          <li>Processing status: Real-time updates via DynamoDB</li>
+          <li>Fallback analysis: Graceful degradation if AI fails</li>
         </ul>
       </div>
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Target: ~$50-100/month for learning/demo</li>
-          <li>Optimizations: Single NAT Gateway, Aurora Serverless v2</li>
-          <li>Drivers: Fargate compute, Aurora ACUs, ALB hours</li>
-          <li>Scaling: Tunable task sizes, autoscaling</li>
+          <li>Target: ~$20-50/month for moderate usage</li>
+          <li>Optimizations: Serverless, on-demand billing, lifecycle policies</li>
+          <li>Drivers: Bedrock tokens, Lambda invocations, S3 storage</li>
+          <li>Scaling: Pay-per-use model scales to zero</li>
         </ul>
       </div>
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Dashboards: ALB/ECS/RDS metrics in CloudWatch</li>
-          <li>Tracing: X-Ray tracing with service maps</li>
-          <li>Alarms: 10+ CloudWatch alarms with SNS notifications</li>
-          <li>Logs: Structured JSON with request correlation</li>
+          <li>Tracing: X-Ray end-to-end request tracking</li>
+          <li>Metrics: CloudWatch dashboards for all services</li>
+          <li>Logs: Structured logging with correlation IDs</li>
+          <li>Monitoring: Processing time and accuracy metrics</li>
         </ul>
       </div>
     </div>
@@ -82,26 +80,26 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem & scope:</span>
-          Demonstrate production-ready ECS Fargate patterns with comprehensive observability and
-          safe chaos engineering for incident response training. Includes guided break/fix scenarios
-          and runbooks for MTTR improvement.
+          Automate legal contract review to save hours of manual analysis. Extract key terms, assess
+          risks, identify unusual clauses, and check compliance using AI. Demonstrates modern
+          serverless architecture with AI integration and production-ready security.
         </div>
       </div>
 
       <div class="flex gap-3 w-full sm:w-auto">
         <a
-          href="https://github.com/Simodalstix/AWS-ecs-fargate-golden-path"
+          href="https://github.com/your-username/AWS-ai-document-analyzer"
           target="_blank"
           class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
         >
           View on GitHub
         </a>
         <a
-          href="https://aws.amazon.com/blogs/aws/accelerate-safe-software-releases-with-new-built-in-blue-green-deployments-in-amazon-ecs/"
+          href="https://aws.amazon.com/bedrock/"
           target="_blank"
           class="bg-gray-600 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
         >
-          Inspiration
+          Learn Bedrock
         </a>
       </div>
     </footer>
