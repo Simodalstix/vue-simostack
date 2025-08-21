@@ -162,30 +162,47 @@
         </div>
       </BaseCard>
 
-      <!-- Creating a Hub-Spoke Network in Azure with a VPN Gateway -->
       <BaseCard
-        @click="showAzureProject = true"
+        @click="showAzureContainerApps = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Azure Hub-Spoke Network with a VPN Gateway
+          Azure Container Apps – Enterprise DevOps with Change Management
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/azure-vpn.png" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/azure-vm.png" alt="Azure VNet Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img
+            src="/images/azure-icons/azure-devops.svg"
+            alt="Devops Pipeline Icon"
+            class="w-8 h-8"
+          />
+          <img
+            src="/images/azure-icons/worker-container-app.svg"
+            alt="Azure Container Apps Icon"
+            class="w-8 h-8"
+          /><img
+            src="/images/azure-icons/key-vaults.svg"
+            alt="Azure Container Apps Icon"
+            class="w-8 h-8"
+          /><img
+            src="/images/azure-icons/application-insights.svg"
+            alt="Azure Container Apps Icon"
+            class="w-8 h-8"
+          />
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Azure</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >IaC</span
+            >Serverless</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Networking</span
+            >CI/CD</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >IaC</span
           >
         </div>
       </BaseCard>
@@ -309,43 +326,70 @@
         </div>
       </BaseCard>
 
+      <!-- Creating a Hub-Spoke Network in Azure with a VPN Gateway -->
       <BaseCard
-        @click="showToolingProject = true"
+        @click="showAzureProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Terraform-AWS DevOps Toolchain SonarQube & LaunchDarkly
+          Azure Hub-Spoke Network with a VPN Gateway
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/azure-vpn.png" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VNet Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Azure</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >IaC</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Networking</span
+          >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showDocumentAnalyzer = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          AWS AI Document Analyzer – Textract & Claude
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
-          <!-- Update icon paths to match your assets -->
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/csharp.png" alt="Csharp Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/react-2.svg" alt="React" class="w-8 h-8" />
           <img
-            src="/images/project-icons/github-actions.svg"
-            alt="GitHub Actions Icon"
-            class="w-8 h-8"
+            src="/images/aws-icons/apigateway.svg"
+            alt="API Gateway"
+            class="w-8 h-8 rounded-md"
           />
-          <img
-            src="/images/project-icons/launchdarkly.svg"
-            alt="LaunchDarkly Icon"
-            class="w-8 h-8"
-          /><img src="/images/project-icons/sonarqube.png" alt="SonarQube Icon" class="h-8" />
+          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
+
+          <img src="/images/aws-icons/textract.svg" alt="Textract" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" /><img
+            src="/images/aws-icons/s3.svg"
+            alt="S3"
+            class="w-8 h-8 rounded-md"
+          />
         </div>
 
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Terraform</span
+            >Serverless</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >AWS</span
+            >OCR</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CI/CD</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Tooling</span
+            >AI</span
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Event Driven</span
           >
         </div>
       </BaseCard>
@@ -423,6 +467,47 @@
         </div>
       </BaseCard>
 
+      <BaseCard
+        @click="showToolingProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Terraform-AWS DevOps Toolchain SonarQube & LaunchDarkly
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <!-- Update icon paths to match your assets -->
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/csharp.png" alt="Csharp Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/github-actions.svg"
+            alt="GitHub Actions Icon"
+            class="w-8 h-8"
+          />
+          <img
+            src="/images/project-icons/launchdarkly.svg"
+            alt="LaunchDarkly Icon"
+            class="w-8 h-8"
+          /><img src="/images/project-icons/sonarqube.png" alt="SonarQube Icon" class="h-8" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Terraform</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >AWS</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CI/CD</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Tooling</span
+          >
+        </div>
+      </BaseCard>
+
       <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3
       <BaseCard
         @click="showPrismaModal = true"
@@ -483,39 +568,6 @@
         </div>
       </BaseCard> -->
 
-      <BaseCard
-        @click="showAzureContainerAppsProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Azure Container Apps Pipeline - IaC + Jenkins CI/CD (In Progress)
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
-          <img
-            src="/images/project-icons/worker-container-app.svg"
-            alt="Azure Container Apps Icon"
-            class="w-8 h-8"
-          />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Azure</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Serverless</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CI/CD</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >IaC</span
-          >
-        </div>
-      </BaseCard>
-
       <!-- SOC Lab: Wazuh + ELK on VMware -->
       <BaseCard
         @click="showWazuhLabProject = true"
@@ -560,7 +612,7 @@
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/azure-vm.png" alt="Azure VM Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VM Icon" class="w-8 h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
@@ -685,13 +737,19 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
-    <Project-Bedrock-Landingzone
+    <ProjectBedrockLandingzone
       :visible="showBedrockLandingzone"
       @close="showBedrockLandingzone = false"
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
 
+    <ProjectDocumentAnalyzer
+      :visible="showDocumentAnalyzer"
+      @close="showDocumentAnalyzer = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <Project-LambdaSqsDlq
       :visible="showAwsLambdaSqsDlq"
       @close="showAwsLambdaSqsDlq = false"
@@ -720,6 +778,12 @@
       height="max-h-[92vh]"
     />
 
+    <ProjectAzureContainerApps
+      :visible="showAzureContainerApps"
+      @close="showAzureContainerApps = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <DynatraceModal
       :visible="showDynatraceProject"
       @close="showDynatraceProject = false"
@@ -796,6 +860,12 @@ import ProjectBedrockLandingzone from '@/components/modals/Project-Bedrock-Landi
 import ProjectFargateGoldenPath from '@/components/modals/Project-FargateGoldenPath.vue'
 import ProjectPilotLight from '@/components/modals/Project-Pilot-Light.vue'
 import ProjectEKSGitopsGP from '@/components/modals/Project-EKS-Gitops-GP.vue'
+import ProjectAzureContainerApps from '@/components/modals/Project-Azure-ContainerApps.vue'
+import ProjectDocumentAnalyzer from '@/components/modals/Project-Document-Analyzer.vue'
+const showDocumentAnalyzer = ref(false)
+const showAzureContainerApps = ref(false)
+const showAwsAmgOktaCdk = ref(false)
+const showK3sGitops = ref(false)
 const showAwsGitopsGP = ref(false)
 const showPilotLightDR = ref(false)
 const showAwsDrBackupLab = ref(false)

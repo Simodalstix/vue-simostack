@@ -2,14 +2,14 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Azure Container Apps + Jenkins IaC Pipeline"
+    title="Azure Container Apps - Enterprise DevOps Pipeline with Change Management"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Left: Architecture Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
         <img
-          src="/images/project-modal-images/azure-container-apps-diagram.svg"
+          src="/images/project-modal-images/azure-devops-containers-diagram.svg"
           alt="Azure Container Apps Architecture Diagram"
           class="object-contain rounded-lg w-full"
         />
@@ -20,9 +20,10 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Production-ready Azure Container Apps platform with Terraform Infrastructure as Code and
-            Jenkins CI/CD pipelines. Features comprehensive monitoring, security best practices, and
-            multi-environment deployment with automated quality gates and approval workflows.
+            Enterprise-grade Azure Container Apps platform with Terraform IaC and Azure DevOps
+            pipelines. Includes compliance controls, change management, multi-stage deployment
+            across dev, staging, and prod, security scanning, and monitoring aligned with 12-factor
+            principles.
           </p>
         </div>
 
@@ -30,9 +31,10 @@
           <h3 class="font-bold text-lg text-orange-300">Key decisions & trade-offs</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Chose Container Apps over AKS for serverless simplicity and auto-scaling, accepting
-              less Kubernetes control. Jenkins over Azure DevOps for flexibility. Terraform modules
-              enable multi-environment consistency with shared infrastructure components.
+              Chose Container Apps over AKS for serverless simplicity. Picked Azure DevOps over
+              Jenkins for native integration and compliance features. Shared ACR and Log Analytics
+              for cost efficiency, accepting less environment isolation (alt: separate per
+              environment for strict compliance).
             </p>
           </div>
         </div>
@@ -44,22 +46,23 @@
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Enterprise Features</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Multi-replica: Auto-scaling 1-10 replicas based on load</li>
-          <li>Health checks: Liveness and readiness probes on /health</li>
-          <li>Blue/green: Single revision mode with traffic splitting</li>
-          <li>Availability tests: Multi-region health monitoring</li>
-          <li>Managed identity: Secure Key Vault integration</li>
+          <li>Compliance: Manual approvals, audit trails, change management</li>
+          <li>Security: Checkov scanning, Key Vault, least privilege access</li>
+          <li>Quality Gates: Format, lint, security checks</li>
+          <li>Multi-Environment: Dev → Staging → Production workflow</li>
+          <li>Immutable: IaC only, no manual changes</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Architecture</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Target: ~$30-80/month for dev/prod environments</li>
-          <li>Serverless: Pay-per-use with automatic scale-to-zero</li>
-          <li>Drivers: Container Apps compute, Log Analytics, ACR</li>
-          <li>Optimization: Shared resources, right-sized replicas</li>
+          <li>12-Factor App: Config via env vars, stateless containers</li>
+          <li>SRP: Single-responsibility modules/pipelines</li>
+          <li>Separation: Infrastructure, application, and CI/CD isolated</li>
+          <li>Declarative: Terraform & YAML only</li>
+          <li>Serverless: Auto-scaling Container Apps with zero-downtime</li>
         </ul>
       </div>
       <div>
@@ -80,9 +83,10 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem & scope:</span>
-          Demonstrate production-ready Azure Container Apps deployment with Infrastructure as Code,
-          automated CI/CD pipelines, comprehensive monitoring, and security best practices. Includes
-          dev/prod environments with quality gates and manual approval workflows.
+          Demonstrate enterprise-grade Azure Container Apps platform with compliance controls,
+          change management, and security best practices. Features three-environment deployment,
+          automated quality gates, manual approvals, and comprehensive audit trails for enterprise
+          use.
         </div>
       </div>
 

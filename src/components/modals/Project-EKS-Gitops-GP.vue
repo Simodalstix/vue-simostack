@@ -47,9 +47,9 @@
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Multi-AZ: 3 worker nodes across availability zones</li>
+          <li>Multi-AZ: 3 worker nodes across AZs</li>
           <li>Auto-scaling: HPA and Cluster Autoscaler</li>
-          <li>Health checks: Kubernetes liveness/readiness probes</li>
+          <li>Health checks: Liveness/Readiness probes</li>
           <li>GitOps: Automated drift detection and self-healing</li>
         </ul>
       </div>
@@ -58,14 +58,14 @@
         <ul class="list-disc list-inside space-y-1 text-sm">
           <li>Target: ~$130/month for dev environment</li>
           <li>Optimizations: Spot instances, single NAT Gateway, GP3 storage</li>
-          <li>Drivers: EKS control plane, EC2 compute, data transfer</li>
-          <li>Scaling: Dynamic node scaling based on demand</li>
+          <li>Cost drivers: EKS control plane, EC2, data transfer</li>
+          <li>Scaling: Dynamic node scaling on demand</li>
         </ul>
       </div>
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Dashboards: Grafana with Kubernetes cluster metrics</li>
+          <li>Grafana dashboards - Cluster metrics</li>
           <li>Metrics: Prometheus scraping all pods and nodes</li>
           <li>Alerting: AlertManager with multi-channel notifications</li>
           <li>GitOps: ArgoCD application health monitoring</li>

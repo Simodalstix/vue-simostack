@@ -8,11 +8,11 @@
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Left: Architecture Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
-        <!-- <img
-          src="/images/project-modal-images/document-analyzer-diagram.svg"
+        <img
+          src="/images/project-modal-images/bedrock-document-analyzer-diagram.svg"
           alt="Document Contract Analyzer Architecture Diagram"
           class="object-contain rounded-lg w-full"
-        /> -->
+        />
       </div>
 
       <!-- Right: Description + Key decisions -->
@@ -47,10 +47,10 @@
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Multi-region: Deploy in AWS Sydney for data residency</li>
+          <li>Region: Sydney for AU data residency</li>
           <li>Error handling: Retry logic with dead letter queues</li>
           <li>Processing status: Real-time updates via DynamoDB</li>
-          <li>Fallback analysis: Graceful degradation if AI fails</li>
+          <li>Fallback: Graceful on AI failure</li>
         </ul>
       </div>
       <div>
