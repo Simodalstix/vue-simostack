@@ -383,7 +383,47 @@
         </div>
       </BaseCard>
 
-      <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3 -->
+      <BaseCard
+        @click="showK3sGitops = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-green-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Raspberry Pi k3s GitOps Platform with Observability (In Progress)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img
+            src="/images/project-icons/raspberry-pi.svg"
+            alt="Raspberry Pi"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/helm2.png" alt="Helm" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/prometheus.png"
+            alt="Prometheus"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            GitOps
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Kubernetes (k3s)
+          </span>
+
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Raspberry Pi
+          </span>
+        </div>
+      </BaseCard>
+
+      <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3
       <BaseCard
         @click="showPrismaModal = true"
         class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
@@ -414,10 +454,10 @@
             >Automation</span
           >
         </div>
-      </BaseCard>
+      </BaseCard> -->
 
       <!-- Executing a Database Migration to AWS with Terraform -->
-      <BaseCard
+      <!-- <BaseCard
         @click="showAwsProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
@@ -439,6 +479,39 @@
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Migration</span
+          >
+        </div>
+      </BaseCard> -->
+
+      <BaseCard
+        @click="showAzureContainerAppsProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Azure Container Apps Pipeline - IaC + Jenkins CI/CD (In Progress)
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/worker-container-app.svg"
+            alt="Azure Container Apps Icon"
+            class="w-8 h-8"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Azure</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Serverless</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CI/CD</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >IaC</span
           >
         </div>
       </BaseCard>

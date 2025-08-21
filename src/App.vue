@@ -198,7 +198,7 @@ n d
                 class="h-8 md:h-12"
                 title="Python"
               />
-              <img
+              <!-- <img
                 src="/images/main-tools/elastic.png"
                 alt="Elastic"
                 class="h-8 md:h-12"
@@ -215,7 +215,7 @@ n d
                 alt="Kibana"
                 class="h-8 md:h-12"
                 title="Kibana"
-              />
+              /> -->
             </div>
           </div>
           <div class="flex items-center justify-center text-center">
