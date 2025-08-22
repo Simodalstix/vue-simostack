@@ -2,90 +2,89 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Azure Hub–Spoke with Site-to-Site VPN to AWS (strongSwan)"
+    title="Azure Enterprise Landing Zone - Hub-Spoke Network Architecture"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Left: Architecture Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
         <img
-          src="/images/project-modal-images/azure-hub-spoke-vpn.jpg"
-          alt="Azure Hub–Spoke with S2S VPN to AWS"
+          src="/images/project-modal-images/azure-landing-zone-hub-diagram.svg"
+          alt="Azure Enterprise Landing Zone Architecture"
           class="object-contain rounded-lg w-full"
         />
       </div>
 
-      <!-- Right: Description + Decisions (paragraphs) -->
+      <!-- Right: Description + Architecture Decisions -->
       <aside class="w-full md:w-1/3 bg-gray-700 p-4 space-y-5 overflow-y-auto">
         <div>
           <h3 class="font-semibold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Terraform-managed Azure hub-and-spoke network with a secure IPSec site-to-site VPN to an
-            AWS VPC running <em>strongSwan</em>. Hub centralises shared services (VPN Gateway, Azure
-            Firewall, Bastion); spokes are peered and routed via the hub for egress and hybrid
-            connectivity.
+            Enterprise-grade Azure Landing Zone with modular Terraform architecture. Hub-spoke
+            topology centralizes security (Azure Firewall, Bastion) and foundation services (Key
+            Vault, Private DNS). Multiple spoke networks for workload isolation with preserved
+            hybrid connectivity to AWS via IPSec VPN.
           </p>
         </div>
 
         <div>
-          <h3 class="font-bold text-lg mb-2 text-orange-300">Key decisions &amp; trade-offs</h3>
-          <div class="text-sm text-gray-300 space-y-3">
+          <h3 class="font-bold text-lg mb-2 text-orange-300">Architecture Principles</h3>
+          <div class="text-base text-gray-300 space-y-3">
             <p>
-              Opted for a hybrid lab by terminating IPsec on an EC2/strongSwan endpoint (home
-              CGNAT), instead of simulated on-prem. Trade-off: self-hosted IPsec (strongSwan on EC2
-              + EIP) as the Azure VPN peer—lower cost & more control; I run the gateway.
+              Modular design: Reusable Terraform modules for networking, security, and foundation
+              services. Single responsibility per module enables independent scaling and
+              maintenance.
             </p>
             <p>
-              Centralised hub control: VPN Gateway + Azure Firewall handle transit & egress; spokes
-              use peering and route tables (egress via firewall, VPN routes to AWS). Bastion for
-              secure admin access.
+              Defense-in-depth: Azure Firewall for centralized security + NSGs for granular
+              subnet-level controls. All spoke traffic force-tunneled through firewall for
+              inspection and logging.
             </p>
           </div>
         </div>
       </aside>
     </div>
 
-    <!-- Row: Reliability, Cost, Observability (concise + honest today) -->
+    <!-- Row: Reliability, Cost, Observability -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Goal: stable IPSec tunnel; bi-directional ping Azure↔AWS.</li>
+          <li>Modular architecture enables independent component updates and testing.</li>
           <li>
-            Measurement: Azure Monitor VPN connection state + EC2/strongSwan status
+            Network Watcher + Connection Monitor for hybrid connectivity validation
             <span class="text-gray-400">(planned)</span>
           </li>
           <li>
-            Fail paths: route/NSG/firewall misconfig; validate with `ipsec statusall` &amp; flow
-            logs.
+            Automated deployment with validation checks; rollback capability via Terraform state.
           </li>
         </ul>
       </div>
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Drivers: VPN Gateway, Azure Firewall, Bastion, cross-cloud egress.</li>
+          <li>Drivers: VPN Gateway, Azure Firewall, Key Vault, cross-spoke traffic.</li>
           <li>
-            Method: Azure Pricing Calculator + Cost Management validation
-            <span class="text-gray-400">(planned)</span>
+            Cost Management + tagging strategy by workload and environment
+            <span class="text-gray-400">(implemented)</span>
           </li>
-          <li>Levers: smallest viable SKUs, stop EC2 when idle, tighten logging retention.</li>
+          <li>Optimization: Standard SKUs, shared services consolidation, retention policies.</li>
         </ul>
       </div>
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
           <li>
-            Diag settings → Log Analytics: VPN GW, Firewall, NSG flow logs
+            Centralized logging: Firewall, NSG flow logs, Key Vault access logs
             <span class="text-gray-400">(planned)</span>
           </li>
           <li>
-            Alerts: tunnel down / high egress; webhook to Slack
+            Security monitoring: Azure Security Center integration + compliance dashboard
             <span class="text-gray-400">(planned)</span>
           </li>
-          <li>Runbook: ping both directions after deploy; capture screenshots.</li>
+          <li>Network analytics: Traffic flow patterns and security event correlation.</li>
         </ul>
       </div>
     </div>
@@ -96,26 +95,27 @@
     >
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
-          <span class="font-medium">Problem &amp; scope:</span>
-          Demonstrate secure hybrid connectivity and centralised egress using Azure hub–spoke with
-          an IPSec S2S to AWS. Current phase: wire up metrics/alerts and publish baseline checks.
+          <span class="font-medium">Enterprise scope:</span>
+          Comprehensive Azure networking foundation with enterprise-grade security, governance, and
+          hybrid connectivity. Modular Terraform design enables rapid spoke deployment and
+          consistent security baselines across workloads.
         </div>
       </div>
 
       <div class="flex gap-3 w-full sm:w-auto">
         <a
-          href="https://github.com/Simodalstix/az-hub-spoke-vpn"
+          href="https://github.com/Simodalstix/az-hubspoke"
           target="_blank"
           class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
         >
           View on GitHub
         </a>
         <a
-          href="https://github.com/Simodalstix/az-hub-spoke-vpn#readme"
+          href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/"
           target="_blank"
           class="bg-gray-600 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
         >
-          Project README
+          Inspiration
         </a>
       </div>
     </footer>

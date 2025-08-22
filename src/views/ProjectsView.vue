@@ -182,7 +182,7 @@
             alt="Azure Container Apps Icon"
             class="w-8 h-8"
           /><img
-            src="/images/azure-icons/key-vaults.svg"
+            src="/images/azure-icons/key-vault.svg"
             alt="Azure Container Apps Icon"
             class="w-8 h-8"
           /><img
@@ -326,30 +326,35 @@
         </div>
       </BaseCard>
 
-      <!-- Creating a Hub-Spoke Network in Azure with a VPN Gateway -->
+      <!-- Azure Enterprise Landing Zone - Hub-Spoke Network Architecture -->
       <BaseCard
         @click="showAzureProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Azure Hub-Spoke Network with a VPN Gateway
+          Azure Enterprise Landing Zone - Hub-Spoke Architecture
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/azure-vpn.png" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VNet Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/firewall.svg" alt="Azure Firewall Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/vnet.svg" alt="Azure VNet Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/key-vault.svg" alt="Azure Key Vault Icon" class="w-8 h-8" />
+          <img
+            src="/images/azure-icons/azure-vpn.png"
+            alt="Azure VPN Gateway Icon"
+            class="w-8 h-8"
+          />
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Azure</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >IaC</span
+            >Enterprise</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Networking</span
+            >Landing Zone</span
           >
         </div>
       </BaseCard>
@@ -363,7 +368,13 @@
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
-          <img src="/images/project-icons/react-2.svg" alt="React" class="w-8 h-8" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/type-script.svg"
+            alt="Type Script"
+            class="w-8 h-8 rounded-md"
+          />
+
           <img
             src="/images/aws-icons/apigateway.svg"
             alt="API Gateway"
@@ -372,11 +383,7 @@
           <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
 
           <img src="/images/aws-icons/textract.svg" alt="Textract" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" /><img
-            src="/images/aws-icons/s3.svg"
-            alt="S3"
-            class="w-8 h-8 rounded-md"
-          />
+          <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" />
         </div>
 
         <div class="flex flex-wrap gap-2">
@@ -467,6 +474,33 @@
         </div>
       </BaseCard>
 
+      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
+      <BaseCard
+        @click="showDynatraceProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Deploying Dynatrace & Azure Monitoring Agents in Azure
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VM Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Azure</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Monitoring</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Automation</span
+          >
+        </div>
+      </BaseCard>
+
       <BaseCard
         @click="showToolingProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
@@ -477,8 +511,9 @@
 
         <div class="flex items-center gap-3 mb-3">
           <!-- Update icon paths to match your assets -->
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+
           <img src="/images/project-icons/csharp.png" alt="Csharp Icon" class="w-8 h-8" />
           <img
             src="/images/project-icons/github-actions.svg"
@@ -594,33 +629,6 @@
             >SIEM</span
           >
 
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Automation</span
-          >
-        </div>
-      </BaseCard>
-
-      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
-      <BaseCard
-        @click="showDynatraceProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Deploying Dynatrace & Azure Monitoring Agents in Azure
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VM Icon" class="w-8 h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Azure</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Monitoring</span
-          >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
           >
