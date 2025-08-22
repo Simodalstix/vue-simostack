@@ -697,7 +697,9 @@
         @click="showAwsAmgOktaCdk = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">Amazon Managed Grafana + Okta (CDK)</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          Amazon Managed Grafana + Okta (CDK) (Paused)
+        </h3>
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />

@@ -9,7 +9,7 @@
       <!-- Left: Architecture Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
         <img
-          src="/images/project-modal-images/fargate-golden-path-diagram.svg"
+          src="/images/project-modal-images/ecs-golden-path-diagram.svg"
           alt="ECS Fargate Golden Path Architecture Diagram"
           class="object-contain rounded-lg w-full"
         />

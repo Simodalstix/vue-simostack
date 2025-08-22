@@ -68,10 +68,7 @@
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>
-            Dual monitoring: Azure Monitor for infrastructure + Dynatrace for applications
-            <span class="text-gray-400">(implemented)</span>
-          </li>
+          <li>Dual monitoring with Azure Monitor (infra) + Dynatrace (apps)</li>
           <li>
             Automated alerting: CPU/memory thresholds with email notifications
             <span class="text-gray-400">(implemented)</span>
