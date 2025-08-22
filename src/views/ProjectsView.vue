@@ -435,73 +435,6 @@
       </BaseCard>
 
       <BaseCard
-        @click="showK3sGitops = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-green-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Raspberry Pi k3s GitOps Platform with Observability (In Progress)
-        </h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img
-            src="/images/project-icons/raspberry-pi.svg"
-            alt="Raspberry Pi"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/helm2.png" alt="Helm" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/prometheus.png"
-            alt="Prometheus"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            GitOps
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Kubernetes (k3s)
-          </span>
-
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Raspberry Pi
-          </span>
-        </div>
-      </BaseCard>
-
-      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
-      <BaseCard
-        @click="showDynatraceProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Deploying Dynatrace & Azure Monitoring Agents in Azure
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VM Icon" class="w-8 h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Azure</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Monitoring</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Automation</span
-          >
-        </div>
-      </BaseCard>
-
-      <BaseCard
         @click="showToolingProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
@@ -539,6 +472,33 @@
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Tooling</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
+      <BaseCard
+        @click="showDynatraceProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Deploying Dynatrace & Azure Monitoring Agents in Azure
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VM Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Azure</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Monitoring</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Automation</span
           >
         </div>
       </BaseCard>
@@ -603,6 +563,74 @@
         </div>
       </BaseCard> -->
 
+      <BaseCard
+        @click="showK3sGitops = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-green-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Raspberry Pi k3s GitOps Platform with Observability (In Progress)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img
+            src="/images/project-icons/raspberry-pi.svg"
+            alt="Raspberry Pi"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/helm2.png" alt="Helm" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/prometheus.png"
+            alt="Prometheus"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            GitOps
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Kubernetes (k3s)
+          </span>
+
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Raspberry Pi
+          </span>
+        </div>
+      </BaseCard>
+
+      <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
+      <BaseCard
+        @click="showRaspberry = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Github actions CI/CD Backend API on a Raspberry Pi & Docker
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+
+          <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Docker</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Backend</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CI/CD</span
+          >
+        </div>
+      </BaseCard>
+
       <!-- SOC Lab: Wazuh + ELK on VMware -->
       <BaseCard
         @click="showWazuhLabProject = true"
@@ -613,12 +641,12 @@
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
           <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh" class="w-8 h-8 rounded-md" />
           <img src="/images/main-tools/elastic.png" alt="Elastic" class="w-8 h-8 rounded-md" />
           <img src="/images/main-tools/logstash.png" alt="Linux" class="w-8 h-8 rounded-md" />
           <img src="/images/main-tools/kibana.png" alt="Windows" class="w-8 h-8 rounded-md" />
-          <img src="/images/main-tools/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
-          <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
         </div>
 
         <div class="flex flex-wrap gap-2">
@@ -660,34 +688,6 @@
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Monitoring</span
-          >
-        </div>
-      </BaseCard>
-
-      <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
-      <BaseCard
-        @click="showRaspberry = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Github actions CI/CD Backend API on a Raspberry Pi & Docker
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-
-          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Docker</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Backend</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CI/CD</span
           >
         </div>
       </BaseCard>

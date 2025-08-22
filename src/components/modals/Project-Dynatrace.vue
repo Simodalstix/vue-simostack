@@ -2,58 +2,114 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Azure Patch Management & Monitoring Agent Lab"
+    title="Azure Monitoring & Patch Management Lab"
   >
+    <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">
-      <!-- Main Content: Diagram -->
-      <div class="md:w-2/3 p-4 sm:p-6 flex flex-col">
+      <!-- Left: Architecture Diagram -->
+      <div class="md:w-2/3 p-4 flex flex-col">
         <img
           src="/images/project-modal-images/dynatrace-console.png"
-          alt="Azure IaaS Operations Diagram"
+          alt="Azure Monitoring Lab Architecture"
           class="object-contain rounded-lg w-full"
         />
       </div>
 
-      <!-- Right-Hand Sidebar -->
-      <aside class="w-full md:w-1/3 bg-gray-700 p-4 sm:p-6 space-y-4 sm:space-y-6 overflow-y-auto">
+      <!-- Right: Description + Architecture Decisions -->
+      <aside class="w-full md:w-1/3 bg-gray-700 p-4 space-y-5 overflow-y-auto">
         <div>
-          <h3 class="font-bold text-xl mb-2 text-orange-300">Key Features</h3>
-          <ul class="list-disc list-inside space-y-1 text-base">
-            <li>Hybrid Monitoring Setup</li>
-            <li>Automated Patch Management</li>
-            <li>Multi-OS VM Provisioning</li>
-            <li>Log Forwarding and Telemetry</li>
-          </ul>
+          <h3 class="font-semibold text-lg text-orange-300">Description</h3>
+          <p class="text-base text-gray-300">
+            Comprehensive monitoring and patch management lab with Azure Monitor, Dynatrace
+            OneAgent, and automated patching. Features Linux/Windows VMs with load balancer, sample
+            applications for realistic monitoring scenarios, and integrated observability stack.
+          </p>
         </div>
 
         <div>
-          <h3 class="font-bold text-xl mb-2 text-orange-300">Technologies Used</h3>
-          <ul class="list-disc list-inside space-y-1 text-base">
-            <li>Monitoring: Azure Monitor, Dynatrace, Node Exporter</li>
-            <li>IaaS: Azure (VMs, Update Management)</li>
-
-            <li>Scripting: Bash</li>
-          </ul>
+          <h3 class="font-bold text-lg mb-2 text-orange-300">Key Decisions</h3>
+          <div class="text-base text-gray-300 space-y-3">
+            <p>
+              Dual monitoring stack: Azure Monitor for infrastructure + Dynatrace for APM. Trade-off
+              between cost and comprehensive observability coverage. Automated patching with
+              maintenance windows vs. manual control. Sample apps provide realistic load for alert
+              validation.
+            </p>
+          </div>
         </div>
       </aside>
     </div>
-    <!-- Footer -->
+
+    <!-- Row: Reliability, Cost, Observability -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
+    >
+      <div>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+          <li>Automated patch management with maintenance windows and reboot policies.</li>
+          <li>
+            Load balancer health probes ensure application availability during patching cycles.
+          </li>
+          <li>Availability sets provide fault tolerance across update and fault domains.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+          <li>Drivers: VM compute, Log Analytics ingestion, Dynatrace licensing, load balancer.</li>
+          <li>
+            Standard SKUs and B-series VMs for cost-effective lab environment
+            <span class="text-gray-400">(implemented)</span>
+          </li>
+          <li>Optimization: Scheduled load generation, retention policies, resource tagging.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <ul class="list-disc list-inside space-y-1 text-sm">
+          <li>
+            Dual monitoring: Azure Monitor for infrastructure + Dynatrace for applications
+            <span class="text-gray-400">(implemented)</span>
+          </li>
+          <li>
+            Automated alerting: CPU/memory thresholds with email notifications
+            <span class="text-gray-400">(implemented)</span>
+          </li>
+          <li>Application Insights integration for web application performance monitoring.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer: scope + links -->
     <footer
       class="border-t border-gray-700 p-4 flex flex-col sm:flex-row justify-between items-center text-sm gap-4"
     >
-      <p class="text-gray-400 italic w-full sm:w-2/3">
-        Deployed a hybrid Azure lab for patching and monitoring with Terraform. Provisioned Linux
-        and Windows VMs, integrated Azure Monitor with DCRs and Log Analytics, and automated
-        Dynatrace and Azure Monitor agent installs via cloud-init and PowerShell. Configured secure
-        access, load balancing, and update workflows using Azure Update Management.
-      </p>
-      <a
-        href="https://github.com/Simodalstix/az-patching-dynatrace"
-        target="_blank"
-        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 w-full sm:w-auto text-center"
-      >
-        View on GitHub
-      </a>
+      <div class="w-full sm:w-2/3 space-y-2">
+        <div class="text-gray-300">
+          <span class="font-medium">Lab scope:</span>
+          Focused monitoring and patch management environment for testing observability tools, alert
+          workflows, and automated maintenance scenarios. Modular Terraform design enables easy
+          extension and customization.
+        </div>
+      </div>
+
+      <div class="flex gap-3 w-full sm:w-auto">
+        <a
+          href="https://github.com/Simodalstix/az-dynatrace"
+          target="_blank"
+          class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
+        >
+          View on GitHub
+        </a>
+        <a
+          href="https://docs.microsoft.com/en-us/azure/azure-monitor/"
+          target="_blank"
+          class="bg-gray-600 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
+        >
+          Azure Monitor
+        </a>
+      </div>
     </footer>
   </BaseModal>
 </template>
