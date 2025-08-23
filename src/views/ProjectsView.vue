@@ -572,7 +572,7 @@
 
       <BaseCard
         @click="showK3sGitops = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-green-800 transition-all duration-300"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
           Raspberry Pi k3s GitOps Platform with Observability (In Progress)
@@ -664,6 +664,35 @@
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Containerization</span
+          >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showMallMicroservicesProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          E-Commerce Microservices Mall - Gradle + Jenkins (In Progress)
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/gradle.svg" alt="Gradle Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/kubernetes.svg" alt="Kubernetes Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/mysql.svg" alt="MySQL Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Microservices</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >DevOps</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Enterprise Scale</span
           >
         </div>
       </BaseCard>

@@ -22,19 +22,18 @@
           <p class="text-base text-gray-300">
             Enterprise-grade Azure Container Apps platform with Terraform IaC and Azure DevOps
             pipelines. Includes compliance controls, change management, multi-stage deployment
-            across dev, staging, and prod, security scanning, and monitoring aligned with 12-factor
+            across dev, staging, prod, security scanning, and monitoring aligned with 12-factor
             principles.
           </p>
         </div>
 
         <div>
-          <h3 class="font-bold text-lg text-orange-300">Key decisions & trade-offs</h3>
+          <h3 class="font-bold text-lg text-orange-300">Reliability & Cost Balance</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Chose Container Apps over AKS for serverless simplicity. Picked Azure DevOps over
-              Jenkins for native integration and compliance features. Shared ACR and Log Analytics
-              for cost efficiency, accepting less environment isolation (alt: separate per
-              environment for strict compliance).
+              Designed for high availability without excess overhead using managed services. Azure
+              DevOps was chosen for compliance and governance. Shared registries and monitoring
+              optimized costs, with isolation trade-offs versus fully separate environments.
             </p>
           </div>
         </div>

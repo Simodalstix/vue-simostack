@@ -8,7 +8,7 @@
     role="dialog"
   >
     <div
-      class="bg-gray-700 text-gray-200 p-3 rounded-lg relative shadow-lg overflow-y-auto w-full min-h-0 max-h-[90dvh] overscroll-contain"
+      class="bg-gray-700 text-gray-200 p-3 rounded-lg relative shadow-lg overflow-y-auto w-full min-h-0 overscroll-contain"
       :class="width"
       :style="maxHeightStyle"
     >
