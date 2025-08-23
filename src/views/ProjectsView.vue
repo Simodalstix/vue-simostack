@@ -613,9 +613,9 @@
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
 
-          <img src="/images/project-icons/postgresqlSVG.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/postgres.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
         </div>
         <div class="flex flex-wrap gap-2">
@@ -659,6 +659,34 @@
 
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
+          >
+        </div>
+      </BaseCard>
+      <!-- Spring PetClinic Jenkins CI/CD -->
+      <BaseCard
+        @click="showPetclinicProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Spring PetClinic with Jenkins CI/CD Pipeline (In Progress)
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/postgres.svg" alt="PostgreSQL Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/maven.svg" alt="Maven Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CI/CD</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >DevOps</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Containerization</span
           >
         </div>
       </BaseCard>
