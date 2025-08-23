@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="visible"
-    class="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center px-4 h-dvh overflow-y-auto overscroll-contain"
+    class="fixed inset-0 z-50 bg-black bg-opacity-50 flex justify-center px-4 h-dvh overscroll-contain"
     :class="alignment"
     @click.self="$emit('close')"
     aria-modal="true"
@@ -11,6 +11,7 @@
       class="bg-gray-700 text-gray-200 p-3 rounded-lg relative shadow-lg overflow-y-auto w-full min-h-0"
       :class="width"
       :style="maxHeightStyle"
+      ref="dialogEl"
     >
       <!-- Close button -->
       <button
@@ -38,17 +39,30 @@
 </template>
 
 <script setup>
+import { ref, watch, nextTick } from 'vue'
+
 const props = defineProps({
   visible: Boolean,
   title: String,
   titleColor: { type: String, default: 'text-white' },
   width: { type: String, default: 'max-w-md' }, // e.g. 'max-w-4xl'
-  height: { type: String, default: '90dvh' }, // NOTE: real CSS value, not a Tailwind class
-  alignment: { type: String, default: 'items-center' },
+  height: { type: String, default: '90dvh' }, // viewport-capped height for the dialog
+  alignment: { type: String, default: 'items-start' }, // not centered on mobile
   hideTitleBorder: { type: Boolean, default: false },
 })
 defineEmits(['close'])
 
-// Use the CSS value directly; your template applies it as an inline style
 const maxHeightStyle = { maxHeight: props.height }
+
+// Reset scroll to top whenever the modal opens
+const dialogEl = ref(null)
+watch(
+  () => props.visible,
+  async (open) => {
+    if (open) {
+      await nextTick()
+      if (dialogEl.value) dialogEl.value.scrollTop = 0
+    }
+  },
+)
 </script>
