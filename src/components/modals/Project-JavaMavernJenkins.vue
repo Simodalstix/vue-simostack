@@ -8,11 +8,11 @@
     <div class="flex flex-col md:flex-row text-gray-200">
       <!-- Left: Architecture Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
-        <!-- <img
-          src="/images/project-modal-images/petclinic-cicd-diagram.svg"
+        <img
+          src="/images/project-modal-images/java-maven-jenkins-diagram.svg"
           alt="Spring PetClinic CI/CD Pipeline Architecture"
           class="object-contain rounded-lg w-full"
-        /> -->
+        />
       </div>
 
       <!-- Right: Description + Key decisions -->
@@ -30,9 +30,11 @@
           <h3 class="font-bold text-lg text-orange-300">Key decisions & trade-offs</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Chose Jenkins over GitHub Actions for enterprise-like setup. PostgreSQL over H2 for
-              production readiness. Excluded integration tests from CI for faster builds, accepting
-              reduced test coverage for pipeline speed.
+              Chose Jenkins over GitHub Actions for enterprise setup with superior Java/Maven
+              toolchain management and plugin ecosystem. PostgreSQL over H2 for production
+              readiness. Excluded integration tests from CI for faster builds, accepting reduced
+              test coverage for speed. Jenkins provides dedicated tools for static analysis and
+              artifact management.
             </p>
           </div>
         </div>
@@ -46,7 +48,7 @@
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">CI/CD Pipeline</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Automated builds: Maven compilation & packaging</li>
+          <li>Automated builds: Maven compile & packaging</li>
           <li>Test execution: Unit tests with JUnit reports</li>
           <li>Static analysis: SpotBugs security & quality checks</li>
           <li>Docker build: Multi-stage containerization</li>
@@ -55,8 +57,8 @@
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Quality Gates</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Test separation: Unit tests in CI, integration tests excluded</li>
-          <li>Code quality: SpotBugs high-priority issues fail build</li>
+          <li>runs unit tests only (integration tests excluded)</li>
+          <li>Fail build on high-priority SpotBugs</li>
           <li>Build artifacts: JAR archival with fingerprinting</li>
           <li>Environment config: PostgreSQL via environment variables</li>
         </ul>
@@ -66,8 +68,8 @@
         <ul class="list-disc list-inside space-y-1 text-sm">
           <li>Database: PostgreSQL with Docker Compose</li>
           <li>Containerization: Multi-stage Dockerfile optimization</li>
-          <li>Orchestration: Docker Compose with health checks</li>
-          <li>Configuration: Profile-based environment management</li>
+          <li>Compose orchestration with health checks</li>
+          <li>Profile-based environment config</li>
         </ul>
       </div>
     </div>

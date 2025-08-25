@@ -434,44 +434,31 @@
         </div>
       </BaseCard>
 
+      <!-- Spring PetClinic Jenkins CI/CD -->
       <BaseCard
-        @click="showToolingProject = true"
+        @click="showJavaMavernJenkins = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Terraform-AWS DevOps Toolchain SonarQube & LaunchDarkly
+          Spring PetClinic with Jenkins CI/CD Pipeline
         </h3>
-
         <div class="flex items-center gap-3 mb-3">
-          <!-- Update icon paths to match your assets -->
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-
-          <img src="/images/project-icons/csharp.png" alt="Csharp Icon" class="w-8 h-8" />
-          <img
-            src="/images/project-icons/github-actions.svg"
-            alt="GitHub Actions Icon"
-            class="w-8 h-8"
-          />
-          <img
-            src="/images/project-icons/launchdarkly.svg"
-            alt="LaunchDarkly Icon"
-            class="w-8 h-8"
-          /><img src="/images/project-icons/sonarqube.png" alt="SonarQube Icon" class="h-8" />
+          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/postgres.svg" alt="PostgreSQL Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/maven.svg" alt="Maven Icon" class="w-8 h-8" />
         </div>
-
         <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Terraform</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >AWS</span
-          >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CI/CD</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Tooling</span
+            >DevOps</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Containerization</span
           >
         </div>
       </BaseCard>
@@ -610,6 +597,35 @@
         </div>
       </BaseCard>
 
+      <BaseCard
+        @click="showMallMicroservicesProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          E-Commerce Microservices Mall - Gradle + Jenkins (In Progress)
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/gradle.svg" alt="Gradle Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/kubernetes.svg" alt="Kubernetes Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/mysql.svg" alt="MySQL Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Microservices</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >DevOps</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Enterprise Scale</span
+          >
+        </div>
+      </BaseCard>
+
       <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
       <BaseCard
         @click="showRaspberry = true"
@@ -639,60 +655,44 @@
         </div>
       </BaseCard>
 
-      <!-- Spring PetClinic Jenkins CI/CD -->
       <BaseCard
-        @click="showPetclinicProject = true"
+        @click="showToolingProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Spring PetClinic with Jenkins CI/CD Pipeline (In Progress)
+          Terraform-AWS DevOps Toolchain SonarQube & LaunchDarkly
         </h3>
+
         <div class="flex items-center gap-3 mb-3">
-          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/postgres.svg" alt="PostgreSQL Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/maven.svg" alt="Maven Icon" class="w-8 h-8" />
+          <!-- Update icon paths to match your assets -->
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+
+          <img src="/images/project-icons/csharp.png" alt="Csharp Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/github-actions.svg"
+            alt="GitHub Actions Icon"
+            class="w-8 h-8"
+          />
+          <img
+            src="/images/project-icons/launchdarkly.svg"
+            alt="LaunchDarkly Icon"
+            class="w-8 h-8"
+          /><img src="/images/project-icons/sonarqube.png" alt="SonarQube Icon" class="h-8" />
         </div>
+
         <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Terraform</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >AWS</span
+          >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CI/CD</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >DevOps</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Containerization</span
-          >
-        </div>
-      </BaseCard>
-
-      <BaseCard
-        @click="showMallMicroservicesProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          E-Commerce Microservices Mall - Gradle + Jenkins (In Progress)
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/gradle.svg" alt="Gradle Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/kubernetes.svg" alt="Kubernetes Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/mysql.svg" alt="MySQL Icon" class="w-8 h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Microservices</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >DevOps</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Enterprise Scale</span
+            >Tooling</span
           >
         </div>
       </BaseCard>
@@ -878,6 +878,13 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
+
+    <ProjectJavaMavernJenkins
+      :visible="showJavaMavernJenkins"
+      @close="showJavaMavernJenkins = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <VmwareMonitoringModal
       :visible="showVmwareProject"
       @close="showVmwareProject = false"
@@ -938,6 +945,8 @@ import ProjectPilotLight from '@/components/modals/Project-Pilot-Light.vue'
 import ProjectEKSGitopsGP from '@/components/modals/Project-EKS-Gitops-GP.vue'
 import ProjectAzureContainerApps from '@/components/modals/Project-Azure-ContainerApps.vue'
 import ProjectDocumentAnalyzer from '@/components/modals/Project-Document-Analyzer.vue'
+import ProjectJavaMavernJenkins from '@/components/modals/Project-JavaMavernJenkins.vue'
+const showJavaMavernJenkins = ref(false)
 const showDocumentAnalyzer = ref(false)
 const showAzureContainerApps = ref(false)
 const showAwsAmgOktaCdk = ref(false)
