@@ -206,6 +206,47 @@
           >
         </div>
       </BaseCard>
+      <BaseCard
+        @click="showEnterpriseLandingZone = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">AWS Enterprise Landing Zone Architecture</h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/python.svg" alt="CDK Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/organizations.svg"
+            alt="Organizations Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/transit-gateway.svg"
+            alt="Transit Gateway Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/guardduty.svg"
+            alt="GuardDuty Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/security-hub.svg"
+            alt="Security Hub Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Multi-Account
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Hub-&amp;-Spoke
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Enterprise
+          </span>
+        </div>
+      </BaseCard>
 
       <BaseCard
         @click="showBedrockLandingzone = true"
@@ -655,6 +696,50 @@
         </div>
       </BaseCard>
 
+      <!-- Java RabbitMQ AKS -->
+      <BaseCard
+        @click="showJavaRabbitMQAKS = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Cloud-Native Java + RabbitMQ on AKS (In Progress)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/spring.svg"
+            alt="Spring Boot"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/rabbitmq.svg" alt="RabbitMQ" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
+          <img src="/images/azure-icons/aks.svg" alt="AKS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/docker-mark-blue.svg"
+            alt="Docker"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/project-icons/prometheus.svg"
+            alt="Prometheus"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Microservices</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Messaging</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Kubernetes</span
+          >
+        </div>
+      </BaseCard>
+
       <BaseCard
         @click="showToolingProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
@@ -853,7 +938,12 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
-
+    <ProjectEnterpriseLandingZone
+      :visible="showEnterpriseLandingZone"
+      @close="showEnterpriseLandingZone = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <ProjectAzureContainerApps
       :visible="showAzureContainerApps"
       @close="showAzureContainerApps = false"
@@ -882,6 +972,13 @@
     <ProjectJavaMavernJenkins
       :visible="showJavaMavernJenkins"
       @close="showJavaMavernJenkins = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+
+    <ProjectJavaRabbitMQ
+      :visible="showJavaRabbitMQ"
+      @close="showJavaRabbitMQ = false"
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
@@ -946,6 +1043,10 @@ import ProjectEKSGitopsGP from '@/components/modals/Project-EKS-Gitops-GP.vue'
 import ProjectAzureContainerApps from '@/components/modals/Project-Azure-ContainerApps.vue'
 import ProjectDocumentAnalyzer from '@/components/modals/Project-Document-Analyzer.vue'
 import ProjectJavaMavernJenkins from '@/components/modals/Project-JavaMavernJenkins.vue'
+import ProjectEnterpriseLandingZone from '@/components/modals/Project-EnterpriseLandingZone.vue'
+// import ProjectJavaRabbitMQ from '@/components/modals/Project-JavaRabbitMQ.vue'
+const showJavaRabbitMQ = ref(false)
+const showEnterpriseLandingZone = ref(false)
 const showJavaMavernJenkins = ref(false)
 const showDocumentAnalyzer = ref(false)
 const showAzureContainerApps = ref(false)

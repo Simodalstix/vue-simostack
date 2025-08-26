@@ -9,7 +9,7 @@
       <!-- Left: Architecture Diagram -->
       <div class="md:w-2/3 p-4 flex flex-col">
         <img
-          src="/images/project-modal-images/eks-gitops-gp-diagram2.svg"
+          src="/images/project-modal-images/eks-gitops-gp-diagram3.svg"
           alt="EKS GitOps Architecture Diagram"
           class="object-contain rounded-lg w-full"
         />
