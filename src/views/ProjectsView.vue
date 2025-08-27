@@ -668,6 +668,44 @@
         </div>
       </BaseCard>
 
+      <BaseCard
+        @click="showObservabilityPlatform = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">AWS Observability Platform (In Progress)</h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/python.svg" alt="CDK Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/cloudwatch.svg"
+            alt="CloudWatch Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/eventbridge.svg"
+            alt="EventBridge Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/aws-icons/x-ray.svg" alt="X-Ray Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/kinesis-data-streams.svg"
+            alt="Kinesis Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Real-time
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Auto-discovery
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Enterprise
+          </span>
+        </div>
+      </BaseCard>
+
       <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
       <BaseCard
         @click="showRaspberry = true"
