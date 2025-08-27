@@ -129,7 +129,9 @@
         @click="showAwsDrBackupLab = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">AWS DR & Backup - Rapid Recovery</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          AWS Disaster Recovery & Backup - Rapid Recovery
+        </h3>
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
@@ -285,7 +287,9 @@
         @click="showPilotLightDR = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">E-commerce Pilot Light Disaster Recovery</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          E-commerce Platform Pilot Light Disaster Recovery
+        </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
           <img
@@ -634,47 +638,32 @@
         </div>
       </BaseCard>
 
-      <!-- Java RabbitMQ AKS -->
+      <!-- Azure AKS GitOps Platform -->
       <BaseCard
-        @click="showJavaRabbitMQAKS = true"
+        @click="showAksGitopsProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Cloud-Native Java + RabbitMQ on AKS (In Progress)
+          Azure AKS GitOps Platform - Enterprise Kubernetes
         </h3>
-
         <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/spring.svg"
-            alt="Spring Boot"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/rabbitmq.svg" alt="RabbitMQ" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/aks.svg" alt="Azure AKS Icon" class="w-8 h-8" />
 
-          <img src="/images/azure-icons/aks.svg" alt="AKS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/docker-mark-blue.svg"
-            alt="Docker"
-            class="w-8 h-8 rounded-md"
-          />
-          <img
-            src="/images/project-icons/prometheus.svg"
-            alt="Prometheus"
-            class="w-8 h-8 rounded-md"
-          />
+          <img src="/images/project-icons/argocd.svg" alt="ArgoCD Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/nginx.svg" alt="NGINX Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/key-vault.svg" alt="Azure Key Vault Icon" class="w-8 h-8" />
         </div>
-
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Microservices</span
+            >AKS</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Messaging</span
+            >GitOps</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Kubernetes</span
+            >Platform</span
           >
         </div>
       </BaseCard>
@@ -747,6 +736,52 @@
           </span>
         </div>
       </BaseCard>
+
+      <!-- Java RabbitMQ AKS -->
+      <BaseCard
+        @click="showJavaRabbitMQAKS = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Cloud-Native Java + RabbitMQ on AKS (In Progress)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/spring.svg"
+            alt="Spring Boot"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/rabbitmq.svg" alt="RabbitMQ" class="w-8 h-8 rounded-md" />
+
+          <img src="/images/azure-icons/aks.svg" alt="AKS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/docker-mark-blue.svg"
+            alt="Docker"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/project-icons/prometheus.svg"
+            alt="Prometheus"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Microservices</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Messaging</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Kubernetes</span
+          >
+        </div>
+      </BaseCard>
+
       <BaseCard
         @click="showToolingProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
@@ -945,6 +980,13 @@
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
+    <ProjectAksGitopsProject
+      :visible="showAksGitopsProject"
+      @close="showAksGitopsProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+
     <ProjectEnterpriseLandingZone
       :visible="showEnterpriseLandingZone"
       @close="showEnterpriseLandingZone = false"
@@ -1052,6 +1094,8 @@ import ProjectDocumentAnalyzer from '@/components/modals/Project-Document-Analyz
 import ProjectJavaMavernJenkins from '@/components/modals/Project-JavaMavernJenkins.vue'
 import ProjectEnterpriseLandingZone from '@/components/modals/Project-EnterpriseLandingZone.vue'
 // import ProjectJavaRabbitMQ from '@/components/modals/Project-JavaRabbitMQ.vue'
+import ProjectAksGitopsProject from '@/components/modals/Project-AzureAKSGitops.vue'
+const showAksGitopsProject = ref(false)
 const showJavaRabbitMQ = ref(false)
 const showEnterpriseLandingZone = ref(false)
 const showJavaMavernJenkins = ref(false)
