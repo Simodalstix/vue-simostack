@@ -44,6 +44,86 @@
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      <!-- AWS Fargate Golden Path -->
+      <BaseCard
+        @click="showAwsFargateGoldenPath = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          ECS Fargate Golden Path + Resilience Scenarios
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/aws-icons/ecs.svg" alt="ECR" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/fargate.svg" alt="SSM" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/code-deploy.svg" alt="ECS" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Containers</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Fargate</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Observability</span
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CDK</span
+          >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showEnterpriseLandingZone = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">AWS Enterprise Landing Zone Architecture</h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/python.svg" alt="CDK Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/organizations.svg"
+            alt="Organizations Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/transit-gateway.svg"
+            alt="Transit Gateway Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/guardduty.svg"
+            alt="GuardDuty Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/security-hub.svg"
+            alt="Security Hub Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Multi-Account
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Hub-and-Spoke
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Enterprise
+          </span>
+        </div>
+      </BaseCard>
+
       <!-- AWS DR & Backup Lab -->
       <BaseCard
         @click="showAwsDrBackupLab = true"
@@ -74,88 +154,6 @@
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Automation</span
-          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CDK</span
-          >
-        </div>
-      </BaseCard>
-
-      <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
-      <BaseCard
-        @click="showMultiregionProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Serverless Multi-Region Platform with Security and Monitoring
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img
-            src="/images/project-icons/eventbridge.svg"
-            alt="EventBridge Icon"
-            class="w-8 h-8 rounded-md"
-          /><img src="/images/aws-icons/lambda.svg" alt="Lambda Icon" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/aws-icons/dynamodb.svg"
-            alt="DynamoDB Icon"
-            class="w-8 h-8 rounded-md"
-          /><img
-            src="/images/aws-icons/apigateway.svg"
-            alt="API Gateway Icon"
-            class="w-8 h-8 rounded-md"
-          />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >AWS</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CDK</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Automation</span
-          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Serverless</span
-          >
-        </div>
-      </BaseCard>
-
-      <!-- AWS Lambda + SQS + DLQ -->
-      <BaseCard
-        @click="showAwsLambdaSqsDlq = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Resilient Serverless Ingestion Pipeline on AWS (SQS + DLQ)
-        </h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/sqs.svg" alt="SQS" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/iam.svg" alt="IAM" class="w-8 h-8 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Serverless</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Queues</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Reliability</span
           ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >CDK</span
           >
@@ -206,45 +204,191 @@
           >
         </div>
       </BaseCard>
+
       <BaseCard
-        @click="showEnterpriseLandingZone = true"
+        @click="showAwsGitopsGP = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">AWS Enterprise Landing Zone Architecture</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          Enterprise EKS Multi-Tier Application with GitOps
+        </h3>
+
         <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/python.svg" alt="CDK Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/eks.svg" alt="EKS" class="w-8 h-8 rounded-md" />
+
+          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/helm2.png" alt="Helm" class="w-8 h-8 rounded-md" />
           <img
-            src="/images/aws-icons/organizations.svg"
-            alt="Organizations Icon"
+            src="/images/project-icons/prometheus.png"
+            alt="Prometheus"
             class="w-8 h-8 rounded-md"
           />
+          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            GitOps
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Kubernetes
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Monitoring
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            IaC
+          </span>
+        </div>
+      </BaseCard>
+
+      <!-- AWS Lambda + SQS + DLQ -->
+      <BaseCard
+        @click="showAwsLambdaSqsDlq = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Resilient Serverless Ingestion Pipeline on AWS (SQS + DLQ)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
           <img
-            src="/images/aws-icons/transit-gateway.svg"
-            alt="Transit Gateway Icon"
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
             class="w-8 h-8 rounded-md"
           />
+          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/sqs.svg" alt="SQS" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/iam.svg" alt="IAM" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Serverless</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Queues</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Reliability</span
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CDK</span
+          >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showPilotLightDR = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">E-commerce Pilot Light Disaster Recovery</h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
           <img
-            src="/images/aws-icons/guardduty.svg"
-            alt="GuardDuty Icon"
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
             class="w-8 h-8 rounded-md"
-          />
+          /><img src="/images/aws-icons/alb.svg" alt="ALB Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/route53.svg" alt="Route 53 Icon" class="w-8 h-8 rounded-md" />
           <img
-            src="/images/aws-icons/security-hub.svg"
-            alt="Security Hub Icon"
+            src="/images/aws-icons/step-functions.svg"
+            alt="Step Functions Icon"
             class="w-8 h-8 rounded-md"
           />
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Multi-Account
+            Pilot Light
           </span>
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Hub-&amp;-Spoke
+            Cross-Region DR
           </span>
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Enterprise
+            Auto Failover
           </span>
+        </div>
+      </BaseCard>
+
+      <!-- Azure Enterprise Landing Zone - Hub-Spoke Network Architecture -->
+      <BaseCard
+        @click="showAzureProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Azure Enterprise Landing Zone - Hub-Spoke Architecture
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/firewall.svg" alt="Azure Firewall Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/vnet.svg" alt="Azure VNet Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/key-vault.svg" alt="Azure Key Vault Icon" class="w-8 h-8" />
+          <img
+            src="/images/azure-icons/azure-vpn.png"
+            alt="Azure VPN Gateway Icon"
+            class="w-8 h-8"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Azure</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Enterprise</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Landing Zone</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- Implementing a Multi-Region CI/CD Pipeline in AWS -->
+      <BaseCard
+        @click="showMultiregionProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Serverless Multi-Region Platform with Security and Monitoring
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/project-icons/eventbridge.svg"
+            alt="EventBridge Icon"
+            class="w-8 h-8 rounded-md"
+          /><img src="/images/aws-icons/lambda.svg" alt="Lambda Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/dynamodb.svg"
+            alt="DynamoDB Icon"
+            class="w-8 h-8 rounded-md"
+          /><img
+            src="/images/aws-icons/apigateway.svg"
+            alt="API Gateway Icon"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >AWS</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CDK</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Automation</span
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Serverless</span
+          >
         </div>
       </BaseCard>
 
@@ -290,100 +434,52 @@
         </div>
       </BaseCard>
 
-      <!-- AWS Fargate Golden Path -->
+      <!-- Spring PetClinic Jenkins CI/CD -->
       <BaseCard
-        @click="showAwsFargateGoldenPath = true"
+        @click="showJavaMavernJenkins = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          ECS Fargate Golden Path + Resilience Scenarios
+          Java Spring PetClinic with Jenkins CI/CD Pipeline
         </h3>
-
         <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/aws-icons/ecs.svg" alt="ECR" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/fargate.svg" alt="SSM" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/code-deploy.svg" alt="ECS" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/cloudwatch.svg" alt="CloudWatch" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/maven.svg" alt="Maven Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/postgres.svg" alt="PostgreSQL Icon" class="w-8 h-8" />
         </div>
-
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Containers</span
+            >CI/CD</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Fargate</span
+            >DevOps</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Observability</span
-          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CDK</span
+            >Containerization</span
           >
         </div>
       </BaseCard>
 
+      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
       <BaseCard
-        @click="showAwsGitopsGP = true"
+        @click="showDynatraceProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Enterprise EKS Multi-Tier Application with GitOps
-        </h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/eks.svg" alt="EKS" class="w-8 h-8 rounded-md" />
-
-          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/helm2.png" alt="Helm" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/prometheus.png"
-            alt="Prometheus"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            GitOps
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Kubernetes
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Monitoring
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            IaC
-          </span>
-        </div>
-      </BaseCard>
-
-      <!-- Azure Enterprise Landing Zone - Hub-Spoke Network Architecture -->
-      <BaseCard
-        @click="showAzureProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Azure Enterprise Landing Zone - Hub-Spoke Architecture
+          Deploying Dynatrace & Azure Monitoring Agents in Azure
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/firewall.svg" alt="Azure Firewall Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/vnet.svg" alt="Azure VNet Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/key-vault.svg" alt="Azure Key Vault Icon" class="w-8 h-8" />
+          <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VM Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/monitor.svg" alt="Azure Monitor Icon" class="w-8 h-8" />
           <img
-            src="/images/azure-icons/azure-vpn.png"
-            alt="Azure VPN Gateway Icon"
+            src="/images/azure-icons/log-analytics-workspaces.svg"
+            alt="Log workspace Icon"
             class="w-8 h-8"
           />
         </div>
@@ -392,10 +488,10 @@
             >Azure</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Enterprise</span
+            >Monitoring</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Landing Zone</span
+            >Automation</span
           >
         </div>
       </BaseCard>
@@ -438,95 +534,6 @@
             >AI</span
           ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Event Driven</span
-          >
-        </div>
-      </BaseCard>
-
-      <BaseCard
-        @click="showPilotLightDR = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">E-commerce Pilot Light Disaster Recovery</h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          /><img src="/images/aws-icons/alb.svg" alt="ALB Icon" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/rds.svg" alt="RDS Icon" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/route53.svg" alt="Route 53 Icon" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/aws-icons/step-functions.svg"
-            alt="Step Functions Icon"
-            class="w-8 h-8 rounded-md"
-          />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Pilot Light
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Cross-Region DR
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Auto Failover
-          </span>
-        </div>
-      </BaseCard>
-
-      <!-- Spring PetClinic Jenkins CI/CD -->
-      <BaseCard
-        @click="showJavaMavernJenkins = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Spring PetClinic with Jenkins CI/CD Pipeline
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/postgres.svg" alt="PostgreSQL Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/maven.svg" alt="Maven Icon" class="w-8 h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CI/CD</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >DevOps</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Containerization</span
-          >
-        </div>
-      </BaseCard>
-
-      <!-- Deploying Dynatrace Monitoring Agents in Azure -->
-      <BaseCard
-        @click="showDynatraceProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Deploying Dynatrace & Azure Monitoring Agents in Azure
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/focus/dynatrace-icon.svg" alt="Dynatrace Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/azure-vm.svg" alt="Azure VM Icon" class="w-8 h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Azure</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Monitoring</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Automation</span
           >
         </div>
       </BaseCard>
@@ -599,6 +606,109 @@
       </BaseCard>
 
       <BaseCard
+        @click="showMallMicroservicesProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          E-Commerce Microservices Mall - Gradle + Jenkins (In Progress)
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/gradle.svg" alt="Gradle Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/kubernetes.svg" alt="Kubernetes Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/mysql.svg" alt="MySQL Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Microservices</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >DevOps</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Enterprise Scale</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- Java RabbitMQ AKS -->
+      <BaseCard
+        @click="showJavaRabbitMQAKS = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Cloud-Native Java + RabbitMQ on AKS (In Progress)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/spring.svg"
+            alt="Spring Boot"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/rabbitmq.svg" alt="RabbitMQ" class="w-8 h-8 rounded-md" />
+
+          <img src="/images/azure-icons/aks.svg" alt="AKS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/docker-mark-blue.svg"
+            alt="Docker"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/project-icons/prometheus.svg"
+            alt="Prometheus"
+            class="w-8 h-8 rounded-md"
+          />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Microservices</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Messaging</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Kubernetes</span
+          >
+        </div>
+      </BaseCard>
+
+      <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
+      <BaseCard
+        @click="showRaspberry = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Github actions CI/CD Backend API on a Raspberry Pi & Docker
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+
+          <img src="/images/project-icons/postgres.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/express.svg" alt="Express Icon" class="h-8" />
+          <img src="/images/project-icons/nginx.svg" alt="NGINX Icon" class="h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Docker</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Backend</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >CI/CD</span
+          >
+        </div>
+      </BaseCard>
+
+      <BaseCard
         @click="showK3sGitops = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
@@ -637,109 +747,6 @@
           </span>
         </div>
       </BaseCard>
-
-      <BaseCard
-        @click="showMallMicroservicesProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          E-Commerce Microservices Mall - Gradle + Jenkins (In Progress)
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/gradle.svg" alt="Gradle Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/kubernetes.svg" alt="Kubernetes Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/mysql.svg" alt="MySQL Icon" class="w-8 h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Microservices</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >DevOps</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Enterprise Scale</span
-          >
-        </div>
-      </BaseCard>
-
-      <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
-      <BaseCard
-        @click="showRaspberry = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Github actions CI/CD Backend API on a Raspberry Pi & Docker
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-
-          <img src="/images/project-icons/postgres.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/express.svg" alt="Express Icon" class="h-8" />
-          <img src="/images/project-icons/nginx.svg" alt="NGINX Icon" class="h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Docker</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Backend</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CI/CD</span
-          >
-        </div>
-      </BaseCard>
-
-      <!-- Java RabbitMQ AKS -->
-      <BaseCard
-        @click="showJavaRabbitMQAKS = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Cloud-Native Java + RabbitMQ on AKS (In Progress)
-        </h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/spring.svg"
-            alt="Spring Boot"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/rabbitmq.svg" alt="RabbitMQ" class="w-8 h-8 rounded-md" />
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
-          <img src="/images/azure-icons/aks.svg" alt="AKS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/docker-mark-blue.svg"
-            alt="Docker"
-            class="w-8 h-8 rounded-md"
-          />
-          <img
-            src="/images/project-icons/prometheus.svg"
-            alt="Prometheus"
-            class="w-8 h-8 rounded-md"
-          />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Microservices</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Messaging</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Kubernetes</span
-          >
-        </div>
-      </BaseCard>
-
       <BaseCard
         @click="showToolingProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
