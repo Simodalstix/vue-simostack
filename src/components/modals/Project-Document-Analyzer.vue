@@ -88,7 +88,7 @@
 
       <div class="flex gap-3 w-full sm:w-auto">
         <a
-          href="https://github.com/your-username/AWS-ai-document-analyzer"
+          href="https://github.com/Simodalstix/AWS-ai-document-analyzer"
           target="_blank"
           class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
         >

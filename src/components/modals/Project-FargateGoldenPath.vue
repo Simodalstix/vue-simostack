@@ -90,7 +90,7 @@
 
       <div class="flex gap-3 w-full sm:w-auto">
         <a
-          href="https://github.com/Simodalstix/AWS-ecs-fargate-golden-path"
+          href="https://github.com/Simodalstix/AWS-fargate-golden-path"
           target="_blank"
           class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
         >

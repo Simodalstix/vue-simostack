@@ -425,6 +425,7 @@
             class="w-8 h-8 rounded-md"
           />
         </div>
+
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
             Multi-Account
@@ -919,6 +920,40 @@
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Monitoring</span
+          >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showTicketDeskProject = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          TicketDesk API - ASP.NET Core 8 with Full Observability
+        </h3>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/azure-icons/azure.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/dotnet.svg" alt=".NET Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/csharp.svg" alt="C# Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/postgres.svg" alt="PostgreSQL Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
+          <img
+            src="/images/project-icons/github-actions.svg"
+            alt="GitHub Actions Icon"
+            class="w-8 h-8"
+          />
+
+          <img src="/images/project-icons/prometheus.svg" alt="Prometheus Icon" class="w-8 h-8" />
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Clean Architecture</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Production Ready</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Enterprise Grade</span
           >
         </div>
       </BaseCard>
