@@ -395,46 +395,46 @@
           >
         </div>
       </BaseCard>
-
       <BaseCard
-        @click="showBedrockLandingzone = true"
+        @click="showObservabilityPlatform = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">AWS Bedrock Landing Zone Architecture</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          Enterprise AWS Observability Platform Architecture
+        </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img
-            src="/images/main-tools/terraform.svg"
-            alt="Terraform Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/aws-icons/bedrock.png" alt="Bedrock Icon" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/aws-icons/organizations.svg"
-            alt="Organizations Icon"
+            src="/images/project-icons/python.svg"
+            alt="Python Icon"
             class="w-8 h-8 rounded-md"
           />
           <img
-            src="/images/aws-icons/cloudtrail.svg"
-            alt="CloudTrail Icon"
+            src="/images/aws-icons/cloudwatch.svg"
+            alt="CloudWatch Icon"
             class="w-8 h-8 rounded-md"
           />
           <img
-            src="/images/aws-icons/guardduty.svg"
-            alt="GuardDuty Icon"
+            src="/images/aws-icons/eventbridge.svg"
+            alt="EventBridge Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/aws-icons/sns.svg" alt="SNS Icon" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/step-functions.svg"
+            alt="Step Functions Icon"
             class="w-8 h-8 rounded-md"
           />
         </div>
-
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Multi-Account
+            Serverless
           </span>
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Landing Zone
+            Enterprise
           </span>
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Enterprise AI
+            Cost Monitoring
           </span>
         </div>
       </BaseCard>
@@ -502,44 +502,45 @@
       </BaseCard>
 
       <BaseCard
-        @click="showDocumentAnalyzer = true"
+        @click="showBedrockLandingzone = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">
-          AWS AI Document Analyzer – Textract & Claude
-        </h3>
-
+        <h3 class="text-lg font-bold text-white mb-3">AWS Bedrock Landing Zone Architecture</h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img
-            src="/images/project-icons/type-script.svg"
-            alt="Type Script"
+            src="/images/main-tools/terraform.svg"
+            alt="Terraform Icon"
             class="w-8 h-8 rounded-md"
           />
-
+          <img src="/images/aws-icons/bedrock.png" alt="Bedrock Icon" class="w-8 h-8 rounded-md" />
           <img
-            src="/images/aws-icons/apigateway.svg"
-            alt="API Gateway"
+            src="/images/aws-icons/organizations.svg"
+            alt="Organizations Icon"
             class="w-8 h-8 rounded-md"
           />
-          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
-
-          <img src="/images/aws-icons/textract.svg" alt="Textract" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/aws-icons/cloudtrail.svg"
+            alt="CloudTrail Icon"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/aws-icons/guardduty.svg"
+            alt="GuardDuty Icon"
+            class="w-8 h-8 rounded-md"
+          />
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Serverless</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >OCR</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >AI</span
-          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Event Driven</span
-          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Multi-Account
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Landing Zone
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Enterprise AI
+          </span>
         </div>
       </BaseCard>
 
@@ -670,40 +671,44 @@
       </BaseCard>
 
       <BaseCard
-        @click="showObservabilityPlatform = true"
+        @click="showDocumentAnalyzer = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">AWS Observability Platform (In Progress)</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          AWS AI Document Analyzer – Textract & Claude
+        </h3>
+
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/python.svg" alt="CDK Icon" class="w-8 h-8 rounded-md" />
           <img
-            src="/images/aws-icons/cloudwatch.svg"
-            alt="CloudWatch Icon"
+            src="/images/project-icons/type-script.svg"
+            alt="Type Script"
             class="w-8 h-8 rounded-md"
           />
+
           <img
-            src="/images/aws-icons/eventbridge.svg"
-            alt="EventBridge Icon"
+            src="/images/aws-icons/apigateway.svg"
+            alt="API Gateway"
             class="w-8 h-8 rounded-md"
           />
-          <img src="/images/aws-icons/x-ray.svg" alt="X-Ray Icon" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/aws-icons/kinesis-data-streams.svg"
-            alt="Kinesis Icon"
-            class="w-8 h-8 rounded-md"
-          />
+          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
+
+          <img src="/images/aws-icons/textract.svg" alt="Textract" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" />
         </div>
+
         <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Real-time
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Auto-discovery
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Enterprise
-          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Serverless</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >OCR</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >AI</span
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Event Driven</span
+          >
         </div>
       </BaseCard>
 
@@ -864,7 +869,7 @@
       </BaseCard>
 
       <!-- SOC Lab: Wazuh + ELK on VMware -->
-      <BaseCard
+      <!-- <BaseCard
         @click="showWazuhLabProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
@@ -893,10 +898,10 @@
             >Automation</span
           >
         </div>
-      </BaseCard>
+      </BaseCard> -->
 
       <!-- Automating VMware Monitoring and Alerting with Ansible -->
-      <BaseCard
+      <!-- <BaseCard
         @click="showVmwareProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
@@ -956,10 +961,10 @@
             >Enterprise Grade</span
           >
         </div>
-      </BaseCard>
+      </BaseCard> -->
 
       <!-- BaseCard: Amazon Managed Grafana + Okta (CDK) -->
-      <BaseCard
+      <!-- <BaseCard
         @click="showAwsAmgOktaCdk = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
@@ -993,7 +998,7 @@
             >CDK</span
           >
         </div>
-      </BaseCard>
+      </BaseCard> -->
 
       <BaseCard class="bg-gray-800 p-4 rounded-md border-2 border-slate-500 text-gray-400">
         <h3 class="text-md font-bold mb-3">More to edit when I get a chance</h3>
@@ -1075,6 +1080,12 @@
     <DynatraceModal
       :visible="showDynatraceProject"
       @close="showDynatraceProject = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
+    <ProjectObservabilityPlatform
+      :visible="showObservabilityPlatform"
+      @close="showObservabilityPlatform = false"
       width="max-w-[1100px]"
       height="max-h-[92vh]"
     />
@@ -1161,20 +1172,22 @@ import ProjectLambdaSqsDlq from '@/components/modals/Project-LambdaSQSDLQ.vue'
 import ProjectBedrockLandingzone from '@/components/modals/Project-Bedrock-Landingzone.vue'
 import ProjectFargateGoldenPath from '@/components/modals/Project-FargateGoldenPath.vue'
 import ProjectPilotLight from '@/components/modals/Project-Pilot-Light.vue'
-import ProjectEKSGitopsGP from '@/components/modals/Project-EKS-Gitops-GP.vue'
+import ProjectEKSGitopsGP from '@/components/modals/Project-EKSGitopsGP.vue'
 import ProjectAzureContainerApps from '@/components/modals/Project-Azure-ContainerApps.vue'
 import ProjectDocumentAnalyzer from '@/components/modals/Project-Document-Analyzer.vue'
 import ProjectJavaMavernJenkins from '@/components/modals/Project-JavaMavernJenkins.vue'
 import ProjectEnterpriseLandingZone from '@/components/modals/Project-EnterpriseLandingZone.vue'
 // import ProjectJavaRabbitMQ from '@/components/modals/Project-JavaRabbitMQ.vue'
 import ProjectAksGitopsProject from '@/components/modals/Project-AzureAKSGitops.vue'
+import ProjectObservabilityPlatform from '@/components/modals/Project-ObservabilityPlatform.vue'
+const showObservabilityPlatform = ref(false)
 const showAksGitopsProject = ref(false)
 const showJavaRabbitMQ = ref(false)
 const showEnterpriseLandingZone = ref(false)
 const showJavaMavernJenkins = ref(false)
 const showDocumentAnalyzer = ref(false)
 const showAzureContainerApps = ref(false)
-const showAwsAmgOktaCdk = ref(false)
+
 const showK3sGitops = ref(false)
 const showAwsGitopsGP = ref(false)
 const showPilotLightDR = ref(false)

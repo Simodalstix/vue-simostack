@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="AWS Observability Platform Architecture"
+    title="Enterprise AWS Observability Platform Architecture"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">
@@ -80,7 +80,7 @@
 
       <div class="flex gap-3 w-full sm:w-auto">
         <a
-          href="https://github.com/yourusername/AWS-observability-platform"
+          href="https://github.com/Simodalstix/AWS-observability-platform"
           target="_blank"
           class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
         >

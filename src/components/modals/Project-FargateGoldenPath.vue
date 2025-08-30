@@ -97,7 +97,7 @@
           View on GitHub
         </a>
         <a
-          href="https://aws.amazon.com/blogs/aws/accelerate-safe-software-releases-with-new-built-in-blue-green-deployments-in-amazon-ecs/"
+          href="https://aws.amazon.com/blogs/containers/announcing-aws-fault-injection-simulator-new-features-for-amazon-ecs-workloads/"
           target="_blank"
           class="bg-gray-600 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
         >
