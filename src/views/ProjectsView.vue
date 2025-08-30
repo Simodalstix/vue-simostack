@@ -396,12 +396,25 @@
         </div>
       </BaseCard>
       <BaseCard
-        @click="showObservabilityPlatform = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="relative cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
+        <!-- Full-card clickable overlay -->
+        <a
+          href="https://github.com/Simodalstix/AWS-observability-platform"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute inset-0 z-10 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+          aria-label="Open GitHub repo: Enterprise AWS Observability Platform"
+        >
+          <span class="sr-only">Open GitHub repo</span>
+        </a>
+
         <h3 class="text-lg font-bold text-white mb-3">
-          Enterprise AWS Observability Platform Architecture
+          Enterprise AWS Observability Platform (<span class="text-orange-300 font-semibold">
+            Needs Write-up </span
+          >)
         </h3>
+
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img
@@ -426,16 +439,17 @@
             class="w-8 h-8 rounded-md"
           />
         </div>
+
         <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Serverless
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Enterprise
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Cost Monitoring
-          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Serverless</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Enterprise</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Cost Monitoring</span
+          >
         </div>
       </BaseCard>
 
@@ -610,14 +624,26 @@
           >
         </div>
       </BaseCard>
-
       <BaseCard
-        @click="showMallMicroservicesProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="relative cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
+        <!-- Full-card clickable overlay -->
+        <a
+          href="https://github.com/Simodalstix/java-gradle-microservices"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute inset-0 z-10 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+          aria-label="Open GitHub repo: E-Commerce Microservices Mall - Jenkins CI/CD"
+        >
+          <span class="sr-only">Open GitHub repo</span>
+        </a>
+
         <h3 class="text-lg font-bold text-white mb-3">
-          E-Commerce Microservices Mall - Gradle + Jenkins (In Progress)
+          E-Commerce Microservices Mall – Jenkins CI/CD (
+          <span class="text-orange-300 font-semibold">Needs Write-up</span>
+          )
         </h3>
+
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/project-icons/java.svg" alt="Java Icon" class="w-8 h-8" />
           <img src="/images/project-icons/spring.svg" alt="Spring Boot Icon" class="w-8 h-8" />
@@ -627,6 +653,7 @@
           <img src="/images/project-icons/kubernetes.svg" alt="Kubernetes Icon" class="w-8 h-8" />
           <img src="/images/project-icons/mysql.svg" alt="MySQL Icon" class="w-8 h-8" />
         </div>
+
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Microservices</span
@@ -640,32 +667,58 @@
         </div>
       </BaseCard>
 
-      <!-- Azure AKS GitOps Platform -->
+      <!-- Java RabbitMQ AKS -->
       <BaseCard
-        @click="showAksGitopsProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="relative cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Azure AKS GitOps Platform - Enterprise Kubernetes
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/aks.svg" alt="Azure AKS Icon" class="w-8 h-8" />
+        <!-- Full-card clickable overlay -->
+        <a
+          href="https://github.com/Simodalstix/java-rabbitmq-aks"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute inset-0 z-10 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+          aria-label="Open GitHub repo: Cloud-Native Java + RabbitMQ on AKS"
+        >
+          <span class="sr-only">Open GitHub repo</span>
+        </a>
 
-          <img src="/images/project-icons/argocd.svg" alt="ArgoCD Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/nginx.svg" alt="NGINX Icon" class="w-8 h-8" />
-          <img src="/images/azure-icons/key-vault.svg" alt="Azure Key Vault Icon" class="w-8 h-8" />
+        <h3 class="text-lg font-bold text-white mb-3">
+          Cloud-Native Java + RabbitMQ on AKS (<span class="text-orange-300 font-semibold">
+            Needs Write-up </span
+          >)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/spring.svg"
+            alt="Spring Boot"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/rabbitmq.svg" alt="RabbitMQ" class="w-8 h-8 rounded-md" />
+          <img src="/images/azure-icons/aks.svg" alt="AKS" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/docker-mark-blue.svg"
+            alt="Docker"
+            class="w-8 h-8 rounded-md"
+          />
+          <img
+            src="/images/project-icons/prometheus.svg"
+            alt="Prometheus"
+            class="w-8 h-8 rounded-md"
+          />
         </div>
+
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >AKS</span
+            >Microservices</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >GitOps</span
+            >Messaging</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Platform</span
+            >Kubernetes</span
           >
         </div>
       </BaseCard>
@@ -746,7 +799,11 @@
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Raspberry Pi k3s GitOps Platform with Observability (In Progress)
+          Raspberry Pi k3s GitOps Platform with Observability (<span
+            class="text-purple-400 font-semibold"
+          >
+            In Progress </span
+          >)
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
@@ -781,47 +838,45 @@
         </div>
       </BaseCard>
 
-      <!-- Java RabbitMQ AKS -->
+      <!-- Azure AKS GitOps Platform -->
       <BaseCard
-        @click="showJavaRabbitMQAKS = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+        class="relative cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
+        <!-- Full-card clickable overlay -->
+        <a
+          href="https://github.com/Simodalstix/Azure-aks-platform"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute inset-0 z-10 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+          aria-label="Open GitHub repo: Azure AKS GitOps Platform - Enterprise Kubernetes"
+        >
+          <span class="sr-only">Open GitHub repo</span>
+        </a>
+
         <h3 class="text-lg font-bold text-white mb-3">
-          Cloud-Native Java + RabbitMQ on AKS (In Progress)
+          Azure AKS GitOps Platform – Kubernetes (<span class="text-purple-400 font-semibold">
+            In Progress </span
+          >)
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/spring.svg"
-            alt="Spring Boot"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/rabbitmq.svg" alt="RabbitMQ" class="w-8 h-8 rounded-md" />
-
-          <img src="/images/azure-icons/aks.svg" alt="AKS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/docker-mark-blue.svg"
-            alt="Docker"
-            class="w-8 h-8 rounded-md"
-          />
-          <img
-            src="/images/project-icons/prometheus.svg"
-            alt="Prometheus"
-            class="w-8 h-8 rounded-md"
-          />
+          <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/aks.svg" alt="Azure AKS Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/argocd.svg" alt="ArgoCD Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/nginx.svg" alt="NGINX Icon" class="w-8 h-8" />
+          <img src="/images/azure-icons/key-vault.svg" alt="Azure Key Vault Icon" class="w-8 h-8" />
         </div>
 
         <div class="flex flex-wrap gap-2">
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Microservices</span
+            >AKS</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Messaging</span
+            >GitOps</span
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Kubernetes</span
+            >Platform</span
           >
         </div>
       </BaseCard>
@@ -959,43 +1014,6 @@
           >
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Enterprise Grade</span
-          >
-        </div>
-      </BaseCard> -->
-
-      <!-- BaseCard: Amazon Managed Grafana + Okta (CDK) -->
-      <!-- <BaseCard
-        @click="showAwsAmgOktaCdk = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Amazon Managed Grafana + Okta (CDK) (Paused)
-        </h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/python.svg"
-            alt="Python Icon"
-            class="w-8 h-8 rounded-md"
-          />
-          <img
-            src="/images/project-icons/grafana.png"
-            alt="Amazon Managed Grafana"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/okta-logo.svg" alt="Okta" class="h-4 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Observability</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >SSO</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >CDK</span
           >
         </div>
       </BaseCard> -->
