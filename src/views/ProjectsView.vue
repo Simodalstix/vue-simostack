@@ -4,12 +4,11 @@
       <div class="md:col-span-2">
         <h1 class="text-3xl font-bold mb-4">My Projects & Labs</h1>
         <p class="text-lg">
-          My projects reflect a hands-on approach to learning and building. I focus on creating
-          real-world infrastructure scenarios with a strong emphasis on Infrastructure as Code
-          (IaC), automation, and monitoring. I also build full-stack web applications to understand
-          the entire technology stack from code to deployment. The labs and projects I create are
-          designed to be reproducible and scalable, showcasing my ability to practice modern
-          infrastructure patterns and solve engineering challenges.
+          My projects are how I learn—hands-on, reproducible, and tied to real tools. I focus on
+          Infrastructure as Code (Terraform, CloudFormation), automation, and monitoring to practice
+          how teams actually manage cloud environments. I also build small full-stack apps so I can
+          see how code moves from development into production. I optimise for modularity and
+          reuse—small proofs of concept I can extend as I go.
         </p>
       </div>
 
@@ -546,39 +545,6 @@
         </div>
       </BaseCard>
 
-      <!-- Full-Stack Blog on Raspberry Pi with Docker & AWS S3
-      <BaseCard
-        @click="showPrismaModal = true"
-        class="relative rounded-xl p-4 shadow space-y-2 border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300 overflow-hidden cursor-pointer"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Full-Stack Blog CI/CD on AWS & Raspberry Pi - With Jenkins
-        </h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/docker-mark-blue.svg" alt="Docker Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/raspberry-pi.svg" alt="Raspberry Pi Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS S3 Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/react-2.svg" alt="React Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/expressjs.png" alt="Express Icon" class="h-8" />
-          <img src="/images/project-icons/jenkins.svg" alt="Jenkins Icon" class="h-8" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Full-Stack</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Docker</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >AWS</span
-          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Automation</span
-          >
-        </div>
-      </BaseCard> -->
-
       <!-- Executing a Database Migration to AWS with Terraform -->
       <BaseCard
         @click="showAwsProject = true"
@@ -666,6 +632,7 @@
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
           <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
           <img
             src="/images/project-icons/spring.svg"
@@ -677,11 +644,6 @@
           <img
             src="/images/project-icons/docker-mark-blue.svg"
             alt="Docker"
-            class="w-8 h-8 rounded-md"
-          />
-          <img
-            src="/images/project-icons/prometheus.svg"
-            alt="Prometheus"
             class="w-8 h-8 rounded-md"
           />
         </div>

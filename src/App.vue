@@ -5,8 +5,8 @@ n d
       <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
           <router-link to="/" class="text-xl font-bold hover:text-purple-300 transition-colors"
-            >Simon Parker</router-link
-          >
+            >Simon Parker
+          </router-link>
           <!-- Mobile menu button -->
           <button
             @click="toggleMobileMenu"
@@ -196,31 +196,19 @@ n d
                 src="/images/main-tools/docker-mark-blue.svg"
                 alt="Docker"
                 class="h-8 md:h-12"
-                title="Python"
-              />
-              <!-- <img
-                src="/images/main-tools/elastic.png"
-                alt="Elastic"
-                class="h-8 md:h-12"
-                title="Elastic"
+                title="Docker"
               />
               <img
-                src="/images/main-tools/logstash.png"
-                alt="Logstash"
+                src="/images/project-icons/kubernetes.svg"
+                alt="Kubernetes"
                 class="h-8 md:h-12"
-                title="Logstash"
+                title="Kubernetes"
               />
-              <img
-                src="/images/main-tools/kibana.png"
-                alt="Kibana"
-                class="h-8 md:h-12"
-                title="Kibana"
-              /> -->
             </div>
           </div>
           <div class="flex items-center justify-center text-center">
             <h2 class="text-xl font-bold text-slate-300">
-              Focused on Cloud Infrastructure, Systems Automation, and Security.
+              Learning by building — Cloud Infrastructure, Automation, and DevOps.
             </h2>
           </div>
         </div>

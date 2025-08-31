@@ -31,7 +31,7 @@
           <p class="text-gray-300 leading-relaxed">
             While I may be new to the tech industry, my experience is defined by a daily immersion
             in the field. I am constantly building, troubleshooting, and learning, creating
-            real-world solutions that mirror enterprise environments. My projects bridge the gap
+            real-world solutions that follow industry best practices. My projects bridge the gap
             between theoretical knowledge and professional practice, and I am an eager and fast
             learner who is ready to contribute, grow, and make a high-impact addition to a team.
           </p>

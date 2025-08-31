@@ -6,9 +6,10 @@
       </h1>
 
       <p class="mt-4 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-        Leveraging a foundation in healthcare to bring calm under pressure and a relentless focus on
-        learning to the world of cloud infrastructure and DevOps. I build, automate, and secure
-        modern cloud platforms with a passion for continuous improvement.
+        I bring precision, root-cause problem solving, and clear communication from healthcare into
+        cloud engineering. With certifications in AWS, Azure, and Terraform, and hands-on projects
+        in IaC, CI/CD, and Kubernetes, I’m building reliable, automated infrastructure while
+        continually expanding my skills.
       </p>
 
       <div
@@ -30,9 +31,9 @@
 
         <router-link
           :to="{ name: 'About' }"
-          class="text-gray-400 hover:text-purple-400 transition-colors duration-300 font-semibold w-full md:w-auto"
+          class="border-2 border-purple-500 text-purple-400 font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 hover:bg-purple-500 hover:text-white w-full md:w-auto"
         >
-          Read My Story &rarr;
+          Read My Story
         </router-link>
       </div>
     </div>

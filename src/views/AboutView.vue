@@ -14,7 +14,7 @@
             engineering challenges and building resilient infrastructure.
           </p>
           <p class="mt-4 font-bold text-lg text-orange-300">
-            Standout qualities: Relentless Focus, Unwavering Curiosity & Self-Driven Learning
+            Standout qualities: Clear communication • Continuous learning • Reliability
           </p>
         </div>
 
@@ -28,10 +28,11 @@
             teams.
           </p>
           <p class="text-lg mt-4">
-            With certifications in AWS, Azure, and Terraform—and hands-on experience with Linux,
-            automation, and monitoring—I’ve built strong fundamentals to bridge infrastructure and
-            operations. I’m also building practical Kubernetes skills (Helm, EKS/AKS basics) so I
-            can contribute where container orchestration is in scope.
+            My AWS, Azure, and Terraform certifications back up my practical skills and show I have
+            a dependable foundation to build on. Combined with hands-on experience in Linux,
+            automation, and monitoring, it means I can approach infrastructure tasks with confidence
+            and a focus on doing things the right way. I’m also growing my Kubernetes skills (Helm,
+            EKS/AKS basics), so I can contribute when container orchestration is part of the stack.
           </p>
         </div>
       </div>
