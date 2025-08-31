@@ -7,11 +7,11 @@
           <p class="text-lg">
             I’m pivoting from a career in healthcare into technology, with a passion for Linux,
             cloud platforms, infrastructure, and DevOps. Over the past year, I’ve built a strong
-            foundation in AWS, Azure, and Terraform, focusing on Infrastructure as Code, CI/CD
-            pipelines, and platform engineering. My background as a pharmacist has honed my ability
-            to stay calm under pressure, triage complex situations, and translate intricate systems
-            into clear, actionable steps — skills I now apply to solving engineering challenges and
-            building resilient infrastructure.
+            foundation in AWS, Azure, and Terraform, focusing on Infrastructure as Code (IaC), CI/CD
+            pipelines, and platform engineering. My background as a pharmacist sharpened my ability
+            to perform root cause analysis under pressure, communicate clearly with different
+            stakeholders, and apply precision in high-stakes environments — skills I now apply to
+            engineering challenges and building resilient infrastructure.
           </p>
           <p class="mt-4 font-bold text-lg text-orange-300">
             Standout qualities: Relentless Focus, Unwavering Curiosity & Self-Driven Learning
@@ -21,17 +21,17 @@
         <div>
           <h2 class="text-3xl font-bold mb-4">Why I'm a Good Hire</h2>
           <p class="text-lg">
-            I specialise in building secure, automated cloud and platform infrastructure through
+            I focus on building secure, automated cloud and platform infrastructure using
             Infrastructure as Code (IaC), CI/CD pipelines, and modern DevOps practices. My projects
-            focus on creating reproducible, enterprise-style environments that strengthen
-            reliability, enable automation, and provide a solid foundation for applications and
+            are reproducible and grounded in real-world engineering patterns — strengthening
+            reliability, enabling automation, and providing a solid foundation for applications and
             teams.
           </p>
           <p class="text-lg mt-4">
-            With certifications in AWS, Azure, and Terraform, and hands-on experience with Linux,
-            automation, and monitoring, I bridge the gap between infrastructure and operations. I
-            thrive in collaborative environments where improving systems, workflows, and reliability
-            directly empowers teams to deliver better software faster.
+            With certifications in AWS, Azure, and Terraform—and hands-on experience with Linux,
+            automation, and monitoring—I’ve built strong fundamentals to bridge infrastructure and
+            operations. I’m also building practical Kubernetes skills (Helm, EKS/AKS basics) so I
+            can contribute where container orchestration is in scope.
           </p>
         </div>
       </div>
