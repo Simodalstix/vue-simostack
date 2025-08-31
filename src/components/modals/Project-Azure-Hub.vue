@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Azure Enterprise Landing Zone - Hub-Spoke Network Architecture"
+    title="Azure Org-Ready Hub-Spoke Landing Zone Architecture"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">

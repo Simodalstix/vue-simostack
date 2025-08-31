@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="AWS Enterprise Landing Zone Architecture"
+    title="AWS Multi-Account Landing Zone Architecture"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">

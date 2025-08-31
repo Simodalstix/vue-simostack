@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Enterprise AWS Observability Platform Architecture"
+    title="AWS Monitoring & Observability Platform Architecture"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">
@@ -46,7 +46,7 @@
         <ul class="list-disc list-inside space-y-1 text-sm">
           <li>Multi-severity alerting with automatic escalation and routing.</li>
           <li>Composite alarms for system-wide health indicators.</li>
-          <li>Automated remediation workflows with rollback capabilities.</li>
+          <li>Automated remediation with rollback capabilities.</li>
         </ul>
       </div>
       <div>

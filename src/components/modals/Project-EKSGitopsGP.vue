@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Enterprise EKS Multi-Tier Application with GitOps"
+    title="EKS Multi-Tier App – GitOps Pipeline"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">

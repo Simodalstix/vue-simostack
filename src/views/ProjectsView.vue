@@ -4,12 +4,12 @@
       <div class="md:col-span-2">
         <h1 class="text-3xl font-bold mb-4">My Projects & Labs</h1>
         <p class="text-lg">
-          My projects are a testament to my hands-on approach to learning and building. I focus on
-          creating real-world infrastructure that mirrors enterprise environments, with a strong
-          emphasis on Infrastructure as Code (IaC), automation, and monitoring. I also build
-          full-stack web applications to gain a deeper understanding of the entire technology stack.
-          The labs and projects I create are designed to be reproducible and scalable, showcasing my
-          ability to tackle modern infrastructure challenges.
+          My projects reflect a hands-on approach to learning and building. I focus on creating
+          real-world infrastructure scenarios with a strong emphasis on Infrastructure as Code
+          (IaC), automation, and monitoring. I also build full-stack web applications to understand
+          the entire technology stack from code to deployment. The labs and projects I create are
+          designed to be reproducible and scalable, showcasing my ability to practice modern
+          infrastructure patterns and solve engineering challenges.
         </p>
       </div>
 
@@ -86,7 +86,9 @@
         @click="showEnterpriseLandingZone = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">AWS Enterprise Landing Zone Architecture</h3>
+        <h3 class="text-lg font-bold text-white mb-3">
+          AWS Multi-Account Landing Zone Architecture
+        </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img src="/images/project-icons/python.svg" alt="CDK Icon" class="w-8 h-8 rounded-md" />
@@ -167,7 +169,7 @@
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Azure Container Apps – Enterprise DevOps with Change Management
+          Azure Container Apps – DevOps & Change Control
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
@@ -211,9 +213,7 @@
         @click="showAwsGitopsGP = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Enterprise EKS Multi-Tier Application with GitOps
-        </h3>
+        <h3 class="text-lg font-bold text-white mb-3">EKS Multi-Tier App – GitOps Pipeline</h3>
 
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
@@ -324,7 +324,7 @@
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Azure Enterprise Landing Zone - Hub-Spoke Architecture
+          Azure Org-Ready Hub-Spoke Landing Zone Architecture
         </h3>
         <div class="flex items-center gap-3 mb-3">
           <img src="/images/main-tools/azure-icon.svg" alt="Azure Icon" class="w-8 h-8" />
@@ -396,23 +396,11 @@
         </div>
       </BaseCard>
       <BaseCard
+        @click="showObservabilityPlatform = true"
         class="relative cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <!-- Full-card clickable overlay -->
-        <a
-          href="https://github.com/Simodalstix/AWS-observability-platform"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="absolute inset-0 z-10 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
-          aria-label="Open GitHub repo: Enterprise AWS Observability Platform"
-        >
-          <span class="sr-only">Open GitHub repo</span>
-        </a>
-
         <h3 class="text-lg font-bold text-white mb-3">
-          Enterprise AWS Observability Platform (<span class="text-orange-300 font-semibold">
-            Needs Write-up </span
-          >)
+          AWS Monitoring & Observability Platform Architecture
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
@@ -625,23 +613,11 @@
         </div>
       </BaseCard>
       <BaseCard
+        @click="showJavaGradleJenkins = true"
         class="relative cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
-        <!-- Full-card clickable overlay -->
-        <a
-          href="https://github.com/Simodalstix/java-gradle-microservices"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="absolute inset-0 z-10 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
-          aria-label="Open GitHub repo: E-Commerce Microservices Mall - Jenkins CI/CD"
-        >
-          <span class="sr-only">Open GitHub repo</span>
-        </a>
-
         <h3 class="text-lg font-bold text-white mb-3">
-          E-Commerce Microservices Mall – Jenkins CI/CD (
-          <span class="text-orange-300 font-semibold">Needs Write-up</span>
-          )
+          E-Commerce Microservices Mall – Jenkins CI/CD & Kubernetes
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
@@ -1024,6 +1000,12 @@
       </BaseCard>
     </div>
 
+    <Project-JavaGradleJenkins
+      :visible="showJavaGradleJenkins"
+      @close="showJavaGradleJenkins = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <ProjectDRbackup
       :visible="showAwsDrBackupLab"
       @close="showAwsDrBackupLab = false"
@@ -1198,6 +1180,8 @@ import ProjectEnterpriseLandingZone from '@/components/modals/Project-Enterprise
 // import ProjectJavaRabbitMQ from '@/components/modals/Project-JavaRabbitMQ.vue'
 import ProjectAksGitopsProject from '@/components/modals/Project-AzureAKSGitops.vue'
 import ProjectObservabilityPlatform from '@/components/modals/Project-ObservabilityPlatform.vue'
+import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenkins.vue'
+const showJavaGradleJenkins = ref(false)
 const showObservabilityPlatform = ref(false)
 const showAksGitopsProject = ref(false)
 const showJavaRabbitMQ = ref(false)

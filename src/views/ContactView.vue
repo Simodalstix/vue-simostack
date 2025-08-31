@@ -14,22 +14,25 @@
           <h1 class="text-4xl font-bold mb-4 md:mb-6">Let's Connect</h1>
 
           <p class="text-lg mb-6">
-            I'm a fast-learning, high-impact engineer-in-the-making. The difference between my
-            current capabilities and adding mid-level value to your team is just a matter of months.
-            I'm not a typical junior; I'm bringing a relentless work ethic and unique perspective to
-            the table.
+            I’m a junior cloud/devops engineer building real, reproducible projects in my spare
+            time. I learn fast, take feedback seriously, and I’m focused on automation, reliability,
+            and clear communication.
           </p>
 
           <p class="font-bold text-xl mb-4">I'd love to chat about:</p>
-          <ul class="list-disc list-inside space-y-2 mb-6">
+          <ul class="list-disc list-outside pl-6 space-y-2 mb-6">
             <li>
-              My journey from healthcare and how my unique skills translate to an engineering role.
+              How my healthcare → engineering pivot maps to root-cause analysis and stakeholder
+              comms
             </li>
-            <li>A deep dive into one of my projects and the technical challenges I overcame.</li>
             <li>
-              How my focus on automation and infrastructure can immediately benefit your team.
+              A quick walkthrough of a project (IaC, CI/CD, Kubernetes) and the trade-offs I made
             </li>
-            <li>The next steps for my career and where I can add the most value.</li>
+            <li>
+              How my base in AWS, Azure, Terraform, Kubernetes, and Jenkins lets me ramp quickly on
+              your stack
+            </li>
+            <li>The next steps in my growth and where I can be useful now</li>
           </ul>
 
           <p class="font-bold text-xl mb-2">Get in touch:</p>

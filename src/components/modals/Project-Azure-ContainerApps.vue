@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Azure Container Apps - Enterprise DevOps Pipeline with Change Management"
+    title="Azure Container Apps – Production DevOps & Change Control"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">

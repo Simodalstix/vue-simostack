@@ -11,7 +11,8 @@
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Infrastructure & DevOps</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Terraform, CloudFormation – Infrastructure as Code (IaC) for AWS & Azure</li>
-            <li>Ansible, GitHub Actions – Provisioning and CI/CD automation</li>
+            <li>Ansible, GitHub Actions, Jenkins – Provisioning and CI/CD automation</li>
+            <li>Kubernetes, Helm, ArgoCD – Container orchestration and GitOps workflows</li>
             <li>Docker, VMware – Containerization and virtual lab environments</li>
           </ul>
         </div>
@@ -161,12 +162,6 @@
               class="border-l-2 border-r-2 border-b-2 border-orange-300 p-8 flex flex-col justify-between items-center text-center flex-grow"
             >
               <div class="flex flex-col gap-8 mb-auto">
-                <img
-                  src="/images/certifications/cdsa.png"
-                  alt="HTB CDSA Badge"
-                  class="w-20 sm:w-36 mx-auto"
-                />
-
                 <img
                   src="/images/skills-in-progress/rhcsa.png"
                   alt="RHCSA Badge"
