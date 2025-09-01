@@ -661,48 +661,6 @@
         </div>
       </BaseCard>
 
-      <BaseCard
-        @click="showDocumentAnalyzer = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          AWS AI Document Analyzer – Textract & Claude
-        </h3>
-
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
-          <img
-            src="/images/project-icons/type-script.svg"
-            alt="Type Script"
-            class="w-8 h-8 rounded-md"
-          />
-
-          <img
-            src="/images/aws-icons/apigateway.svg"
-            alt="API Gateway"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
-
-          <img src="/images/aws-icons/textract.svg" alt="Textract" class="w-8 h-8 rounded-md" />
-          <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" />
-        </div>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Serverless</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >OCR</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >AI</span
-          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Event Driven</span
-          >
-        </div>
-      </BaseCard>
-
       <!-- Deploying a Containerized Backend API on a Raspberry Pi -->
       <BaseCard
         @click="showRaspberry = true"
@@ -761,6 +719,41 @@
         </div>
       </BaseCard>
 
+      <BaseCard
+        @click="showK3sGitops = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Raspberry Pi k3s GitOps Platform with Observability
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img
+            src="/images/project-icons/raspberry-pi.svg"
+            alt="Raspberry Pi"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/helm.png" alt="Helm" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/mariadb.svg" alt="MariaDB" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            GitOps
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Kubernetes (k3s)
+          </span>
+
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Raspberry Pi
+          </span>
+        </div>
+      </BaseCard>
+
       <!-- Azure AKS GitOps Platform -->
       <BaseCard
         class="relative cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
@@ -806,46 +799,44 @@
       </BaseCard>
 
       <BaseCard
-        @click="showK3sGitops = true"
+        @click="showDocumentAnalyzer = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Raspberry Pi k3s GitOps Platform with Observability (<span
-            class="text-purple-400 font-semibold"
-          >
-            In Progress </span
-          >)
+          AWS AI Document Analyzer – Textract & Claude
         </h3>
 
         <div class="flex items-center gap-3 mb-3">
+          <img src="/images/main-tools/aws-icon2.png" alt="AWS Icon" class="w-8 h-8" />
           <img
-            src="/images/project-icons/raspberry-pi.svg"
-            alt="Raspberry Pi"
+            src="/images/project-icons/type-script.svg"
+            alt="Type Script"
             class="w-8 h-8 rounded-md"
           />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/helm.png" alt="Helm" class="w-8 h-8 rounded-md" />
+
           <img
-            src="/images/project-icons/prometheus.png"
-            alt="Prometheus"
+            src="/images/aws-icons/apigateway.svg"
+            alt="API Gateway"
             class="w-8 h-8 rounded-md"
           />
-          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
+
+          <img src="/images/aws-icons/textract.svg" alt="Textract" class="w-8 h-8 rounded-md" />
+          <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" />
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            GitOps
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Kubernetes (k3s)
-          </span>
-
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Raspberry Pi
-          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Serverless</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >OCR</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >AI</span
+          ><span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Event Driven</span
+          >
         </div>
       </BaseCard>
 
@@ -963,6 +954,12 @@
       </BaseCard>
     </div>
 
+    <ProjectK3sGitops
+      :visible="showK3sGitops"
+      @close="showK3sGitops = false"
+      width="max-w-[1100px]"
+      height="max-h-[92vh]"
+    />
     <Project-JavaGradleJenkins
       :visible="showJavaGradleJenkins"
       @close="showJavaGradleJenkins = false"
@@ -1144,6 +1141,8 @@ import ProjectEnterpriseLandingZone from '@/components/modals/Project-Enterprise
 import ProjectAksGitopsProject from '@/components/modals/Project-AzureAKSGitops.vue'
 import ProjectObservabilityPlatform from '@/components/modals/Project-ObservabilityPlatform.vue'
 import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenkins.vue'
+import ProjectK3sGitops from '@/components/modals/Project-K3sGitops.vue'
+const showK3sGitops = ref(false)
 const showJavaGradleJenkins = ref(false)
 const showObservabilityPlatform = ref(false)
 const showAksGitopsProject = ref(false)
@@ -1152,8 +1151,6 @@ const showEnterpriseLandingZone = ref(false)
 const showJavaMavernJenkins = ref(false)
 const showDocumentAnalyzer = ref(false)
 const showAzureContainerApps = ref(false)
-
-const showK3sGitops = ref(false)
 const showAwsGitopsGP = ref(false)
 const showPilotLightDR = ref(false)
 const showAwsDrBackupLab = ref(false)
