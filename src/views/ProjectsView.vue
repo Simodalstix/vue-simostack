@@ -220,7 +220,7 @@
           <img src="/images/aws-icons/eks.svg" alt="EKS" class="w-8 h-8 rounded-md" />
 
           <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/helm2.png" alt="Helm" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/helm.png" alt="Helm" class="w-8 h-8 rounded-md" />
           <img
             src="/images/project-icons/prometheus.png"
             alt="Prometheus"
@@ -732,47 +732,32 @@
         </div>
       </BaseCard>
 
+      <!-- Automating VMware Monitoring and Alerting with Ansible -->
       <BaseCard
-        @click="showK3sGitops = true"
+        @click="showVmwareProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >
         <h3 class="text-lg font-bold text-white mb-3">
-          Raspberry Pi k3s GitOps Platform with Observability (<span
-            class="text-purple-400 font-semibold"
-          >
-            In Progress </span
-          >)
+          Automating VMware Monitoring and Alerting with Ansible
         </h3>
-
         <div class="flex items-center gap-3 mb-3">
-          <img
-            src="/images/project-icons/raspberry-pi.svg"
-            alt="Raspberry Pi"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
-          <img src="/images/project-icons/helm2.png" alt="Helm" class="w-8 h-8 rounded-md" />
-          <img
-            src="/images/project-icons/prometheus.png"
-            alt="Prometheus"
-            class="w-8 h-8 rounded-md"
-          />
-          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+          <img src="/images/main-tools/vmware.svg" alt="VMware Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/ansible.svg" alt="Ansible Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/redhat.svg" alt="Red Hat Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/prometheus.png" alt="Prometheus Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/grafana.png" alt="Grafana Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/loki.png" alt="Loki Icon" class="h-8" />
         </div>
-
         <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            GitOps
-          </span>
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Kubernetes (k3s)
-          </span>
-
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
-            Raspberry Pi
-          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >VMware</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Automation</span
+          >
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
+            >Monitoring</span
+          >
         </div>
       </BaseCard>
 
@@ -802,6 +787,7 @@
           <img src="/images/main-tools/terraform.svg" alt="Terraform Icon" class="w-8 h-8" />
           <img src="/images/azure-icons/aks.svg" alt="Azure AKS Icon" class="w-8 h-8" />
           <img src="/images/project-icons/argocd.svg" alt="ArgoCD Icon" class="w-8 h-8" />
+          <img src="/images/project-icons/helm.png" alt="Helm Icon" class="w-8 h-8" />
           <img src="/images/project-icons/nginx.svg" alt="NGINX Icon" class="w-8 h-8" />
           <img src="/images/azure-icons/key-vault.svg" alt="Azure Key Vault Icon" class="w-8 h-8" />
         </div>
@@ -816,6 +802,50 @@
           <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
             >Platform</span
           >
+        </div>
+      </BaseCard>
+
+      <BaseCard
+        @click="showK3sGitops = true"
+        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
+      >
+        <h3 class="text-lg font-bold text-white mb-3">
+          Raspberry Pi k3s GitOps Platform with Observability (<span
+            class="text-purple-400 font-semibold"
+          >
+            In Progress </span
+          >)
+        </h3>
+
+        <div class="flex items-center gap-3 mb-3">
+          <img
+            src="/images/project-icons/raspberry-pi.svg"
+            alt="Raspberry Pi"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
+          <img src="/images/project-icons/helm.png" alt="Helm" class="w-8 h-8 rounded-md" />
+          <img
+            src="/images/project-icons/prometheus.png"
+            alt="Prometheus"
+            class="w-8 h-8 rounded-md"
+          />
+          <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+        </div>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            GitOps
+          </span>
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Kubernetes (k3s)
+          </span>
+
+          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full">
+            Raspberry Pi
+          </span>
         </div>
       </BaseCard>
 
@@ -893,36 +923,7 @@
         </div>
       </BaseCard> -->
 
-      <!-- Automating VMware Monitoring and Alerting with Ansible -->
       <!-- <BaseCard
-        @click="showVmwareProject = true"
-        class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
-      >
-        <h3 class="text-lg font-bold text-white mb-3">
-          Automating VMware Monitoring and Alerting with Ansible
-        </h3>
-        <div class="flex items-center gap-3 mb-3">
-          <img src="/images/main-tools/vmware.svg" alt="VMware Icon" class="w-8 h-8" />
-          <img src="/images/main-tools/ansible.svg" alt="Ansible Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/prometheus.png" alt="Prometheus Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/grafana.png" alt="Grafana Icon" class="w-8 h-8" />
-          <img src="/images/project-icons/splunk2.png" alt="Grafana Icon" class="h-8" />
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >VMware</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Automation</span
-          >
-          <span class="bg-gray-800/60 text-gray-200 text-xs font-semibold px-2 py-0.5 rounded-full"
-            >Monitoring</span
-          >
-        </div>
-      </BaseCard>
-
-      <BaseCard
         @click="showTicketDeskProject = true"
         class="cursor-pointer p-4 rounded-xl border-2 bg-slate-700 border-slate-500 hover:bg-indigo-800 transition-all duration-300"
       >

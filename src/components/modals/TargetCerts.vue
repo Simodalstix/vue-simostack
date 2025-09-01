@@ -61,8 +61,10 @@
     </div>
 
     <!-- Footer quote -->
-    <div class="mt-10 text-center text-md italic text-slate-300">
-      “We are what we repeatedly do. Excellence, then, is not an act but a habit.”
+    <div class="mt-6 border-t-2 border-slate-500">
+      <div class="mt-3 mb-1 text-center text-md italic text-slate-300">
+        We are what we repeatedly do. Excellence, then, is not an act but a habit.
+      </div>
     </div>
   </BaseModal>
 </template>

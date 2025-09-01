@@ -94,13 +94,6 @@
         >
           View on GitHub
         </a>
-        <a
-          href="https://aws.amazon.com/bedrock/"
-          target="_blank"
-          class="bg-gray-600 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
-        >
-          Learn Bedrock
-        </a>
       </div>
     </footer>
   </BaseModal>

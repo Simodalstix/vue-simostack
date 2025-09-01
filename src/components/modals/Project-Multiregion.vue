@@ -99,13 +99,6 @@
         >
           View on GitHub
         </a>
-        <a
-          href="https://github.com/Simodalstix/AWS-multiregion-ecommerce/blob/main/docs/ARCHITECTURE.md"
-          target="_blank"
-          class="bg-gray-600 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200 text-center"
-        >
-          Architecture Doc
-        </a>
       </div>
     </footer>
   </BaseModal>
