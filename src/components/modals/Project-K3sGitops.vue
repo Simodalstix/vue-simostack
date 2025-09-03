@@ -26,9 +26,9 @@
           <h3 class="font-bold text-lg text-orange-300">Key decisions & trade-offs</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Chose K3s over full Kubernetes for resource efficiency and simplicity. MariaDB over
-              PostgreSQL for better ARM64 compatibility and easier setup. NodePort services instead
-              of ingress to avoid NGINX conflicts with existing infrastructure.
+              Chose a single-node K3s cluster for low resource overhead and simpler ops. MariaDB
+              over PostgreSQL for lighter footprint on ARM64. Expose services via NodePort for
+              direct access; Ingress can be added later if you need hostnames/TLS and path routing.
             </p>
           </div>
         </div>
@@ -52,8 +52,8 @@
         <h3 class="font-bold text-lg mb-2 text-orange-300">Simplicity</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
           <li>Single-node K3s cluster on ARM64</li>
-          <li>NodePort services for direct access</li>
-          <li>MariaDB for reliable database operations</li>
+          <li>NodePort for simplicity; ingress optional</li>
+          <li>MariaDB for lighter footprint on Pi</li>
           <li>Minimal resource footprint (~2GB RAM)</li>
         </ul>
       </div>

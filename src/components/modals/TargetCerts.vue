@@ -5,7 +5,7 @@
     title="Target Certifications"
     width="max-w-3xl"
   >
-    <div class="space-y-8 mt-6">
+    <div class="space-y-8 mt-6 mx-4">
       <!-- RHCSA -->
       <div class="flex items-center space-x-6 border-b border-slate-600 pb-6">
         <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-24 md:w-28" />

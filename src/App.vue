@@ -1,10 +1,10 @@
 n d
 <template>
   <div class="flex flex-col min-h-screen bg-gray-900 text-white">
-    <header class="bg-purple-700 shadow-lg">
+    <header class="bg-gradient-to-r from-slate-800 to-slate-700 shadow-xl border-b border-slate-600">
       <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-          <router-link to="/" class="text-xl font-bold hover:text-purple-300 transition-colors"
+          <router-link to="/" class="text-xl font-bold text-white hover:text-indigo-300 transition-colors duration-200"
             >Simon Parker
           </router-link>
           <!-- Mobile menu button -->
@@ -42,46 +42,46 @@ n d
           <div class="flex flex-col space-y-3">
             <router-link
               :to="{ name: 'Home' }"
-              class="hover:text-purple-300 transition-colors duration-200 py-2"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
               >Home</router-link
             >
             <router-link
               :to="{ name: 'Blog' }"
-              class="hover:text-purple-300 transition-colors duration-200 py-2"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
               >Blog</router-link
             >
             <router-link
               :to="{ name: 'Skills' }"
-              class="hover:text-purple-300 transition-colors duration-200 py-2"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
               >Skills & Certs</router-link
             >
             <router-link
               :to="{ name: 'Projects' }"
-              class="hover:text-purple-300 transition-colors duration-200 py-2"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
               >Projects</router-link
             >
             <router-link
               :to="{ name: 'About' }"
-              class="hover:text-purple-300 transition-colors duration-200 py-2"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
               >About</router-link
             >
             <router-link
               :to="{ name: 'Contact' }"
-              class="hover:text-purple-300 transition-colors duration-200 py-2"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
               >Contact</router-link
             >
             <router-link
               :to="{ name: 'Elephant' }"
-              class="hover:opacity-80 transition-opacity duration-200 py-2"
+              class="px-3 py-2 rounded-md hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
             >
-              <div class="flex items-center">
+              <div class="flex items-center text-gray-300 hover:text-white">
                 <img
                   src="/images/project-icons/elephant-icon.png"
                   alt="Elephant Icon"
@@ -94,45 +94,45 @@ n d
         </div>
         <!-- Desktop menu -->
         <div class="hidden md:flex justify-between items-center mt-4">
-          <div class="flex space-x-6">
+          <div class="flex space-x-1">
             <router-link
               :to="{ name: 'Home' }"
-              class="hover:text-purple-300 transition-colors duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Home</router-link
             >
             <router-link
               :to="{ name: 'Blog' }"
-              class="hover:text-purple-300 transition-colors duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Blog</router-link
             >
             <router-link
               :to="{ name: 'Skills' }"
-              class="hover:text-purple-300 transition-colors duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Skills & Certs</router-link
             >
             <router-link
               :to="{ name: 'Projects' }"
-              class="hover:text-purple-300 transition-colors duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Projects</router-link
             >
             <router-link
               :to="{ name: 'About' }"
-              class="hover:text-purple-300 transition-colors duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >About</router-link
             >
             <router-link
               :to="{ name: 'Contact' }"
-              class="hover:text-purple-300 transition-colors duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Contact</router-link
             >
             <router-link
               :to="{ name: 'Elephant' }"
-              class="hover:opacity-80 transition-opacity duration-200"
+              class="px-3 py-2 rounded-md hover:bg-slate-600/50 transition-all duration-200"
             >
               <img
                 src="/images/project-icons/elephant-icon.png"
                 alt="Elephant Icon"
-                class="h-8 w-8"
+                class="h-6 w-6"
               />
             </router-link>
           </div>
