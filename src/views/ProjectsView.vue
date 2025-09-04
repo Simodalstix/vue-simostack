@@ -41,7 +41,7 @@
       <!-- Enhanced AWS Fargate Card -->
       <BaseCard
         @click="showAwsFargateGoldenPath = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -67,17 +67,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-3 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Containers
           </span>
           <span
-            class="px-3 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Fargate
           </span>
           <span
-            class="px-3 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Observability
           </span>
@@ -85,22 +85,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Cloud Infrastructure</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Cloud Infrastructure - View details</span>
         </div>
       </BaseCard>
+
       <!-- Enhanced Landing Zone Card -->
       <BaseCard
         @click="showEnterpriseLandingZone = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -133,17 +135,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Multi-Account
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-gray-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Hub & Spoke
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Enterprise
           </span>
@@ -151,23 +153,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Cloud Infrastructure</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Cloud Infrastructure - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced DR & Backup Card -->
       <BaseCard
         @click="showAwsDrBackupLab = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -189,17 +192,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-3 py-1 text-xs font-medium bg-red-500/10 text-red-300 border border-red-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Backup
           </span>
           <span
-            class="px-3 py-1 text-xs font-medium bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             DR
           </span>
           <span
-            class="px-3 py-1 text-xs font-medium bg-green-500/10 text-green-300 border border-green-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Automation
           </span>
@@ -207,23 +210,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Experimental Lab</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Experimental Lab - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Azure Container Apps Card -->
       <BaseCard
         @click="showAzureContainerApps = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -256,17 +260,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Containers
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Serverless
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             CI/CD
           </span>
@@ -274,23 +278,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced EKS GitOps Card -->
       <BaseCard
         @click="showAwsGitopsGP = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -316,17 +321,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-500/20 rounded-md"
           >
             GitOps
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-500/20 rounded-md"
           >
             Kubernetes
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Monitoring
           </span>
@@ -334,23 +339,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Lambda SQS Card -->
       <BaseCard
         @click="showAwsLambdaSqsDlq = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -371,17 +377,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Serverless
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Queues
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Reliability
           </span>
@@ -389,23 +395,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Cloud Infrastructure</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Cloud Infrastructure - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Pilot Light DR Card -->
       <BaseCard
         @click="showPilotLightDR = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -430,17 +437,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-red-500/10 text-red-300 border border-red-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Multi-Region
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             DR
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-green-500/10 text-green-300 border border-green-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Auto Failover
           </span>
@@ -448,23 +455,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Experimental Lab</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Experimental Lab - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Azure Hub-Spoke Card -->
       <BaseCard
         @click="showAzureProject = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -493,17 +501,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Hub & Spoke
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/20 rounded-md"
           >
             Enterprise
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-orange-500/20 text-orange-300 border border-orange-500/20 rounded-md"
           >
             VPN Tunnel
           </span>
@@ -511,23 +519,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Cloud Infrastructure</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Cloud Infrastructure - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Multi-Region Platform Card -->
       <BaseCard
         @click="showMultiregionProject = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -556,17 +565,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Multi-Region
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Serverless
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Automation
           </span>
@@ -574,22 +583,23 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Cloud Infrastructure</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Cloud Infrastructure - View details</span>
         </div>
       </BaseCard>
       <!-- Enhanced Observability Platform Card -->
       <BaseCard
         @click="showObservabilityPlatform = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -618,17 +628,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Observability
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Monitoring
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Cost Control
           </span>
@@ -636,23 +646,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Spring PetClinic Card -->
       <BaseCard
         @click="showJavaMavernJenkins = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -685,17 +696,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             CI/CD
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Java
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Containers
           </span>
@@ -703,23 +714,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Dynatrace Azure Card -->
       <BaseCard
         @click="showDynatraceProject = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -748,17 +760,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Azure
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Monitoring
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Automation
           </span>
@@ -766,23 +778,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Bedrock Landing Zone Card -->
       <BaseCard
         @click="showBedrockLandingzone = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -807,17 +820,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Multi-Account
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-green-500/20 text-green-300 border border-green-500/20 rounded-md"
           >
             AI Platform
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/20 rounded-md"
           >
             Enterprise
           </span>
@@ -825,23 +838,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Cloud Infrastructure</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Cloud Infrastructure - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Database Migration Card -->
       <BaseCard
         @click="showAwsProject = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -870,17 +884,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Database
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Migration
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Automation
           </span>
@@ -888,22 +902,23 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Cloud Migration</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Cloud Migration - View details</span>
         </div>
       </BaseCard>
       <!-- Enhanced E-Commerce Microservices Card -->
       <BaseCard
         @click="showJavaGradleJenkins = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -937,17 +952,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Microservices
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Java
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-purple-500/20 text-purple-300 border border-purple-500/20 rounded-md"
           >
             Enterprise
           </span>
@@ -955,22 +970,23 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Java RabbitMQ AKS Card -->
       <BaseCard
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 relative"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10 relative"
       >
         <!-- Full-card clickable overlay -->
         <a
@@ -1011,17 +1027,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Microservices
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Messaging
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-500/20 rounded-md"
           >
             Kubernetes
           </span>
@@ -1029,23 +1045,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
               In Progress
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View on GitHub</span>
+          <span class="text-gray-400">DevOps - View on GitHub</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Raspberry Pi Backend Card -->
       <BaseCard
         @click="showRaspberry = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -1077,17 +1094,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Docker
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Backend
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             CI/CD
           </span>
@@ -1095,23 +1112,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
-      <!-- Enhanced K3s GitOps Card (Old Style) -->
+      <!-- Enhanced K3s GitOps Card -->
       <BaseCard
         @click="showK3sGitops = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -1136,17 +1154,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-500/20 rounded-md"
           >
             GitOps
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-500/20 rounded-md"
           >
             Kubernetes
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Raspberry Pi
           </span>
@@ -1154,23 +1172,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Experimental Lab</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Experimental Lab - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced VMware Monitoring Card -->
       <BaseCard
         @click="showVmwareProject = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -1195,17 +1214,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             VMware
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Automation
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Monitoring
           </span>
@@ -1213,22 +1232,23 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Azure AKS GitOps Card -->
       <BaseCard
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10 relative"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10 relative"
       >
         <!-- Full-card clickable overlay -->
         <a
@@ -1261,17 +1281,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-500/20 rounded-md"
           >
             Kubernetes
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-500/20 rounded-md"
           >
             GitOps
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Platform
           </span>
@@ -1279,23 +1299,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
               In Progress
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View on GitHub</span>
+          <span class="text-gray-400">DevOps - View on GitHub</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced Document Analyzer Card -->
       <BaseCard
         @click="showDocumentAnalyzer = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -1324,17 +1345,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Serverless
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-green-500/20 text-green-300 border border-green-500/20 rounded-md"
           >
-            AI/ML
+            AI Platform
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             OCR
           </span>
@@ -1342,23 +1363,24 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>Cloud Infrastructure</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">Cloud Infrastructure - View details</span>
         </div>
       </BaseCard>
 
       <!-- Enhanced DevOps Toolchain Card -->
       <BaseCard
         @click="showToolingProject = true"
-        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-800 hover:to-indigo-900 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-500/10"
+        class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
       >
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -1391,17 +1413,17 @@
         <!-- Enhanced tags -->
         <div class="flex flex-wrap gap-2 mb-4">
           <span
-            class="px-2 py-1 text-xs font-medium bg-blue-500/10 text-blue-300 border border-blue-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             DevOps
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Toolchain
           </span>
           <span
-            class="px-2 py-1 text-xs font-medium bg-orange-500/10 text-orange-300 border border-orange-500/20 rounded-md"
+            class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
           >
             Quality Gates
           </span>
@@ -1409,22 +1431,23 @@
 
         <!-- Project metadata footer -->
         <div
-          class="flex items-center justify-between text-xs text-gray-400 pt-3 border-t border-slate-600"
+          class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
         >
           <div class="flex items-center gap-4">
-            <span class="flex items-center gap-1">
+            <span
+              class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+            >
               <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              Complete
+              Ready
             </span>
-            <span>DevOps</span>
           </div>
-          <span class="text-gray-500">View details</span>
+          <span class="text-gray-400">DevOps - View details</span>
         </div>
       </BaseCard>
 
-      <BaseCard class="bg-gray-800 p-4 rounded-md border-2 border-slate-500 text-gray-400">
-        <h3 class="text-md font-bold mb-3">More to edit when I get a chance</h3>
-        <p class="text-sm"></p>
+      <BaseCard class="p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 text-gray-400">
+        <h3 class="text-lg font-bold mb-3 text-white">More Projects Coming Soon</h3>
+        <p class="text-sm text-slate-300">Additional cloud infrastructure and DevOps projects in development.</p>
       </BaseCard>
     </div>
 

@@ -83,7 +83,7 @@
             class="group relative flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-600/50 rounded-lg border border-slate-600 hover:border-green-400 transition-all duration-200"
           >
             <span
-              class="absolute top-2 right-2 px-2 py-1 text-xs font-medium bg-blue-600/20 text-blue-400 border border-blue-600/30 rounded-md"
+              class="absolute top-2 right-2 px-2 py-1 text-xs font-medium bg-blue-600/20 text-blue-500 border border-blue-600/30 rounded-md"
               >Defensive</span
             >
             <div>
@@ -176,7 +176,7 @@
             class="group relative flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-600/50 rounded-lg border border-slate-600 hover:border-green-400 transition-all duration-200"
           >
             <span
-              class="absolute top-2 right-2 px-2 py-1 text-xs font-medium bg-blue-600/20 text-blue-400 border border-blue-600/30 rounded-md"
+              class="absolute top-2 right-2 px-2 py-1 text-xs font-medium bg-blue-600/20 text-blue-500 border border-blue-600/30 rounded-md"
               >Defensive</span
             >
             <div>
@@ -217,6 +217,67 @@
                 Our favorite seabird
               </h5>
               <p class="text-sm text-gray-400">Linux Fundamentals module completed</p>
+            </div>
+            <svg
+              class="absolute bottom-2 right-2 w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              ></path>
+            </svg>
+          </a>
+
+          <!-- Module 7 -->
+          <a
+            href=""
+            target="_blank"
+            class="group relative flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-600/50 rounded-lg border border-slate-600 hover:border-green-400 transition-all duration-200"
+          >
+            <span
+              class="absolute top-2 right-2 px-2 py-1 text-xs font-medium bg-red-600/20 text-red-500 border border-red-600/30 rounded-md"
+              >Offensive</span
+            >
+            <div>
+              <h5 class="font-medium text-white group-hover:text-green-100 mb-1 pr-20">
+                Linux Privilege Escalation
+              </h5>
+              <p class="text-sm text-gray-400">Stairway to Heaven (In Progress)</p>
+            </div>
+            <svg
+              class="absolute bottom-2 right-2 w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              ></path>
+            </svg>
+          </a>
+
+          <a
+            href=""
+            target="_blank"
+            class="group relative flex items-center justify-between p-4 bg-slate-700/50 hover:bg-slate-600/50 rounded-lg border border-slate-600 hover:border-green-400 transition-all duration-200"
+          >
+            <span
+              class="absolute top-2 right-2 px-2 py-1 text-xs font-medium bg-blue-600/20 text-blue-500 border border-blue-600/30 rounded-md"
+              >Defensive</span
+            >
+            <div>
+              <h5 class="font-medium text-white group-hover:text-green-100 mb-1 pr-20">
+                Introduction to Threat Hunting & Hunting With Elastic
+              </h5>
+              <p class="text-sm text-gray-400">Predict the next move (In Progress)</p>
             </div>
             <svg
               class="absolute bottom-2 right-2 w-5 h-5 text-gray-400 group-hover:text-green-400 transition-colors"
