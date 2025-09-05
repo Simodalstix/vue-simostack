@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Azure Container Apps – Production DevOps & Change Control"
+    title="Azure Container Apps – DevOps & Change Control"
   >
     <!-- Top row: diagram + sidebar -->
     <div class="flex flex-col md:flex-row text-gray-200">
@@ -20,57 +20,56 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Enterprise-grade Azure Container Apps platform with Terraform IaC and Azure DevOps
-            pipelines. Includes compliance controls, change management, multi-stage deployment
-            across dev, staging, prod, security scanning, and monitoring aligned with 12-factor
-            principles.
+            Azure Container Apps platform with Terraform IaC and Azure DevOps pipelines. 
+            Includes compliance controls, change management, multi-stage deployment across 
+            dev, staging, prod, security scanning, and monitoring.
           </p>
         </div>
 
         <div>
-          <h3 class="font-bold text-lg text-orange-300">Reliability & Cost Balance</h3>
+          <h3 class="font-bold text-lg text-orange-300">Design Decisions</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Designed for high availability without excess overhead using managed services. Azure
-              DevOps was chosen for compliance and governance. Shared registries and monitoring
-              optimized costs, with isolation trade-offs versus fully separate environments.
+              Built for high availability using managed services. Azure DevOps chosen for 
+              compliance and governance. Shared registries and monitoring to optimize costs, 
+              with trade-offs between isolation and operational overhead.
             </p>
           </div>
         </div>
       </aside>
     </div>
 
-    <!-- New Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Enterprise Features</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Compliance & Security</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Compliance: Manual approvals, audit trails, change management</li>
-          <li>Security: Checkov scanning, Key Vault, least privilege access</li>
-          <li>Quality Gates: Format, lint, security checks</li>
-          <li>Multi-Environment: Dev → Staging → Production workflow</li>
-          <li>Immutable: IaC only, no manual changes</li>
+          <li>Manual approvals and audit trails</li>
+          <li>Checkov security scanning</li>
+          <li>Key Vault for secrets management</li>
+          <li>Dev → Staging → Production workflow</li>
+          <li>Infrastructure as Code only</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Architecture</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Platform Architecture</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>12-Factor App: Config via env vars, stateless containers</li>
-          <li>SRP: Single-responsibility modules/pipelines</li>
-          <li>Separation: Infrastructure, application, and CI/CD isolated</li>
-          <li>Declarative: Terraform & YAML only</li>
-          <li>Serverless: Auto-scaling Container Apps with zero-downtime</li>
+          <li>Stateless containers with environment config</li>
+          <li>Modular Terraform and pipeline separation</li>
+          <li>Declarative deployments via YAML</li>
+          <li>Auto-scaling Container Apps</li>
+          <li>Zero-downtime rolling updates</li>
         </ul>
       </div>
       <div>
         <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Dashboards: Request rate, errors, latency, CPU metrics</li>
-          <li>Tracing: Application Insights with correlation IDs</li>
-          <li>Alerts: CPU, memory, error rate with email notifications</li>
-          <li>Logs: Structured JSON logs with KQL queries</li>
+          <li>Request rate, errors, latency dashboards</li>
+          <li>Application Insights tracing</li>
+          <li>CPU, memory, error rate alerts</li>
+          <li>Structured JSON logs with KQL</li>
         </ul>
       </div>
     </div>
@@ -81,11 +80,10 @@
     >
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
-          <span class="font-medium">Problem & scope:</span>
-          Demonstrate enterprise-grade Azure Container Apps platform with compliance controls,
-          change management, and security best practices. Features three-environment deployment,
-          automated quality gates, manual approvals, and comprehensive audit trails for enterprise
-          use.
+          <span class="font-medium">Scope:</span>
+          Container platform with compliance controls and change management. 
+          Three-environment deployment with automated quality gates, manual approvals, 
+          and audit trails for production workloads.
         </div>
       </div>
 
