@@ -20,9 +20,9 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Production-ready EKS deployment showcasing modern cloud-native patterns with GitOps
-            workflows, comprehensive monitoring, and AWS best practices. Demonstrates container
-            orchestration, infrastructure as code, and automated deployment pipelines.
+            EKS deployment with GitOps workflows, multi-metric monitoring, and container
+            orchestration. Demonstrates infrastructure as code and automated deployment pipelines
+            using ArgoCD, Prometheus, and Terraform.
           </p>
         </div>
 
@@ -80,8 +80,8 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem & scope:</span>
-          Demonstrate enterprise-grade Kubernetes deployment patterns with GitOps workflows,
-          infrastructure as code, and comprehensive monitoring. Showcases modern cloud-native
+          Demonstrate Kubernetes deployment patterns with GitOps workflows,
+          infrastructure as code, and multi-metric monitoring. Showcases container-based
           application lifecycle management from development to production.
         </div>
       </div>

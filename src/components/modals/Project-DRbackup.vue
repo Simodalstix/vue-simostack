@@ -86,7 +86,7 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem &amp; scope:</span>
-          Demonstrate a cost-optimised, enterprise-style DR posture using Backup &amp; Restore with
+          Demonstrate a cost-optimised DR approach using Backup &amp; Restore with
           automated recovery. Current phase: baseline backup monitoring + first recovery drill.
         </div>
       </div>

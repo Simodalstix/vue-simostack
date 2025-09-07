@@ -8,7 +8,7 @@
       <!-- First column: Infrastructure & DevOps -->
       <div class="md:col-span-1">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Infrastructure & DevOps</h2>
+          <h2 class="text-2xl font-bold mb-2 text-slate-400">Infrastructure & DevOps</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Terraform, CloudFormation – Infrastructure as Code (IaC) for AWS & Azure</li>
             <li>Ansible, GitHub Actions, Jenkins – Provisioning and CI/CD automation</li>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Cloud Platforms</h2>
+          <h2 class="text-2xl font-bold mb-2 text-slate-400">Cloud Platforms</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>AWS (EC2, IAM, S3, Lambda, ACM, CloudWatch)</li>
             <li>Azure (App Services, VNets, Key Vault, Log Analytics, Update Mgmt)</li>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Scripting & Automation</h2>
+          <h2 class="text-2xl font-bold mb-2 text-slate-400">Scripting & Automation</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Bash, PowerShell, Python – Automation and admin tooling</li>
             <li>Cron, systemd timers – Task scheduling and service control</li>
@@ -38,7 +38,7 @@
       <!-- Second column: Systems Administration -->
       <div class="md:col-span-1">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Systems Administration</h2>
+          <h2 class="text-2xl font-bold mb-2 text-slate-400">Systems Administration</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>RHEL, Ubuntu, Windows Server – Multi-platform environments</li>
             <li>Active Directory, Group Policy (GPO), pfSense, DNS</li>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Security & Monitoring</h2>
+          <h2 class="text-2xl font-bold mb-2 text-slate-400">Security & Monitoring</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Sysmon, ELK Stack, Wazuh, Splunk, CloudWatch, Azure Monitor</li>
             <li>Log Analytics, Data Collection Rules (DCR), Dynatrace OneAgent</li>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Web & Networking</h2>
+          <h2 class="text-2xl font-bold mb-2 text-slate-400">Web & Networking</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>HTTP, NGINX, Let's Encrypt – SSL/TLS and reverse proxy setup</li>
             <li>JavaScript, Vue.js, React</li>
@@ -69,11 +69,13 @@
       <div class="md:col-span-2">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="col-span-2">
-            <div class="rounded-t-lg border border-purple-700 bg-purple-700">
+            <div
+              class="rounded-t-lg border border-purple-600 bg-gradient-to-r from-purple-700 to-purple-600"
+            >
               <h2 class="text-2xl font-bold py-3 text-center">Completed Certifications</h2>
             </div>
             <div
-              class="border-l-2 border-r-2 border-b-2 border-purple-700 p-8 grid grid-cols-2 gap-8 place-items-center"
+              class="border-l-2 border-r-2 border-b-2 border-purple-600 p-8 grid grid-cols-2 gap-8 place-items-center"
             >
               <div>
                 <AWSPractioner
@@ -83,7 +85,7 @@
                 <img
                   src="/images/certifications/Cloud_Practitioner.png"
                   alt="AWS Cloud Practitioner Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showPractitionerModal = true"
                 />
               </div>
@@ -95,7 +97,7 @@
                 <img
                   src="/images/certifications/securityplus.png"
                   alt="Comptia Security+ Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showSecurityPlusModal = true"
                 />
               </div>
@@ -105,7 +107,7 @@
                 <img
                   src="/images/certifications/Solutions_Architect.png"
                   alt="AWS Solutions Architect Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showArchitectModal = true"
                 />
               </div>
@@ -114,7 +116,7 @@
                 <img
                   src="/images/certifications/terraform003-2.png"
                   alt="Terraform Associate Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showTerraformModal = true"
                 />
               </div>
@@ -123,7 +125,7 @@
                 <img
                   src="/images/certifications/Developer.png"
                   alt="AWS Developer Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showDeveloperModal = true"
                 />
               </div>
@@ -132,7 +134,7 @@
                 <img
                   src="/images/certifications/azure-admin.png"
                   alt="Azure Admin Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showAzureAmin = true"
                 />
               </div>
@@ -141,25 +143,29 @@
                 <img
                   src="/images/certifications/python-associate.png"
                   alt="Python Associate Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:scale-105 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 rounded cursor-pointer"
+                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showPythonModal = true"
                 />
               </div>
             </div>
-            <div class="rounded-b-lg border-l border-r border-b border-purple-700 bg-purple-700">
+            <div
+              class="rounded-b-lg border-l border-r border-b border-purple-600 bg-gradient-to-r from-purple-700 to-purple-600"
+            >
               <h2 class="text-2xl font-bold py-3 text-center">&nbsp;</h2>
             </div>
           </div>
 
           <div
             @click="showTargetCertsModal = true"
-            class="col-span-1 flex flex-col cursor-pointer transition duration-300 hover:bg-orange-400/40 rounded-lg"
+            class="col-span-1 cursor-pointer transition duration-100 rounded-lg group"
           >
-            <div class="rounded-t-lg border border-orange-300 bg-orange-300">
-              <h2 class="text-2xl font-bold py-3 text-center text-gray-900">In Progress</h2>
+            <div
+              class="rounded-t-lg border border-slate-600 bg-gradient-to-r from-slate-700 to-slate-600 group-hover:border-emerald-400 group-hover:from-emerald-700 group-hover:to-emerald-600 transition-all duration-100"
+            >
+              <h2 class="text-2xl font-bold py-3 text-center">In Progress</h2>
             </div>
             <div
-              class="border-l-2 border-r-2 border-b-2 border-orange-300 p-8 flex flex-col justify-between items-center text-center flex-grow"
+              class="border-l-2 border-r-2 border-b-2 border-slate-600 p-8 flex flex-col justify-between items-center text-center group-hover:border-emerald-400 transition-all duration-100"
             >
               <div class="flex flex-col gap-8 mb-auto">
                 <img
@@ -174,8 +180,10 @@
                 />
               </div>
             </div>
-            <div class="rounded-b-lg border border-orange-300 bg-orange-300">
-              <h2 class="text-2xl font-bold py-3 text-center text-gray-900">How Soon?</h2>
+            <div
+              class="rounded-b-lg border border-slate-600 bg-gradient-to-r from-slate-700 to-slate-600 group-hover:border-emerald-400 group-hover:from-emerald-700 group-hover:to-emerald-600 transition-all duration-100"
+            >
+              <h2 class="text-2xl font-bold py-3 text-center">How Soon?</h2>
             </div>
           </div>
         </div>

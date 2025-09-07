@@ -20,8 +20,8 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Enterprise-ready monitoring platform built with AWS CDK providing instant visibility
-            into any AWS workload. Features automated resource discovery, intelligent alerting,
+            AWS monitoring platform built with CDK providing visibility
+            into AWS workloads. Features automated resource discovery, multi-channel alerting,
             distributed tracing with X-Ray, and real-time dashboards with minimal configuration.
           </p>
         </div>
@@ -74,8 +74,8 @@
       <div class="w-full sm:w-2/3 text-gray-300">
         <span class="font-medium">Problem & scope:</span>
         Organizations struggle with fragmented monitoring across AWS services and lack unified
-        observability. This platform provides comprehensive monitoring, intelligent alerting, and
-        automated remediation with enterprise-grade security and cost optimization.
+        observability. This platform provides cross-service monitoring, multi-channel alerting, and
+        automated remediation with security controls and cost optimization.
       </div>
 
       <div class="flex gap-3 w-full sm:w-auto">

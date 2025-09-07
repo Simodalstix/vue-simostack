@@ -20,7 +20,7 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Production-ready ECS Fargate web service with comprehensive observability, blue/green
+            ECS Fargate web service with multi-metric observability, blue/green
             deployments, and built-in chaos engineering scenarios for incident response training.
             Deploy once, break things safely, learn how to fix them.
           </p>
@@ -82,7 +82,7 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem & scope:</span>
-          Demonstrate production-ready ECS Fargate patterns with comprehensive observability and
+          Demonstrate ECS Fargate deployment patterns with multi-metric observability and
           safe chaos engineering for incident response training. Includes guided break/fix scenarios
           and runbooks for MTTR improvement.
         </div>

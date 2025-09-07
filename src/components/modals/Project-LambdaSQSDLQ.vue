@@ -20,9 +20,9 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            A production-ready, event-driven ingestion pipeline on AWS using API Gateway, Lambda,
-            SQS, DynamoDB, and EventBridge. It demonstrates how platform teams can embed resilience,
-            observability, and operational excellence directly into the architecture, with
+            Event-driven ingestion pipeline on AWS using API Gateway, Lambda,
+            SQS, DynamoDB, and EventBridge. Demonstrates how platform teams can embed resilience,
+            observability, and operational patterns directly into the architecture, with
             everything provisioned through CDK for repeatability.
           </p>
         </div>

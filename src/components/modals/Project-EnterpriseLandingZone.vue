@@ -20,9 +20,9 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Production-ready AWS Landing Zone using CDK with enterprise organizational structure,
-            multi-account strategy, hub-and-spoke networking via Transit Gateway, and comprehensive
-            security baseline with GuardDuty, Security Hub, and automated governance.
+            AWS Landing Zone using CDK with multi-account organizational structure,
+            hub-and-spoke networking via Transit Gateway, and security baseline with GuardDuty,
+            Security Hub, and automated governance.
           </p>
         </div>
 

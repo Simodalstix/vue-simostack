@@ -16,7 +16,7 @@
         <a
           href="https://github.com/Simodalstix"
           target="_blank"
-          class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-indigo-700 hover:to-indigo-600 border border-slate-500 hover:border-indigo-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
+          class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-violet-700 hover:to-violet-600 border border-slate-500 hover:border-violet-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
         >
           <img src="/images/project-icons/githubwhite.png" alt="GitHub" class="w-6 h-6" />
           <span class="text-white font-medium group-hover:text-indigo-100">GitHub</span>
@@ -516,7 +516,7 @@
           <!-- Enhanced Azure Hub-Spoke Card -->
           <BaseCard
             @click="showAzureProject = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -791,7 +791,7 @@
           <!-- Enhanced Dynatrace Azure Card -->
           <BaseCard
             @click="showDynatraceProject = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -1078,7 +1078,7 @@
 
           <!-- Enhanced Java RabbitMQ AKS Card -->
           <BaseCard
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10 relative"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10 relative"
           >
             <!-- Full-card clickable overlay -->
             <a
@@ -1158,141 +1158,6 @@
               <span class="text-gray-400">DevOps - View on GitHub</span>
             </div>
           </BaseCard>
-
-          <!-- Enhanced Document Analyzer Card -->
-          <BaseCard
-            @click="showDocumentAnalyzer = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                AWS AI Document Analyzer – Textract & Claude
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/type-script.svg"
-                alt="TypeScript"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/aws-icons/apigateway.svg"
-                alt="API Gateway"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/textract.svg" alt="Textract" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Serverless
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                AI Platform
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                OCR
-              </span>
-            </div>
-
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
-                >
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                  Ready
-                </span>
-              </div>
-              <span class="text-gray-400">Cloud Infrastructure - View details</span>
-            </div>
-          </BaseCard>
-
-          <!-- Enhanced Raspberry Pi Backend Card -->
-          <BaseCard
-            @click="showRaspberry = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                Github actions CI/CD Backend API on a Raspberry Pi & Docker
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img
-                src="/images/main-tools/raspberry-pi.svg"
-                alt="Raspberry Pi"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/docker-mark-blue.svg"
-                alt="Docker"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/postgres.svg"
-                alt="PostgreSQL"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/express.svg"
-                alt="Express"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/nginx.svg" alt="NGINX" class="w-8 h-8 rounded-md" />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Docker
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Backend
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                CI/CD
-              </span>
-            </div>
-
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
-                >
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                  Ready
-                </span>
-              </div>
-              <span class="text-gray-400">DevOps - View details</span>
-            </div>
-          </BaseCard>
         </div>
       </div>
       <!-- Row 1: Foundation & Core Infrastructure -->
@@ -1304,10 +1169,10 @@
           <!-- Enhanced K3s GitOps Card -->
           <BaseCard
             @click="showK3sGitops = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-zinc-950 transition-all hover:border-gray-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
           >
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
+              <h3 class="text-lg font-bold text-white group-hover:text-slate-100">
                 Raspberry Pi k3s GitOps Platform with Observability
               </h3>
             </div>
@@ -1372,7 +1237,7 @@
           <!-- Enhanced VMware Monitoring Card -->
           <BaseCard
             @click="showVmwareProject = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-zinc-950 transition-all hover:border-gray-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
@@ -1443,7 +1308,7 @@
 
           <BaseCard
             @click="showCICDPipeline = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-zinc-950 transition-all hover:border-gray-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
@@ -1515,7 +1380,7 @@
 
           <BaseCard
             @click="showZeroTrustSecurity = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-zinc-950 transition-all hover:border-gray-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
@@ -1586,7 +1451,7 @@
 
           <BaseCard
             @click="showEnterpriseFileServer = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-zinc-950 transition-all hover:border-gray-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
@@ -1655,7 +1520,7 @@
 
           <BaseCard
             @click="showELKStack = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-zinc-950 transition-all hover:border-gray-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
@@ -1742,7 +1607,7 @@
           <!-- Enhanced DevOps Toolchain Card -->
           <BaseCard
             @click="showToolingProject = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-violet-700 hover:to-violet-950 transition-all hover:border-violet-400 duration-100 hover:shadow-xl hover:shadow-violet-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
