@@ -64,7 +64,7 @@
         <!-- Header Option 3: Minimal Professional -->
         <div class="header-option-3 mb-8">
           <div
-            class="rounded-md border-l-4 border-cyan-400 pl-6 mb-6 bg-gradient-to-r from-slate-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
+            class="rounded-md border-l-8 border-cyan-400 pl-6 mb-6 bg-gradient-to-r from-slate-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
           >
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div class="flex items-center gap-3">
@@ -127,7 +127,7 @@
 
             <!-- Tech Stack -->
             <div class="flex items-center gap-2 mb-4 flex-wrap">
-              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-10 h-10 rounded-md" />
+              <img src="/images/aws-icons/vpc.svg" alt="VPC " class="w-10 h-10 rounded-md" />
               <img
                 src="/images/aws-icons/organizations.svg"
                 alt="Organizations"
@@ -138,12 +138,19 @@
                 alt="Transit Gateway"
                 class="w-10 h-10 rounded-md"
               />
+              <img src="/images/aws-icons/config.svg" alt="SSM" class="w-10 h-10 rounded-md" />
               <img
-                src="/images/aws-icons/cloudwatch.svg"
-                alt="CloudWatch"
+                src="/images/aws-icons/cloudtrail.svg"
+                alt="CloudTrail"
                 class="w-10 h-10 rounded-md"
               />
-              <img src="/images/aws-icons/ssm.svg" alt="SSM" class="w-10 h-10 rounded-md" />
+              <img src="/images/aws-icons/kms.svg" alt="KMS" class="w-10 h-10 rounded-md" />
+              <img src="/images/aws-icons/guardduty.svg" alt="SSM" class="w-10 h-10 rounded-md" />
+              <img
+                src="/images/aws-icons/security-hub.svg"
+                alt="SSM"
+                class="w-10 h-10 rounded-md"
+              />
             </div>
 
             <!-- Enhanced Tags -->
@@ -195,17 +202,25 @@
 
             <!-- Tech Stack -->
             <div class="flex items-center gap-2 mb-4 flex-wrap">
-              <img src="/images/aws-icons/eks.svg" alt="EKS" class="w-10 h-10 rounded-md" />
               <img src="/images/aws-icons/ecs.svg" alt="ECS" class="w-10 h-10 rounded-md" />
+              <img src="/images/aws-icons/eks.svg" alt="EKS" class="w-10 h-10 rounded-md" />
+
               <img src="/images/aws-icons/fargate.svg" alt="Fargate" class="w-10 h-10 rounded-md" />
+              <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-10 h-10 rounded-md" />
+              <img
+                src="/images/aws-icons/cloudwatch.svg"
+                alt="Cloudwatch"
+                class="w-10 h-10 rounded-md"
+              />
               <img
                 src="/images/project-icons/argocd.svg"
                 alt="ArgoCD"
                 class="w-10 h-10 rounded-md"
               />
+              <img src="/images/project-icons/helm.png" alt="Helm" class="w-10 h-10 rounded-md" />
               <img
-                src="/images/project-icons/prometheus.png"
-                alt="Prometheus"
+                src="/images/project-icons/istio.jpeg"
+                alt="Istio"
                 class="w-10 h-10 rounded-md"
               />
             </div>
@@ -275,7 +290,12 @@
                 src="/images/aws-icons/apigateway.svg"
                 alt="API Gateway"
                 class="w-10 h-10 rounded-md"
+              /><img
+                src="/images/aws-icons/eventbridge.svg"
+                alt="EventBridge"
+                class="w-10 h-10 rounded-md"
               />
+              <img src="/images/aws-icons/s3.svg" alt="S3" class="w-10 h-10 rounded-md" />
             </div>
 
             <!-- Enhanced Tags -->
@@ -329,7 +349,7 @@
         <!-- Header Option 3: Minimal Professional -->
         <div class="relative z-10 mb-8">
           <div
-            class="rounded-md border-l-4 border-zinc-400 pl-6 mb-6 bg-gradient-to-r from-zinc-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
+            class="rounded-md border-l-8 border-purple-400 pl-6 mb-6 bg-gradient-to-r from-purple-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
           >
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div class="flex items-center gap-3">
@@ -779,7 +799,7 @@
         <!-- Zone Header -->
         <div class="relative z-10 mb-8">
           <div
-            class="rounded-md border-l-4 border-indigo-400 pl-6 mb-6 bg-gradient-to-r from-indigo-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
+            class="rounded-md border-l-8 border-indigo-400 pl-6 mb-6 bg-gradient-to-r from-indigo-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
           >
             <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div class="flex items-center gap-3">
