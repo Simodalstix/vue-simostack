@@ -1,10 +1,14 @@
 n d
 <template>
   <div class="flex flex-col min-h-screen bg-gray-900 text-white">
-    <header class="bg-gradient-to-r from-slate-800 to-slate-700 shadow-xl border-b border-slate-600">
+    <header
+      class="bg-gradient-to-r from-slate-800 to-slate-700 shadow-xl border-b border-slate-600"
+    >
       <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-          <router-link to="/" class="text-xl font-bold text-white hover:text-indigo-300 transition-colors duration-200"
+          <router-link
+            to="/"
+            class="text-xl font-bold text-white hover:text-indigo-300 transition-colors duration-200"
             >Simon Parker
           </router-link>
           <!-- Mobile menu button -->
@@ -65,6 +69,12 @@ n d
               >Projects</router-link
             >
             <router-link
+              :to="{ name: 'ProjectsRemake' }"
+              class="px-3 py-2 rounded-md text-orange-300 hover:text-white hover:bg-orange-600/50 transition-all duration-200 text-sm"
+              @click="closeMobileMenu"
+              >Projects v2</router-link
+            >
+            <router-link
               :to="{ name: 'About' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
@@ -114,6 +124,11 @@ n d
               :to="{ name: 'Projects' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Projects</router-link
+            >
+            <router-link
+              :to="{ name: 'ProjectsRemake' }"
+              class="px-3 py-2 rounded-md text-orange-300 hover:text-white hover:bg-orange-600/50 transition-all duration-200 text-sm"
+              >Projects v2</router-link
             >
             <router-link
               :to="{ name: 'About' }"
@@ -175,7 +190,7 @@ n d
                 title="Azure"
               />
               <img
-                src="/images/main-tools/ansible.svg"
+                src="/images/project-icons/ansible.svg"
                 alt="Ansible"
                 class="h-8 md:h-12"
                 title="Ansible"

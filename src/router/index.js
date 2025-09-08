@@ -25,6 +25,11 @@ const routes = [
     name: 'Projects',
     component: () => import('../views/ProjectsView.vue'),
   },
+  {
+    path: '/projects-remake',
+    name: 'ProjectsRemake',
+    component: () => import('../views/ProjectsRemakeView.vue'),
+  },
 
   {
     path: '/contact',

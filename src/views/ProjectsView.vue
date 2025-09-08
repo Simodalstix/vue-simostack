@@ -18,7 +18,11 @@
           target="_blank"
           class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-violet-700 hover:to-violet-600 border border-slate-500 hover:border-violet-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
         >
-          <img src="/images/project-icons/githubwhite.png" alt="GitHub" class="w-6 h-6" />
+          <img
+            src="/images/project-icons/githubwhite.png"
+            alt="GitHub"
+            class="w-8 h-8 rounded-md"
+          />
           <span class="text-white font-medium group-hover:text-indigo-100">GitHub</span>
         </a>
 
@@ -30,7 +34,7 @@
           <img
             src="/images/project-icons/hackthebox-green.svg"
             alt="Hack The Box"
-            class="w-6 h-6"
+            class="w-8 h-8 rounded-md"
           />
           <span class="text-white font-medium group-hover:text-green-100">Hack The Box</span>
         </button>
@@ -45,12 +49,7 @@
           Cloud Platforms & Extensions
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <!-- Col 1 -->
-          <!-- Col 2 -->
-          <!-- Col 3 -->
-          <!-- Col 4 -->
-
-          <!-- Enhanced AWS Fargate Card -->
+          <!-- Azure Container Apps Card -->
           <BaseCard
             @click="showAwsFargateGoldenPath = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
@@ -248,7 +247,6 @@
             </div>
           </BaseCard>
 
-          <!-- Enhanced Azure Container Apps Card -->
           <BaseCard
             @click="showAzureContainerApps = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
@@ -327,7 +325,7 @@
           <!-- Enhanced EKS GitOps Card -->
           <BaseCard
             @click="showAwsGitopsGP = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
@@ -513,7 +511,7 @@
             </div>
           </BaseCard>
 
-          <!-- Enhanced Azure Hub-Spoke Card -->
+          <!-- Azure Hub-Spoke Card -->
           <BaseCard
             @click="showAzureProject = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
@@ -788,7 +786,7 @@
             </div>
           </BaseCard>
 
-          <!-- Enhanced Dynatrace Azure Card -->
+          <!-- Dynatrace Azure Card -->
           <BaseCard
             @click="showDynatraceProject = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
@@ -1076,7 +1074,7 @@
             </div>
           </BaseCard>
 
-          <!-- Enhanced Java RabbitMQ AKS Card -->
+          <!-- Java RabbitMQ AKS Card -->
           <BaseCard
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10 relative"
           >
@@ -1160,440 +1158,517 @@
           </BaseCard>
         </div>
       </div>
-      <!-- Row 1: Foundation & Core Infrastructure -->
-      <div>
-        <h3 class="text-sm font-medium text-slate-400 mb-4 uppercase tracking-wide">
-          Foundation & Core Infrastructure
-        </h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <!-- Enhanced K3s GitOps Card -->
-          <BaseCard
-            @click="showK3sGitops = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
-          >
+      <!-- Foundation & Core Infrastructure Zone -->
+      <div class="relative">
+        <!-- Zone Container with Sleek Border -->
+        <div
+          class="border-2 border-slate-500/30 rounded-2xl p-6 bg-gradient-to-br from-slate-800/20 to-slate-900/40 backdrop-blur-sm"
+        >
+          <!-- Zone Header -->
+          <div class="mb-6">
             <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-slate-100">
-                Raspberry Pi k3s GitOps Platform with Observability
+              <h3 class="text-xl font-bold text-slate-200 uppercase tracking-wide">
+                Foundation & Core Infrastructure
               </h3>
+              <!-- Technology Icons Row -->
+              <div class="flex items-center gap-3">
+                <img
+                  src="/images/project-icons/rocky.svg"
+                  alt="Rocky Linux"
+                  class="w-8 h-8 opacity-80 hover:opacity-100 transition-opacity"
+                  title="Rocky Linux"
+                />
+                <img
+                  src="/images/main-tools/vmware.svg"
+                  alt="VMware"
+                  class="w-8 h-8 opacity-80 hover:opacity-100 transition-opacity"
+                  title="VMware vSphere"
+                />
+                <img
+                  src="/images/project-icons/proxmox2.png"
+                  alt="Proxmox"
+                  class="w-8 h-8 opacity-80 hover:opacity-100 transition-opacity"
+                  title="Proxmox VE"
+                />
+                <img
+                  src="/images/project-icons/ansible.svg"
+                  alt="Ansible"
+                  class="w-8 h-8 opacity-80 hover:opacity-100 transition-opacity"
+                  title="Ansible Automation"
+                />
+              </div>
             </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img
-                src="/images/project-icons/raspberry-pi.svg"
-                alt="Raspberry Pi"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/ansible.svg"
-                alt="Ansible"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
-              <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
-              <img src="/images/project-icons/helm.png" alt="Helm" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/mariadb.svg"
-                alt="MariaDB"
-                class="w-8 h-8 rounded-md"
-              />
+            <!-- Zone Description -->
+            <div class="bg-slate-700/30 rounded-lg p-4 border border-slate-600/30">
+              <p class="text-slate-300 text-sm leading-relaxed">
+                My home lab foundation built on
+                <span class="text-slate-200 font-medium">VMware</span> and
+                <span class="text-slate-200 font-medium">Rocky Linux</span>, automated with
+                <span class="text-slate-200 font-medium">Ansible</span>. Currently expanding to
+                include a
+                <span class="text-cyan-400 font-medium">Beelink SER8 mini-PC</span> running
+                <span class="text-orange-400 font-medium">Proxmox</span>
+                for containerized workloads and Kubernetes clusters. This infrastructure serves as
+                the foundation for all cloud integrations and hybrid deployments.
+              </p>
             </div>
+          </div>
 
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                GitOps
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Kubernetes
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Raspberry Pi
-              </span>
-            </div>
-
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+          <!-- Projects Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- Enhanced K3s GitOps Card -->
+            <BaseCard
+              @click="showK3sGitops = true"
+              class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
             >
-              <div class="flex items-center gap-4">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-white group-hover:text-slate-100">
+                  Raspberry Pi k3s GitOps Platform with Observability
+                </h3>
+              </div>
+
+              <!-- Tech stack icons -->
+              <div class="flex items-center gap-3 mb-4">
+                <img
+                  src="/images/project-icons/raspberry-pi.svg"
+                  alt="Raspberry Pi"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/ansible.svg"
+                  alt="Ansible"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
+                <img
+                  src="/images/project-icons/argocd.svg"
+                  alt="ArgoCD"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img src="/images/project-icons/helm.png" alt="Helm" class="w-8 h-8 rounded-md" />
+                <img
+                  src="/images/project-icons/mariadb.svg"
+                  alt="MariaDB"
+                  class="w-8 h-8 rounded-md"
+                />
+              </div>
+
+              <!-- Enhanced tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
                 <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
                 >
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                  Ready
+                  GitOps
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Kubernetes
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Raspberry Pi
                 </span>
               </div>
-              <span class="text-gray-400">Experimental Lab - View details</span>
-            </div>
-          </BaseCard>
 
-          <!-- Enhanced VMware Monitoring Card -->
-          <BaseCard
-            @click="showVmwareProject = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
-                Automating VMware Monitoring and Alerting with Ansible
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/ansible.svg"
-                alt="Ansible"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/redhat.svg"
-                alt="Red Hat"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/prometheus.png"
-                alt="Prometheus"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/grafana.png"
-                alt="Grafana"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/loki.png" alt="Loki" class="w-8 h-8 rounded-md" />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              <!-- Project metadata footer -->
+              <div
+                class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
               >
-                VMware
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Automation
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Monitoring
-              </span>
-            </div>
+                <div class="flex items-center gap-4">
+                  <span
+                    class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                  >
+                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                    Ready
+                  </span>
+                </div>
+                <span class="text-gray-400">Experimental Lab - View details</span>
+              </div>
+            </BaseCard>
 
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            <!-- Enhanced VMware Monitoring Card -->
+            <BaseCard
+              @click="showVmwareProject = true"
+              class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
             >
-              <div class="flex items-center gap-4">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
+                  Infrastructure Monitoring with Prometheus & Grafana
+                </h3>
+              </div>
+
+              <!-- Tech stack icons -->
+              <div class="flex items-center gap-3 mb-4">
+                <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
+                <img
+                  src="/images/project-icons/ansible.svg"
+                  alt="Ansible"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/redhat.svg"
+                  alt="Red Hat"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/prometheus.png"
+                  alt="Prometheus"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/grafana.png"
+                  alt="Grafana"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img src="/images/project-icons/loki.png" alt="Loki" class="w-8 h-8 rounded-md" />
+              </div>
+
+              <!-- Enhanced tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
                 <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
                 >
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                  Ready
+                  VMware
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Automation
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Monitoring
                 </span>
               </div>
-              <span class="text-gray-400">DevOps - View details</span>
-            </div>
-          </BaseCard>
 
-          <BaseCard
-            @click="showCICDPipeline = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
-                CI/CD Pipeline Infrastructure with Ansible Automation
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/project-icons/rocky.svg" alt="VMware" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/ansible.svg"
-                alt="Ansible"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/jenkins.svg"
-                alt="Jenkins"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/nexus.png" alt="Nexus" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/sonarqube.png"
-                alt="SonarQube"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/docker-mark-blue.svg"
-                alt="Docker"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/nginx.svg" alt="Nginx" class="w-8 h-8 rounded-md" />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              <!-- Project metadata footer -->
+              <div
+                class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
               >
-                DevOps
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Code Analysis
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Quality Gates
-              </span>
-            </div>
+                <div class="flex items-center gap-4">
+                  <span
+                    class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                  >
+                    <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                    Ready
+                  </span>
+                </div>
+                <span class="text-gray-400">DevOps - View details</span>
+              </div>
+            </BaseCard>
 
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            <BaseCard
+              @click="showCICDPipeline = true"
+              class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
             >
-              <div class="flex items-center gap-4">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
+                  Jenkins CI/CD Pipeline with SonarQube & Nexus
+                </h3>
+              </div>
+
+              <!-- Tech stack icons -->
+              <div class="flex items-center gap-3 mb-4">
+                <img
+                  src="/images/project-icons/rocky.svg"
+                  alt="VMware"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/ansible.svg"
+                  alt="Ansible"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/jenkins.svg"
+                  alt="Jenkins"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img src="/images/project-icons/nexus.png" alt="Nexus" class="w-8 h-8 rounded-md" />
+                <img
+                  src="/images/project-icons/sonarqube.png"
+                  alt="SonarQube"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/docker-mark-blue.svg"
+                  alt="Docker"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img src="/images/project-icons/nginx.svg" alt="Nginx" class="w-8 h-8 rounded-md" />
+              </div>
+
+              <!-- Enhanced tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
                 <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
                 >
-                  <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  Active
+                  DevOps
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Code Analysis
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Quality Gates
                 </span>
               </div>
-              <span class="text-gray-400">CI/CD Infrastructure - View details</span>
-            </div>
-          </BaseCard>
 
-          <BaseCard
-            @click="showZeroTrustSecurity = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
-                Zero-Trust Security Platform with Threat Detection & PKI
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/ansible.svg"
-                alt="Ansible"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/redhat.svg"
-                alt="Red Hat"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/vault.svg"
-                alt="HashiCorp Vault"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/wazuh-icon.png"
-                alt="Wazuh SIEM"
-                class="w-8 h-8 rounded-md"
-              />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              <!-- Project metadata footer -->
+              <div
+                class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
               >
-                Zero-Trust
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Enterprise Security
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                SIEM
-              </span>
-            </div>
+                <div class="flex items-center gap-4">
+                  <span
+                    class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                  >
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    Active
+                  </span>
+                </div>
+                <span class="text-gray-400">CI/CD Infrastructure - View details</span>
+              </div>
+            </BaseCard>
 
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            <BaseCard
+              @click="showZeroTrustSecurity = true"
+              class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
             >
-              <div class="flex items-center gap-4">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
+                  Zero-Trust Security Platform with Threat Detection & PKI
+                </h3>
+              </div>
+
+              <!-- Tech stack icons -->
+              <div class="flex items-center gap-3 mb-4">
+                <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
+                <img
+                  src="/images/project-icons/ansible.svg"
+                  alt="Ansible"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/redhat.svg"
+                  alt="Red Hat"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/ubuntu.svg"
+                  alt="Ubuntu"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/vault.svg"
+                  alt="HashiCorp Vault"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/wazuh-icon.png"
+                  alt="Wazuh SIEM"
+                  class="w-8 h-8 rounded-md"
+                />
+              </div>
+
+              <!-- Enhanced tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
                 <span
-                  class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
                 >
-                  <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                  In Progress
+                  Zero-Trust
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Enterprise Security
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  SIEM
                 </span>
               </div>
-              <span class="text-gray-400">Security Platform - View details</span>
-            </div>
-          </BaseCard>
 
-          <BaseCard
-            @click="showEnterpriseFileServer = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
-                Enterprise File Server Platform with Cloud Extensions
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/ansible.svg"
-                alt="Ansible"
-                class="w-8 h-8 rounded-md"
-              />
-
-              <img
-                src="/images/project-icons/redhat.svg"
-                alt="Red Hat"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu" class="w-8 h-8 rounded-md" />
-              <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-8 h-8 rounded-md" />
-              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/ad.png"
-                alt="Active Directory"
-                class="w-8 h-8 rounded-md"
-              />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              <!-- Project metadata footer -->
+              <div
+                class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
               >
-                Hybrid Cloud
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Enterprise
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Modular
-              </span>
-            </div>
+                <div class="flex items-center gap-4">
+                  <span
+                    class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
+                  >
+                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                    In Progress
+                  </span>
+                </div>
+                <span class="text-gray-400">Security Platform - View details</span>
+              </div>
+            </BaseCard>
 
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            <BaseCard
+              @click="showEnterpriseFileServer = true"
+              class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
             >
-              <div class="flex items-center gap-4">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
+                  Enterprise File Server Platform with Cloud Extensions
+                </h3>
+              </div>
+
+              <!-- Tech stack icons -->
+              <div class="flex items-center gap-3 mb-4">
+                <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
+                <img
+                  src="/images/project-icons/ansible.svg"
+                  alt="Ansible"
+                  class="w-8 h-8 rounded-md"
+                />
+
+                <img
+                  src="/images/project-icons/redhat.svg"
+                  alt="Red Hat"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/ubuntu.svg"
+                  alt="Ubuntu"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/main-tools/azure-icon.svg"
+                  alt="Azure"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+                <img
+                  src="/images/project-icons/ad.png"
+                  alt="Active Directory"
+                  class="w-8 h-8 rounded-md"
+                />
+              </div>
+
+              <!-- Enhanced tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
                 <span
-                  class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
                 >
-                  <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                  In Progress
+                  Hybrid Cloud
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Enterprise
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Modular
                 </span>
               </div>
-              <span class="text-gray-400">Platform - View details</span>
-            </div>
-          </BaseCard>
 
-          <BaseCard
-            @click="showELKStack = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
-                ELK Stack Centralized Logging Platform
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/ansible.svg"
-                alt="Ansible"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/elastic.svg"
-                alt="Elasticsearch"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/kibana.svg" alt="Kibana" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/logstash.svg"
-                alt="Logstash"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/filebeat.svg"
-                alt="Filebeat"
-                class="w-8 h-8 rounded-md"
-              />
-
-              <img src="/images/project-icons/nginx.svg" alt="Nginx" class="w-8 h-8 rounded-md" />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              <!-- Project metadata footer -->
+              <div
+                class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
               >
-                Observability
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Log Analytics
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Multi Node
-              </span>
-            </div>
+                <div class="flex items-center gap-4">
+                  <span
+                    class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
+                  >
+                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                    In Progress
+                  </span>
+                </div>
+                <span class="text-gray-400">Platform - View details</span>
+              </div>
+            </BaseCard>
 
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            <BaseCard
+              @click="showELKStack = true"
+              class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
             >
-              <div class="flex items-center gap-4">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
+                  ELK Stack Centralized Logging Platform
+                </h3>
+              </div>
+
+              <!-- Tech stack icons -->
+              <div class="flex items-center gap-3 mb-4">
+                <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
+                <img
+                  src="/images/project-icons/ansible.svg"
+                  alt="Ansible"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/elastic.svg"
+                  alt="Elasticsearch"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/kibana.svg"
+                  alt="Kibana"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/logstash.svg"
+                  alt="Logstash"
+                  class="w-8 h-8 rounded-md"
+                />
+                <img
+                  src="/images/project-icons/filebeat.svg"
+                  alt="Filebeat"
+                  class="w-8 h-8 rounded-md"
+                />
+
+                <img src="/images/project-icons/nginx.svg" alt="Nginx" class="w-8 h-8 rounded-md" />
+              </div>
+
+              <!-- Enhanced tags -->
+              <div class="flex flex-wrap gap-2 mb-4">
                 <span
-                  class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
                 >
-                  <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-                  In Progress
+                  Observability
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Log Analytics
+                </span>
+                <span
+                  class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                >
+                  Multi Node
                 </span>
               </div>
-              <span class="text-gray-400">Infrastructure - View details</span>
-            </div>
-          </BaseCard>
-          <!-- Col 1 -->
-          <!-- Col 2 -->
-          <!-- Col 3 -->
-          <!-- Col 4 -->
+
+              <!-- Project metadata footer -->
+              <div
+                class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+              >
+                <div class="flex items-center gap-4">
+                  <span
+                    class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
+                  >
+                    <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                    In Progress
+                  </span>
+                </div>
+                <span class="text-gray-400">Infrastructure - View details</span>
+              </div>
+            </BaseCard>
+            <!-- Col 1 -->
+            <!-- Col 2 -->
+            <!-- Col 3 -->
+            <!-- Col 4 -->
+          </div>
         </div>
       </div>
 
