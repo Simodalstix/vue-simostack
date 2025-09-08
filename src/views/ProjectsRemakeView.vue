@@ -3,8 +3,8 @@
     <!-- Header Section -->
     <div class="text-center mb-16">
       <div class="max-w-4xl mx-auto">
-        <h1 class="text-4xl font-bold mb-4">Infrastructure Portfolio</h1>
-        <p class="text-xl text-slate-400 mb-8">
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4">Infrastructure Portfolio</h1>
+        <p class="text-lg sm:text-xl text-slate-400 mb-8">
           Modular cloud and on-premises platforms showcasing enterprise architecture patterns,
           DevOps automation, and modern security practices across AWS, Azure, and home lab
           environments.
@@ -49,7 +49,7 @@
     <div class="relative mb-16">
       <!-- Zone Container with Modern Gradient Border -->
       <div
-        class="border-2 border-slate-500/40 rounded-3xl p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
+        class="border-2 border-slate-500/40 rounded-3xl p-4 sm:p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
       >
         <!-- Animated Background Pattern -->
         <div class="absolute inset-0 opacity-5">
@@ -63,8 +63,10 @@
 
         <!-- Header Option 3: Minimal Professional -->
         <div class="header-option-3 mb-8">
-          <div class="border-l-4 border-cyan-400 pl-6 mb-6 bg-gradient-to-r from-slate-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2">
-            <div class="flex items-center justify-between">
+          <div
+            class="rounded-md border-l-4 border-cyan-400 pl-6 mb-6 bg-gradient-to-r from-slate-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
+          >
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div class="flex items-center gap-3">
                 <img
                   src="/images/main-tools/aws-icon2.png"
@@ -72,26 +74,32 @@
                   class="w-10 h-10 rounded-md"
                 />
                 <div>
-                  <h3 class="text-2xl font-bold text-white mb-1">AWS Cloud Infrastructure</h3>
-                  <div class="flex items-center gap-3">
-                    <span class="text-sm text-slate-400">IaC - Python CDK + Terraform </span>
-                    <span class="text-xs text-slate-500">•</span>
-                    <span class="text-sm text-slate-400">3 Enterprise Platforms</span>
-                    <span class="text-xs text-slate-500">•</span>
-                    <span class="text-sm text-slate-400">Multi-Account + Multi-Region</span>
+                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">
+                    AWS Cloud Infrastructure
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                    <span class="text-xs sm:text-sm text-slate-400"
+                      >IaC - Python CDK + Terraform</span
+                    >
+                    <span class="text-xs text-slate-500 hidden sm:inline">•</span>
+                    <span class="text-xs sm:text-sm text-slate-400">3 Enterprise Platforms</span>
+                    <span class="text-xs text-slate-500 hidden sm:inline">•</span>
+                    <span class="text-xs sm:text-sm text-slate-400"
+                      >Multi-Account + Multi-Region</span
+                    >
                   </div>
                 </div>
               </div>
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2 self-start sm:self-auto">
                 <img
                   src="/images/main-tools/terraform.svg"
                   alt="Terraform"
-                  class="w-10 h-10 rounded-md opacity-80"
+                  class="w-8 h-8 sm:w-10 sm:h-10 rounded-md opacity-80"
                 />
                 <img
                   src="/images/project-icons/python.svg"
                   alt="Python CDK"
-                  class="w-10 h-10 rounded-md opacity-80"
+                  class="w-8 h-8 sm:w-10 sm:h-10 rounded-md opacity-80"
                 />
               </div>
             </div>
@@ -307,7 +315,7 @@
     <div class="relative mb-16">
       <!-- Zone Container with Modern Gradient Border -->
       <div
-        class="border-2 border-slate-500/40 rounded-3xl p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
+        class="border-2 border-slate-500/40 rounded-3xl p-4 sm:p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
       >
         <!-- Animated Background Pattern -->
         <div class="absolute inset-0 opacity-5">
@@ -320,8 +328,10 @@
         <!-- COPY HEADER OPTIONS HERE: Replace this entire section with any header from HomeLabHeaders.vue -->
         <!-- Header Option 3: Minimal Professional -->
         <div class="relative z-10 mb-8">
-          <div class="border-l-4 border-zinc-400 pl-6 mb-6 bg-gradient-to-r from-zinc-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2">
-            <div class="flex items-center justify-between">
+          <div
+            class="rounded-md border-l-4 border-zinc-400 pl-6 mb-6 bg-gradient-to-r from-zinc-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
+          >
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div class="flex items-center gap-3">
                 <img
                   src="/images/project-icons/proxmox2.png"
@@ -329,26 +339,26 @@
                   class="w-10 h-10 rounded-md"
                 />
                 <div>
-                  <h3 class="text-2xl font-bold text-white mb-1">On-Premises Lab</h3>
-                  <div class="flex items-center gap-3">
-                    <span class="text-sm text-slate-400">IaC - Ansible</span>
-                    <span class="text-xs text-slate-500">•</span>
-                    <span class="text-sm text-slate-400">6 Core Services</span>
-                    <span class="text-xs text-slate-500">•</span>
-                    <span class="text-sm text-slate-400">80GB RAM Across 3 Systems</span>
+                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">On-Premises Lab</h3>
+                  <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                    <span class="text-xs sm:text-sm text-slate-400">IaC - Ansible</span>
+                    <span class="text-xs text-slate-500 hidden sm:inline">•</span>
+                    <span class="text-xs sm:text-sm text-slate-400">6 Core Services</span>
+                    <span class="text-xs text-slate-500 hidden sm:inline">•</span>
+                    <span class="text-xs sm:text-sm text-slate-400">80GB RAM Across 3 Systems</span>
                   </div>
                 </div>
               </div>
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2 self-start sm:self-auto">
                 <img
                   src="/images/main-tools/vmware.svg"
                   alt="VMware"
-                  class="w-10 h-10 rounded-md opacity-80"
+                  class="w-8 h-8 sm:w-10 sm:h-10 rounded-md opacity-80"
                 />
                 <img
                   src="/images/project-icons/rocky.svg"
                   alt="Rocky Linux"
-                  class="w-10 h-10 rounded-md opacity-80"
+                  class="w-8 h-8 sm:w-10 sm:h-10 rounded-md opacity-80"
                 />
               </div>
             </div>
@@ -681,10 +691,10 @@
             <!-- Status & Metadata -->
             <div class="flex items-center justify-between text-xs pt-4 border-t border-slate-600">
               <span
-                class="flex items-center gap-2 px-3 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
+                class="flex items-center gap-2 px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full"
               >
-                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                Ready
+                <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                Planned (awaiting hardware)
               </span>
               <span class="text-slate-400 font-medium">Network Security</span>
             </div> </BaseCard
@@ -742,9 +752,9 @@
             <!-- Status & Metadata -->
             <div class="flex items-center justify-between text-xs pt-4 border-t border-slate-600">
               <span
-                class="flex items-center gap-2 px-3 py-1 bg-yellow-500/20 text-yellow-300 border border-yellow-500/30 rounded-full"
+                class="flex items-center gap-2 px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full"
               >
-                <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
                 Planned
               </span>
               <span class="text-slate-400 font-medium">Identity Core</span>
@@ -757,7 +767,7 @@
     <div class="relative">
       <!-- Zone Container with Modern Gradient Border -->
       <div
-        class="border-2 border-slate-500/40 rounded-3xl p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
+        class="border-2 border-slate-500/40 rounded-3xl p-4 sm:p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
       >
         <!-- Animated Background Pattern -->
         <div class="absolute inset-0 opacity-5">
@@ -768,8 +778,10 @@
 
         <!-- Zone Header -->
         <div class="relative z-10 mb-8">
-          <div class="border-l-4 border-indigo-400 pl-6 mb-6 bg-gradient-to-r from-indigo-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2">
-            <div class="flex items-center justify-between">
+          <div
+            class="rounded-md border-l-4 border-indigo-400 pl-6 mb-6 bg-gradient-to-r from-indigo-600/20 via-slate-700/10 to-transparent rounded-r-xl py-4 -ml-2"
+          >
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div class="flex items-center gap-3">
                 <img
                   src="/images/main-tools/azure-icon.svg"
@@ -777,21 +789,25 @@
                   class="w-10 h-10 rounded-md"
                 />
                 <div>
-                  <h3 class="text-2xl font-bold text-white mb-1">Azure Cloud Infrastructure</h3>
-                  <div class="flex items-center gap-3">
-                    <span class="text-sm text-slate-400">IaC - Terraform</span>
-                    <span class="text-xs text-slate-500">•</span>
-                    <span class="text-sm text-slate-400">2 Specialized Platforms</span>
-                    <span class="text-xs text-slate-500">•</span>
-                    <span class="text-sm text-slate-400">Hub & Spoke + Container Focus</span>
+                  <h3 class="text-xl sm:text-2xl font-bold text-white mb-1">
+                    Azure Cloud Infrastructure
+                  </h3>
+                  <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                    <span class="text-xs sm:text-sm text-slate-400">IaC - Terraform</span>
+                    <span class="text-xs text-slate-500 hidden sm:inline">•</span>
+                    <span class="text-xs sm:text-sm text-slate-400">2 Specialized Platforms</span>
+                    <span class="text-xs text-slate-500 hidden sm:inline">•</span>
+                    <span class="text-xs sm:text-sm text-slate-400"
+                      >Hub & Spoke + Container Focus</span
+                    >
                   </div>
                 </div>
               </div>
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2 self-start sm:self-auto">
                 <img
                   src="/images/main-tools/terraform.svg"
                   alt="Terraform"
-                  class="w-10 h-10 rounded-md opacity-80"
+                  class="w-8 h-8 sm:w-10 sm:h-10 rounded-md opacity-80"
                 />
               </div>
             </div>
