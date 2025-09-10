@@ -20,53 +20,52 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Event-driven ingestion pipeline on AWS using API Gateway, Lambda,
-            SQS, DynamoDB, and EventBridge. Demonstrates how platform teams can embed resilience,
-            observability, and operational patterns directly into the architecture, with
-            everything provisioned through CDK for repeatability.
+            Event-driven ingestion pipeline on AWS using API Gateway, Lambda, SQS, DynamoDB, and
+            EventBridge. Demonstrates how platform teams can embed resilience, observability, and
+            operational patterns directly into the architecture, with everything provisioned through
+            CDK for repeatability.
           </p>
         </div>
 
         <div>
-          <h3 class="font-bold text-lg text-orange-300">Reliability & Fault Tolerance</h3>
+          <h3 class="font-bold text-lg text-orange-300">Key Architecture Decisions</h3>
           <div class="text-sm text-gray-300 space-y-3">
-            <p class="text-sm text-gray-300">
-              Implements resilience mechanisms: DLQ with controlled redrive, idempotency in
-              DynamoDB, partial batch retries, and circuit breakers for external calls. Backoff with
-              jitter prevents storms, while single-responsibility Lambdas limit blast radius and
-              simplify scaling—together forming a modern resilience posture.
+            <p class="text-base text-gray-300">
+              Used SQS with DLQ for reliable message processing - failed messages go to dead letter
+              queue for investigation. DynamoDB stores processed message IDs to prevent duplicates.
+              Lambda functions are small and focused on single tasks for easier debugging.
             </p>
           </div>
         </div>
       </aside>
     </div>
 
-    <!-- Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Error Handling</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>DLQ with configurable redrive policy.</li>
-          <li>Idempotency enforced using DynamoDB + TTL.</li>
-          <li>Circuit breaker patterns for external dependencies.</li>
+          <li>Dead letter queue captures failed messages</li>
+          <li>DynamoDB prevents duplicate processing</li>
+          <li>Retry logic with exponential backoff</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Est. ~US$20/mo in dev (1M msgs, us-east-1).</li>
-          <li>Major drivers: Lambda, API Gateway, CloudWatch.</li>
-          <li>KMS optional (adds ~$3/mo if enabled).</li>
+          <li>~$20/month for 1M messages in development</li>
+          <li>Main costs: Lambda execution and API Gateway</li>
+          <li>Optional KMS encryption adds ~$3/month</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>CloudWatch dashboards + alarms preconfigured.</li>
-          <li>Structured JSON logging with correlation IDs.</li>
-          <li>X-Ray tracing + Log Insights for debugging</li>
+          <li>CloudWatch dashboards show message flow</li>
+          <li>Structured logging with request tracking</li>
+          <li>X-Ray tracing for performance debugging</li>
         </ul>
       </div>
     </div>
@@ -78,9 +77,9 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem &amp; scope:</span>
-          Demonstrate a resilient ingestion pipeline with safe failure handling, observability, and
-          cost-effective scaling. Current phase: DLQ handling, retries with backoff/jitter,
-          idempotency, and circuit breakers.
+          Learning serverless event-driven architecture with proper error handling and monitoring.
+          Demonstrates message queuing, dead letter queues, and Lambda function patterns for
+          reliable data processing.
         </div>
       </div>
 

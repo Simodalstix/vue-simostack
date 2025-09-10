@@ -74,12 +74,7 @@ n d
               @click="closeMobileMenu"
               >Projects v2</router-link
             >
-            <router-link
-              :to="{ name: 'SkillsRemake' }"
-              class="px-3 py-2 rounded-md text-violet-300 hover:text-white hover:bg-violet-600/50 transition-all duration-200 text-sm"
-              @click="closeMobileMenu"
-              >Skills v2</router-link
-            >
+
             <router-link
               :to="{ name: 'About' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
@@ -136,11 +131,7 @@ n d
               class="px-3 py-2 rounded-md text-orange-300 hover:text-white hover:bg-orange-600/50 transition-all duration-200 text-sm"
               >Projects v2</router-link
             >
-            <router-link
-              :to="{ name: 'SkillsRemake' }"
-              class="px-3 py-2 rounded-md text-violet-300 hover:text-white hover:bg-violet-600/50 transition-all duration-200 text-sm"
-              >Skills v2</router-link
-            >
+
             <router-link
               :to="{ name: 'About' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"

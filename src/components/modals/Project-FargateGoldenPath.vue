@@ -39,38 +39,35 @@
       </aside>
     </div>
 
-    <!-- New Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">High Availability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Multi-AZ: 2 tasks across availability zones</li>
-          <li>Auto-rollback: CodeDeploy on ALB 5xx alarms</li>
-          <li>Health checks: ALB monitors /healthz endpoint</li>
-          <li>
-            Break/fix scenarios: Safe failure injection via SSM parameters (todo: add Fault
-            Injection Simulator)
-          </li>
+          <li>2 Fargate tasks across availability zones</li>
+          <li>CodeDeploy auto-rollback on health check failures</li>
+          <li>Load balancer health checks on /healthz</li>
+          <li>Chaos testing with controlled failure scenarios</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Target: ~$50-100/month for learning/demo</li>
-          <li>Optimizations: Single NAT Gateway, Aurora Serverless v2</li>
-          <li>Drivers: Fargate compute, Aurora ACUs, ALB hours</li>
-          <li>Scaling: Tunable task sizes, autoscaling</li>
+          <li>~$50-100/month for demo environment</li>
+          <li>Single NAT Gateway, Aurora Serverless v2</li>
+          <li>Main costs: Fargate compute and database</li>
+          <li>Auto-scaling adjusts to traffic</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Dashboards: ALB/ECS/RDS metrics in CloudWatch</li>
-          <li>Tracing: X-Ray tracing with service maps</li>
-          <li>Alarms: 10+ CloudWatch alarms with SNS notifications</li>
-          <li>Logs: Structured JSON with request correlation</li>
+          <li>CloudWatch dashboards for key metrics</li>
+          <li>X-Ray tracing shows request flow</li>
+          <li>CloudWatch alarms with email notifications</li>
+          <li>Structured logging for troubleshooting</li>
         </ul>
       </div>
     </div>
@@ -82,9 +79,9 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem & scope:</span>
-          Demonstrate ECS Fargate deployment patterns with multi-metric observability and
-          safe chaos engineering for incident response training. Includes guided break/fix scenarios
-          and runbooks for MTTR improvement.
+          Learning containerized application deployment with ECS Fargate, blue/green deployments,
+          and monitoring setup. Includes controlled failure scenarios to practice incident
+          response and troubleshooting skills.
         </div>
       </div>
 

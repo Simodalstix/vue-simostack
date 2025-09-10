@@ -27,42 +27,42 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg text-orange-300">Security & Governance</h3>
+          <h3 class="font-bold text-lg text-orange-300">Key Architecture Decisions</h3>
           <p class="text-base text-gray-300">
-            Service Control Policies enforce preventive guardrails; Config rules provide detective
-            controls; organization-wide CloudTrail with integrity validation; cross-account IAM
-            roles with least privilege; centralized KMS key management across all accounts.
+            Used CDK over Terraform for better AWS service integration. Transit Gateway provides
+            centralized networking instead of VPC peering. Separate accounts for different
+            environments (dev/staging/prod) with shared services account for common resources.
           </p>
         </div>
       </aside>
     </div>
 
-    <!-- Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Multi-Account Setup</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Multi-AZ Transit Gateway with redundant connectivity paths.</li>
-          <li>Account factory for standardized baseline provisioning.</li>
-          <li>Automated drift detection and compliance monitoring.</li>
+          <li>Transit Gateway connects all account VPCs</li>
+          <li>Standardized account creation with CDK</li>
+          <li>Config rules check for compliance drift</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Control</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Account-level budgets with automated alerts and thresholds.</li>
-          <li>Centralized NAT Gateway in shared services for cost optimization.</li>
-          <li>S3 lifecycle policies for CloudTrail logs with automated archival.</li>
+          <li>Budget alerts for each account</li>
+          <li>Shared NAT Gateway reduces costs</li>
+          <li>CloudTrail logs archived to cheaper storage</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Security & Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Cross-account CloudWatch dashboards and centralized monitoring.</li>
-          <li>Organization-wide CloudTrail with centralized log aggregation.</li>
-          <li>Security Hub findings aggregation across all accounts and regions.</li>
+          <li>CloudWatch dashboards across accounts</li>
+          <li>CloudTrail logging for all API calls</li>
+          <li>Security Hub aggregates security findings</li>
         </ul>
       </div>
     </div>
@@ -73,9 +73,9 @@
     >
       <div class="w-full sm:w-2/3 text-gray-300">
         <span class="font-medium">Problem &amp; scope:</span>
-        Enterprise organizations need a scalable, secure foundation for AWS multi-account
-        environments. This landing zone provides automated account provisioning, centralized
-        governance, and standardized networking patterns following AWS Well-Architected principles.
+        Learning to build multi-account AWS environments with proper security and networking.
+        This project demonstrates account organization, centralized logging, and standardized
+        infrastructure patterns using Infrastructure as Code.
       </div>
 
       <div class="flex gap-3 w-full sm:w-auto">
