@@ -40,7 +40,7 @@
 
       <div class="mt-16 md:mt-24 text-center">
         <p class="text-gray-400 italic text-2xl font-semibold max-w-2xl mx-auto leading-tight">
-          "Every master was once a beginner."
+          "Luck is what happens when preparation meets opportunity."
         </p>
       </div>
     </div>

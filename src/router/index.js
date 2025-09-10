@@ -30,6 +30,16 @@ const routes = [
     name: 'ProjectsRemake',
     component: () => import('../views/ProjectsRemakeView.vue'),
   },
+  {
+    path: '/skills-remake',
+    name: 'SkillsRemake',
+    component: () => import('../views/SkillsRemakeView.vue'),
+  },
+  {
+    path: '/about-remake',
+    name: 'AboutRemake',
+    component: () => import('../views/AboutRemakeView.vue'),
+  },
 
   {
     path: '/contact',

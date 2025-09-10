@@ -7,10 +7,9 @@
       </h1>
 
       <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-        I bring analytical precision, systematic problem-solving, and clear technical communication
-        from healthcare and research into cloud engineering. With hands-on experience in AWS, Azure,
-        Terraform, and Kubernetes, I build reliable, automated infrastructure through practical
-        projects that demonstrate real-world cloud operations.
+        I build and manage cloud and infrastructure systems with a focus on reliability, security,
+        and automation. With hands-on experience in AWS, Azure, Terraform, Kubernetes, and Linux, I
+        design practical projects that reflect real-world operations and modern DevOps practices.
       </p>
 
       <div

@@ -4,7 +4,11 @@
     <div class="text-center mb-16">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-3xl sm:text-4xl font-bold mb-4">Infrastructure Portfolio</h1>
-        <p class="text-lg sm:text-xl text-slate-400 mb-8">
+        <h2 class="text-xl sm:text-4x1 font-bold mb-2 text-orange-300">
+          (Currently reorganising projects into clear, themed suites.)<br />
+          (Full showcase coming soon.)
+        </h2>
+        <p class="text-2xl sm:text-xl text-slate-400 mb-8">
           Modular cloud and on-premises platforms showcasing enterprise architecture patterns,
           DevOps automation, and modern security practices across AWS, Azure, and home lab
           environments.
@@ -46,7 +50,7 @@
       </div>
     </div>
     <!-- AWS Cloud Zone -->
-    <div class="relative mb-16">
+    <div class="relative mb-16 bg-cyan-500/10">
       <!-- Zone Container with Modern Gradient Border -->
       <div
         class="border-2 border-slate-500/40 rounded-3xl p-4 sm:p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
@@ -332,7 +336,7 @@
       </div>
     </div>
     <!-- Enterprise Home Lab Zone - Redesigned -->
-    <div class="relative mb-16">
+    <div class="relative mb-16 bg-purple-500/10">
       <!-- Zone Container with Modern Gradient Border -->
       <div
         class="border-2 border-slate-500/40 rounded-3xl p-4 sm:p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
@@ -714,7 +718,7 @@
                 class="flex items-center gap-2 px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full"
               >
                 <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
-                Planned (awaiting hardware)
+                Planned
               </span>
               <span class="text-slate-400 font-medium">Network Security</span>
             </div> </BaseCard
@@ -784,7 +788,7 @@
       </div>
     </div>
     <!-- Azure Cloud Zone -->
-    <div class="relative">
+    <div class="relative bg-indigo-500/10">
       <!-- Zone Container with Modern Gradient Border -->
       <div
         class="border-2 border-slate-500/40 rounded-3xl p-4 sm:p-8 bg-gradient-to-br from-slate-800/30 to-slate-900/60 backdrop-blur-md relative overflow-hidden"
@@ -1044,9 +1048,16 @@
         </div>
       </div>
     </div>
+
+    <!-- Modals -->
+    <AwsFoundationModal :visible="showAwsFoundation" @close="showAwsFoundation = false" />
   </div>
 </template>
 
 <script setup>
-// Under construction page for projects redesign
+import { ref } from 'vue'
+import BaseCard from '../components/ui/BaseCard.vue'
+// import AwsFoundationModal from '../components/modals/AWS-Foundation.vue'
+
+const showAwsFoundation = ref(false)
 </script>
