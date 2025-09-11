@@ -190,7 +190,7 @@
 
           <!-- AWS Container Platform -->
           <BaseCard
-            @click="showAwsContainers = true"
+            @click="showAWSContainers = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
           >
             <div class="mb-4">
@@ -1050,14 +1050,27 @@
     </div>
 
     <!-- Modals -->
-    <AwsFoundationModal :visible="showAwsFoundation" @close="showAwsFoundation = false" />
+    <AwsFoundationModal
+      :visible="showAwsFoundation"
+      @close="showAwsFoundation = false"
+      width="max-w-[1200px]"
+      height="max-h-[92vh]"
+    />
+    <AWSContainers
+      :visible="showAWSContainers"
+      @close="showAWSContainers = false"
+      width="max-w-[1200px]"
+      height="max-h-[92vh]"
+    />
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
 import BaseCard from '../components/ui/BaseCard.vue'
-// import AwsFoundationModal from '../components/modals/AWS-Foundation.vue'
+// import AWSContainers from '@/components/modals/AWS-Containers.vue'
 
+// import AwsFoundationModal from '../components/modals/AWS-Foundation.vue'
+const showAWSContainers = ref(false)
 const showAwsFoundation = ref(false)
 </script>

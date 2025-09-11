@@ -28,55 +28,47 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg mb-2 text-orange-300">Platform Principles</h3>
+          <h3 class="font-bold text-lg mb-2 text-orange-300">Key Architecture Decisions</h3>
           <div class="text-base text-gray-300 space-y-3">
             <p>
-              GitOps-first: All workloads deployed declaratively via Git repositories. No manual
-              kubectl changes - immutable infrastructure with audit trails.
+              Used GitOps with ArgoCD for deployments - all changes go through Git instead of direct
+              kubectl commands. This provides audit trails and rollback capabilities.
             </p>
             <p>
-              Secure by default: Workload Identity, Key Vault CSI, namespace-scoped RBAC, and
-              resource quotas. Teams get isolated environments with least-privilege access.
+              Separate node pools for system and workload pods. Azure AD integration for user
+              authentication. Each team gets their own namespace with resource limits.
             </p>
           </div>
         </div>
       </aside>
     </div>
 
-    <!-- Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">High Availability</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Auto-scaling nodes (1–10) with system/workload separation.</li>
-          <li>GitOps reconciliation restores state after config drift.</li>
-          <li>Automated TLS (cert-manager) and DNS (external-dns).</li>
+          <li>Auto-scaling node pools (1-10 nodes)</li>
+          <li>GitOps automatically fixes configuration drift</li>
+          <li>Automated TLS certificates and DNS management</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Drivers: Node pools, Load Balancer, Log Analytics, DNS queries.</li>
-          <li>
-            Namespace quotas prevent runaway costs <span class="text-gray-400">(implemented)</span>
-          </li>
-          <li>Optimization: Right-sized VMs, scaling, shared services.</li>
+          <li>Main costs: VM nodes, load balancer, log storage</li>
+          <li>Namespace resource quotas prevent overuse</li>
+          <li>Right-sized VMs with auto-scaling</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>
-            Azure Monitor Container Insights, 30-day retention
-            <span class="text-gray-400">(implemented)</span>
-          </li>
-          <li>
-            Dynatrace OneAgent for AI-driven root cause analysis
-            <span class="text-gray-400">(ready)</span>
-          </li>
-          <li>GitOps deployment tracking & app health via ArgoCD UI.</li>
+          <li>Azure Monitor for container metrics and logs</li>
+          <li>ArgoCD dashboard shows deployment status</li>
+          <li>30-day log retention for troubleshooting</li>
         </ul>
       </div>
     </div>
@@ -87,10 +79,10 @@
     >
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
-          <span class="font-medium">Platform scope:</span>
-          Production-ready Kubernetes platform with GitOps delivery, enterprise security, and
-          self-service team onboarding. Minimal but complete - the 20% of features that solve 80% of
-          enterprise Kubernetes needs.
+          <span class="font-medium">Problem &amp; scope:</span>
+          Learning Azure Kubernetes Service with GitOps deployment patterns. Demonstrates AKS
+          cluster setup, ArgoCD integration, and team namespace isolation using Terraform
+          and modern Kubernetes practices.
         </div>
       </div>
 

@@ -28,63 +28,51 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg mb-2 text-orange-300">Architecture Principles</h3>
+          <h3 class="font-bold text-lg mb-2 text-orange-300">Key Architecture Decisions</h3>
           <div class="text-base text-gray-300 space-y-3">
             <p>
-              Modular design: Reusable Terraform modules for networking, security, and foundation
-              services. Single responsibility per module enables independent scaling and
-              maintenance.
+              Used hub-and-spoke topology to centralize shared services like Azure Firewall and
+              Bastion. Each workload gets its own spoke VNet for isolation. Terraform modules
+              make it easy to deploy new spokes consistently.
             </p>
             <p>
-              Defense-in-depth: Azure Firewall for centralized security + NSGs for granular
-              subnet-level controls. All spoke traffic force-tunneled through firewall for
-              inspection and logging.
+              Azure Firewall in the hub inspects all traffic between spokes and to the internet.
+              Network Security Groups provide additional subnet-level filtering.
             </p>
           </div>
         </div>
       </aside>
     </div>
 
-    <!-- Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Network Architecture</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Modular architecture enables independent component updates and testing.</li>
-          <li>
-            Network Watcher + Connection Monitor for hybrid connectivity validation
-            <span class="text-gray-400">(planned)</span>
-          </li>
-          <li>
-            Automated deployment with validation checks; rollback capability via Terraform state.
-          </li>
+          <li>Hub VNet with shared services (firewall, bastion)</li>
+          <li>Spoke VNets for workload isolation</li>
+          <li>VNet peering connects hub to all spokes</li>
+          <li>Terraform modules for consistent deployment</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Drivers: VPN Gateway, Azure Firewall, Key Vault, cross-spoke traffic.</li>
-          <li>
-            Cost Management + tagging strategy by workload and environment
-            <span class="text-gray-400">(implemented)</span>
-          </li>
-          <li>Optimization: Standard SKUs, shared services consolidation, retention policies.</li>
+          <li>Main costs: VPN Gateway, Azure Firewall, traffic</li>
+          <li>Resource tagging for cost tracking</li>
+          <li>Standard SKUs for cost optimization</li>
+          <li>Shared services reduce per-spoke costs</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Security & Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>
-            Centralized logging: Firewall, NSG flow logs, Key Vault access logs
-            <span class="text-gray-400">(planned)</span>
-          </li>
-          <li>
-            Security monitoring: Azure Security Center integration + compliance dashboard
-            <span class="text-gray-400">(planned)</span>
-          </li>
-          <li>Network analytics: Traffic flow patterns and security event correlation.</li>
+          <li>Azure Firewall logs all traffic flows</li>
+          <li>Network Security Groups for subnet filtering</li>
+          <li>Azure Monitor for network performance</li>
+          <li>Key Vault for secrets management</li>
         </ul>
       </div>
     </div>
@@ -95,10 +83,10 @@
     >
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
-          <span class="font-medium">Enterprise scope:</span>
-          Comprehensive Azure networking foundation with enterprise-grade security, governance, and
-          hybrid connectivity. Modular Terraform design enables rapid spoke deployment and
-          consistent security baselines across workloads.
+          <span class="font-medium">Problem &amp; scope:</span>
+          Learning Azure networking with hub-and-spoke architecture. Demonstrates VNet peering,
+          Azure Firewall configuration, and modular Terraform patterns for scalable network
+          design with centralized security controls.
         </div>
       </div>
 

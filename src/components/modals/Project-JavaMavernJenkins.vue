@@ -27,14 +27,12 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg text-orange-300">Key decisions & trade-offs</h3>
+          <h3 class="font-bold text-lg text-orange-300">Key Architecture Decisions</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Chose Jenkins over GitHub Actions for enterprise setup with superior Java/Maven
-              toolchain management and plugin ecosystem. PostgreSQL over H2 for production
-              readiness. Excluded integration tests from CI for faster builds, accepting reduced
-              test coverage for speed. Jenkins provides dedicated tools for static analysis and
-              artifact management.
+              Used Jenkins for CI/CD because it has good Java/Maven integration and lots of plugins.
+              Switched from H2 in-memory database to PostgreSQL for more realistic setup. Docker
+              containers make deployment consistent across environments.
             </p>
           </div>
         </div>
@@ -81,9 +79,9 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem & scope:</span>
-          Demonstrate enterprise Java application modernization with automated CI/CD, database
-          migration from H2 to PostgreSQL, and containerization. Shows real-world DevOps practices
-          for monolith-to-cloud migration scenarios.
+          Learning Java application CI/CD with Jenkins, Maven, and Docker. Demonstrates automated
+          testing, static code analysis, and containerization patterns for Spring Boot applications
+          with PostgreSQL database integration.
         </div>
       </div>
 

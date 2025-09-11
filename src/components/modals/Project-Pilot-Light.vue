@@ -40,39 +40,35 @@
       </aside>
     </div>
 
-    <!-- New Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Disaster Recovery</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>RTO: 3-5 minutes automated, 5-10 minutes manual</li>
-          <li>RPO: &lt; 1 minute (database), &lt; 5 minutes (application data)</li>
-
-          <li>Route 53 health checks with DNS failover</li>
-          <li>Step Functions orchestrate DR with validation</li>
-          <li>Cross-region RDS read replica synchronization</li>
+          <li>5-10 minute recovery time objective</li>
+          <li>Route 53 health checks trigger failover</li>
+          <li>RDS read replica keeps data synchronized</li>
+          <li>Step Functions automate the failover process</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Primary: ~$200-500/month (production workload)</li>
-          <li>DR Region: ~$50-100/month (pilot light mode)</li>
-          <li>80% cost reduction vs warm standby approach</li>
-          <li>ASG scaled to 0, single NAT Gateway in DR</li>
-          <li>Only RDS read replica running continuously</li>
+          <li>Primary region: ~$200-500/month</li>
+          <li>DR region: ~$50-100/month (pilot light)</li>
+          <li>80% cost savings vs full standby</li>
+          <li>Only database replica runs continuously</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>CloudWatch dashboards for DR metrics</li>
+          <li>CloudWatch dashboards for DR status</li>
           <li>Route 53 health check monitoring</li>
-          <li>RDS performance insights and alarms</li>
-          <li>Step Functions execution tracking</li>
-          <li>SNS notifications for DR events</li>
+          <li>RDS replica lag tracking</li>
+          <li>SNS alerts for failover events</li>
         </ul>
       </div>
     </div>
@@ -84,10 +80,9 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem & scope:</span>
-          Demonstrate enterprise-grade disaster recovery using pilot light strategy for e-commerce
-          platforms. Includes Australian data sovereignty compliance, automated failover
-          orchestration, and comprehensive security with WAF, GuardDuty, and Security Hub
-          integration.
+          Learning disaster recovery patterns with AWS pilot light strategy. Demonstrates
+          cross-region database replication, automated failover with Step Functions, and
+          cost-effective DR architecture for web applications.
         </div>
       </div>
 

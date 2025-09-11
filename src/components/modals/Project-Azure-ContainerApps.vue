@@ -20,9 +20,9 @@
         <div>
           <h3 class="font-bold text-lg text-orange-300">Description</h3>
           <p class="text-base text-gray-300">
-            Azure Container Apps platform with Terraform IaC and Azure DevOps pipelines. 
-            Includes compliance controls, change management, multi-stage deployment across 
-            dev, staging, prod, security scanning, and monitoring.
+            Azure Container Apps platform with Terraform IaC and Azure DevOps pipelines. Includes
+            compliance controls, change management, multi-stage deployment across dev, staging,
+            prod, security scanning, and monitoring.
           </p>
         </div>
 
@@ -30,9 +30,9 @@
           <h3 class="font-bold text-lg text-orange-300">Design Decisions</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Built for high availability using managed services. Azure DevOps chosen for 
-              compliance and governance. Shared registries and monitoring to optimize costs, 
-              with trade-offs between isolation and operational overhead.
+              Built for high availability using managed services. Azure DevOps chosen for compliance
+              and governance. Shared registries and monitoring to optimize costs, with trade-offs
+              between isolation and operational overhead.
             </p>
           </div>
         </div>
@@ -44,32 +44,30 @@
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Compliance & Security</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">DevOps Pipeline</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Manual approvals and audit trails</li>
-          <li>Checkov security scanning</li>
-          <li>Key Vault for secrets management</li>
-          <li>Dev → Staging → Production workflow</li>
-          <li>Infrastructure as Code only</li>
+          <li>Azure DevOps for CI/CD automation</li>
+          <li>Security scanning with Checkov</li>
+          <li>Manual approvals for production</li>
+          <li>Dev → Staging → Production flow</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Platform Architecture</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Container Platform</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Stateless containers with environment config</li>
-          <li>Modular Terraform and pipeline separation</li>
-          <li>Declarative deployments via YAML</li>
-          <li>Auto-scaling Container Apps</li>
-          <li>Zero-downtime rolling updates</li>
+          <li>Azure Container Apps for serverless containers</li>
+          <li>Auto-scaling based on HTTP requests</li>
+          <li>Rolling updates with zero downtime</li>
+          <li>Terraform for infrastructure deployment</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Request rate, errors, latency dashboards</li>
-          <li>Application Insights tracing</li>
-          <li>CPU, memory, error rate alerts</li>
-          <li>Structured JSON logs with KQL</li>
+          <li>Application Insights for request tracing</li>
+          <li>Azure Monitor dashboards and alerts</li>
+          <li>Structured logging with KQL queries</li>
+          <li>Performance and error rate tracking</li>
         </ul>
       </div>
     </div>
@@ -80,10 +78,10 @@
     >
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
-          <span class="font-medium">Scope:</span>
-          Container platform with compliance controls and change management. 
-          Three-environment deployment with automated quality gates, manual approvals, 
-          and audit trails for production workloads.
+          <span class="font-medium">Problem &amp; scope:</span>
+          Learning Azure Container Apps with proper DevOps practices. Demonstrates CI/CD pipelines,
+          multi-environment deployment, security scanning, and Infrastructure as Code patterns with
+          Terraform and Azure DevOps.
         </div>
       </div>
 

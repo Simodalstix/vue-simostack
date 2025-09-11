@@ -29,45 +29,44 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg mb-2 text-orange-300">Developer Value</h3>
+          <h3 class="font-bold text-lg mb-2 text-orange-300">Key Architecture Decisions</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-sm text-gray-300">
-              GitHub Actions gives simple source-integrated CI/CD. SonarQube enforces quality gates,
-              LaunchDarkly enables safe feature rollout, and Terraform keeps infra reproducible and
-              disposable. SonarQube runs lean on one EC2; pipeline can extend with more checks
-              later.
+              Used GitHub Actions for CI/CD because it integrates well with the code repository.
+              SonarQube runs on EC2 for code quality scanning. LaunchDarkly feature flags allow
+              testing new features with a subset of users before full rollout.
             </p>
           </div>
         </div>
       </aside>
     </div>
 
-    <!-- Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Quality Control</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Quality gates block poor code at CI/CD level.</li>
-          <li>Feature flags allow safe rollout and rollback.</li>
-          <li>End-to-end tests validate runtime behavior.</li>
+          <li>SonarQube scans code for bugs and security issues</li>
+          <li>Quality gates prevent bad code from deploying</li>
+          <li>Playwright tests validate application behavior</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Target: &lt; AU$30–50/mo at lab scale.</li>
-          <li>Major driver: EC2 instance for SonarQube.</li>
-          <li>Terraform enables easy destroy/recreate for cost control.</li>
+          <li>~$30-50/month for development environment</li>
+          <li>Main cost: EC2 instance running SonarQube</li>
+          <li>Terraform makes it easy to destroy when not needed</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Feature Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>SonarQube dashboards track code health.</li>
-          <li>GitHub Actions logs cover build/test failures.</li>
-          <li>Future: add monitoring for SonarQube and pipeline alerts.</li>
+          <li>LaunchDarkly feature flags for safe rollouts</li>
+          <li>GitHub Actions automates build and deployment</li>
+          <li>SonarQube dashboard shows code quality metrics</li>
         </ul>
       </div>
     </div>
@@ -79,9 +78,9 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem &amp; scope:</span>
-          Demonstrate how platform engineering teams integrate code quality, feature management, and
-          testing into an AWS-hosted developer toolchain. Current phase: baseline infra, SonarQube,
-          LaunchDarkly integration, and working CI/CD with quality gates.
+          Learning DevOps toolchain setup with code quality scanning, feature flags, and automated
+          testing. Demonstrates Terraform infrastructure deployment, SonarQube integration, and
+          CI/CD pipeline patterns with GitHub Actions.
         </div>
       </div>
 

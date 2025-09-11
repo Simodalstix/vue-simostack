@@ -23,42 +23,42 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg text-orange-300">Security & governance</h3>
+          <h3 class="font-bold text-lg text-orange-300">Key Architecture Decisions</h3>
           <p class="text-base text-gray-300">
-            SCPs and service‑control tags constrain Bedrock model access; per‑env IAM roles with
-            session policies; Guardrails and content filters preconfigured; prompt/response logging
-            to S3 with KMS + object retention; CloudTrail/Config/GuardDuty enabled org‑wide.
+            Used VPC endpoints for private Bedrock access instead of internet gateway. Separate
+            accounts for different environments (dev/prod). IAM roles limit which AI models teams
+            can access. All prompts and responses logged to S3 for audit purposes.
           </p>
         </div>
       </aside>
     </div>
 
-    <!-- Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Security Setup</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Private Bedrock endpoints across AZs; retry/backoff on throttles.</li>
-          <li>Cross‑account role chaining with least‑privilege boundaries.</li>
-          <li>Versioned prompt templates; rollout via parameters/aliases.</li>
+          <li>VPC endpoints for private Bedrock access</li>
+          <li>IAM roles control model access by team</li>
+          <li>Content filters and guardrails configured</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Control</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Budgets + Anomalies; per‑team cost tags and quotas.</li>
-          <li>Default deny on high‑cost models; allowlists per env.</li>
-          <li>S3 lifecycle for logs/artifacts; CloudWatch log retention.</li>
+          <li>Budget alerts for AI model usage</li>
+          <li>Expensive models blocked by default</li>
+          <li>S3 lifecycle policies for log storage</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Invocation metrics, latency, and errors in CloudWatch.</li>
-          <li>Prompt/response audit trails in S3 + Athena queries.</li>
-          <li>Centralized CloudTrail Lake; alerts via SNS/Slack (planned).</li>
+          <li>CloudWatch metrics for API calls and errors</li>
+          <li>All prompts and responses logged to S3</li>
+          <li>CloudTrail tracks all Bedrock API usage</li>
         </ul>
       </div>
     </div>
@@ -69,9 +69,9 @@
     >
       <div class="w-full sm:w-2/3 text-gray-300">
         <span class="font-medium">Problem &amp; scope:</span>
-        Give product teams a secure, governed starting point for Bedrock—private access, guardrails,
-        auditability, and cost controls—shipped as repeatable IaC. Current phase: core org+network,
-        guardrails, and logging; example app wiring next.
+        Learning to build secure AI infrastructure with AWS Bedrock. Demonstrates multi-account
+        setup, private networking, IAM controls, and audit logging patterns for AI workloads
+        using Infrastructure as Code.
       </div>
 
       <div class="flex gap-3 w-full sm:w-auto">

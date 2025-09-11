@@ -27,13 +27,12 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg text-orange-300">Key decisions &amp; trade-offs</h3>
+          <h3 class="font-bold text-lg text-orange-300">Key Architecture Decisions</h3>
           <div class="text-sm text-gray-300 space-y-3">
             <p class="text-base text-gray-300">
-              Chose Backup &amp; Restore over Warm Standby/Pilot Light to minimise steady-state
-              cost, accepting RTO/RPO in hours rather than minutes. Daily backups copy to a
-              secondary region and age to cold storage; recovery remains automated via
-              templates/runbooks—modern posture at a fraction of the cost.
+              Used backup and restore strategy for lowest cost disaster recovery. Daily backups
+              are copied to another AWS region. Recovery takes a few hours but costs much less
+              than keeping duplicate infrastructure running all the time.
             </p>
           </div>
         </div>
@@ -45,36 +44,28 @@
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Backup Strategy</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Targets: RTO ≤ 4h; RPO ≤ 4h.</li>
-          <li>
-            Failover: Route 53 health checks to secondary region
-            <span class="text-gray-400">(expected)</span>
-          </li>
-          <li>
-            Measurement: backup success &amp; recovery drills
-            <span class="text-gray-400">(planned)</span>
-          </li>
+          <li>4-hour recovery time objective</li>
+          <li>Daily automated backups to second region</li>
+          <li>Route 53 health checks for DNS failover</li>
+          <li>CloudFormation templates for recovery</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Target: &lt; AU$50/mo for lab scale.</li>
-          <li>Drivers: backup storage + cross-region copies (RDS/EBS/S3).</li>
-          <li>
-            Method: AWS Backup pricing; validate in Cost Explorer
-            <span class="text-gray-400">(planned)</span>
-          </li>
+          <li>~$50/month for development environment</li>
+          <li>Main costs: backup storage and cross-region copies</li>
+          <li>Much cheaper than running duplicate infrastructure</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Monitor: backup job success, copy lag, runbook errors.</li>
-          <li>Alarms: recovery failures, cost threshold breaches.</li>
-          <li>Alerts: SNS → Slack <span class="text-gray-400">(planned)</span></li>
+          <li>CloudWatch monitors backup job success</li>
+          <li>Alarms for backup failures and cost overruns</li>
+          <li>Regular recovery testing to validate process</li>
         </ul>
       </div>
     </div>
@@ -86,8 +77,9 @@
       <div class="w-full sm:w-2/3 space-y-2">
         <div class="text-gray-300">
           <span class="font-medium">Problem &amp; scope:</span>
-          Demonstrate a cost-optimised DR approach using Backup &amp; Restore with
-          automated recovery. Current phase: baseline backup monitoring + first recovery drill.
+          Learning cost-effective disaster recovery with AWS Backup service. Demonstrates
+          cross-region backup strategies, automated recovery procedures, and DNS failover
+          patterns for business continuity planning.
         </div>
       </div>
 

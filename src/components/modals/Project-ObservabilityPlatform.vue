@@ -27,42 +27,42 @@
         </div>
 
         <div>
-          <h3 class="font-bold text-lg text-orange-300">Automation & Intelligence</h3>
+          <h3 class="font-bold text-lg text-orange-300">Key Architecture Decisions</h3>
           <p class="text-base text-gray-300">
-            EventBridge-driven workflows enable automated incident response; Step Functions handle
-            complex remediation; Lambda functions process alerts with enrichment and routing;
-            Kinesis streams provide real-time log analysis with anomaly detection.
+            Used CloudWatch as the central monitoring hub with X-Ray for distributed tracing.
+            EventBridge routes alerts to different channels (email, Slack). Lambda functions
+            process and enrich alert data before sending notifications.
           </p>
         </div>
       </aside>
     </div>
 
-    <!-- Row: Reliability, Cost, Observability -->
+    <!-- Implementation Details -->
     <div
       class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
     >
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Alert Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Multi-severity alerting with automatic escalation and routing.</li>
-          <li>Composite alarms for system-wide health indicators.</li>
-          <li>Automated remediation with rollback capabilities.</li>
+          <li>CloudWatch alarms for different severity levels</li>
+          <li>EventBridge routes alerts to appropriate channels</li>
+          <li>Lambda functions enrich alerts with context</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Budget monitoring with anomaly detection and forecasting.</li>
-          <li>S3 lifecycle policies with automated archival (IA → Glacier).</li>
-          <li>X-Ray sampling rules and configurable log retention periods.</li>
+          <li>Log retention policies to control storage costs</li>
+          <li>X-Ray sampling to reduce tracing overhead</li>
+          <li>S3 lifecycle policies for log archival</li>
         </ul>
       </div>
       <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
+        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring Coverage</h3>
         <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Universal resource discovery across EC2, ECS, EKS, Lambda, RDS.</li>
-          <li>Pre-built CloudWatch dashboards with business metrics integration.</li>
-          <li>Structured log processing with CloudWatch Logs Insights queries.</li>
+          <li>CloudWatch dashboards for key services</li>
+          <li>X-Ray tracing for request flow visibility</li>
+          <li>Log aggregation with CloudWatch Logs Insights</li>
         </ul>
       </div>
     </div>
@@ -73,9 +73,9 @@
     >
       <div class="w-full sm:w-2/3 text-gray-300">
         <span class="font-medium">Problem & scope:</span>
-        Organizations struggle with fragmented monitoring across AWS services and lack unified
-        observability. This platform provides cross-service monitoring, multi-channel alerting, and
-        automated remediation with security controls and cost optimization.
+        Learning to build comprehensive monitoring for AWS workloads. Demonstrates CloudWatch
+        integration, alert routing with EventBridge, and distributed tracing patterns for
+        visibility across multiple services.
       </div>
 
       <div class="flex gap-3 w-full sm:w-auto">
