@@ -7,9 +7,9 @@
       </h1>
 
       <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-        I build and manage cloud and infrastructure systems with a focus on reliability, security,
-        and automation. With hands-on experience in AWS, Azure, Terraform, Kubernetes, and Linux, I
-        design practical projects that reflect real-world operations and modern DevOps practices.
+        I build and manage cloud infrastructure with a focus on reliability, security, and
+        automation. My projects in AWS, Azure, and Linux are designed to reflect real-world
+        operations while strengthening my skills in DevOps and platform engineering.
       </p>
 
       <div

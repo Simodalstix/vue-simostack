@@ -3,36 +3,31 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
       <div class="md:col-span-2 flex flex-col space-y-8">
         <div>
-          <h1 class="text-3xl font-bold mb-4">My Story: The Pivot</h1>
+          <h2 class="text-3xl font-bold mb-4">My Story: The Pivot</h2>
           <p class="text-lg">
             I’m pivoting from a career in healthcare into technology, with a passion for Linux,
-            cloud platforms, infrastructure, and DevOps. Over the past year, I’ve built a strong
-            foundation in AWS, Azure, and Terraform, focusing on Infrastructure as Code (IaC), CI/CD
-            pipelines, and platform engineering. My background as a pharmacist sharpened my ability
-            to perform root cause analysis under pressure, communicate clearly with different
-            stakeholders, and apply precision in high-stakes environments — skills I now apply to
-            engineering challenges and building resilient infrastructure.
+            cloud platforms, and DevOps. Over the past year I’ve built a strong foundation in AWS
+            and Azure, focusing on automation, Infrastructure as Code, and platform engineering. My
+            background as a pharmacist gave me experience performing root cause analysis under
+            pressure, communicating clearly with different stakeholders, and applying precision in
+            high-stakes environments — skills I now bring to engineering challenges and building
+            resilient infrastructure.
           </p>
-          <p class="mt-4 font-bold text-lg text-orange-300">
-            Standout qualities: Clear communication • Continuous learning • Reliability
-          </p>
+          <p class="mt-4 font-bold text-lg text-orange-300">What I Bring</p>
+          <ul class="list-disc list-inside mt-2 text-base text-gray-200">
+            <li>Clear communication and a collaborative mindset</li>
+            <li>Commitment to continuous learning and certification (AWS, Azure, Terraform)</li>
+            <li>A focus on reliability, security, and doing things the right way</li>
+            <li>Hands-on projects in automation, monitoring, and systems administration</li>
+          </ul>
         </div>
 
         <div>
           <h2 class="text-3xl font-bold mb-4">Why I'm a Good Hire</h2>
           <p class="text-lg">
-            I focus on building secure, automated cloud and platform infrastructure using
-            Infrastructure as Code (IaC), CI/CD pipelines, and modern DevOps practices. My projects
-            are reproducible and grounded in real-world engineering patterns — strengthening
-            reliability, enabling automation, and providing a solid foundation for applications and
-            teams.
-          </p>
-          <p class="text-lg mt-4">
-            My AWS, Azure, and Terraform certifications back up my practical skills and show I have
-            a dependable foundation to build on. Combined with hands-on experience in Linux,
-            automation, and monitoring, it means I can approach infrastructure tasks with confidence
-            and a focus on doing things the right way. I’m also growing my Kubernetes skills (Helm,
-            EKS/AKS basics), so I can contribute when container orchestration is part of the stack.
+            I aim to help teams run reliable, secure, and scalable infrastructure. My certifications
+            provide a strong foundation, while my ongoing projects in Kubernetes and observability
+            keep me learning and ready to contribute in both operations and engineering contexts.
           </p>
         </div>
       </div>
