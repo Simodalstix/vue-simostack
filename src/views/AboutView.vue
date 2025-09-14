@@ -3,7 +3,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
       <div class="md:col-span-2 flex flex-col space-y-8">
         <div>
-          <h2 class="text-3xl font-bold mb-4">My Story: The Pivot</h2>
+          <h2 class="text-3xl font-bold mb-4">My Story: Healthcare to Cloud Engineering</h2>
           <p class="text-lg">
             I’m pivoting from a career in healthcare into technology, with a passion for Linux,
             cloud platforms, and DevOps. Over the past year I’ve built a strong foundation in AWS
@@ -13,17 +13,17 @@
             high-stakes environments — skills I now bring to engineering challenges and building
             resilient infrastructure.
           </p>
-          <p class="mt-4 font-bold text-lg text-orange-300">What I Bring</p>
+          <p class="mt-4 font-bold text-lg text-orange-300">What I Bring to Technical Teams</p>
           <ul class="list-disc list-inside mt-2 text-base text-gray-200">
-            <li>Clear communication and a collaborative mindset</li>
-            <li>Commitment to continuous learning and certification (AWS, Azure, Terraform)</li>
-            <li>A focus on reliability, security, and doing things the right way</li>
-            <li>Hands-on projects in automation, monitoring, and systems administration</li>
+            <li>Excellent customer service with a 'Can Do' attitude</li>
+            <li>Strong Active Directory and Microsoft 365 administration skills</li>
+            <li>Experience with Windows/Linux environments and Azure cloud services</li>
+            <li>Systematic troubleshooting approach with clear documentation</li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-3xl font-bold mb-4">Why I'm a Good Hire</h2>
+          <h2 class="text-3xl font-bold mb-4">Why I'm a Strong Engineering Hire</h2>
           <p class="text-lg">
             I aim to help teams run reliable, secure, and scalable infrastructure. My certifications
             provide a strong foundation, while my ongoing projects in Kubernetes and observability

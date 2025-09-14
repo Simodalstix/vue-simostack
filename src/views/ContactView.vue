@@ -14,9 +14,7 @@
           <h1 class="text-4xl font-bold mb-4 md:mb-6">Let's Connect</h1>
 
           <p class="text-lg mb-6">
-            I’m a junior cloud/devops engineer building real, reproducible projects in my spare
-            time. I learn fast, take feedback seriously, and I’m focused on automation, reliability,
-            and clear communication.
+            I’m a cloud engineer with 6 months IT support experience combining technical skills with user-focused solutions. I learn fast, take feedback seriously, and I’m focused on automation, reliability, and clear communication.
           </p>
 
           <p class="font-bold text-xl mb-4">I'd love to chat about:</p>
