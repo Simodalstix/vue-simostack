@@ -1,60 +1,57 @@
 <template>
   <div class="text-white container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-10">
-      <div class="md:col-span-2">
-        <h1 class="text-3xl font-bold mb-4">My Projects & Labs</h1>
-        <p class="text-lg">
-          My projects are how I learn—hands-on, reproducible, and tied to real tools. I focus on
-          Infrastructure as Code (Terraform, CloudFormation), automation, and monitoring to practice
-          how teams actually manage cloud environments. I also build small full-stack apps so I can
-          see how code moves from development into production. I optimise for modularity and
-          reuse—small proofs of concept I can extend as I go.
-        </p>
-      </div>
-
-      <div class="flex flex-col justify-end gap-3">
-        <a
-          href="https://github.com/Simodalstix"
-          target="_blank"
-          class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-violet-700 hover:to-violet-600 border border-slate-500 hover:border-violet-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
-        >
-          <img
-            src="/images/project-icons/githubwhite.png"
-            alt="GitHub"
-            class="w-8 h-8 rounded-md"
-          />
-          <span class="text-white font-medium group-hover:text-indigo-100">GitHub</span>
-        </a>
-
-        <button
-          type="button"
-          @click="showHtbModal = true"
-          class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-green-700 hover:to-green-600 border border-slate-500 hover:border-green-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20"
-        >
-          <img
-            src="/images/project-icons/hackthebox-green.svg"
-            alt="Hack The Box"
-            class="w-8 h-8 rounded-md"
-          />
-          <span class="text-white font-medium group-hover:text-green-100">Hack The Box</span>
-        </button>
-      </div>
-    </div>
-
     <!-- Home Lab Foundation -->
     <div class="mb-12">
       <div
         class="border-2 border-slate-500/30 rounded-2xl p-8 bg-gradient-to-br from-slate-800/20 to-slate-900/40 backdrop-blur-sm"
       >
         <div class="mb-8">
-          <h2 class="text-2xl font-bold text-slate-200 mb-4">Home Lab Foundation</h2>
-          <p class="text-slate-300 text-lg leading-relaxed mb-6">
-            My infrastructure foundation spans VMware Workstation on Windows 11 (with WSL) and a
-            Rocky Linux 9 spare laptop, transitioning to Proxmox deployment. This hybrid approach
-            lets me simulate real-world enterprise patterns while building toward modern
-            containerized workloads. All environments are automated with Ansible and integrated with
-            cloud platforms for hybrid scenarios.
-          </p>
+          <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
+            <div class="flex-1">
+              <h1 class="text-3xl font-bold text-white mb-4">My Projects & Labs</h1>
+              <p class="text-slate-300 text-lg leading-relaxed mb-4">
+                My home lab is where I extend my support skills and upskill toward cloud
+                technologies and infrastructure. This hands-on approach shows my enthusiasm for
+                growth and drive toward engineering roles. I focus on automation, monitoring, and
+                Infrastructure as Code to understand how teams manage enterprise environments,
+                making me a more well-rounded support engineer with genuine cloud curiosity.
+              </p>
+              <p class="text-slate-300 text-base leading-relaxed">
+                My infrastructure foundation spans VMware Workstation on Windows 11 and a Rocky
+                Linux spare laptop, transitioning to Proxmox deployment. The network runs through
+                pfSense firewall with DHCP, MAC address reservations for VMware VMs, and DNS via
+                Active Directory. All environments are automated with Ansible. I'll expand this
+                setup significantly with my always-on Beelink once I add another NIC for proper
+                network segmentation.
+              </p>
+            </div>
+            <div class="flex flex-col gap-3 lg:min-w-[200px]">
+              <a
+                href="https://github.com/Simodalstix"
+                target="_blank"
+                class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-600/50 to-slate-700/50 hover:from-violet-700 hover:to-violet-600 border border-slate-500/50 hover:border-violet-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20"
+              >
+                <img
+                  src="/images/project-icons/githubwhite.png"
+                  alt="GitHub"
+                  class="w-6 h-6 rounded-md"
+                />
+                <span class="text-white font-medium group-hover:text-indigo-100">GitHub</span>
+              </a>
+              <button
+                type="button"
+                @click="showHtbModal = true"
+                class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-600/50 to-slate-700/50 hover:from-green-700 hover:to-green-600 border border-slate-500/50 hover:border-green-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-green-500/20"
+              >
+                <img
+                  src="/images/project-icons/hackthebox-green.svg"
+                  alt="Hack The Box"
+                  class="w-6 h-6 rounded-md"
+                />
+                <span class="text-white font-medium group-hover:text-green-100">Hack The Box</span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -68,13 +65,19 @@
                   <p class="text-slate-400 text-sm">Windows 11 + VMware Workstation (32GB host)</p>
                 </div>
               </div>
-              <div class="flex items-center gap-2">
-                <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-6 h-6" />
-                <span class="text-slate-400 text-xs">Ansible Managed</span>
-              </div>
             </div>
 
             <div class="space-y-4">
+              <div class="flex items-center gap-3 p-3 bg-slate-600/20 rounded-lg">
+                <img src="/images/project-icons/redhat.svg" alt="Red Hat" class="w-8 h-8" />
+                <div class="flex-1">
+                  <span class="text-slate-200 font-medium">RHEL 9 Learning Lab</span>
+                  <p class="text-slate-400 text-xs">RHCSA experimentation, practice and learning</p>
+                </div>
+                <span class="text-cyan-400 text-xs font-medium px-2 py-1 bg-cyan-400/10 rounded"
+                  >4GB RAM</span
+                >
+              </div>
               <div class="flex items-center gap-3 p-3 bg-slate-600/20 rounded-lg">
                 <img src="/images/project-icons/ad.png" alt="Active Directory" class="w-8 h-8" />
                 <div class="flex-1">
@@ -112,7 +115,7 @@
                 <img src="/images/project-icons/pfsense.svg" alt="pfSense" class="w-8 h-8" />
                 <div class="flex-1">
                   <span class="text-slate-200 font-medium">pfSense Firewall</span>
-                  <p class="text-slate-400 text-xs">Network segmentation + VPN gateway</p>
+                  <p class="text-slate-400 text-xs">Network segmentation + DHCP Server</p>
                 </div>
                 <span class="text-cyan-400 text-xs font-medium px-2 py-1 bg-cyan-400/10 rounded"
                   >2GB RAM</span
@@ -123,7 +126,6 @@
             <div class="mt-6 pt-4 border-t border-slate-600">
               <div class="flex items-center justify-between">
                 <span class="text-green-400 text-sm font-medium">AD Domain: simo.local</span>
-                <span class="text-slate-400 text-xs">Total: 14GB allocated</span>
               </div>
             </div>
           </div>
@@ -139,9 +141,8 @@
                 </div>
               </div>
               <div class="flex items-center gap-3">
-                <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-6 h-6" />
-                <img src="/images/project-icons/proxmox2.png" alt="Proxmox" class="w-6 h-6" />
-                <span class="text-slate-400 text-xs">Ansible + Proxmox</span>
+                <span class="text-slate-400 text-center text-xs">Proxmox <br />Hypervisor</span>
+                <img src="/images/project-icons/proxmox2.png" alt="Proxmox" class="w-10 h-10" />
               </div>
             </div>
 
@@ -150,7 +151,7 @@
                 <h4 class="text-slate-200 font-medium mb-3">Hardware Specifications</h4>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 text-center">
                   <div>
-                    <div class="text-orange-400 font-bold text-lg">Ryzen 7</div>
+                    <div class="text-slate-200 font-bold text-lg">Ryzen 7</div>
                     <div class="text-slate-400 text-xs">8845HS CPU</div>
                   </div>
                   <div>
@@ -158,7 +159,7 @@
                     <div class="text-slate-400 text-xs">DDR5 RAM</div>
                   </div>
                   <div>
-                    <div class="text-purple-400 font-bold text-lg">1TB</div>
+                    <div class="text-slate-200 font-bold text-lg">1TB</div>
                     <div class="text-slate-400 text-xs">NVMe SSD</div>
                   </div>
                   <div>

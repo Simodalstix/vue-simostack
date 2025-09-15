@@ -8,12 +8,12 @@
       <!-- First column: Infrastructure & DevOps -->
       <div class="md:col-span-1">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-slate-400">IT Support & Administration</h2>
+          <h2 class="text-2xl font-bold mb-2 text-slate-400">Infrastructure & DevOps</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
-            <li>Active Directory, Group Policy (GPO) – User and computer management</li>
-            <li>Microsoft 365, Exchange Online – Email and collaboration platform support</li>
-            <li>Windows Server, DHCP, DNS – Core network services administration</li>
-            <li>Remote support tools (RDP, TeamViewer) – End user assistance</li>
+            <li>Terraform, CloudFormation – Infrastructure as Code (IaC) for AWS & Azure</li>
+            <li>Ansible, GitHub Actions, Jenkins – Provisioning and CI/CD automation</li>
+            <li>Kubernetes, Helm, ArgoCD – Container orchestration and GitOps workflows</li>
+            <li>Docker, VMware – Containerization and virtual lab environments</li>
           </ul>
         </div>
 
@@ -38,11 +38,11 @@
       <!-- Second column: Systems Administration -->
       <div class="md:col-span-1">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-slate-400">Cloud & Infrastructure</h2>
+          <h2 class="text-2xl font-bold mb-2 text-slate-400">Systems Administration</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
-            <li>Azure AD/Entra ID, Intune – Cloud identity and device management</li>
-            <li>AWS, Azure – Cloud platform administration and support</li>
-            <li>Terraform, PowerShell – Automation and infrastructure management</li>
+            <li>RHEL, Ubuntu, Windows Server – Multi-platform environments</li>
+            <li>Active Directory, Group Policy (GPO), pfSense, DNS</li>
+            <li>DHCP, NAT, SSH hardening, access control</li>
           </ul>
         </div>
 

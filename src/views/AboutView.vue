@@ -3,31 +3,23 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
       <div class="md:col-span-2 flex flex-col space-y-8">
         <div>
-          <h2 class="text-3xl font-bold mb-4">My Story: Healthcare to Cloud Engineering</h2>
+          <h2 class="text-3xl font-bold mb-4">My Story: The Pivot</h2>
           <p class="text-lg">
-            I’m pivoting from a career in healthcare into technology, with a passion for Linux,
-            cloud platforms, and DevOps. Over the past year I’ve built a strong foundation in AWS
-            and Azure, focusing on automation, Infrastructure as Code, and platform engineering. My
-            background as a pharmacist gave me experience performing root cause analysis under
-            pressure, communicating clearly with different stakeholders, and applying precision in
-            high-stakes environments — skills I now bring to engineering challenges and building
-            resilient infrastructure.
+            I'm a curious tech support professional with a strong interest in engineering and infrastructure. Coming from healthcare and pharmacy, I've built a solid foundation in Windows, Linux, cloud platforms (AWS/Azure), and networking through hands-on experience and home lab projects. My experience in both pharmacy and IT support taught me performing root cause analysis under pressure, communicating clearly with different stakeholders, and applying precision in high-stakes environments — skills that make me effective in both support and infrastructure work.
           </p>
-          <p class="mt-4 font-bold text-lg text-orange-300">What I Bring to Technical Teams</p>
+          <p class="mt-4 font-bold text-lg text-orange-300">What I Bring</p>
           <ul class="list-disc list-inside mt-2 text-base text-gray-200">
-            <li>Excellent customer service with a 'Can Do' attitude</li>
-            <li>Strong Active Directory and Microsoft 365 administration skills</li>
-            <li>Experience with Windows/Linux environments and Azure cloud services</li>
-            <li>Systematic troubleshooting approach with clear documentation</li>
+            <li>Genuine enthusiasm for technology and continuous learning</li>
+            <li>Positive attitude and collaborative approach to problem-solving</li>
+            <li>Takes responsibility and accepts feedback with humility</li>
+            <li>User-focused perspective from support experience combined with engineering curiosity</li>
           </ul>
         </div>
 
         <div>
-          <h2 class="text-3xl font-bold mb-4">Why I'm a Strong Engineering Hire</h2>
+          <h2 class="text-3xl font-bold mb-4">Why I'm a Good Hire</h2>
           <p class="text-lg">
-            I aim to help teams run reliable, secure, and scalable infrastructure. My certifications
-            provide a strong foundation, while my ongoing projects in Kubernetes and observability
-            keep me learning and ready to contribute in both operations and engineering contexts.
+            I aim to help teams with both immediate support needs and longer-term infrastructure goals. My certifications provide a strong foundation, while my hands-on projects in automation, monitoring, and cloud technologies show my commitment to growing from support into engineering roles while bringing valuable user-focused perspective to technical challenges.
           </p>
         </div>
       </div>

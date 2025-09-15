@@ -2,12 +2,12 @@
   <div class="bg-slate-900 min-h-screen flex flex-col justify-center text-white">
     <div class="text-center p-6 sm:p-8 md:p-12 lg:p-20" style="padding-bottom: 10rem">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-        <span class="text-slate-400">~/Support/Administrator/</span>
-        <span class="text-cyan-400">IT Engineer</span>
+        <span class="text-slate-400">~/Scientist/Pharmacist/</span>
+        <span class="text-cyan-400">Tech Support</span>
       </h1>
 
       <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-        I'm transitioning from healthcare into cloud engineering with 6 months IT support experience. I combine strong customer service skills from my pharmacy background with growing technical expertise in AWS, Azure, and automation. I'm passionate about both solving user problems and building scalable infrastructure.
+        I'm a tech support professional with a genuine curiosity for cloud infrastructure and engineering. My hands-on projects in AWS, Azure, and Linux demonstrate my enthusiasm for learning beyond traditional support roles. I bring a user-focused perspective to technical challenges while actively developing skills in automation, monitoring, and infrastructure management.
       </p>
 
       <div

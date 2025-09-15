@@ -14,23 +14,21 @@
           <h1 class="text-4xl font-bold mb-4 md:mb-6">Let's Connect</h1>
 
           <p class="text-lg mb-6">
-            I’m a cloud engineer with 6 months IT support experience combining technical skills with user-focused solutions. I learn fast, take feedback seriously, and I’m focused on automation, reliability, and clear communication.
+            I’m a in tech support looking for an environment where I can grow into Level 3 and engineering roles. I build real, reproducible projects in my spare time to develop those skills. I learn fast, take feedback seriously, and I’m focused on automation, reliability, and clear communication.
           </p>
 
           <p class="font-bold text-xl mb-4">I'd love to chat about:</p>
           <ul class="list-disc list-outside pl-6 space-y-2 mb-6">
             <li>
-              How my healthcare → engineering pivot maps to root-cause analysis and stakeholder
-              comms
+              How my support experience with troubleshooting and user communication helps with complex issues
             </li>
             <li>
-              A quick walkthrough of a project (IaC, CI/CD, Kubernetes) and the trade-offs I made
+              My cloud and infrastructure interests—how they make me a better support engineer
             </li>
             <li>
-              How my base in AWS, Azure, Terraform, Kubernetes, and Jenkins lets me ramp quickly on
-              your stack
+              A quick walkthrough of my home lab projects and what I've learned
             </li>
-            <li>The next steps in my growth and where I can be useful now</li>
+            <li>Growth opportunities and where I can contribute now</li>
           </ul>
 
           <p class="font-bold text-xl mb-2">Get in touch:</p>

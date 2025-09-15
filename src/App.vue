@@ -87,20 +87,7 @@ n d
               @click="closeMobileMenu"
               >Contact</router-link
             >
-            <router-link
-              :to="{ name: 'Elephant' }"
-              class="px-3 py-2 rounded-md hover:bg-slate-600/50 transition-all duration-200"
-              @click="closeMobileMenu"
-            >
-              <div class="flex items-center text-gray-300 hover:text-white">
-                <img
-                  src="/images/project-icons/elephant-icon.png"
-                  alt="Elephant Icon"
-                  class="h-6 w-6 mr-2"
-                />
-                <span>Elephant Room</span>
-              </div>
-            </router-link>
+
           </div>
         </div>
         <!-- Desktop menu -->
@@ -142,16 +129,7 @@ n d
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Contact</router-link
             >
-            <router-link
-              :to="{ name: 'Elephant' }"
-              class="px-3 py-2 rounded-md hover:bg-slate-600/50 transition-all duration-200"
-            >
-              <img
-                src="/images/project-icons/elephant-icon.png"
-                alt="Elephant Icon"
-                class="h-6 w-6"
-              />
-            </router-link>
+
           </div>
         </div>
       </nav>
