@@ -169,7 +169,7 @@
             >
               <div class="flex flex-col gap-8 mb-auto">
                 <img
-                  src="/images/certifications/aplus.png"
+                  src="/images/certifications/a-plus.png"
                   alt="Comptia A+ Badge"
                   class="w-20 sm:w-36 mx-auto"
                 />
