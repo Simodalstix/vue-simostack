@@ -8,7 +8,7 @@
       <!-- First column: Infrastructure & DevOps -->
       <div class="md:col-span-1">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-slate-400">Infrastructure & DevOps</h2>
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Infrastructure & DevOps</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Terraform, CloudFormation – Infrastructure as Code (IaC) for AWS & Azure</li>
             <li>Ansible, GitHub Actions, Jenkins – Provisioning and CI/CD automation</li>
@@ -18,7 +18,7 @@
         </div>
 
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-slate-400">Cloud Platforms</h2>
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Cloud Platforms</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>AWS (EC2, IAM, S3, Lambda, ACM, CloudWatch)</li>
             <li>Azure (App Services, VNets, Key Vault, Log Analytics, Update Mgmt)</li>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-slate-400">Scripting & Automation</h2>
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Scripting & Automation</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Bash, PowerShell, Python – Automation and admin tooling</li>
             <li>Cron, systemd timers – Task scheduling and service control</li>
@@ -38,7 +38,7 @@
       <!-- Second column: Systems Administration -->
       <div class="md:col-span-1">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-slate-400">Systems Administration</h2>
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Systems Administration</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>RHEL, Ubuntu, Windows Server – Multi-platform environments</li>
             <li>Active Directory, Group Policy (GPO), pfSense, DNS</li>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-slate-400">Security & Monitoring</h2>
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Security & Monitoring</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>Sysmon, ELK Stack, Wazuh, Splunk, CloudWatch, Azure Monitor</li>
             <li>Log Analytics, Data Collection Rules (DCR), Dynatrace OneAgent</li>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-slate-400">Web & Networking</h2>
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Web & Networking</h2>
           <ul class="list-disc space-y-1 text-lg pl-5">
             <li>HTTP, NGINX, Let's Encrypt – SSL/TLS and reverse proxy setup</li>
             <li>JavaScript, Vue.js, React</li>
@@ -168,6 +168,11 @@
               class="border-l-2 border-r-2 border-b-2 border-slate-600 p-8 flex flex-col justify-between items-center text-center group-hover:border-emerald-400 transition-all duration-100"
             >
               <div class="flex flex-col gap-8 mb-auto">
+                <img
+                  src="/images/certifications/a+.png"
+                  alt="Comptia A+ Badge"
+                  class="w-20 sm:w-36 mx-auto"
+                />
                 <img
                   src="/images/skills-in-progress/rhcsa.png"
                   alt="RHCSA Badge"

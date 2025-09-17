@@ -215,13 +215,21 @@
       </div>
     </div>
 
-    <!-- Cloud Projects -->
-    <div class="space-y-8">
-      <!-- Row 1: Cloud Platforms & Extensions -->
-      <div>
-        <h3 class="text-sm font-medium text-slate-400 mb-4 uppercase tracking-wide">
-          Cloud Platforms & Extensions
-        </h3>
+    <!-- Cloud Infrastructure Projects -->
+    <div class="border-2 border-slate-500/30 rounded-2xl p-8 bg-gradient-to-br from-slate-800/20 to-slate-900/40 backdrop-blur-sm">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-white mb-4">Cloud Infrastructure Projects</h2>
+        <p class="text-slate-300 text-lg leading-relaxed">
+          These projects demonstrate enterprise-scale cloud architectures, automation pipelines, and infrastructure patterns. Built with Terraform, containerization, and DevOps best practices to showcase real-world cloud engineering capabilities.
+        </p>
+      </div>
+      
+      <div class="space-y-8">
+        <!-- Cloud Platforms & Infrastructure -->
+        <div>
+          <h3 class="text-lg font-semibold text-slate-200 mb-6">
+            Enterprise Cloud Architectures
+          </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <!-- Azure Container Apps Card -->
           <BaseCard
@@ -1333,11 +1341,11 @@
         </div>
       </div>
 
-      <!-- Row 3: DevOps & Tooling -->
-      <div>
-        <h3 class="text-sm font-medium text-slate-400 mb-4 uppercase tracking-wide">
-          DevOps & Tooling
-        </h3>
+        <!-- DevOps & Automation -->
+        <div>
+          <h3 class="text-lg font-semibold text-slate-200 mb-6">
+            DevOps & Automation Tooling
+          </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <!-- Col 1 -->
           <!-- Enhanced DevOps Toolchain Card -->
@@ -1425,6 +1433,7 @@
           </BaseCard>
         </div>
       </div>
+    </div>
     </div>
 
     <ProjectK3sGitops

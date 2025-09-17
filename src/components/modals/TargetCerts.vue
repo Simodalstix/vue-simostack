@@ -6,6 +6,19 @@
     width="max-w-3xl"
   >
     <div class="space-y-8 mt-6 mx-4">
+      <div class="flex items-center space-x-6 border-b border-slate-600 pb-6">
+        <img src="/images/certifications/a+.png" alt="Comptia A+" class="w-24 md:w-28" />
+        <div class="space-y-2">
+          <h3 class="font-bold text-xl text-white">CompTIA A+ Certification</h3>
+          <p class="text-sm"><b>Status:</b> Preparing to sit</p>
+          <p class="text-sm">
+            <b>Why:</b> Solidifies my hardware and OS fundamentals, making me a more well-rounded support engineer with deeper troubleshooting capabilities.
+          </p>
+          <p class="text-sm">
+            <b>Focus:</b> Hardware troubleshooting, Windows/Linux basics, networking fundamentals, and mobile device support.
+          </p>
+        </div>
+      </div>
       <!-- RHCSA -->
       <div class="flex items-center space-x-6 border-b border-slate-600 pb-6">
         <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-24 md:w-28" />
@@ -43,8 +56,7 @@
         </div>
       </div>
 
-      <!-- Azure DevOps -->
-      <div class="flex items-center space-x-6">
+      <!-- <div class="flex items-center space-x-6">
         <img
           src="/images/certifications/azure-devops.png"
           alt="Azure DevOps Badge"
@@ -57,7 +69,7 @@
             <b>Why:</b> Deepen CI/CD workflows and Azure-native automation experience.
           </p>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- Footer quote -->
