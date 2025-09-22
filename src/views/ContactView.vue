@@ -14,20 +14,19 @@
           <h1 class="text-4xl font-bold mb-4 md:mb-6">Let's Connect</h1>
 
           <p class="text-lg mb-6">
-            I’m a in tech support looking for an environment where I can grow into Level 3 and engineering roles. I build real, reproducible projects in my spare time to develop those skills. I learn fast, take feedback seriously, and I’m focused on automation, reliability, and clear communication.
+            If you think I’d be a good fit for your team, I’d love to hear from you.
           </p>
 
           <p class="font-bold text-xl mb-4">I'd love to chat about:</p>
           <ul class="list-disc list-outside pl-6 space-y-2 mb-6">
             <li>
-              How my support experience with troubleshooting and user communication helps with complex issues
+              How my support experience with troubleshooting and user communication helps with
+              complex issues
             </li>
             <li>
               My cloud and infrastructure interests—how they make me a better support engineer
             </li>
-            <li>
-              A quick walkthrough of my home lab projects and what I've learned
-            </li>
+            <li>A quick walkthrough of my home lab projects and what I've learned</li>
             <li>Growth opportunities and where I can contribute now</li>
           </ul>
 

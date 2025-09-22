@@ -264,12 +264,18 @@
             </div>
 
             <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img src="/images/project-icons/vyos.png" alt="VyOS" class="w-6 h-6 sm:w-8 sm:h-8" />
+              <img
+                src="/images/project-icons/opnsense.webp"
+                alt="Opensense"
+                class="w-6 h-6 sm:w-8 sm:h-8"
+              />
               <div class="flex-1 min-w-0">
                 <span class="text-slate-200 font-medium text-sm sm:text-base"
-                  >VyOS Router + WireGuard VPN</span
+                  >OPNsense Router + WireGuard VPN</span
                 >
-                <p class="text-slate-400 text-xs">Advanced routing + cloud integration + VLANs</p>
+                <p class="text-slate-400 text-xs">
+                  Upgrade on PFsense, VPN tunnel to cloud landing zones
+                </p>
               </div>
               <span
                 class="text-yellow-400 text-xs font-medium px-2 py-1 bg-yellow-400/10 rounded whitespace-nowrap"
