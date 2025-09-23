@@ -279,7 +279,7 @@
               </div>
               <span
                 class="text-yellow-400 text-xs font-medium px-2 py-1 bg-yellow-400/10 rounded whitespace-nowrap"
-                >Planning</span
+                >In Progress</span
               >
             </div>
           </div>
