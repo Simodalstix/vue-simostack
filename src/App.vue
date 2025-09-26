@@ -6,11 +6,6 @@ n d
     >
       <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
-          <router-link
-            to="/"
-            class="text-xl font-bold text-white hover:text-indigo-300 transition-colors duration-200"
-            >Simon Parker
-          </router-link>
           <!-- Mobile menu button -->
           <button
             @click="toggleMobileMenu"
@@ -87,7 +82,6 @@ n d
               @click="closeMobileMenu"
               >Contact</router-link
             >
-
           </div>
         </div>
         <!-- Desktop menu -->
@@ -129,7 +123,6 @@ n d
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Contact</router-link
             >
-
           </div>
         </div>
       </nav>

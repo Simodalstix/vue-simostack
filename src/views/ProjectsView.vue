@@ -51,241 +51,279 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-        <!-- Current VMware Environment -->
-        <div class="bg-slate-700/30 rounded-xl p-4 sm:p-6 border border-slate-600/30">
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-4">
-              <img
-                src="/images/main-tools/vmware.svg"
-                alt="VMware"
-                class="w-8 h-8 sm:w-10 sm:h-10"
-              />
-              <div>
-                <h3 class="text-lg sm:text-xl font-semibold text-slate-200">
-                  Current VMware Environment
-                </h3>
-                <p class="text-slate-400 text-xs sm:text-sm">
-                  Windows 11 + VMware Workstation (32GB host)
+      <!-- VMware Background -->
+      <div class="mb-8 bg-slate-700/20 rounded-lg p-4 border border-slate-600/20">
+        <div class="flex items-center gap-3 mb-2">
+          <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8" />
+          <div>
+            <h3 class="text-lg font-semibold text-slate-200">VMware Foundation</h3>
+            <p class="text-slate-400 text-sm">
+              Previous lab environment: Windows 11 + VMware Workstation with RHEL 9, Windows Server
+              2022 AD, Ubuntu servers, ELK stack, and pfSense firewall (simo.local domain)
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beelink Infrastructure -->
+      <div class="bg-slate-700/30 rounded-xl p-4 sm:p-6 border border-slate-600/30">
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
+          <div class="flex items-center gap-4">
+            <img
+              src="/images/project-icons/beelink.png"
+              alt="Beelink SER8"
+              class="w-8 h-8 sm:w-10 sm:h-10"
+            />
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold text-slate-200">Beelink SER8 Mini-PC</h3>
+              <p class="text-slate-400 text-xs sm:text-sm">
+                Ryzen 7 8845HS • 32GB DDR5 • 1TB NVMe • 2.5GbE
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 sm:gap-3">
+            <span class="text-slate-400 text-center text-xs hidden sm:block"
+              >Proxmox <br />Hypervisor</span
+            >
+            <img
+              src="/images/project-icons/proxmox2.png"
+              alt="Proxmox"
+              class="w-8 h-8 sm:w-10 sm:h-10"
+            />
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="space-y-4">
+          <!-- ONE unified grid: 2 columns (left) + VPN spacer + 2 columns (right) -->
+          <div class="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-7">
+            <!-- Left column (stacked 2 cards) -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+              <!-- Wazuh Security Card -->
+              <BaseCard
+                @click="showWazuhLabProject = true"
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <img
+                    src="/images/project-icons/wazuh-icon.png"
+                    alt="Wazuh"
+                    class="w-8 h-8 rounded-full"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      Wazuh + OpenSearch
+                    </h5>
+                    <p class="text-slate-400 text-xs">VM 103 • 10GB RAM</p>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                  Enterprise SIEM with threat detection, log aggregation from all lab systems, and
+                  security event correlation. Integrates with cloud security tools for hybrid
+                  monitoring.
                 </p>
-              </div>
-            </div>
-          </div>
+                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
+                  >Active</span
+                >
+              </BaseCard>
 
-          <div class="space-y-3 sm:space-y-4">
-            <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img
-                src="/images/project-icons/redhat.svg"
-                alt="Red Hat"
-                class="w-6 h-6 sm:w-8 sm:h-8"
-              />
-              <div class="flex-1 min-w-0">
-                <span class="text-slate-200 font-medium text-sm sm:text-base"
-                  >RHEL 9 Learning Lab</span
-                >
-                <p class="text-slate-400 text-xs">RHCSA experimentation, practice and learning</p>
-              </div>
-              <span
-                class="text-cyan-400 text-xs font-medium px-2 py-1 bg-cyan-400/10 rounded whitespace-nowrap"
-                >4GB RAM</span
+              <!-- Ubuntu File Server -->
+              <BaseCard
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
-            </div>
-            <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img
-                src="/images/project-icons/ad.png"
-                alt="Active Directory"
-                class="w-6 h-6 sm:w-8 sm:h-8"
-              />
-              <div class="flex-1 min-w-0">
-                <span class="text-slate-200 font-medium text-sm sm:text-base"
-                  >Windows Server 2022 AD</span
+                <div class="flex items-center gap-3 mb-4">
+                  <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu" class="w-8 h-8" />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      Ubuntu File Server
+                    </h5>
+                    <p class="text-slate-400 text-xs">VM 101 • 2GB RAM</p>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                  Centralized file storage for Windows laptop, Rocky Linux laptop, and all VMs.
+                  Testing cloud sync integration with AWS S3 and Azure Blob for hybrid storage
+                  scenarios.
+                </p>
+                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
+                  >Active</span
                 >
-                <p class="text-slate-400 text-xs">Domain controller + Group Policy management</p>
-              </div>
-              <span
-                class="text-cyan-400 text-xs font-medium px-2 py-1 bg-cyan-400/10 rounded whitespace-nowrap"
-                >4GB RAM</span
-              >
+              </BaseCard>
             </div>
 
-            <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img
-                src="/images/project-icons/ubuntu.svg"
-                alt="Ubuntu"
-                class="w-6 h-6 sm:w-8 sm:h-8"
-              />
-              <div class="flex-1 min-w-0">
-                <span class="text-slate-200 font-medium text-sm sm:text-base"
-                  >Ubuntu Application Server</span
-                >
-                <p class="text-slate-400 text-xs">Web services + containerized applications</p>
-              </div>
-              <span
-                class="text-cyan-400 text-xs font-medium px-2 py-1 bg-cyan-400/10 rounded whitespace-nowrap"
-                >2GB RAM</span
+            <!-- Second Column -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+              <!-- OPNsense Card -->
+              <BaseCard
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
+                <div class="flex items-center gap-3 mb-4">
+                  <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8" />
+
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      OPNsense Firewall
+                    </h5>
+                    <p class="text-slate-400 text-xs">VM 102 • 3GB RAM</p>
+                  </div>
+
+                  <!-- right-side port + pipe -->
+                  <div class="ml-auto flex items-center w-24">
+                    <span
+                      class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                    ></span>
+                    <span
+                      class="h-[2px] flex-1 bg-cyan-400 -mr-6 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                    ></span>
+                  </div>
+                </div>
+
+                <p class="text-slate-400 text-sm mb-4">
+                  Network gateway with VPN tunnels to cloud landing zones. Replaces pfSense with
+                  advanced routing, VLAN segmentation, and site-to-site connectivity testing.
+                </p>
+                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded">
+                  Active
+                </span>
+              </BaseCard>
+
+              <!-- Prometheus Card -->
+              <BaseCard
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <img
+                    src="/images/project-icons/prometheus-icon.svg"
+                    alt="Prometheus"
+                    class="w-8 h-8"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      Prometheus + Grafana
+                    </h5>
+                    <p class="text-slate-400 text-xs">VM 104 • 4GB RAM</p>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                  Infrastructure monitoring for all lab systems with custom dashboards. Collecting
+                  metrics from cloud resources to create unified observability across hybrid
+                  environments.
+                </p>
+                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
+                  >Active</span
+                >
+              </BaseCard>
+            </div>
+            <!-- VPN Tunnel spacer column -->
+            <div class="lg:col-span-1 flex flex-col items-center pt-11 pb-8">
+              <div class="flex flex-col items-center">
+                <!-- elbow at header height -->
+                <div class="flex items-center -translate-y-[3px]">
+                  <!-- elbow connection circle -->
+                  <span
+                    class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  ></span>
+
+                  <!-- horizontal run into the card -->
+                  <div
+                    class="h-[2px] w-[120px] -ml-[120px] bg-gradient-to-l from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  ></div>
+                  <!-- ↑ tweak width/-ml together until the line kisses the card edge -->
+                </div>
+
+                <!-- continuous vertical down -->
+                <div
+                  class="w-[2px] h-16 -mt-px bg-gradient-to-b from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                ></div>
+
+                <!-- WireGuard node -->
+                <img
+                  src="/images/project-icons/wireguard.png"
+                  alt="WireGuard"
+                  class="w-12 h-12 rounded-full"
+                />
+
+                <div class="text-center my-1">
+                  <p class="text-cyan-400 text-xs font-medium">VPN Tunnel</p>
+                  <p class="text-slate-400 text-xs">Site-to-Site</p>
+                </div>
+
+                <!-- continue vertical -->
+                <div
+                  class="w-[2px] h-8 bg-gradient-to-b from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                ></div>
+                <div
+                  class="w-[2px] h-40 bg-gradient-to-b from-sky-400 to-blue-500 rounded-full drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                ></div>
+                <!-- elbow connection circle -->
+                <span
+                  class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                ></span>
+                <div class="flex items-center space-x-2 mt-2">
+                  <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-10 h-10" />
+                  <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-10 h-10" />
+                </div>
+              </div>
             </div>
 
-            <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img
-                src="/images/project-icons/elastic.svg"
-                alt="ELK Stack"
-                class="w-6 h-6 sm:w-8 sm:h-8"
-              />
-              <div class="flex-1 min-w-0">
-                <span class="text-slate-200 font-medium text-sm sm:text-base"
-                  >Ubuntu ELK Platform</span
-                >
-                <p class="text-slate-400 text-xs">Centralized logging + security monitoring</p>
-              </div>
-              <span
-                class="text-cyan-400 text-xs font-medium px-2 py-1 bg-cyan-400/10 rounded whitespace-nowrap"
-                >6GB RAM</span
+            <div class="lg:col-span-2 flex flex-col gap-4">
+              <!-- Vault Card -->
+              <BaseCard
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
-            </div>
-
-            <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img
-                src="/images/project-icons/pfsense.svg"
-                alt="pfSense"
-                class="w-6 h-6 sm:w-8 sm:h-8"
-              />
-              <div class="flex-1 min-w-0">
-                <span class="text-slate-200 font-medium text-sm sm:text-base"
-                  >pfSense Firewall</span
+                <div class="flex items-center gap-3 mb-4">
+                  <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8" />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      Vault + PKI
+                    </h5>
+                    <p class="text-slate-400 text-xs">VM 105 • 3GB RAM</p>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                  Certificate authority and secrets management for lab PKI. Issuing certificates for
+                  services and testing integration with cloud identity providers and key management
+                  services.
+                </p>
+                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
+                  >Active</span
                 >
-                <p class="text-slate-400 text-xs">Network segmentation + DHCP Server</p>
-              </div>
-              <span
-                class="text-cyan-400 text-xs font-medium px-2 py-1 bg-cyan-400/10 rounded whitespace-nowrap"
-                >2GB RAM</span
-              >
-            </div>
-          </div>
+              </BaseCard>
 
-          <div class="mt-6 pt-4 border-t border-slate-600">
-            <div class="flex items-center justify-between">
-              <span class="text-green-400 text-sm font-medium">AD Domain: simo.local</span>
+              <!-- Windows Server Card -->
+              <BaseCard
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <img src="/images/project-icons/ad.png" alt="Windows Server" class="w-8 h-8" />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      Windows Server 2022
+                    </h5>
+                    <p class="text-slate-400 text-xs">VM 100 • 4GB RAM</p>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                  Active Directory domain services with Group Policy management. Testing hybrid
+                  identity scenarios and Azure AD Connect integration for cloud authentication
+                  workflows.
+                </p>
+                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
+                  >Active</span
+                >
+              </BaseCard>
             </div>
           </div>
         </div>
 
-        <!-- Beelink SER8 Transition -->
-        <div class="bg-slate-700/30 rounded-xl p-4 sm:p-6 border border-slate-600/30">
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-4">
-              <img
-                src="/images/project-icons/beelink.png"
-                alt="Beelink SER8"
-                class="w-8 h-8 sm:w-10 sm:h-10"
-              />
-              <div>
-                <h3 class="text-lg sm:text-xl font-semibold text-slate-200">
-                  Beelink SER8 Mini-PC
-                </h3>
-                <p class="text-slate-400 text-xs sm:text-sm">
-                  Dedicated containerized infrastructure
-                </p>
-              </div>
-            </div>
-            <div class="flex items-center gap-2 sm:gap-3">
-              <span class="text-slate-400 text-center text-xs hidden sm:block"
-                >Proxmox <br />Hypervisor</span
-              >
-              <img
-                src="/images/project-icons/proxmox2.png"
-                alt="Proxmox"
-                class="w-8 h-8 sm:w-10 sm:h-10"
-              />
-            </div>
-          </div>
-
-          <div class="mb-6">
-            <div class="bg-slate-600/20 rounded-lg p-3 sm:p-4">
-              <h4 class="text-slate-200 font-medium mb-3 text-sm sm:text-base">
-                Hardware Specifications
-              </h4>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 text-center">
-                <div>
-                  <div class="text-slate-200 font-bold text-sm sm:text-lg">Ryzen 7</div>
-                  <div class="text-slate-400 text-xs">8845HS CPU</div>
-                </div>
-                <div>
-                  <div class="text-cyan-400 font-bold text-sm sm:text-lg">32GB</div>
-                  <div class="text-slate-400 text-xs">DDR5 RAM</div>
-                </div>
-                <div>
-                  <div class="text-slate-200 font-bold text-sm sm:text-lg">1TB</div>
-                  <div class="text-slate-400 text-xs">NVMe SSD</div>
-                </div>
-                <div>
-                  <div class="text-green-400 font-bold text-sm sm:text-lg">2.5GbE</div>
-                  <div class="text-slate-400 text-xs">Networking</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-3 sm:space-y-4">
-            <h4 class="text-slate-200 font-medium text-sm sm:text-base">Planned Infrastructure</h4>
-
-            <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img
-                src="/images/project-icons/wazuh-icon.png"
-                alt="Zero Trust"
-                class="w-6 h-6 sm:w-8 sm:h-8 rounded-md"
-              />
-              <div class="flex-1 min-w-0">
-                <span class="text-slate-200 font-medium text-sm sm:text-base"
-                  >Zero Trust Security Lab</span
-                >
-                <p class="text-slate-400 text-xs">Wazuh SIEM + threat detection + PKI</p>
-              </div>
-              <span
-                class="text-yellow-400 text-xs font-medium px-2 py-1 bg-yellow-400/10 rounded whitespace-nowrap"
-                >In Progress</span
-              >
-            </div>
-
-            <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img
-                src="/images/project-icons/ubuntu.svg"
-                alt="File Server"
-                class="w-6 h-6 sm:w-8 sm:h-8"
-              />
-              <div class="flex-1 min-w-0">
-                <span class="text-slate-200 font-medium text-sm sm:text-base">File Server</span>
-                <p class="text-slate-400 text-xs">NAS + cloud sync + backup automation</p>
-              </div>
-              <span
-                class="text-cyan-400 text-xs font-medium px-2 py-1 bg-cyan-400/10 rounded whitespace-nowrap"
-                >2GB RAM</span
-              >
-            </div>
-
-            <div class="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 bg-slate-600/20 rounded-lg">
-              <img
-                src="/images/project-icons/opnsense.webp"
-                alt="Opensense"
-                class="w-6 h-6 sm:w-8 sm:h-8"
-              />
-              <div class="flex-1 min-w-0">
-                <span class="text-slate-200 font-medium text-sm sm:text-base"
-                  >OPNsense Router + WireGuard VPN</span
-                >
-                <p class="text-slate-400 text-xs">
-                  Upgrade on PFsense, VPN tunnel to cloud landing zones
-                </p>
-              </div>
-              <span
-                class="text-yellow-400 text-xs font-medium px-2 py-1 bg-yellow-400/10 rounded whitespace-nowrap"
-                >In Progress</span
-              >
-            </div>
-          </div>
-
-          <div class="mt-6 pt-4 border-t border-slate-600">
-            <div class="flex items-center justify-between"></div>
+        <!-- Footer -->
+        <div class="mt-6 pt-4 border-t border-slate-600">
+          <div class="flex items-center justify-between">
+            <span class="text-green-400 text-sm font-medium"
+              >AD Domain: proxmox.local • 6 Active VMs</span
+            >
+            <span class="text-slate-400 text-xs">26GB RAM allocated</span>
           </div>
         </div>
       </div>
