@@ -2,27 +2,23 @@
   <div class="text-white container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-10">
     <!-- Home Lab Foundation -->
     <div class="mb-12">
-      <div class="mb-8">
-        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-6">
-          <div class="flex-1">
-            <h1 class="text-3xl font-bold text-white mb-4">My Projects & Labs</h1>
-            <p class="text-slate-300 text-lg leading-relaxed mb-4">
-              My home lab extends my support skills into cloud technologies and infrastructure. It
-              reflects a hands-on approach to growth, with a focus on automation, monitoring, and
-              Infrastructure as Code — helping me build the practical foundation for engineering
-              roles.
-            </p>
-            <p class="text-slate-300 text-lg leading-relaxed">
-              The core environment runs on VMware Workstation with Windows 11 and a Rocky Linux
-              laptop, while I am in the process of transitioning to Proxmox for broader
-              virtualization capabilities. Networking is managed through a pfSense firewall with
-              DHCP, MAC-based reservations for VMware VMs, and DNS provided by Active Directory.
-              Automation is applied consistently using Ansible. I plan to expand the setup further
-              with an always-on Beelink system, adding another NIC to enable proper network
-              segmentation.
-            </p>
+      <!-- Home Infrastructure (TOP container) -->
+      <div class="bg-slate-700/30 rounded-xl p-4 sm:p-6 border border-slate-600/30 mb-6 isolate">
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
+          <!-- Left: Title & Icon -->
+          <div class="flex items-center gap-4">
+            <div>
+              <h3 class="text-lg sm:text-xl font-semibold text-slate-200">
+                My Projects &amp; Labs
+              </h3>
+              <p class="text-slate-400 text-xs sm:text-sm">
+                Windows 11 • Rocky Linux 10 • VMware Workstation • Ansible
+              </p>
+            </div>
           </div>
-          <div class="flex flex-col gap-3 lg:min-w-[200px]">
+
+          <div class="flex flex-row gap-3 lg:min-w-[200px]">
             <a
               href="https://github.com/Simodalstix"
               target="_blank"
@@ -49,27 +45,111 @@
             </button>
           </div>
         </div>
-      </div>
 
-      <!-- VMware Background -->
-      <div class="mb-8 bg-slate-700/20 rounded-lg p-4 border border-slate-600/20">
-        <div class="flex items-center gap-3 mb-2">
-          <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8" />
-          <div>
-            <h3 class="text-lg font-semibold text-slate-200">VMware Foundation</h3>
-            <p class="text-slate-400 text-sm">
-              Previous lab environment: Windows 11 + VMware Workstation with RHEL 9, Windows Server
-              2022 AD, Ubuntu servers, ELK stack, and pfSense firewall (simo.local domain)
-            </p>
+        <!-- Body -->
+        <div class="space-y-4">
+          <div class="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-7">
+            <!-- LEFT: description (merged span-4) -->
+            <div class="lg:col-span-4">
+              <div
+                class="relative z-10 overflow-hidden p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800"
+              >
+                <p class="text-slate-300 text-lg leading-relaxed">
+                  My home lab extends my support skills into cloud technologies and infrastructure.
+                  It reflects a hands-on approach to growth, with a focus on automation, monitoring,
+                  and Infrastructure as Code — helping me build the practical foundation for
+                  engineering roles.
+                </p>
+                <p class="text-slate-400 text-lg mt-3">
+                  The core environment runs on a Windows 11 laptop with VMware Workstation and a
+                  Rocky Linux 10 laptop. Networking is managed via OPNsense with DHCP reservations
+                  and VLAN segmentation. Ansible provides consistent automation. The VPN tunnel
+                  (shown in the middle) terminates at my gateway and connects to external landing
+                  zones (AWS/Azure).
+                </p>
+              </div>
+            </div>
+
+            <!-- VPN Tunnel spacer -->
+            <div class="lg:col-span-1 flex flex-col items-center pb-8">
+              <div class="flex flex-col items-center justify-between h-full relative">
+                <!-- vertical run above -->
+                <div class="w-[2px] flex-1"></div>
+
+                <!-- circle aligned with Rocky card -->
+                <span
+                  class="h-3 w-3 my-2 translate-y-[2px] rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                ></span>
+                <div class="text-center mb-2">
+                  <p class="text-cyan-400 text-xs font-medium">VPN Tunnel</p>
+                  <p class="text-slate-400 text-xs">Point-to-Site</p>
+                </div>
+                <!-- vertical run below -->
+                <div
+                  class="w-[2px] flex-1 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                ></div>
+              </div>
+            </div>
+
+            <!-- RIGHT: stacked cards -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+              <BaseCard
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <img src="/images/project-icons/rocky.svg" alt="Rocky Linux" class="w-8 h-8" />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      Rocky Linux 10 Laptop
+                    </h5>
+                    <p class="text-slate-400 text-xs">Ansible • Containers • Tooling</p>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                  Daily Linux workstation for automation work, containers, and lab management. The
+                  VPN line will extend to this host later.
+                </p>
+
+                <!-- glowing cyan elbow -->
+                <div class="flex items-center">
+                  <div
+                    class="h-[2px] w-36 -ml-[140px] bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  ></div>
+                  <span
+                    class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  ></span>
+                </div>
+              </BaseCard>
+
+              <BaseCard
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <img src="/images/project-icons/windows.svg" alt="Windows 11" class="w-8 h-8" />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      Windows 11 Laptop (VMware)
+                    </h5>
+                    <p class="text-slate-400 text-xs">VMware Workstation • Primary Dev Host</p>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                  Local hypervisor for multi-VM labs and PoCs. Bridges into OPNsense VLANs and
+                  participates in VPN workflows.
+                </p>
+              </BaseCard>
+            </div>
           </div>
         </div>
       </div>
+      <!-- /Home Infrastructure (TOP container) -->
 
       <!-- Beelink Infrastructure -->
       <div class="bg-slate-700/30 rounded-xl p-4 sm:p-6 border border-slate-600/30">
         <!-- Header -->
-        <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
-          <div class="flex items-center gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-7 gap-4 mb-6">
+          <!-- Left 4 cols (title + details) -->
+          <div class="lg:col-span-4 flex items-center gap-4">
             <img
               src="/images/project-icons/beelink.png"
               alt="Beelink SER8"
@@ -82,10 +162,19 @@
               </p>
             </div>
           </div>
-          <div class="flex items-center gap-2 sm:gap-3">
-            <span class="text-slate-400 text-center text-xs hidden sm:block"
-              >Proxmox <br />Hypervisor</span
-            >
+
+          <!-- Middle 1 col (VPN pipe in header) -->
+          <div class="lg:col-span-1 flex items-stretch">
+            <div
+              class="mx-auto w-[2px] translate-x-px self-stretch bg-gradient-to-b from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)] -mt-40 -mb-6"
+            ></div>
+          </div>
+
+          <!-- Right 2 cols (Proxmox badge) -->
+          <div class="lg:col-span-2 flex items-center gap-2 sm:gap-3">
+            <span class="text-slate-400 text-center text-xs hidden sm:block">
+              Proxmox <br />Hypervisor
+            </span>
             <img
               src="/images/project-icons/proxmox2.png"
               alt="Proxmox"
@@ -119,9 +208,8 @@
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
-                  Enterprise SIEM with threat detection, log aggregation from all lab systems, and
-                  security event correlation. Integrates with cloud security tools for hybrid
-                  monitoring.
+                  SIEM with threat detection, log aggregation from all lab systems, and security
+                  event correlation. Integrates with cloud security tools for hybrid monitoring.
                 </p>
                 <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
                   >Active</span
@@ -169,13 +257,16 @@
                   </div>
 
                   <!-- right-side port + pipe -->
-                  <div class="ml-auto flex items-center w-24">
+                  <div class="ml-auto flex items-center">
+                    <!-- small horizontal line -->
+
+                    <!-- circle node -->
                     <span
-                      class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                      class="h-3 w-3 -mr-[4px] rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
                     ></span>
-                    <span
-                      class="h-[2px] flex-1 bg-cyan-400 -mr-6 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                    ></span>
+                    <div
+                      class="h-[2px] w-36 -mr-36 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                    ></div>
                   </div>
                 </div>
 
@@ -216,25 +307,23 @@
               </BaseCard>
             </div>
             <!-- VPN Tunnel spacer column -->
-            <div class="lg:col-span-1 flex flex-col items-center pt-11 pb-8">
+            <div class="lg:col-span-1 flex flex-col items-center pt-6 pb-8">
               <div class="flex flex-col items-center">
+                <!-- vertical up into header -->
+                <div
+                  class="w-[2px] h-12 bg-gradient-to-b from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)] -mt-6"
+                ></div>
+
                 <!-- elbow at header height -->
-                <div class="flex items-center -translate-y-[3px]">
-                  <!-- elbow connection circle -->
+                <div class="flex items-center -translate-y-[7px]">
                   <span
                     class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
                   ></span>
-
-                  <!-- horizontal run into the card -->
-                  <div
-                    class="h-[2px] w-[120px] -ml-[120px] bg-gradient-to-l from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                  ></div>
-                  <!-- ↑ tweak width/-ml together until the line kisses the card edge -->
                 </div>
 
-                <!-- continuous vertical down -->
+                <!-- continuous vertical down, overlapping elbow circle -->
                 <div
-                  class="w-[2px] h-16 -mt-px bg-gradient-to-b from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  class="w-[2px] h-20 -mt-[8px] bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
                 ></div>
 
                 <!-- WireGuard node -->
@@ -246,16 +335,14 @@
 
                 <div class="text-center my-1">
                   <p class="text-cyan-400 text-xs font-medium">VPN Tunnel</p>
-                  <p class="text-slate-400 text-xs">Site-to-Site</p>
+                  <p class="text-slate-400 text-xs">IPsec</p>
                 </div>
 
                 <!-- continue vertical -->
                 <div
-                  class="w-[2px] h-8 bg-gradient-to-b from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  class="w-[2px] h-40 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
                 ></div>
-                <div
-                  class="w-[2px] h-40 bg-gradient-to-b from-sky-400 to-blue-500 rounded-full drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                ></div>
+
                 <!-- elbow connection circle -->
                 <span
                   class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
@@ -321,7 +408,7 @@
         <div class="mt-6 pt-4 border-t border-slate-600">
           <div class="flex items-center justify-between">
             <span class="text-green-400 text-sm font-medium"
-              >AD Domain: proxmox.local • 6 Active VMs</span
+              >AD Domain: beelink.local • 6 Active VMs</span
             >
             <span class="text-slate-400 text-xs">26GB RAM allocated</span>
           </div>
