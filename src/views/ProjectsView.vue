@@ -9,12 +9,9 @@
           <!-- Left: Title & Icon -->
           <div class="flex items-center gap-4">
             <div>
-              <h3 class="text-lg sm:text-xl font-semibold text-slate-200">
+              <h3 class="text-xl sm:text-2xl font-semibold text-slate-200">
                 My Projects &amp; Labs
               </h3>
-              <p class="text-slate-400 text-xs sm:text-sm">
-                Windows 11 • Rocky Linux 10 • VMware Workstation • Ansible
-              </p>
             </div>
           </div>
 
@@ -55,17 +52,21 @@
                 class="relative z-10 overflow-hidden p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800"
               >
                 <p class="text-slate-300 text-lg leading-relaxed">
-                  My home lab extends my support skills into cloud technologies and infrastructure.
-                  It reflects a hands-on approach to growth, with a focus on automation, monitoring,
-                  and Infrastructure as Code — helping me build the practical foundation for
-                  engineering roles.
+                  My portfolio brings together cloud projects on AWS and Azure with a growing set of
+                  on-premises labs where I practice networking, identity, and monitoring.
                 </p>
-                <p class="text-slate-400 text-lg mt-3">
-                  The core environment runs on a Windows 11 laptop with VMware Workstation and a
-                  Rocky Linux 10 laptop. Networking is managed via OPNsense with DHCP reservations
-                  and VLAN segmentation. Ansible provides consistent automation. The VPN tunnel
-                  (shown in the middle) terminates at my gateway and connects to external landing
-                  zones (AWS/Azure).
+                <p class="text-slate-300 text-lg mt-3">
+                  The cloud work is the core — automated setups with Terraform, Python CDK, CI/CD
+                  pipelines, and monitoring that make environments reliable and reproducible. My
+                  VMware lab extends that by giving me space to test how infrastructure pieces fit
+                  together: Active Directory, VPNs, logging, and hybrid networking.
+                </p>
+                <p class="text-slate-300 text-lg mt-3">
+                  Right now I’m concentrating on the Beelink lab as a longer-term build. The roadmap
+                  ends with a hybrid environment that links on-premises Active Directory with Entra
+                  ID, secured by VPNs, backed by a SIEM and monitoring stack, and reinforced with
+                  recovery processes — a setup designed to mirror the day-to-day challenges of
+                  engineering work.
                 </p>
               </div>
             </div>
@@ -86,7 +87,7 @@
                 </div>
                 <!-- vertical run below -->
                 <div
-                  class="w-[2px] flex-1 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  class="w-[2px] h-[328px] -mb-[180px] bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
                 ></div>
               </div>
             </div>
@@ -126,9 +127,10 @@
               >
                 <div class="flex items-center gap-3 mb-4">
                   <img src="/images/project-icons/windows.svg" alt="Windows 11" class="w-8 h-8" />
+                  <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8" />
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      Windows 11 Laptop (VMware)
+                      Windows 11 Laptop
                     </h5>
                     <p class="text-slate-400 text-xs">VMware Workstation • Primary Dev Host</p>
                   </div>
@@ -147,9 +149,9 @@
       <!-- Beelink Infrastructure -->
       <div class="bg-slate-700/30 rounded-xl p-4 sm:p-6 border border-slate-600/30">
         <!-- Header -->
-        <div class="grid grid-cols-1 lg:grid-cols-7 gap-4 mb-6">
-          <!-- Left 4 cols (title + details) -->
-          <div class="lg:col-span-4 flex items-center gap-4">
+        <div class="flex justify-between items-center mb-6">
+          <!-- Left (title + details) -->
+          <div class="flex items-center gap-4">
             <img
               src="/images/project-icons/beelink.png"
               alt="Beelink SER8"
@@ -163,16 +165,9 @@
             </div>
           </div>
 
-          <!-- Middle 1 col (VPN pipe in header) -->
-          <div class="lg:col-span-1 flex items-stretch">
-            <div
-              class="mx-auto w-[2px] translate-x-px self-stretch bg-gradient-to-b from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)] -mt-40 -mb-6"
-            ></div>
-          </div>
-
-          <!-- Right 2 cols (Proxmox badge) -->
-          <div class="lg:col-span-2 flex items-center gap-2 sm:gap-3">
-            <span class="text-slate-400 text-center text-xs hidden sm:block">
+          <!-- Right (Proxmox badge) -->
+          <div class="flex items-center gap-2 sm:gap-3">
+            <span class="text-slate-400 text-center text-sm hidden sm:block">
               Proxmox <br />Hypervisor
             </span>
             <img
@@ -191,13 +186,16 @@
             <div class="lg:col-span-2 flex flex-col gap-4">
               <!-- Wazuh Security Card -->
               <BaseCard
-                @click="showWazuhLabProject = true"
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
                   <img
                     src="/images/project-icons/wazuh-icon.png"
                     alt="Wazuh"
+                    class="w-8 h-8 rounded-full"
+                  /><img
+                    src="/images/project-icons/opensearch2.webp"
+                    alt="OpenSearch"
                     class="w-8 h-8 rounded-full"
                   />
                   <div class="flex-1 min-w-0">
@@ -221,7 +219,11 @@
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu" class="w-8 h-8" />
+                  <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu" class="w-8 h-8" /><img
+                    src="/images/project-icons/samba.png"
+                    alt="Samba"
+                    class="w-16 h-8"
+                  />
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
                       Ubuntu File Server
@@ -248,6 +250,11 @@
               >
                 <div class="flex items-center gap-3 mb-4">
                   <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8" />
+                  <img
+                    src="/images/project-icons/wireguard.png"
+                    alt="WireGuard"
+                    class="w-8 h-8 rounded-full"
+                  />
 
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
@@ -289,6 +296,7 @@
                     alt="Prometheus"
                     class="w-8 h-8"
                   />
+                  <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8" />
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
                       Prometheus + Grafana
@@ -327,11 +335,6 @@
                 ></div>
 
                 <!-- WireGuard node -->
-                <img
-                  src="/images/project-icons/wireguard.png"
-                  alt="WireGuard"
-                  class="w-12 h-12 rounded-full"
-                />
 
                 <div class="text-center my-1">
                   <p class="text-cyan-400 text-xs font-medium">VPN Tunnel</p>
@@ -340,7 +343,7 @@
 
                 <!-- continue vertical -->
                 <div
-                  class="w-[2px] h-40 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  class="w-[2px] h-52 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
                 ></div>
 
                 <!-- elbow connection circle -->
@@ -383,7 +386,12 @@
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/ad.png" alt="Windows Server" class="w-8 h-8" />
+                  <img
+                    src="/images/project-icons/windows.svg"
+                    alt="Windows Server"
+                    class="w-8 h-8"
+                  />
+                  <img src="/images/project-icons/ad.png" alt="Active Directory" class="w-8 h-8" />
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
                       Windows Server 2022
@@ -418,6 +426,7 @@
   </div>
 
   <!-- Cloud Infrastructure Projects -->
+
   <div class="text-white container mx-auto px-4 sm:px-6 mb-12">
     <div class="mb-8">
       <h2 class="text-2xl font-bold text-white mb-4">Cloud Infrastructure Projects</h2>
