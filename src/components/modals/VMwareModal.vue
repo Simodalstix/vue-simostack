@@ -15,7 +15,7 @@
       <aside class="w-full md:w-1/3 bg-slate-800/60 p-4 space-y-4">
         <div>
           <h3 class="font-semibold text-slate-100">What this shows</h3>
-          <p class="text-sm text-slate-300">
+          <p class="text-base text-slate-300">
             VMware Workstation is where I practice RHEL/RHCSA and prototype the lab: pfSense, Active
             Directory, file services, and monitoring. It's fast to iterate, easy to break and
             rebuild, and keeps notes/scripts close at hand. I'm now moving the long-term build to
@@ -24,7 +24,7 @@
         </div>
 
         <!-- Optional tiny bullets for quick signal -->
-        <ul class="text-xs text-slate-300 space-y-1 list-disc list-inside">
+        <ul class="text-base text-slate-300 space-y-1 list-disc list-inside">
           <li>RHEL + Windows Server VMs</li>
           <li>pfSense, AD DS, Samba, exporters</li>
           <li>Snapshot/restore for rebuild practice</li>

@@ -123,6 +123,7 @@
               </BaseCard>
 
               <BaseCard
+                @click="showVmwareModal = true"
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
@@ -136,8 +137,8 @@
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
-                  Local hypervisor for multi-VM labs and PoCs. Bridges into OPNsense VLANs and
-                  participates in VPN workflows.
+                  My general-purpose Windows 11 laptop and gaming rig, which I also use with VMware
+                  Workstation for pfSense and lab practice.
                 </p>
               </BaseCard>
             </div>
@@ -209,9 +210,20 @@
                   SIEM with threat detection, log aggregation from all lab systems, and security
                   event correlation. Integrates with cloud security tools for hybrid monitoring.
                 </p>
-                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
-                  >Active</span
+                <!-- Project metadata footer -->
+                <div
+                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
                 >
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="flex items-center gap-1 px-2 py-1 bg-yellow-500/20 text-yellow-300 border border-yellow-500/30 rounded-full"
+                    >
+                      <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                      To Implement
+                    </span>
+                  </div>
+                  <span class="italic text-gray-400">Details coming soon</span>
+                </div>
               </BaseCard>
 
               <!-- Ubuntu File Server -->
@@ -236,9 +248,20 @@
                   Testing cloud sync integration with AWS S3 and Azure Blob for hybrid storage
                   scenarios.
                 </p>
-                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
-                  >Active</span
+                <!-- Project metadata footer -->
+                <div
+                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
                 >
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
+                    >
+                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                      Active
+                    </span>
+                  </div>
+                  <span class="italic text-gray-400">Details coming soon</span>
+                </div>
               </BaseCard>
             </div>
 
@@ -281,9 +304,20 @@
                   Network gateway with VPN tunnels to cloud landing zones. Replaces pfSense with
                   advanced routing, VLAN segmentation, and site-to-site connectivity testing.
                 </p>
-                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded">
-                  Active
-                </span>
+                <!-- Project metadata footer -->
+                <div
+                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+                >
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
+                    >
+                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                      Active
+                    </span>
+                  </div>
+                  <span class="italic text-gray-400">Details coming soon</span>
+                </div>
               </BaseCard>
 
               <!-- Prometheus Card -->
@@ -309,9 +343,20 @@
                   metrics from cloud resources to create unified observability across hybrid
                   environments.
                 </p>
-                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
-                  >Active</span
+                <!-- Project metadata footer -->
+                <div
+                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
                 >
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
+                    >
+                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                      Active
+                    </span>
+                  </div>
+                  <span class="italic text-gray-400">Details coming soon</span>
+                </div>
               </BaseCard>
             </div>
             <!-- VPN Tunnel spacer column -->
@@ -343,7 +388,7 @@
 
                 <!-- continue vertical -->
                 <div
-                  class="w-[2px] h-52 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
+                  class="w-[2px] h-60 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
                 ></div>
 
                 <!-- elbow connection circle -->
@@ -376,9 +421,20 @@
                   services and testing integration with cloud identity providers and key management
                   services.
                 </p>
-                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
-                  >Active</span
+                <!-- Project metadata footer -->
+                <div
+                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
                 >
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="flex items-center gap-1 px-2 py-1 bg-yellow-500/20 text-yellow-300 border border-yellow-500/30 rounded-full"
+                    >
+                      <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                      To Implement
+                    </span>
+                  </div>
+                  <span class="italic text-gray-400">Details coming soon</span>
+                </div>
               </BaseCard>
 
               <!-- Windows Server Card -->
@@ -404,9 +460,20 @@
                   identity scenarios and Azure AD Connect integration for cloud authentication
                   workflows.
                 </p>
-                <span class="text-green-400 text-xs font-medium px-2 py-1 bg-green-400/10 rounded"
-                  >Active</span
+                <!-- Project metadata footer -->
+                <div
+                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
                 >
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
+                    >
+                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                      Active
+                    </span>
+                  </div>
+                  <span class="italic text-gray-400">Details coming soon</span>
+                </div>
               </BaseCard>
             </div>
           </div>
@@ -1552,7 +1619,7 @@
 
       <!-- DevOps & Automation -->
       <div>
-        <h3 class="text-lg font-semibold text-slate-200 mb-6">DevOps & Automation Tooling</h3>
+        <h3 class="text-lg font-semibold text-slate-200 mb-6">Extra Projects & Experiments</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <!-- Col 1 -->
           <!-- Enhanced DevOps Toolchain Card -->
@@ -1626,6 +1693,144 @@
               <span class="text-gray-400">DevOps - View details</span>
             </div>
           </BaseCard>
+          <!-- Enhanced K3s GitOps Card -->
+          <BaseCard
+            @click="showK3sGitops = true"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-bold text-white group-hover:text-slate-100">
+                Raspberry Pi k3s GitOps Platform with Observability
+              </h3>
+            </div>
+
+            <!-- Tech stack icons -->
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="/images/project-icons/raspberry-pi.svg"
+                alt="Raspberry Pi"
+                class="w-8 h-8 rounded-md"
+              />
+              <img
+                src="/images/project-icons/ansible.svg"
+                alt="Ansible"
+                class="w-8 h-8 rounded-md"
+              />
+              <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
+              <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
+              <img src="/images/project-icons/helm.png" alt="Helm" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/project-icons/mariadb.svg"
+                alt="MariaDB"
+                class="w-8 h-8 rounded-md"
+              />
+            </div>
+
+            <!-- Enhanced tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                GitOps
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Kubernetes
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Raspberry Pi
+              </span>
+            </div>
+
+            <!-- Project metadata footer -->
+            <div
+              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                >
+                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                  Ready
+                </span>
+              </div>
+              <span class="text-gray-400">Experimental Lab - View details</span>
+            </div>
+          </BaseCard>
+          <!-- Enhanced VMware Monitoring Card -->
+          <BaseCard
+            @click="showVmwareProject = true"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-bold text-white group-hover:text-zinc-100">
+                Infrastructure Monitoring with Prometheus & Grafana
+              </h3>
+            </div>
+
+            <!-- Tech stack icons -->
+            <div class="flex items-center gap-3 mb-4">
+              <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/project-icons/ansible.svg"
+                alt="Ansible"
+                class="w-8 h-8 rounded-md"
+              />
+              <img
+                src="/images/project-icons/redhat.svg"
+                alt="Red Hat"
+                class="w-8 h-8 rounded-md"
+              />
+              <img
+                src="/images/project-icons/prometheus.png"
+                alt="Prometheus"
+                class="w-8 h-8 rounded-md"
+              />
+              <img
+                src="/images/project-icons/grafana.png"
+                alt="Grafana"
+                class="w-8 h-8 rounded-md"
+              />
+              <img src="/images/project-icons/loki.png" alt="Loki" class="w-8 h-8 rounded-md" />
+            </div>
+
+            <!-- Enhanced tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                VMware
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Automation
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Monitoring
+              </span>
+            </div>
+
+            <!-- Project metadata footer -->
+            <div
+              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                >
+                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                  Ready
+                </span>
+              </div>
+              <span class="text-gray-400">DevOps - View details</span>
+            </div>
+          </BaseCard>
           <!-- Col 2 -->
           <!-- Col 3 -->
           <!-- Col 4 -->
@@ -1643,6 +1848,12 @@
     </div>
   </div>
 
+  <VMwareModal
+    :visible="showVmwareModal"
+    @close="showVmwareModal = false"
+    width="max-w-[1000px]"
+    height="max-h-[92vh]"
+  />
   <ProjectK3sGitops
     :visible="showK3sGitops"
     @close="showK3sGitops = false"
@@ -1835,6 +2046,8 @@ import ProjectObservabilityPlatform from '@/components/modals/Project-Observabil
 import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenkins.vue'
 import ProjectK3sGitops from '@/components/modals/Project-K3sGitops.vue'
 import HackTheBoxModal from '@/components/modals/HackTheBoxModal.vue'
+import VMwareModal from '@/components/modals/VMwareModal.vue'
+const showVmwareModal = ref(false)
 const showK3sGitops = ref(false)
 const showJavaGradleJenkins = ref(false)
 const showObservabilityPlatform = ref(false)
