@@ -231,14 +231,14 @@
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/ubuntu.svg" alt="Ubuntu" class="w-8 h-8" /><img
-                    src="/images/project-icons/samba.png"
-                    alt="Samba"
-                    class="w-16 h-8"
-                  />
+                  <img
+                    src="/images/project-icons/rocky.svg"
+                    alt="Rocky Linux"
+                    class="w-8 h-8"
+                  /><img src="/images/project-icons/samba.png" alt="Samba" class="w-16 h-8" />
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      Ubuntu File Server
+                      File Server
                     </h5>
                     <p class="text-slate-400 text-xs">VM 101 • 2GB RAM</p>
                   </div>
@@ -408,6 +408,7 @@
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
+                  <img src="/images/project-icons/rocky.svg" alt="Rocky Linux" class="w-8 h-8" />
                   <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8" />
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">

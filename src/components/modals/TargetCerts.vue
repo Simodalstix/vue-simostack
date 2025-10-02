@@ -10,7 +10,7 @@
         <img src="/images/certifications/a-plus.png" alt="Comptia A+" class="w-24 md:w-28" />
         <div class="space-y-2">
           <h3 class="font-bold text-xl text-white">CompTIA A+ Certification</h3>
-          <p class="text-sm"><b>Status:</b> First exam 1pm 29/9/25</p>
+          <p class="text-sm"><b>Status:</b> Core 1 29/9/25 passed, Core 2 study in progress</p>
           <p class="text-sm">
             <b>Why:</b> Solidifies my hardware and OS fundamentals, making me a more well-rounded
             support engineer with deeper troubleshooting capabilities.
