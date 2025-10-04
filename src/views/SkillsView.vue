@@ -5,62 +5,77 @@
     </section>
 
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <!-- First column: Infrastructure & DevOps -->
-      <div class="md:col-span-1">
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Infrastructure & DevOps</h2>
-          <ul class="list-disc space-y-1 text-lg pl-5">
-            <li>Terraform, CloudFormation – Infrastructure as Code (IaC) for AWS & Azure</li>
-            <li>Ansible, GitHub Actions, Jenkins – Provisioning and CI/CD automation</li>
-            <li>Kubernetes, Helm, ArgoCD – Container orchestration and GitOps workflows</li>
-            <li>Docker, VMware – Containerization and virtual lab environments</li>
+      <!-- Balanced Skills Section (short descriptions, easy to scan) -->
+      <div class="md:col-span-2 mx-auto w-full max-w-4xl">
+        <div class="mb-10">
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Infrastructure & Automation</h2>
+          <p class="text-lg text-gray-200 mb-2">
+            Building stable, repeatable infrastructure across Linux and Windows environments.
+          </p>
+          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
+            <li>Terraform & Ansible – automate provisioning, patching, and configuration</li>
+            <li>VMware lab environments – simulate private cloud and hybrid networking</li>
+            <li>Focus on reproducibility and lifecycle management through code</li>
           </ul>
         </div>
 
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Cloud Platforms</h2>
-          <ul class="list-disc space-y-1 text-lg pl-5">
-            <li>AWS (EC2, IAM, S3, Lambda, ACM, CloudWatch)</li>
-            <li>Azure (App Services, VNets, Key Vault, Log Analytics, Update Mgmt)</li>
+        <div class="mb-10">
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Cloud & Virtualization</h2>
+          <p class="text-lg text-gray-200 mb-2">
+            Hands-on with both AWS and Azure platforms in real-world project setups.
+          </p>
+          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
+            <li>AWS (EC2, IAM, VPC, CloudWatch) and Azure (App Services, VNets, Key Vault)</li>
+            <li>Designed multi-tier environments with monitoring and backup integration</li>
+            <li>Emphasis on secure IAM design and consistent resource tagging</li>
           </ul>
         </div>
 
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Scripting & Automation</h2>
-          <ul class="list-disc space-y-1 text-lg pl-5">
-            <li>Bash, PowerShell, Python – Automation and admin tooling</li>
-            <li>Cron, systemd timers – Task scheduling and service control</li>
-            <li>JSON, YAML – Config formats for cloud, IaC, and CI/CD</li>
+        <div class="mb-10">
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Scripting & Tooling</h2>
+          <p class="text-lg text-gray-200 mb-2">
+            Automating day-to-day operations using modern scripting and scheduling tools.
+          </p>
+          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
+            <li>Bash, PowerShell, and Python for admin tasks and automation scripts</li>
+            <li>systemd timers and cron jobs – recurring maintenance and monitoring</li>
+            <li>JSON/YAML – defining IaC, pipelines, and configuration templates</li>
           </ul>
         </div>
-      </div>
 
-      <!-- Second column: Systems Administration -->
-      <div class="md:col-span-1">
-        <div class="mb-8">
+        <div class="mb-10">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Systems Administration</h2>
-          <ul class="list-disc space-y-1 text-lg pl-5">
-            <li>RHEL, Ubuntu, Windows Server – Multi-platform environments</li>
-            <li>Active Directory, Group Policy (GPO), pfSense, DNS</li>
-            <li>DHCP, NAT, SSH hardening, access control</li>
+          <p class="text-lg text-gray-200 mb-2">
+            Managing secure, multi-platform systems and hybrid domain environments.
+          </p>
+          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
+            <li>RHEL, Ubuntu, and Windows Server with Active Directory and Group Policy</li>
+            <li>pfSense, DNS, DHCP, and firewall configuration for secure network access</li>
+            <li>Emphasis on uptime, access control, and structured system configuration</li>
           </ul>
         </div>
 
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Security & Monitoring</h2>
-          <ul class="list-disc space-y-1 text-lg pl-5">
-            <li>Sysmon, ELK Stack, Wazuh, Splunk, CloudWatch, Azure Monitor</li>
-            <li>Log Analytics, Data Collection Rules (DCR), Dynatrace OneAgent</li>
-            <li>PKI, OpenVPN, IPSec (Strongswan), SSH key-based auth</li>
+        <div class="mb-10">
+          <h2 class="text-2xl font-bold mb-2 text-purple-400">Monitoring & Security</h2>
+          <p class="text-lg text-gray-200 mb-2">
+            Treating observability and hardening as core disciplines in every deployment.
+          </p>
+          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
+            <li>ELK, Wazuh, Splunk, and CloudWatch – event collection and correlation</li>
+            <li>SSH lockdowns, PKI, CIS benchmarks, and VPN configuration (OpenVPN/IPSec)</li>
+            <li>Security-first automation – patching, logging, and least-privilege IAM</li>
           </ul>
         </div>
 
-        <div class="mb-8">
+        <div class="mb-10">
           <h2 class="text-2xl font-bold mb-2 text-purple-400">Web & Networking</h2>
-          <ul class="list-disc space-y-1 text-lg pl-5">
-            <li>HTTP, NGINX, Let's Encrypt – SSL/TLS and reverse proxy setup</li>
-            <li>JavaScript, Vue.js, React</li>
-            <li>xfreerdp, RDP, TeamViewer – Remote access tooling</li>
+          <p class="text-lg text-gray-200 mb-2">
+            Solid grounding in networking and web stack fundamentals.
+          </p>
+          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
+            <li>Routing, NAT, DNS, and reverse proxies with NGINX & Let’s Encrypt</li>
+            <li>Basic web integration using Vue.js for dashboards and admin interfaces</li>
+            <li>VPN and remote access tooling (RDP, xfreerdp, TeamViewer)</li>
           </ul>
         </div>
       </div>
