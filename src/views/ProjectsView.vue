@@ -269,6 +269,7 @@
             <div class="lg:col-span-2 flex flex-col gap-4">
               <!-- OPNsense Card -->
               <BaseCard
+                @click="showOPNsense = true"
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
@@ -283,7 +284,7 @@
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
                       OPNsense Firewall
                     </h5>
-                    <p class="text-slate-400 text-xs">VM 102 • 3GB RAM</p>
+                    <p class="text-slate-400 text-xs">192.168.100.1 • 3GB RAM</p>
                   </div>
 
                   <!-- right-side port + pipe -->
@@ -316,7 +317,7 @@
                       Active
                     </span>
                   </div>
-                  <span class="italic text-gray-400">Details coming soon</span>
+                  <span class="text-gray-400">Click for Details</span>
                 </div>
               </BaseCard>
 
@@ -435,7 +436,7 @@
                       Active
                     </span>
                   </div>
-                  <span class="italic text-gray-400">Click for Details</span>
+                  <span class="text-gray-400">Click for Details</span>
                 </div>
               </BaseCard>
 
@@ -1971,6 +1972,13 @@
     height="max-h-[90vh]"
   />
 
+  <ProjectOPNsense
+    :visible="showOPNsense"
+    @close="showOPNsense = false"
+    width="max-w-[1000px]"
+    height="max-h-[92vh]"
+  />
+
   <ProjectJavaMavernJenkins
     :visible="showJavaMavernJenkins"
     @close="showJavaMavernJenkins = false"
@@ -2057,6 +2065,8 @@ import ProjectK3sGitops from '@/components/modals/Project-K3sGitops.vue'
 import HackTheBoxModal from '@/components/modals/HackTheBoxModal.vue'
 import VMwareModal from '@/components/modals/VMwareModal.vue'
 import VaultPkiModal from '@/components/modals/VaultPKI.vue'
+import ProjectOPNsense from '@/components/modals/Project-OPNsense.vue'
+const showOPNsense = ref(false)
 const showVaultPki = ref(false)
 const showVmwareModal = ref(false)
 const showK3sGitops = ref(false)
