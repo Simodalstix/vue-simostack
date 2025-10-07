@@ -405,6 +405,7 @@
             <div class="lg:col-span-2 flex flex-col gap-4">
               <!-- Vault Card -->
               <BaseCard
+                @click="showVaultPki = true"
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
@@ -428,13 +429,13 @@
                 >
                   <div class="flex items-center gap-4">
                     <span
-                      class="flex items-center gap-1 px-2 py-1 bg-yellow-500/20 text-yellow-300 border border-yellow-500/30 rounded-full"
+                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
                     >
-                      <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      To Implement
+                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                      Active
                     </span>
                   </div>
-                  <span class="italic text-gray-400">Details coming soon</span>
+                  <span class="italic text-gray-400">Click for Details</span>
                 </div>
               </BaseCard>
 
@@ -1963,6 +1964,13 @@
     height="max-h-[92vh]"
   />
 
+  <VaultPkiModal
+    :visible="showVaultPki"
+    @close="showVaultPki = false"
+    width="max-w-[1000px]"
+    height="max-h-[90vh]"
+  />
+
   <ProjectJavaMavernJenkins
     :visible="showJavaMavernJenkins"
     @close="showJavaMavernJenkins = false"
@@ -2048,6 +2056,8 @@ import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenk
 import ProjectK3sGitops from '@/components/modals/Project-K3sGitops.vue'
 import HackTheBoxModal from '@/components/modals/HackTheBoxModal.vue'
 import VMwareModal from '@/components/modals/VMwareModal.vue'
+import VaultPkiModal from '@/components/modals/VaultPKI.vue'
+const showVaultPki = ref(false)
 const showVmwareModal = ref(false)
 const showK3sGitops = ref(false)
 const showJavaGradleJenkins = ref(false)
