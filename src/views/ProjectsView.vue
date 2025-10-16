@@ -185,6 +185,44 @@
           <div class="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-7">
             <!-- Left column (stacked 2 cards) -->
             <div class="lg:col-span-2 flex flex-col gap-4">
+              <!-- Rocky File Server -->
+              <BaseCard
+                @click="showFileServer = true"
+                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
+              >
+                <div class="flex items-center gap-3 mb-4">
+                  <img
+                    src="/images/project-icons/rocky.svg"
+                    alt="Rocky Linux"
+                    class="w-8 h-8"
+                  /><img src="/images/project-icons/samba.png" alt="Samba" class="w-16 h-8" />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
+                      File Server
+                    </h5>
+                    <p class="text-slate-400 text-xs">192.168.100.31 • 2GB RAM</p>
+                  </div>
+                </div>
+                <p class="text-slate-400 text-sm mb-4">
+                  Centralized file storage for Windows laptop, Rocky Linux laptop, and all VMs.
+                  Testing cloud sync integration with AWS S3 and Azure Blob for hybrid storage
+                  scenarios.
+                </p>
+                <!-- Project metadata footer -->
+                <div
+                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+                >
+                  <div class="flex items-center gap-4">
+                    <span
+                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
+                    >
+                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                      Active
+                    </span>
+                  </div>
+                  <span class="text-gray-400">Click for Details</span>
+                </div>
+              </BaseCard>
               <!-- Wazuh Security Card -->
               <BaseCard
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
@@ -203,7 +241,7 @@
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
                       Wazuh + OpenSearch
                     </h5>
-                    <p class="text-slate-400 text-xs">VM 103 • 10GB RAM</p>
+                    <p class="text-slate-400 text-xs">192.168.100.34 • 10GB RAM</p>
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
@@ -220,44 +258,6 @@
                     >
                       <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
                       To Implement
-                    </span>
-                  </div>
-                  <span class="italic text-gray-400">Details coming soon</span>
-                </div>
-              </BaseCard>
-
-              <!-- Ubuntu File Server -->
-              <BaseCard
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img
-                    src="/images/project-icons/rocky.svg"
-                    alt="Rocky Linux"
-                    class="w-8 h-8"
-                  /><img src="/images/project-icons/samba.png" alt="Samba" class="w-16 h-8" />
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      File Server
-                    </h5>
-                    <p class="text-slate-400 text-xs">VM 101 • 2GB RAM</p>
-                  </div>
-                </div>
-                <p class="text-slate-400 text-sm mb-4">
-                  Centralized file storage for Windows laptop, Rocky Linux laptop, and all VMs.
-                  Testing cloud sync integration with AWS S3 and Azure Blob for hybrid storage
-                  scenarios.
-                </p>
-                <!-- Project metadata footer -->
-                <div
-                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-                >
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
-                    >
-                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                      Active
                     </span>
                   </div>
                   <span class="italic text-gray-400">Details coming soon</span>
@@ -336,7 +336,7 @@
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
                       Prometheus + Grafana
                     </h5>
-                    <p class="text-slate-400 text-xs">VM 104 • 4GB RAM</p>
+                    <p class="text-slate-400 text-xs">192.168.100.33 • 4GB RAM</p>
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
@@ -416,7 +416,7 @@
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
                       Vault + PKI
                     </h5>
-                    <p class="text-slate-400 text-xs">VM 105 • 3GB RAM</p>
+                    <p class="text-slate-400 text-xs">192.168.100.30 • 3GB RAM</p>
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
@@ -456,7 +456,7 @@
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
                       Windows Server 2022
                     </h5>
-                    <p class="text-slate-400 text-xs">VM 100 • 4GB RAM</p>
+                    <p class="text-slate-400 text-xs">192.168.100.32 • 4GB RAM</p>
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
@@ -1986,6 +1986,12 @@
     height="max-h-[92vh]"
   />
 
+  <ProjectFileServer
+    :visible="showFileServer"
+    @close="showFileServer = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
   <ProjectJavaMavernJenkins
     :visible="showJavaMavernJenkins"
     @close="showJavaMavernJenkins = false"
@@ -2074,6 +2080,8 @@ import VMwareModal from '@/components/modals/VMwareModal.vue'
 import VaultPkiModal from '@/components/modals/VaultPKI.vue'
 import ProjectOPNsense from '@/components/modals/Project-OPNsense.vue'
 import ProjectDC1 from '@/components/modals/Project-DC1.vue'
+import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'
+const showFileServer = ref(false)
 const showDC1 = ref(false)
 const showOPNsense = ref(false)
 const showVaultPki = ref(false)
