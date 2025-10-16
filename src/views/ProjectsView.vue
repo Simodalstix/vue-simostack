@@ -442,6 +442,7 @@
 
               <!-- Windows Server Card -->
               <BaseCard
+                @click="showDC1 = true"
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
@@ -475,7 +476,7 @@
                       Active
                     </span>
                   </div>
-                  <span class="italic text-gray-400">Details coming soon</span>
+                  <span class="text-gray-400">Click for Details</span>
                 </div>
               </BaseCard>
             </div>
@@ -1964,6 +1965,12 @@
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
+  <ProjectDC1
+    :visible="showDC1"
+    @close="showDC1 = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
 
   <VaultPkiModal
     :visible="showVaultPki"
@@ -2066,6 +2073,8 @@ import HackTheBoxModal from '@/components/modals/HackTheBoxModal.vue'
 import VMwareModal from '@/components/modals/VMwareModal.vue'
 import VaultPkiModal from '@/components/modals/VaultPKI.vue'
 import ProjectOPNsense from '@/components/modals/Project-OPNsense.vue'
+import ProjectDC1 from '@/components/modals/Project-DC1.vue'
+const showDC1 = ref(false)
 const showOPNsense = ref(false)
 const showVaultPki = ref(false)
 const showVmwareModal = ref(false)
