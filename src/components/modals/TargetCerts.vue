@@ -28,7 +28,7 @@
           <h3 class="font-bold text-xl text-white">
             Red Hat Certified System Administrator (RHCSA)
           </h3>
-          <p class="text-sm"><b>Status:</b>Sitting the week of the 6th October</p>
+          <p class="text-sm"><b>Status:</b>Ready: Just need a window to book it</p>
           <p class="text-sm">
             <b>Why:</b> Linux administration is the backbone of cloud and DevOps.
           </p>
