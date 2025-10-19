@@ -204,9 +204,9 @@
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
-                  Centralized file storage for Windows laptop, Rocky Linux laptop, and all VMs.
-                  Testing cloud sync integration with AWS S3 and Azure Blob for hybrid storage
-                  scenarios.
+                  Centralized file storage for all lab systems, including Windows and Rocky Linux
+                  laptops. Currently testing cloud synchronization with AWS S3 and Azure Blob to
+                  enable hybrid storage capabilities.
                 </p>
                 <!-- Project metadata footer -->
                 <div

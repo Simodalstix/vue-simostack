@@ -9,7 +9,7 @@
       <div class="px-6 pt-2">
         <p class="text-gray-300 leading-relaxed">
           A centralized <span class="font-medium text-orange-300">Samba fileserver</span> hosted on
-          Ubuntu, providing shared storage access for <span class="font-medium">Rocky</span> and
+          Rocky 10, providing shared storage access for <span class="font-medium">Rocky</span> and
           <span class="font-medium">Ubuntu</span> clients using
           <span class="font-medium text-orange-300">Autofs</span> for on-demand mounting. Configured
           with guest access and SELinux integration to simulate a mixed-environment network share
