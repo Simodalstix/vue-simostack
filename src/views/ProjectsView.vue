@@ -195,6 +195,10 @@
                     src="/images/project-icons/rocky.svg"
                     alt="Rocky Linux"
                     class="w-8 h-8"
+                  /><img
+                    src="/images/project-icons/ansible.svg"
+                    alt="Ansible"
+                    class="w-8 h-8"
                   /><img src="/images/project-icons/samba.png" alt="Samba" class="w-16 h-8" />
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
@@ -204,9 +208,8 @@
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
-                  Centralized file storage for all lab systems, including Windows and Rocky Linux
-                  laptops. Currently testing cloud synchronization with AWS S3 and Azure Blob to
-                  enable hybrid storage capabilities.
+                  Centralized file storage for all lab systems, including Windows and Rocky Linux.
+                  Testing cloud sync with AWS S3 and Azure Blob to enable hybrid storage.
                 </p>
                 <!-- Project metadata footer -->
                 <div
@@ -228,7 +231,7 @@
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
-                  <img
+                  <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8" /><img
                     src="/images/project-icons/wazuh-icon.png"
                     alt="Wazuh"
                     class="w-8 h-8 rounded-full"
@@ -323,9 +326,11 @@
 
               <!-- Prometheus Card -->
               <BaseCard
+                @click="showPrometheusGrafana = true"
                 class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 <div class="flex items-center gap-3 mb-4">
+                  <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8" />
                   <img
                     src="/images/project-icons/prometheus-icon.svg"
                     alt="Prometheus"
@@ -356,7 +361,7 @@
                       Active
                     </span>
                   </div>
-                  <span class="italic text-gray-400">Details coming soon</span>
+                  <span class="text-gray-400">Click for Details</span>
                 </div>
               </BaseCard>
             </div>
@@ -411,6 +416,7 @@
               >
                 <div class="flex items-center gap-3 mb-4">
                   <img src="/images/project-icons/rocky.svg" alt="Rocky Linux" class="w-8 h-8" />
+                  <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8" />
                   <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8" />
                   <div class="flex-1 min-w-0">
                     <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
@@ -1972,6 +1978,13 @@
     height="max-h-[92vh]"
   />
 
+  <ProjectPrometheusGrafana
+    :visible="showPrometheusGrafana"
+    @close="showPrometheusGrafana = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
+
   <VaultPkiModal
     :visible="showVaultPki"
     @close="showVaultPki = false"
@@ -2081,6 +2094,8 @@ import VaultPkiModal from '@/components/modals/VaultPKI.vue'
 import ProjectOPNsense from '@/components/modals/Project-OPNsense.vue'
 import ProjectDC1 from '@/components/modals/Project-DC1.vue'
 import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'
+import ProjectPrometheusGrafana from '@/components/modals/Project-Prometheus.vue'
+const showPrometheusGrafana = ref(false)
 const showFileServer = ref(false)
 const showDC1 = ref(false)
 const showOPNsense = ref(false)
