@@ -5,16 +5,21 @@
     title="Vault PKI Automation (Ansible + Rocky)"
   >
     <div class="text-gray-200 space-y-3">
-      <!-- Image: spans full width -->
-      <div class="px-2">
+      <!-- Two column images (portrait 3:4) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-2">
         <img
-          src="/images/project-modal-images/vault-pki.png"
-          alt="Vault PKI Automation"
-          class="object-contain rounded-lg w-full max-h-[70vh] mx-auto"
+          src="/images/project-modal-images/vault-pki-ansible.png"
+          alt="Vault PKI Ansible playbook output"
+          class="object-contain rounded-lg w-full mx-auto"
+        />
+        <img
+          src="/images/project-modal-images/vault-pki-output.png"
+          alt="Vault console output"
+          class="object-contain rounded-lg w-full mx-auto"
         />
       </div>
 
-      <!-- Two-column content below image -->
+      <!-- Two-column content below images -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-2 py-2">
         <!-- Overview -->
         <section>
