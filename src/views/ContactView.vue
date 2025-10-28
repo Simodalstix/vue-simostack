@@ -18,16 +18,20 @@
           </p>
 
           <p class="font-bold text-xl mb-4">I'd love to chat about:</p>
-          <ul class="list-disc list-outside pl-6 space-y-2 mb-6">
+          <ul class="list-disc list-outside pl-6 space-y-2 mb-6 text-lg">
             <li>
-              How my support experience with troubleshooting and user communication helps with
-              complex issues
+              How my IT support experience and communication skills help users and teams solve
+              problems
             </li>
             <li>
-              My cloud and infrastructure interests—how they make me a better support engineer
+              My growing interest in cloud and infrastructure and how that strengthens my support
+              work
             </li>
-            <li>A quick walkthrough of my home lab projects and what I've learned</li>
-            <li>Growth opportunities and where I can contribute now</li>
+            <li>A quick look at my home-lab projects and the practical skills I’m developing</li>
+            <li>
+              Opportunities to learn, contribute, and build long-term capability within your
+              organisation
+            </li>
           </ul>
 
           <p class="font-bold text-xl mb-2">Get in touch:</p>
