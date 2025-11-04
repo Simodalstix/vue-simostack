@@ -8,75 +8,62 @@
       <!-- Balanced Skills Section (short descriptions, easy to scan) -->
       <div class="md:col-span-2 mx-auto w-full max-w-4xl">
         <div class="mb-10">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Infrastructure & Automation</h2>
-          <p class="text-lg text-gray-200 mb-2">
-            Building stable, repeatable infrastructure across Linux and Windows environments.
-          </p>
-          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
-            <li>Terraform & Ansible – automate provisioning, patching, and configuration</li>
-            <li>VMware lab environments – simulate private cloud and hybrid networking</li>
-            <li>Focus on reproducibility and lifecycle management through code</li>
-          </ul>
-        </div>
+          <h2 class="text-2xl font-bold mb-3 text-white">Technical Support & Systems Operations</h2>
 
-        <div class="mb-10">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Cloud & Virtualization</h2>
-          <p class="text-lg text-gray-200 mb-2">
-            Hands-on with both AWS and Azure platforms in real-world project setups.
+          <p class="text-lg text-gray-200 leading-relaxed">
+            I’m strongest in <span class="text-orange-300">technical support</span> and
+            <span class="text-orange-300">systems operations</span>—keeping users productive and
+            systems steady. I’ve supported both <span class="text-orange-300">Windows</span> and
+            <span class="text-orange-300">Linux</span> environments, managing
+            <span class="text-orange-300">Active Directory</span> access, configuring
+            <span class="text-orange-300">VPN</span>, <span class="text-orange-300">firewall</span>,
+            <span class="text-orange-300">DNS</span>, and
+            <span class="text-orange-300">DHCP</span> settings, and helping resolve common endpoint
+            and network issues efficiently.
           </p>
-          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
-            <li>AWS (EC2, IAM, VPC, CloudWatch) and Azure (App Services, VNets, Key Vault)</li>
-            <li>Designed multi-tier environments with monitoring and backup integration</li>
-            <li>Emphasis on secure IAM design and consistent resource tagging</li>
-          </ul>
-        </div>
 
-        <div class="mb-10">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Scripting & Tooling</h2>
-          <p class="text-lg text-gray-200 mb-2">
-            Automating day-to-day operations using modern scripting and scheduling tools.
+          <p class="text-lg text-gray-200 leading-relaxed mt-4">
+            Professionally, I’ve provided
+            <span class="text-orange-300">application and product support</span>
+            for SaaS clients—logging, tracking, and resolving issues through
+            <span class="text-orange-300">HubSpot</span> and exploring platforms like
+            <span class="text-orange-300">ServiceNow</span>. I’ve used
+            <span class="text-orange-300">PowerShell</span> to troubleshoot connectivity, run
+            queries in <span class="text-orange-300">SQL Server Management Studio</span>, and
+            perform small fixes like updating data or resetting credentials. I’m also experienced
+            with <span class="text-orange-300">remote tools</span> such as
+            <span class="text-orange-300">TeamViewer</span> and
+            <span class="text-orange-300">RDP</span>, and communication platforms like
+            <span class="text-orange-300">Slack</span> for coordinating solutions with teams and
+            users.
           </p>
-          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
-            <li>Bash, PowerShell, and Python for admin tasks and automation scripts</li>
-            <li>systemd timers and cron jobs – recurring maintenance and monitoring</li>
-            <li>JSON/YAML – defining IaC, pipelines, and configuration templates</li>
-          </ul>
-        </div>
 
-        <div class="mb-10">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Systems Administration</h2>
-          <p class="text-lg text-gray-200 mb-2">
-            Managing secure, multi-platform systems and hybrid domain environments.
+          <p class="text-lg text-gray-200 leading-relaxed mt-4">
+            For scripting and automation, I work comfortably in
+            <span class="text-orange-300">Bash</span> and
+            <span class="text-orange-300">Python</span> for log collection, system checks, and
+            lightweight admin scripts. I understand <span class="text-orange-300">YAML</span> for
+            configuration files and pipelines, and use
+            <span class="text-orange-300">Ansible</span> to deploy updates and configurations across
+            my <span class="text-orange-300">VMware</span> lab VMs. On the web side, I can build or
+            adjust small interfaces with <span class="text-orange-300">HTML</span>,
+            <span class="text-orange-300">CSS</span> (<span class="text-orange-300">Tailwind</span
+            >), and frameworks like <span class="text-orange-300">Vue</span> and
+            <span class="text-orange-300">React</span>—useful for dashboards and troubleshooting
+            tools.
           </p>
-          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
-            <li>RHEL, Ubuntu, and Windows Server with Active Directory and Group Policy</li>
-            <li>pfSense, DNS, DHCP, and firewall configuration for secure network access</li>
-            <li>Emphasis on uptime, access control, and structured system configuration</li>
-          </ul>
-        </div>
 
-        <div class="mb-10">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Monitoring & Security</h2>
-          <p class="text-lg text-gray-200 mb-2">
-            Treating observability and hardening as core disciplines in every deployment.
+          <p class="text-lg text-gray-200 leading-relaxed mt-4">
+            I’ve also been building hands-on hardware experience through
+            <span class="text-orange-300">CompTIA A+</span> study and home lab work with a
+            <span class="text-orange-300">Raspberry Pi</span> and
+            <span class="text-orange-300">SER8 Mini-PC</span>—learning component-level concepts like
+            <span class="text-orange-300">memory, PCIe, cabling</span>, and system assembly.
+            Combined with my <span class="text-orange-300">Security+</span> and cloud certifications
+            (<span class="text-orange-300">AWS</span>, <span class="text-orange-300">Azure</span>,
+            <span class="text-orange-300">Terraform</span>), I bring both the practical and
+            analytical mindset needed to support users and infrastructure with confidence.
           </p>
-          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
-            <li>ELK, Wazuh, Splunk, and CloudWatch – event collection and correlation</li>
-            <li>SSH lockdowns, PKI, CIS benchmarks, and VPN configuration (OpenVPN/IPSec)</li>
-            <li>Security-first automation – patching, logging, and least-privilege IAM</li>
-          </ul>
-        </div>
-
-        <div class="mb-10">
-          <h2 class="text-2xl font-bold mb-2 text-purple-400">Web & Networking</h2>
-          <p class="text-lg text-gray-200 mb-2">
-            Solid grounding in networking and web stack fundamentals.
-          </p>
-          <ul class="list-disc pl-6 space-y-1 text-lg text-gray-200">
-            <li>Routing, NAT, DNS, and reverse proxies with NGINX & Let’s Encrypt</li>
-            <li>Basic web integration using Vue.js for dashboards and admin interfaces</li>
-            <li>VPN and remote access tooling (RDP, xfreerdp, TeamViewer)</li>
-          </ul>
         </div>
       </div>
 
