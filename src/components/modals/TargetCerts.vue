@@ -22,7 +22,7 @@
         </div>
       </div>
       <!-- RHCSA -->
-      <div class="flex items-center space-x-6 border-b border-slate-600 pb-6">
+      <div class="flex items-center space-x-6 pb-6">
         <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-24 md:w-28" />
         <div class="space-y-2">
           <h3 class="font-bold text-xl text-white">
@@ -39,7 +39,7 @@
       </div>
 
       <!-- AWS DevOps Pro -->
-      <div class="flex items-center space-x-6 border-b border-slate-600 pb-6">
+      <!-- <div class="flex items-center space-x-6 border-b border-slate-600 pb-6">
         <img
           src="/images/skills-in-progress/aws-devops.png"
           alt="AWS DevOps Pro Badge"
@@ -56,7 +56,7 @@
             incident response.
           </p>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- Footer quote -->

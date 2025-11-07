@@ -180,11 +180,6 @@
                   alt="RHCSA Badge"
                   class="w-20 sm:w-36 mx-auto"
                 />
-                <img
-                  src="/images/skills-in-progress/aws-devops.png"
-                  alt="AWS DevOps Badge"
-                  class="w-20 sm:w-36 mx-auto"
-                />
               </div>
             </div>
             <div
