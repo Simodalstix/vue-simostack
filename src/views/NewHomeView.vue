@@ -8,8 +8,8 @@
       </h1>
 
       <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-        IT Support and Service Desk Professional with growing experience across cloud, networks, and
-        Linux systems.
+        IT Support and Service Desk Professional, building depth in cloud, networking, and Linux
+        systems.
       </p>
 
       <div

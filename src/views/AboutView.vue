@@ -28,11 +28,11 @@
           <section>
             <h2 class="text-3xl font-bold mb-4">Where I'm Headed</h2>
             <p class="text-lg leading-relaxed">
-              I’m continuing to deepen my skills in Linux, scripting, and cloud infrastructure,
-              gradually moving toward platform and DevOps work. I’m drawn to how systems connect and
-              scale, and I enjoy learning new tools that make technology more reliable for everyone.
-              For now, my focus is on being the kind of support professional teams can rely on—calm,
-              capable, and eager to keep improving.
+              I’m enjoying getting stronger in Linux, scripting, and cloud environments, and I like
+              understanding how different systems fit together. The more I learn, the more I
+              appreciate how much good support and clear communication matter in keeping things
+              running smoothly. I’m excited to keep building depth in these areas and keep growing
+              into a well-rounded IT professional who makes life easier for both users and teams.
             </p>
           </section>
         </div>
