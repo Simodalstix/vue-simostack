@@ -45,12 +45,12 @@ n d
               @click="closeMobileMenu"
               >Home</router-link
             >
-            <router-link
+            <!-- <router-link
               :to="{ name: 'Blog' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               @click="closeMobileMenu"
               >Blog</router-link
-            >
+            > -->
             <router-link
               :to="{ name: 'Skills' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
@@ -63,13 +63,6 @@ n d
               @click="closeMobileMenu"
               >Projects</router-link
             >
-            <!-- <router-link
-              :to="{ name: 'ProjectsRemake' }"
-              class="px-3 py-2 rounded-md text-orange-300 hover:text-white hover:bg-orange-600/50 transition-all duration-200 text-sm"
-              @click="closeMobileMenu"
-              >Projects v2</router-link
-            > -->
-
             <router-link
               :to="{ name: 'About' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
@@ -92,11 +85,11 @@ n d
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Home</router-link
             >
-            <router-link
+            <!-- <router-link
               :to="{ name: 'Blog' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Blog</router-link
-            >
+            > -->
             <router-link
               :to="{ name: 'Skills' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
@@ -107,12 +100,6 @@ n d
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Projects</router-link
             >
-            <!-- <router-link
-              :to="{ name: 'ProjectsRemake' }"
-              class="px-3 py-2 rounded-md text-orange-300 hover:text-white hover:bg-orange-600/50 transition-all duration-200 text-sm"
-              >Projects v2</router-link
-            > -->
-
             <router-link
               :to="{ name: 'About' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"

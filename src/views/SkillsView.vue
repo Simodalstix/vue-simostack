@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white container mx-auto px-6 py-8 md:py-8">
+  <div class="text-white container mx-auto px-6 py-6 md:py-3">
     <section class="mb-12 text-center max-w-4xl mx-auto">
       <h1 class="text-4xl font-bold mb-4">My Skills & Certifications</h1>
     </section>
@@ -11,58 +11,54 @@
           <h2 class="text-2xl font-bold mb-3 text-white">Technical Support & Systems Operations</h2>
 
           <p class="text-lg text-gray-200 leading-relaxed">
-            I’m strongest in <span class="text-orange-300">technical support</span> and
-            <span class="text-orange-300">systems operations</span>—keeping users productive and
-            systems steady. I’ve supported both <span class="text-orange-300">Windows</span> and
-            <span class="text-orange-300">Linux</span> environments, managing
+            I’m strongest in <span class="text-orange-300">IT support</span> and
+            <span class="text-orange-300">service operations</span>—helping users stay productive
+            and keeping systems reliable. I’ve supported mixed environments across
+            <span class="text-orange-300">Windows</span> and
+            <span class="text-orange-300">Linux</span>, managing
             <span class="text-orange-300">Active Directory</span> access, configuring
-            <span class="text-orange-300">VPN</span>, <span class="text-orange-300">firewall</span>,
-            <span class="text-orange-300">DNS</span>, and
-            <span class="text-orange-300">DHCP</span> settings, and helping resolve common endpoint
-            and network issues efficiently.
+            <span class="text-orange-300">VPN</span> and
+            <span class="text-orange-300">firewall</span> settings, and resolving endpoint and
+            <span class="text-orange-300">network</span> issues efficiently.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            Professionally, I’ve provided
-            <span class="text-orange-300">application and product support</span>
-            for SaaS clients—logging, tracking, and resolving issues through
-            <span class="text-orange-300">HubSpot</span> and exploring platforms like
-            <span class="text-orange-300">ServiceNow</span>. I’ve used
-            <span class="text-orange-300">PowerShell</span> to troubleshoot connectivity, run
-            queries in <span class="text-orange-300">SQL Server Management Studio</span>, and
-            perform small fixes like updating data or resetting credentials. I’m also experienced
-            with <span class="text-orange-300">remote tools</span> such as
+            Professionally, I’ve delivered
+            <span class="text-orange-300">application support</span> for SaaS clients—logging,
+            tracking, and resolving tickets through <span class="text-orange-300">HubSpot</span> and
+            learning platforms like <span class="text-orange-300">ServiceNow</span>. I use tools
+            such as <span class="text-orange-300">PowerShell</span> and
+            <span class="text-orange-300">SQL Server Management Studio</span> for diagnostics and
+            light data fixes, and rely on
+            <span class="text-orange-300">remote support tools</span> like
             <span class="text-orange-300">TeamViewer</span> and
-            <span class="text-orange-300">RDP</span>, and communication platforms like
-            <span class="text-orange-300">Slack</span> for coordinating solutions with teams and
-            users.
+            <span class="text-orange-300">RDP</span> to assist users directly. Clear, calm
+            communication remains at the centre of my work.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            For scripting and automation, I work comfortably in
+            For scripting and process improvement, I work with
             <span class="text-orange-300">Bash</span> and
-            <span class="text-orange-300">Python</span> for log collection, system checks, and
-            lightweight admin scripts. I understand <span class="text-orange-300">YAML</span> for
-            configuration files and pipelines, and use
-            <span class="text-orange-300">Ansible</span> to deploy updates and configurations across
-            my <span class="text-orange-300">VMware</span> lab VMs. On the web side, I can build or
-            adjust small interfaces with <span class="text-orange-300">HTML</span>,
-            <span class="text-orange-300">CSS</span> (<span class="text-orange-300">Tailwind</span
-            >), and frameworks like <span class="text-orange-300">Vue</span> and
-            <span class="text-orange-300">React</span>—useful for dashboards and troubleshooting
-            tools.
+            <span class="text-orange-300">Python</span> to automate small admin tasks, gather logs,
+            and perform system checks. I understand <span class="text-orange-300">YAML</span> for
+            configuration and use <span class="text-orange-300">Ansible</span> in my home lab to
+            practise consistent updates across <span class="text-orange-300">VMware</span> virtual
+            machines. These tools help me learn how automation supports everyday IT operations.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            I’ve also been building hands-on hardware experience through
-            <span class="text-orange-300">CompTIA A+</span> study and home lab work with a
+            I’m also developing hands-on hardware knowledge through
+            <span class="text-orange-300">CompTIA A+</span> study and lab work with a
             <span class="text-orange-300">Raspberry Pi</span> and
-            <span class="text-orange-300">SER8 Mini-PC</span>—learning component-level concepts like
-            <span class="text-orange-300">memory, PCIe, cabling</span>, and system assembly.
-            Combined with my <span class="text-orange-300">Security+</span> and cloud certifications
-            (<span class="text-orange-300">AWS</span>, <span class="text-orange-300">Azure</span>,
-            <span class="text-orange-300">Terraform</span>), I bring both the practical and
-            analytical mindset needed to support users and infrastructure with confidence.
+            <span class="text-orange-300">Beelink mini PC</span>, exploring topics like
+            <span class="text-orange-300">memory</span>, <span class="text-orange-300">PCIe</span>,
+            and <span class="text-orange-300">system assembly</span>. Combined with my
+            <span class="text-orange-300">Security+</span> and cloud certifications (<span
+              class="text-orange-300"
+              >AWS</span
+            >, <span class="text-orange-300">Azure</span>,
+            <span class="text-orange-300">Terraform</span>), it gives me a strong foundation to
+            support users and infrastructure with confidence.
           </p>
         </div>
       </div>

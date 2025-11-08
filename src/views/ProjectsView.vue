@@ -9,9 +9,7 @@
           <!-- Left: Title & Icon -->
           <div class="flex items-center gap-4">
             <div>
-              <h3 class="text-xl sm:text-2xl font-semibold text-slate-200">
-                My Projects &amp; Labs
-              </h3>
+              <h2 class="text-3xl font-bold mb-4 text-white">My Lab & Projects</h2>
             </div>
           </div>
 
@@ -51,23 +49,36 @@
               <div
                 class="relative z-10 overflow-hidden p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800"
               >
-                <p class="text-slate-300 text-lg leading-relaxed">
-                  My portfolio brings together cloud projects on AWS and Azure with a growing set of
-                  on-premises labs where I practice networking, identity, and monitoring.
-                </p>
-                <p class="text-slate-300 text-lg mt-3">
-                  The cloud work is the core — automated setups with Terraform, Python CDK, CI/CD
-                  pipelines, and monitoring that make environments reliable and reproducible. My
-                  VMware lab extends that by giving me space to test how infrastructure pieces fit
-                  together: Active Directory, VPNs, logging, and hybrid networking.
-                </p>
-                <p class="text-slate-300 text-lg mt-3">
-                  Right now I’m concentrating on the Beelink lab as a longer-term build. The roadmap
-                  ends with a hybrid environment that links on-premises Active Directory with Entra
-                  ID, secured by VPNs, backed by a SIEM and monitoring stack, and reinforced with
-                  recovery processes — a setup designed to mirror the day-to-day challenges of
-                  engineering work.
-                </p>
+                <section>
+                  <p class="text-lg leading-relaxed text-gray-200">
+                    My projects are where I explore how technology fits together—from
+                    <span class="text-orange-300">cloud platforms</span> to
+                    <span class="text-orange-300">on-premises labs</span>. Each build helps me
+                    strengthen my understanding of <span class="text-orange-300">automation</span>,
+                    <span class="text-orange-300">networking</span>, and
+                    <span class="text-orange-300">identity</span> in real environments.
+                  </p>
+
+                  <p class="text-lg leading-relaxed text-gray-200 mt-4">
+                    I use tools like <span class="text-orange-300">Terraform</span>,
+                    <span class="text-orange-300">Python CDK</span>, and CI/CD pipelines to practise
+                    reliable, repeatable deployments. My
+                    <span class="text-orange-300">VMware lab</span> extends that learning—testing
+                    <span class="text-orange-300">Active Directory</span>,
+                    <span class="text-orange-300">VPNs</span>, and
+                    <span class="text-orange-300">logging</span> in realistic setups.
+                  </p>
+
+                  <p class="text-lg leading-relaxed text-gray-200 mt-4">
+                    Right now I’m focused on a long-term
+                    <span class="text-orange-300">Beelink mini PC</span> build, linking on-premises
+                    <span class="text-orange-300">Active Directory</span> with
+                    <span class="text-orange-300">Entra ID</span> and supporting it with
+                    <span class="text-orange-300">monitoring</span> and recovery tools. It’s a
+                    personal lab for continuous learning—a place to test, break, and understand how
+                    systems connect.
+                  </p>
+                </section>
               </div>
             </div>
 
