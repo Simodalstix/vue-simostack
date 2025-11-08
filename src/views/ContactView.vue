@@ -14,24 +14,16 @@
           <h1 class="text-4xl font-bold mb-4 md:mb-6">Let's Connect</h1>
 
           <p class="text-lg mb-6">
-            If you think I’d be a good fit for your team, I’d love to hear from you.
+            With extensive customer experience across pharmacy and SaaS, and a calm, mature approach
+            under pressure, I’d love to connect and keep learning from great teams.
           </p>
 
-          <p class="font-bold text-xl mb-4">I'd love to chat about:</p>
+          <p class="font-bold text-xl mb-4">Some things I enjoy talking about:</p>
           <ul class="list-disc list-outside pl-6 space-y-2 mb-6 text-lg">
-            <li>
-              How my IT support experience and communication skills help users and teams solve
-              problems
-            </li>
-            <li>
-              My growing interest in cloud and infrastructure and how that strengthens my support
-              work
-            </li>
-            <li>A quick look at my home-lab projects and the practical skills I’m developing</li>
-            <li>
-              Opportunities to learn, contribute, and build long-term capability within your
-              organisation
-            </li>
+            <li>Technical support, service desk workflows, and user experience</li>
+            <li>Developing stronger processes through documentation and teamwork</li>
+            <li>Experimenting in my home lab and learning new tools hands-on</li>
+            <li>How small improvements in IT can make big differences for users</li>
           </ul>
 
           <p class="font-bold text-xl mb-2">Get in touch:</p>
