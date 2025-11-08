@@ -6,11 +6,12 @@
           <section>
             <h2 class="text-3xl font-bold mb-4">From Pharmacy to Tech</h2>
             <p class="text-lg leading-relaxed">
-              I started my career in pharmacy, managing busy dispensaries and helping people every
-              day. That work taught me patience, communication, and accuracy under pressure—skills
-              that have carried naturally into IT. I’m used to listening carefully, explaining
-              complex information in plain language, and following through until a problem is fully
-              resolved.
+              I began my career in pharmacy, working closely with people every day to guide them
+              through health concerns and everyday problems. Over time, I refined my communication,
+              empathy, and problem-solving skills—learning how to stay calm, clear, and helpful in
+              any situation. I eventually realised I wanted to work in a field that’s more dynamic
+              and inventive, where there’s always something new to learn and improve. That drive for
+              growth and curiosity is what led me toward technology.
             </p>
           </section>
 
