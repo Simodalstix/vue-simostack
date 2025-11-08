@@ -47,7 +47,7 @@
             <!-- LEFT: description (merged span-4) -->
             <div class="lg:col-span-4">
               <div
-                class="relative z-10 overflow-hidden p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800"
+                class="relative z-10 overflow-hidden p-6 rounded-xl border border-slate-600 bg-slate-900"
               >
                 <section>
                   <p class="text-lg leading-relaxed text-gray-200">

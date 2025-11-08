@@ -31,11 +31,6 @@ const routes = [
     name: 'Contact',
     component: () => import('../views/ContactView.vue'),
   },
-  {
-    path: '/elephant',
-    name: 'Elephant',
-    component: () => import('../views/ElephantRoom.vue'),
-  },
 ]
 
 const router = createRouter({

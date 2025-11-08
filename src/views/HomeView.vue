@@ -3,8 +3,9 @@
     <div class="text-center p-6 sm:p-8 md:p-12 lg:p-20" style="padding-bottom: 10rem">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
         <span class="text-slate-400">~/Pharmacist/</span>
-        <span class="text-cyan-400">Support</span>
-        <span class="text-slate-400">/Engineer</span>
+        <span class="text-cyan-400">Support/</span>
+
+        <span class="text-slate-800">Engineer</span>
       </h1>
 
       <p class="mt-6 text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">

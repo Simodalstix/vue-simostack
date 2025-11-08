@@ -8,7 +8,7 @@
       <!-- Balanced Skills Section (short descriptions, easy to scan) -->
       <div class="md:col-span-2 mx-auto w-full max-w-4xl">
         <div class="mb-10">
-          <h2 class="text-2xl font-bold mb-3 text-white">Technical Support & Systems Operations</h2>
+          <h2 class="text-3xl font-bold mb-3 text-white">Technical Support & Systems Operations</h2>
 
           <p class="text-lg text-gray-200 leading-relaxed">
             I’m strongest in <span class="text-orange-300">IT support</span> and
