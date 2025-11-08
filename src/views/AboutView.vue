@@ -17,11 +17,12 @@
           <section>
             <h2 class="text-3xl text-orange-300 font-bold mb-4">Where I Am Now</h2>
             <p class="text-lg leading-relaxed text-orange-300">
-              Today I work in technical support, helping users solve problems across Windows
-              systems, networks, and SaaS platforms. I’ve built hands-on experience through home-lab
-              projects and cloud environments on AWS and Azure, where I practise user management,
-              monitoring, and automation. I enjoy combining technical skill with clear communication
-              so that technology feels helpful—not frustrating—for the people using it.
+              Today I work in technical support, helping users troubleshoot issues across devices,
+              networks, and business applications. I’m focused on building deeper experience in
+              Level 1 and 2 support—handling tickets, improving documentation, and learning
+              different service desk environments. I take pride in clear, patient communication and
+              aim to make every interaction a step toward smoother, more reliable IT for the people
+              I support.
             </p>
           </section>
 
