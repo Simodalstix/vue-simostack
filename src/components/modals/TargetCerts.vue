@@ -16,8 +16,8 @@
             support engineer with deeper troubleshooting capabilities.
           </p>
           <p class="text-sm">
-            <b>Focus:</b> Hardware troubleshooting, Windows/Linux basics, networking fundamentals,
-            and mobile device support.
+            <b>Focus:</b> Hardware troubleshooting, Windows/Mac/Linux basics, networking
+            fundamentals, and mobile device support.
           </p>
         </div>
       </div>
