@@ -5,7 +5,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/NewHomeView.vue'),
+    component: () => import('../views/HomeView.vue'),
   },
 
   { path: '/blog', name: 'Blog', component: RaspBlog },
@@ -24,17 +24,6 @@ const routes = [
     path: '/projects',
     name: 'Projects',
     component: () => import('../views/ProjectsView.vue'),
-  },
-  {
-    path: '/projects-remake',
-    name: 'ProjectsRemake',
-    component: () => import('../views/ProjectsRemakeView.vue'),
-  },
-
-  {
-    path: '/about-remake',
-    name: 'AboutRemake',
-    component: () => import('../views/AboutRemakeView.vue'),
   },
 
   {
