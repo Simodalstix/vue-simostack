@@ -33,7 +33,7 @@
           </section>
 
           <section>
-            <h2 class="text-3xl font-bold mb-4">Where I'm Headed</h2>
+            <h2 class="text-3xl font-bold mb-4">Building on My Skills</h2>
             <p class="text-lg leading-relaxed text-gray-200">
               I’m enjoying getting stronger in Linux, scripting, and modern IT environments, and I
               like understanding how different systems fit together. The more I learn, the more I
