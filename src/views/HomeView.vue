@@ -2,7 +2,8 @@
   <div class="bg-slate-900 min-h-screen flex flex-col justify-center text-white">
     <div class="text-center p-6 sm:p-8 md:p-12 lg:p-20" style="padding-bottom: 10rem">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-        <span class="text-slate-400">~/Pharmacist/</span>
+        <span class="text-white">~</span>
+        <span class="text-slate-400">/Pharmacist/</span>
         <span class="text-cyan-400">Support/</span>
 
         <span class="text-slate-800">Engineer</span>
