@@ -44,7 +44,12 @@
               class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-600/50 to-slate-700/50 hover:from-cyan-700 hover:to-cyan-600 border border-slate-500/50 hover:border-cyan-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
             >
               <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                ></path>
               </svg>
               <span class="text-white font-medium group-hover:text-cyan-100">Cloud Projects</span>
             </button>
@@ -227,8 +232,8 @@
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
-                  Centralized file storage for VMs, including Windows and Rocky Linux. Aiming to
-                  sync it up to the cloud landing zones later when I find the time.
+                  Centralized file storage for Windows and Rocky Linux VMs using Samba, mimicking
+                  on-prem setups. Autofs mounts shares on demand, with planned cloud sync later.
                 </p>
                 <!-- Project metadata footer -->
                 <div
