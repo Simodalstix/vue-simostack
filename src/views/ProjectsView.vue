@@ -38,6 +38,16 @@
               />
               <span class="text-white font-medium group-hover:text-green-100">Hack The Box</span>
             </button>
+            <button
+              type="button"
+              @click="scrollToCloudProjects"
+              class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-600/50 to-slate-700/50 hover:from-cyan-700 hover:to-cyan-600 border border-slate-500/50 hover:border-cyan-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
+            >
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+              </svg>
+              <span class="text-white font-medium group-hover:text-cyan-100">Cloud Projects</span>
+            </button>
           </div>
         </div>
 
@@ -46,9 +56,7 @@
           <div class="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-7">
             <!-- LEFT: description (merged span-4) -->
             <div class="lg:col-span-4">
-              <div
-                class="relative z-10 overflow-hidden p-6 rounded-xl border border-slate-600 bg-slate-900"
-              >
+              <div class="relative z-10 overflow-hidden p-6 rounded-xl bg-slate-900">
                 <section>
                   <p class="text-lg leading-relaxed text-gray-200">
                     My projects are where I explore how technology fits together—from
@@ -219,8 +227,8 @@
                   </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-4">
-                  Centralized file storage for all lab systems, including Windows and Rocky Linux.
-                  Testing cloud sync with AWS S3 and Azure Blob to enable hybrid storage.
+                  Centralized file storage for VMs, including Windows and Rocky Linux. Aiming to
+                  sync it up to the cloud landing zones later when I find the time.
                 </p>
                 <!-- Project metadata footer -->
                 <div
@@ -515,7 +523,7 @@
 
   <!-- Cloud Infrastructure Projects -->
 
-  <div class="text-white container mx-auto px-4 sm:px-6 mb-12">
+  <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 mb-12">
     <div class="mb-8">
       <h2 class="text-2xl font-bold text-white mb-4">Cloud Infrastructure Projects</h2>
       <p class="text-slate-300 text-lg leading-relaxed">
@@ -2137,4 +2145,11 @@ const showVmwareProject = ref(false)
 const showDynatraceProject = ref(false)
 const showAzureProject = ref(false)
 const showAwsProject = ref(false)
+
+const scrollToCloudProjects = () => {
+  const element = document.getElementById('cloud-projects')
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 </script>

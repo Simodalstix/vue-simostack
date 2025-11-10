@@ -1,6 +1,5 @@
-n d
 <template>
-  <div class="flex flex-col min-h-screen bg-gray-900 text-white">
+  <div class="flex flex-col min-h-screen bg-slate-900 text-white">
     <header
       class="bg-gradient-to-r from-slate-800 to-slate-700 shadow-xl border-b border-slate-600"
     >
@@ -121,8 +120,8 @@ n d
 
     <footer class="bg-gray-800 text-white py-8 sm:py-10">
       <div class="container mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          <div class="md:col-span-2">
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-6 sm:gap-8">
+          <!-- <div class="md:col-span-2">
             <h3 class="text-lg font-bold mb-4">Technologies & Tools</h3>
             <div class="flex flex-wrap gap-4 justify-center md:justify-start">
               <img
@@ -180,10 +179,10 @@ n d
                 title="Kubernetes"
               />
             </div>
-          </div>
+          </div> -->
           <div class="flex items-center justify-center text-center">
             <h2 class="text-xl font-bold text-slate-300">
-              Learning by building — Cloud Infrastructure, Automation, and DevOps.
+              Reliable systems. Trusted support. Continuous improvement.
             </h2>
           </div>
         </div>
@@ -194,17 +193,6 @@ n d
     </footer>
   </div>
 </template>
-
-<style>
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #111827;
-  min-height: 100%;
-  font-family: 'Inter', sans-serif;
-}
-</style>
 
 <script setup>
 import { ref } from 'vue'
