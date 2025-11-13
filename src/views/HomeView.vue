@@ -5,11 +5,7 @@
         Simon Parker
       </h1>
       <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-        <span class="text-cyan-400">Technical Support</span>
-        <span class="text-slate-400"> & </span>
-      </h1>
-      <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-        <span class="text-cyan-400">Customer Support Analyst</span>
+        <span class="text-cyan-400">Technical Support Analyst</span>
       </h1>
 
       <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed">

@@ -19,16 +19,17 @@
           <section>
             <h2 class="text-3xl font-bold mb-4 text-orange-300">Current Work</h2>
             <p class="text-lg leading-relaxed text-gray-200">
-              Today I work in <span class="text-orange-300 font-semibold">technical support</span>,
-              helping users troubleshoot issues across <span class="text-orange-300">devices</span>,
+              Today I work in <span class="text-orange-300">technical support</span>, helping users
+              troubleshoot issues across <span class="text-orange-300">devices</span>,
               <span class="text-orange-300">networks</span>, and
-              <span class="text-orange-300">business applications</span>. I’m focused on building
-              deeper experience in
-              <span class="text-orange-300">Level&nbsp;1&nbsp;and&nbsp;2&nbsp;support</span
-              >—handling tickets, improving documentation, and learning different
-              <span class="text-orange-300">service desk environments</span>. I take pride in clear,
-              patient communication and aim to make every interaction a step toward smoother, more
-              reliable IT for the people I support.
+              <span class="text-orange-300">SaaS applications</span>. I handle
+              <span class="text-orange-300">Level&nbsp;1&nbsp;and&nbsp;2&nbsp;support</span> tickets
+              end to end—diagnosing access issues, documenting fixes, and coordinating with
+              <span class="text-orange-300">product and engineering teams</span> when a problem
+              needs deeper investigation. I'm building experience across both
+              <span class="text-orange-300">SaaS support</span> and more traditional
+              <span class="text-orange-300">IT support environments</span>, focusing on clear
+              communication and giving users a straightforward path to a solution.
             </p>
           </section>
 
