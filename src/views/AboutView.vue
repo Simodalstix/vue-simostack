@@ -5,19 +5,19 @@
       <div class="md:col-span-2 flex flex-col space-y-8">
         <div class="max-w-5xl mx-auto space-y-8">
           <section>
-            <h2 class="text-3xl font-bold mb-4">From Pharmacy to Tech</h2>
+            <h2 class="text-3xl font-bold mb-4">Background</h2>
             <p class="text-lg leading-relaxed text-gray-200">
-              I began my career in pharmacy, working closely with people every day to guide them
-              through health concerns and everyday problems. Over time, I refined my communication,
-              empathy, and problem-solving skills—learning how to stay calm, clear, and helpful in
-              any situation. I eventually realised I wanted to work in a field that’s more dynamic
-              and inventive, driven by curiosity and constant learning. That drive for growth is
+              I started my career in pharmacy, working with people every day and helping them
+              navigate real problems under pressure. Over time, that work sharpened the habits I
+              still rely on: staying calm, listening properly, and breaking issues down so they can
+              be solved cleanly. As much as I valued the role, I eventually realised I wanted to
+              work in a field built on curiosity, systems thinking, and constant learning — which is
               what led me toward technology.
             </p>
           </section>
 
           <section>
-            <h2 class="text-3xl font-bold mb-4 text-orange-300">Where I Am Now</h2>
+            <h2 class="text-3xl font-bold mb-4 text-orange-300">Current Work</h2>
             <p class="text-lg leading-relaxed text-gray-200">
               Today I work in <span class="text-orange-300 font-semibold">technical support</span>,
               helping users troubleshoot issues across <span class="text-orange-300">devices</span>,
@@ -33,7 +33,7 @@
           </section>
 
           <section>
-            <h2 class="text-3xl font-bold mb-4">Building on My Skills</h2>
+            <h2 class="text-3xl font-bold mb-4">Growing My Capability</h2>
             <p class="text-lg leading-relaxed text-gray-200">
               I’m enjoying getting stronger in Linux, scripting, and modern IT environments, and I
               like understanding how different systems fit together. The more I learn, the more I
@@ -47,7 +47,7 @@
 
       <!-- Timeline -->
       <aside class="md:col-span-1">
-        <h2 class="text-3xl font-bold mb-6">My Diverse Journey</h2>
+        <h2 class="text-3xl font-bold mb-6">My Journey So Far</h2>
         <div class="relative pl-6 md:pl-12">
           <div class="absolute left-0 md:left-6 top-0 bottom-0 w-1 bg-gray-700 rounded-full"></div>
           <ul class="relative space-y-7">
@@ -103,7 +103,7 @@
               <div
                 class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
               ></div>
-              <p class="text-lg font-bold">SaaS Customer Support</p>
+              <p class="text-lg font-bold">SaaS Technical Support</p>
             </li>
             <li class="relative mt-8">
               <div

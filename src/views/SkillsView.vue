@@ -8,57 +8,63 @@
       <!-- Balanced Skills Section (short descriptions, easy to scan) -->
       <div class="md:col-span-2 mx-auto w-full max-w-4xl">
         <div class="mb-10">
-          <h2 class="text-3xl font-bold mb-3 text-white">Technical Support & Systems Operations</h2>
+          <h2 class="text-2xl font-bold mb-4 text-white">
+            Technical Support & Application Troubleshooting
+          </h2>
 
           <p class="text-lg text-gray-200 leading-relaxed">
             I’m strongest in <span class="text-orange-300">IT support</span> and
-            <span class="text-orange-300">service operations</span>—helping users stay productive
-            and keeping systems reliable. I’ve supported mixed environments across
+            <span class="text-orange-300">service operations</span>—keeping users productive and
+            systems stable. I’ve supported mixed environments across
             <span class="text-orange-300">Windows</span> and
             <span class="text-orange-300">Linux</span>, managing
-            <span class="text-orange-300">Active Directory</span> access, configuring
+            <span class="text-orange-300">Active Directory</span> access, basic
             <span class="text-orange-300">VPN</span> and
-            <span class="text-orange-300">firewall</span> settings, and resolving endpoint and
+            <span class="text-orange-300">firewall</span> configuration, and resolving endpoint and
             <span class="text-orange-300">network</span> issues efficiently.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            Professionally, I’ve delivered
-            <span class="text-orange-300">application support</span> for SaaS clients—logging,
-            tracking, and resolving tickets through <span class="text-orange-300">HubSpot</span> and
-            learning platforms like <span class="text-orange-300">ServiceNow</span>. I use tools
-            such as <span class="text-orange-300">PowerShell</span> and
-            <span class="text-orange-300">SQL Server Management Studio</span> for diagnostics and
-            light data fixes, and rely on
+            Professionally, I’ve supported
+            <span class="text-orange-300">SaaS applications</span> for external clients—logging,
+            investigating, and resolving issues through platforms like
+            <span class="text-orange-300">HubSpot</span> and
+            <span class="text-orange-300">ServiceNow</span>. I use
+            <span class="text-orange-300">PowerShell</span>,
+            <span class="text-orange-300">Windows diagnostics</span>, and
+            <span class="text-orange-300">SQL Server Management Studio</span> for troubleshooting
+            and light data validation, and rely on
             <span class="text-orange-300">remote support tools</span> like
             <span class="text-orange-300">TeamViewer</span> and
-            <span class="text-orange-300">RDP</span> to assist users directly. Clear, calm
-            communication remains at the centre of my work.
+            <span class="text-orange-300">RDP</span> to assist users directly.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            For scripting and process improvement, I work with
+            For process improvement and personal development, I work with
             <span class="text-orange-300">Bash</span> and
-            <span class="text-orange-300">Python</span> to automate small admin tasks, gather logs,
-            and perform system checks. I understand <span class="text-orange-300">YAML</span> for
-            configuration and use <span class="text-orange-300">Ansible</span> in my home lab to
-            practise consistent updates across <span class="text-orange-300">VMware</span> virtual
-            machines. These tools help me learn how automation supports everyday IT operations.
+            <span class="text-orange-300">Python</span> to automate small checks, gather logs, and
+            better understand system behaviour. In my home lab, I explore tools like
+            <span class="text-orange-300">YAML</span> and
+            <span class="text-orange-300">Ansible</span> to learn how configuration management
+            supports consistent operations across
+            <span class="text-orange-300">VMware</span> machines—purely as a way to deepen my
+            understanding of how IT environments fit together.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            I’m also developing hands-on hardware knowledge through
+            I’m also building hands-on hardware knowledge through
             <span class="text-orange-300">CompTIA A+</span> study and lab work with a
             <span class="text-orange-300">Raspberry Pi</span> and
-            <span class="text-orange-300">Beelink mini PC</span>, exploring topics like
+            <span class="text-orange-300">Beelink mini PC</span>. Exploring topics like
             <span class="text-orange-300">memory</span>, <span class="text-orange-300">PCIe</span>,
-            and <span class="text-orange-300">system assembly</span>. Combined with my
+            and <span class="text-orange-300">system assembly</span> helps me understand the
+            foundations behind the systems I support. Combined with my
             <span class="text-orange-300">Security+</span> and cloud certifications (<span
               class="text-orange-300"
               >AWS</span
             >, <span class="text-orange-300">Azure</span>,
-            <span class="text-orange-300">Terraform</span>), it gives me a strong foundation to
-            support users and infrastructure with confidence.
+            <span class="text-orange-300">Terraform</span>), it gives me a well-rounded technical
+            base to troubleshoot confidently and support users effectively.
           </p>
         </div>
       </div>
@@ -109,7 +115,7 @@
                   @click="showArchitectModal = true"
                 />
               </div>
-              <div>
+              <!-- <div>
                 <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
                 <img
                   src="/images/certifications/terraform003-2.png"
@@ -126,7 +132,7 @@
                   class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showDeveloperModal = true"
                 />
-              </div>
+              </div> -->
               <div>
                 <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
                 <img

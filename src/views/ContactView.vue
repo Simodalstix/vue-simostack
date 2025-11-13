@@ -14,16 +14,18 @@
           <h1 class="text-4xl font-bold mb-4 md:mb-6">Let's Connect</h1>
 
           <p class="text-lg mb-6">
-            With extensive customer experience across pharmacy and SaaS, and a calm, mature approach
-            under pressure, I’d love to connect and keep learning from great teams.
+            With experience across pharmacy and SaaS support, I bring a steady, practical approach
+            to problem-solving and user communication. I’m always interested in connecting with
+            teams who value emotional intelligence, reliability, and a grounded, self-directed way
+            of working.
           </p>
 
-          <p class="font-bold text-xl mb-4">Some things I enjoy talking about:</p>
+          <p class="font-bold text-xl mb-4">Things I like discussing:</p>
           <ul class="list-disc list-outside pl-6 space-y-2 mb-6 text-lg">
-            <li>Technical support, service desk workflows, and user experience</li>
-            <li>Developing stronger processes through documentation and teamwork</li>
-            <li>Experimenting in my home lab and learning new tools hands-on</li>
-            <li>How small improvements in IT can make big differences for users</li>
+            <li>Technical support and service desk workflows</li>
+            <li>Improving processes through clearer documentation</li>
+            <li>Hands-on learning in small labs and real environments</li>
+            <li>How small IT improvements create better user experiences</li>
           </ul>
 
           <p class="font-bold text-xl mb-2">Get in touch:</p>
