@@ -82,17 +82,15 @@
               class="border-l-2 border-r-2 border-b-2 border-purple-600 p-8 grid grid-cols-2 gap-8 place-items-center"
             >
               <div>
-                <AWSPractioner
-                  :visible="showPractitionerModal"
-                  @close="showPractitionerModal = false"
-                />
+                <APlus :visible="showAPlusModal" @close="showAPlusModal = false" />
                 <img
-                  src="/images/certifications/Cloud_Practitioner.png"
-                  alt="AWS Cloud Practitioner Badge"
+                  src="/images/certifications/a-plus.png"
+                  alt="Comptia A+ Badge"
                   class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showPractitionerModal = true"
+                  @click="showAPlusModal = true"
                 />
               </div>
+
               <div>
                 <SecurityPlus
                   :visible="showSecurityPlusModal"
@@ -103,6 +101,18 @@
                   alt="Comptia Security+ Badge"
                   class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
                   @click="showSecurityPlusModal = true"
+                />
+              </div>
+              <div>
+                <AWSPractioner
+                  :visible="showPractitionerModal"
+                  @close="showPractitionerModal = false"
+                />
+                <img
+                  src="/images/certifications/Cloud_Practitioner.png"
+                  alt="AWS Cloud Practitioner Badge"
+                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
+                  @click="showPractitionerModal = true"
                 />
               </div>
 
@@ -173,11 +183,6 @@
             >
               <div class="flex flex-col gap-8 mb-auto">
                 <img
-                  src="/images/certifications/a-plus.png"
-                  alt="Comptia A+ Badge"
-                  class="w-20 sm:w-36 mx-auto"
-                />
-                <img
                   src="/images/skills-in-progress/rhcsa.png"
                   alt="RHCSA Badge"
                   class="w-20 sm:w-36 mx-auto"
@@ -216,6 +221,8 @@ import PythonModal from '../components/modals/PythonModal.vue'
 import AzureAdministrator from '../components/modals/AzureAdministrator.vue'
 import TargetCertifications from '../components/modals/TargetCerts.vue'
 import SecurityPlus from '../components/modals/SecurityPlus.vue'
+import APlus from '../components/modals/CompTIA-A+.vue'
+const showAPlusModal = ref(false)
 const showSecurityPlusModal = ref(false)
 const showAzureAmin = ref(false)
 const showPythonModal = ref(false)
