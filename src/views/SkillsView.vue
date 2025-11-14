@@ -179,16 +179,20 @@
               <h2 class="text-2xl font-bold py-3 text-center">In Progress</h2>
             </div>
             <div
-              class="border-l-2 border-r-2 border-b-2 border-slate-600 p-8 flex flex-col justify-between items-center text-center group-hover:border-emerald-400 transition-all duration-100"
+              class="border-l-2 border-r-2 border-b-2 border-slate-600 p-8 flex flex-col items-center text-center space-y-8 group-hover:border-emerald-400 transition-all duration-100"
             >
-              <div class="flex flex-col gap-8 mb-auto">
-                <img
-                  src="/images/skills-in-progress/rhcsa.png"
-                  alt="RHCSA Badge"
-                  class="w-20 sm:w-36 mx-auto"
-                />
-              </div>
+              <img
+                src="/images/skills-in-progress/rhcsa.png"
+                alt="RHCSA Badge"
+                class="w-20 sm:w-36 mx-auto"
+              />
+              <img
+                src="/images/certifications/itil.png"
+                alt="ITIL Foundation Badge"
+                class="w-20 sm:w-36 mx-auto"
+              />
             </div>
+
             <div
               class="rounded-b-lg border border-slate-600 bg-gradient-to-r from-slate-700 to-slate-600 group-hover:border-emerald-400 group-hover:from-emerald-700 group-hover:to-emerald-600 transition-all duration-100"
             >
