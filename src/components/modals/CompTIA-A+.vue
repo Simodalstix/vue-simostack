@@ -21,12 +21,12 @@ import BaseModal from './BaseModal.vue'
       </p>
       <div class="mt-4">
         <a
-          href=""
+          href="https://www.credly.com/badges/7a7d63f5-07dc-47f5-9d86-1ba95699d84d"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-block bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
         >
-          Passed 14/11/2025 badge coming soon!
+          Verify Certification on Credly
         </a>
       </div>
     </div>
