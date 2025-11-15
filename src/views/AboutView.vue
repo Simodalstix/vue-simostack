@@ -8,11 +8,11 @@
             <h2 class="text-3xl font-bold mb-4">Background</h2>
             <p class="text-lg leading-relaxed text-gray-200">
               I started my career in pharmacy, working with people every day and helping them
-              navigate real problems under pressure. Over time, that work sharpened the habits I
-              still rely on: staying calm, listening properly, and breaking issues down so they can
-              be solved cleanly. As much as I valued the role, I eventually realised I wanted to
-              work in a field built on curiosity, systems thinking, and constant learning — which is
-              what led me toward technology.
+              navigate real problems under pressure. Over time, that work refined the habits I still
+              rely on: staying calm, listening properly, and breaking issues down so they can be
+              solved cleanly. As much as I valued the role, I eventually realised I wanted to work
+              in a field built on curiosity, systems thinking, and constant learning — which is what
+              led me toward technology.
             </p>
           </section>
 

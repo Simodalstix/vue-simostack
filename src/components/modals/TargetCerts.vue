@@ -6,23 +6,6 @@
     width="max-w-3xl"
   >
     <div class="space-y-8 mt-6 mx-4">
-      <!-- RHCSA -->
-      <div class="flex items-center space-x-6 pb-6">
-        <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-24 md:w-28" />
-        <div class="space-y-2">
-          <h3 class="font-bold text-xl text-white">
-            Red Hat Certified System Administrator (RHCSA)
-          </h3>
-          <p class="text-sm"><b>Status: </b>Ready: Just need a window to book it</p>
-          <p class="text-sm">
-            <b>Why:</b> Because it proves I can administer enterprise-grade Linux systems — the
-            foundation that modern infrastructure, cloud platforms, and automation all rely on.
-          </p>
-          <p class="text-sm">
-            <b>Focus:</b> Users/groups, storage, services, networking, and automation basics.
-          </p>
-        </div>
-      </div>
       <!-- ITIL Foundation -->
       <div class="flex items-center space-x-6 pb-6">
         <img
@@ -39,6 +22,23 @@
           </p>
           <p class="text-sm">
             <b>Focus:</b> Service value system, change management, incident/problem handling.
+          </p>
+        </div>
+      </div>
+      <!-- RHCSA -->
+      <div class="flex items-center space-x-6 pb-6">
+        <img src="/images/skills-in-progress/rhcsa.png" alt="RHCSA Badge" class="w-24 md:w-28" />
+        <div class="space-y-2">
+          <h3 class="font-bold text-xl text-white">
+            Red Hat Certified System Administrator (RHCSA)
+          </h3>
+          <p class="text-sm"><b>Status: </b>Ready: Just need a window to book it</p>
+          <p class="text-sm">
+            <b>Why:</b> Because it proves I can administer enterprise-grade Linux systems — the
+            foundation that modern infrastructure, cloud platforms, and automation all rely on.
+          </p>
+          <p class="text-sm">
+            <b>Focus:</b> Users/groups, storage, services, networking, and automation basics.
           </p>
         </div>
       </div>

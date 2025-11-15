@@ -18,10 +18,11 @@
             systems stable. I’ve supported mixed environments across
             <span class="text-orange-300">Windows</span> and
             <span class="text-orange-300">Linux</span>, managing
-            <span class="text-orange-300">Active Directory</span> access, basic
+            <span class="text-orange-300">Active Directory</span> access,
             <span class="text-orange-300">VPN</span> and
-            <span class="text-orange-300">firewall</span> configuration, and resolving endpoint and
-            <span class="text-orange-300">network</span> issues efficiently.
+            <span class="text-orange-300">firewall</span> basics, and resolving endpoint and
+            <span class="text-orange-300">network</span> issues with a structured, reliable
+            approach.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
@@ -29,42 +30,35 @@
             <span class="text-orange-300">SaaS applications</span> for external clients—logging,
             investigating, and resolving issues through platforms like
             <span class="text-orange-300">HubSpot</span> and
-            <span class="text-orange-300">ServiceNow</span>. I use
+            <span class="text-orange-300">ServiceNow</span>. I’ve used
             <span class="text-orange-300">PowerShell</span>,
             <span class="text-orange-300">Windows diagnostics</span>, and
-            <span class="text-orange-300">SQL Server Management Studio</span> for troubleshooting
-            and light data validation, and rely on
-            <span class="text-orange-300">remote support tools</span> like
+            <span class="text-orange-300">SQL Server Management Studio</span> where needed for
+            troubleshooting and light data checks, and rely on
+            <span class="text-orange-300">remote support tools</span> such as
             <span class="text-orange-300">TeamViewer</span> and
-            <span class="text-orange-300">RDP</span> to assist users directly.
+            <span class="text-orange-300">RDP</span> to work directly with users.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
             For process improvement and personal development, I work with
             <span class="text-orange-300">Bash</span> and
             <span class="text-orange-300">Python</span> to automate small checks, gather logs, and
-            better understand system behaviour. In my home lab, I explore tools like
+            understand system behaviour. In my home lab, I explore tools like
             <span class="text-orange-300">YAML</span> and
-            <span class="text-orange-300">Ansible</span> to learn how configuration management
-            supports consistent operations across
-            <span class="text-orange-300">VMware</span> machines—purely as a way to deepen my
-            understanding of how IT environments fit together.
+            <span class="text-orange-300">Ansible</span> to see how configuration management
+            supports consistent operations across <span class="text-orange-300">VMware</span> and
+            virtualised environments.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            I’m also building hands-on hardware knowledge through
-            <span class="text-orange-300">CompTIA A+</span> study and lab work with a
+            I’ve also been developing stronger hardware familiarity through
+            <span class="text-orange-300">CompTIA A+</span> study and hands-on work with a
             <span class="text-orange-300">Raspberry Pi</span> and
-            <span class="text-orange-300">Beelink mini PC</span>. Exploring topics like
+            <span class="text-orange-300">Beelink mini PC</span>. Working through topics like
             <span class="text-orange-300">memory</span>, <span class="text-orange-300">PCIe</span>,
-            and <span class="text-orange-300">system assembly</span> helps me understand the
-            foundations behind the systems I support. Combined with my
-            <span class="text-orange-300">Security+</span> and cloud certifications (<span
-              class="text-orange-300"
-              >AWS</span
-            >, <span class="text-orange-300">Azure</span>,
-            <span class="text-orange-300">Terraform</span>), it gives me a well-rounded technical
-            base to troubleshoot confidently and support users effectively.
+            and <span class="text-orange-300">system assembly</span> has helped me understand the
+            foundations behind the systems I support and diagnose in real environments.
           </p>
         </div>
       </div>
@@ -182,13 +176,12 @@
               class="border-l-2 border-r-2 border-b-2 border-slate-600 p-8 flex flex-col items-center text-center space-y-8 group-hover:border-emerald-400 transition-all duration-100"
             >
               <img
-                src="/images/skills-in-progress/rhcsa.png"
-                alt="RHCSA Badge"
-                class="w-20 sm:w-36 mx-auto"
-              />
-              <img
                 src="/images/certifications/itil.png"
                 alt="ITIL Foundation Badge"
+                class="w-20 sm:w-36 mx-auto"
+              /><img
+                src="/images/skills-in-progress/rhcsa.png"
+                alt="RHCSA Badge"
                 class="w-20 sm:w-36 mx-auto"
               />
             </div>

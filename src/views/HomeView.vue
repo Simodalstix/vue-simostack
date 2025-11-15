@@ -9,8 +9,10 @@
       </h1>
 
       <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-        Focused on troubleshooting SaaS applications, resolving user issues, and supporting product
-        teams through clear analysis and reliable communication.
+        I support users across SaaS platforms and Microsoft environments, diagnose technical issues
+        with clarity, and provide concise, value-driven feedback that helps product and engineering
+        teams resolve problems efficiently. I stay attentive to the person behind the issue and make
+        sure the support experience is as smooth as the technical fix.
       </p>
 
       <div
