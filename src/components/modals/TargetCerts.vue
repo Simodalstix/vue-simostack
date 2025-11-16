@@ -15,7 +15,7 @@
         />
         <div class="space-y-2">
           <h3 class="font-bold text-xl text-white">ITIL 4 Foundation</h3>
-          <p class="text-sm"><b>Status:</b> Revising and ready to sit</p>
+          <p class="text-sm"><b>Status:</b> Exam booked 26/11/25</p>
           <p class="text-sm">
             <b>Why:</b> Gives a clear framework for service management and how ops ties into
             business outcomes.
@@ -32,7 +32,7 @@
           <h3 class="font-bold text-xl text-white">
             Red Hat Certified System Administrator (RHCSA)
           </h3>
-          <p class="text-sm"><b>Status: </b>Ready: Just need a window to book it</p>
+          <p class="text-sm"><b>Status: </b>Exam purcahsed, ready to schedule</p>
           <p class="text-sm">
             <b>Why:</b> Because it proves I can administer enterprise-grade Linux systems — the
             foundation that modern infrastructure, cloud platforms, and automation all rely on.
