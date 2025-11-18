@@ -13,52 +13,49 @@
           </h2>
 
           <p class="text-lg text-gray-200 leading-relaxed">
-            I’m strongest in <span class="text-orange-300">IT support</span> and
-            <span class="text-orange-300">service operations</span>—keeping users productive and
-            systems stable. I’ve supported mixed environments across
+            I work confidently across <span class="text-orange-300">Microsoft</span>,
+            <span class="text-orange-300">Linux</span>, and
+            <span class="text-orange-300">SaaS platforms</span>, supporting users and resolving
+            issues with a structured troubleshooting approach. I’m confident working with
+            <span class="text-orange-300">Entra ID</span>,
+            <span class="text-orange-300">Microsoft 365</span>, and
+            <span class="text-orange-300">Active Directory</span> for user access, security groups,
+            and <span class="text-orange-300">Group Policy</span> basics. I know how to troubleshoot
             <span class="text-orange-300">Windows</span> and
-            <span class="text-orange-300">Linux</span>, managing
-            <span class="text-orange-300">Active Directory</span> access,
-            <span class="text-orange-300">VPN</span> and
-            <span class="text-orange-300">firewall</span> basics, and resolving endpoint and
-            <span class="text-orange-300">network</span> issues with a structured, reliable
-            approach.
+            <span class="text-orange-300">Linux</span> endpoint issues across authentication,
+            performance, applications, and connectivity.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            Professionally, I’ve supported
-            <span class="text-orange-300">SaaS applications</span> for external clients—logging,
-            investigating, and resolving issues through platforms like
-            <span class="text-orange-300">HubSpot</span> and
-            <span class="text-orange-300">ServiceNow</span>. I’ve used
+            I’ve supported <span class="text-orange-300">SaaS applications</span> for external
+            clients, diagnosing account faults, workflow errors, and integration issues through
+            platforms like <span class="text-orange-300">HubSpot</span> and
+            <span class="text-orange-300">ServiceNow</span>. I use
             <span class="text-orange-300">PowerShell</span>,
             <span class="text-orange-300">Windows diagnostics</span>, and
-            <span class="text-orange-300">SQL Server Management Studio</span> where needed for
-            troubleshooting and light data checks, and rely on
-            <span class="text-orange-300">remote support tools</span> such as
+            <span class="text-orange-300">SQL Server Management Studio</span> for investigation, and
+            rely on <span class="text-orange-300">remote support tools</span> such as
             <span class="text-orange-300">TeamViewer</span> and
             <span class="text-orange-300">RDP</span> to work directly with users.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            For process improvement and personal development, I work with
-            <span class="text-orange-300">Bash</span> and
-            <span class="text-orange-300">Python</span> to automate small checks, gather logs, and
-            understand system behaviour. In my home lab, I explore tools like
-            <span class="text-orange-300">YAML</span> and
-            <span class="text-orange-300">Ansible</span> to see how configuration management
-            supports consistent operations across <span class="text-orange-300">VMware</span> and
-            virtualised environments.
+            I’m familiar with configuring <span class="text-orange-300">Intune</span> for device
+            onboarding, compliance, and basic application deployment, and I’ve troubleshot issues
+            across <span class="text-orange-300">Windows 10/11</span>, patching, and system
+            configuration many times. I understand how <span class="text-orange-300">DNS</span>,
+            <span class="text-orange-300">DHCP</span>, <span class="text-orange-300">VPN</span>, and
+            <span class="text-orange-300">firewall</span> behaviour affects user access and device
+            reliability.
           </p>
 
           <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            I’ve also been developing stronger hardware familiarity through
-            <span class="text-orange-300">CompTIA A+</span> study and hands-on work with a
-            <span class="text-orange-300">Raspberry Pi</span> and
-            <span class="text-orange-300">Beelink mini PC</span>. Working through topics like
-            <span class="text-orange-300">memory</span>, <span class="text-orange-300">PCIe</span>,
-            and <span class="text-orange-300">system assembly</span> has helped me understand the
-            foundations behind the systems I support and diagnose in real environments.
+            I use <span class="text-orange-300">Bash</span> and
+            <span class="text-orange-300">PowerShell</span> for automation and diagnostics, and I’m
+            comfortable working across both <span class="text-orange-300">VMware</span> and
+            <span class="text-orange-300">Proxmox</span> virtualisation environments. I also work
+            with <span class="text-orange-300">YAML</span>-based tooling for configuration and
+            workflow management.
           </p>
         </div>
       </div>

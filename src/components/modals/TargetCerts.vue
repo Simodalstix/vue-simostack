@@ -32,7 +32,7 @@
           <h3 class="font-bold text-xl text-white">
             Red Hat Certified System Administrator (RHCSA)
           </h3>
-          <p class="text-sm"><b>Status: </b>Exam purcahsed, ready to schedule</p>
+          <p class="text-sm"><b>Status: </b>Exam booked 27/11/25 - had to delay until NBN fixed</p>
           <p class="text-sm">
             <b>Why:</b> Because it proves I can administer enterprise-grade Linux systems — the
             foundation that modern infrastructure, cloud platforms, and automation all rely on.
