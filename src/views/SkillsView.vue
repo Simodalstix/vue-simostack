@@ -12,9 +12,11 @@
       <div class="flex flex-wrap justify-center gap-6 md:gap-8">
         <!-- ITIL -->
         <div class="flex flex-col items-center">
+          <ITILCertification :visible="showITILModal" @close="showITILModal = false" />
           <img
             src="/images/certifications/itil.png"
             class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded"
+            @click="showITILModal = true"
           />
           <span class="mt-2 text-xs text-gray-300">ITIL</span>
         </div>
@@ -75,8 +77,9 @@
 
     <!-- Unified Dual-Role Gradient Card -->
     <section
-      class="rounded-2xl border border-slate-700 bg-gradient-to-r from-cyan-800/60 via-cyan-800/30 to-slate-900 px-6 py-6 max-w-6xl mx-auto"
-    >
+  class="rounded-2xl border border-slate-700 bg-gradient-to-br from-cyan-800 to-slate-900 px-6 py-6 max-w-6xl mx-auto"
+>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- LEFT: Customer Success / SaaS Support -->
         <div class="flex flex-col">
@@ -144,6 +147,7 @@
   <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
   <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
   <APlus :visible="showAPlusModal" @close="showAPlusModal = false" />
+  <ITILCertification :visible="false" @close="false" />
 </template>
 
 <script setup>
@@ -152,7 +156,9 @@ import AWSPractioner from '../components/modals/AWSPractioner.vue'
 import AzureAdministrator from '../components/modals/AzureAdministrator.vue'
 import SecurityPlus from '../components/modals/SecurityPlus.vue'
 import APlus from '../components/modals/CompTIA-A+.vue'
+import ITILCertification from '../components/modals/ITIL-Certification.vue'
 
+const showITILModal = ref(false)
 const showAPlusModal = ref(false)
 const showSecurityPlusModal = ref(false)
 const showAzureAmin = ref(false)
