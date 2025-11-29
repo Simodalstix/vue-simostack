@@ -11,37 +11,34 @@
         </div>
 
         <div>
-          <h1 class="text-4xl font-bold mb-4 md:mb-6">Let's Connect</h1>
+  <h1 class="text-4xl font-bold mb-4 md:mb-6">Let's Connect</h1>
 
-          <p class="text-lg mb-6">
-            With experience across pharmacy and SaaS support, I bring a steady, practical approach
-            to problem-solving and user communication. I’m always interested in connecting with
-            teams who value emotional intelligence, reliability, and a grounded, self-directed way
-            of working.
-          </p>
+  <p class="text-lg mb-6 leading-relaxed">
+    I work well in environments that value steady communication, accuracy, and clear thinking.
+    My background across pharmacy, customer service, and SaaS support means I’m comfortable talking
+    to users, breaking down problems, and working with engineering teams without drama or guesswork.
+  </p>
 
-          <p class="font-bold text-xl mb-4">Things I like discussing:</p>
-          <ul class="list-disc list-outside pl-6 space-y-2 mb-6 text-lg">
-            <li>Technical support and service desk workflows</li>
-            <li>Improving processes through clearer documentation</li>
-            <li>Hands-on learning in small labs and real environments</li>
-            <li>How small IT improvements create better user experiences</li>
-          </ul>
+  <p class="text-lg mb-6 leading-relaxed">
+    Whether it’s service desk operations, SaaS troubleshooting, or improving support workflows,
+    I’m always open to discussing opportunities where practical problem-solving and empathy matter.
+  </p>
 
-          <p class="font-bold text-xl mb-2">Get in touch:</p>
-          <div class="flex items-center text-xl space-x-4">
-            <a href="mailto:Lastpolar@gmail.com" class="text-orange-300 hover:underline">
-              Lastpolar@gmail.com
-            </a>
-            <a
-              href="https://www.linkedin.com/in/simonparker-dev/"
-              target="_blank"
-              class="text-orange-300 hover:underline"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
+  <p class="font-bold text-xl mb-2">Get in touch:</p>
+  <div class="flex items-center text-xl space-x-4">
+    <a href="mailto:Lastpolar@gmail.com" class="text-orange-300 hover:underline">
+      Lastpolar@gmail.com
+    </a>
+    <a
+      href="https://www.linkedin.com/in/simonparker-dev/"
+      target="_blank"
+      class="text-orange-300 hover:underline"
+    >
+      LinkedIn
+    </a>
+  </div>
+</div>
+
       </div>
     </div>
   </div>

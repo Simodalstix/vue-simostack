@@ -1,228 +1,160 @@
 <template>
-  <div class="text-white container mx-auto px-6 py-6 md:py-3">
-    <section class="mb-12 text-center max-w-4xl mx-auto">
-      <h1 class="text-4xl font-bold mb-4">My Skills & Certifications</h1>
+  <div class="text-white container mx-auto px-6 py-8 max-w-6xl">
+    <!-- Header (no redundant paragraph) -->
+    <section class="text-center mb-6">
+      <h1 class="text-4xl font-bold">My Skills & Certifications</h1>
     </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <!-- Balanced Skills Section (short descriptions, easy to scan) -->
-      <div class="md:col-span-2 mx-auto w-full max-w-4xl">
-        <div class="mb-10">
-          <h2 class="text-2xl font-bold mb-4 text-white">
-            Technical Support & Application Troubleshooting
-          </h2>
+    <!-- Certification Strip -->
+    <section
+      class="mb-4 rounded-xl  bg-slate-900/70 px-6 py-5 max-w-5xl mx-auto"
+    >
+      <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+        <!-- ITIL -->
+        <div class="flex flex-col items-center">
+          <img
+            src="/images/certifications/itil.png"
+            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded"
+          />
+          <span class="mt-2 text-xs text-gray-300">ITIL</span>
+        </div>
 
-          <p class="text-lg text-gray-200 leading-relaxed">
-            I work confidently across <span class="text-orange-300">Microsoft</span>,
-            <span class="text-orange-300">Linux</span>, and
-            <span class="text-orange-300">SaaS platforms</span>, supporting users and resolving
-            issues with a structured troubleshooting approach. I’m confident working with
-            <span class="text-orange-300">Entra ID</span>,
-            <span class="text-orange-300">Microsoft 365</span>, and
-            <span class="text-orange-300">Active Directory</span> for user access, security groups,
-            and <span class="text-orange-300">Group Policy</span> basics. I know how to troubleshoot
-            <span class="text-orange-300">Windows</span> and
-            <span class="text-orange-300">Linux</span> endpoint issues across authentication,
-            performance, applications, and connectivity.
-          </p>
+        <!-- A+ -->
+        <div class="flex flex-col items-center">
+          <APlus :visible="showAPlusModal" @close="showAPlusModal = false" />
+          <img
+            src="/images/certifications/a-plus.png"
+            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+            @click="showAPlusModal = true"
+          />
+          <span class="mt-2 text-xs text-gray-300">A+</span>
+        </div>
 
-          <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            I’ve supported <span class="text-orange-300">SaaS applications</span> for external
-            clients, diagnosing account faults, workflow errors, and integration issues through
-            platforms like <span class="text-orange-300">HubSpot</span> and
-            <span class="text-orange-300">ServiceNow</span>. I use
-            <span class="text-orange-300">PowerShell</span>,
-            <span class="text-orange-300">Windows diagnostics</span>, and
-            <span class="text-orange-300">SQL Server Management Studio</span> for investigation, and
-            rely on <span class="text-orange-300">remote support tools</span> such as
-            <span class="text-orange-300">TeamViewer</span> and
-            <span class="text-orange-300">RDP</span> to work directly with users.
-          </p>
+        <!-- Security+ -->
+        <div class="flex flex-col items-center">
+          <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
+          <img
+            src="/images/certifications/securityplus.png"
+            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+            @click="showSecurityPlusModal = true"
+          />
+          <span class="mt-2 text-xs text-gray-300">Security+</span>
+        </div>
 
-          <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            I’m familiar with configuring <span class="text-orange-300">Intune</span> for device
-            onboarding, compliance, and basic application deployment, and I’ve troubleshot issues
-            across <span class="text-orange-300">Windows 10/11</span>, patching, and system
-            configuration many times. I understand how <span class="text-orange-300">DNS</span>,
-            <span class="text-orange-300">DHCP</span>, <span class="text-orange-300">VPN</span>, and
-            <span class="text-orange-300">firewall</span> behaviour affects user access and device
-            reliability.
-          </p>
+        <!-- AWS Cloud Practitioner -->
+        <div class="flex flex-col items-center">
+          <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
+          <img
+            src="/images/certifications/Cloud_Practitioner.png"
+            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+            @click="showPractitionerModal = true"
+          />
+          <span class="mt-2 text-xs text-gray-300">AWS CP</span>
+        </div>
 
-          <p class="text-lg text-gray-200 leading-relaxed mt-4">
-            I use <span class="text-orange-300">Bash</span> and
-            <span class="text-orange-300">PowerShell</span> for automation and diagnostics, and I’m
-            comfortable working across both <span class="text-orange-300">VMware</span> and
-            <span class="text-orange-300">Proxmox</span> virtualisation environments. I also work
-            with <span class="text-orange-300">YAML</span>-based tooling for configuration and
-            workflow management.
-          </p>
+        <!-- Azure Administrator -->
+        <div class="flex flex-col items-center">
+          <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
+          <img
+            src="/images/certifications/azure-admin.png"
+            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+            @click="showAzureAmin = true"
+          />
+          <span class="mt-2 text-xs text-gray-300">Azure Admin</span>
         </div>
       </div>
 
-      <!-- Third column: Certifications -->
-      <div class="md:col-span-2">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="col-span-2">
-            <div
-              class="rounded-t-lg border border-purple-600 bg-gradient-to-r from-purple-700 to-purple-600"
-            >
-              <h2 class="text-2xl font-bold py-3 text-center">Completed Certifications</h2>
-            </div>
-            <div
-              class="border-l-2 border-r-2 border-b-2 border-purple-600 p-8 grid grid-cols-2 gap-8 place-items-center"
-            >
-              <div>
-                <APlus :visible="showAPlusModal" @close="showAPlusModal = false" />
-                <img
-                  src="/images/certifications/a-plus.png"
-                  alt="Comptia A+ Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showAPlusModal = true"
-                />
-              </div>
+      <p class="mt-4 text-sm md:text-base text-center text-gray-200 leading-relaxed">
+  These certifications provide a solid grounding for customer success and technical support roles,
+  covering ITIL processes, OS and hardware fundamentals, core security concepts, Microsoft 365 /
+  Entra ID administration, and cloud environment proficiency.
+</p>
 
-              <div>
-                <SecurityPlus
-                  :visible="showSecurityPlusModal"
-                  @close="showSecurityPlusModal = false"
-                />
-                <img
-                  src="/images/certifications/securityplus.png"
-                  alt="Comptia Security+ Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showSecurityPlusModal = true"
-                />
-              </div>
-              <div>
-                <AWSPractioner
-                  :visible="showPractitionerModal"
-                  @close="showPractitionerModal = false"
-                />
-                <img
-                  src="/images/certifications/Cloud_Practitioner.png"
-                  alt="AWS Cloud Practitioner Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showPractitionerModal = true"
-                />
-              </div>
 
-              <div>
-                <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
-                <img
-                  src="/images/certifications/Solutions_Architect.png"
-                  alt="AWS Solutions Architect Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showArchitectModal = true"
-                />
-              </div>
-              <!-- <div>
-                <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
-                <img
-                  src="/images/certifications/terraform003-2.png"
-                  alt="Terraform Associate Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showTerraformModal = true"
-                />
-              </div>
-              <div>
-                <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
-                <img
-                  src="/images/certifications/Developer.png"
-                  alt="AWS Developer Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showDeveloperModal = true"
-                />
-              </div> -->
-              <div>
-                <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
-                <img
-                  src="/images/certifications/azure-admin.png"
-                  alt="Azure Admin Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showAzureAmin = true"
-                />
-              </div>
-              <div>
-                <PythonModal :visible="showPythonModal" @close="showPythonModal = false" />
-                <img
-                  src="/images/certifications/python-associate.png"
-                  alt="Python Associate Badge"
-                  class="w-20 md:w-24 lg:w-36 hover:filter hover:drop-shadow-[0_0_20px_rgba(139,69,193,0.6)] transition-all duration-300 rounded cursor-pointer"
-                  @click="showPythonModal = true"
-                />
-              </div>
-            </div>
-            <div
-              class="rounded-b-lg border-l border-r border-b border-purple-600 bg-gradient-to-r from-purple-700 to-purple-600"
-            >
-              <h2 class="text-2xl font-bold py-3 text-center">&nbsp;</h2>
-            </div>
-          </div>
+    </section>
 
-          <div
-            @click="showTargetCertsModal = true"
-            class="col-span-1 cursor-pointer transition duration-100 rounded-lg group"
-          >
-            <div
-              class="rounded-t-lg border border-slate-600 bg-gradient-to-r from-slate-700 to-slate-600 group-hover:border-emerald-400 group-hover:from-emerald-700 group-hover:to-emerald-600 transition-all duration-100"
-            >
-              <h2 class="text-2xl font-bold py-3 text-center">In Progress</h2>
-            </div>
-            <div
-              class="border-l-2 border-r-2 border-b-2 border-slate-600 p-8 flex flex-col items-center text-center space-y-8 group-hover:border-emerald-400 transition-all duration-100"
-            >
-              <img
-                src="/images/certifications/itil.png"
-                alt="ITIL Foundation Badge"
-                class="w-20 sm:w-36 mx-auto"
-              /><img
-                src="/images/skills-in-progress/rhcsa.png"
-                alt="RHCSA Badge"
-                class="w-20 sm:w-36 mx-auto"
-              />
-            </div>
+    <!-- Unified Dual-Role Gradient Card -->
+    <section
+      class="rounded-2xl border border-slate-700 bg-gradient-to-r from-cyan-800/60 via-cyan-800/30 to-slate-900 px-6 py-6 max-w-6xl mx-auto"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- LEFT: Customer Success / SaaS Support -->
+        <div class="flex flex-col">
+          <h2 class="text-2xl font-bold mb-3">Customer Success & SaaS Support</h2>
 
-            <div
-              class="rounded-b-lg border border-slate-600 bg-gradient-to-r from-slate-700 to-slate-600 group-hover:border-emerald-400 group-hover:from-emerald-700 group-hover:to-emerald-600 transition-all duration-100"
-            >
-              <h2 class="text-2xl font-bold py-3 text-center">How Soon?</h2>
-            </div>
-          </div>
+          <p class="text-gray-200 leading-relaxed">
+            Experience in <span class="text-orange-300">ticketed SaaS environments</span> where
+            clear communication, tone, and follow-up matter. Comfortable handling first contact
+            through <span class="text-orange-300">Dialpad</span>, email, and live chat, and carrying
+            a case through to resolution.
+          </p>
+
+          <p class="text-gray-200 leading-relaxed mt-3">
+            Experienced with <span class="text-orange-300">TeamViewer</span> and
+            <span class="text-orange-300">RDP</span> for guided sessions, configuration changes, and
+            assisting with <span class="text-orange-300">installs</span> or workflow fixes.
+            Accurate, clear case notes maintained in
+            <span class="text-orange-300">ServiceNow</span> and
+            <span class="text-orange-300">HubSpot</span>.
+          </p>
+
+          <p class="text-gray-200 leading-relaxed mt-3">
+            Collaboration with engineering via <span class="text-orange-300">Slack</span>, sharing
+            structured repro steps, logs, and screenshots – not just forwarding tickets. Customer
+            background from <span class="text-orange-300">pharmacy</span> reinforces accuracy and a
+            calm approach with <span class="text-orange-300">stressed customers</span>.
+          </p>
+        </div>
+
+        <!-- RIGHT: Technical Support / Troubleshooting -->
+        <div class="flex flex-col">
+          <h2 class="text-2xl font-bold mb-3">Technical Support & Troubleshooting</h2>
+
+          <p class="text-gray-200 leading-relaxed">
+            Hands-on across <span class="text-orange-300">Microsoft 365</span>,
+            <span class="text-orange-300">Entra ID</span>, and
+            <span class="text-orange-300">Active Directory</span> for identity, access, licensing,
+            and <span class="text-orange-300">security group</span> adjustments. Able to break down
+            “can’t sign in” into specific checks and fixes.
+          </p>
+
+          <p class="text-gray-200 leading-relaxed mt-3">
+            Familiar with <span class="text-orange-300">Intune</span> for onboarding, compliance,
+            and <span class="text-orange-300">application installs</span>. On
+            <span class="text-orange-300">Windows 10/11</span> and Linux, uses logs, event viewer,
+            service states, and focused <span class="text-orange-300">PowerShell</span> /
+            <span class="text-orange-300">Bash</span> commands instead of guesswork.
+          </p>
+
+          <p class="text-gray-200 leading-relaxed mt-3">
+            <span class="text-orange-300">Azure Admin</span> and
+            <span class="text-orange-300">AWS CP</span> provide context when issues involve
+            <span class="text-orange-300">APIs</span>,
+            <span class="text-orange-300">IAM</span>, or cloud-backed services. Able to identify
+            whether a problem is likely endpoint, identity, or platform-side and communicate that
+            clearly to both users and engineers.
+          </p>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 
+  <!-- Modals -->
   <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
   <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
-
-  <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
-  <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
-  <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
-  <PythonModal :visible="showPythonModal" @close="showPythonModal = false" />
-  <TargetCertifications :visible="showTargetCertsModal" @close="showTargetCertsModal = false" />
   <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
+  <APlus :visible="showAPlusModal" @close="showAPlusModal = false" />
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import AWSArchitect from '../components/modals/AWSArchitect.vue'
-import AWSDeveloper from '../components/modals/AWSDeveloper.vue'
-import TerraformModal from '../components/modals/TerraformModal.vue'
 import AWSPractioner from '../components/modals/AWSPractioner.vue'
-import PythonModal from '../components/modals/PythonModal.vue'
 import AzureAdministrator from '../components/modals/AzureAdministrator.vue'
-import TargetCertifications from '../components/modals/TargetCerts.vue'
 import SecurityPlus from '../components/modals/SecurityPlus.vue'
 import APlus from '../components/modals/CompTIA-A+.vue'
+
 const showAPlusModal = ref(false)
 const showSecurityPlusModal = ref(false)
 const showAzureAmin = ref(false)
-const showPythonModal = ref(false)
 const showPractitionerModal = ref(false)
-const showTerraformModal = ref(false)
-const showDeveloperModal = ref(false)
-const showArchitectModal = ref(false)
-const showTargetCertsModal = ref(false)
 </script>
