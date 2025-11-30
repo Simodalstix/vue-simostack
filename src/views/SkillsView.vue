@@ -114,12 +114,13 @@
           <h2 class="text-2xl font-bold mb-3">Technical Support & Troubleshooting</h2>
 
           <p class="text-gray-200 leading-relaxed">
-            Hands-on across <span class="text-orange-300">Microsoft 365</span>,
-            <span class="text-orange-300">Entra ID</span>, and
-            <span class="text-orange-300">Active Directory</span> for identity, access, licensing,
-            and <span class="text-orange-300">security group</span> adjustments. Able to break down
-            “can’t sign in” into specific checks and fixes.
-          </p>
+  Works directly with <span class="text-orange-300">Microsoft 365</span>,
+  <span class="text-orange-300">Entra ID</span>, and
+  <span class="text-orange-300">Active Directory</span> to diagnose identity,
+  access, licensing, and <span class="text-orange-300">security group</span> issues.
+  Breaks down sign-in failures with structured checks that reveal the actual cause.
+</p>
+
 
           <p class="text-gray-200 leading-relaxed mt-3">
             Familiar with <span class="text-orange-300">Intune</span> for onboarding, compliance,
