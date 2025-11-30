@@ -18,7 +18,7 @@
             class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded"
             @click="showITILModal = true"
           />
-          <span class="mt-2 text-xs text-gray-300">ITIL</span>
+          
         </div>
 
         <!-- A+ -->
@@ -29,7 +29,7 @@
             class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
             @click="showAPlusModal = true"
           />
-          <span class="mt-2 text-xs text-gray-300">A+</span>
+        
         </div>
 
         <!-- Security+ -->
@@ -40,9 +40,18 @@
             class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
             @click="showSecurityPlusModal = true"
           />
-          <span class="mt-2 text-xs text-gray-300">Security+</span>
+         
         </div>
-
+<div class="flex flex-col items-center">
+  <PCAPModal :visible="showPCAPModal" @close="showPCAPModal = false" />
+  <img
+    src="/images/certifications/pcap.png"
+    class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+    @click="showPCAPModal = true"
+    alt="Python Institute PCAP – Certified Associate in Python Programming"
+  />
+ 
+</div>
         <!-- AWS Cloud Practitioner -->
         <div class="flex flex-col items-center">
           <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
@@ -51,7 +60,7 @@
             class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
             @click="showPractitionerModal = true"
           />
-          <span class="mt-2 text-xs text-gray-300">AWS CP</span>
+         
         </div>
 
         <!-- Azure Administrator -->
@@ -62,11 +71,13 @@
             class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
             @click="showAzureAmin = true"
           />
-          <span class="mt-2 text-xs text-gray-300">Azure Admin</span>
-        </div>
+      
+
+        </div>  
+        
       </div>
 
-      <p class="mt-4 text-sm md:text-base text-center text-gray-200 leading-relaxed">
+      <p class="mt-6 text-sm md:text-base text-center text-gray-200 leading-relaxed">
   These certifications provide a solid grounding for customer success and technical support roles,
   covering ITIL processes, OS and hardware fundamentals, core security concepts, Microsoft 365 /
   Entra ID administration, and cloud environment proficiency.
@@ -158,6 +169,8 @@ import AzureAdministrator from '../components/modals/AzureAdministrator.vue'
 import SecurityPlus from '../components/modals/SecurityPlus.vue'
 import APlus from '../components/modals/CompTIA-A+.vue'
 import ITILCertification from '../components/modals/ITIL-Certification.vue'
+import PCAPModal from '../components/modals/PythonModal.vue'
+const showPCAPModal = ref(false);
 
 const showITILModal = ref(false)
 const showAPlusModal = ref(false)

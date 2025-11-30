@@ -7,41 +7,42 @@
           <section>
             <h2 class="text-3xl font-bold mb-4">Background</h2>
             <p class="text-lg leading-relaxed text-gray-200">
-              I started my career in pharmacy, working with people every day and helping them
-              navigate real problems under pressure. Over time, that work refined the habits I still
-              rely on: staying calm, listening properly, and breaking issues down so they can be
-              solved cleanly. As much as I valued the role, I eventually realised I wanted to work
-              in a field built on curiosity, systems thinking, and constant learning — which is what
-              led me toward technology.
-            </p>
+  I started my career in pharmacy, working closely with people every day and helping them
+  navigate real problems under pressure. That environment shaped the habits I still rely on:
+  staying calm, listening properly, and breaking issues down so they can be solved cleanly.
+  Over time, I realised I wanted to be in a field built on curiosity, systems thinking, and
+  continuous learning — which is what led me toward technology.
+</p>
+
           </section>
 
           <section>
             <h2 class="text-3xl font-bold mb-4 text-orange-300">Current Work</h2>
             <p class="text-lg leading-relaxed text-gray-200">
-              Today I work in <span class="text-orange-300">technical support</span>, helping users
-              troubleshoot issues across <span class="text-orange-300">devices</span>,
-              <span class="text-orange-300">networks</span>, and
-              <span class="text-orange-300">SaaS applications</span>. I handle
-              <span class="text-orange-300">Level&nbsp;1&nbsp;and&nbsp;2&nbsp;support</span> tickets
-              end to end—diagnosing access issues, documenting fixes, and coordinating with
-              <span class="text-orange-300">product and engineering teams</span> when a problem
-              needs deeper investigation. I'm building experience across both
-              <span class="text-orange-300">SaaS support</span> and more traditional
-              <span class="text-orange-300">IT support environments</span>, focusing on clear
-              communication and giving users a straightforward path to a solution.
-            </p>
+  Today I work in <span class="text-orange-300">technical support</span>, helping users troubleshoot
+  issues across <span class="text-orange-300">devices</span>, <span class="text-orange-300">networks</span>,
+  and <span class="text-orange-300">SaaS applications</span>. I handle
+  <span class="text-orange-300">Level&nbsp;1&nbsp;and&nbsp;2</span> tickets end to end—running structured
+  checks, confirming assumptions, documenting fixes, and escalating clearly when deeper investigation
+  is needed. I work closely with <span class="text-orange-300">product and engineering teams</span> to
+  surface patterns and keep user impact low. I’m building experience across both
+  <span class="text-orange-300">SaaS support</span> and traditional
+  <span class="text-orange-300">IT environments</span>, focusing on clarity, consistency, and giving
+  users a straightforward path to a solution.
+</p>
+
           </section>
 
           <section>
             <h2 class="text-3xl font-bold mb-4">Growing My Capability</h2>
             <p class="text-lg leading-relaxed text-gray-200">
-              I’m enjoying getting stronger in Linux, scripting, and modern IT environments, and I
-              like understanding how different systems fit together. The more I learn, the more I
-              appreciate how much good support and clear communication matter in keeping things
-              running smoothly. I’m excited to keep building depth in these areas and grow into a
-              well-rounded IT professional who makes life easier for both users and teams.
-            </p>
+  I’m strengthening my capability in Linux, identity systems, scripting, and modern IT environments,
+  and I like understanding how different services interact under the hood. The more I learn, the more
+  I see how disciplined troubleshooting and clear communication keep systems — and teams — running
+  smoothly. I’m focused on building deeper technical foundations and growing into a reliable,
+  well-rounded IT professional.
+</p>
+
           </section>
         </div>
       </div>

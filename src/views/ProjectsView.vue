@@ -529,14 +529,94 @@
   <!-- Cloud Infrastructure Projects -->
 
   <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 mb-12">
-    <div class="mb-8">
+   <div class="mb-8">
+  <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+
+    <!-- Left: intro text (about 60%) -->
+    <div class="md:basis-3/5">
       <h2 class="text-2xl font-bold text-white mb-4">Cloud Infrastructure Projects</h2>
       <p class="text-slate-300 text-lg leading-relaxed">
         These projects demonstrate well-architected cloud solutions, automation pipelines, and
-        infrastructure patterns. Built with Terraform, containerization, and modern DevOps practices
-        to reflect real-world engineering workflows.
+        infrastructure patterns. They’re built with <span class="text-cyan-300">Terraform</span>, <span class="text-cyan-300">Python CDK</span>,
+        containerization, and modern DevOps practices to reflect real-world engineering workflows.
+        I learn best by combining project-based work with understanding the underlying
+        <span class="text-cyan-300">cloud and infrastructure fundamentals</span>.
       </p>
     </div>
+
+   <!-- Right: cert badges (about 40%) -->
+<div class="md:basis-2/5 flex flex-col items-center md:items-end">
+
+  <!-- Cert grid -->
+  <div class="flex flex-wrap justify-center md:justify-end gap-5">
+  
+    <!-- AWS SAA -->
+    <div class="flex flex-col items-center">
+      <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
+      <img
+        src="/images/certifications/aws-saa.png"
+        class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)]
+               transition-all duration-300 cursor-pointer rounded"
+        @click="showArchitectModal = true"
+        alt="AWS Certified Solutions Architect – Associate"
+      />
+   
+    </div>
+
+    <!-- AWS DVA -->
+    <div class="flex flex-col items-center">
+      <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
+      <img
+        src="/images/certifications/aws-dva.png"
+        class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)]
+               transition-all duration-300 cursor-pointer rounded"
+        @click="showDeveloperModal = true"
+        alt="AWS Developer Associate"
+      />
+    
+    </div>
+
+    <!-- Azure Admin -->
+    <div class="flex flex-col items-center">
+      <AzureAdmin :visible="showAzureAdminModal" @close="showAzureAdminModal = false" />
+      <img
+        src="/images/certifications/azure-admin.png"
+        class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)]
+               transition-all duration-300 cursor-pointer rounded"
+        @click="showAzureAdminModal = true"
+        alt="Azure Administrator Associate"
+      />
+      
+    </div>
+
+    <!-- Terraform -->
+    <div class="flex flex-col items-center">
+      <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
+      <img
+        src="/images/certifications/terraform003.png"
+        class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)]
+               transition-all duration-300 cursor-pointer rounded"
+        @click="showTerraformModal = true"
+        alt="Terraform Associate"
+      />
+   
+    </div>
+
+  </div>
+
+  <!-- Caption centered under the cert grid -->
+  <p class="text-slate-400 text-base mt-6 italic text-center w-full md:w-auto md:mr-14">
+  My cloud certifications supporting these projects
+</p>
+
+
+</div>
+
+
+  </div>
+  
+</div>
+
 
     <div class="space-y-8">
       <!-- Cloud Platforms & Infrastructure -->
@@ -2107,7 +2187,6 @@ import ProjectAzureContainerApps from '@/components/modals/Project-Azure-Contain
 import ProjectDocumentAnalyzer from '@/components/modals/Project-Document-Analyzer.vue'
 import ProjectJavaMavernJenkins from '@/components/modals/Project-JavaMavernJenkins.vue'
 import ProjectEnterpriseLandingZone from '@/components/modals/Project-EnterpriseLandingZone.vue'
-// import ProjectJavaRabbitMQ from '@/components/modals/Project-JavaRabbitMQ.vue'
 import ProjectAksGitopsProject from '@/components/modals/Project-AzureAKSGitops.vue'
 import ProjectObservabilityPlatform from '@/components/modals/Project-ObservabilityPlatform.vue'
 import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenkins.vue'
@@ -2119,6 +2198,14 @@ import ProjectOPNsense from '@/components/modals/Project-OPNsense.vue'
 import ProjectDC1 from '@/components/modals/Project-DC1.vue'
 import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'
 import ProjectPrometheusGrafana from '@/components/modals/Project-Prometheus.vue'
+import AWSArchitect from '@/components/modals/AWSArchitect.vue'
+import AWSDeveloper from '@/components/modals/AWSDeveloper.vue'
+import AzureAdmin from '@/components/modals/AzureAdministrator.vue'
+import TerraformModal from '@/components/modals/TerraformModal.vue'
+const showArchitectModal = ref(false)
+const showDeveloperModal = ref(false)
+const showAzureAdminModal = ref(false)
+const showTerraformModal = ref(false)
 const showPrometheusGrafana = ref(false)
 const showFileServer = ref(false)
 const showDC1 = ref(false)
