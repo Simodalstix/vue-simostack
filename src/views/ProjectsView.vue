@@ -99,7 +99,7 @@
                 class="group p-4 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-800 to-slate-900 hover:border-cyan-400 transition-all hover:shadow-lg hover:shadow-cyan-500/10"
               >
                 <!-- Beelink header -->
-                <div class="flex items-center gap-3 mb-3">
+                <div class="flex items-center gap-3 my-1 mb-3">
                   <img
                     src="/images/project-icons/beelink.png"
                     alt="Beelink SER8"
