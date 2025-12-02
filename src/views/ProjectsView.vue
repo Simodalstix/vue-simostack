@@ -1,7 +1,7 @@
 <template>
-  <div class="text-white container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-10">
+  <div class="text-white container mx-auto px-4 sm:px-6 py-4 sm:py-4 md:py-4">
     <!-- Home Lab Foundation -->
-    <div class="mb-12">
+    <div class="mb-2">
       <!-- Home Infrastructure (TOP container) -->
       <div class="bg-slate-700/30 rounded-xl p-4 sm:p-6 border border-slate-600/30 mb-6 isolate">
         <!-- Header -->
@@ -22,7 +22,7 @@
               <img
                 src="/images/project-icons/githubwhite.png"
                 alt="GitHub"
-                class="w-6 h-6 rounded-md"
+                class="w-8 h-8 rounded-md"
               />
               <span class="text-white font-medium group-hover:text-indigo-100">GitHub</span>
             </a>
@@ -34,7 +34,7 @@
               <img
                 src="/images/project-icons/hackthebox-green.svg"
                 alt="Hack The Box"
-                class="w-6 h-6 rounded-md"
+                class="w-8 h-8 rounded-md"
               />
               <span class="text-white font-medium group-hover:text-green-100">Hack The Box</span>
             </button>
@@ -43,7 +43,7 @@
               @click="scrollToCloudProjects"
               class="group flex items-center justify-center gap-3 px-4 py-3 bg-gradient-to-r from-slate-600/50 to-slate-700/50 hover:from-cyan-700 hover:to-cyan-600 border border-slate-500/50 hover:border-cyan-400 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20"
             >
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -56,479 +56,227 @@
           </div>
         </div>
 
-        <!-- Body -->
+               <!-- Body -->
         <div class="space-y-4">
-          <div class="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-7">
-            <!-- LEFT: description (merged span-4) -->
-            <div class="lg:col-span-4">
+          <div class="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-2">
+            <!-- LEFT: description -->
+            <div class="lg:col-span-1">
               <div class="relative z-10 overflow-hidden p-6 rounded-xl bg-slate-900">
                 <section>
                   <p class="text-lg leading-relaxed text-gray-200">
-                    My projects are where I explore how technology fits together—from
+                    I use a small home lab to practise how systems actually fit together, from
                     <span class="text-orange-300">cloud platforms</span> to
-                    <span class="text-orange-300">on-premises labs</span>. Each build helps me
-                    strengthen my understanding of <span class="text-orange-300">automation</span>,
-                    <span class="text-orange-300">networking</span>, and
-                    <span class="text-orange-300">identity</span> in real environments.
+                    <span class="text-orange-300">on-premises services</span>. It helps me build a
+                    practical understanding of <span class="text-orange-300">networking</span>,
+                    <span class="text-orange-300">identity</span>, and
+                    <span class="text-orange-300">automation</span> that I can apply when
+                    troubleshooting real issues.
                   </p>
 
                   <p class="text-lg leading-relaxed text-gray-200 mt-4">
-                    I use tools like <span class="text-orange-300">Terraform</span>,
-                    <span class="text-orange-300">Python CDK</span>, and CI/CD pipelines to practise
-                    reliable, repeatable deployments. My
-                    <span class="text-orange-300">VMware lab</span> extends that learning—testing
-                    <span class="text-orange-300">Active Directory</span>,
-                    <span class="text-orange-300">VPNs</span>, and
-                    <span class="text-orange-300">logging</span> in realistic setups.
+                    Most of the core services run on a
+                    <span class="text-orange-300">Beelink mini PC</span> with Proxmox, while a
+                    <span class="text-orange-300">Flint2 router</span> handles edge networking and
+                    Wi-Fi at home. Earlier firewall and VPN experiments were done on an
+                    <span class="text-orange-300">OPNsense</span> VM, which I now treat as a legacy
+                    setup for reference.
                   </p>
 
                   <p class="text-lg leading-relaxed text-gray-200 mt-4">
-                    Right now I’m focused on a long-term
-                    <span class="text-orange-300">Beelink mini PC</span> build, linking on-premises
-                    <span class="text-orange-300">Active Directory</span> with
-                    <span class="text-orange-300">Entra ID</span> and supporting it with
-                    <span class="text-orange-300">monitoring</span> and recovery tools. It’s a
-                    personal lab for continuous learning—a place to test, break, and understand how
-                    systems connect.
+                    The goal isn’t to run production at home, but to have a safe place to test,
+                    break, and fix things: <span class="text-orange-300">Active Directory</span>,
+                    file shares, <span class="text-orange-300">monitoring</span>,
+                    <span class="text-orange-300">PKI</span>, and hybrid
+                    <span class="text-orange-300">cloud</span> integrations.
                   </p>
                 </section>
               </div>
             </div>
 
-            <!-- VPN Tunnel spacer -->
-            <div class="lg:col-span-1 flex flex-col items-center pb-8">
-              <div class="flex flex-col items-center justify-between h-full relative">
-                <!-- vertical run above -->
-                <div class="w-[2px] flex-1"></div>
-
-                <!-- circle aligned with Rocky card -->
-                <span
-                  class="h-3 w-3 my-2 translate-y-[2px] rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                ></span>
-                <div class="text-center mb-2">
-                  <p class="text-cyan-400 text-xs font-medium">VPN Tunnel</p>
-                  <p class="text-slate-400 text-xs">Point-to-Site</p>
+             <!-- RIGHT: Beelink host as container for lab projects -->
+            <div class="lg:col-span-1">
+              <div
+                class="group p-4 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-800 to-slate-900 hover:border-cyan-400 transition-all hover:shadow-lg hover:shadow-cyan-500/10"
+              >
+                <!-- Beelink header -->
+                <div class="flex items-center gap-3 mb-3">
+                  <img
+                    src="/images/project-icons/beelink.png"
+                    alt="Beelink SER8"
+                    class="w-10 h-10"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <h5 class="text-sm font-semibold text-white group-hover:text-cyan-100">
+                      Beelink SER8 Lab Host (Proxmox)
+                    </h5>
+                    <p class="text-slate-400 text-xs">
+                      Ryzen 7 8845HS • 32GB DDR5 • 1TB NVMe • 2.5GbE
+                    </p>
+                  </div>
                 </div>
-                <!-- vertical run below -->
-                <div
-                  class="w-[2px] h-[328px] -mb-[180px] bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                ></div>
+
+                <p class="text-slate-400 text-xs mb-3">
+                  Runs the core lab services below so I can build and break realistic
+                  infrastructure in a controlled way.
+                </p>
+
+                <!-- Lab services list -->
+<div class="flex flex-col divide-y divide-slate-700">
+
+  <!-- AD / Windows Server -->
+  <button
+    type="button"
+    @click="showDC1 = true"
+    class="flex items-center py-1 text-left"
+  >
+    <div
+      class="flex items-center gap-3 w-full py-2 px-2 ml-1 rounded-xl transition-colors hover:bg-cyan-800/70"
+    >
+      <div class="flex items-center gap-2">
+        <img
+          src="/images/project-icons/windows.svg"
+          alt="Windows Server"
+          class="w-8 h-8"
+        />
+        <img
+          src="/images/project-icons/ad.png"
+          alt="Active Directory"
+          class="w-8 h-8"
+        />
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-medium text-slate-100 group-hover:text-cyan-100">
+          Windows Server 2022 – Active Directory & GPO
+        </p>
+      </div>
+    </div>
+  </button>
+
+  <!-- File Server -->
+  <button
+    type="button"
+    @click="showFileServer = true"
+    class="flex items-center py-1 text-left"
+  >
+    <div
+      class="flex items-center gap-3 w-full py-2 px-2 ml-1 rounded-xl transition-colors hover:bg-cyan-800/70"
+    >
+      <div class="flex items-center gap-2">
+        <img
+          src="/images/project-icons/rocky.svg"
+          alt="Rocky Linux"
+          class="w-8 h-8"
+        />
+        <img
+          src="/images/project-icons/samba.png"
+          alt="Samba"
+          class="w-12 h-6"
+        />
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-medium text-slate-100 group-hover:text-cyan-100">
+          Rocky Linux File Server – Samba Shares
+        </p>
+      </div>
+    </div>
+  </button>
+
+  <!-- Monitoring -->
+  <button
+    type="button"
+    @click="showPrometheusGrafana = true"
+    class="flex items-center py-1 text-left"
+  >
+    <div
+      class="flex items-center gap-3 w-full py-2 px-2 ml-1 rounded-xl transition-colors hover:bg-cyan-800/70"
+    >
+      <div class="flex items-center gap-2">
+        <img
+          src="/images/project-icons/prometheus-icon.svg"
+          alt="Prometheus"
+          class="w-8 h-8"
+        />
+        <img
+          src="/images/project-icons/grafana.png"
+          alt="Grafana"
+          class="w-8 h-8"
+        />
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-medium text-slate-100 group-hover:text-cyan-100">
+          Prometheus + Grafana – Lab Monitoring
+        </p>
+      </div>
+    </div>
+  </button>
+
+  <!-- Vault / PKI -->
+  <button
+    type="button"
+    @click="showVaultPki = true"
+    class="flex items-center py-1 text-left"
+  >
+    <div
+      class="flex items-center gap-3 w-full py-2 px-2 ml-1 rounded-xl transition-colors hover:bg-cyan-800/70"
+    >
+      <div class="flex items-center gap-2">
+        <img
+          src="/images/project-icons/rocky.svg"
+          alt="Rocky Linux"
+          class="w-8 h-8"
+        />
+        <img
+          src="/images/project-icons/vault.svg"
+          alt="Vault"
+          class="w-8 h-8"
+        />
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-medium text-slate-100 group-hover:text-cyan-100">
+          Vault + PKI – Certificates & Secrets
+        </p>
+      </div>
+    </div>
+  </button>
+
+  <!-- OPNsense legacy -->
+  <button
+    type="button"
+    @click="showOPNsense = true"
+    class="flex items-center py-1 text-left"
+  >
+    <div
+      class="flex items-center gap-3 w-full py-2 px-2 ml-1 rounded-xl transition-colors hover:bg-cyan-800/70"
+    >
+      <div class="flex items-center gap-2">
+        <img
+          src="/images/project-icons/opnsense.webp"
+          alt="OPNsense"
+          class="w-8 h-8"
+        />
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-medium text-slate-100 group-hover:text-cyan-100">
+          OPNsense Firewall – Legacy VPN & Routing Lab
+        </p>
+      </div>
+    </div>
+  </button>
+
+</div>
+
               </div>
-            </div>
-
-            <!-- RIGHT: stacked cards -->
-            <div class="lg:col-span-2 flex flex-col gap-4">
-              <BaseCard
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/rocky.svg" alt="Rocky Linux" class="w-8 h-8" />
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      Rocky Linux 10 Laptop
-                    </h5>
-                    <p class="text-slate-400 text-xs">Ansible • Containers • Tooling</p>
-                  </div>
-                </div>
-                <p class="text-slate-400 text-sm mb-4">
-                  Daily Linux workstation for automation work, containers, and lab management. The
-                  VPN line will extend to this host later.
-                </p>
-
-                <!-- glowing cyan elbow -->
-                <div class="flex items-center">
-                  <div
-                    class="h-[2px] w-36 -ml-[140px] bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                  ></div>
-                  <span
-                    class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                  ></span>
-                </div>
-              </BaseCard>
-
-              <BaseCard
-                @click="showVmwareModal = true"
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/windows.svg" alt="Windows 11" class="w-8 h-8" />
-                  <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8" />
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      Windows 11 Laptop
-                    </h5>
-                    <p class="text-slate-400 text-xs">VMware Workstation • Primary Dev Host</p>
-                  </div>
-                </div>
-                <p class="text-slate-400 text-sm mb-4">
-                  My general-purpose Windows 11 laptop and gaming rig, which I also use with VMware
-                  Workstation for pfSense and lab practice.
-                </p>
-              </BaseCard>
             </div>
           </div>
         </div>
       </div>
-      <!-- /Home Infrastructure (TOP container) -->
-
-      <!-- Beelink Infrastructure -->
-      <div class="bg-slate-700/30 rounded-xl p-4 sm:p-6 border border-slate-600/30">
-        <!-- Header -->
-        <div class="flex justify-between items-center mb-6">
-          <!-- Left (title + details) -->
-          <div class="flex items-center gap-4">
-            <img
-              src="/images/project-icons/beelink.png"
-              alt="Beelink SER8"
-              class="w-8 h-8 sm:w-10 sm:h-10"
-            />
-            <div>
-              <h3 class="text-lg sm:text-xl font-semibold text-slate-200">Beelink SER8 Mini-PC</h3>
-              <p class="text-slate-400 text-xs sm:text-sm">
-                Ryzen 7 8845HS • 32GB DDR5 • 1TB NVMe • 2.5GbE
-              </p>
-            </div>
-          </div>
-
-          <!-- Right (Proxmox badge) -->
-          <div class="flex items-center gap-2 sm:gap-3">
-            <span class="text-slate-400 text-center text-sm hidden sm:block">
-              Proxmox <br />Hypervisor
-            </span>
-            <img
-              src="/images/project-icons/proxmox2.png"
-              alt="Proxmox"
-              class="w-8 h-8 sm:w-10 sm:h-10"
-            />
-          </div>
-        </div>
-
-        <!-- Body -->
-        <div class="space-y-4">
-          <!-- ONE unified grid: 2 columns (left) + VPN spacer + 2 columns (right) -->
-          <div class="grid gap-4 sm:gap-6 grid-cols-1 lg:grid-cols-7">
-            <!-- Left column (stacked 2 cards) -->
-            <div class="lg:col-span-2 flex flex-col gap-4">
-              <!-- Rocky File Server -->
-              <BaseCard
-                @click="showFileServer = true"
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img
-                    src="/images/project-icons/rocky.svg"
-                    alt="Rocky Linux"
-                    class="w-8 h-8"
-                  /><img
-                    src="/images/project-icons/ansible.svg"
-                    alt="Ansible"
-                    class="w-8 h-8"
-                  /><img src="/images/project-icons/samba.png" alt="Samba" class="w-16 h-8" />
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      File Server
-                    </h5>
-                    <p class="text-slate-400 text-xs">192.168.100.31 • 2GB RAM</p>
-                  </div>
-                </div>
-                <p class="text-slate-400 text-sm mb-4">
-                  Centralized file storage for Windows and Rocky Linux VMs using Samba, mimicking
-                  on-prem setups. Autofs mounts shares on demand, with planned cloud sync later.
-                </p>
-                <!-- Project metadata footer -->
-                <div
-                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-                >
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
-                    >
-                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                      Active
-                    </span>
-                  </div>
-                  <span class="text-gray-400">Click for Details</span>
-                </div>
-              </BaseCard>
-              <!-- Wazuh Security Card -->
-              <BaseCard
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8" /><img
-                    src="/images/project-icons/wazuh-icon.png"
-                    alt="Wazuh"
-                    class="w-8 h-8 rounded-full"
-                  /><img
-                    src="/images/project-icons/opensearch2.webp"
-                    alt="OpenSearch"
-                    class="w-8 h-8 rounded-full"
-                  />
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      Wazuh + OpenSearch
-                    </h5>
-                    <p class="text-slate-400 text-xs">192.168.100.34 • 10GB RAM</p>
-                  </div>
-                </div>
-                <p class="text-slate-400 text-sm mb-4">
-                  SIEM with threat detection, log aggregation from all lab systems, and security
-                  event correlation. Integrates with cloud security tools for hybrid monitoring.
-                </p>
-                <!-- Project metadata footer -->
-                <div
-                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-                >
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="flex items-center gap-1 px-2 py-1 bg-yellow-500/20 text-yellow-300 border border-yellow-500/30 rounded-full"
-                    >
-                      <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      To Implement
-                    </span>
-                  </div>
-                  <span class="italic text-gray-400">Details coming soon</span>
-                </div>
-              </BaseCard>
-            </div>
-
-            <!-- Second Column -->
-            <div class="lg:col-span-2 flex flex-col gap-4">
-              <!-- OPNsense Card -->
-              <BaseCard
-                @click="showOPNsense = true"
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8" />
-                  <img
-                    src="/images/project-icons/wireguard.png"
-                    alt="WireGuard"
-                    class="w-8 h-8 rounded-full"
-                  />
-
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      OPNsense Firewall
-                    </h5>
-                    <p class="text-slate-400 text-xs">192.168.100.1 • 3GB RAM</p>
-                  </div>
-
-                  <!-- right-side port + pipe -->
-                  <div class="ml-auto flex items-center">
-                    <!-- small horizontal line -->
-
-                    <!-- circle node -->
-                    <span
-                      class="h-3 w-3 -mr-[4px] rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                    ></span>
-                    <div
-                      class="h-[2px] w-36 -mr-36 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                    ></div>
-                  </div>
-                </div>
-
-                <p class="text-slate-400 text-sm mb-4">
-                  Network gateway with VPN tunnels to cloud landing zones. Replaces pfSense with
-                  advanced routing, VLAN segmentation, and site-to-site connectivity testing.
-                </p>
-                <!-- Project metadata footer -->
-                <div
-                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-                >
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
-                    >
-                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                      Active
-                    </span>
-                  </div>
-                  <span class="text-gray-400">Click for Details</span>
-                </div>
-              </BaseCard>
-
-              <!-- Prometheus Card -->
-              <BaseCard
-                @click="showPrometheusGrafana = true"
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8" />
-                  <img
-                    src="/images/project-icons/prometheus-icon.svg"
-                    alt="Prometheus"
-                    class="w-8 h-8"
-                  />
-                  <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8" />
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      Prometheus + Grafana
-                    </h5>
-                    <p class="text-slate-400 text-xs">192.168.100.33 • 4GB RAM</p>
-                  </div>
-                </div>
-                <p class="text-slate-400 text-sm mb-4">
-                  Infrastructure monitoring for all lab systems with custom dashboards. Collecting
-                  metrics from cloud resources to create unified observability across hybrid
-                  environments.
-                </p>
-                <!-- Project metadata footer -->
-                <div
-                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-                >
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
-                    >
-                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                      Active
-                    </span>
-                  </div>
-                  <span class="text-gray-400">Click for Details</span>
-                </div>
-              </BaseCard>
-            </div>
-            <!-- VPN Tunnel spacer column -->
-            <div class="lg:col-span-1 flex flex-col items-center pt-6 pb-8">
-              <div class="flex flex-col items-center">
-                <!-- vertical up into header -->
-                <div
-                  class="w-[2px] h-12 bg-gradient-to-b from-cyan-400 to-sky-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)] -mt-6"
-                ></div>
-
-                <!-- elbow at header height -->
-                <div class="flex items-center -translate-y-[7px]">
-                  <span
-                    class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                  ></span>
-                </div>
-
-                <!-- continuous vertical down, overlapping elbow circle -->
-                <div
-                  class="w-[2px] h-20 -mt-[8px] bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                ></div>
-
-                <!-- WireGuard node -->
-
-                <div class="text-center my-1">
-                  <p class="text-cyan-400 text-xs font-medium">VPN Tunnel</p>
-                  <p class="text-slate-400 text-xs">IPsec</p>
-                </div>
-
-                <!-- continue vertical -->
-                <div
-                  class="w-[2px] h-60 bg-cyan-400 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                ></div>
-
-                <!-- elbow connection circle -->
-                <span
-                  class="h-3 w-3 rounded-full bg-cyan-400 ring-2 ring-cyan-300/40 drop-shadow-[0_0_6px_rgba(34,211,238,0.7)]"
-                ></span>
-                <div class="flex items-center space-x-2 mt-2">
-                  <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-10 h-10" />
-                  <img src="/images/main-tools/azure-icon.svg" alt="Azure" class="w-10 h-10" />
-                </div>
-              </div>
-            </div>
-
-            <div class="lg:col-span-2 flex flex-col gap-4">
-              <!-- Vault Card -->
-              <BaseCard
-                @click="showVaultPki = true"
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img src="/images/project-icons/rocky.svg" alt="Rocky Linux" class="w-8 h-8" />
-                  <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8" />
-                  <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8" />
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      Vault + PKI
-                    </h5>
-                    <p class="text-slate-400 text-xs">192.168.100.30 • 3GB RAM</p>
-                  </div>
-                </div>
-                <p class="text-slate-400 text-sm mb-4">
-                  Certificate authority and secrets management for lab PKI. Issuing certificates for
-                  services and testing integration with cloud identity providers and key management
-                  services.
-                </p>
-                <!-- Project metadata footer -->
-                <div
-                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-                >
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
-                    >
-                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                      Active
-                    </span>
-                  </div>
-                  <span class="text-gray-400">Click for Details</span>
-                </div>
-              </BaseCard>
-
-              <!-- Windows Server Card -->
-              <BaseCard
-                @click="showDC1 = true"
-                class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-cyan-500/10"
-              >
-                <div class="flex items-center gap-3 mb-4">
-                  <img
-                    src="/images/project-icons/windows.svg"
-                    alt="Windows Server"
-                    class="w-8 h-8"
-                  />
-                  <img src="/images/project-icons/ad.png" alt="Active Directory" class="w-8 h-8" />
-                  <div class="flex-1 min-w-0">
-                    <h5 class="text-lg font-bold text-white group-hover:text-cyan-100">
-                      Windows Server 2022
-                    </h5>
-                    <p class="text-slate-400 text-xs">192.168.100.32 • 4GB RAM</p>
-                  </div>
-                </div>
-                <p class="text-slate-400 text-sm mb-4">
-                  Active Directory domain services with Group Policy management. Testing hybrid
-                  identity scenarios and Azure AD Connect integration for cloud authentication
-                  workflows.
-                </p>
-                <!-- Project metadata footer -->
-                <div
-                  class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-                >
-                  <div class="flex items-center gap-4">
-                    <span
-                      class="flex items-center gap-1 px-2 py-1 bg-green-500/20 text-green-300 border border-green-500/30 rounded-full"
-                    >
-                      <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                      Active
-                    </span>
-                  </div>
-                  <span class="text-gray-400">Click for Details</span>
-                </div>
-              </BaseCard>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="mt-6 pt-4 border-t border-slate-600">
-          <div class="flex items-center justify-between">
-            <span class="text-green-400 text-sm font-medium"
-              >AD Domain: beelink.local • 6 Active VMs</span
-            >
-            <span class="text-slate-400 text-xs">26GB RAM allocated</span>
-          </div>
-        </div>
-      </div>
+     
     </div>
   </div>
 
   <!-- Cloud Infrastructure Projects -->
 
-  <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 mb-12">
+  <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 mb-6">
    <div class="mb-8">
   <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
 

@@ -97,26 +97,26 @@
           <h2 class="text-2xl font-bold mb-3">Customer Success & SaaS Support</h2>
 
           <p class="text-gray-200 leading-relaxed">
-            Experience in <span class="text-orange-300">ticketed SaaS environments</span> where
+            Experience in <span class="text-cyan-300">ticketed SaaS environments</span> where
             clear communication, tone, and follow-up matter. Comfortable handling first contact
-            through <span class="text-orange-300">Dialpad</span>, email, and live chat, and carrying
+            through <span class="text-cyan-300">Dialpad</span>, email, and live chat, and carrying
             a case through to resolution.
           </p>
 
           <p class="text-gray-200 leading-relaxed mt-3">
-            Experienced with <span class="text-orange-300">TeamViewer</span> and
-            <span class="text-orange-300">RDP</span> for guided sessions, configuration changes, and
-            assisting with <span class="text-orange-300">installs</span> or workflow fixes.
+            Experienced with <span class="text-cyan-300">TeamViewer</span> and
+            <span class="text-cyan-300">RDP</span> for guided sessions, configuration changes, and
+            assisting with <span class="text-cyan-300">installs</span> or workflow fixes.
             Accurate, clear case notes maintained in
-            <span class="text-orange-300">ServiceNow</span> and
-            <span class="text-orange-300">HubSpot</span>.
+            <span class="text-cyan-300">ServiceNow</span> and
+            <span class="text-cyan-300">HubSpot</span>.
           </p>
 
           <p class="text-gray-200 leading-relaxed mt-3">
-            Collaboration with engineering via <span class="text-orange-300">Slack</span>, sharing
+            Collaboration with engineering via <span class="text-cyan-300">Slack</span>, sharing
             structured repro steps, logs, and screenshots – not just forwarding tickets. Customer
-            background from <span class="text-orange-300">pharmacy</span> reinforces accuracy and a
-            calm approach with <span class="text-orange-300">stressed customers</span>.
+            background from <span class="text-cyan-300">pharmacy</span> reinforces accuracy and a
+            calm approach with <span class="text-cyan-300">stressed customers</span>.
           </p>
         </div>
 
@@ -125,27 +125,27 @@
           <h2 class="text-2xl font-bold mb-3">Technical Support & Troubleshooting</h2>
 
           <p class="text-gray-200 leading-relaxed">
-  Works directly with <span class="text-orange-300">Microsoft 365</span>,
-  <span class="text-orange-300">Entra ID</span>, and
-  <span class="text-orange-300">Active Directory</span> to diagnose identity,
-  access, licensing, and <span class="text-orange-300">security group</span> issues.
+  Works directly with <span class="text-cyan-300">Microsoft 365</span>,
+  <span class="text-cyan-300">Entra ID</span>, and
+  <span class="text-cyan-300">Active Directory</span> to diagnose identity,
+  access, licensing, and <span class="text-cyan-300">security group</span> issues.
   Breaks down sign-in failures with structured checks that reveal the actual cause.
 </p>
 
 
           <p class="text-gray-200 leading-relaxed mt-3">
-            Familiar with <span class="text-orange-300">Intune</span> for onboarding, compliance,
-            and <span class="text-orange-300">application installs</span>. On
-            <span class="text-orange-300">Windows 10/11</span> and Linux, uses logs, event viewer,
-            service states, and focused <span class="text-orange-300">PowerShell</span> /
-            <span class="text-orange-300">Bash</span> commands instead of guesswork.
+            Familiar with <span class="text-cyan-300">Intune</span> for onboarding, compliance,
+            and <span class="text-cyan-300">application installs</span>. On
+            <span class="text-cyan-300">Windows 10/11</span> and Linux, uses logs, event viewer,
+            service states, and focused <span class="text-cyan-300">PowerShell</span> /
+            <span class="text-cyan-300">Bash</span> commands instead of guesswork.
           </p>
 
           <p class="text-gray-200 leading-relaxed mt-3">
-            <span class="text-orange-300">Azure Admin</span> and
-            <span class="text-orange-300">AWS CP</span> provide context when issues involve
-            <span class="text-orange-300">APIs</span>,
-            <span class="text-orange-300">IAM</span>, or cloud-backed services. Able to identify
+            <span class="text-cyan-300">Azure Admin</span> and
+            <span class="text-cyan-300">AWS CP</span> provide context when issues involve
+            <span class="text-cyan-300">APIs</span>,
+            <span class="text-cyan-300">IAM</span>, or cloud-backed services. Able to identify
             whether a problem is likely endpoint, identity, or platform-side and communicate that
             clearly to both users and engineers.
           </p>
