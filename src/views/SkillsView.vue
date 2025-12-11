@@ -82,14 +82,14 @@
       <div class="mt-6 grid gap-6 text-center md:grid-cols-[4fr_3fr]">
         <p class="text-sm text-gray-200 leading-relaxed">
           <span class="font-semibold text-cyan-300">Foundational Certifications:</span>
-          ITIL, A+, Security+, and AWS Cloud Practitioner give me the baseline expected in modern IT
-          and support roles — operations fundamentals, security basics, and cloud awareness.
+          Show that I have the baseline fluency expected in modern IT — service management,
+          operating systems, hardware fundamentals, and cloud basics.
         </p>
 
         <p class="text-sm text-gray-200 leading-relaxed">
           <span class="font-semibold text-cyan-300">Systems & Engineering Certifications:</span>
-          PCAP, RHCSA, and Azure Administrator reflect deeper capability in scripting, Linux system
-          administration, and cloud platform operations.
+          Demonstrate deeper technical capability, including scripting, Linux administration, and
+          platform-level problem-solving.
         </p>
       </div>
     </section>
