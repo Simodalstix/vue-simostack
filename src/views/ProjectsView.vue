@@ -172,6 +172,11 @@
           alt="Samba"
           class="w-12 h-6"
         />
+        <img
+          src="/images/project-icons/ansible.svg"
+          alt="Ansible"
+          class="w-8 h-8"
+        />
       </div>
       <div class="flex-1 min-w-0">
         <p class="text-xs font-medium text-slate-100 group-hover:text-cyan-100">
@@ -201,6 +206,11 @@
           alt="Grafana"
           class="w-8 h-8"
         />
+         <img
+          src="/images/project-icons/ansible.svg"
+          alt="Ansible"
+          class="w-8 h-8"
+        />
       </div>
       <div class="flex-1 min-w-0">
         <p class="text-xs font-medium text-slate-100 group-hover:text-cyan-100">
@@ -228,6 +238,11 @@
         <img
           src="/images/project-icons/vault.svg"
           alt="Vault"
+          class="w-8 h-8"
+        />
+         <img
+          src="/images/project-icons/ansible.svg"
+          alt="Ansible"
           class="w-8 h-8"
         />
       </div>

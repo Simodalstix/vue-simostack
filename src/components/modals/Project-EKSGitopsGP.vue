@@ -40,39 +40,6 @@
       </aside>
     </div>
 
-    <!-- Implementation Details -->
-    <div
-      class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
-    >
-      <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">High Availability</h3>
-        <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>3 worker nodes across availability zones</li>
-          <li>Auto-scaling based on CPU/memory usage</li>
-          <li>Pod health checks and restart policies</li>
-          <li>GitOps drift detection</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost Management</h3>
-        <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>~$130/month development environment</li>
-          <li>Spot instances for 70% cost reduction</li>
-          <li>Single NAT Gateway, GP3 storage</li>
-          <li>Nodes scale down when not needed</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Monitoring</h3>
-        <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Grafana dashboards for cluster metrics</li>
-          <li>Prometheus collecting pod and node data</li>
-          <li>Basic alerting for system issues</li>
-          <li>ArgoCD deployment status tracking</li>
-        </ul>
-      </div>
-    </div>
-
     <!-- Footer: scope + links -->
     <footer
       class="border-t border-gray-700 p-4 flex flex-col sm:flex-row justify-between items-center text-sm gap-4"

@@ -18,7 +18,8 @@ coverage
 restructure.md
 /cypress/videos/
 /cypress/screenshots/
-
+# random
+ideas.txt
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

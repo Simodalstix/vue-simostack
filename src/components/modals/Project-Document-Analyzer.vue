@@ -40,39 +40,6 @@
       </aside>
     </div>
 
-    <!-- New Row: Reliability, Cost, Observability -->
-    <div
-      class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-md bg-gray-800 text-gray-200 border-t border-gray-700"
-    >
-      <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Reliability</h3>
-        <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Region: Sydney for AU data residency</li>
-          <li>Error handling: Retry logic with dead letter queues</li>
-          <li>Processing status: Real-time updates via DynamoDB</li>
-          <li>Fallback: Graceful on AI failure</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Cost</h3>
-        <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Target: ~$20-50/month for moderate usage</li>
-          <li>Optimizations: Serverless, on-demand billing, lifecycle policies</li>
-          <li>Drivers: Bedrock tokens, Lambda invocations, S3 storage</li>
-          <li>Scaling: Pay-per-use model scales to zero</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="font-bold text-lg mb-2 text-orange-300">Observability</h3>
-        <ul class="list-disc list-inside space-y-1 text-sm">
-          <li>Tracing: X-Ray end-to-end request tracking</li>
-          <li>Metrics: CloudWatch dashboards for all services</li>
-          <li>Logs: Structured logging with correlation IDs</li>
-          <li>Monitoring: Processing time and accuracy metrics</li>
-        </ul>
-      </div>
-    </div>
-
     <!-- Footer: scope + links -->
     <footer
       class="border-t border-gray-700 p-4 flex flex-col sm:flex-row justify-between items-center text-sm gap-4"

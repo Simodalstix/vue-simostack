@@ -6,117 +6,124 @@
     </section>
 
     <!-- Certification Strip -->
-    <section
-      class="mb-4 rounded-xl  bg-slate-900/70 px-6 py-5 max-w-5xl mx-auto"
-    >
-      <div class="flex flex-wrap justify-center gap-6 md:gap-8">
-        <!-- ITIL -->
+    <section class="mb-4 rounded-xl bg-slate-900/70 px-6 py-5 max-w-7xl mx-auto">
+      <!-- Row of Certifications -->
+      <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+        <!-- Foundational (first 4) -->
         <div class="flex flex-col items-center">
           <ITILCertification :visible="showITILModal" @close="showITILModal = false" />
           <img
             src="/images/certifications/itil.png"
-            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded"
+            class="w-16 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
             @click="showITILModal = true"
           />
-          
         </div>
 
-        <!-- A+ -->
         <div class="flex flex-col items-center">
           <APlus :visible="showAPlusModal" @close="showAPlusModal = false" />
           <img
             src="/images/certifications/a-plus.png"
-            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+            class="w-16 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
             @click="showAPlusModal = true"
           />
-        
         </div>
 
-        <!-- Security+ -->
         <div class="flex flex-col items-center">
           <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
           <img
             src="/images/certifications/securityplus.png"
-            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+            class="w-16 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
             @click="showSecurityPlusModal = true"
           />
-         
         </div>
-<div class="flex flex-col items-center">
-  <PCAPModal :visible="showPCAPModal" @close="showPCAPModal = false" />
-  <img
-    src="/images/certifications/pcap.png"
-    class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
-    @click="showPCAPModal = true"
-    alt="Python Institute PCAP – Certified Associate in Python Programming"
-  />
- 
-</div>
-        <!-- AWS Cloud Practitioner -->
+
         <div class="flex flex-col items-center">
           <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
           <img
             src="/images/certifications/Cloud_Practitioner.png"
-            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+            class="w-16 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
             @click="showPractitionerModal = true"
           />
-         
         </div>
 
-        <!-- Azure Administrator -->
+        <!-- Divider between groups (desktop only) -->
+        <div class="hidden md:block h-24 w-px bg-slate-700/60 mx-2"></div>
+
+        <!-- Systems / Engineering (last 3) -->
+        <div class="flex flex-col items-center">
+          <PCAPModal :visible="showPCAPModal" @close="showPCAPModal = false" />
+          <img
+            src="/images/certifications/pcap.png"
+            class="w-16 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
+            @click="showPCAPModal = true"
+          />
+        </div>
+
+        <div class="flex flex-col items-center">
+          <RHCSA :visible="showRHCSA" @close="showRHCSA = false" />
+          <img
+            src="/images/certifications/rhcsa.png"
+            class="w-16 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
+            @click="showRHCSA = true"
+          />
+        </div>
+
         <div class="flex flex-col items-center">
           <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
           <img
             src="/images/certifications/azure-admin.png"
-            class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
+            class="w-16 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
             @click="showAzureAmin = true"
           />
-      
-
-        </div>  
-        
+        </div>
       </div>
 
-      <p class="mt-6 text-sm md:text-base text-center text-gray-200 leading-relaxed">
-  These certifications provide a solid grounding for customer success and technical support roles,
-  covering ITIL processes, OS and hardware fundamentals, core security concepts, Microsoft 365 /
-  Entra ID administration, and cloud environment proficiency.
-</p>
+      <!-- Group blurbs -->
+      <div class="mt-6 grid gap-6 text-center md:grid-cols-[4fr_3fr]">
+        <p class="text-sm text-gray-200 leading-relaxed">
+          <span class="font-semibold text-cyan-300">Foundational Certifications:</span>
+          ITIL, A+, Security+, and AWS Cloud Practitioner give me the baseline expected in modern IT
+          and support roles — operations fundamentals, security basics, and cloud awareness.
+        </p>
 
-
+        <p class="text-sm text-gray-200 leading-relaxed">
+          <span class="font-semibold text-cyan-300">Systems & Engineering Certifications:</span>
+          PCAP, RHCSA, and Azure Administrator reflect deeper capability in scripting, Linux system
+          administration, and cloud platform operations.
+        </p>
+      </div>
     </section>
 
     <!-- Unified Dual-Role Gradient Card -->
     <section
-  class="rounded-2xl border border-slate-700 bg-gradient-to-br from-cyan-800 to-slate-900 px-6 py-6 max-w-6xl mx-auto"
->
-
+      class="rounded-2xl border border-cyan-500 bg-gradient-to-br from-cyan-900 to-slate-900 px-6 py-6 max-w-6xl mx-auto"
+    >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- LEFT: Customer Success / SaaS Support -->
         <div class="flex flex-col">
           <h2 class="text-2xl font-bold mb-3">Customer Success & SaaS Support</h2>
 
           <p class="text-gray-200 leading-relaxed">
-            Experience in <span class="text-cyan-300">ticketed SaaS environments</span> where
-            clear communication, tone, and follow-up matter. Comfortable handling first contact
-            through <span class="text-cyan-300">Dialpad</span>, email, and live chat, and carrying
-            a case through to resolution.
+            Experience in <span class="text-cyan-300">ticketed SaaS environments</span> where clear
+            communication, tone, and follow-up matter. Comfortable handling first contact through
+            <span class="text-cyan-300">Dialpad</span>, email, and live chat, and carrying a case
+            through to resolution.
           </p>
 
           <p class="text-gray-200 leading-relaxed mt-3">
-            Experienced with <span class="text-cyan-300">TeamViewer</span> and
+            Skilled with <span class="text-cyan-300">TeamViewer</span> and
             <span class="text-cyan-300">RDP</span> for guided sessions, configuration changes, and
-            assisting with <span class="text-cyan-300">installs</span> or workflow fixes.
-            Accurate, clear case notes maintained in
-            <span class="text-cyan-300">ServiceNow</span> and
-            <span class="text-cyan-300">HubSpot</span>.
+            helping users with <span class="text-cyan-300">installs</span> or workflow fixes.
+            Maintains accurate, structured case notes in <span class="text-cyan-300">HubSpot</span>.
           </p>
 
           <p class="text-gray-200 leading-relaxed mt-3">
-            Collaboration with engineering via <span class="text-cyan-300">Slack</span>, sharing
-            structured repro steps, logs, and screenshots – not just forwarding tickets. Customer
-            background from <span class="text-cyan-300">pharmacy</span> reinforces accuracy and a
-            calm approach with <span class="text-cyan-300">stressed customers</span>.
+            Collaborates effectively with engineering — providing clear repro steps, logs, and
+            screenshots instead of escalating blindly. Familiar with internal communication tools
+            such as
+            <span class="text-cyan-300">Slack</span> as part of that workflow. Background in
+            <span class="text-cyan-300">pharmacy</span> reinforces accuracy and a calm approach with
+            <span class="text-cyan-300">stressed customers</span>.
           </p>
         </div>
 
@@ -125,17 +132,16 @@
           <h2 class="text-2xl font-bold mb-3">Technical Support & Troubleshooting</h2>
 
           <p class="text-gray-200 leading-relaxed">
-  Works directly with <span class="text-cyan-300">Microsoft 365</span>,
-  <span class="text-cyan-300">Entra ID</span>, and
-  <span class="text-cyan-300">Active Directory</span> to diagnose identity,
-  access, licensing, and <span class="text-cyan-300">security group</span> issues.
-  Breaks down sign-in failures with structured checks that reveal the actual cause.
-</p>
-
+            Works directly with <span class="text-cyan-300">Microsoft 365</span>,
+            <span class="text-cyan-300">Entra ID</span>, and
+            <span class="text-cyan-300">Active Directory</span> to diagnose identity, access,
+            licensing, and <span class="text-cyan-300">security group</span> issues. Breaks down
+            sign-in failures with structured checks that reveal the actual cause.
+          </p>
 
           <p class="text-gray-200 leading-relaxed mt-3">
-            Familiar with <span class="text-cyan-300">Intune</span> for onboarding, compliance,
-            and <span class="text-cyan-300">application installs</span>. On
+            Familiar with <span class="text-cyan-300">Intune</span> for onboarding, compliance, and
+            <span class="text-cyan-300">application installs</span>. On
             <span class="text-cyan-300">Windows 10/11</span> and Linux, uses logs, event viewer,
             service states, and focused <span class="text-cyan-300">PowerShell</span> /
             <span class="text-cyan-300">Bash</span> commands instead of guesswork.
@@ -144,10 +150,9 @@
           <p class="text-gray-200 leading-relaxed mt-3">
             <span class="text-cyan-300">Azure Admin</span> and
             <span class="text-cyan-300">AWS CP</span> provide context when issues involve
-            <span class="text-cyan-300">APIs</span>,
-            <span class="text-cyan-300">IAM</span>, or cloud-backed services. Able to identify
-            whether a problem is likely endpoint, identity, or platform-side and communicate that
-            clearly to both users and engineers.
+            <span class="text-cyan-300">APIs</span>, <span class="text-cyan-300">IAM</span>, or
+            cloud-backed services. Able to identify whether a problem is likely endpoint, identity,
+            or platform-side and communicate that clearly to both users and engineers.
           </p>
         </div>
       </div>
@@ -155,6 +160,7 @@
   </div>
 
   <!-- Modals -->
+  <RHCSA :visible="showRHCSA" @close="showRHCSA = false" />
   <AWSPractioner :visible="showPractitionerModal" @close="showPractitionerModal = false" />
   <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
   <AzureAdministrator :visible="showAzureAmin" @close="showAzureAmin = false" />
@@ -170,8 +176,9 @@ import SecurityPlus from '../components/modals/SecurityPlus.vue'
 import APlus from '../components/modals/CompTIA-A+.vue'
 import ITILCertification from '../components/modals/ITIL-Certification.vue'
 import PCAPModal from '../components/modals/PythonModal.vue'
-const showPCAPModal = ref(false);
-
+import RHCSA from '../components/modals/RHCSA-Cert.vue'
+const showRHCSA = ref(false)
+const showPCAPModal = ref(false)
 const showITILModal = ref(false)
 const showAPlusModal = ref(false)
 const showSecurityPlusModal = ref(false)
