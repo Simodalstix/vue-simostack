@@ -1,46 +1,100 @@
 <template>
-  <div class="bg-slate-900 min-h-screen flex flex-col justify-center text-white">
-    <div class="text-center p-6 sm:p-8 md:p-12 lg:p-20" style="padding-bottom: 10rem">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+  <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
+    <!-- Header: Name & Role -->
+    <section class="text-center mb-6 sm:mb-8">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-3 sm:mb-4">
         Simon Parker
       </h1>
-      <h1 class="text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight tracking-tight">
-        <span class="text-cyan-400">Technical Support Analyst</span>
-      </h1>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">
+        <span class="text-cyan-400">Helpdesk Support Technician</span>
+      </h2>
+    </section>
 
-      <p class="mt-6 text-lg md:text-xl text-slate-400 max-w-4xl mx-auto leading-relaxed">
-        I troubleshoot SaaS and Microsoft environment issues, support users with clear
-        communication, and help teams resolve problems quickly and accurately.
-      </p>
+    <!-- Certification Strip -->
+    <section class="mb-6 sm:mb-8 rounded-xl bg-slate-900/70 px-4 sm:px-6 py-5 sm:py-6 max-w-5xl mx-auto">
+      <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8">
+        <div class="flex flex-col items-center">
+          <img
+            src="/images/certifications/itil.png"
+            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
+            @click="showITILModal = true"
+          />
+        </div>
 
-      <div
-        class="mt-10 sm:mt-12 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
-      >
-        <router-link
-          :to="{ name: 'Projects' }"
-          class="group bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-700 hover:to-violet-600 border border-slate-500 hover:border-violet-400 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20 w-full md:w-auto"
-        >
-          <span class="group-hover:text-indigo-100">View My Projects</span>
-        </router-link>
+        <div class="flex flex-col items-center">
+          <img
+            src="/images/certifications/a-plus.png"
+            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
+            @click="showAPlusModal = true"
+          />
+        </div>
 
-        <router-link
-          :to="{ name: 'Skills' }"
-          class="group bg-gradient-to-r from-slate-700 to-slate-600 hover:from-cyan-700 hover:to-cyan-600 border border-slate-500 hover:border-cyan-400 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 w-full md:w-auto"
-        >
-          <span class="group-hover:text-cyan-100">Explore My Skills</span>
-        </router-link>
+        <div class="flex flex-col items-center">
+          <img
+            src="/images/certifications/securityplus.png"
+            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
+            @click="showSecurityPlusModal = true"
+          />
+        </div>
 
-        <router-link
-          :to="{ name: 'About' }"
-          class="group bg-gradient-to-r from-slate-700 to-slate-600 hover:from-emerald-700 hover:to-emerald-600 border border-slate-500 hover:border-emerald-400 text-white font-medium py-3 px-8 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/20 w-full md:w-auto"
-        >
-          <span class="group-hover:text-emerald-100">Read My Story</span>
-        </router-link>
+        <div class="flex flex-col items-center">
+          <img
+            src="/images/certifications/ms-900.png"
+            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
+            @click="showMS900Modal = true"
+          />
+        </div>
+
+        <div class="flex flex-col items-center">
+          <img
+            src="/images/certifications/azure-admin.png"
+            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
+            @click="showAzureAdminModal = true"
+          />
+        </div>
+
+        <div class="flex flex-col items-center">
+          <img
+            src="/images/certifications/rhcsa.png"
+            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
+            @click="showRHCSAModal = true"
+          />
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- MSP/Helpdesk Description -->
+    <section class="rounded-2xl border border-cyan-500 bg-gradient-to-br from-cyan-900 to-slate-900 px-5 sm:px-8 py-5 sm:py-6 max-w-3xl mx-auto">
+      <div class="text-gray-200 leading-relaxed text-sm sm:text-base">
+        <p>
+          Working for an MSP, providing <span class="text-cyan-300">Level 1 & 2 support</span> for clients across <span class="text-cyan-300">endpoints</span>, <span class="text-cyan-300">Microsoft 365</span>, <span class="text-cyan-300">Entra ID</span>, <span class="text-cyan-300">Active Directory</span>, and <span class="text-cyan-300">network troubleshooting</span>. I use <span class="text-cyan-300">Autotask</span> for ticketing, <span class="text-cyan-300">Datto RMM</span> for remote management, and maintain clear documentation in <span class="text-cyan-300">IT Glue</span>. Comfortable with <span class="text-cyan-300">PowerShell</span>, <span class="text-cyan-300">RDP</span>, and structured troubleshooting to resolve issues efficiently.
+        </p>
+      </div>
+    </section>
   </div>
+
+  <!-- Modals -->
+  <ITILCertification :visible="showITILModal" @close="showITILModal = false" />
+  <APlus :visible="showAPlusModal" @close="showAPlusModal = false" />
+  <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
+  <MS900 :visible="showMS900Modal" @close="showMS900Modal = false" />
+  <AzureAdministrator :visible="showAzureAdminModal" @close="showAzureAdminModal = false" />
+  <RHCSA :visible="showRHCSAModal" @close="showRHCSAModal = false" />
 </template>
 
 <script setup>
-// This page does not require a <script> block unless you have specific logic for it.
+import { ref } from 'vue'
+import ITILCertification from '../components/modals/ITIL-Certification.vue'
+import APlus from '../components/modals/CompTIA-A+.vue'
+import SecurityPlus from '../components/modals/SecurityPlus.vue'
+import MS900 from '../components/modals/MS900.vue'
+import AzureAdministrator from '../components/modals/AzureAdministrator.vue'
+import RHCSA from '../components/modals/RHCSA-Cert.vue'
+
+const showITILModal = ref(false)
+const showAPlusModal = ref(false)
+const showSecurityPlusModal = ref(false)
+const showMS900Modal = ref(false)
+const showAzureAdminModal = ref(false)
+const showRHCSAModal = ref(false)
 </script>

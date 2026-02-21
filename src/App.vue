@@ -44,18 +44,6 @@
               @click="closeMobileMenu"
               >Home</router-link
             >
-            <!-- <router-link
-              :to="{ name: 'Blog' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
-              @click="closeMobileMenu"
-              >Blog</router-link
-            > -->
-            <router-link
-              :to="{ name: 'Skills' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
-              @click="closeMobileMenu"
-              >Skills & Certs</router-link
-            >
             <router-link
               :to="{ name: 'Projects' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
@@ -83,16 +71,6 @@
               :to="{ name: 'Home' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Home</router-link
-            >
-            <!-- <router-link
-              :to="{ name: 'Blog' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
-              >Blog</router-link
-            > -->
-            <router-link
-              :to="{ name: 'Skills' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
-              >Skills & Certs</router-link
             >
             <router-link
               :to="{ name: 'Projects' }"
