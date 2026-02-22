@@ -56,12 +56,6 @@
               @click="closeMobileMenu"
               >About</router-link
             >
-            <router-link
-              :to="{ name: 'Contact' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
-              @click="closeMobileMenu"
-              >Contact</router-link
-            >
           </div>
         </div>
         <!-- Desktop menu -->
@@ -81,11 +75,6 @@
               :to="{ name: 'About' }"
               class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >About</router-link
-            >
-            <router-link
-              :to="{ name: 'Contact' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
-              >Contact</router-link
             >
           </div>
         </div>

@@ -1,121 +1,130 @@
 <template>
-  <div class="text-white container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-10">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
-      <!-- Main content -->
-      <div class="md:col-span-2 flex flex-col space-y-8">
-        <div class="max-w-5xl mx-auto space-y-8">
-          <section>
-            <h2 class="text-3xl font-bold mb-4">Background</h2>
-            <p class="text-lg leading-relaxed text-gray-200">
-  I started my career in pharmacy, working closely with people every day and helping them
-  navigate real problems under pressure. That environment shaped the habits I still rely on:
-  staying calm, listening properly, and breaking issues down so they can be solved cleanly.
-  Over time, I realised I wanted to be in a field built on curiosity, systems thinking, and
-  continuous learning — which is what led me toward technology.
-</p>
+  <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
+    <!-- Header -->
+    <section class="mb-8 sm:mb-12">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-2">About Me</h1>
+    </section>
 
-          </section>
+    <!-- Main container with L-shaped border -->
+    <section class="relative border-l-4 border-b-4 border-cyan-500 rounded-bl-3xl pl-6 sm:pl-8 pb-8 mb-12 max-w-5xl">
+      <!-- Start point circle -->
+      <div class="absolute -left-[9px] top-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
+      <!-- End point circle -->
+      <div class="absolute -bottom-[9px] right-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
+      
+      <div class="space-y-6">
+        <p class="text-lg sm:text-lg text-gray-200 leading-relaxed">
+          Currently working in MSP support, I handle Level 1 and 2 issues across Microsoft 365, identity, and endpoint environments. My background in science shaped how I approach technology: I enjoy understanding how systems interact, identifying root causes, and working through complexity methodically.
+        </p>
+        <p class="text-lg sm:text-lg text-gray-200 leading-relaxed">
+          Outside of daily support work, I am particularly interested in operating systems and infrastructure, especially Linux and cloud platforms such as Azure and AWS. I run a home server and lab environment where I experiment with networking, automation, and system configuration in a practical, hands-on way.
+        </p>
+        <p class="text-lg sm:text-lg text-gray-200 leading-relaxed">My focus right now is becoming efficient and reliable in core troubleshooting scenarios, while steadily building deeper knowledge in systems and infrastructure.</p>
+       
+      </div>
+    </section>
 
-          <section>
-            <h2 class="text-3xl font-bold mb-4 text-orange-300">Current Work</h2>
-            <p class="text-lg leading-relaxed text-gray-200">
-  Today I work in <span class="text-orange-300">technical support</span>, helping users troubleshoot
-  issues across <span class="text-orange-300">devices</span>, <span class="text-orange-300">networks</span>,
-  and <span class="text-orange-300">SaaS applications</span>. I handle
-  <span class="text-orange-300">Level&nbsp;1&nbsp;and&nbsp;2</span> tickets end to end—running structured
-  checks, confirming assumptions, documenting fixes, and escalating clearly when deeper investigation
-  is needed. I work closely with <span class="text-orange-300">product and engineering teams</span> to
-  surface patterns and keep user impact low. I’m building experience across both
-  <span class="text-orange-300">SaaS support</span> and traditional
-  <span class="text-orange-300">IT environments</span>, focusing on clarity, consistency, and giving
-  users a straightforward path to a solution.
-</p>
+    <!-- Role cards below the timeline -->
+    <section class="max-w-6xl relative pt-8">
+      <!-- Connector lines from bottom border to cards -->
+      <div class="hidden md:block absolute -top-12 left-0 right-0 h-20">
+        <!-- Line to Pharmacist (left) -->
+        <div class="absolute left-[16.84%] top-0 w-0.5 h-full bg-slate-600"></div>
+        <div class="absolute left-[16.66%] -top-[6px] w-3 h-3 bg-cyan-500 rounded-full -translate-x-[3px]"></div>
+        
+        <!-- Line to SaaS (center) -->
+        <div class="absolute left-1/2 top-0 w-0.5 h-full bg-slate-600"></div>
+        <div class="absolute left-1/2 -top-[6px] w-3 h-3 bg-cyan-500 rounded-full -translate-x-1"></div>
+        
+        <!-- Line to MSP (right) -->
+        <div class="absolute left-[83.54%] top-0 w-0.5 h-full bg-cyan-500"></div>
+        <div class="absolute left-[83.33%] -top-[6px] w-3 h-3 bg-cyan-500 rounded-full -translate-x-[3px]"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Pharmacist (LEFT - earliest) -->
+        <div class="rounded-xl bg-slate-800/50 border border-slate-600 p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="bg-slate-400 rounded-full w-3 h-3"></div>
+            <span class="text-sm text-gray-400">2017 — 2024</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-300 mb-3">Pharmacist</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            Community pharmacy work managing prescriptions, advising patients, and handling high-pressure situations with accuracy.
+          </p>
+          <div class="space-y-2">
+            <p class="text-xs text-gray-400 font-semibold">Key Skills</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-slate-700/50 rounded text-xs">Customer Service</span>
+              <span class="px-2 py-1 bg-slate-700/50 rounded text-xs">Accuracy</span>
+              <span class="px-2 py-1 bg-slate-700/50 rounded text-xs">Problem Solving</span>
+              <span class="px-2 py-1 bg-slate-700/50 rounded text-xs">Calm Under Pressure</span>
+            </div>
+          </div>
+        </div>
 
-          </section>
-
-          <section>
-            <h2 class="text-3xl font-bold mb-4">Growing My Capability</h2>
-            <p class="text-lg leading-relaxed text-gray-200">
-  I’m strengthening my capability in Linux, identity systems, scripting, and modern IT environments,
-  and I like understanding how different services interact under the hood. The more I learn, the more
-  I see how disciplined troubleshooting and clear communication keep systems — and teams — running
-  smoothly. I’m focused on building deeper technical foundations and growing into a reliable,
-  well-rounded IT professional.
-</p>
-
-          </section>
+        <!-- SaaS Technical Support (CENTER) -->
+        <div class="rounded-xl bg-slate-800/50 border border-slate-600 p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="bg-slate-400 rounded-full w-3 h-3"></div>
+            <span class="text-sm text-gray-400">2025 — 2025</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-300 mb-3">SaaS Technical Support</h3>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            Handled L1 & L2 tickets, troubleshooting user issues, documenting fixes, and collaborating with engineering teams.
+          </p>
+          <div class="space-y-2">
+            <p class="text-xs text-gray-400 font-semibold">Key Skills</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-slate-700/50 rounded text-xs">Ticketing</span>
+              <span class="px-2 py-1 bg-slate-700/50 rounded text-xs">Remote Support</span>
+              <span class="px-2 py-1 bg-slate-700/50 rounded text-xs">Documentation</span>
+              <span class="px-2 py-1 bg-slate-700/50 rounded text-xs">Communication</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- MSP Helpdesk Support (RIGHT - current) -->
+        <div class="rounded-xl bg-gradient-to-br from-cyan-900 to-slate-900 border border-cyan-500 p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <div class="bg-cyan-400 rounded-full w-3 h-3"></div>
+            <span class="text-sm text-gray-400">2026 — Present</span>
+          </div>
+          <h3 class="text-xl font-bold text-cyan-300 mb-3">Helpdesk Support Technician</h3>
+          <p class="text-gray-200 text-sm leading-relaxed mb-4">
+            Level 1 & 2 support for clients across endpoints, M365, Entra ID, Active Directory, and network troubleshooting.
+          </p>
+          <div class="space-y-2">
+            <p class="text-xs text-gray-400 font-semibold">Key Skills</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-cyan-700/50 rounded text-xs">M365</span>
+              <span class="px-2 py-1 bg-cyan-700/50 rounded text-xs">PowerShell</span>
+              <span class="px-2 py-1 bg-cyan-700/50 rounded text-xs">Autotask</span>
+              <span class="px-2 py-1 bg-cyan-700/50 rounded text-xs">Datto RMM</span>
+              <span class="px-2 py-1 bg-cyan-700/50 rounded text-xs">IT Glue</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Timeline -->
-      <aside class="md:col-span-1">
-        <h2 class="text-3xl font-bold mb-6">My Journey So Far</h2>
-        <div class="relative pl-6 md:pl-12">
-          <div class="absolute left-0 md:left-6 top-0 bottom-0 w-1 bg-gray-700 rounded-full"></div>
-          <ul class="relative space-y-7">
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">Delivery Boy</p>
-            </li>
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">Fast Food</p>
-            </li>
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">Super Market</p>
-            </li>
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">Private Laboratory</p>
-            </li>
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">Public Laboratory</p>
-            </li>
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">Laborer (building site)</p>
-            </li>
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">Painter (building site)</p>
-            </li>
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">Pharmacist</p>
-            </li>
-            <li class="relative">
-              <div
-                class="bg-purple-400 rounded-full w-4 h-4 absolute -left-7 md:-left-9 top-1"
-              ></div>
-              <p class="text-lg font-bold">SaaS Technical Support</p>
-            </li>
-            <li class="relative mt-8">
-              <div
-                class="bg-purple-400 rounded-full w-6 h-6 absolute -left-8 md:-left-10 top-0"
-              ></div>
-              <p class="text-xl font-bold text-orange-300">Let’s work together</p>
-            </li>
-          </ul>
-        </div>
-      </aside>
-    </div>
+    <!-- Contact -->
+    <!-- <section class="mt-16 sm:mt-20 text-center max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
+      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+        I work best in environments that value steady communication, accuracy, and clear thinking. If you're looking for reliable MSP or helpdesk support, I'm open to opportunities where practical problem-solving matters.
+      </p>
+      <div class="flex flex-wrap justify-center items-center gap-6 text-lg">
+        <a href="mailto:Lastpolar@gmail.com" class="text-cyan-300 hover:text-cyan-400 transition-colors">
+          📧 Lastpolar@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/simonparker-dev/" target="_blank" class="text-cyan-300 hover:text-cyan-400 transition-colors">
+          💼 LinkedIn
+        </a>
+        <a href="https://github.com/Simodalstix" target="_blank" class="text-cyan-300 hover:text-cyan-400 transition-colors">
+          🔗 GitHub
+        </a>
+      </div>
+    </section> -->
   </div>
 </template>
