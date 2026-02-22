@@ -3,7 +3,7 @@
     <header
       class="bg-gradient-to-r from-slate-800 to-slate-700 shadow-xl border-b border-slate-600"
     >
-      <nav class="container mx-auto px-6 py-4">
+      <nav class="container mx-auto px-6 py-2">
         <div class="flex justify-between items-center">
           <!-- Mobile menu button -->
           <button
@@ -59,22 +59,27 @@
           </div>
         </div>
         <!-- Desktop menu -->
-        <div class="hidden md:flex justify-between items-center mt-4">
-          <div class="flex space-x-1">
-            <router-link
-              :to="{ name: 'Home' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
-              >Home</router-link
-            >
+        <div class="hidden md:flex justify-center items-center mt-2">
+          <div class="flex items-center gap-12">
+            <!-- Main navigation pair (centered) -->
+            <div class="flex space-x-1">
+              <router-link
+                :to="{ name: 'Home' }"
+                class="px-4 py-2 rounded-md text-lg text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+                >Home</router-link
+              >
+              <router-link
+                :to="{ name: 'About' }"
+                class="px-4 py-2 rounded-md text-lg text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+                >About</router-link
+              >
+            </div>
+            
+            <!-- Projects (offset right) -->
             <router-link
               :to="{ name: 'Projects' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+              class="px-4 py-2 rounded-md text-lg text-gray-400 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Projects</router-link
-            >
-            <router-link
-              :to="{ name: 'About' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
-              >About</router-link
             >
           </div>
         </div>
