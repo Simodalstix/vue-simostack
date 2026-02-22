@@ -1,8 +1,8 @@
 <template>
   <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
     <!-- Header: Name & Role -->
-    <section class="text-center mb-5 sm:mb-2">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-3 sm:mb-4">
+    <section class="text-center mb-4 sm:mb-6">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 sm:mb-5">
         Simon Parker
       </h1>
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">
@@ -11,7 +11,7 @@
     </section>
 
     <!-- Certification Strip -->
-    <section class="mb-5 sm:mb-8 rounded-xl bg-slate-900/70 px-4 sm:px-6 py-3 sm:py-3 max-w-5xl mx-auto">
+    <section class="mb-8 sm:mb-10 rounded-xl bg-slate-900/70 px-4 sm:px-6 py-3 sm:py-4 max-w-5xl mx-auto">
       <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8">
         <div class="flex flex-col items-center">
           <img
@@ -64,10 +64,10 @@
     </section>
 
     <!-- MSP/Helpdesk Description -->
-    <section class="rounded-2xl border border-cyan-500 bg-gradient-to-br from-cyan-900 to-slate-900 px-5 sm:px-8 py-5 sm:py-6 max-w-3xl mx-auto">
+    <section class="rounded-2xl border border-cyan-500 bg-gradient-to-br from-cyan-900 to-slate-900 px-5 sm:px-8 py-5 sm:py-6 max-w-2xl mx-auto">
       <div class="text-gray-200 leading-relaxed text-sm sm:text-base">
         <p>
-          Working for an MSP, providing <span class="text-cyan-300">Level 1 & 2 support</span> for clients across <span class="text-cyan-300">endpoints</span>, <span class="text-cyan-300">Microsoft 365</span>, <span class="text-cyan-300">Entra ID</span>, <span class="text-cyan-300">Active Directory</span>, and <span class="text-cyan-300">network troubleshooting</span>. Day-to-day work includes <span class="text-cyan-300">SharePoint</span>, <span class="text-cyan-300">Teams</span>, <span class="text-cyan-300">Outlook</span>, <span class="text-cyan-300">Exchange</span>, and <span class="text-cyan-300">VPN</span> issues. I use <span class="text-cyan-300">Autotask</span> for ticketing, <span class="text-cyan-300">Datto RMM</span> for remote management, and maintain documentation in <span class="text-cyan-300">IT Glue</span>. Focused on making <span class="text-cyan-300">PowerShell</span> an increasing part of my support work.
+          Working in MSP support, handling <span class="text-cyan-300">Level 1 & 2</span> issues across client environments. Daily work includes <span class="text-cyan-300">Microsoft 365</span> (<span class="text-cyan-300">SharePoint</span>, <span class="text-cyan-300">Teams</span>, <span class="text-cyan-300">Outlook</span>, <span class="text-cyan-300">Exchange</span>), <span class="text-cyan-300">Entra ID</span>, <span class="text-cyan-300">Active Directory</span>, <span class="text-cyan-300">endpoints</span>, and <span class="text-cyan-300">VPNs</span>. Ticketing through <span class="text-cyan-300">Autotask</span>, remote management via <span class="text-cyan-300">Datto RMM</span>, and documentation in <span class="text-cyan-300">IT Glue</span>. Focused on making <span class="text-cyan-300">PowerShell</span> a regular part of my workflow.
         </p>
       </div>
     </section>
