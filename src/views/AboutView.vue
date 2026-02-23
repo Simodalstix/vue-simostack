@@ -1,12 +1,23 @@
 <template>
   <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
     <!-- Header -->
-    <section class="mb-8 sm:mb-12">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-2">About Me</h1>
+    <section class="mb-8 sm:mb-12 flex items-center justify-between">
+      <h1 class="text-4xl sm:text-5xl font-bold">Profile</h1>
+      <a
+        href="https://github.com/Simodalstix"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-600 hover:border-slate-500 rounded-lg transition-all duration-200 text-gray-300 hover:text-white"
+      >
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+        </svg>
+        <span class="text-sm font-medium">GitHub</span>
+      </a>
     </section>
 
     <!-- Main container with L-shaped border -->
-    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-6 md:pb-8 mb-8 md:mb-12 max-w-5xl">
+    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-2 mb-8 md:mb-12 max-w-5xl">
       <!-- Start point circle (desktop only) -->
       <div class="hidden md:block absolute -left-[9px] top-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
       <!-- End point circle (desktop only) -->
@@ -14,13 +25,21 @@
       
       <div class="space-y-4 md:space-y-6">
         <p class="text-base md:text-lg text-gray-200 leading-relaxed">
-          Currently working in MSP support, I handle Level 1 and 2 issues across Microsoft 365, identity, and endpoint environments. My background in science shaped how I approach technology: I enjoy understanding how systems interact, identifying root causes, and working through complexity methodically.
+                   My background in science shaped how I approach technology: I enjoy understanding how systems interact, identifying root causes, and working through complexity methodically. Outside of daily support work, I maintain a home lab where I experiment with networking, automation, and system configuration.
+
         </p>
-        <p class="text-base md:text-lg text-gray-200 leading-relaxed">
-          Outside of daily support work, I am particularly interested in operating systems and infrastructure, especially Linux and cloud platforms such as Azure and AWS. I run a home server and lab environment where I experiment with networking, automation, and system configuration in a practical, hands-on way.
-        </p>
-        <p class="text-base md:text-lg text-gray-200 leading-relaxed">My focus right now is becoming efficient and reliable in core troubleshooting scenarios, while steadily building deeper knowledge in systems and infrastructure.</p>
-       
+        
+        <p class="text-base md:text-lg text-gray-200 leading-relaxed flex-1">
+           Right now, my focus is mastering the Microsoft environments I support each day. I’m working toward becoming consistently efficient and dependable in real-world troubleshooting. At the same time, I continue building practical depth in systems and infrastructure.
+          </p>
+        <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+          <!-- <img
+            src="/images/certifications/rhcsa.png"
+            alt="RHCSA Certification"
+            class="w-24 sm:w-28 md:w-32 opacity-80 hover:opacity-100 transition-opacity duration-300 flex-shrink-0"
+          /> -->
+          
+        </div>
       </div>
     </section>
 

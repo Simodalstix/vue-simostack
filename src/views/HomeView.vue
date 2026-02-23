@@ -53,22 +53,22 @@
           />
         </div>
 
-        <!-- <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center">
           <img
             src="/images/certifications/rhcsa.png"
             class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
             @click="showRHCSAModal = true"
           />
-        </div> -->
+        </div>
       </div>
     </section>
 
     <!-- MSP/Helpdesk Description -->
     <section class="rounded-2xl border border-cyan-500 bg-gradient-to-br from-cyan-900 to-slate-900 px-5 sm:px-8 py-5 sm:py-6 max-w-2xl mx-auto">
       <div class="text-gray-200 leading-relaxed text-sm sm:text-base">
-        <p>
-          Working in MSP support, handling <span class="text-cyan-300">Level 1 & 2</span> issues across client environments. Daily work includes <span class="text-cyan-300">Microsoft 365</span> (<span class="text-cyan-300">SharePoint</span>, <span class="text-cyan-300">Teams</span>, <span class="text-cyan-300">Outlook</span>, <span class="text-cyan-300">Exchange</span>), <span class="text-cyan-300">Entra ID</span>, <span class="text-cyan-300">Active Directory</span>, <span class="text-cyan-300">endpoints</span>, and <span class="text-cyan-300">VPNs</span>. Ticketing through <span class="text-cyan-300">Autotask</span>, remote management via <span class="text-cyan-300">Datto RMM</span>, and documentation in <span class="text-cyan-300">IT Glue</span>. Focused on making <span class="text-cyan-300">PowerShell</span> a regular part of my workflow.
-        </p>
+       <p>
+  Working in MSP support, handling <span class="text-cyan-300">Level 1 & 2</span> issues across varied client environments. Daily responsibilities cover <span class="text-cyan-300">Microsoft 365</span>, <span class="text-cyan-300">Entra ID</span>, <span class="text-cyan-300">Active Directory</span>, <span class="text-cyan-300">endpoints</span>, and <span class="text-cyan-300">VPNs</span>, alongside structured ticketing and remote management. I focus on careful problem diagnosis, expanding my use of the command line, and integrating <span class="text-cyan-300">PowerShell</span> into regular workflows to improve consistency and response time.
+</p>
       </div>
     </section>
   </div>
