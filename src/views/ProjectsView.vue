@@ -10,7 +10,7 @@
     <div class="md:basis-3/5">
       
       <p class="text-slate-300 text-lg leading-relaxed">
-       These projects represent my ongoing work in cloud and infrastructure technologies. I use tools such as Terraform, Python CDK, and container platforms to explore how scalable environments are built, secured, and maintained. The focus is on practical implementation, repeatable patterns, and developing a clear understanding of the underlying infrastructure fundamentals that support production systems.
+       These projects reflect my ongoing work with cloud and infrastructure technologies. I use tools such as Terraform, Python CDK, and container platforms to build and test scalable environments. The focus is on practical implementation, repeatable patterns, and understanding the infrastructure fundamentals that support production systems.
       </p>
     </div>
 
@@ -228,67 +228,70 @@
               <span class="text-gray-400">Cloud Infrastructure - View details</span>
             </div>
           </BaseCard>
+<!-- Infrastructure Lab Card -->
+<BaseCard
+  @click="showProxmoxLab = true"
+  class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+>
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="text-lg font-bold text-white group-hover:text-slate-100">
+      Infrastructure Lab – Proxmox & Enterprise Linux
+    </h3>
+  </div>
 
-          <!-- Enhanced DR & Backup Card -->
-          <BaseCard
-            @click="showAwsDrBackupLab = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                AWS Disaster Recovery & Backup - Rapid Recovery
-              </h3>
-            </div>
+  <!-- Tech stack icons -->
+  <div class="flex items-center gap-3 mb-4">
+    <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 rounded-md" />
+    <img src="/images/project-icons/rocky.svg" alt="Rocky Linux" class="w-8 h-8 rounded-md" />
+    <img src="/images/project-icons/windows.svg" alt="Windows Server" class="w-8 h-8 rounded-sm" />
+    <img src="/images/project-icons/prometheus-icon.svg" alt="Prometheus" class="w-8 h-8 rounded-md" />
+    <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+    <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8 rounded-md" />
+    <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
+  </div>
 
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-              <img src="/images/project-icons/python.svg" alt="Python" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/backup.svg" alt="AWS Backup" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/rds.svg" alt="RDS" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/ebs.svg" alt="EBS" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/route53.svg" alt="Route 53" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/aws-icons/cloudwatch.svg"
-                alt="CloudWatch"
-                class="w-8 h-8 rounded-md"
-              />
-            </div>
+  <!-- Enhanced tags -->
+  <div class="flex flex-wrap gap-2 mb-4">
+    <span
+      class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+    >
+      Virtualization
+    </span>
 
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Backup
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                DR
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Automation
-              </span>
-            </div>
+    <span
+      class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+    >
+      Linux
+    </span>
 
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
-                >
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                  Ready
-                </span>
-              </div>
-              <span class="text-gray-400">Experimental Lab - View details</span>
-            </div>
-          </BaseCard>
+    <span
+      class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+    >
+      Active Directory
+    </span>
+
+  </div>
+
+  <!-- Project metadata footer -->
+  <div
+    class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+  >
+    <div class="flex items-center gap-4">
+      <span
+        class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+      >
+        <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+        Active
+      </span>
+    </div>
+
+    <span class="text-gray-400">
+      Systems Infrastructure – View details
+    </span>
+  </div>
+
+</BaseCard>
+          
 
           <BaseCard
             @click="showAzureContainerApps = true"
@@ -434,14 +437,14 @@
             </div>
           </BaseCard>
 
-          <!-- Enhanced Lambda SQS Card -->
+          <!-- Enhanced DR & Backup Card -->
           <BaseCard
-            @click="showAwsLambdaSqsDlq = true"
+            @click="showAwsDrBackupLab = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                Resilient Serverless Ingestion Pipeline on AWS (SQS + DLQ)
+                AWS Disaster Recovery & Backup - Rapid Recovery
               </h3>
             </div>
 
@@ -449,14 +452,15 @@
             <div class="flex items-center gap-3 mb-4">
               <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
               <img src="/images/project-icons/python.svg" alt="Python" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/sqs.svg" alt="SQS" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/backup.svg" alt="AWS Backup" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/rds.svg" alt="RDS" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/ebs.svg" alt="EBS" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/route53.svg" alt="Route 53" class="w-8 h-8 rounded-md" />
               <img
                 src="/images/aws-icons/cloudwatch.svg"
                 alt="CloudWatch"
                 class="w-8 h-8 rounded-md"
               />
-              <img src="/images/aws-icons/iam.svg" alt="IAM" class="w-8 h-8 rounded-md" />
             </div>
 
             <!-- Enhanced tags -->
@@ -464,17 +468,17 @@
               <span
                 class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
               >
-                Serverless
+                Backup
               </span>
               <span
                 class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
               >
-                Queues
+                DR
               </span>
               <span
                 class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
               >
-                Reliability
+                Automation
               </span>
             </div>
 
@@ -490,9 +494,10 @@
                   Ready
                 </span>
               </div>
-              <span class="text-gray-400">Cloud Infrastructure - View details</span>
+              <span class="text-gray-400">Experimental Lab - View details</span>
             </div>
           </BaseCard>
+         
 
           <!-- Enhanced Pilot Light DR Card -->
           <BaseCard
@@ -626,14 +631,14 @@
             </div>
           </BaseCard>
 
-          <!-- Enhanced Multi-Region Platform Card -->
+           <!-- Enhanced Lambda SQS Card -->
           <BaseCard
-            @click="showMultiregionProject = true"
+            @click="showAwsLambdaSqsDlq = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                Serverless Multi-Region Platform with Security and Monitoring
+                Resilient Serverless Ingestion Pipeline on AWS (SQS + DLQ)
               </h3>
             </div>
 
@@ -641,27 +646,18 @@
             <div class="flex items-center gap-3 mb-4">
               <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
               <img src="/images/project-icons/python.svg" alt="Python" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/eventbridge.svg"
-                alt="EventBridge"
-                class="w-8 h-8 rounded-md"
-              />
               <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/dynamodb.svg" alt="DynamoDB" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/sqs.svg" alt="SQS" class="w-8 h-8 rounded-md" />
               <img
-                src="/images/aws-icons/apigateway.svg"
-                alt="API Gateway"
+                src="/images/aws-icons/cloudwatch.svg"
+                alt="CloudWatch"
                 class="w-8 h-8 rounded-md"
               />
+              <img src="/images/aws-icons/iam.svg" alt="IAM" class="w-8 h-8 rounded-md" />
             </div>
 
             <!-- Enhanced tags -->
             <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Multi-Region
-              </span>
               <span
                 class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
               >
@@ -670,7 +666,12 @@
               <span
                 class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
               >
-                Automation
+                Queues
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Reliability
               </span>
             </div>
 
@@ -689,6 +690,7 @@
               <span class="text-gray-400">Cloud Infrastructure - View details</span>
             </div>
           </BaseCard>
+          
           <!-- Enhanced Observability Platform Card -->
           <BaseCard
             @click="showObservabilityPlatform = true"
@@ -1198,6 +1200,71 @@
               <span class="text-gray-400">DevOps - View on GitHub</span>
             </div>
           </BaseCard>
+
+
+          <!-- Enhanced Multi-Region Platform Card -->
+          <BaseCard
+            @click="showMultiregionProject = true"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
+                Serverless Multi-Region Platform with Security and Monitoring
+              </h3>
+            </div>
+
+            <!-- Tech stack icons -->
+            <div class="flex items-center gap-3 mb-4">
+              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+              <img src="/images/project-icons/python.svg" alt="Python" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/project-icons/eventbridge.svg"
+                alt="EventBridge"
+                class="w-8 h-8 rounded-md"
+              />
+              <img src="/images/aws-icons/lambda.svg" alt="Lambda" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/dynamodb.svg" alt="DynamoDB" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/aws-icons/apigateway.svg"
+                alt="API Gateway"
+                class="w-8 h-8 rounded-md"
+              />
+            </div>
+
+            <!-- Enhanced tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Multi-Region
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Serverless
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Automation
+              </span>
+            </div>
+
+            <!-- Project metadata footer -->
+            <div
+              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                >
+                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                  Ready
+                </span>
+              </div>
+              <span class="text-gray-400">Cloud Infrastructure - View details</span>
+            </div>
+          </BaseCard>
         </div>
       </div>
 
@@ -1444,6 +1511,14 @@
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
+
+  <ProjectProxmoxLab
+    :visible="showProxmoxLab"
+    @close="showProxmoxLab = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
+
   <Project-JavaGradleJenkins
     :visible="showJavaGradleJenkins"
     @close="showJavaGradleJenkins = false"
@@ -1672,6 +1747,8 @@ import AWSArchitect from '@/components/modals/AWSArchitect.vue'
 import AWSDeveloper from '@/components/modals/AWSDeveloper.vue'
 import AzureAdmin from '@/components/modals/AzureAdministrator.vue'
 import TerraformModal from '@/components/modals/TerraformModal.vue'
+import ProjectProxmoxLab from '@/components/modals/Project-ProxmoxLab.vue'
+const showProxmoxLab = ref(false)
 const showArchitectModal = ref(false)
 const showDeveloperModal = ref(false)
 const showAzureAdminModal = ref(false)
