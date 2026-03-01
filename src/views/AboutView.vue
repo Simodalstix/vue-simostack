@@ -38,7 +38,7 @@
       
       <div class="space-y-4 md:space-y-6">
         <p class="text-base md:text-lg text-gray-200 leading-relaxed">
-                   My background in science shaped how I approach technology: I enjoy learning how systems interact and isolating problems to the systems or layers involved, working through issues systematically. My work spans support, cloud, and infrastructure environments, with a strong foundation in Linux-based systems.
+                  My background in science shaped how I approach technology: I enjoy learning how systems interact and isolating problems to the systems or layers involved, working through issues systematically. My work spans support, cloud, and infrastructure environments, with an interest in Linux-based systems and practical systems administration.
 
         </p>
         
