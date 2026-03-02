@@ -9,7 +9,7 @@
       <img
         src="/images/project-modal-images/azure-devops-containers-diagram.svg"
         alt="Azure Container Apps Architecture Diagram"
-        class="object-contain rounded-lg w-full"
+        class="object-contain rounded-lg w-full max-h-[50vh]"
       />
     </div>
 

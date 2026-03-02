@@ -2,27 +2,24 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Infrastructure Lab – Proxmox & Enterprise Linux (revamp progress)""
+    title="Infrastructure Lab – Proxmox & Enterprise Linux"
   >
-    <div class="text-gray-200 space-y-4 text-base px-2 sm:px-4">
+    <div class="text-gray-200 space-y-3 text-base px-2 sm:px-4">
      <!-- Overview -->
-<section class="bg-slate-900 rounded-xl p-4 border border-slate-700/60">
+<section class="rounded-xl p-3">
   <p class="text-gray-300 leading-relaxed">
-    Ongoing home lab built on a Proxmox host to simulate realistic enterprise
-    infrastructure. The environment includes Windows–Linux identity integration,
-    monitoring, PKI, and file services, allowing me to test and troubleshoot
-    infrastructure in a controlled setting.
+    Bare-metal Proxmox lab running on a Beelink mini-PC (32GB RAM, 6-core AMD Ryzen 9, 1TB NVMe). This is where I learn, administer, and experiment with Linux systems, VMs, and networking—building practical experience with enterprise infrastructure patterns outside of cloud environments.
   </p>
 </section>
 
 
 
       <!-- Services grid -->
-      <section class="bg-slate-900 rounded-xl p-4 border border-slate-700/60">
-        <h3 class="font-semibold text-lg text-slate-100 mb-3">Core services</h3>
+      <section class="rounded-xl p-3">
+        <h3 class="font-semibold text-lg text-slate-100 mb-2">Core services</h3>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-slate-400 transition-colors">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-cyan-400 hover:bg-slate-800/50 transition-all">
             <div class="flex items-center gap-2 mb-1">
               <img src="/images/project-icons/windows.svg" alt="Windows" class="w-6 h-6" />
               <img src="/images/project-icons/ad.png" alt="AD" class="w-6 h-6" />
@@ -33,7 +30,7 @@
             </p>
           </div>
 
-          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-slate-400 transition-colors">
+          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-cyan-400 hover:bg-slate-800/50 transition-all">
             <div class="flex items-center gap-2 mb-1">
               <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-6 h-6" />
               <img src="/images/project-icons/samba.png" alt="Samba" class="w-10 h-5" />
@@ -44,7 +41,7 @@
             </p>
           </div>
 
-          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-slate-400 transition-colors">
+          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-cyan-400 hover:bg-slate-800/50 transition-all">
             <div class="flex items-center gap-2 mb-1">
               <img src="/images/project-icons/prometheus-icon.svg" alt="Prometheus" class="w-6 h-6" />
               <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-6 h-6" />
@@ -55,7 +52,7 @@
             </p>
           </div>
 
-          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-slate-400 transition-colors">
+          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-cyan-400 hover:bg-slate-800/50 transition-all">
             <div class="flex items-center gap-2 mb-1">
               <img src="/images/project-icons/vault.svg" alt="Vault" class="w-6 h-6" />
               <p class="text-sm font-semibold text-slate-100">Vault PKI (Certificates + Secrets)</p>
@@ -65,7 +62,7 @@
             </p>
           </div>
 
-          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-slate-400 transition-colors sm:col-span-2">
+          <div class="rounded-xl border border-slate-700/60 p-3 hover:border-cyan-400 hover:bg-slate-800/50 transition-all">
             <div class="flex items-center gap-2 mb-1">
               <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-6 h-6" />
               <p class="text-sm font-semibold text-slate-100">Firewall / VPN (Legacy Reference)</p>

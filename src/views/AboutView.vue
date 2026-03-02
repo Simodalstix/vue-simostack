@@ -4,7 +4,7 @@
     <section class="mb-8 sm:mb-12 flex items-center justify-between">
       <div class="flex items-center gap-4">
         <img src="/images/landscapes/profile.png" alt="profile" class=" h-20 sm:h-20 " />
-        <h1 class="text-4xl sm:text-5xl font-bold">Profile</h1>
+        <h1 class="text-4xl sm:text-5xl font-bold">Personal Summary</h1>
       </div>
       <div class="flex items-center gap-3">
         <a
@@ -41,7 +41,7 @@
       
       <div class="space-y-4 md:space-y-6">
         <p class="text-base md:text-lg text-gray-200 leading-relaxed">
-                  My background in science shaped how I approach technology: I enjoy learning how systems interact and isolating problems to the systems or layers involved, working through issues systematically. My work spans support, cloud, and infrastructure environments, with an interest in Linux-based systems and practical systems administration.
+                  My background in science shapes how I relate to technology. I’m interested in systems from the fundamentals upward, from how hardware stores information at a physical level to how identity and applications interact across a network. My work spans support, cloud, and infrastructure environments, with an interest in Linux-based systems and practical systems administration.
 
         </p>
         
