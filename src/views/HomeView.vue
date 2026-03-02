@@ -70,6 +70,19 @@
   Working in MSP support, handling <span class="text-cyan-300">Level 1 & 2</span> issues across varied client environments. Daily responsibilities cover <span class="text-cyan-300">Microsoft 365</span>, <span class="text-cyan-300">Entra ID</span>, <span class="text-cyan-300">Active Directory</span>, <span class="text-cyan-300">endpoints</span>, and <span class="text-cyan-300">VPNs</span>, alongside structured ticketing and remote management. I focus on careful problem diagnosis, expanding my use of the command line, and integrating <span class="text-cyan-300">PowerShell</span> into regular workflows to improve consistency and response time.
 </p>
       </div>
+      
+      <!-- Next Button -->
+      <div class="mt-6 flex justify-center">
+        <router-link
+          to="/about"
+          class="flex items-center gap-2 px-6 py-3 bg-cyan-600 hover:bg-cyan-500 border border-cyan-400 rounded-lg transition-all duration-200 text-white font-medium"
+        >
+          <span>View Profile</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </router-link>
+      </div>
     </section>
   </div>
 
