@@ -1,7 +1,7 @@
 <template>
   <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
     <!-- Header -->
-    <section class="mb-8 sm:mb-12 flex items-center justify-between">
+    <section class="mb-8 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="flex items-center gap-4">
         <img src="/images/landscapes/profile.png" alt="profile" class=" h-20 sm:h-20 " />
         <h1 class="text-4xl sm:text-5xl font-bold">Personal Summary</h1>
