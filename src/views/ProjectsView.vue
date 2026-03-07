@@ -10,7 +10,7 @@
     <div class="md:basis-3/5">
       
       <p class="text-slate-300 text-lg leading-relaxed">
-       These projects reflect my ongoing work with cloud and infrastructure technologies. I use tools such as Terraform, Python CDK, and container platforms to build and test scalable environments. The focus is on practical implementation, repeatable patterns, and understanding the infrastructure fundamentals that support production systems.
+       These projects document hands-on work building and operating cloud environments. They focus on infrastructure provisioning, containerised workloads, and system design using tools such as Terraform, AWS CDK (Python), and container platforms. Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
       </p>
     </div>
 

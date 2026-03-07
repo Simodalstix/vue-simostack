@@ -64,7 +64,7 @@
     </section>
 
     <!-- MSP/Helpdesk Description -->
-    <section class="rounded-2xl border border-cyan-500 bg-gradient-to-br from-cyan-900 to-slate-900 px-5 sm:px-8 py-5 sm:py-6 max-w-2xl mx-auto">
+    <section class="rounded-2xl border border-cyan-500 bg-gradient-to-br from-cyan-900 to-slate-900 px-5 sm:px-8 py-5 sm:py-6 max-w-3xl mx-auto">
       <div class="text-gray-200 leading-relaxed text-sm sm:text-base">
        <p>
   Working in MSP support, handling <span class="text-cyan-300">Level 1 & 2</span> issues across varied client environments. Daily responsibilities cover <span class="text-cyan-300">Microsoft 365</span>, <span class="text-cyan-300">Entra ID</span>, <span class="text-cyan-300">Active Directory</span>, <span class="text-cyan-300">endpoints</span>, and <span class="text-cyan-300">VPNs</span>, alongside structured ticketing and remote management. I focus on careful problem diagnosis, expanding my use of the command line, and integrating <span class="text-cyan-300">PowerShell</span> into regular workflows to improve consistency and response time.
