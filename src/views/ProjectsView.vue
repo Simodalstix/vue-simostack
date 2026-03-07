@@ -566,7 +566,7 @@
           >
             <div class="flex items-center justify-between mb-4">
               <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                Azure Org-Ready Hub-Spoke Landing Zone Architecture
+                Azure Hub-Spoke Landing Zone Architecture
               </h3>
             </div>
 
@@ -1515,6 +1515,11 @@
   <ProjectProxmoxLab
     :visible="showProxmoxLab"
     @close="showProxmoxLab = false"
+    @open-dc1="showDC1 = true"
+    @open-fileserver="showFileServer = true"
+    @open-prometheus="showPrometheusGrafana = true"
+    @open-vault="showVaultPki = true"
+    @open-opnsense="showOPNsense = true"
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
@@ -1611,7 +1616,7 @@
   <AzureHubSpokeModal
     :visible="showAzureProject"
     @close="showAzureProject = false"
-    width="max-w-[1200px]"
+    width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
   <AwsMigrationModal
@@ -1623,36 +1628,36 @@
   <ProjectDC1
     :visible="showDC1"
     @close="showDC1 = false"
-    width="max-w-[1100px]"
-    height="max-h-[92vh]"
+    width="max-w-[900px]"
+    height="max-h-[85vh]"
   />
 
   <ProjectPrometheusGrafana
     :visible="showPrometheusGrafana"
     @close="showPrometheusGrafana = false"
-    width="max-w-[1100px]"
-    height="max-h-[92vh]"
+    width="max-w-[900px]"
+    height="max-h-[85vh]"
   />
 
   <VaultPkiModal
     :visible="showVaultPki"
     @close="showVaultPki = false"
-    width="max-w-[1000px]"
-    height="max-h-[90vh]"
+    width="max-w-[900px]"
+    height="max-h-[85vh]"
   />
 
   <ProjectOPNsense
     :visible="showOPNsense"
     @close="showOPNsense = false"
-    width="max-w-[1000px]"
-    height="max-h-[92vh]"
+    width="max-w-[900px]"
+    height="max-h-[85vh]"
   />
 
   <ProjectFileServer
     :visible="showFileServer"
     @close="showFileServer = false"
-    width="max-w-[1100px]"
-    height="max-h-[92vh]"
+    width="max-w-[900px]"
+    height="max-h-[85vh]"
   />
   <ProjectJavaMavernJenkins
     :visible="showJavaMavernJenkins"
@@ -1738,7 +1743,7 @@ import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenk
 import ProjectK3sGitops from '@/components/modals/Project-K3sGitops.vue'
 import HackTheBoxModal from '@/components/modals/HackTheBoxModal.vue'
 import VMwareModal from '@/components/modals/VMwareModal.vue'
-import VaultPkiModal from '@/components/modals/VaultPKI.vue'
+import VaultPkiModal from '@/components/modals/Project-VaultPKI.vue'
 import ProjectOPNsense from '@/components/modals/Project-OPNsense.vue'
 import ProjectDC1 from '@/components/modals/Project-DC1.vue'
 import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'

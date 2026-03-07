@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Azure Org-Ready Hub-Spoke Landing Zone Architecture"
+    title="Azure Hub-Spoke Landing Zone Architecture"
   >
     <!-- Architecture Diagram -->
     <div class="px-4 pt-3 pb-3">
