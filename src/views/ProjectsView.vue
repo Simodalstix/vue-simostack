@@ -1750,8 +1750,9 @@ import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'
 import ProjectPrometheusGrafana from '@/components/modals/Project-Prometheus.vue'
 import AWSArchitect from '@/components/modals/AWSArchitect.vue'
 import AWSDeveloper from '@/components/modals/AWSDeveloper.vue'
-import AzureAdmin from '@/components/modals/AzureAdministrator.vue'
 import TerraformModal from '@/components/modals/TerraformModal.vue'
+import AzureAdmin from '@/components/modals/AzureAdministrator.vue'
+
 import ProjectProxmoxLab from '@/components/modals/Project-ProxmoxLab.vue'
 const showProxmoxLab = ref(false)
 const showArchitectModal = ref(false)

@@ -11,7 +11,7 @@
         An IT professional who has earned the Red Hat® Certified System Administrator (RHCSA®) is
         able to perform the core system administration skills required in Red Hat Enterprise Linux
         environments. The credential is earned after successfully passing the Red Hat Certified
-        System Administrator (RHCSA) Exam (EX200).
+        System Administrator (RHCSA).
       </p>
       <div class="mt-4">
         <a
