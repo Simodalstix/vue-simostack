@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-5xl font-bold text-white mb-12 mt-8 container mx-auto px-4 sm:px-6">Cloud &amp; Infrastructure Projects</h1>
+  <h1 class="text-5xl font-bold text-white mb-12 mt-8 container mx-auto px-4 sm:px-6">Systems, Cloud &amp; Infra Projects</h1>
   <!-- Cloud Infrastructure Projects -->
 
   <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 mb-6">
