@@ -1,14 +1,32 @@
 <template>
   <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
     <!-- Header: Name & Role -->
-    <section class="text-center mb-4 sm:mb-6">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 sm:mb-5">
-        Simon Parker
-      </h1>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">
-        <span class="text-cyan-400">Helpdesk Support Technician</span>
-      </h2>
-    </section>
+ <section class="text-center mb-6">
+  <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6">
+    Simon Parker
+  </h1>
+
+  <div class="font-mono text-left inline-block text-lg sm:text-xl md:text-2xl leading-relaxed">
+
+    <div class="text-gray-500">
+      $ ls ~/career
+    </div>
+
+    <div class="text-gray-400">
+      Pharmacist.tar.gz
+    </div>
+
+    <div class="text-gray-300">
+      Helpdesk-Support-Technician/
+    </div>
+
+    <div class="flex text-cyan-400">
+      <span class="mr-2 text-gray-400">└──</span>
+      <span>Systems-Cloud-Engineer/</span>
+    </div>
+
+  </div>
+</section>
 
     <!-- Certification Strip -->
     <section class="mb-8 sm:mb-10 rounded-xl bg-slate-900/70 px-4 sm:px-6 py-3 sm:py-4 max-w-5xl mx-auto">
