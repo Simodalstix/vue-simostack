@@ -9,7 +9,7 @@
     </section>
 
     <!-- Main container with L-shaped border -->
-    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-2 mb-8 md:mb-12 max-w-5xl">
+    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-5 mb-8 md:mb-12 max-w-5xl">
       <!-- Start point circle (desktop only) -->
       <div class="hidden md:block absolute -left-[9px] top-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
       <!-- End point circle (desktop only) -->
