@@ -101,7 +101,7 @@
             alt="Microsoft 365 Fundamentals"
           />
           <img
-            :src="cloudPractitionerImg"
+            src="/images/certifications/cloudpractitioner12.png"
             class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
             @click="showCloudPractitionerModal = true"
             alt="AWS Cloud Practitioner"
@@ -185,7 +185,7 @@ import AWSArchitect from '@/components/modals/AWSArchitect.vue'
 import AWSDeveloper from '@/components/modals/AWSDeveloper.vue'
 import TerraformModal from '@/components/modals/TerraformModal.vue'
 import SecurityPlus from '../components/modals/SecurityPlus.vue'
-const cloudPractitionerImg = '/images/certifications/cloud_practitioner.png'
+
 
 const showArchitectModal = ref(false)
 const showDeveloperModal = ref(false)
