@@ -4,7 +4,7 @@
     <section class="mb-8 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="flex items-center gap-4">
         
-        <h1 class="text-4xl sm:text-5xl font-bold">How I Think About Systems</h1>
+        <h1 class="text-4xl sm:text-5xl font-bold">Background &amp; Direction</h1>
       </div>
     </section>
 
@@ -15,44 +15,30 @@
       <!-- End point circle (desktop only) -->
       <div class="hidden md:block absolute -bottom-[9px] right-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
 
-    <div class="space-y-4 md:space-y-6">
+    <div class="flex flex-col md:flex-row gap-6">
 
-  <p class="text-base md:text-lg text-gray-200 leading-relaxed">
-    Before moving into technology I worked in healthcare, where mistakes carry real consequences. That environment trained me to slow down, verify assumptions, and think carefully about what might be missing before acting. Those habits translate naturally into troubleshooting complex systems.
-  </p>
+      <!-- Paragraphs (left) -->
+      <div class="space-y-4 md:space-y-6 flex-1">
+        <p class="text-base md:text-lg text-gray-200 leading-relaxed">
+          Before moving into technology I worked in healthcare, where mistakes carry real consequences. That environment trained me to slow down, verify assumptions, and think carefully about what might be missing before acting. Those habits translate naturally into troubleshooting complex systems.
+        </p>
+        <p class="text-base md:text-lg text-gray-200 leading-relaxed">
+          Cloud and infrastructure feel like a playground for systems thinking. If you can imagine an environment, you can usually build it. Outside of work I explore that through labs and projects involving Linux systems, automation, and cloud platforms, focusing on how services interact across real environments.
+        </p>
+      </div>
 
+      <!-- Traits block (right) -->
+      <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-4 md:w-64 shrink-0 self-start">
+        <div class="text-gray-500 mb-2">$ simon --traits</div>
+        <div class="text-cyan-300">curiosity: high</div>
+        <div class="text-cyan-300">learning_speed: fast</div>
+        <div class="text-cyan-300">root_cause: priority</div>
+        <div class="text-cyan-300">incident_response: calm</div>
+        <div class="text-cyan-300">team_morale: +3</div>
+        <div class="text-cyan-300">ownership: enabled</div>
+      </div>
 
-  <p class="text-base md:text-lg text-gray-200 leading-relaxed">
-   Cloud and infrastructure feel like a playground for systems thinking. If you can imagine an environment, you can usually build it. Outside of work I explore that through labs and projects involving Linux systems, automation, and cloud platforms, focusing on how services interact across real environments.
-  </p>
-<div class="flex flex-col md:flex-row gap-4 mt-2">
-  
-  <!-- Traits block -->
-  <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-4 max-w-md">
-    <div class="text-gray-500 mb-2">$ simon --traits</div>
-    <div class="text-cyan-300">curiosity: high</div>
-    <div class="text-cyan-300">learning_speed: fast</div>
-    <div class="text-cyan-300">root_cause: priority</div>
-    <div class="text-cyan-300">incident_response: calm</div>
-    <div class="text-cyan-300">team_morale: +3</div>
-    <div class="text-cyan-300">ownership: enabled</div>
-  </div>
-
-  <!-- Debug philosophy -->
-  <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-4 max-w-md">
-    <div class="text-gray-500 mb-2">$ simon --debug</div>
-    <div class="text-cyan-300">1. observe symptoms before assuming cause</div>
-    <div class="text-cyan-300">2. identify the failing layer</div>
-    <div class="text-cyan-300">3. reproduce the issue if possible</div>
-    <div class="text-cyan-300">4. check simple explanations first</div>
-    <div class="text-cyan-300">5. follow the signal: logs, network, identity</div>
-    <div class="text-cyan-300">6. confirm root cause explains failure</div>
-  </div>
-
-</div>
-
-
-</div>
+    </div>
 
     </section>
 
