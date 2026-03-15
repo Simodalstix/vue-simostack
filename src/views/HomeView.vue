@@ -3,7 +3,7 @@
     <div class="rounded-2xl border border-slate-700 bg-slate-950/60 px-6 sm:px-8 py-8">
       <div class="flex flex-col gap-4 sm:gap-5 md:flex-row md:items-center md:justify-between mb-8">
         <div class="flex items-center gap-4">
-          <img src="oblivion_profileicon.jpg" alt="profile" class="h-20 rounded-full" />
+          <img src="/images/icons/oblivion_profileicon.jpg" alt="profile" class="h-20 rounded-full" />
           <h1 class="text-4xl sm:text-5xl md:text-5xl font-extrabold tracking-tight">
             Simon Parker
           </h1>
