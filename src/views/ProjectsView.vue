@@ -292,7 +292,7 @@
 
 </BaseCard>
           
-
+<!-- Azure Container Apps -->
           <BaseCard
             @click="showAzureContainerApps = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
@@ -1482,10 +1482,7 @@
               <span class="text-gray-400">DevOps - View details</span>
             </div>
           </BaseCard>
-          <!-- Col 2 -->
-          <!-- Col 3 -->
-          <!-- Col 4 -->
-
+        
           <BaseCard
             class="p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 text-gray-400"
           >

@@ -81,6 +81,11 @@
               class="px-4 py-2 rounded-md text-lg text-gray-400 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Projects</router-link
             >
+            <router-link
+              :to="{ name: 'ProjectsV2' }"
+              class="px-4 py-2 rounded-md text-lg text-transparent hover:text-cyan-400 hover:bg-slate-600/50 transition-all duration-200"
+              >V2</router-link
+            >
           </div>
         </div>
       </nav>
