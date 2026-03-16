@@ -14,74 +14,6 @@
       </p>
     </div>
 
-   <!-- Right: cert badges (about 40%) -->
-<div class="md:basis-2/5 flex flex-col items-center md:items-end">
-
-  <!-- Cert grid -->
-  <div class="flex flex-wrap justify-center md:justify-end gap-5">
-  
-    <!-- AWS SAA -->
-    <div class="flex flex-col items-center">
-      <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
-      <img
-        src="/images/certifications/aws-saa.png"
-        class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)]
-               transition-all duration-300 cursor-pointer rounded"
-        @click="showArchitectModal = true"
-        alt="AWS Certified Solutions Architect – Associate"
-      />
-   
-    </div>
-
-    <!-- AWS DVA -->
-    <div class="flex flex-col items-center">
-      <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
-      <img
-        src="/images/certifications/aws-dva.png"
-        class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)]
-               transition-all duration-300 cursor-pointer rounded"
-        @click="showDeveloperModal = true"
-        alt="AWS Developer Associate"
-      />
-    
-    </div>
-
-    <!-- Azure Admin -->
-    <div class="flex flex-col items-center">
-      <AzureAdmin :visible="showAzureAdminModal" @close="showAzureAdminModal = false" />
-      <img
-        src="/images/certifications/azure-admin.png"
-        class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)]
-               transition-all duration-300 cursor-pointer rounded"
-        @click="showAzureAdminModal = true"
-        alt="Azure Administrator Associate"
-      />
-      
-    </div>
-
-    <!-- Terraform -->
-    <div class="flex flex-col items-center">
-      <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
-      <img
-        src="/images/certifications/terraform003.png"
-        class="w-16 md:w-28 lg:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)]
-               transition-all duration-300 cursor-pointer rounded"
-        @click="showTerraformModal = true"
-        alt="Terraform Associate"
-      />
-   
-    </div>
-
-  </div>
-
-  <!-- Caption centered under the cert grid -->
-  <p class="text-slate-400 text-base mt-6 italic text-center w-full md:w-auto md:mr-14">
-  My cloud certifications supporting these projects
-</p>
-
-
-</div>
-
 
   </div>
   
@@ -1344,6 +1276,7 @@
               <span class="text-gray-400">DevOps - View details</span>
             </div>
           </BaseCard>
+          
           <!-- Enhanced K3s GitOps Card -->
           <BaseCard
             @click="showK3sGitops = true"
@@ -1411,6 +1344,7 @@
               <span class="text-gray-400">Experimental Lab - View details</span>
             </div>
           </BaseCard>
+
           <!-- Enhanced VMware Monitoring Card -->
           <BaseCard
             @click="showVmwareProject = true"

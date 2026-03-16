@@ -26,6 +26,36 @@
           <!-- LEFT FIRST COLUMN -->
           <div class="flex-1 flex flex-col gap-2">
 
+
+             <BaseCard
+          @click="showPrometheusGrafana = true"
+          class="group cursor-pointer px-4 py-3 rounded-lg border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800 hover:border-zinc-500 transition-all duration-100"
+        >
+          <h3 class="text-sm font-semibold text-slate-200 group-hover:text-white">Prometheus + Grafana Monitoring — Host Observability & Alerting</h3>
+          <div class="flex items-center gap-3 mt-2.5">
+            <img src="/images/main-tools/vmware.svg" alt="VMware" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/prometheus.png" alt="Prometheus" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
+          </div>
+        </BaseCard>
+
+            <BaseCard
+          @click="showK3sGitops = true"
+          class="group cursor-pointer px-4 py-3 rounded-lg border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800 hover:border-zinc-500 transition-all duration-100"
+        >
+          <h3 class="text-sm font-semibold text-slate-200 group-hover:text-white">Raspberry Pi k3s GitOps Platform — ArgoCD, Helm & Observability</h3>
+          <div class="flex items-center gap-3 mt-2.5">
+            <img src="/images/project-icons/raspberry-pi.svg" alt="Raspberry Pi" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/k3s.svg" alt="k3s" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/argocd.svg" alt="ArgoCD" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/helm.png" alt="Helm" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/mariadb.svg" alt="MariaDB" class="w-8 h-8 rounded-md" />
+          </div>
+        </BaseCard>
+        
         <BaseCard
           @click="showWindowsAD = true"
           class="group cursor-pointer px-4 py-3 rounded-lg border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800 hover:border-zinc-500 transition-all duration-100"
@@ -50,19 +80,7 @@
           </div>
         </BaseCard>
 
-        <BaseCard
-          @click="showPrometheusGrafana = true"
-          class="group cursor-pointer px-4 py-3 rounded-lg border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800 hover:border-zinc-500 transition-all duration-100"
-        >
-          <h3 class="text-sm font-semibold text-slate-200 group-hover:text-white">Prometheus + Grafana Monitoring — Host Observability & Alerting</h3>
-          <div class="flex items-center gap-3 mt-2.5">
-            <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 rounded-md" />
-            <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-8 h-8 rounded-md" />
-            <img src="/images/project-icons/prometheus.png" alt="Prometheus" class="w-8 h-8 rounded-md" />
-            <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
-            <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
-          </div>
-        </BaseCard>
+       
 
         <BaseCard
           @click="showVaultPKI = true"
@@ -87,6 +105,8 @@
             <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8 rounded-md" />
           </div>
         </BaseCard>
+
+  
 
           </div>
           <!-- LEFT SECOND COLUMN -->
@@ -478,4 +498,5 @@ const showRockySamba = ref(false)
 const showPrometheusGrafana = ref(false)
 const showVaultPKI = ref(false)
 const showOPNsense = ref(false)
+const showK3sGitops = ref(false)
 </script>
