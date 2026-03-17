@@ -7,7 +7,7 @@
   <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
 
     <!-- Left: intro text (about 60%) -->
-    <div class="md:basis-3/5">
+    <div class="md:basis-4/5">
       
       <p class="text-slate-300 text-lg leading-relaxed">
        These projects document hands-on work building and operating cloud environments. They focus on infrastructure provisioning, containerised workloads, and system design using tools such as Terraform, AWS CDK (Python), and container platforms. Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
@@ -1722,10 +1722,4 @@ const showDynatraceProject = ref(false)
 const showAzureProject = ref(false)
 const showAwsProject = ref(false)
 
-const scrollToCloudProjects = () => {
-  const element = document.getElementById('cloud-projects')
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-}
 </script>

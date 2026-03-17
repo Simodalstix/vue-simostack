@@ -32,10 +32,11 @@
         <div class="text-gray-500 mb-2">$ simon --traits</div>
         <div class="text-cyan-300">curiosity: high</div>
         <div class="text-cyan-300">learning_speed: fast</div>
-        <div class="text-cyan-300">root_cause: priority</div>
+      <div class="text-cyan-300">ownership: enabled</div>
         <div class="text-cyan-300">incident_response: calm</div>
         <div class="text-cyan-300">team_morale: +3</div>
-        <div class="text-cyan-300">ownership: enabled</div>
+          <div class="text-cyan-300">root_cause: priority</div>
+        
       </div>
 
     </div>

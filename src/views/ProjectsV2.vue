@@ -57,53 +57,31 @@
         </BaseCard>
         
         <BaseCard
-          @click="showWindowsAD = true"
-          class="group cursor-pointer px-4 py-3 rounded-lg border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800 hover:border-zinc-500 transition-all duration-100"
+          class="px-5 py-5 rounded-lg border border-amber-900/40 bg-gradient-to-br from-stone-900 to-stone-950"
         >
-          <h3 class="text-sm font-semibold text-slate-200 group-hover:text-white">Windows Server 2022 Domain Controller — AD, DNS & Group Policy</h3>
-          <div class="flex items-center gap-3 mt-2.5">
-            <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 rounded-md" />
-            <img src="/images/project-icons/windows.svg" alt="Windows" class="w-8 h-8 rounded-md" />
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="text-base font-bold text-amber-200/90">Proxmox Hypervisor</h3>
+              <p class="text-xs text-stone-400 mb-3">Beelink SER8 Mini PC</p>
+            </div>
+            <img src="/images/project-icons/beelink.png" alt="Beelink" class="w-10 h-10 rounded-md" />
           </div>
-        </BaseCard>
-
-        <BaseCard
-          @click="showRockySamba = true"
-          class="group cursor-pointer px-4 py-3 rounded-lg border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800 hover:border-zinc-500 transition-all duration-100"
-        >
-          <h3 class="text-sm font-semibold text-slate-200 group-hover:text-white">Rocky Linux Samba File Server — Centralised Shares & ACL Testing</h3>
-          <div class="flex items-center gap-3 mt-2.5">
+          <div class="flex items-center gap-3 py-2">
             <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 rounded-md" />
-            <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-8 h-8 rounded-md" />
-            <img src="/images/project-icons/samba.png" alt="Samba" class="w-8 h-8 rounded-md" />
-            <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
-          </div>
-        </BaseCard>
-
-       
-
-        <BaseCard
-          @click="showVaultPKI = true"
-          class="group cursor-pointer px-4 py-3 rounded-lg border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800 hover:border-zinc-500 transition-all duration-100"
-        >
-          <h3 class="text-sm font-semibold text-slate-200 group-hover:text-white">HashiCorp Vault PKI — Automated Internal Certs & Secret Management</h3>
-          <div class="flex items-center gap-3 mt-2.5">
-            <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/windows.svg" alt="Windows" class="w-8 h-8 rounded-sm" />
             <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-8 h-8 rounded-md" />
             <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8 rounded-md" />
             <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
-          </div>
-        </BaseCard>
-
-        <BaseCard
-          @click="showOPNsense = true"
-          class="group cursor-pointer px-4 py-3 rounded-lg border border-slate-700/60 bg-slate-900/80 hover:bg-slate-800 hover:border-zinc-500 transition-all duration-100"
-        >
-          <h3 class="text-sm font-semibold text-slate-200 group-hover:text-white">OPNsense Firewall & WireGuard VPN — Routing & NAT Reference</h3>
-          <div class="flex items-center gap-3 mt-2.5">
-            <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 rounded-md" />
             <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8 rounded-md" />
+            <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh" class="w-8 h-8 rounded-md" />
           </div>
+          <ul class="space-y-2 text-sm">
+            <li @click="showWindowsAD = true" class="flex items-start gap-2.5 cursor-pointer group/item"><span class="text-amber-500 mt-0.5 shrink-0">&#x25B8;</span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">Windows Server Domain Controller</span></li>
+            <li @click="showRockySamba = true" class="flex items-start gap-2.5 cursor-pointer group/item"><span class="text-amber-500 mt-0.5 shrink-0">&#x25B8;</span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">Rocky Linux Samba File Server</span></li>
+            <li @click="showVaultPKI = true" class="flex items-start gap-2.5 cursor-pointer group/item"><span class="text-amber-500 mt-0.5 shrink-0">&#x25B8;</span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">HashiCorp Vault PKI</span></li>
+            <li @click="showOPNsense = true" class="flex items-start gap-2.5 cursor-pointer group/item"><span class="text-amber-500 mt-0.5 shrink-0">&#x25B8;</span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
+            <li @click="showWazuhLab = true" class="flex items-start gap-2.5 cursor-pointer group/item"><span class="text-amber-500 mt-0.5 shrink-0">&#x25B8;</span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">Wazuh Security Lab</span></li>
+          </ul>
         </BaseCard>
 
   
@@ -498,5 +476,6 @@ const showRockySamba = ref(false)
 const showPrometheusGrafana = ref(false)
 const showVaultPKI = ref(false)
 const showOPNsense = ref(false)
+const showWazuhLab = ref(false)
 const showK3sGitops = ref(false)
 </script>

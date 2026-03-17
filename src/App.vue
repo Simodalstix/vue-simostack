@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen bg-slate-900 text-white">
     <header
- class="bg-gradient-to-r from-slate-800 to-cyan-900/40 shadow-xl border-b border-cyan-800/40"
+ class="bg-gradient-to-r from-purple-800 to-purple-950 shadow-xl border-b border-cyan-800/40"
     >
       <nav class="container mx-auto px-6 py-2">
         <div class="flex justify-between items-center">
@@ -78,7 +78,7 @@
             <!-- Projects (offset right) -->
             <router-link
               :to="{ name: 'Projects' }"
-              class="px-4 py-2 rounded-md text-lg text-gray-400 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+              class="px-4 py-2 rounded-md text-lg text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
               >Projects</router-link
             >
             <router-link
@@ -98,66 +98,7 @@
     <footer class="bg-gray-800 text-white py-8 sm:py-10">
       <div class="container mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 md:grid-cols-1 gap-6 sm:gap-8">
-          <!-- <div class="md:col-span-2">
-            <h3 class="text-lg font-bold mb-4">Technologies & Tools</h3>
-            <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-              <img
-                src="/images/main-tools/terraform.svg"
-                alt="Terraform"
-                class="h-8 md:h-12"
-                title="Terraform"
-              />
-              <img
-                src="/images/main-tools/vmware.svg"
-                alt="VMware"
-                class="h-8 md:h-12"
-                title="VMware"
-              />
-              <img
-                src="/images/main-tools/aws-icon2.png"
-                alt="AWS"
-                class="h-8 md:h-12"
-                title="AWS"
-              />
-              <img
-                src="/images/main-tools/azure-icon.svg"
-                alt="Azure"
-                class="h-8 md:h-12"
-                title="Azure"
-              />
-              <img
-                src="/images/project-icons/ansible.svg"
-                alt="Ansible"
-                class="h-8 md:h-12"
-                title="Ansible"
-              /><img
-                src="/images/project-icons/vue-icon.svg"
-                alt="Vue"
-                class="h-8 md:h-12"
-                title="Vue"
-              />
-              <img
-                src="/images/project-icons/python.svg"
-                alt="Python"
-                class="h-8 md:h-12"
-                title="Python"
-              />
-
-              <img
-                src="/images/main-tools/docker-mark-blue.svg"
-                alt="Docker"
-                class="h-8 md:h-12"
-                title="Docker"
-              />
-              <img
-                src="/images/project-icons/kubernetes.svg"
-                alt="Kubernetes"
-                class="h-8 md:h-12"
-                title="Kubernetes"
-              />
-            </div>
-          </div> -->
-          <div class="flex items-center justify-center text-center">
+                    <div class="flex items-center justify-center text-center">
             <h2 class="text-xl font-bold text-slate-300">
               Reliable systems. Trusted support. Continuous improvement.
             </h2>
