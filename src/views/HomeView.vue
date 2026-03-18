@@ -1,7 +1,7 @@
 <template>
   <div class="text-white container mx-auto px-4 sm:px-6 py-8 sm:py-10 max-w-[940px]">
-    <div class="rounded-2xl border border-slate-700 bg-slate-950/60 px-6 sm:px-8 py-8">
-      <div class="flex flex-col gap-4 sm:gap-5 md:flex-row md:items-center md:justify-between mb-8">
+    <div class="rounded-2xl border border-slate-700 bg-slate-950/60 px-6 sm:px-8 py-6">
+      <div class="flex flex-col gap-4 sm:gap-5 md:flex-row md:items-center md:justify-between mb-6">
         <div class="flex items-center gap-4">
           <img src="/images/icons/oblivion_profileicon.jpg" alt="profile" class="h-20 rounded-full" />
           <h1 class="text-4xl sm:text-5xl md:text-5xl font-extrabold tracking-tight">
@@ -37,7 +37,7 @@
       </div>
 
       <!-- Career path -->
-      <div class="font-mono text-left inline-block text-base sm:text-xl md:text-2xl leading-relaxed mb-8">
+      <div class="font-mono text-left inline-block text-base sm:text-xl md:text-2xl leading-relaxed mb-6">
         <div class="text-gray-500">$ ls ~/career</div>
         <div class="text-gray-500">Pharmacist.tar.gz</div>
         <div class="text-cyan-300">Helpdesk-Support-Technician/</div>
@@ -48,25 +48,25 @@
       </div>
 
       <!-- Intro -->
-      <div class="max-w-3xl text-gray-200 leading-relaxed text-sm sm:text-base md:text-lg space-y-4">
-        <p>
-          I currently work in MSP support across varied client environments, handling
-          <span class="text-cyan-300">Microsoft 365</span>,
-          <span class="text-cyan-300">Entra ID</span>,
-          <span class="text-cyan-300">Active Directory</span>,
-          <span class="text-cyan-300">endpoints</span>, and
-          <span class="text-cyan-300">network troubleshooting</span> in live operational environments.
-        </p>
+      <div class="max-w-4xl text-gray-200 leading-relaxed text-sm sm:text-base md:text-lg space-y-4">
+       <p> 
+  I currently work in MSP support across varied client environments, handling
+  <span class="text-cyan-300">Microsoft 365</span>,
+  <span class="text-cyan-300">Entra ID</span>,
+  <span class="text-cyan-300">Active Directory</span>,
+  <span class="text-cyan-300">endpoints</span>, and
+  <span class="text-cyan-300">network troubleshooting</span> in day-to-day operations.
+</p>
 
-        <p>
-          Outside day-to-day support, I spend much of my time building depth in
-          <span class="text-cyan-300">Linux administration</span>,
-          <span class="text-cyan-300">cloud infrastructure</span>, and
-          <span class="text-cyan-300">automation</span> through projects involving
-          <span class="text-cyan-300">Terraform</span>,
-          <span class="text-cyan-300">AWS CDK</span>,
-          <span class="text-cyan-300">Ansible</span>, and virtualized lab environments.
-        </p>
+       <p>
+  Outside of support, I spend much of my time building depth in
+  <span class="text-cyan-300">Linux administration</span>,
+  <span class="text-cyan-300">cloud infrastructure</span>, and
+  <span class="text-cyan-300">automation</span> through projects involving
+  <span class="text-cyan-300">Terraform</span>,
+  <span class="text-cyan-300">AWS CDK</span>,
+  <span class="text-cyan-300">Ansible</span>, and virtualized lab environments.
+</p>
       </div>
 
       <!-- CTA -->
@@ -87,7 +87,7 @@
       </div>
 
       <!-- Top Certifications -->
-      <div class="mt-10">
+      <div class="mt-6">
         <h2 class="text-sm uppercase tracking-[0.28em] text-gray-400 mb-5 text-center">
           Technical Foundations
         </h2>

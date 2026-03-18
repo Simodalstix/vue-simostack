@@ -17,7 +17,7 @@
             Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
           </p>
          <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-4">
-  <div class="text-cyan-300">$ rm -rf /limitations</div>
+  <div class="text-cyan-300">All diagrams were created by me in Excalidraw.</div>
 </div>
         </div>
 
