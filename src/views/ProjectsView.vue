@@ -1,23 +1,20 @@
 <template>
-  <h1 class="text-5xl font-bold text-white mb-12 mt-8 container mx-auto px-4 sm:px-6">Systems, Cloud &amp; Infra Projects</h1>
-  <!-- Cloud Infrastructure Projects -->
-
-  <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 mb-6">
-   <div class="mb-8">
-  <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-
-    <!-- Left: intro text (about 60%) -->
-    <div class="md:basis-4/5">
-      
-      <p class="text-slate-300 text-lg leading-relaxed">
-       These projects document hands-on work building and operating cloud environments. They focus on infrastructure provisioning, containerised workloads, and system design using tools such as Terraform, AWS CDK (Python), and container platforms. Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
-      </p>
+  <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+    <div class="flex flex-col lg:flex-row gap-6 lg:gap-12 mb-8 sm:mb-10 mt-6 sm:mt-8">
+      <div class="lg:w-2/3">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Systems, Cloud &amp; Infra Projects</h1>
+        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+          These projects document hands-on work building and operating cloud environments. They focus on infrastructure provisioning, containerised workloads, and system design using tools such as Terraform, AWS CDK (Python), and container platforms. Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
+        </p>
+      </div>
+      <div class="lg:w-1/3 flex flex-col items-center justify-center gap-4">
+        <div class="flex items-center gap-5">
+          <img src="/images/certifications/terraform003.png" alt="Terraform Associate" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" />
+          <img src="/images/certifications/pcap.png" alt="PCAP Python" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" />
+        </div>
+        <p class="text-xs sm:text-sm text-slate-400 text-center leading-snug">In the era of AI-assisted development, I value understanding the code and logic behind the tools.</p>
+      </div>
     </div>
-
-
-  </div>
-  
-</div>
 
 
     <div class="space-y-8">
