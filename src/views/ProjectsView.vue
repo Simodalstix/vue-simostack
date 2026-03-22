@@ -7,7 +7,16 @@
           These projects document hands-on work building and operating cloud environments. They focus on infrastructure provisioning, containerised workloads, and system design using tools such as Terraform, AWS CDK (Python), and container platforms. Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
         </p>
       </div>
-     
+      <div class="lg:w-1/3 flex flex-col justify-center">
+        <div class="p-5 rounded-xl border border-amber-900/40 bg-gradient-to-br from-stone-900 to-stone-950">
+          <h3 class="text-sm font-bold text-amber-200/90 mb-3">Lab Expansion <em class="text-stone-500 font-normal">(Planned)</em></h3>
+          <div class="space-y-2 text-xs text-stone-400">
+            <p><span class="text-stone-300">Hardware:</span> Minisforum 64 GB node</p>
+            <p><span class="text-stone-300">Goal:</span> Distributed workloads, Kubernetes, containers</p>
+            <p><span class="text-stone-300">Adding:</span> CI/CD, monitoring, network segmentation</p>
+          </div>
+        </div>
+      </div>
     </div>
 
 
