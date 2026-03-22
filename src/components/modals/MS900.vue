@@ -11,12 +11,16 @@ import BaseModal from './BaseModal.vue'
     title="Microsoft 365 Certified: Fundamentals"
     width="max-w-3xl"
   >
-    <div class="bg-gray-700 p-3 rounded">
-      <p class="text-base text-white mb-2">Issued by Microsoft</p>
-      <p class="text-base text-gray-300">
-        Earning the Microsoft 365 Fundamentals certification demonstrates an understanding of the options available in Microsoft 365 and the benefits of adopting cloud services, the Software as a Service (SaaS) cloud model, and implementing Microsoft 365 cloud service.
-      </p>
-       <div class="mt-4">
+    <div class="bg-gray-700 p-4 rounded">
+      <p class="text-base text-white mb-3">Validates understanding of Microsoft 365 services, cloud concepts, and the SaaS model underpinning modern enterprise productivity.</p>
+      <ul class="text-base text-gray-300 space-y-1.5 mb-4 list-disc list-inside">
+        <li>Microsoft 365 service offerings including Exchange, SharePoint, Teams, and Intune</li>
+        <li>Cloud deployment models, shared responsibility, and SaaS licensing</li>
+        <li>Security and compliance features including DLP, retention policies, and eDiscovery</li>
+        <li>Entra ID basics, user lifecycle management, and tenant administration</li>
+      </ul>
+      <p class="text-sm text-slate-400 italic mb-4">A foundational certification that establishes fluency across the Microsoft 365 ecosystem, the platform most enterprise environments are built on.</p>
+      <div>
         <a
           href="https://learn.microsoft.com/api/credentials/share/en-us/SimonParker-8212/989AE3914AA3B976?sharingId=F0664CD37994DC5D"
           target="_blank"

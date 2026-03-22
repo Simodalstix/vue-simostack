@@ -4,7 +4,7 @@
     <section class="mb-8 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="flex items-center gap-4">
         
-        <h1 class="text-4xl sm:text-5xl font-bold">Background &amp; Direction</h1>
+        <h1 class="text-4xl sm:text-5xl font-bold text-center sm:text-left">Background &amp; Direction</h1>
       </div>
     </section>
 

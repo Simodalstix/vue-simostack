@@ -2,7 +2,7 @@
   <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 lg:px-8 mb-6">
     <div class="flex flex-col lg:flex-row gap-6 lg:gap-12 mb-8 sm:mb-10 mt-6 sm:mt-8">
       <div class="lg:w-2/3">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">Systems, Cloud &amp; Infra Projects</h1>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-center lg:text-left">Systems, Cloud &amp; Infra Projects</h1>
         <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
           These projects document hands-on work building and operating cloud environments. They focus on infrastructure provisioning, containerised workloads, and system design using tools such as Terraform, AWS CDK (Python), and container platforms. Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
         </p>
@@ -1199,7 +1199,7 @@
 
       <!-- DevOps & Automation -->
       <div>
-        <h3 class="text-lg font-semibold text-slate-200 mb-6">Extra Projects & Experiments</h3>
+        <h3 class="text-lg font-semibold text-slate-200 mb-6 text-center sm:text-left">Extra Projects & Experiments</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <!-- Col 1 -->
           <!-- Enhanced DevOps Toolchain Card -->

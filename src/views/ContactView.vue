@@ -11,7 +11,7 @@
         </div>
 
         <div>
-          <h1 class="text-4xl font-bold mb-4 md:mb-6">Let’s Connect</h1>
+          <h1 class="text-4xl font-bold mb-4 md:mb-6 text-center md:text-left">Let’s Connect</h1>
 
           <p class="text-lg mb-6 leading-relaxed">
             I work best in environments that value steady communication, accuracy, and clear thinking.

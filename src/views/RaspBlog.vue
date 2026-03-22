@@ -38,7 +38,7 @@
 
       <!-- Blog Posts Column -->
       <div>
-        <h1 class="text-3xl font-bold mb-6">Blog Posts</h1>
+        <h1 class="text-3xl font-bold mb-6 text-center md:text-left">Blog Posts</h1>
         <ul>
           <li v-for="post in posts" :key="post.id" class="mb-6 border-b border-gray-700 pb-4">
             <h2 class="text-xl font-semibold">{{ post.title }}</h2>

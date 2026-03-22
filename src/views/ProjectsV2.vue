@@ -1,6 +1,6 @@
 <template>
   <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-[90vw]">
-    <h1 class="text-5xl font-bold mb-10">Systems, Cloud & Infra Projects</h1>
+    <h1 class="text-5xl font-bold mb-10 text-center sm:text-left">Systems, Cloud & Infra Projects</h1>
 
     <!-- Outer: 2 halves -->
     <div class="flex flex-col lg:flex-row gap-4 sm:gap-6">

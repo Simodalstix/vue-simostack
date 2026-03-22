@@ -8,20 +8,19 @@ import BaseModal from './BaseModal.vue'
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="
-PCAP™ – Certified Associate Python Programmer"
+    title="PCAP: Certified Associate Python Programmer"
     width="max-w-3xl"
-    ><div class="bg-gray-700 p-3">
-      <p class="text-base text-white mb-2">Issued by Python Institute</p>
-      <p class="text-base text-gray-300">
-        Earners of the PCAP – Certified Associate Python Programmer badge demonstrate the ability to
-        accomplish coding tasks related to the basics of programming in the Python language and the
-        fundamental notions and techniques used in object-oriented programming. Becoming PCAP
-        certified ensures that the individual is fully acquainted with all the primary means
-        provided by Python 3 to enable him to start his own studies, and to open a path to the
-        developer’s career.
-      </p>
-      <div class="mt-4">
+  >
+    <div class="bg-gray-700 p-4 rounded">
+      <p class="text-base text-white mb-3">Validates the ability to write, analyse, and reason about Python code, covering control flow, data structures, functions, OOP, and exception handling.</p>
+      <ul class="text-base text-gray-300 space-y-1.5 mb-4 list-disc list-inside">
+        <li>Control flow logic, iterators, generators, and list comprehensions</li>
+        <li>Object-oriented programming with inheritance, polymorphism, and encapsulation</li>
+        <li>String processing, file I/O, and structured exception handling</li>
+        <li>Modules, packages, and the Python standard library for real-world scripting</li>
+      </ul>
+      <p class="text-sm text-slate-400 italic mb-4">In an era of AI-generated code, formally understanding how logic executes, not just what to prompt, is what separates engineers who can debug, extend, and trust what they ship.</p>
+      <div>
         <a
           href="https://www.credly.com/badges/dd32e128-d849-40fa-b39c-e4b77b3480cd"
           target="_blank"

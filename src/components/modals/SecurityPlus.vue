@@ -10,16 +10,17 @@ import BaseModal from './BaseModal.vue'
     @close="$emit('close')"
     title="CompTIA Security+ ce Certification"
     width="max-w-3xl"
-    ><div class="bg-gray-700 p-3 rounded">
-      <p class="text-base text-white mb-2">Issued by CompTIA</p>
-      <p class="text-base text-gray-300">
-        Earners of the CompTIA Security+ certification have the knowledge and skills necessary to
-        perform core security functions required of any cybersecurity role. CompTIA Security+
-        professionals know how to identify and address potential threats, attacks and
-        vulnerabilities and they have established techniques in risk management, risk mitigation,
-        threat management and intrusion detection.
-      </p>
-      <div class="mt-4">
+  >
+    <div class="bg-gray-700 p-4 rounded">
+      <p class="text-base text-white mb-3">Validates foundational cybersecurity knowledge across threat analysis, network security, identity management, and risk mitigation.</p>
+      <ul class="text-base text-gray-300 space-y-1.5 mb-4 list-disc list-inside">
+        <li>Threat vectors, vulnerability assessment, and penetration testing concepts</li>
+        <li>Network security architecture, firewalls, IDS/IPS, and segmentation</li>
+        <li>Identity and access management, PKI, and cryptographic protocols</li>
+        <li>Incident response procedures, governance frameworks, and compliance standards</li>
+      </ul>
+      <p class="text-sm text-slate-400 italic mb-4">Security+ establishes a vendor-neutral security baseline, the shared language for evaluating risk and implementing controls across any platform.</p>
+      <div>
         <a
           href="https://www.credly.com/badges/6966dceb-e004-4e7f-a0e2-690f3eb43f2e/public_url"
           target="_blank"

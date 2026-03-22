@@ -69,99 +69,48 @@
 </p>
       </div>
 
-      <!-- CTA -->
-      <div class="mt-8 flex flex-wrap gap-3">
-        <router-link
-          to="/about"
-          class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 border border-cyan-400 rounded-lg transition-all duration-200 text-white font-medium"
-        >
-          About Me
-        </router-link>
+      <!-- CTA + Certifications -->
+      <div class="mt-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center">
 
-        <router-link
-          to="/projects"
-          class="px-6 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg transition-all duration-200 text-white font-medium"
-        >
-          View Projects
-        </router-link>
-      </div>
-
-      <!-- Top Certifications -->
-      <div class="mt-6">
-        <h2 class="text-sm uppercase tracking-[0.28em] text-gray-400 mb-5 text-center">
-          Technical Foundations
-        </h2>
-
-        <!-- Row 1 -->
-        <div class="flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-7">
-          <img
-            src="/images/certifications/ms-900.png"
-            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
-            @click="showMS900Modal = true"
-            alt="Microsoft 365 Fundamentals"
-          />
-          <img
-            src="/images/certifications/cloudpractitioner12.png"
-            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
-            @click="showCloudPractitionerModal = true"
-            alt="AWS Cloud Practitioner"
-          />
-          <img
-            src="/images/certifications/aws-saa.png"
-            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
-            @click="showArchitectModal = true"
-            alt="AWS Certified Solutions Architect Associate"
-          />
-          
-          <img
-            src="/images/certifications/terraform003.png"
-            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
-            @click="showTerraformModal = true"
-            alt="Terraform Associate"
-          />
-        
+        <!-- Left: Buttons -->
+        <div class="flex flex-row md:flex-col gap-3 shrink-0 md:self-end">
+          <router-link
+            to="/about"
+            class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 border border-cyan-400 rounded-lg transition-all duration-200 text-white font-medium text-center"
+          >
+            About Me
+          </router-link>
+          <router-link
+            to="/projects"
+            class="px-6 py-3 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-lg transition-all duration-200 text-white font-medium text-center"
+          >
+            View Projects
+          </router-link>
         </div>
 
-        <!-- Row 2 (offset) -->
-        <div class="flex flex-wrap justify-center gap-3 sm:gap-5 md:gap-7 md:-mt-1 sm:-mt-2">
-          <img
-            src="/images/certifications/azure-admin.png"
-            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
-            @click="showAzureAdminModal = true"
-            alt="Azure Administrator Associate"
-          />
-          <div class="relative flex items-center justify-center">
-            <img
-              src="/images/certifications/sc-300.png"
-              class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 rounded cursor-pointer"
-              @click="showSC300Modal = true"
-              alt="Microsoft SC-300 Identity and Access Administrator"
-            />
-            <span
-              class="absolute -bottom-2 -left-2 text-[9px] sm:text-[10px] uppercase tracking-wide
-                     bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 rounded
-                     px-1.5 py-0.5 backdrop-blur-sm"
-            >Soon</span>
+        <!-- Right: Cert pyramid (top-right to bottom-left) -->
+        <div class="flex-1 flex flex-col items-end pr-4 sm:pr-6 md:pr-10">
+          <!-- Row 1: Security+ then Microsoft lowest to best right (flush right) -->
+          <div class="flex flex-wrap justify-end gap-3 sm:gap-4">
+            <img src="/images/certifications/securityplus.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showSecurityPlusModal = true" alt="CompTIA Security+" />
+            <img src="/images/certifications/ms-900.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showMS900Modal = true" alt="Microsoft 365 Fundamentals" />
+            <img src="/images/certifications/sc-300.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showSC300Modal = true" alt="Microsoft SC-300 Identity and Access Administrator" />
+            <img src="/images/certifications/azure-admin.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showAzureAdminModal = true" alt="Azure Administrator Associate" />
           </div>
-          <img
-            src="/images/certifications/aws-dva.png"
-            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
-            @click="showDeveloperModal = true"
-            alt="AWS Developer Associate"
-          />
-            <img
-            src="/images/certifications/rhcsa.png"
-            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(255,80,80,0.5)] transition-all duration-300 cursor-pointer rounded"
-            @click="showRHCSAModal = true"
-            alt="Red Hat Certified System Administrator"
-          />
-          <img
-            src="/images/certifications/securityplus.png"
-            class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded"
-            @click="showSecurityPlusModal = true"
-            alt="CompTIA Security+"
-          />
+          <!-- Row 2: AWS lowest to best right (staggered) -->
+          <div class="flex flex-wrap justify-end gap-3 sm:gap-4 pr-10 sm:pr-12 md:pr-16">
+            <img src="/images/certifications/cloudpractitioner12.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showCloudPractitionerModal = true" alt="AWS Cloud Practitioner" />
+            <img src="/images/certifications/aws-dva.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showDeveloperModal = true" alt="AWS Developer Associate" />
+            <img src="/images/certifications/aws-saa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showArchitectModal = true" alt="AWS Solutions Architect Associate" />
+          </div>
+          <!-- Row 3: Terraform + RHCSA (flush right) -->
+          <div class="flex flex-wrap justify-end gap-3 sm:gap-4">
+                        <img src="/images/certifications/pcap.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showPCAPModal = true" alt="PCAP Python" />
+            <img src="/images/certifications/terraform003.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showTerraformModal = true" alt="Terraform Associate" />
+            <img src="/images/certifications/rhcsa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(255,80,80,0.5)] transition-all duration-300 cursor-pointer rounded" @click="showRHCSAModal = true" alt="Red Hat Certified System Administrator" />
+          </div>
         </div>
+
       </div>
     </div>
   </div>
@@ -174,6 +123,9 @@
   <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
   <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
   <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
+  <SC300Modal :visible="showSC300Modal" @close="showSC300Modal = false" />
+  <AWSPractitioner :visible="showCloudPractitionerModal" @close="showCloudPractitionerModal = false" />
+  <PythonModal :visible="showPCAPModal" @close="showPCAPModal = false" />
 </template>
 
 <script setup>
@@ -185,6 +137,9 @@ import AWSArchitect from '@/components/modals/AWSArchitect.vue'
 import AWSDeveloper from '@/components/modals/AWSDeveloper.vue'
 import TerraformModal from '@/components/modals/TerraformModal.vue'
 import SecurityPlus from '../components/modals/SecurityPlus.vue'
+import SC300Modal from '../components/modals/SC300Modal.vue'
+import AWSPractitioner from '../components/modals/AWSPractioner.vue'
+import PythonModal from '../components/modals/PythonModal.vue'
 
 
 const showArchitectModal = ref(false)
@@ -196,4 +151,5 @@ const showRHCSAModal = ref(false)
 const showSC300Modal = ref(false)
 const showCloudPractitionerModal = ref(false)
 const showSecurityPlusModal = ref(false)
+const showPCAPModal = ref(false)
 </script>

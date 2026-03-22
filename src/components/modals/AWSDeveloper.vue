@@ -8,20 +8,19 @@ import BaseModal from './BaseModal.vue'
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="AWS Certified Developer – Associate"
+    title="AWS Certified Developer: Associate"
     width="max-w-3xl"
-    ><div class="bg-gray-700 p-3">
-      <p class="text-base text-white mb-2">
-        Issued by Amazon Web Services Training and Certification
-      </p>
-      <p class="text-base text-gray-300">
-        Earners of this certification have a comprehensive understanding of application life-cycle
-        management. They demonstrated proficiency in writing applications using AWS service APIs,
-        AWS CLI, and SDKs; using containers; and deploying with a CI/CD pipeline. Certification
-        holders can develop, deploy, and debug cloud-based applications following AWS best
-        practices.
-      </p>
-      <div class="mt-4">
+  >
+    <div class="bg-gray-700 p-4 rounded">
+      <p class="text-base text-white mb-3">Validates proficiency in developing, deploying, and debugging cloud-native applications on AWS.</p>
+      <ul class="text-base text-gray-300 space-y-1.5 mb-4 list-disc list-inside">
+        <li>Building with Lambda, API Gateway, DynamoDB, SQS, and SNS</li>
+        <li>CI/CD pipelines using CodePipeline, CodeBuild, and CodeDeploy</li>
+        <li>SDK and CLI usage, IAM authentication, and Secrets Manager integration</li>
+        <li>Container deployment with ECS/Fargate and application observability with CloudWatch and X-Ray</li>
+      </ul>
+      <p class="text-sm text-slate-400 italic mb-4">This certification covers the full application lifecycle, from writing code against AWS APIs to deploying through automated pipelines with proper instrumentation.</p>
+      <div>
         <a
           href="https://www.credly.com/badges/e90f09fd-d161-465a-93e1-bcfb7375635a"
           target="_blank"
