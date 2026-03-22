@@ -7,13 +7,7 @@
           These projects document hands-on work building and operating cloud environments. They focus on infrastructure provisioning, containerised workloads, and system design using tools such as Terraform, AWS CDK (Python), and container platforms. Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
         </p>
       </div>
-      <div class="lg:w-1/3 flex flex-col items-center justify-center gap-4">
-        <div class="flex items-center gap-5">
-          <img src="/images/certifications/terraform003.png" alt="Terraform Associate" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" />
-          <img src="/images/certifications/pcap.png" alt="PCAP Python" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" />
-        </div>
-        <p class="text-xs sm:text-sm text-slate-400 text-center leading-snug">In the era of AI-assisted development, I value understanding the code and logic behind the tools.</p>
-      </div>
+     
     </div>
 
 
@@ -157,68 +151,47 @@
               <span class="text-gray-400">Cloud Infrastructure - View details</span>
             </div>
           </BaseCard>
-<!-- Infrastructure Lab Card -->
+<!-- Proxmox Infrastructure Lab Card (2-row tall) -->
 <BaseCard
-  @click="showProxmoxLab = true"
-  class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-zinc-700 hover:to-slate-900 transition-all hover:border-slate-200 duration-100 hover:shadow-xl hover:shadow-zinc-500/10"
+  class="lg:row-span-2 flex flex-col p-6 rounded-xl border border-amber-900/40 bg-gradient-to-br from-stone-900 to-stone-950"
 >
-  <div class="flex items-center justify-between mb-4">
-    <h3 class="text-lg font-bold text-white group-hover:text-slate-100">
-      Infrastructure Lab – Proxmox & Enterprise Linux
-    </h3>
+  <div class="flex items-start justify-between mb-4">
+    <h3 class="text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
+    <img src="/images/project-icons/beelink.png" alt="Beelink" class="w-10 h-10 rounded-md" />
   </div>
-
-  <!-- Tech stack icons -->
   <div class="flex items-center gap-3 mb-4">
     <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 rounded-md" />
-    <img src="/images/project-icons/rocky.svg" alt="Rocky Linux" class="w-8 h-8 rounded-md" />
-    <img src="/images/project-icons/windows.svg" alt="Windows Server" class="w-8 h-8 rounded-sm" />
-    <img src="/images/project-icons/prometheus-icon.svg" alt="Prometheus" class="w-8 h-8 rounded-md" />
-    <img src="/images/project-icons/grafana.png" alt="Grafana" class="w-8 h-8 rounded-md" />
+    <img src="/images/project-icons/windows.svg" alt="Windows" class="w-8 h-8 rounded-sm" />
+    <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-8 h-8 rounded-md" />
     <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8 rounded-md" />
     <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 rounded-md" />
+    <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8 rounded-md" />
+    <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh" class="w-8 h-8 rounded-md" />
   </div>
-
-  <!-- Enhanced tags -->
   <div class="flex flex-wrap gap-2 mb-4">
-    <span
-      class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-    >
-      Virtualization
-    </span>
-
-    <span
-      class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-    >
-      Linux
-    </span>
-
-    <span
-      class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-    >
-      Active Directory
-    </span>
-
+    <span class="px-2 py-1 text-xs font-medium bg-stone-800/60 text-stone-300 border border-stone-700/50 rounded-md">Hypervisor</span>
+    <span class="px-2 py-1 text-xs font-medium bg-stone-800/60 text-stone-300 border border-stone-700/50 rounded-md">Firewall</span>
+    <span class="px-2 py-1 text-xs font-medium bg-stone-800/60 text-stone-300 border border-stone-700/50 rounded-md">Linux</span>
   </div>
-
-  <!-- Project metadata footer -->
-  <div
-    class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-  >
-    <div class="flex items-center gap-4">
-      <span
-        class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
-      >
-        <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-        Active
-      </span>
-    </div>
-
-    <span class="text-gray-400">
-      Systems Infrastructure – View details
-    </span>
+  <div class="border-t border-stone-700/60 pt-4">
+    <p class="text-xs text-stone-400 font-medium">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
+    <p class="text-xs text-stone-500 mt-1.5">6 VMs running services on a single node.</p>
   </div>
-
+  <ul class="space-y-2 text-sm mt-2">
+    <li @click="showDC1 = true" class="flex items-center gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">Windows Server Domain Controller</span></li>
+    <li @click="showFileServer = true" class="flex items-center gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">Rocky Linux Samba File Server</span></li>
+    <li @click="showVaultPki = true" class="flex items-center gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">HashiCorp Vault PKI</span></li>
+    <li @click="showOPNsense = true" class="flex items-center gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
+    <li class="flex items-center gap-2.5 group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 px-2.5 py-1 rounded-md">Wazuh Security Lab <em class="text-stone-500">(Planned)</em></span></li>
+    <li @click="showPrometheusGrafana = true" class="flex items-center gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-2.5 py-1 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
+  </ul>
+  <div class="flex items-center justify-between gap-2 text-xs text-gray-400 pt-4 mt-auto border-t border-stone-700">
+    <span class="flex items-center gap-1 px-2 py-1 bg-stone-500/30 text-stone-300 border border-stone-500/20 rounded-full">
+      <div class="w-2 h-2 bg-stone-400 rounded-full"></div>
+      Archived
+    </span>
+    <span>Systems Infrastructure</span>
+  </div>
 </BaseCard>
           
 <!-- Azure Container Apps -->
@@ -428,65 +401,7 @@
           </BaseCard>
          
 
-          <!-- Enhanced Pilot Light DR Card -->
-          <BaseCard
-            @click="showPilotLightDR = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                E-commerce Platform Pilot Light Disaster Recovery
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-              <img src="/images/project-icons/python.svg" alt="Python" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/rds.svg" alt="RDS" class="w-8 h-8 rounded-md" />
-              <img src="/images/aws-icons/route53.svg" alt="Route 53" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/aws-icons/step-functions.svg"
-                alt="Step Functions"
-                class="w-8 h-8 rounded-md"
-              />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Multi-Region
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                DR
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Auto Failover
-              </span>
-            </div>
-
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
-                >
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                  Ready
-                </span>
-              </div>
-              <span class="text-gray-400">Experimental Lab - View details</span>
-            </div>
-          </BaseCard>
+          
 
           <!-- Azure Hub-Spoke Card -->
           <BaseCard
@@ -620,6 +535,66 @@
             </div>
           </BaseCard>
           
+          <!-- Enhanced Pilot Light DR Card -->
+          <BaseCard
+            @click="showPilotLightDR = true"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
+                E-commerce Platform Pilot Light Disaster Recovery
+              </h3>
+            </div>
+
+            <!-- Tech stack icons -->
+            <div class="flex items-center gap-3 mb-4">
+              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+              <img src="/images/project-icons/python.svg" alt="Python" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/alb.svg" alt="ALB" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/rds.svg" alt="RDS" class="w-8 h-8 rounded-md" />
+              <img src="/images/aws-icons/route53.svg" alt="Route 53" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/aws-icons/step-functions.svg"
+                alt="Step Functions"
+                class="w-8 h-8 rounded-md"
+              />
+            </div>
+
+            <!-- Enhanced tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Multi-Region
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                DR
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Auto Failover
+              </span>
+            </div>
+
+            <!-- Project metadata footer -->
+            <div
+              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                >
+                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                  Ready
+                </span>
+              </div>
+              <span class="text-gray-400">Experimental Lab - View details</span>
+            </div>
+          </BaseCard>
+
           <!-- Enhanced Observability Platform Card -->
           <BaseCard
             @click="showObservabilityPlatform = true"
@@ -688,79 +663,7 @@
             </div>
           </BaseCard>
 
-          <!-- Enhanced Spring PetClinic Card -->
-          <BaseCard
-            @click="showJavaMavernJenkins = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                Java Spring PetClinic with Jenkins CI/CD Pipeline
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/spring.svg"
-                alt="Spring Boot"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/project-icons/maven.svg" alt="Maven" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/project-icons/jenkins.svg"
-                alt="Jenkins"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/docker-mark-blue.svg"
-                alt="Docker"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/project-icons/postgres.svg"
-                alt="PostgreSQL"
-                class="w-8 h-8 rounded-md"
-              />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                CI/CD
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Java
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Containers
-              </span>
-            </div>
-
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
-                >
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                  Ready
-                </span>
-              </div>
-              <span class="text-gray-400">DevOps Lab - View details</span>
-            </div>
-          </BaseCard>
-
-          <!-- Dynatrace Azure Card -->
+                  <!-- Dynatrace Azure Card -->
           <BaseCard
             @click="showDynatraceProject = true"
             class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-indigo-700 hover:to-indigo-950 transition-all hover:border-indigo-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
@@ -836,77 +739,7 @@
             </div>
           </BaseCard>
 
-          <!-- Enhanced Bedrock Landing Zone Card -->
-          <BaseCard
-            @click="showBedrockLandingzone = true"
-            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
-          >
-            <div class="flex items-center justify-between mb-4">
-              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
-                AWS Bedrock Landing Zone Architecture
-              </h3>
-            </div>
-
-            <!-- Tech stack icons -->
-            <div class="flex items-center gap-3 mb-4">
-              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/main-tools/terraform.svg"
-                alt="Terraform"
-                class="w-8 h-8 rounded-md"
-              />
-              <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" />
-              <img
-                src="/images/aws-icons/organizations.svg"
-                alt="Organizations"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/aws-icons/cloudtrail.svg"
-                alt="CloudTrail"
-                class="w-8 h-8 rounded-md"
-              />
-              <img
-                src="/images/aws-icons/guardduty.svg"
-                alt="GuardDuty"
-                class="w-8 h-8 rounded-md"
-              />
-            </div>
-
-            <!-- Enhanced tags -->
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Multi-Account
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                AI Platform
-              </span>
-              <span
-                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-              >
-                Enterprise
-              </span>
-            </div>
-
-            <!-- Project metadata footer -->
-            <div
-              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
-            >
-              <div class="flex items-center gap-4">
-                <span
-                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
-                >
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                  Ready
-                </span>
-              </div>
-              <span class="text-gray-400">Cloud Infrastructure - View details</span>
-            </div>
-          </BaseCard>
+          
 
           <!-- Enhanced Database Migration Card -->
           <BaseCard
@@ -1029,6 +862,78 @@
                 class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
               >
                 Enterprise
+              </span>
+            </div>
+
+            <!-- Project metadata footer -->
+            <div
+              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                >
+                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                  Ready
+                </span>
+              </div>
+              <span class="text-gray-400">DevOps Lab - View details</span>
+            </div>
+          </BaseCard>
+
+            <!-- Enhanced Spring PetClinic Card -->
+          <BaseCard
+            @click="showJavaMavernJenkins = true"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
+                Java Spring PetClinic with Jenkins CI/CD Pipeline
+              </h3>
+            </div>
+
+            <!-- Tech stack icons -->
+            <div class="flex items-center gap-3 mb-4">
+              <img src="/images/project-icons/java.svg" alt="Java" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/project-icons/spring.svg"
+                alt="Spring Boot"
+                class="w-8 h-8 rounded-md"
+              />
+              <img src="/images/project-icons/maven.svg" alt="Maven" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/project-icons/jenkins.svg"
+                alt="Jenkins"
+                class="w-8 h-8 rounded-md"
+              />
+              <img
+                src="/images/project-icons/docker-mark-blue.svg"
+                alt="Docker"
+                class="w-8 h-8 rounded-md"
+              />
+              <img
+                src="/images/project-icons/postgres.svg"
+                alt="PostgreSQL"
+                class="w-8 h-8 rounded-md"
+              />
+            </div>
+
+            <!-- Enhanced tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                CI/CD
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Java
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Containers
               </span>
             </div>
 
@@ -1176,6 +1081,77 @@
                 class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
               >
                 Automation
+              </span>
+            </div>
+
+            <!-- Project metadata footer -->
+            <div
+              class="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-slate-600"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="flex items-center gap-1 px-2 py-1 bg-green-500/30 text-green-300 border border-green-500/20 rounded-full"
+                >
+                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                  Ready
+                </span>
+              </div>
+              <span class="text-gray-400">Cloud Infrastructure - View details</span>
+            </div>
+          </BaseCard>
+          <!-- Enhanced Bedrock Landing Zone Card -->
+          <BaseCard
+            @click="showBedrockLandingzone = true"
+            class="group cursor-pointer p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 hover:from-cyan-700 hover:to-cyan-950 transition-all hover:border-cyan-400 duration-100 hover:shadow-xl hover:shadow-indigo-500/10"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-bold text-white group-hover:text-indigo-100">
+                AWS Bedrock Landing Zone Architecture
+              </h3>
+            </div>
+
+            <!-- Tech stack icons -->
+            <div class="flex items-center gap-3 mb-4">
+              <img src="/images/main-tools/aws-icon2.png" alt="AWS" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/main-tools/terraform.svg"
+                alt="Terraform"
+                class="w-8 h-8 rounded-md"
+              />
+              <img src="/images/aws-icons/bedrock.png" alt="Bedrock" class="w-8 h-8 rounded-md" />
+              <img
+                src="/images/aws-icons/organizations.svg"
+                alt="Organizations"
+                class="w-8 h-8 rounded-md"
+              />
+              <img
+                src="/images/aws-icons/cloudtrail.svg"
+                alt="CloudTrail"
+                class="w-8 h-8 rounded-md"
+              />
+              <img
+                src="/images/aws-icons/guardduty.svg"
+                alt="GuardDuty"
+                class="w-8 h-8 rounded-md"
+              />
+            </div>
+
+            <!-- Enhanced tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Multi-Account
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                AI Platform
+              </span>
+              <span
+                class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+              >
+                Enterprise
               </span>
             </div>
 
