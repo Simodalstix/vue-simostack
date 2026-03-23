@@ -102,7 +102,7 @@
           </div>
           <h3 class="text-xl font-bold text-cyan-300 mb-3">Helpdesk Support Technician</h3>
           <p class="text-gray-200 text-sm leading-relaxed">
-            Delivering Level 1 and 2 support across client environments, including Microsoft 365, Entra ID, Active Directory, endpoints, networking, and common business applications. Work across varied infrastructures, diagnosing issues methodically and resolving them in live production environments.
+            Delivering Level 1 and 2 support across client environments, including Microsoft 365, Entra ID, Active Directory, endpoints, networking, and business applications. Focus on root cause analysis, repeatable fixes, and understanding how services behave across real-world infrastructure.
           </p>
         </div>
       </div>

@@ -1037,7 +1037,7 @@
                   class="flex items-center gap-1 px-2 py-1 bg-purple-500/30 text-purple-300 border border-purple-500/20 rounded-full"
                 >
                   <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
-                  In Progress
+                  No Diagram
                 </span>
               </div>
               <span class="text-gray-400">DevOps - View on GitHub</span>
