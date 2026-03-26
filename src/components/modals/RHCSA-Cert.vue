@@ -2,24 +2,32 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="Red Hat Certified System Administrator (RHCSA)"
+    bgColor="bg-[#000000]"
+    borderClass="border border-[#393939]"
     width="max-w-3xl"
+    :hideTitleBorder="true"
   >
-    <div class="bg-gray-700 p-4 rounded">
-      <p class="text-base text-white mb-3">Validates core Linux system administration skills through a fully hands-on, performance-based exam on live RHEL systems.</p>
-      <ul class="text-base text-gray-300 space-y-1.5 mb-4 list-disc list-inside">
+    <template #header>
+      <div class="px-2 pt-2 pb-4">
+        <h2 class="text-xl font-bold text-white">Red Hat Certified System Administrator (RHCSA)</h2>
+        <div class="h-0.5 bg-[#EE0000] mt-3 rounded-full"></div>
+      </div>
+    </template>
+    <div class="bg-[#151515] p-5 rounded border border-[#393939]">
+      <p class="text-base text-[#D2D2D2] mb-3">Validates core Linux system administration skills through a fully hands-on, performance-based exam on live RHEL systems.</p>
+      <ul class="text-base text-[#D2D2D2] space-y-1.5 mb-4 list-disc list-inside">
         <li>User and group management, file permissions, ACLs, and SELinux enforcement</li>
         <li>Disk partitioning, LVM, filesystem creation, and persistent mounts</li>
         <li>Service management with systemd, firewall rules, and network configuration</li>
         <li>Package management, shell scripting, cron scheduling, and log analysis</li>
       </ul>
-      <p class="text-sm text-slate-400 italic mb-4">One of the few certifications with no multiple choice. Every task is performed on a live system under time pressure, proving real operational ability.</p>
+      <p class="text-sm text-[#8A8D90] italic mb-4">One of the few certifications with no multiple choice. Every task is performed on a live system under time pressure, proving real operational ability.</p>
       <div>
         <a
           href="https://www.credly.com/badges/6b46d32a-6c42-4349-a74f-5ed0a8d0b67c"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+          class="inline-block bg-[#EE0000] hover:bg-[#C9190B] text-white font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
         >
           View Badge on Credly
         </a>

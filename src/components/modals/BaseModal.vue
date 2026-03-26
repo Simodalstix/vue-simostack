@@ -8,8 +8,8 @@
     role="dialog"
   >
     <div
-      class="bg-gray-700 text-gray-200 p-3 rounded-lg relative shadow-lg overflow-y-auto w-full min-h-0 overscroll-contain max-h-[90dvh] md:max-h-none"
-      :class="width"
+      class="text-gray-200 p-3 rounded-lg relative shadow-lg overflow-y-auto w-full min-h-0 overscroll-contain max-h-[90dvh] md:max-h-none"
+      :class="[width, bgColor, borderClass]"
       :style="maxHeightStyle"
     >
       <!-- Close button -->
@@ -42,6 +42,8 @@ const props = defineProps({
   visible: Boolean,
   title: String,
   titleColor: { type: String, default: 'text-white' },
+  borderClass: { type: String, default: '' },
+  bgColor: { type: String, default: 'bg-gray-700' },
   width: { type: String, default: 'max-w-md' }, // e.g. 'max-w-4xl'
   height: { type: String, default: '90dvh' }, // keep your prop; pairs with :style
   alignment: { type: String, default: '' },
