@@ -8,17 +8,18 @@ import BaseModal from './BaseModal.vue'
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    bgColor="bg-[#1C1C1E]"
+    bgColor="bg-[#D6E3F1]"
+    borderClass="border border-[#C7D9EC]"
     width="max-w-3xl"
     :hideTitleBorder="true"
   >
     <template #header>
       <div class="px-2 pt-2 pb-4">
-        <h2 class="text-xl font-bold text-white">PCAP: Certified Associate Python Programmer</h2>
-        <div class="h-0.5 bg-[#FFD43B] mt-3 rounded-full"></div>
+        <h2 class="text-xl font-bold text-gray-900">PCAP: Certified Associate Python Programmer</h2>
+        <div class="h-0.5 bg-[#3776AB] mt-3 rounded-full"></div>
       </div>
     </template>
-    <div class="bg-white p-5 rounded">
+    <div class="bg-[#F8FBFF] p-5 rounded border border-[#C7D9EC]">
       <p class="text-base text-gray-800 mb-3">Validates the ability to write, analyse, and reason about Python code, covering control flow, data structures, functions, OOP, and exception handling.</p>
       <ul class="text-base text-gray-600 space-y-1.5 mb-4 list-disc list-inside">
         <li>Control flow logic, iterators, generators, and list comprehensions</li>

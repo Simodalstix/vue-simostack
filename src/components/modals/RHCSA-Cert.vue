@@ -21,7 +21,7 @@
         <li>Service management with systemd, firewall rules, and network configuration</li>
         <li>Package management, shell scripting, cron scheduling, and log analysis</li>
       </ul>
-      <p class="text-sm text-[#8A8D90] italic mb-4">One of the few certifications with no multiple choice. Every task is performed on a live system under time pressure, proving real operational ability.</p>
+      <p class="text-sm text-[#8A8D90] italic mb-4">Performance-based certification completed on live RHEL systems, involving direct execution of core Linux administration tasks under time constraints.</p>
       <div>
         <a
           href="https://www.credly.com/badges/6b46d32a-6c42-4349-a74f-5ed0a8d0b67c"

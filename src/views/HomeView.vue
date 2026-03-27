@@ -43,7 +43,7 @@
         <div class="text-cyan-300">Helpdesk-Support-Technician/</div>
         <div class="flex text-gray-500">
           <span class="mr-2 text-gray-500">└──</span>
-          <span>Systems-Cloud-Engineer/</span>
+          <span>Systems-Cloud-Engineer/<span class="inline-block w-1.5 h-5 bg-cyan-400 ml-1 align-middle animate-[pulse_0.8s_ease-in-out_infinite]"></span></span>
         </div>
       </div>
 
@@ -91,23 +91,23 @@
         <!-- Right: Cert pyramid (top-right to bottom-left) -->
         <div class="flex-1 flex flex-col items-end pr-4 sm:pr-6 md:pr-10">
           <!-- Row 1: Security+ then Microsoft lowest to best right (flush right) -->
-          <div class="flex flex-wrap justify-end gap-3 sm:gap-4">
-            <img src="/images/certifications/securityplus.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showSecurityPlusModal = true" alt="CompTIA Security+" />
-            <img src="/images/certifications/ms-900.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showMS900Modal = true" alt="Microsoft 365 Fundamentals" />
-            <img src="/images/certifications/sc-300.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showSC300Modal = true" alt="Microsoft SC-300 Identity and Access Administrator" />
-            <img src="/images/certifications/azure-admin.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showAzureAdminModal = true" alt="Azure Administrator Associate" />
+          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4">
+            <img src="/images/certifications/securityplus.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSecurityPlusModal = true" alt="CompTIA Security+" />
+            <img src="/images/certifications/ms-900.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showMS900Modal = true" alt="Microsoft 365 Fundamentals" />
+            <img src="/images/certifications/sc-300.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSC300Modal = true" alt="Microsoft SC-300 Identity and Access Administrator" />
+            <img src="/images/certifications/azure-admin.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showAzureAdminModal = true" alt="Azure Administrator Associate" />
           </div>
           <!-- Row 2: AWS lowest to best right (staggered) -->
-          <div class="flex flex-wrap justify-end gap-3 sm:gap-4 pr-10 sm:pr-12 md:pr-16">
-            <img src="/images/certifications/cloudpractitioner12.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showCloudPractitionerModal = true" alt="AWS Cloud Practitioner" />
-            <img src="/images/certifications/aws-dva.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showDeveloperModal = true" alt="AWS Developer Associate" />
-            <img src="/images/certifications/aws-saa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showArchitectModal = true" alt="AWS Solutions Architect Associate" />
+          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4 pr-10 sm:pr-12 md:pr-16">
+            <img src="/images/certifications/cloudpractitioner12.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showCloudPractitionerModal = true" alt="AWS Cloud Practitioner" />
+            <img src="/images/certifications/aws-dva.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showDeveloperModal = true" alt="AWS Developer Associate" />
+            <img src="/images/certifications/aws-saa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showArchitectModal = true" alt="AWS Solutions Architect Associate" />
           </div>
           <!-- Row 3: Terraform + RHCSA (flush right) -->
-          <div class="flex flex-wrap justify-end gap-3 sm:gap-4">
-                        <img src="/images/certifications/pcap.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showPCAPModal = true" alt="PCAP Python" />
-            <img src="/images/certifications/terraform003.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] transition-all duration-300 cursor-pointer rounded" @click="showTerraformModal = true" alt="Terraform Associate" />
-            <img src="/images/certifications/rhcsa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(255,80,80,0.5)] transition-all duration-300 cursor-pointer rounded" @click="showRHCSAModal = true" alt="Red Hat Certified System Administrator" />
+          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4">
+            <img src="/images/certifications/pcap.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showPCAPModal = true" alt="PCAP Python" />
+            <img src="/images/certifications/terraform003.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showTerraformModal = true" alt="Terraform Associate" />
+            <img src="/images/certifications/rhcsa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(255,80,80,0.5)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showRHCSAModal = true" alt="Red Hat Certified System Administrator" />
           </div>
         </div>
 
