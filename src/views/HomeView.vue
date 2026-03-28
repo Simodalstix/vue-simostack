@@ -73,7 +73,7 @@
       <div class="mt-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center">
 
         <!-- Left: Buttons -->
-        <div class="flex flex-row md:flex-col gap-3 shrink-0 md:self-end">
+        <div class="flex flex-row md:flex-col gap-3 shrink-0 md:self-end relative z-10">
           <router-link
             to="/about"
             class="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 border border-cyan-400 rounded-lg transition-all duration-200 text-white font-medium text-center"
