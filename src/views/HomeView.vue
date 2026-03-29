@@ -43,7 +43,7 @@
         <div class="text-cyan-300">Helpdesk-Support-Technician/</div>
         <div class="flex text-gray-500">
           <span class="mr-2 text-gray-500">└──</span>
-          <span>Systems-Cloud-Engineer/<span class="inline-block w-1.5 h-5 bg-cyan-400 ml-1 align-middle animate-[pulse_0.8s_ease-in-out_infinite]"></span></span>
+          <span>Systems-Cloud-Engineer/</span>
         </div>
       </div>
 

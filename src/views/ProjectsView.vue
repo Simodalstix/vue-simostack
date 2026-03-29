@@ -4,18 +4,26 @@
       <div class="lg:w-2/3">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-center lg:text-left">Systems, Cloud &amp; Infra Projects</h1>
         <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-          These projects document hands-on work building and operating cloud environments. They focus on infrastructure provisioning, containerised workloads, and system design using tools such as Terraform, AWS CDK (Python), and container platforms. Each project explores a specific operational problem such as networking, deployment pipelines, or service architecture.
+         These projects document hands-on work building and operating cloud environments across infrastructure, systems, and application layers. They explore real-world scenarios such as networking, deployment, monitoring, and service behaviour, with an emphasis on understanding how systems operate in practice.
         </p>
       </div>
       <div class="lg:w-1/3 flex flex-col justify-center">
         <div class="p-5 rounded-xl border border-amber-900/40 bg-gradient-to-br from-stone-900 to-stone-950">
-          <h3 class="text-sm font-bold text-amber-200/90 mb-3">Lab Expansion <em class="text-stone-500 font-normal">(Planned)</em></h3>
-          <div class="space-y-2 text-xs text-stone-400">
-            <p><span class="text-stone-300">Hardware:</span> Minisforum 64 GB node</p>
-            <p><span class="text-stone-300">Goal:</span> Distributed workloads, Kubernetes, containers</p>
-            <p><span class="text-stone-300">Adding:</span> CI/CD, monitoring, network segmentation</p>
-          </div>
-        </div>
+  <h3 class="text-sm font-bold text-amber-200/90 mb-3">
+  Cloud Operations Focus <em class="text-stone-500 font-normal">(Current)</em>
+</h3>
+<div class="space-y-2 text-xs text-stone-400">
+  <p>
+  <span class="text-stone-300">Direction:</span>From infrastructure and IaC into hands-on AWS operations
+</p>
+<p>
+  <span class="text-stone-300">Focus:</span> Building fluency with the AWS CLI to match Linux-based workflows, alongside monitoring and system behaviour
+</p>
+<p>
+  <span class="text-stone-300">Working on:</span> Incident response, failure simulation, and recovery
+</p>
+</div>
+</div>
       </div>
     </div>
 

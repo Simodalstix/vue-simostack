@@ -23,7 +23,7 @@
           Before moving into technology I worked in healthcare, where mistakes carry real consequences. That environment trained me to slow down, verify assumptions, and think carefully about what might be missing before acting. Those habits translate naturally into troubleshooting complex systems.
         </p>
         <p class="text-base md:text-lg text-gray-200 leading-relaxed">
-          Cloud and infrastructure feel like a playground for systems thinking. If you can imagine an environment, you can usually build it. Outside of work I explore that through labs and projects involving Linux systems, automation, and cloud platforms, focusing on how services interact across real environments.
+         Cloud and infrastructure feel like a playground for systems thinking, where I design, test, and refine how systems behave under change, failure, and scale. Outside of work, I explore this through hands-on labs and projects, building and refining code in GitHub, working in Linux, and deploying systems across cloud platforms.
         </p>
       </div>
 
@@ -31,7 +31,7 @@
       <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-4 md:w-64 shrink-0 self-start">
         <div class="text-gray-500 mb-2">$ simon --traits</div>
         <div class="text-cyan-300">curiosity: high</div>
-        <div class="text-cyan-300">learning_speed: fast</div>
+        <div class="text-cyan-300">learning: continuous</div>
       <div class="text-cyan-300">ownership: enabled</div>
         <div class="text-cyan-300">incident_response: calm</div>
         <div class="text-cyan-300">team_morale: +3</div>
