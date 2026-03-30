@@ -20,7 +20,7 @@
   <span class="text-stone-300">Focus:</span> Building fluency with the AWS CLI to match Linux-based workflows, alongside monitoring and system behaviour
 </p>
 <p>
-  <span class="text-stone-300">Working on:</span> Incident response, failure simulation, and recovery
+  <span class="text-stone-300">Working on:</span> Provisioning, monitoring, and response
 </p>
 </div>
 </div>

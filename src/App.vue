@@ -86,7 +86,7 @@
       </nav>
     </header>
 
-    <main class="flex-grow container mx-auto px-6 py-4">
+    <main class="flex-grow container mx-auto px-2 sm:px-6 py-4">
       <router-view />
     </main>
 

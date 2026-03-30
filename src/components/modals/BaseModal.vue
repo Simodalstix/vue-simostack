@@ -25,9 +25,9 @@
       >
         <div
           v-if="visible"
-          class="text-gray-200 p-4 rounded-xl relative shadow-2xl overflow-y-auto w-full min-h-0 overscroll-contain max-h-[90dvh] md:max-h-none scrollbar-thin"
+          class="text-gray-200 p-4 rounded-xl relative shadow-2xl overflow-y-auto w-full min-h-0 overscroll-contain mt-4 md:mt-0 scrollbar-thin"
           :class="[width, bgColor, borderClass]"
-          :style="maxHeightStyle"
+          :style="{ maxHeight: 'min(90dvh, ' + maxHeightPx + ')' }"
         >
           <!-- Close button -->
           <button
@@ -72,7 +72,7 @@ const props = defineProps({
 })
 defineEmits(['close'])
 
-const maxHeightStyle = { maxHeight: props.height }
+const maxHeightPx = props.height.startsWith('max-h-') ? props.height.replace('max-h-[', '').replace(']', '') : props.height
 </script>
 
 <style scoped>

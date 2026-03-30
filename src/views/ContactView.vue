@@ -6,7 +6,7 @@
           <img
             src="/images/landscapes/desertworld.jpg"
             alt="Abstract landscape"
-            class="rounded-full w-64 h-64 md:w-[40rem] md:h-[40rem] mx-auto md:mx-0 object-cover"
+            class="rounded-full w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[32rem] lg:h-[32rem] mx-auto md:mx-0 object-cover"
           />
         </div>
 
