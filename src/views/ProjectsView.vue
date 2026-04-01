@@ -31,7 +31,7 @@
     <div class="space-y-8">
       <!-- Cloud Platforms & Infrastructure -->
       <div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           <!-- Azure Container Apps Card -->
           <BaseCard
             @click="showAwsFargateGoldenPath = true"
@@ -1420,19 +1420,19 @@
     </div>
   </div>
 
-  <VMwareModal
-    :visible="showVmwareModal"
-    @close="showVmwareModal = false"
-    width="max-w-[1000px]"
-    height="max-h-[92vh]"
-  />
-  <ProjectK3sGitops
-    :visible="showK3sGitops"
-    @close="showK3sGitops = false"
+   <ProjectFargateGoldenPath
+    :visible="showAwsFargateGoldenPath"
+    @close="showAwsFargateGoldenPath = false"
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
 
+ <Project-Multiregion
+    :visible="showMultiregionProject"
+    @close="showMultiregionProject = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
   <ProjectProxmoxLab
     :visible="showProxmoxLab"
     @close="showProxmoxLab = false"
@@ -1444,7 +1444,13 @@
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
-
+  <ProjectAzureContainerApps
+    :visible="showAzureContainerApps"
+    @close="showAzureContainerApps = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
+  
   <Project-JavaGradleJenkins
     :visible="showJavaGradleJenkins"
     @close="showJavaGradleJenkins = false"
@@ -1457,12 +1463,7 @@
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
-  <Project-Multiregion
-    :visible="showMultiregionProject"
-    @close="showMultiregionProject = false"
-    width="max-w-[1100px]"
-    height="max-h-[92vh]"
-  />
+ 
   <ProjectBedrockLandingzone
     :visible="showBedrockLandingzone"
     @close="showBedrockLandingzone = false"
@@ -1479,13 +1480,6 @@
   <Project-LambdaSqsDlq
     :visible="showAwsLambdaSqsDlq"
     @close="showAwsLambdaSqsDlq = false"
-    width="max-w-[1100px]"
-    height="max-h-[92vh]"
-  />
-
-  <ProjectFargateGoldenPath
-    :visible="showAwsFargateGoldenPath"
-    @close="showAwsFargateGoldenPath = false"
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
@@ -1516,12 +1510,7 @@
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
-  <ProjectAzureContainerApps
-    :visible="showAzureContainerApps"
-    @close="showAzureContainerApps = false"
-    width="max-w-[1100px]"
-    height="max-h-[92vh]"
-  />
+
   <DynatraceModal
     :visible="showDynatraceProject"
     @close="showDynatraceProject = false"
@@ -1630,6 +1619,21 @@
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
+
+    <ProjectK3sGitops
+    :visible="showK3sGitops"
+    @close="showK3sGitops = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
+
+    <VMwareModal
+    :visible="showVmwareModal"
+    @close="showVmwareModal = false"
+    width="max-w-[1000px]"
+    height="max-h-[92vh]"
+  />
+
   <HackTheBoxModal :visible="showHtbModal" @close="showHtbModal = false" />
 </template>
 
@@ -1669,17 +1673,9 @@ import ProjectOPNsense from '@/components/modals/Project-OPNsense.vue'
 import ProjectDC1 from '@/components/modals/Project-DC1.vue'
 import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'
 import ProjectPrometheusGrafana from '@/components/modals/Project-Prometheus.vue'
-import AWSArchitect from '@/components/modals/AWSArchitect.vue'
-import AWSDeveloper from '@/components/modals/AWSDeveloper.vue'
-import TerraformModal from '@/components/modals/TerraformModal.vue'
-import AzureAdmin from '@/components/modals/AzureAdministrator.vue'
 
 import ProjectProxmoxLab from '@/components/modals/Project-ProxmoxLab.vue'
 const showProxmoxLab = ref(false)
-const showArchitectModal = ref(false)
-const showDeveloperModal = ref(false)
-const showAzureAdminModal = ref(false)
-const showTerraformModal = ref(false)
 const showPrometheusGrafana = ref(false)
 const showFileServer = ref(false)
 const showDC1 = ref(false)
