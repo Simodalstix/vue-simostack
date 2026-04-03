@@ -21,7 +21,7 @@
         <li>Service management with systemd, firewall rules, and network configuration</li>
         <li>Package management, shell scripting, cron scheduling, and log analysis</li>
       </ul>
-      <p class="text-sm text-[#8A8D90] italic mb-4">Performance-based certification completed on live RHEL systems, involving direct execution of core Linux administration tasks under time constraints.</p>
+      <p class="text-sm text-[#8A8D90] italic mb-4 mt-5 pt-4 border-t border-[#393939]">When something breaks and the GUI is gone, you're left with a terminal and what you actually know. RHCSA is built around exactly that — real systems, no safety net, no guessing.</p>
       <div>
         <a
           href="https://www.credly.com/badges/6b46d32a-6c42-4349-a74f-5ed0a8d0b67c"

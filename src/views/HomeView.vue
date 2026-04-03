@@ -130,16 +130,16 @@
 
 <script setup>
 import { ref } from 'vue'
-import MS900 from '../components/modals/MS900.vue'
-import AzureAdministrator from '../components/modals/AzureAdministrator.vue'
-import RHCSA from '../components/modals/RHCSA-Cert.vue'
-import AWSArchitect from '@/components/modals/AWSArchitect.vue'
-import AWSDeveloper from '@/components/modals/AWSDeveloper.vue'
-import TerraformModal from '@/components/modals/TerraformModal.vue'
-import SecurityPlus from '../components/modals/SecurityPlus.vue'
-import SC300Modal from '../components/modals/SC300Modal.vue'
-import AWSPractitioner from '../components/modals/AWSPractioner.vue'
-import PythonModal from '../components/modals/PythonModal.vue'
+import MS900 from '../components/modals/Cert-MS900.vue'
+import AzureAdministrator from '../components/modals/Cert-AZ104.vue'
+import RHCSA from '../components/modals/Cert-RHCSA.vue'
+import AWSArchitect from '@/components/modals/Cert-AWSArchitect.vue'
+import AWSDeveloper from '@/components/modals/Cert-AWSDeveloper.vue'
+import TerraformModal from '@/components/modals/Cert-TerraformModal.vue'
+import SecurityPlus from '../components/modals/Cert-SecurityPlus.vue'
+import SC300Modal from '../components/modals/Cert-SC300.vue'
+import AWSPractitioner from '../components/modals/Cert-AWSPractioner.vue'
+import PythonModal from '../components/modals/Cert-PythonModal.vue'
 
 
 const showArchitectModal = ref(false)
