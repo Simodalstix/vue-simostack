@@ -4,26 +4,21 @@
       <div class="lg:w-2/3">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-center lg:text-left">Systems, Cloud &amp; Infra Projects</h1>
         <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-         These projects document hands-on work building and operating cloud environments across infrastructure, systems, and application layers. They explore real-world scenarios such as networking, deployment, monitoring, and service behaviour, with an emphasis on understanding how systems operate in practice.
+       These projects document hands-on work across infrastructure, systems, and application layers. Current focus is moving from IaC into hands-on AWS operations — building fluency with the CLI, provisioning, monitoring, and understanding how services behave in practice.
         </p>
       </div>
-      <div class="lg:w-1/3 flex flex-col justify-center">
-        <div class="p-5 rounded-xl border border-amber-900/40 bg-gradient-to-br from-stone-900 to-stone-950">
-  <h3 class="text-sm font-bold text-amber-200/90 mb-3">
-  Cloud Operations Focus <em class="text-stone-500 font-normal">(Current)</em>
-</h3>
-<div class="space-y-2 text-xs text-stone-400">
-  <p>
-  <span class="text-stone-300">Direction:</span>From infrastructure and IaC into hands-on AWS operations
-</p>
-<p>
-  <span class="text-stone-300">Focus:</span> Building fluency with the AWS CLI to match Linux-based workflows, alongside monitoring and system behaviour
-</p>
-<p>
-  <span class="text-stone-300">Working on:</span> Provisioning, monitoring, and response
-</p>
-</div>
-</div>
+      <div class="lg:w-1/3 flex flex-col justify-start">
+        <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-3 w-fit">
+          <div class="flex items-center gap-2 mb-1">
+            <span class="text-green-400">●</span>
+            <span class="text-white">simon.service</span>
+            <span class="text-gray-400">- Cloud Labs &amp; Projects</span>
+          </div>
+          <div class="pl-4 text-gray-500">Loaded: <span class="text-gray-300">loaded (/etc/systemd/system/simon.service; <span class="text-green-400">enabled</span>)</span></div>
+          <div class="pl-4 text-gray-500">Active: <span class="text-green-400">active (running)</span><span class="text-gray-500"> since 2025</span></div>
+          <div class="pl-4 text-gray-500">Main PID: <span class="text-gray-300">simon</span></div>
+          <div class="pl-4 text-gray-500">Status: <span class="text-cyan-300">"Diving deep into infrastructure"</span></div>
+        </div>
       </div>
     </div>
 
@@ -170,7 +165,7 @@
           </BaseCard>
 <!-- Proxmox Infrastructure Lab Card (2-row tall) -->
 <BaseCard
-  class="lg:row-span-2 flex flex-col p-6 rounded-xl border border-amber-900/40 bg-gradient-to-br from-stone-900 to-stone-950"
+  class="lg:row-span-2 flex flex-col p-6 rounded-xl border border-stone-600 bg-gradient-to-br from-stone-900 to-stone-950"
 >
   <div class="flex items-start justify-between mb-4">
     <h3 class="text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
@@ -210,7 +205,7 @@
     <span>Systems Infrastructure</span>
   </div>
 </BaseCard>
-          
+
 <!-- Azure Container Apps -->
           <BaseCard
             @click="showAzureContainerApps = true"
@@ -416,9 +411,9 @@
               <span class="text-gray-400">Experimental Lab - View details</span>
             </div>
           </BaseCard>
-         
 
-          
+
+
 
           <!-- Azure Hub-Spoke Card -->
           <BaseCard
@@ -551,7 +546,7 @@
               <span class="text-gray-400">Cloud Infrastructure - View details</span>
             </div>
           </BaseCard>
-          
+
           <!-- Enhanced Pilot Light DR Card -->
           <BaseCard
             @click="showPilotLightDR = true"
@@ -756,7 +751,7 @@
             </div>
           </BaseCard>
 
-          
+
 
           <!-- Enhanced Database Migration Card -->
           <BaseCard
@@ -1266,7 +1261,7 @@
               <span class="text-gray-400">DevOps - View details</span>
             </div>
           </BaseCard>
-          
+
           <!-- Enhanced K3s GitOps Card -->
           <BaseCard
             @click="showK3sGitops = true"
@@ -1406,7 +1401,7 @@
               <span class="text-gray-400">DevOps - View details</span>
             </div>
           </BaseCard>
-        
+
           <BaseCard
             class="p-6 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 text-gray-400"
           >
@@ -1450,7 +1445,7 @@
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
-  
+
   <Project-JavaGradleJenkins
     :visible="showJavaGradleJenkins"
     @close="showJavaGradleJenkins = false"
@@ -1463,7 +1458,7 @@
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
- 
+
   <ProjectBedrockLandingzone
     :visible="showBedrockLandingzone"
     @close="showBedrockLandingzone = false"

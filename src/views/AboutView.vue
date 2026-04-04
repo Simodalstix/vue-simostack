@@ -3,7 +3,7 @@
     <!-- Header -->
     <section class="mb-8 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="flex items-center gap-4">
-        
+
         <h1 class="text-4xl sm:text-5xl font-bold text-center sm:text-left">Background &amp; Direction</h1>
       </div>
     </section>
@@ -18,7 +18,7 @@
     <div class="flex flex-col md:flex-row gap-6">
 
       <!-- Paragraphs (left) -->
-      <div class="space-y-4 md:space-y-6 flex-1">
+      <div class="space-y-4 md:space-y-6 flex-1 min-w-0">
         <p class="text-base md:text-lg text-gray-200 leading-relaxed">
           Before moving into technology I worked in healthcare, where mistakes carry real consequences. That environment trained me to slow down, verify assumptions, and think carefully about what might be missing before acting. Those habits translate naturally into troubleshooting complex systems.
         </p>
@@ -28,15 +28,16 @@
       </div>
 
       <!-- Traits block (right) -->
-      <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-4 md:w-64 shrink-0 self-start">
+      <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-4 w-auto shrink-0 self-start">
         <div class="text-gray-500 mb-2">$ simon --traits</div>
         <div class="text-cyan-300">curiosity: high</div>
         <div class="text-cyan-300">learning: continuous</div>
-      <div class="text-cyan-300">ownership: enabled</div>
+      <div class="text-cyan-300">ownership: Enforcing</div>
         <div class="text-cyan-300">incident_response: calm</div>
         <div class="text-cyan-300">team_morale: +3</div>
           <div class="text-cyan-300">root_cause: priority</div>
-        
+          <div class="text-cyan-300">logical_fallacies: none</div>
+
       </div>
 
     </div>
