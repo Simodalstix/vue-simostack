@@ -38,13 +38,13 @@
       <!-- LEFT: image/screenshot area (2/3) -->
       <div class="md:col-span-2">
         <!-- limit image block so tab content doesn’t “jump” -->
-        <div class="rounded-lg border border-gray-700 bg-gray-800/60 p-3">
+        <div class="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm p-3">
           <component :is="leftRenderer" />
         </div>
       </div>
 
       <!-- RIGHT: prose area (1/3) -->
-      <aside class="rounded-lg border border-gray-700 bg-gray-800/60 p-5">
+      <aside class="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm p-5">
         <component :is="rightRenderer" />
       </aside>
     </div>

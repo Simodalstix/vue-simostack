@@ -15,9 +15,16 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
-        AWS Landing Zone using CDK with multi-account organizational structure. Hub-and-spoke networking via Transit Gateway, security baseline with GuardDuty and Security Hub, automated governance with Config rules, and standardized account creation.
-      </p>
+     <p>
+  AWS Landing Zone built with <span class="text-cyan-300">CDK</span> implementing
+  <span class="text-cyan-300">zero trust</span> principles — no implicit cross-account
+  trust, identity-based access boundaries, and <span class="text-cyan-300">SCPs</span>
+  enforcing governance at the org level. Hub-and-spoke networking via
+  <span class="text-cyan-300">Transit Gateway</span>, centralised security baseline with
+  <span class="text-cyan-300">GuardDuty</span> and
+  <span class="text-cyan-300">Security Hub</span>, and automated compliance via
+  <span class="text-cyan-300">Config</span>.
+</p>
       <a
         href="https://github.com/simodalstix/AWS-enterprise-landingzone"
         target="_blank"

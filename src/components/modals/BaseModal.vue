@@ -25,7 +25,7 @@
       >
         <div
           v-if="visible"
-          class="text-gray-200 p-4 rounded-xl relative shadow-2xl overflow-y-auto w-full min-h-0 overscroll-contain mt-4 md:mt-0 scrollbar-thin"
+          class="text-white p-4 rounded-xl relative shadow-2xl overflow-y-auto w-full min-h-0 overscroll-contain mt-4 md:mt-0 scrollbar-thin"
           :class="[width, bgColor, borderClass]"
           :style="{ maxHeight: 'min(90dvh, ' + maxHeightPx + ')' }"
         >
@@ -44,7 +44,7 @@
             <slot name="header">
               <h2
                 v-if="title && !hideTitleBorder"
-                :class="`text-xl font-bold border-b-2 border-slate-500 pb-2 text-center ${titleColor}`"
+                :class="`text-xl font-bold pb-2 text-center ${titleColor}`"
               >
                 {{ title }}
               </h2>
@@ -63,8 +63,8 @@ const props = defineProps({
   visible: Boolean,
   title: String,
   titleColor: { type: String, default: 'text-white' },
-  borderClass: { type: String, default: '' },
-  bgColor: { type: String, default: 'bg-gray-700' },
+  borderClass: { type: String, default: 'border border-cyan-500/30 shadow-xl shadow-cyan-500/10' },
+  bgColor: { type: String, default: 'bg-gray-950' },
   width: { type: String, default: 'max-w-md' },
   height: { type: String, default: '90dvh' },
   alignment: { type: String, default: '' },

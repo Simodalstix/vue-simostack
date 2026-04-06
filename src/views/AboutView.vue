@@ -35,7 +35,7 @@
       <div class="text-cyan-300">ownership: Enforcing</div>
         <div class="text-cyan-300">incident_response: calm</div>
         <div class="text-cyan-300">team_morale: +3</div>
-          <div class="text-cyan-300">root_cause: priority</div>
+          <div class="text-cyan-300">root_cause: required</div>
           <div class="text-cyan-300">logical_fallacies: none</div>
 
       </div>
