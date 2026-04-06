@@ -16,7 +16,7 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
       <p class="text-base text-gray-300 leading-relaxed flex-1">
-        EKS deployment with GitOps workflows using ArgoCD, Prometheus, and Terraform. Multi-tier application with automated deployment pipelines, drift detection, and multi-metric monitoring. Spot instances reduce costs by 70% while maintaining reliability.
+        <span class="text-cyan-300">EKS</span> deployment with GitOps workflows using <span class="text-cyan-300">ArgoCD</span>, <span class="text-cyan-300">Prometheus</span>, and <span class="text-cyan-300">Terraform</span>. Multi-tier application with automated deployment pipelines, drift detection, and multi-metric monitoring. Spot instances reduce costs by 70% while maintaining reliability.
       </p>
       <a
         href="https://github.com/Simodalstix/AWS-eks-multi-tier-gitops"

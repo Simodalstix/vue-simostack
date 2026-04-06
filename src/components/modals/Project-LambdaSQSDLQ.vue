@@ -16,7 +16,7 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
       <p class="text-base text-gray-300 leading-relaxed flex-1">
-        Event-driven ingestion pipeline using API Gateway, Lambda, SQS, DynamoDB, and EventBridge. SQS with DLQ for reliable message processing, DynamoDB prevents duplicates, retry logic with exponential backoff. Everything provisioned through CDK.
+        Event-driven ingestion pipeline using <span class="text-cyan-300">API Gateway</span>, <span class="text-cyan-300">Lambda</span>, <span class="text-cyan-300">SQS</span>, <span class="text-cyan-300">DynamoDB</span>, and <span class="text-cyan-300">EventBridge</span>. SQS with <span class="text-cyan-300">DLQ</span> for reliable message processing, DynamoDB prevents duplicates, retry logic with exponential backoff. Everything provisioned through <span class="text-cyan-300">CDK</span>.
       </p>
       <a
         href="https://github.com/Simodalstix/AWS-lambda-sqs-dlq"

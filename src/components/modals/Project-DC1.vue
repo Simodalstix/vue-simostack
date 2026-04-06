@@ -4,19 +4,9 @@
     @close="$emit('close')"
     title="Active Directory Integration (DC1 + Linux Realm)"
   >
-    <div class="text-gray-200 space-y-4 text-base">
-      <!-- Overview -->
-      <div class="px-6 pt-2">
-        <p class="text-gray-300 leading-relaxed">
-          Windows Server 2022 domain controller configured for
-          <span class="font-medium text-orange-300">beelink.local</span>, with Linux clients (
-          Rocky, Ubuntu) joined via realmd and sssd. Dynamic DNS updates verified through the DC1
-          DNS Manager.
-        </p>
-      </div>
-
-      <!-- Screenshot grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-6">
+    <!-- Screenshots -->
+    <div class="px-4 pt-3 pb-3">
+      <div class="grid grid-cols-2 gap-3">
         <img
           src="/images/project-modal-images/ad-servermanager.png"
           alt="Server Manager showing domain configuration"
@@ -38,24 +28,19 @@
           class="rounded-lg shadow-md w-full object-contain"
         />
       </div>
+    </div>
 
-      <!-- Footer -->
-      <footer
-        class="border-t border-gray-700 px-6 py-3 flex flex-col sm:flex-row justify-between items-center text-gray-300 text-base"
-      >
-        <div class="sm:w-2/3 text-center sm:text-left leading-snug">
-          <span class="font-medium">Scope:</span>
-          Demonstrates full Windows–Linux identity integration, including DNS, Kerberos
-          authentication, and dynamic record registration.
-        </div>
-
-        <button
-          disabled
-          class="bg-gray-700 text-gray-400 font-medium py-1.5 px-3 rounded-md shadow-sm mt-2 sm:mt-0 cursor-not-allowed"
-        >
-          Completed Lab
-        </button>
-      </footer>
+    <!-- Description -->
+    <div class="px-4 pb-4">
+      <p class="text-base text-gray-300 leading-relaxed">
+        <span class="text-cyan-300">Windows Server 2022</span> domain controller for
+        <span class="text-cyan-300">beelink.local</span>, with Linux clients (Rocky, Ubuntu)
+        joined via <span class="text-cyan-300">realmd</span> and
+        <span class="text-cyan-300">sssd</span>. Dynamic DNS,
+        <span class="text-cyan-300">Kerberos</span> authentication, and cross-platform identity
+        integration verified through the DC1 DNS Manager and
+        <span class="text-cyan-300">Active Directory Users & Computers</span>.
+      </p>
     </div>
   </BaseModal>
 </template>

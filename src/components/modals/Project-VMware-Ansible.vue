@@ -16,7 +16,7 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
       <p class="text-base text-gray-300 leading-relaxed flex-1">
-        Single-VM deployment using Ansible to configure Django polls app, PostgreSQL, Prometheus metrics, Grafana dashboards, and Loki log aggregation with Nginx reverse proxy. Five idempotent roles with templated configs and one-command deployment.
+        Single-VM deployment using <span class="text-cyan-300">Ansible</span> to configure Django polls app, <span class="text-cyan-300">PostgreSQL</span>, <span class="text-cyan-300">Prometheus</span> metrics, <span class="text-cyan-300">Grafana</span> dashboards, and <span class="text-cyan-300">Loki</span> log aggregation with Nginx reverse proxy. Five idempotent roles with templated configs and one-command deployment.
       </p>
       <a
         href="https://github.com/Simodalstix/ansible-monitoring-lab"

@@ -4,24 +4,12 @@
     @close="$emit('close')"
     title="Fileserver (Samba Share + Autofs Integration)"
   >
-    <div class="text-gray-200 space-y-4 text-base">
-      <!-- Overview -->
-      <div class="px-6 pt-2">
-        <p class="text-gray-300 leading-relaxed">
-          A centralized <span class="font-medium text-orange-300">Samba fileserver</span> hosted on
-          Rocky 10, providing shared storage access for <span class="font-medium">Rocky</span> and
-          <span class="font-medium">Ubuntu</span> clients using
-          <span class="font-medium text-orange-300">Autofs</span> for on-demand mounting. Configured
-          with guest access and SELinux integration to simulate a mixed-environment network share
-          commonly found in enterprise networks.
-        </p>
-      </div>
-
-      <!-- Screenshot grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-6">
+    <!-- Screenshots -->
+    <div class="px-4 pt-3 pb-3">
+      <div class="grid grid-cols-2 gap-3">
         <img
           src="/images/project-modal-images/fs-ansible.png"
-          alt="Ansible deoploy output showing successful deployment"
+          alt="Ansible deploy output showing successful deployment"
           class="rounded-lg shadow-md w-full object-contain"
         />
         <img
@@ -34,32 +22,30 @@
           alt="systemctl status smb service running"
           class="rounded-lg shadow-md w-full object-contain"
         />
-
         <img
           src="/images/project-modal-images/fs-clientmount.png"
           alt="Client VM listing files from mounted beelinkshare"
           class="rounded-lg shadow-md w-full object-contain"
         />
       </div>
+    </div>
 
-      <!-- Footer -->
-      <footer
-        class="border-t border-gray-700 px-6 py-3 flex flex-col sm:flex-row justify-between items-center text-gray-300 text-base"
+    <!-- Description + GitHub -->
+    <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
+      <p class="text-base text-gray-300 leading-relaxed flex-1">
+        Centralised <span class="text-cyan-300">Samba</span> fileserver on Rocky Linux,
+        providing shared storage for Rocky and Ubuntu clients via
+        <span class="text-cyan-300">Autofs</span> on-demand mounting. Configured with guest
+        access and <span class="text-cyan-300">SELinux</span> for cross-platform compatibility.
+        Deployed and configured via <span class="text-cyan-300">Ansible</span>.
+      </p>
+      <a
+        href="https://github.com/Simodalstix/ansible-beelink-fileserver"
+        target="_blank"
+        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-6 rounded-md shadow-sm transition-colors duration-200 text-center whitespace-nowrap"
       >
-        <div class="sm:w-2/3 text-center sm:text-left leading-snug">
-          <span class="font-medium">Scope:</span>
-          Demonstrates shared storage access between Linux systems using Samba and Autofs, including
-          SELinux configuration for cross-platform compatibility.
-        </div>
-
-        <a
-          href="https://github.com/Simodalstix/ansible-beelink-fileserver"
-          target="_blank"
-          class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-3 rounded-md shadow-sm transition-colors duration-200 mt-2 sm:mt-0"
-        >
-          View on GitHub
-        </a>
-      </footer>
+        View on GitHub
+      </a>
     </div>
   </BaseModal>
 </template>

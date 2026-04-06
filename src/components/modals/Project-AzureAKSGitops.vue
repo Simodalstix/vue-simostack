@@ -17,7 +17,7 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
       <p class="text-base text-gray-300 leading-relaxed flex-1">
-        Enterprise-ready AKS platform with GitOps delivery using ArgoCD/Flux. Modular Terraform architecture with system + workload node pools, AAD integration, automated team onboarding, and namespace isolation with resource limits.
+        Enterprise-ready <span class="text-cyan-300">AKS</span> platform with GitOps delivery using <span class="text-cyan-300">ArgoCD</span>/<span class="text-cyan-300">Flux</span>. Modular <span class="text-cyan-300">Terraform</span> architecture with system + workload node pools, <span class="text-cyan-300">AAD</span> integration, automated team onboarding, and namespace isolation with resource limits.
       </p>
       <a
         href="https://github.com/Simodalstix/Azure-aks-platform"

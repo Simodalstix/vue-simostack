@@ -4,60 +4,38 @@
     @close="$emit('close')"
     title="Vault PKI Automation (Ansible + Rocky)"
   >
-    <div class="text-gray-200 space-y-3">
-      <!-- Two column images (portrait 3:4) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-2">
+    <!-- Screenshots -->
+    <div class="px-4 pt-3 pb-3">
+      <div class="grid grid-cols-2 gap-3">
         <img
           src="/images/project-modal-images/vault-pki-ansible.png"
           alt="Vault PKI Ansible playbook output"
-          class="object-contain rounded-lg w-full mx-auto"
+          class="object-contain rounded-lg w-full"
         />
         <img
           src="/images/project-modal-images/vault-pki-output.png"
           alt="Vault console output"
-          class="object-contain rounded-lg w-full mx-auto"
+          class="object-contain rounded-lg w-full"
         />
       </div>
+    </div>
 
-      <!-- Two-column content below images -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-2 py-2">
-        <!-- Overview -->
-        <section>
-          <h3 class="font-semibold text-lg text-orange-300 mb-1">Overview</h3>
-          <p class="text-gray-300 text-base leading-snug">
-            Automated deployment of a HashiCorp Vault PKI on Rocky Linux using Ansible. Includes
-            TLS, trusted storage, and a root + intermediate CA setup for issuing internal
-            certificates.
-          </p>
-        </section>
-
-        <!-- Details -->
-        <section>
-          <h3 class="font-semibold text-lg text-orange-300 mb-1">Details</h3>
-          <ul class="list-disc list-inside text-gray-300 text-base space-y-0.5">
-            <li>Idempotent playbook handles Vault, TLS, and trust setup.</li>
-            <li>PKI hierarchy ready for internal service certificates.</li>
-          </ul>
-        </section>
-      </div>
-
-      <!-- Footer -->
-      <footer
-        class="border-t border-gray-700 px-4 py-2 flex flex-col sm:flex-row justify-between items-center text-base text-gray-300"
+    <!-- Description + GitHub -->
+    <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
+      <p class="text-base text-gray-300 leading-relaxed flex-1">
+        Automated deployment of <span class="text-cyan-300">HashiCorp Vault</span> PKI on
+        Rocky Linux using <span class="text-cyan-300">Ansible</span>.
+        <span class="text-cyan-300">Root + intermediate CA</span> hierarchy for issuing
+        internal certificates, with <span class="text-cyan-300">TLS</span> and trusted storage
+        configured. Idempotent playbook handles full Vault, TLS, and trust setup end-to-end.
+      </p>
+      <a
+        href="https://github.com/Simodalstix/ansible-vault-pki"
+        target="_blank"
+        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-6 rounded-md shadow-sm transition-colors duration-200 text-center whitespace-nowrap"
       >
-        <div class="sm:w-2/3 text-center sm:text-left">
-          <span class="font-medium">Scope:</span>
-          Secure Vault PKI via IaC, with headroom for HA and dynamic cert issuance.
-        </div>
-
-        <a
-          href="https://github.com/Simodalstix/ansible-vault-pki"
-          target="_blank"
-          class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-3 rounded-md shadow-sm transition-colors duration-200 mt-2 sm:mt-0"
-        >
-          View on GitHub
-        </a>
-      </footer>
+        View on GitHub
+      </a>
     </div>
   </BaseModal>
 </template>

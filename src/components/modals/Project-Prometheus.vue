@@ -4,21 +4,9 @@
     @close="$emit('close')"
     title="Prometheus + Grafana Monitoring Stack"
   >
-    <div class="text-gray-200 space-y-3 text-base">
-      <!-- Overview -->
-      <div class="px-6 pt-2">
-        <p class="text-gray-300 leading-relaxed">
-          Centralized monitoring stack on
-          <span class="font-medium text-orange-300">beelink-monitoring</span>, using
-          <span class="font-medium">Prometheus</span> for metrics and
-          <span class="font-medium">Grafana</span> for visualization. Node Exporters on Linux VMs
-          (Rocky, Ubuntu) expose CPU, memory, disk, and network data, scraped by Prometheus and
-          displayed in Grafana.
-        </p>
-      </div>
-
-      <!-- Screenshot grid -->
-      <div class="flex flex-col space-y-2 px-6">
+    <!-- Screenshots -->
+    <div class="px-4 pt-3 pb-3">
+      <div class="flex flex-col gap-3">
         <img
           src="/images/project-modal-images/monitoring-ansible-nodeexporter.png"
           alt="Ansible playbook deploying node_exporters to remote VMs"
@@ -30,25 +18,25 @@
           class="rounded-lg shadow-md w-full object-contain"
         />
       </div>
+    </div>
 
-      <!-- Footer -->
-      <footer
-        class="border-t border-gray-700 px-6 py-2 flex flex-col sm:flex-row justify-between items-center text-gray-300 text-base"
+    <!-- Description + GitHub -->
+    <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
+      <p class="text-base text-gray-300 leading-relaxed flex-1">
+        Centralised monitoring stack using <span class="text-cyan-300">Prometheus</span> for
+        metrics collection and <span class="text-cyan-300">Grafana</span> for visualization.
+        <span class="text-cyan-300">Node Exporters</span> on Linux VMs (Rocky, Ubuntu) expose
+        CPU, memory, disk, and network data. Deployed across the lab with
+        <span class="text-cyan-300">Ansible</span>.
+      </p>
+      <a
+        href="https://github.com/Simodalstix/ansible-beelink-monitoring"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-6 rounded-md shadow-sm transition-colors duration-200 text-center whitespace-nowrap"
       >
-        <div class="sm:w-3/4 text-center sm:text-left leading-snug">
-          <span class="font-medium">Scope:</span>
-          Demonstrates a Linux-based monitoring solution with Prometheus collecting metrics from
-          distributed Node Exporters and Grafana providing centralized performance dashboards.
-        </div>
-        <a
-          href="https://github.com/Simodalstix/ansible-beelink-monitoring"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-purple-700 hover:bg-purple-800 text-white font-medium py-2 px-3 rounded-md shadow-sm mt-2 sm:mt-0 transition-colors duration-150"
-        >
-          View on GitHub
-        </a>
-      </footer>
+        View on GitHub
+      </a>
     </div>
   </BaseModal>
 </template>

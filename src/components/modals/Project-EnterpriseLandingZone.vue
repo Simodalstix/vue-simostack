@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="AWS Multi-Account Landing Zone Architecture"
+    title="AWS Multi-Account Landing Zone – Zero Trust Architecture"
   >
     <!-- Architecture Diagram -->
     <div class="px-4 pt-3 pb-3">
@@ -22,8 +22,8 @@
   enforcing governance at the org level. Hub-and-spoke networking via
   <span class="text-cyan-300">Transit Gateway</span>, centralised security baseline with
   <span class="text-cyan-300">GuardDuty</span> and
-  <span class="text-cyan-300">Security Hub</span>, and automated compliance via
-  <span class="text-cyan-300">Config</span>.
+  <span class="text-cyan-300">Security Hub</span>, and
+  <span class="text-cyan-300">Config</span> compliance.
 </p>
       <a
         href="https://github.com/simodalstix/AWS-enterprise-landingzone"

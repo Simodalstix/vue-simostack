@@ -16,7 +16,7 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
       <p class="text-base text-gray-300 leading-relaxed flex-1">
-        Multi-region serverless ecommerce backend with DynamoDB Global Tables, API Gateway, Lambda, and Route 53 failover. Pay-per-use scaling with provisioned concurrency on checkout path. Targets p95 < 250ms and >= 99.9% availability with ~60-120s failover.
+        Multi-region serverless ecommerce backend with <span class="text-cyan-300">DynamoDB Global Tables</span>, <span class="text-cyan-300">API Gateway</span>, <span class="text-cyan-300">Lambda</span>, and <span class="text-cyan-300">Route 53</span> failover. Pay-per-use scaling with provisioned concurrency on checkout path. Targets p95 &lt; 250ms and &gt;= 99.9% availability with ~60–120s failover.
       </p>
       <a
         href="https://github.com/Simodalstix/AWS-multiregion-ecommerce"

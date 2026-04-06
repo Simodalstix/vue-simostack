@@ -16,7 +16,7 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
       <p class="text-base text-gray-300 leading-relaxed flex-1">
-        Migrated 9-service e-commerce platform from Maven to Gradle with Jenkins CI/CD. Spring Cloud Gateway, Nacos, MySQL per service, Redis, Elasticsearch, and RabbitMQ. Achieved 40% faster builds (33s vs 2+ min) with parallel execution and Gradle caching.
+        Migrated 9-service e-commerce platform from <span class="text-cyan-300">Maven</span> to <span class="text-cyan-300">Gradle</span> with <span class="text-cyan-300">Jenkins</span> CI/CD. Spring Cloud Gateway, <span class="text-cyan-300">Nacos</span>, MySQL per service, <span class="text-cyan-300">Redis</span>, Elasticsearch, and <span class="text-cyan-300">RabbitMQ</span>. Achieved 40% faster builds (33s vs 2+ min) with parallel execution and Gradle caching.
       </p>
       <a
         href="https://github.com/Simodalstix/java-gradle-microservices"

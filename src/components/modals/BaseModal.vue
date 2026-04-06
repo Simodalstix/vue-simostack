@@ -25,7 +25,7 @@
       >
         <div
           v-if="visible"
-          class="text-white p-4 rounded-xl relative shadow-2xl overflow-y-auto w-full min-h-0 overscroll-contain mt-4 md:mt-0 scrollbar-thin"
+          class="text-white pt-4 px-4 pb-2 rounded-xl relative shadow-2xl overflow-y-auto w-full min-h-0 overscroll-contain mt-4 md:mt-0 scrollbar-thin"
           :class="[width, bgColor, borderClass]"
           :style="{ maxHeight: 'min(90dvh, ' + maxHeightPx + ')' }"
         >

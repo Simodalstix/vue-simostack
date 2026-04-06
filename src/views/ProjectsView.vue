@@ -484,7 +484,7 @@ const projects = [
   },
   {
     id: 'enterprise-landing-zone',
-    title: 'AWS Multi-Account Landing Zone Architecture - Zero trust',
+    title: 'AWS Multi-Account Landing Zone – Zero Trust Architecture',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },

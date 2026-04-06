@@ -16,7 +16,7 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
       <p class="text-base text-gray-300 leading-relaxed flex-1">
-        Complete DevOps pipeline for Spring Boot application with Jenkins automation, PostgreSQL database, Docker containerization, and quality gates. Maven compile, JUnit tests, SpotBugs security checks, and multi-stage Docker builds with health checks.
+        Complete DevOps pipeline for Spring Boot application with <span class="text-cyan-300">Jenkins</span> automation, <span class="text-cyan-300">PostgreSQL</span> database, <span class="text-cyan-300">Docker</span> containerization, and quality gates. Maven compile, <span class="text-cyan-300">JUnit</span> tests, <span class="text-cyan-300">SpotBugs</span> security checks, and multi-stage Docker builds with health checks.
       </p>
       <a
         href="https://github.com/Simodalstix/java-app-jenkins"

@@ -16,7 +16,7 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
       <p class="text-base text-gray-300 leading-relaxed flex-1">
-        Monitoring and patch management lab with Azure Monitor, Dynatrace OneAgent, and automated patching. Linux/Windows VMs with load balancer, sample applications, health probes, and maintenance windows. Dual monitoring stack for infrastructure and APM coverage.
+        Monitoring and patch management lab with <span class="text-cyan-300">Azure Monitor</span>, <span class="text-cyan-300">Dynatrace OneAgent</span>, and automated patching. Linux/Windows VMs with load balancer, sample applications, health probes, and maintenance windows. Dual monitoring stack for infrastructure and <span class="text-cyan-300">APM</span> coverage.
       </p>
       <a
         href="https://github.com/Simodalstix/az-dynatrace"
