@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen bg-slate-900 text-white">
     <header
- class="bg-gradient-to-r from-purple-800 to-purple-950 shadow-xl border-b border-cyan-800/40"
+      class="bg-purple-900 bg-gradient-to-r from-purple-800 to-purple-950 shadow-xl border-b border-purple-700/50"
     >
       <nav class="container mx-auto px-6 py-2">
         <div class="flex justify-between items-center">
@@ -37,22 +37,25 @@
         </div>
         <!-- Mobile menu -->
         <div v-if="isMobileMenuOpen" class="md:hidden mt-4 pb-4">
-          <div class="flex flex-col space-y-3">
+          <div class="flex flex-col space-y-2">
             <router-link
               :to="{ name: 'Home' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
+              active-class="text-white bg-white/10 border-cyan-400/40"
               @click="closeMobileMenu"
               >Home</router-link
             >
             <router-link
               :to="{ name: 'Projects' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
+              active-class="text-white bg-white/10 border-cyan-400/40"
               @click="closeMobileMenu"
               >Projects</router-link
             >
             <router-link
               :to="{ name: 'About' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
+              active-class="text-white bg-white/10 border-cyan-400/40"
               @click="closeMobileMenu"
               >About</router-link
             >
@@ -65,20 +68,23 @@
             <div class="flex space-x-1">
               <router-link
                 :to="{ name: 'Home' }"
-                class="px-4 py-2 rounded-md text-lg text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+                class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 hover:text-white hover:bg-white/15 transition-all duration-200"
+                exact-active-class="!text-white !bg-white/20"
                 >Home</router-link
               >
               <router-link
                 :to="{ name: 'About' }"
-                class="px-4 py-2 rounded-md text-lg text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+                class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 hover:text-white hover:bg-white/15 transition-all duration-200"
+                exact-active-class="!text-white !bg-white/20"
                 >About</router-link
               >
             </div>
-            
+
             <!-- Projects (offset right) -->
             <router-link
               :to="{ name: 'Projects' }"
-              class="px-4 py-2 rounded-md text-lg text-gray-300 hover:text-white hover:bg-slate-600/50 transition-all duration-200"
+              class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 hover:text-white hover:bg-white/15 transition-all duration-200"
+              exact-active-class="!text-white !bg-white/20"
               >Projects</router-link
             >
           </div>

@@ -4,7 +4,7 @@
       <div class="min-[1150px]:w-2/3">
         <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-center min-[1150px]:text-left">Systems, Cloud &amp; Infra Projects</h1>
         <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-       These projects document hands-on work across infrastructure, systems, and application layers. Current focus is moving from IaC into hands-on AWS operations — building fluency with the CLI, provisioning, monitoring, and understanding how services behave in practice.
+       Cloud infrastructure, platform engineering, and systems work built across AWS, Azure, Kubernetes, and a bare-metal Proxmox lab. Projects range from multi-account landing zones and GitOps pipelines to disaster recovery, observability platforms, and Java CI/CD. Current shift: moving beyond pure IaC into AWS operations — understanding how services behave, break, and recover in practice.
         </p>
       </div>
       <div class="min-[1150px]:w-1/3 flex flex-col justify-start">
@@ -29,7 +29,7 @@
 
           <!-- Proxmox Infrastructure Lab Card (hardcoded — row-span, sub-items, custom emits) -->
           <BaseCard
-            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-stone-600 bg-gradient-to-br from-stone-900 to-stone-950"
+            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-700/60 bg-slate-950"
           >
             <div class="flex items-start justify-between mb-3 min-[1400px]:mb-4">
               <h3 class="text-base min-[1400px]:text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
@@ -45,25 +45,25 @@
               <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
             </div>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-2 py-1 text-xs font-medium bg-stone-800/60 text-stone-300 border border-stone-700/50 rounded-md">Hypervisor</span>
-              <span class="px-2 py-1 text-xs font-medium bg-stone-800/60 text-stone-300 border border-stone-700/50 rounded-md">Firewall</span>
-              <span class="px-2 py-1 text-xs font-medium bg-stone-800/60 text-stone-300 border border-stone-700/50 rounded-md">Linux</span>
+              <span class="px-2 py-1 text-xs font-medium bg-slate-800/60 text-slate-300 border border-slate-700/50 rounded-md">Hypervisor</span>
+              <span class="px-2 py-1 text-xs font-medium bg-slate-800/60 text-slate-300 border border-slate-700/50 rounded-md">Firewall</span>
+              <span class="px-2 py-1 text-xs font-medium bg-slate-800/60 text-slate-300 border border-slate-700/50 rounded-md">Linux</span>
             </div>
-            <div class="border-t border-stone-700/60 pt-4">
-              <p class="text-xs text-stone-400 font-medium">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
-              <p class="text-xs text-stone-500 mt-1.5">6 VMs running services on a single node.</p>
+            <div class="border-t border-slate-700/60 pt-4">
+              <p class="text-xs text-slate-400 font-medium">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
+              <p class="text-xs text-slate-500 mt-1.5">6 VMs running services on a single node.</p>
             </div>
             <ul class="space-y-1.5 min-[1400px]:space-y-2 text-xs min-[1400px]:text-sm mt-2">
-              <li @click="showDC1 = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Windows Server Domain Controller</span></li>
-              <li @click="showFileServer = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Rocky Linux Samba File Server</span></li>
-              <li @click="showVaultPki = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">HashiCorp Vault PKI</span></li>
-              <li @click="showOPNsense = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
+              <li @click="showDC1 = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Windows Server Domain Controller</span></li>
+              <li @click="showFileServer = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Rocky Linux Samba File Server</span></li>
+              <li @click="showVaultPki = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">HashiCorp Vault PKI</span></li>
+              <li @click="showOPNsense = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
 
-              <li @click="showPrometheusGrafana = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0"></span><span class="bg-stone-800/80 text-stone-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
+              <li @click="showPrometheusGrafana = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
             </ul>
-            <div class="flex items-center justify-between gap-2 text-xs text-gray-400 pt-4 mt-auto border-t border-stone-700">
-              <span class="flex items-center gap-1 px-2 py-1 bg-stone-500/30 text-stone-300 border border-stone-500/20 rounded-full">
-                <div class="w-2 h-2 bg-stone-400 rounded-full"></div>
+            <div class="flex items-center justify-between gap-2 text-xs text-gray-400 pt-4 mt-auto border-t border-slate-700/60">
+              <span class="flex items-center gap-1 px-2 py-1 bg-slate-700/30 text-slate-300 border border-slate-600/30 rounded-full">
+                <div class="w-2 h-2 bg-slate-400 rounded-full"></div>
                 Archived
               </span>
               <span>Systems Infrastructure</span>
@@ -74,7 +74,7 @@
           <template v-for="project in mainProjects" :key="project.id">
             <BaseCard
               :class="[
-                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100 hover:shadow-xl',
+                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-600/80 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100',
                 project.hover,
                 project.githubUrl ? 'relative' : '',
               ]"
@@ -92,7 +92,7 @@
               </a>
 
               <div class="flex items-center justify-between mb-4">
-                <h3 class="text-base font-bold text-white group-hover:text-indigo-100">{{ project.title }}</h3>
+                <h3 :class="['text-base font-bold text-white', project.titleHover]">{{ project.title }}</h3>
               </div>
 
               <div class="flex items-center justify-evenly mb-4">
@@ -126,7 +126,7 @@
           <template v-for="project in extraProjects" :key="project.id">
             <BaseCard
               v-if="project.id === 'coming-soon'"
-              class="p-4 rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 text-gray-400"
+              class="p-4 rounded-xl border border-slate-600/80 bg-slate-700/80 text-gray-400"
             >
               <h3 class="text-lg font-bold mb-3 text-white">More Projects Coming Soon</h3>
               <p class="text-sm text-slate-300">Additional cloud infrastructure and DevOps projects in development.</p>
@@ -135,13 +135,13 @@
             <BaseCard
               v-else
               :class="[
-                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-600 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100 hover:shadow-xl',
+                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-600/80 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100',
                 project.hover,
               ]"
               @click="handleCardClick(project)"
             >
               <div class="flex items-center justify-between mb-4">
-                <h3 class="text-base font-bold text-white group-hover:text-indigo-100">{{ project.title }}</h3>
+                <h3 :class="['text-base font-bold text-white', project.titleHover]">{{ project.title }}</h3>
               </div>
 
               <div class="flex items-center justify-evenly mb-4">
@@ -479,7 +479,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -497,7 +498,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -515,7 +517,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:from-indigo-700 hover:to-indigo-950 hover:border-indigo-400 hover:shadow-indigo-500/10',
+    hover: 'hover:bg-indigo-900/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    titleHover: 'group-hover:text-indigo-100',
     section: 'main',
   },
   {
@@ -534,7 +537,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -553,7 +557,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Experimental Lab',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -571,7 +576,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:from-indigo-700 hover:to-indigo-950 hover:border-indigo-400 hover:shadow-indigo-500/10',
+    hover: 'hover:bg-indigo-900/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    titleHover: 'group-hover:text-indigo-100',
     section: 'main',
   },
   {
@@ -589,7 +595,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -607,7 +614,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Experimental Lab',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -625,7 +633,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -643,7 +652,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:from-indigo-700 hover:to-indigo-950 hover:border-indigo-400 hover:shadow-indigo-500/10',
+    hover: 'hover:bg-indigo-900/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    titleHover: 'group-hover:text-indigo-100',
     section: 'main',
   },
   {
@@ -661,7 +671,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Migration',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -680,7 +691,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps Lab',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -698,7 +710,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps Lab',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -717,7 +730,8 @@ const projects = [
     status: 'No Diagram',
     statusColor: 'purple',
     category: 'DevOps',
-    hover: 'hover:from-indigo-700 hover:to-indigo-950 hover:border-indigo-400 hover:shadow-indigo-500/10',
+    hover: 'hover:bg-indigo-900/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    titleHover: 'group-hover:text-indigo-100',
     githubUrl: 'https://github.com/Simodalstix/java-rabbitmq-aks',
     section: 'main',
   },
@@ -736,7 +750,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
   {
@@ -754,7 +769,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
 
@@ -774,7 +790,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:from-cyan-700 hover:to-cyan-950 hover:border-cyan-400 hover:shadow-cyan-500/10',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
     section: 'extra',
   },
   {
@@ -792,7 +809,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Experimental Lab',
-    hover: 'hover:from-zinc-700 hover:to-slate-900 hover:border-slate-200 hover:shadow-zinc-500/10',
+    hover: 'hover:bg-zinc-700/60 hover:border-slate-400/60 hover:shadow-lg hover:shadow-zinc-500/10',
+    titleHover: 'group-hover:text-slate-100',
     section: 'extra',
   },
   {
@@ -810,7 +828,8 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:from-zinc-700 hover:to-slate-900 hover:border-slate-200 hover:shadow-zinc-500/10',
+    hover: 'hover:bg-zinc-700/60 hover:border-slate-400/60 hover:shadow-lg hover:shadow-zinc-500/10',
+    titleHover: 'group-hover:text-slate-100',
     section: 'extra',
   },
   {
@@ -822,6 +841,7 @@ const projects = [
     statusColor: 'green',
     category: '',
     hover: '',
+    titleHover: '',
     section: 'extra',
   },
 ]

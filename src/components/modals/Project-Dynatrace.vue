@@ -3,6 +3,7 @@
     :visible="visible"
     @close="$emit('close')"
     title="Azure Monitoring & Patch Management Lab"
+    borderClass="border border-indigo-500/30 shadow-xl shadow-indigo-500/10"
   >
     <!-- Architecture Diagram -->
     <div class="px-4 pt-3 pb-3">

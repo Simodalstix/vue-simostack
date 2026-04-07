@@ -1,7 +1,7 @@
 <template>
   <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
     <!-- Header -->
-    <section class="mb-8 sm:mb-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+    <section class="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="flex items-center gap-4">
 
         <h1 class="text-4xl sm:text-5xl font-bold text-center sm:text-left">Background &amp; Direction</h1>
@@ -9,7 +9,7 @@
     </section>
 
     <!-- Main container with L-shaped border -->
-    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-5 mb-8 md:mb-12 max-w-5xl">
+    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-4 mb-4 md:mb-8 max-w-5xl">
       <!-- Start point circle (desktop only) -->
       <div class="hidden md:block absolute -left-[9px] top-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
       <!-- End point circle (desktop only) -->
