@@ -29,14 +29,14 @@
 
           <!-- Proxmox Infrastructure Lab Card (hardcoded — row-span, sub-items, custom emits) -->
           <BaseCard
-            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-700/60 bg-slate-950"
+            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-700/60 bg-slate-900"
           >
             <div class="flex items-start justify-between mb-3 min-[1400px]:mb-4">
               <h3 class="text-base min-[1400px]:text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
               <img src="/images/project-icons/beelink.png" alt="Beelink" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
             </div>
             <div class="flex items-center gap-1.5 min-[1400px]:gap-3 mb-3 min-[1400px]:mb-4">
-              <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
+              <img src="/images/project-icons/proxmox2.png" alt="Proxmox" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
               <img src="/images/project-icons/windows.svg" alt="Windows" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-sm" />
               <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
               <img src="/images/project-icons/vault.svg" alt="Vault" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
