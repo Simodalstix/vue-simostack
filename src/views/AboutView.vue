@@ -47,7 +47,7 @@
     <!-- Role cards below the timeline -->
     <section class="max-w-6xl relative pt-0 md:pt-8">
       <!-- Connector lines from bottom border to cards -->
-      <div class="hidden md:block absolute -top-12 left-0 right-0 h-20">
+      <div class="hidden md:block absolute -top-8 left-0 right-0 h-16">
         <!-- Line to Pharmacist (left) -->
         <div class="absolute left-[16.84%] top-0 w-0.5 h-full bg-slate-600"></div>
         <div class="absolute left-[16.66%] -top-[6px] w-3 h-3 bg-cyan-500 rounded-full -translate-x-[3px]"></div>
