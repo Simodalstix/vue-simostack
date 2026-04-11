@@ -378,6 +378,13 @@
     height="max-h-[92vh]"
   />
 
+  <ProjectAwsSsmFleet
+    :visible="showAwsSsmFleet"
+    @close="showAwsSsmFleet = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
+
   <VMwareModal
     :visible="showVmwareModal"
     @close="showVmwareModal = false"
@@ -413,6 +420,7 @@ import ProjectAksGitopsProject from '@/components/modals/Project-AzureAKSGitops.
 import ProjectObservabilityPlatform from '@/components/modals/Project-ObservabilityPlatform.vue'
 import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenkins.vue'
 import ProjectK3sGitops from '@/components/modals/Project-K3sGitops.vue'
+import ProjectAwsSsmFleet from '@/components/modals/Project-AWSSsmFleet.vue'
 import HackTheBoxModal from '@/components/modals/HackTheBoxModal.vue'
 import VMwareModal from '@/components/modals/VMwareModal.vue'
 import VaultPkiModal from '@/components/modals/Project-VaultPKI.vue'
@@ -448,6 +456,7 @@ const showPilotLightDR = ref(false)
 const showAwsDrBackupLab = ref(false)
 const showAwsLambdaSqsDlq = ref(false)
 const showAwsFargateGoldenPath = ref(false)
+const showAwsSsmFleet = ref(false)
 const showBedrockLandingzone = ref(false)
 const showToolingProject = ref(false)
 const showHtbModal = ref(false)
@@ -522,21 +531,21 @@ const projects = [
     section: 'main',
   },
   {
-    id: 'eks-gitops',
-    title: 'EKS Multi-Tier App – GitOps Pipeline & Observability',
+    id: 'aws-ssm-fleet',
+    title: 'AWS SSM Fleet – Puppet Config Management Without SSH',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
-      { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
-      { src: '/images/aws-icons/eks.svg', alt: 'EKS' },
-      { src: '/images/project-icons/argocd.svg', alt: 'ArgoCD' },
-      { src: '/images/project-icons/helm.png', alt: 'Helm' },
-      { src: '/images/project-icons/prometheus.png', alt: 'Prometheus' },
-      { src: '/images/project-icons/grafana.png', alt: 'Grafana' },
+      { src: '/images/project-icons/python.svg', alt: 'Python' },
+      { src: '/images/project-icons/puppet.svg', alt: 'Puppet' },
+      { src: '/images/aws-icons/ssm.svg', alt: 'SSM' },
+      { src: '/images/aws-icons/ec2.svg', alt: 'EC2' },
+      { src: '/images/project-icons/nodejs.svg', alt: 'Node.js' },
+
     ],
-    tags: ['GitOps', 'Kubernetes', 'Monitoring'],
+    tags: ['Config Management', 'Fleet', 'Keyless'],
     status: 'Ready',
     statusColor: 'green',
-    category: 'DevOps',
+    category: 'Cloud Infrastructure',
     hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
@@ -773,6 +782,27 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
+{
+    id: 'eks-gitops',
+    title: 'EKS Multi-Tier App – GitOps Pipeline & Observability',
+    icons: [
+      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
+      { src: '/images/aws-icons/eks.svg', alt: 'EKS' },
+      { src: '/images/project-icons/argocd.svg', alt: 'ArgoCD' },
+      { src: '/images/project-icons/helm.png', alt: 'Helm' },
+      { src: '/images/project-icons/prometheus.png', alt: 'Prometheus' },
+      { src: '/images/project-icons/grafana.png', alt: 'Grafana' },
+    ],
+    tags: ['GitOps', 'Kubernetes', 'Monitoring'],
+    status: 'Ready',
+    statusColor: 'green',
+    category: 'DevOps',
+    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
+    section: 'main',
+  },
+
 
   // ── Extra section ──────────────────────────────────────────────────────────
   {
@@ -898,6 +928,7 @@ watch(activeProject, (id) => {
     'java-petclinic':          showJavaMavernJenkins,
     'multiregion-platform':    showMultiregionProject,
     'bedrock-landing-zone':    showBedrockLandingzone,
+    'aws-ssm-fleet':           showAwsSsmFleet,
     'devops-toolchain':        showToolingProject,
     'k3s-gitops':              showK3sGitops,
     'vmware-monitoring':       showVmwareProject,
