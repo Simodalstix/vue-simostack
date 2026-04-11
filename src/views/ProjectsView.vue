@@ -29,7 +29,7 @@
 
           <!-- Proxmox Infrastructure Lab Card (hardcoded — row-span, sub-items, custom emits) -->
           <BaseCard
-            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-700/60 bg-slate-900"
+            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-600/80 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800"
           >
             <div class="flex items-start justify-between mb-3 min-[1400px]:mb-4">
               <h3 class="text-base min-[1400px]:text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
@@ -62,8 +62,8 @@
               <li @click="showPrometheusGrafana = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
             </ul>
             <div class="flex items-center justify-between gap-2 text-xs text-gray-400 pt-4 mt-auto border-t border-slate-700/60">
-              <span class="flex items-center gap-1 px-2 py-1 bg-slate-700/30 text-slate-300 border border-slate-600/30 rounded-full">
-                <div class="w-2 h-2 bg-slate-400 rounded-full"></div>
+              <span class="flex items-center gap-1 px-2 py-1 bg-yellow-700/30 text-yellow-300 border border-yellow-600/30 rounded-full">
+                <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
                 Archived
               </span>
               <span>Systems Infrastructure</span>
@@ -488,7 +488,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -507,7 +507,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -526,7 +526,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:bg-indigo-900/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    hover: 'hover:bg-indigo-800/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
     titleHover: 'group-hover:text-indigo-100',
     section: 'main',
   },
@@ -546,7 +546,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -566,7 +566,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Experimental Lab',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -585,7 +585,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:bg-indigo-900/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    hover: 'hover:bg-indigo-900 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
     titleHover: 'group-hover:text-indigo-100',
     section: 'main',
   },
@@ -604,7 +604,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -623,7 +623,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Experimental Lab',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -642,7 +642,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -661,7 +661,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:bg-indigo-900/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    hover: 'hover:bg-indigo-900 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
     titleHover: 'group-hover:text-indigo-100',
     section: 'main',
   },
@@ -680,7 +680,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Migration',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -700,7 +700,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps Lab',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -719,7 +719,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps Lab',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -739,7 +739,7 @@ const projects = [
     status: 'No Diagram',
     statusColor: 'purple',
     category: 'DevOps',
-    hover: 'hover:bg-indigo-900/60 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    hover: 'hover:bg-indigo-900 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
     titleHover: 'group-hover:text-indigo-100',
     githubUrl: 'https://github.com/Simodalstix/java-rabbitmq-aks',
     section: 'main',
@@ -759,7 +759,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -778,7 +778,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -798,7 +798,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
@@ -820,7 +820,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'extra',
   },
@@ -877,7 +877,7 @@ const projects = [
     status: 'Live',
     statusColor: 'green',
     category: 'Web',
-    hover: 'hover:bg-cyan-900/40 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     githubUrl: 'https://github.com/Simodalstix/vue-simostack',
     section: 'extra',
