@@ -89,22 +89,23 @@
         </div>
 
         <!-- Right: Cert pyramid (top-right to bottom-left) -->
-        <div class="flex-1 flex flex-col items-end pr-4 sm:pr-6 md:pr-10">
-          <!-- Row 1: Security+ then Microsoft lowest to best right (flush right) -->
+        <div class="flex-1 flex flex-col items-end pr-6 sm:pr-8 md:pr-10">
+          <!-- Row 1: ITIL then Microsoft lowest to best right (flush right) -->
           <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4">
-            <img src="/images/certifications/securityplus.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSecurityPlusModal = true" alt="CompTIA Security+" />
+            <img src="/images/certifications/itil.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showITILModal = true" alt="ITIL Foundation" />
             <img src="/images/certifications/ms-900.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showMS900Modal = true" alt="Microsoft 365 Fundamentals" />
             <img src="/images/certifications/sc-300.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSC300Modal = true" alt="Microsoft SC-300 Identity and Access Administrator" />
             <img src="/images/certifications/azure-admin.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showAzureAdminModal = true" alt="Azure Administrator Associate" />
           </div>
-          <!-- Row 2: AWS lowest to best right (staggered) -->
-          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4 pr-10 sm:pr-12 md:pr-16">
+          <!-- Row 2: Security+ then AWS lowest to best right (staggered) -->
+          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4 pr-7 sm:pr-9 md:pr-16">
+            <img src="/images/certifications/securityplus.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSecurityPlusModal = true" alt="CompTIA Security+" />
             <img src="/images/certifications/cloudpractitioner12.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showCloudPractitionerModal = true" alt="AWS Cloud Practitioner" />
             <img src="/images/certifications/aws-dva.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showDeveloperModal = true" alt="AWS Developer Associate" />
             <img src="/images/certifications/aws-saa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showArchitectModal = true" alt="AWS Solutions Architect Associate" />
           </div>
           <!-- Row 3: Terraform + RHCSA (flush right) -->
-          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4">
+          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4 md:pr-32">
             <img src="/images/certifications/pcap.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showPCAPModal = true" alt="PCAP Python" />
             <img src="/images/certifications/terraform003.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showTerraformModal = true" alt="Terraform Associate" />
             <img src="/images/certifications/rhcsa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(255,80,80,0.5)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showRHCSAModal = true" alt="Red Hat Certified System Administrator" />
@@ -116,6 +117,7 @@
   </div>
 
   <!-- Modals -->
+  <ITILModal :visible="showITILModal" @close="showITILModal = false" />
   <MS900 :visible="showMS900Modal" @close="showMS900Modal = false" />
   <AzureAdministrator :visible="showAzureAdminModal" @close="showAzureAdminModal = false" />
   <RHCSA :visible="showRHCSAModal" @close="showRHCSAModal = false" />
@@ -130,6 +132,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import ITILModal from '../components/modals/Cert-ITIL.vue'
 import MS900 from '../components/modals/Cert-MS900.vue'
 import AzureAdministrator from '../components/modals/Cert-AZ104.vue'
 import RHCSA from '../components/modals/Cert-RHCSA.vue'
@@ -150,6 +153,7 @@ const showAzureAdminModal = ref(false)
 const showRHCSAModal = ref(false)
 const showSC300Modal = ref(false)
 const showCloudPractitionerModal = ref(false)
+const showITILModal = ref(false)
 const showSecurityPlusModal = ref(false)
 const showPCAPModal = ref(false)
 </script>
