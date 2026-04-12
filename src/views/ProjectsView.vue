@@ -74,12 +74,17 @@
           <template v-for="project in mainProjects" :key="project.id">
             <BaseCard
               :class="[
-                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-600/80 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100',
+                'relative group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-600/80 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100 overflow-hidden',
                 project.hover,
-                project.githubUrl ? 'relative' : '',
+                project.githubUrl ? '' : '',
               ]"
               @click="handleCardClick(project)"
             >
+              <!-- New ribbon -->
+              <div v-if="project.isNew" class="absolute top-0 right-0 w-20 h-20 z-20 pointer-events-none">
+                <div class="absolute top-3 -right-6 w-24 bg-cyan-400 text-cyan-950 text-[10px] font-bold text-center py-0.5 rotate-45 tracking-widest shadow-[0_0_12px_rgba(34,211,238,0.85)]">NEW</div>
+              </div>
+
               <a
                 v-if="project.githubUrl"
                 :href="project.githubUrl"
@@ -549,6 +554,7 @@ const projects = [
     hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
+    isNew: true,
   },
   {
     id: 'dr-backup',
