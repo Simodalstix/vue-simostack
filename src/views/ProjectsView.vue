@@ -97,7 +97,7 @@
               </a>
 
               <div class="flex items-center justify-between mb-4">
-                <h3 :class="['text-base font-bold text-white', project.titleHover]">{{ project.title }}</h3>
+                <h3 :class="['text-base font-bold text-white', project.titleHover]" v-html="project.titleHtml || project.title"></h3>
               </div>
 
               <div class="flex items-center justify-evenly mb-4">
@@ -146,7 +146,7 @@
               @click="handleCardClick(project)"
             >
               <div class="flex items-center justify-between mb-4">
-                <h3 :class="['text-base font-bold text-white', project.titleHover]">{{ project.title }}</h3>
+                <h3 :class="['text-base font-bold text-white', project.titleHover]" v-html="project.titleHtml || project.title"></h3>
               </div>
 
               <div class="flex items-center justify-evenly mb-4">
@@ -538,6 +538,7 @@ const projects = [
   {
     id: 'aws-ssm-fleet',
     title: 'AWS SSM Fleet – Puppet Config Management Without SSH',
+    titleHtml: 'AWS SSM Fleet – <span class="text-amber-400">Puppet</span> Config Management Without SSH',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },

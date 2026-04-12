@@ -92,7 +92,7 @@
         <div class="flex-1 flex flex-col items-end pr-6 sm:pr-8 md:pr-10">
           <!-- Row 1: ITIL then Microsoft lowest to best right (flush right) -->
           <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4">
-            <img src="/images/certifications/itil.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showITILModal = true" alt="ITIL Foundation" />
+            <img src="/images/certifications/itil.png" class="rounded-full w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showITILModal = true" alt="ITIL Foundation" />
             <img src="/images/certifications/ms-900.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showMS900Modal = true" alt="Microsoft 365 Fundamentals" />
             <img src="/images/certifications/sc-300.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSC300Modal = true" alt="Microsoft SC-300 Identity and Access Administrator" />
             <img src="/images/certifications/azure-admin.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showAzureAdminModal = true" alt="Azure Administrator Associate" />
