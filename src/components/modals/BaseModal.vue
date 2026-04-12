@@ -44,7 +44,7 @@
             <slot name="header">
               <h2
                 v-if="title && !hideTitleBorder"
-                :class="`text-xl font-bold pb-2 text-center ${titleColor}`"
+                :class="`text-xl font-bold pb-1 text-center ${titleColor}`"
               >
                 {{ title }}
               </h2>

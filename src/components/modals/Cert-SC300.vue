@@ -18,7 +18,7 @@ import BaseModal from './BaseModal.vue'
         <div class="h-0.5 bg-[#0078D4] mt-3 rounded-full"></div>
       </div>
     </template>
-    <div class="bg-[#F3F3F3] p-5 rounded">
+    <div class="bg-[#F3F3F3] p-5 rounded mb-2">
       <p class="text-base text-gray-800 mb-3">Validates expertise in designing and operating identity solutions using Microsoft Entra ID across cloud and hybrid environments.</p>
       <ul class="text-base text-gray-600 space-y-1.5 mb-4 list-disc list-inside">
         <li>Entra ID tenant configuration, authentication methods, and conditional access policies</li>

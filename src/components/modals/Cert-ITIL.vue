@@ -11,7 +11,7 @@ import BaseModal from './BaseModal.vue'
     title="ITIL 4 Foundation"
     width="max-w-3xl"
   >
-    <div class="p-4">
+    <div class="p-4 mb-2">
       <p class="text-base text-gray-300 leading-relaxed mb-4">
         Issued by PeopleCert on behalf of AXELOS. Covers
         <span class="text-cyan-300">change enablement</span>,

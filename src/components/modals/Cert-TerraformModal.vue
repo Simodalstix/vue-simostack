@@ -18,7 +18,7 @@ import BaseModal from './BaseModal.vue'
         <div class="h-0.5 bg-[#7B42BC] mt-3 rounded-full"></div>
       </div>
     </template>
-    <div class="bg-white p-5 rounded">
+    <div class="bg-white p-5 rounded mb-2">
       <p class="text-base text-gray-800 mb-3">Validates hands-on ability to write, plan, and manage infrastructure as code across cloud providers.</p>
       <ul class="text-base text-gray-600 space-y-1.5 mb-4 list-disc list-inside">
         <li>HCL syntax, module composition, and input/output variable design</li>

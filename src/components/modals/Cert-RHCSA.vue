@@ -13,7 +13,7 @@
         <div class="h-0.5 bg-[#EE0000] mt-3 rounded-full"></div>
       </div>
     </template>
-    <div class="bg-[#151515] p-5 rounded border border-[#393939]">
+    <div class="bg-[#151515] p-5 rounded border border-[#393939] mb-2">
       <p class="text-base text-[#D2D2D2] mb-3">Validates core Linux system administration skills through a fully hands-on, performance-based exam on live RHEL systems.</p>
       <ul class="text-base text-[#D2D2D2] space-y-1.5 mb-4 list-disc list-inside">
         <li>User and group management, file permissions, ACLs, and SELinux enforcement</li>

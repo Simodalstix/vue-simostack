@@ -18,7 +18,7 @@ import BaseModal from './BaseModal.vue'
         <div class="h-0.5 bg-[#C8202F] mt-3 rounded-full"></div>
       </div>
     </template>
-    <div class="bg-white p-5 rounded">
+    <div class="bg-white p-5 rounded mb-2">
       <p class="text-base text-gray-800 mb-3">Validates foundational cybersecurity knowledge across threat analysis, network security, identity management, and risk mitigation.</p>
       <ul class="text-base text-gray-600 space-y-1.5 mb-4 list-disc list-inside">
         <li>Threat vectors, vulnerability assessment, and penetration testing concepts</li>

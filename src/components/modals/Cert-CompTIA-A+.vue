@@ -10,7 +10,7 @@ import BaseModal from './BaseModal.vue'
     @close="$emit('close')"
     title="CompTIA A+ ce Certification"
     width="max-w-3xl"
-    ><div class="bg-gray-700 p-3 rounded">
+    ><div class="bg-gray-700 p-3 rounded mb-2">
       <p class="text-base text-white mb-2">Issued by CompTIA</p>
       <p class="text-base text-gray-300">
         Earners of the CompTIA A+ certification are proven problem solvers who are able to perform
