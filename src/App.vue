@@ -68,14 +68,14 @@
             <div class="flex space-x-1">
               <router-link
                 :to="{ name: 'Home' }"
-                class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 hover:text-white hover:bg-white/15 transition-all duration-200"
-                exact-active-class="!text-white !bg-white/20"
+                class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 border border-transparent hover:text-white hover:bg-white/15 transition-all duration-200"
+                exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
                 >Home</router-link
               >
               <router-link
                 :to="{ name: 'About' }"
-                class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 hover:text-white hover:bg-white/15 transition-all duration-200"
-                exact-active-class="!text-white !bg-white/20"
+                class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 border border-transparent hover:text-white hover:bg-white/15 transition-all duration-200"
+                exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
                 >About</router-link
               >
             </div>
@@ -83,8 +83,8 @@
             <!-- Projects (offset right) -->
             <router-link
               :to="{ name: 'Projects' }"
-              class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 hover:text-white hover:bg-white/15 transition-all duration-200"
-              exact-active-class="!text-white !bg-white/20"
+              class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 border border-transparent hover:text-white hover:bg-white/15 transition-all duration-200"
+              exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
               >Projects</router-link
             >
           </div>

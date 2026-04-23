@@ -45,21 +45,20 @@
               <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
             </div>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-2 py-1 text-xs font-medium bg-slate-800/60 text-slate-300 border border-slate-700/50 rounded-md">Hypervisor</span>
-              <span class="px-2 py-1 text-xs font-medium bg-slate-800/60 text-slate-300 border border-slate-700/50 rounded-md">Firewall</span>
-              <span class="px-2 py-1 text-xs font-medium bg-slate-800/60 text-slate-300 border border-slate-700/50 rounded-md">Linux</span>
+              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Hypervisor</span>
+              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Firewall</span>
+              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Linux</span>
             </div>
-            <div class="border-t border-slate-700/60 pt-4">
-              <p class="text-xs text-slate-400 font-medium">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
-              <p class="text-xs text-slate-500 mt-1.5">6 VMs running services on a single node.</p>
+            <div class="border-t border-slate-700/60 pb-2 pt-4">
+              <p class="text-xs white font-medium">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
+              <p class="text-xs text-white mt-1.5">6 VMs running services on a single node.</p>
             </div>
             <ul class="space-y-1.5 min-[1400px]:space-y-2 text-xs min-[1400px]:text-sm mt-2">
-              <li @click="showDC1 = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Windows Server Domain Controller</span></li>
-              <li @click="showFileServer = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Rocky Linux Samba File Server</span></li>
-              <li @click="showVaultPki = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">HashiCorp Vault PKI</span></li>
-              <li @click="showOPNsense = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
-
-              <li @click="showPrometheusGrafana = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-800/60 group-hover/item:bg-slate-700/60 text-slate-300 group-hover/item:text-white px-1.5 py-0.5 min-[1400px]:px-2.5 min-[1400px]:py-1 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
+              <li @click="showDC1 = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Windows Server Domain Controller</span></li>
+              <li @click="showFileServer = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Rocky Linux Samba File Server</span></li>
+              <li @click="showVaultPki = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">HashiCorp Vault PKI</span></li>
+              <li @click="showOPNsense = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
+              <li @click="showPrometheusGrafana = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
             </ul>
             <div class="flex items-center justify-between gap-2 text-xs text-gray-400 pt-4 mt-auto border-t border-slate-700/60">
               <span class="flex items-center gap-1 px-2 py-1 bg-yellow-700/30 text-yellow-300 border border-yellow-600/30 rounded-full">
@@ -486,7 +485,7 @@ const projects = [
       { src: '/images/aws-icons/ecs.svg', alt: 'ECS' },
       { src: '/images/aws-icons/fargate.svg', alt: 'Fargate' },
       { src: '/images/aws-icons/code-deploy.svg', alt: 'CodeDeploy' },
-      { src: '/images/aws-icons/alb.svg', alt: 'ALB' },
+      { src: '/images/aws-icons/fis.svg', alt: 'FIS' },
       { src: '/images/aws-icons/cloudwatch.svg', alt: 'CloudWatch' },
     ],
     tags: ['Containers', 'Fargate', 'Observability'],
@@ -692,6 +691,26 @@ const projects = [
     section: 'main',
   },
   {
+    id: 'eks-gitops',
+    title: 'EKS Multi-Tier App – GitOps Pipeline & Observability',
+    icons: [
+      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
+      { src: '/images/aws-icons/eks.svg', alt: 'EKS' },
+      { src: '/images/project-icons/argocd.svg', alt: 'ArgoCD' },
+      { src: '/images/project-icons/helm.png', alt: 'Helm' },
+      { src: '/images/project-icons/prometheus.png', alt: 'Prometheus' },
+      { src: '/images/project-icons/grafana.png', alt: 'Grafana' },
+    ],
+    tags: ['GitOps', 'Kubernetes', 'Monitoring'],
+    status: 'Ready',
+    statusColor: 'green',
+    category: 'DevOps',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
+    section: 'main',
+  },
+  {
     id: 'microservices-mall',
     title: 'Microservices Mall – Jenkins CI/CD & Kubernetes',
     icons: [
@@ -711,25 +730,8 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
-  {
-    id: 'java-petclinic',
-    title: 'Java Spring PetClinic with Jenkins CI/CD Pipeline',
-    icons: [
-      { src: '/images/project-icons/java.svg', alt: 'Java' },
-      { src: '/images/project-icons/spring.svg', alt: 'Spring Boot' },
-      { src: '/images/project-icons/maven.svg', alt: 'Maven' },
-      { src: '/images/project-icons/jenkins.svg', alt: 'Jenkins' },
-      { src: '/images/project-icons/docker-mark-blue.svg', alt: 'Docker' },
-      { src: '/images/project-icons/postgres.svg', alt: 'PostgreSQL' },
-    ],
-    tags: ['CI/CD', 'Java', 'Containers'],
-    status: 'Ready',
-    statusColor: 'green',
-    category: 'DevOps Lab',
-    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
-    titleHover: 'group-hover:text-cyan-100',
-    section: 'main',
-  },
+
+
   {
     id: 'java-rabbitmq-aks',
     title: 'Cloud-Native Java Microservices + RabbitMQ on AKS',
@@ -770,6 +772,7 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
+
   {
     id: 'bedrock-landing-zone',
     title: 'AWS Bedrock Landing Zone – Multi-Account AI Platform',
@@ -790,21 +793,20 @@ const projects = [
     section: 'main',
   },
 {
-    id: 'eks-gitops',
-    title: 'EKS Multi-Tier App – GitOps Pipeline & Observability',
+    id: 'java-petclinic',
+    title: 'Java Spring PetClinic with Jenkins CI/CD Pipeline',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
-      { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
-      { src: '/images/aws-icons/eks.svg', alt: 'EKS' },
-      { src: '/images/project-icons/argocd.svg', alt: 'ArgoCD' },
-      { src: '/images/project-icons/helm.png', alt: 'Helm' },
-      { src: '/images/project-icons/prometheus.png', alt: 'Prometheus' },
-      { src: '/images/project-icons/grafana.png', alt: 'Grafana' },
+      { src: '/images/project-icons/java.svg', alt: 'Java' },
+      { src: '/images/project-icons/spring.svg', alt: 'Spring Boot' },
+      { src: '/images/project-icons/maven.svg', alt: 'Maven' },
+      { src: '/images/project-icons/jenkins.svg', alt: 'Jenkins' },
+      { src: '/images/project-icons/docker-mark-blue.svg', alt: 'Docker' },
+      { src: '/images/project-icons/postgres.svg', alt: 'PostgreSQL' },
     ],
-    tags: ['GitOps', 'Kubernetes', 'Monitoring'],
+    tags: ['CI/CD', 'Java', 'Containers'],
     status: 'Ready',
     statusColor: 'green',
-    category: 'DevOps',
+    category: 'DevOps Lab',
     hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
