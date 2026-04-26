@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col min-h-screen bg-slate-900 text-white">
     <header
-      class="bg-purple-900 bg-gradient-to-r from-purple-800 to-purple-950 shadow-xl border-b border-purple-700/50"
+      class="bg-gradient-to-r from-cyan-950 to-slate-900 shadow-xl border-b border-cyan-800/50"
     >
-      <nav class="container mx-auto px-6 py-2">
+      <nav class="container mx-auto px-6 py-4">
         <div class="flex justify-between items-center">
           <!-- Mobile menu button -->
           <button
@@ -62,20 +62,20 @@
           </div>
         </div>
         <!-- Desktop menu -->
-        <div class="hidden md:flex justify-center items-center mt-2">
+        <div class="hidden md:flex justify-center items-center">
           <div class="flex items-center gap-12">
             <!-- Main navigation pair (centered) -->
             <div class="flex space-x-1">
               <router-link
                 :to="{ name: 'Home' }"
-                class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 border border-transparent hover:text-white hover:bg-white/15 transition-all duration-200"
-                exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
+                class="px-5 py-1.5 rounded-full text-lg text-cyan-200/70 border border-transparent hover:text-white hover:bg-cyan-800/40 transition-all duration-200"
+                exact-active-class="!bg-cyan-500 !text-white !font-semibold !border-cyan-400/40"
                 >Home</router-link
               >
               <router-link
                 :to="{ name: 'About' }"
-                class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 border border-transparent hover:text-white hover:bg-white/15 transition-all duration-200"
-                exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
+                class="px-5 py-1.5 rounded-full text-lg text-cyan-200/70 border border-transparent hover:text-white hover:bg-cyan-800/40 transition-all duration-200"
+                exact-active-class="!bg-cyan-500 !text-white !font-semibold !border-cyan-400/40"
                 >About</router-link
               >
             </div>
@@ -83,8 +83,8 @@
             <!-- Projects (offset right) -->
             <router-link
               :to="{ name: 'Projects' }"
-              class="px-5 py-1.5 rounded-full text-lg text-purple-200/70 border border-transparent hover:text-white hover:bg-white/15 transition-all duration-200"
-              exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
+              class="px-5 py-1.5 rounded-full text-lg text-cyan-200/70 border border-transparent hover:text-white hover:bg-cyan-800/40 transition-all duration-200"
+              exact-active-class="!bg-cyan-500 !text-white !font-semibold !border-cyan-400/40"
               >Projects</router-link
             >
           </div>

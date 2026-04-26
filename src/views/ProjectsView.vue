@@ -8,7 +8,7 @@
         </p>
       </div>
       <div class="min-[1150px]:w-1/3 flex flex-col justify-start">
-        <div class="font-mono text-xs sm:text-sm bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 sm:px-4 sm:py-3 w-fit">
+        <div class="font-mono text-xs sm:text-sm bg-slate-900/80 border border-cyan-500/40 rounded-lg px-3 py-2 sm:px-4 sm:py-3 w-fit">
           <div class="flex items-center gap-2 mb-1">
             <span class="text-green-400">●</span>
             <span class="text-white">simon.service</span>
