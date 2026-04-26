@@ -33,7 +33,7 @@
         href="https://github.com/Simodalstix/ansible-beelink-monitoring"
         target="_blank"
         rel="noopener noreferrer"
-        class="bg-purple-700 hover:bg-purple-600 text-white font-medium py-2 px-6 rounded-md shadow-sm transition-colors duration-200 text-center whitespace-nowrap"
+        class="bg-cyan-500 hover:bg-cyan-400 text-white font-medium py-2 px-6 rounded-md shadow-sm shadow-cyan-400/40 hover:shadow-cyan-300/60 transition-all duration-200 text-center whitespace-nowrap"
       >
         View on GitHub
       </a>

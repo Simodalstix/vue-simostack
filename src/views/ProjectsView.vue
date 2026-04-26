@@ -389,6 +389,13 @@
     height="max-h-[92vh]"
   />
 
+  <ProjectAWS3TierPlatform
+    :visible="showAws3TierPlatform"
+    @close="showAws3TierPlatform = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
+
   <VMwareModal
     :visible="showVmwareModal"
     @close="showVmwareModal = false"
@@ -433,6 +440,7 @@ import ProjectDC1 from '@/components/modals/Project-DC1.vue'
 import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'
 import ProjectPrometheusGrafana from '@/components/modals/Project-Prometheus.vue'
 import ProjectProxmoxLab from '@/components/modals/Project-ProxmoxLab.vue'
+import ProjectAWS3TierPlatform from '@/components/modals/Project-AWS3TierPlatform.vue'
 
 defineProps({
   releaseVersion: String,
@@ -472,10 +480,31 @@ const showVmwareProject = ref(false)
 const showDynatraceProject = ref(false)
 const showAzureProject = ref(false)
 const showAwsProject = ref(false)
+const showAws3TierPlatform = ref(false)
 
 // ─── Project data ─────────────────────────────────────────────────────────────
 const projects = [
   // ── Main section ──────────────────────────────────────────────────────────
+  {
+    id: 'aws-3tier-platform',
+    title: 'AWS 3-Tier Platform – FastAPI, ALB, ASG, RDS & ElastiCache',
+    icons: [
+      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/python.svg', alt: 'Python' },
+      { src: '/images/aws-icons/ec2-autoscaling.svg', alt: 'Auto Scaling' },
+      { src: '/images/aws-icons/rds.svg', alt: 'RDS' },
+      { src: '/images/project-icons/redis.svg', alt: 'Redis' },
+      { src: '/images/project-icons/FastAPI.svg', alt: 'FastAPI' },
+    ],
+    tags: ['Database', 'Cache', '3-Tier', 'Fault Injection'],
+    status: 'Ready',
+    statusColor: 'green',
+    category: 'Cloud Infrastructure',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
+    section: 'main',
+    isNew: true,
+  },
   {
     id: 'fargate-golden-path',
     title: 'ECS Fargate Golden Path + Resilience Scenarios',
@@ -496,25 +525,7 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
-  {
-    id: 'enterprise-landing-zone',
-    title: 'AWS Multi-Account Landing Zone – Zero Trust Architecture',
-    icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
-      { src: '/images/project-icons/python.svg', alt: 'Python' },
-      { src: '/images/aws-icons/organizations.svg', alt: 'Organizations' },
-      { src: '/images/aws-icons/transit-gateway.svg', alt: 'Transit Gateway' },
-      { src: '/images/aws-icons/guardduty.svg', alt: 'GuardDuty' },
-      { src: '/images/aws-icons/security-hub.svg', alt: 'Security Hub' },
-    ],
-    tags: ['Multi-Account', 'Hub & Spoke', 'Enterprise'],
-    status: 'Ready',
-    statusColor: 'green',
-    category: 'Cloud Infrastructure',
-    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
-    titleHover: 'group-hover:text-cyan-100',
-    section: 'main',
-  },
+
   {
     id: 'azure-container-apps',
     title: 'Azure Container Apps – DevOps & Change Control',
@@ -556,19 +567,18 @@ const projects = [
     section: 'main',
     isNew: true,
   },
-  {
-    id: 'dr-backup',
-    title: 'AWS Disaster Recovery & Backup - Rapid Recovery',
+{
+    id: 'pilot-light-dr',
+    title: 'E-commerce Platform Pilot Light Disaster Recovery with Step Functions',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
-      { src: '/images/aws-icons/backup.svg', alt: 'AWS Backup' },
+      { src: '/images/aws-icons/alb.svg', alt: 'ALB' },
       { src: '/images/aws-icons/rds.svg', alt: 'RDS' },
-      { src: '/images/aws-icons/ebs.svg', alt: 'EBS' },
       { src: '/images/aws-icons/route53.svg', alt: 'Route 53' },
-      { src: '/images/aws-icons/cloudwatch.svg', alt: 'CloudWatch' },
+      { src: '/images/aws-icons/step-functions.svg', alt: 'Step Functions' },
     ],
-    tags: ['Backup', 'DR', 'Automation'],
+    tags: ['Multi-Region', 'DR', 'Auto Failover'],
     status: 'Ready',
     statusColor: 'green',
     category: 'Experimental Lab',
@@ -576,6 +586,7 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
+
   {
     id: 'azure-hub-spoke',
     title: 'Azure Hub-Spoke Landing Zone Architecture & VPN',
@@ -614,21 +625,23 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
+
+
   {
-    id: 'pilot-light-dr',
-    title: 'E-commerce Platform Pilot Light Disaster Recovery',
+    id: 'enterprise-landing-zone',
+    title: 'AWS Multi-Account Landing Zone – Zero Trust Architecture',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
-      { src: '/images/aws-icons/alb.svg', alt: 'ALB' },
-      { src: '/images/aws-icons/rds.svg', alt: 'RDS' },
-      { src: '/images/aws-icons/route53.svg', alt: 'Route 53' },
-      { src: '/images/aws-icons/step-functions.svg', alt: 'Step Functions' },
+      { src: '/images/aws-icons/organizations.svg', alt: 'Organizations' },
+      { src: '/images/aws-icons/transit-gateway.svg', alt: 'Transit Gateway' },
+      { src: '/images/aws-icons/guardduty.svg', alt: 'GuardDuty' },
+      { src: '/images/aws-icons/security-hub.svg', alt: 'Security Hub' },
     ],
-    tags: ['Multi-Region', 'DR', 'Auto Failover'],
+    tags: ['Multi-Account', 'Hub & Spoke', 'Enterprise'],
     status: 'Ready',
     statusColor: 'green',
-    category: 'Experimental Lab',
+    category: 'Cloud Infrastructure',
     hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
@@ -811,6 +824,26 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
+  {
+    id: 'dr-backup',
+    title: 'AWS Disaster Recovery & Backup - Rapid Recovery',
+    icons: [
+      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/python.svg', alt: 'Python' },
+      { src: '/images/aws-icons/backup.svg', alt: 'AWS Backup' },
+      { src: '/images/aws-icons/rds.svg', alt: 'RDS' },
+      { src: '/images/aws-icons/ebs.svg', alt: 'EBS' },
+      { src: '/images/aws-icons/route53.svg', alt: 'Route 53' },
+      { src: '/images/aws-icons/cloudwatch.svg', alt: 'CloudWatch' },
+    ],
+    tags: ['Backup', 'DR', 'Automation'],
+    status: 'Ready',
+    statusColor: 'green',
+    category: 'Experimental Lab',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
+    section: 'main',
+  },
 
 
   // ── Extra section ──────────────────────────────────────────────────────────
@@ -938,6 +971,7 @@ watch(activeProject, (id) => {
     'multiregion-platform':    showMultiregionProject,
     'bedrock-landing-zone':    showBedrockLandingzone,
     'aws-ssm-fleet':           showAwsSsmFleet,
+    'aws-3tier-platform':      showAws3TierPlatform,
     'devops-toolchain':        showToolingProject,
     'k3s-gitops':              showK3sGitops,
     'vmware-monitoring':       showVmwareProject,
