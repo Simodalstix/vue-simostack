@@ -35,14 +35,13 @@
               <h3 class="text-base min-[1400px]:text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
               <img src="/images/project-icons/beelink.png" alt="Beelink" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
             </div>
-            <div class="flex items-center gap-1.5 min-[1400px]:gap-3 mb-3 min-[1400px]:mb-4">
-              <img src="/images/project-icons/proxmox2.png" alt="Proxmox" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
-              <img src="/images/project-icons/windows.svg" alt="Windows" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-sm" />
-              <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
-              <img src="/images/project-icons/vault.svg" alt="Vault" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
-              <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
-              <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
-              <img src="/images/project-icons/wazuh-icon.png" alt="Wazuh" class="w-7 h-7 min-[1400px]:w-8 min-[1400px]:h-8 rounded-md" />
+            <div class="flex items-center justify-evenly mb-3 min-[1400px]:mb-4">
+              <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
+              <img src="/images/project-icons/windows.svg" alt="Windows" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-sm" />
+              <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
+              <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
+              <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
+              <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
             </div>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Hypervisor</span>
@@ -120,6 +119,7 @@
               </div>
             </BaseCard>
           </template>
+
         </div>
       </div>
 
@@ -396,6 +396,13 @@
     height="max-h-[92vh]"
   />
 
+  <ProjectAWSImagePipeline
+    :visible="showAwsImagePipeline"
+    @close="showAwsImagePipeline = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
+
   <VMwareModal
     :visible="showVmwareModal"
     @close="showVmwareModal = false"
@@ -441,6 +448,7 @@ import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'
 import ProjectPrometheusGrafana from '@/components/modals/Project-Prometheus.vue'
 import ProjectProxmoxLab from '@/components/modals/Project-ProxmoxLab.vue'
 import ProjectAWS3TierPlatform from '@/components/modals/Project-AWS3TierPlatform.vue'
+import ProjectAWSImagePipeline from '@/components/modals/Project-AWSImagePipeline.vue'
 
 defineProps({
   releaseVersion: String,
@@ -481,13 +489,16 @@ const showDynatraceProject = ref(false)
 const showAzureProject = ref(false)
 const showAwsProject = ref(false)
 const showAws3TierPlatform = ref(false)
+const showAwsImagePipeline = ref(false)
 
 // ─── Project data ─────────────────────────────────────────────────────────────
 const projects = [
   // ── Main section ──────────────────────────────────────────────────────────
+
   {
     id: 'aws-3tier-platform',
-    title: 'AWS 3-Tier Platform – FastAPI, ALB, ASG, RDS & ElastiCache',
+    title: 'AWS 3-Tier Platform – FastAPI, ALB, ASG, RDS & ElastiCache Redis',
+    titleHtml: 'AWS 3-Tier Platform – FastAPI, ALB, ASG, RDS & ElastiCache <span class="text-red-500">Redis</span>',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
@@ -497,6 +508,28 @@ const projects = [
       { src: '/images/project-icons/FastAPI.svg', alt: 'FastAPI' },
     ],
     tags: ['Database', 'Cache', '3-Tier', 'Fault Injection'],
+    status: 'Ready',
+    statusColor: 'green',
+    category: 'Cloud Infrastructure',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
+    section: 'main',
+    isNew: true,
+  },
+  {
+    id: 'aws-image-pipeline',
+    title: 'AWS Image Pipeline – Golden AMI Factory with Packer & SSM',
+    titleHtml: 'AWS Image Pipeline – Golden AMI Factory with <span class="text-[#4d8bff]">Packer</span> & SSM',
+    icons: [
+      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+
+      { src: '/images/project-icons/python.svg', alt: 'Python' },
+{ src: '/images/aws-icons/ec2.svg', alt: 'EC2' },
+      { src: '/images/aws-icons/iam.svg', alt: 'IAM' },
+          { src: '/images/project-icons/Packer.svg', alt: 'Packer' },
+      { src: '/images/aws-icons/ssm.svg', alt: 'SSM' },
+    ],
+    tags: ['Golden AMI', 'Image Baking', 'Automation'],
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
@@ -526,25 +559,6 @@ const projects = [
     section: 'main',
   },
 
-  {
-    id: 'azure-container-apps',
-    title: 'Azure Container Apps – DevOps & Change Control',
-    icons: [
-      { src: '/images/main-tools/azure-icon.svg', alt: 'Azure' },
-      { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
-      { src: '/images/azure-icons/azure-devops.svg', alt: 'Azure DevOps' },
-      { src: '/images/azure-icons/worker-container-app.svg', alt: 'Container Apps' },
-      { src: '/images/azure-icons/key-vault.svg', alt: 'Key Vault' },
-      { src: '/images/azure-icons/application-insights.svg', alt: 'App Insights' },
-    ],
-    tags: ['Containers', 'Serverless', 'CI/CD'],
-    status: 'Ready',
-    statusColor: 'green',
-    category: 'DevOps',
-    hover: 'hover:bg-indigo-800 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
-    titleHover: 'group-hover:text-indigo-100',
-    section: 'main',
-  },
   {
     id: 'aws-ssm-fleet',
     title: 'AWS SSM Fleet – Puppet Config Management Without SSH',
@@ -759,7 +773,7 @@ const projects = [
     ],
     tags: ['Messaging', 'Kubernetes', 'Microservices'],
     status: 'No Diagram',
-    statusColor: 'purple',
+    statusColor: 'orange',
     category: 'DevOps',
     hover: 'hover:bg-indigo-800 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
     titleHover: 'group-hover:text-indigo-100',
@@ -844,7 +858,25 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
-
+{
+    id: 'azure-container-apps',
+    title: 'Azure Container Apps – DevOps & Change Control',
+    icons: [
+      { src: '/images/main-tools/azure-icon.svg', alt: 'Azure' },
+      { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
+      { src: '/images/azure-icons/azure-devops.svg', alt: 'Azure DevOps' },
+      { src: '/images/azure-icons/worker-container-app.svg', alt: 'Container Apps' },
+      { src: '/images/azure-icons/key-vault.svg', alt: 'Key Vault' },
+      { src: '/images/azure-icons/application-insights.svg', alt: 'App Insights' },
+    ],
+    tags: ['Containers', 'Serverless', 'CI/CD'],
+    status: 'Ready',
+    statusColor: 'green',
+    category: 'DevOps',
+    hover: 'hover:bg-indigo-800 hover:border-indigo-500/60 hover:shadow-lg hover:shadow-indigo-500/20',
+    titleHover: 'group-hover:text-indigo-100',
+    section: 'main',
+  },
 
   // ── Extra section ──────────────────────────────────────────────────────────
   {
@@ -947,6 +979,7 @@ const statusClasses = {
   amber:  { badge: 'bg-amber-500/30 text-amber-300 border border-amber-500/20',    dot: 'bg-amber-400' },
   stone:  { badge: 'bg-stone-500/30 text-stone-300 border border-stone-500/20',    dot: 'bg-stone-400' },
   purple: { badge: 'bg-purple-500/30 text-purple-300 border border-purple-500/20', dot: 'bg-purple-400' },
+  orange: { badge: 'bg-orange-500/30 text-orange-300 border border-orange-500/20', dot: 'bg-orange-400' },
 }
 
 // ─── Modal routing ────────────────────────────────────────────────────────────
@@ -971,6 +1004,7 @@ watch(activeProject, (id) => {
     'multiregion-platform':    showMultiregionProject,
     'bedrock-landing-zone':    showBedrockLandingzone,
     'aws-ssm-fleet':           showAwsSsmFleet,
+    'aws-image-pipeline':      showAwsImagePipeline,
     'aws-3tier-platform':      showAws3TierPlatform,
     'devops-toolchain':        showToolingProject,
     'k3s-gitops':              showK3sGitops,

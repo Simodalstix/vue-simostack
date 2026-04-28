@@ -2,7 +2,7 @@
   <BaseModal
     :visible="visible"
     @close="$emit('close')"
-    title="AWS 3-Tier Platform – FastAPI, ALB, ASG, RDS & ElastiCache"
+    title="AWS 3-Tier Platform – FastAPI, ALB, ASG, RDS & ElastiCache Redis"
   >
     <!-- Architecture Diagram -->
     <div class="px-4 pt-3 pb-3">
