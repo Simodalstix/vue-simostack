@@ -29,7 +29,7 @@
 
           <!-- Proxmox Infrastructure Lab Card (hardcoded — row-span, sub-items, custom emits) -->
           <BaseCard
-            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-600/80 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800"
+            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800"
           >
             <div class="flex items-start justify-between mb-3 min-[1400px]:mb-4">
               <h3 class="text-base min-[1400px]:text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
@@ -72,7 +72,7 @@
           <template v-for="project in mainProjects" :key="project.id">
             <BaseCard
               :class="[
-                'relative group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-600/80 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100 overflow-hidden',
+                'relative group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100 overflow-hidden',
                 project.hover,
                 project.githubUrl ? '' : '',
               ]"
@@ -110,12 +110,12 @@
                 >{{ tag }}</span>
               </div>
 
-              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-gray-400 pt-4 border-t border-slate-600">
+              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-gray-400 pt-4 border-t border-slate-500/60">
                 <span :class="['flex items-center gap-1 px-1.5 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs rounded-full', statusClasses[project.statusColor].badge]">
                   <div :class="['w-2 h-2 rounded-full', statusClasses[project.statusColor].dot]"></div>
                   {{ project.status }}
                 </span>
-                <span class="text-gray-400">{{ project.category }} - {{ project.githubUrl ? 'View on GitHub' : 'View details' }}</span>
+                <span class="text-slate-300">{{ project.category }} - {{ project.githubUrl ? 'View on GitHub' : 'View details' }}</span>
               </div>
             </BaseCard>
           </template>
@@ -139,7 +139,7 @@
             <BaseCard
               v-else
               :class="[
-                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-600/80 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100',
+                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100',
                 project.hover,
               ]"
               @click="handleCardClick(project)"
@@ -160,12 +160,12 @@
                 >{{ tag }}</span>
               </div>
 
-              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-gray-400 pt-4 border-t border-slate-600">
+              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-gray-400 pt-4 border-t border-slate-500/60">
                 <span :class="['flex items-center gap-1 px-1.5 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs rounded-full', statusClasses[project.statusColor].badge]">
                   <div :class="['w-2 h-2 rounded-full', statusClasses[project.statusColor].dot]"></div>
                   {{ project.status }}
                 </span>
-                <span class="text-gray-400">{{ project.category }} - View details</span>
+                <span class="text-slate-300">{{ project.category }} - View details</span>
               </div>
             </BaseCard>
           </template>
@@ -531,11 +531,10 @@ const projects = [
     titleHtml: 'AWS Image Pipeline – Golden AMI Factory with <span class="text-[#4d8bff]">Packer</span> & SSM',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
-
       { src: '/images/project-icons/python.svg', alt: 'Python' },
-{ src: '/images/aws-icons/ec2.svg', alt: 'EC2' },
+      { src: '/images/aws-icons/ec2.svg', alt: 'EC2' },
       { src: '/images/aws-icons/iam.svg', alt: 'IAM' },
-          { src: '/images/project-icons/Packer.svg', alt: 'Packer' },
+      { src: '/images/project-icons/Packer.svg', alt: 'Packer' },
       { src: '/images/aws-icons/ssm.svg', alt: 'SSM' },
     ],
     tags: ['Golden AMI', 'Image Baking', 'Automation'],
@@ -557,7 +556,6 @@ const projects = [
       { src: '/images/aws-icons/Glue.svg', alt: 'Glue' },
       { src: '/images/aws-icons/s3.svg', alt: 'S3' },
       { src: '/images/aws-icons/athena.svg', alt: 'Athena' },
-
     ],
     tags: ['Serverless', 'Data Pipeline', 'Analytics'],
     status: 'Ready',
@@ -588,7 +586,6 @@ const projects = [
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
   },
-
   {
     id: 'aws-config-mgmt',
     title: 'AWS SSM Fleet – Puppet, Config Mangement & Compliance',
@@ -608,7 +605,6 @@ const projects = [
     hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
-
   },
 {
     id: 'pilot-light-dr',

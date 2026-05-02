@@ -1,5 +1,5 @@
 <template>
-  <div class="text-white container mx-auto px-4 sm:px-6 py-6 sm:py-8 max-w-6xl">
+  <div class="text-white container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
     <!-- Header -->
     <section class="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div class="flex items-center gap-4">
@@ -9,7 +9,7 @@
     </section>
 
     <!-- Main container with L-shaped border -->
-    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-4 mb-4 md:mb-8 max-w-5xl">
+    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-4 mb-4 md:mb-8">
       <!-- Start point circle (desktop only) -->
       <div class="hidden md:block absolute -left-[9px] top-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
       <!-- End point circle (desktop only) -->
@@ -27,17 +27,36 @@
         </p>
       </div>
 
-      <!-- Traits block (right) -->
-      <div class="font-mono text-sm md:text-base bg-slate-900/80 border border-slate-700 rounded-lg px-4 py-4 w-auto shrink-0 self-start">
-        <div class="text-gray-500 mb-2">$ simon --traits</div>
-        <div class="text-cyan-300">curiosity: high</div>
-        <div class="text-cyan-300">learning: continuous</div>
-      <div class="text-cyan-300">ownership: Enforcing</div>
-        <div class="text-cyan-300">incident_response: calm</div>
-        <div class="text-cyan-300">team_morale: +3</div>
-          <div class="text-cyan-300">root_cause: required</div>
-          <div class="text-cyan-300">logical_fallacies: none</div>
+      <!-- Traits + Current Pursuit merged card -->
+      <div class="bg-slate-900/80 border border-slate-700 rounded-lg shrink-0 self-start overflow-hidden">
+        <div class="flex flex-col sm:flex-row">
 
+          <!-- Traits -->
+          <div class="font-mono text-sm md:text-base px-4 py-4 flex flex-col">
+            <div class="text-gray-500 mb-2">$ simon --traits</div>
+            <div class="text-cyan-300">curiosity: high</div>
+            <div class="relative flex items-center text-cyan-300">
+              <span class="whitespace-nowrap">learning: continuous</span>
+              <div class="w-1.5 h-1.5 rounded-full bg-cyan-500/80 shrink-0 ml-2 shadow-[0_0_5px_rgba(6,182,212,0.9)]"></div>
+              <div class="flex-1 h-0.5 bg-cyan-500/50"></div>
+              <div class="hidden sm:block absolute top-1/2 -translate-y-1/2 right-[-1rem] w-4 h-0.5 bg-cyan-500/50"></div>
+            </div>
+            <div class="text-cyan-300">ownership: Enforcing</div>
+                  <div class="text-cyan-300">team_morale: +3</div>
+            <div class="text-cyan-300">root_cause: required</div>
+            <div class="text-cyan-300">logical_fallacies: none</div>
+          </div>
+
+          <!-- Divider: horizontal on mobile, vertical on sm+ -->
+          <div class="h-px sm:h-auto sm:w-0.5 bg-cyan-500/50 sm:self-stretch"></div>
+
+          <!-- cert -->
+          <div class="px-4 py-4 flex flex-col items-center justify-center gap-2 bg-cyan-950/40 shadow-[inset_0_0_24px_rgba(6,182,212,0.12),inset_0_0_0_1px_rgba(6,182,212,0.35)]">
+            <img src="/images/certifications/cloudops.webp" alt="AWS SysOps Administrator" class="w-16 sm:w-20 md:w-28 rounded drop-shadow-[0_0_14px_rgba(6,182,212,0.65)]" />
+            <span class="text-xs font-mono tracking-[0.25em] uppercase text-cyan-400 animate-pulse drop-shadow-[0_0_8px_rgba(6,182,212,0.9)]">Focus</span>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -45,7 +64,7 @@
     </section>
 
     <!-- Role cards below the timeline -->
-    <section class="max-w-6xl relative pt-0 md:pt-8">
+    <section class="relative pt-0 md:pt-8">
       <!-- Connector lines from bottom border to cards -->
       <div class="hidden md:block absolute -top-8 left-0 right-0 h-16">
         <!-- Line to Pharmacist (left) -->
