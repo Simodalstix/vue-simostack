@@ -382,9 +382,9 @@
     height="max-h-[92vh]"
   />
 
-  <ProjectAwsSsmFleet
-    :visible="showAwsSsmFleet"
-    @close="showAwsSsmFleet = false"
+  <ProjectAwsConfigMgmt
+    :visible="showAwsConfigMgmt"
+    @close="showAwsConfigMgmt = false"
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
@@ -399,6 +399,13 @@
   <ProjectAWSImagePipeline
     :visible="showAwsImagePipeline"
     @close="showAwsImagePipeline = false"
+    width="max-w-[1100px]"
+    height="max-h-[92vh]"
+  />
+
+  <ProjectAWSEventPipeline
+    :visible="showAwsEventPipeline"
+    @close="showAwsEventPipeline = false"
     width="max-w-[1100px]"
     height="max-h-[92vh]"
   />
@@ -438,7 +445,7 @@ import ProjectAksGitopsProject from '@/components/modals/Project-AzureAKSGitops.
 import ProjectObservabilityPlatform from '@/components/modals/Project-ObservabilityPlatform.vue'
 import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenkins.vue'
 import ProjectK3sGitops from '@/components/modals/Project-K3sGitops.vue'
-import ProjectAwsSsmFleet from '@/components/modals/Project-AWSSsmFleet.vue'
+import ProjectAwsConfigMgmt from '@/components/modals/Project-AWSConfigMgmt.vue'
 import HackTheBoxModal from '@/components/modals/HackTheBoxModal.vue'
 import VMwareModal from '@/components/modals/VMwareModal.vue'
 import VaultPkiModal from '@/components/modals/Project-VaultPKI.vue'
@@ -449,6 +456,7 @@ import ProjectPrometheusGrafana from '@/components/modals/Project-Prometheus.vue
 import ProjectProxmoxLab from '@/components/modals/Project-ProxmoxLab.vue'
 import ProjectAWS3TierPlatform from '@/components/modals/Project-AWS3TierPlatform.vue'
 import ProjectAWSImagePipeline from '@/components/modals/Project-AWSImagePipeline.vue'
+import ProjectAWSEventPipeline from '@/components/modals/Project-AWSEventPipeline.vue'
 
 defineProps({
   releaseVersion: String,
@@ -476,7 +484,7 @@ const showPilotLightDR = ref(false)
 const showAwsDrBackupLab = ref(false)
 const showAwsLambdaSqsDlq = ref(false)
 const showAwsFargateGoldenPath = ref(false)
-const showAwsSsmFleet = ref(false)
+const showAwsConfigMgmt = ref(false)
 const showBedrockLandingzone = ref(false)
 const showToolingProject = ref(false)
 const showHtbModal = ref(false)
@@ -490,6 +498,7 @@ const showAzureProject = ref(false)
 const showAwsProject = ref(false)
 const showAws3TierPlatform = ref(false)
 const showAwsImagePipeline = ref(false)
+const showAwsEventPipeline = ref(false)
 
 // ─── Project data ─────────────────────────────────────────────────────────────
 const projects = [
@@ -539,8 +548,29 @@ const projects = [
     isNew: true,
   },
   {
+    id: 'aws-event-driven-pipeline',
+    title: 'AWS Event-Driven Pipeline – SQS, Lambda, S3, Glue & Athena',
+    icons: [
+      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/python.svg', alt: 'Python' },
+      { src: '/images/aws-icons/sqs.svg', alt: 'SQS' },
+      { src: '/images/aws-icons/Glue.svg', alt: 'Glue' },
+      { src: '/images/aws-icons/s3.svg', alt: 'S3' },
+      { src: '/images/aws-icons/athena.svg', alt: 'Athena' },
+
+    ],
+    tags: ['Serverless', 'Data Pipeline', 'Analytics'],
+    status: 'Ready',
+    statusColor: 'green',
+    category: 'Cloud Infrastructure',
+    hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
+    titleHover: 'group-hover:text-cyan-100',
+    section: 'main',
+    isNew: true,
+  },
+  {
     id: 'fargate-golden-path',
-    title: 'ECS Fargate Golden Path + Resilience Scenarios',
+    title: 'ECS Fargate Golden Path – Blue/Green, Aurora Serverless, X-Ray & FIS',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
@@ -560,26 +590,25 @@ const projects = [
   },
 
   {
-    id: 'aws-ssm-fleet',
-    title: 'AWS SSM Fleet – Puppet Config Management Without SSH',
-    titleHtml: 'AWS SSM Fleet – <span class="text-amber-400">Puppet</span> Config Management Without SSH',
+    id: 'aws-config-mgmt',
+    title: 'AWS SSM Fleet – Puppet, Config Mangement & Compliance',
+    titleHtml: 'AWS SSM Fleet – <span class="text-amber-400">Puppet</span> Config Mangement & Compliance',
     icons: [
       { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/project-icons/puppet.svg', alt: 'Puppet' },
       { src: '/images/aws-icons/ssm.svg', alt: 'SSM' },
-      { src: '/images/aws-icons/ec2.svg', alt: 'EC2' },
-      { src: '/images/project-icons/nodejs.svg', alt: 'Node.js' },
-
+      { src: '/images/aws-icons/config.svg', alt: 'AWS Config' },
+      { src: '/images/aws-icons/eventbridge.svg', alt: 'EventBridge' },
     ],
-    tags: ['Config Management', 'Fleet', 'Keyless'],
+    tags: ['Masterless Puppet', 'Fleet', 'Keyless'],
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',
     hover: 'hover:bg-cyan-800 hover:border-cyan-500/70 hover:shadow-lg hover:shadow-cyan-500/25',
     titleHover: 'group-hover:text-cyan-100',
     section: 'main',
-    isNew: true,
+
   },
 {
     id: 'pilot-light-dr',
@@ -1003,9 +1032,10 @@ watch(activeProject, (id) => {
     'java-petclinic':          showJavaMavernJenkins,
     'multiregion-platform':    showMultiregionProject,
     'bedrock-landing-zone':    showBedrockLandingzone,
-    'aws-ssm-fleet':           showAwsSsmFleet,
-    'aws-image-pipeline':      showAwsImagePipeline,
-    'aws-3tier-platform':      showAws3TierPlatform,
+    'aws-config-mgmt':         showAwsConfigMgmt,
+    'aws-image-pipeline':          showAwsImagePipeline,
+    'aws-event-driven-pipeline':   showAwsEventPipeline,
+    'aws-3tier-platform':          showAws3TierPlatform,
     'devops-toolchain':        showToolingProject,
     'k3s-gitops':              showK3sGitops,
     'vmware-monitoring':       showVmwareProject,
