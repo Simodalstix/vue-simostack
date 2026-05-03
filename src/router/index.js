@@ -20,6 +20,16 @@ const routes = [
     name: 'Projects',
     component: () => import('../views/ProjectsView.vue'),
   },
+  {
+    path: '/prep/stars',
+    name: 'PrepStars',
+    component: () => import('../views/prep/StarsView.vue'),
+  },
+  {
+    path: '/prep/stars/:id',
+    name: 'PrepStarDetail',
+    component: () => import('../views/prep/StarDetailView.vue'),
+  },
 ]
 
 const router = createRouter({

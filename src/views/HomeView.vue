@@ -76,13 +76,13 @@
         <div class="flex flex-row md:flex-col gap-3 shrink-0 md:self-end relative z-10">
           <router-link
             to="/about"
-            class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 border border-cyan-400/60 rounded-lg shadow-sm shadow-cyan-400/40 hover:shadow-cyan-300/60 transition-all duration-200 text-white font-medium text-center"
+            class="px-5 py-3 bg-slate-800 hover:bg-cyan-500 border border-slate-700 hover:border-cyan-500 rounded-lg transition-all duration-200 text-slate-300 hover:text-white font-medium text-center"
           >
             About Me
           </router-link>
           <router-link
             to="/projects"
-            class="px-6 py-3 bg-transparent hover:bg-cyan-900/40 border border-cyan-500/50 hover:border-cyan-400/70 rounded-lg transition-all duration-200 text-cyan-300 hover:text-white font-medium text-center"
+            class="px-5 py-3 bg-[#FF9900] hover:bg-[#FF9900]/70 border border-[#FF9900] rounded-lg transition-all duration-200 text-white font-medium text-center"
           >
             View Projects
           </router-link>

@@ -23,7 +23,7 @@
           Before moving into technology I worked in healthcare, where mistakes carry real consequences. That environment trained me to slow down, verify assumptions, and think carefully about what might be missing before acting. Those habits translate naturally into troubleshooting complex systems.
         </p>
         <p class="text-base md:text-lg text-slate-200 leading-relaxed">
-         Cloud and infrastructure feel like a playground for systems thinking, where I design, test, and refine how systems behave under change, failure, and scale. Outside of work, I explore this through hands-on labs and projects, building and refining code in GitHub, working in Linux, and deploying systems across cloud platforms.
+         Cloud and infrastructure feel like a playground for systems thinking, where I design, test, and refine how systems behave under change, failure, and scale. Outside of work, I explore this through hands-on labs and projects, building and refining code in GitHub, working in <span style="color: #FFB347; -webkit-text-stroke: 0.5px #FF9900; font-weight: 600;">Linux</span>, and deploying systems across cloud platforms.
         </p>
       </div>
 
@@ -56,7 +56,7 @@
             @click="showCloudOps = true"
           >
             <img src="/images/certifications/cloudops.webp" alt="AWS SysOps Administrator" class="w-16 sm:w-20 md:w-28 rounded drop-shadow-[0_0_14px_rgba(6,182,212,0.65)] group-hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.9)] transition-all duration-200" />
-            <span class="text-xs font-mono tracking-[0.25em] uppercase text-cyan-400 animate-pulse drop-shadow-[0_0_8px_rgba(6,182,212,0.9)]">Focus</span>
+            <span class="text-base font-semibold text-cyan-400 animate-pulse drop-shadow-[0_0_8px_rgba(6,182,212,0.9)]">Current Focus</span>
           </div>
 
         </div>
@@ -93,7 +93,7 @@
             </div>
             <span class="text-xs text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full">Healthcare</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-300 mb-3"><span class="text-purple-400">Pharmacist</span> - Community</h3>
+          <h3 class="text-xl font-bold text-slate-300 mb-3"><span style="color: #d8b4fe; -webkit-text-stroke: 0.5px #c084fc; font-weight: 600;">Pharmacist</span> - Community</h3>
           <p class="text-slate-300 text-sm leading-relaxed">
             Community pharmacy within a regulated healthcare environment. Dispensed prescriptions, advised patients, and communicated clearly in high-responsibility situations. Built strong attention to detail, accountability, and the ability to operate calmly in compliance-driven settings.
           </p>
