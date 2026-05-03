@@ -22,7 +22,7 @@
 
     <!-- Description + GitHub -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Automated deployment of <span class="text-cyan-300">HashiCorp Vault</span> PKI on
         Rocky Linux using <span class="text-cyan-300">Ansible</span>.
         <span class="text-cyan-300">Root + intermediate CA</span> hierarchy for issuing

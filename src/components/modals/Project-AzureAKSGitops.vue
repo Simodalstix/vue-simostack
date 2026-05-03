@@ -12,12 +12,12 @@
         alt="Azure AKS GitOps Platform Architecture"
         class="object-contain rounded-lg w-full"
       /> -->
-      <p class="text-gray-400 text-center py-8">Diagram coming soon</p>
+      <p class="text-slate-400 text-center py-8">Diagram coming soon</p>
     </div>
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Enterprise-ready <span class="text-cyan-300">AKS</span> platform with GitOps delivery using <span class="text-cyan-300">ArgoCD</span>/<span class="text-cyan-300">Flux</span>. Modular <span class="text-cyan-300">Terraform</span> architecture with system + workload node pools, <span class="text-cyan-300">AAD</span> integration, automated team onboarding, and namespace isolation with resource limits.
       </p>
       <a

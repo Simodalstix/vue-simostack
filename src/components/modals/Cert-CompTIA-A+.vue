@@ -10,9 +10,9 @@ import BaseModal from './BaseModal.vue'
     @close="$emit('close')"
     title="CompTIA A+ ce Certification"
     width="max-w-3xl"
-    ><div class="bg-gray-700 p-3 rounded mb-2">
+    ><div class="bg-slate-700 p-3 rounded mb-2">
       <p class="text-base text-white mb-2">Issued by CompTIA</p>
-      <p class="text-base text-gray-300">
+      <p class="text-base text-slate-300">
         Earners of the CompTIA A+ certification are proven problem solvers who are able to perform
         critical IT support tasks including device configuration, data backup and recovery, and
         operating system configuration. CompTIA A+ certified professionals have demonstrated

@@ -32,7 +32,7 @@
 
     <!-- Description + GitHub -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Centralised <span class="text-cyan-300">Samba</span> fileserver on Rocky Linux,
         providing shared storage for Rocky and Ubuntu clients via
         <span class="text-cyan-300">Autofs</span> on-demand mounting. Configured with guest

@@ -1,10 +1,10 @@
 <template>
   <BaseModal :visible="visible" @close="$emit('close')" width="max-w-3xl">
-    <div class="bg-gray-700 p-3">
+    <div class="bg-slate-700 p-3">
       <h2 class="text-xl font-bold border-b-2 border-indigo-500 pb-1 mb-4">
         What Happened<span class="text-red-500">!</span>
       </h2>
-      <p class="text-sm text-gray-300 leading-relaxed">
+      <p class="text-sm text-slate-300 leading-relaxed">
         Unfortunately, Strongroom.AI entered voluntary administration in April 2025 due to
         operational and financial challenges, resulting in approximately 50% of staff being made
         redundant — including my role. Despite the short tenure, my time at Strongroom.AI solidified

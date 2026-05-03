@@ -90,7 +90,7 @@
 
     <!-- Description + GitHub -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Event-driven ingestion and analytics pipeline for the <span class="text-orange-300">ops-lab platform</span>. Events flow from <span class="text-cyan-300">SQS</span> through a <span class="text-orange-300">Lambda</span> processor into a partitioned <span class="text-cyan-300">S3</span> data lake, where <span class="text-cyan-300">Glue</span> auto-discovers schema and <span class="text-cyan-300">Athena</span> enables SQL analytics. <span class="text-cyan-300">CDK Python</span> deploys all three stacks; all cross-stack references flow through <span class="text-cyan-300">SSM Parameter Store</span> — no hardcoded ARNs anywhere.
       </p>
       <a

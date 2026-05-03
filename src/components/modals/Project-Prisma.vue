@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         CI/CD pipeline building React + Node/Express + Prisma/PostgreSQL blog. Jenkins builds multi-arch Docker images to ECR, Ansible deploys backend to Raspberry Pi, frontend served from S3/CloudFront with Terraform-managed DNS/TLS. Secrets in SSM/Jenkins with pipeline gates.
       </p>
       <a

@@ -11,7 +11,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Multi-account landing zone for <span class="text-cyan-300">Amazon Bedrock</span> with <span class="text-cyan-300">Terraform</span>/<span class="text-cyan-300">CDK</span>. <span class="text-cyan-300">VPC endpoints</span> for private Bedrock access, <span class="text-cyan-300">KMS</span>-encrypted logs, least-privilege <span class="text-cyan-300">IAM</span> roles for model usage, and content filters with guardrails. All prompts and responses logged to <span class="text-cyan-300">S3</span> for audit.
       </p>
       <a

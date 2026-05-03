@@ -11,7 +11,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Microservices demo with Spring Boot and RabbitMQ on AKS. Three services (User CRUD, Order Publisher, Analytics Consumer) with event-driven messaging, DLQ, retry policies. GitHub Actions CI/CD, Helm charts, Prometheus monitoring, and structured logging with correlation IDs.
       </p>
       <a

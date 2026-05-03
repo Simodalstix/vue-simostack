@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Blue-team homelab with Wazuh SIEM and Elastic Stack. Ingesting logs from Windows (Sysmon) and Linux endpoints, building detection rules, and mapping alerts to MITRE ATT&CK. Agent deployment automated with Ansible.
       </p>
       <a

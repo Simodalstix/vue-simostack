@@ -22,7 +22,7 @@
 
     <!-- Description + GitHub -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Centralised monitoring stack using <span class="text-cyan-300">Prometheus</span> for
         metrics collection and <span class="text-cyan-300">Grafana</span> for visualization.
         <span class="text-cyan-300">Node Exporters</span> on Linux VMs (Rocky, Ubuntu) expose

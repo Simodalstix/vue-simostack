@@ -15,7 +15,7 @@
       Hack The Box Academy – Cyber Security
     </h3>
 
-      <p class="text-sm text-gray-300 leading-relaxed">
+      <p class="text-sm text-slate-300 leading-relaxed">
       Building practical defensive security skills across log analysis, event correlation, 
       attacker behaviour, and the foundations of incident response. The training develops the 
       ability to recognise malicious activity, investigate across multiple data sources, and 
@@ -49,10 +49,10 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100 mb-0.5">
                 Introduction to Bash Scripting
               </h5>
-              <p class="text-xs text-gray-400">Do things the traditional way</p>
+              <p class="text-xs text-slate-400">Do things the traditional way</p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -77,12 +77,12 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100 mb-0.5">
                 Anticipate the next attack
               </h5>
-              <p class="text-xs text-gray-400">
+              <p class="text-xs text-slate-400">
                 Security Monitoring & SIEM Fundamentals module 
               </p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -107,10 +107,10 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100 mb-0.5">
                 Everything is connected
               </h5>
-              <p class="text-xs text-gray-400">Introduction to Networking module completed</p>
+              <p class="text-xs text-slate-400">Introduction to Networking module completed</p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -135,10 +135,10 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100 mb-0.5">
                 Panoptic
               </h5>
-              <p class="text-xs text-gray-400">Incident Handling Process module completed</p>
+              <p class="text-xs text-slate-400">Incident Handling Process module completed</p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -163,12 +163,12 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100 mb-0.5">
                 Log keeper
               </h5>
-              <p class="text-xs text-gray-400">
+              <p class="text-xs text-slate-400">
                 Windows Event Logs & Finding Evil module completed
               </p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -193,10 +193,10 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100 mb-0.5">
                 Our favorite seabird
               </h5>
-              <p class="text-xs text-gray-400">Linux Fundamentals module completed</p>
+              <p class="text-xs text-slate-400">Linux Fundamentals module completed</p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -221,10 +221,10 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100 mb-0.5">
                 Linux Privilege Escalation
               </h5>
-              <p class="text-xs text-gray-400">Stairway to Heaven (In Progress)</p>
+              <p class="text-xs text-slate-400">Stairway to Heaven (In Progress)</p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -249,10 +249,10 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100 mb-0.5">
                 Intro to Threat Hunting & Hunting With Elastic
               </h5>
-              <p class="text-xs text-gray-400">Predict the next move (In Progress)</p>
+              <p class="text-xs text-slate-400">Predict the next move (In Progress)</p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -273,10 +273,10 @@
               <h5 class="font-medium text-white text-sm group-hover:text-emerald-100">
                 More to update as I progress
               </h5>
-              <p class="text-xs text-gray-400">Additional modules will be added over time</p>
+              <p class="text-xs text-slate-400">Additional modules will be added over time</p>
             </div>
 
-            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-gray-400
+            <div class="absolute bottom-2 right-2 flex items-center space-x-1 text-slate-400
                         group-hover:text-emerald-400 transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

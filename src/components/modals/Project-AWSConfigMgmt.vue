@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         <span class="text-cyan-300">CDK (Python)</span> enforces masterless <span class="text-cyan-300">Puppet</span> agent state via <span class="text-cyan-300">SSM State Manager</span> (manifests in S3), audits the fleet with <span class="text-cyan-300">AWS Config</span> rules, and routes violations through <span class="text-cyan-300">EventBridge</span> to <span class="text-cyan-300">Lambda</span> for auto-remediation. Covers cloud and on-prem via SSM Hybrid Activations.
       </p>
       <a

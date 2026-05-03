@@ -16,7 +16,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Enterprise-grade Azure Landing Zone with modular <span class="text-cyan-300">Terraform</span> architecture. Hub-spoke topology centralizes security (<span class="text-cyan-300">Azure Firewall</span>, Bastion) and foundation services (<span class="text-cyan-300">Key Vault</span>, Private DNS). Multiple spoke networks for workload isolation with hybrid connectivity to AWS via <span class="text-cyan-300">IPSec VPN</span>.
       </p>
       <a

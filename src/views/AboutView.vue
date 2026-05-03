@@ -19,10 +19,10 @@
 
       <!-- Paragraphs (left) -->
       <div class="space-y-4 md:space-y-6 flex-1 min-w-0">
-        <p class="text-base md:text-lg text-gray-200 leading-relaxed">
+        <p class="text-base md:text-lg text-slate-200 leading-relaxed">
           Before moving into technology I worked in healthcare, where mistakes carry real consequences. That environment trained me to slow down, verify assumptions, and think carefully about what might be missing before acting. Those habits translate naturally into troubleshooting complex systems.
         </p>
-        <p class="text-base md:text-lg text-gray-200 leading-relaxed">
+        <p class="text-base md:text-lg text-slate-200 leading-relaxed">
          Cloud and infrastructure feel like a playground for systems thinking, where I design, test, and refine how systems behave under change, failure, and scale. Outside of work, I explore this through hands-on labs and projects, building and refining code in GitHub, working in Linux, and deploying systems across cloud platforms.
         </p>
       </div>
@@ -33,7 +33,7 @@
 
           <!-- Traits -->
           <div class="font-mono text-sm md:text-base px-4 py-4 flex flex-col">
-            <div class="text-gray-500 mb-2">$ simon --traits</div>
+            <div class="text-slate-500 mb-2">$ simon --traits</div>
             <div class="text-cyan-300">curiosity: high</div>
             <div class="relative flex items-center text-cyan-300">
               <span class="whitespace-nowrap">learning: continuous</span>
@@ -50,9 +50,12 @@
           <!-- Divider: horizontal on mobile, vertical on sm+ -->
           <div class="h-px sm:h-auto sm:w-0.5 bg-cyan-500/50 sm:self-stretch"></div>
 
-          <!-- cert -->
-          <div class="px-4 py-4 flex flex-col items-center justify-center gap-2 bg-cyan-950/40 shadow-[inset_0_0_24px_rgba(6,182,212,0.12),inset_0_0_0_1px_rgba(6,182,212,0.35)]">
-            <img src="/images/certifications/cloudops.webp" alt="AWS SysOps Administrator" class="w-16 sm:w-20 md:w-28 rounded drop-shadow-[0_0_14px_rgba(6,182,212,0.65)]" />
+          <!-- cert — clickable -->
+          <div
+            class="px-4 py-4 flex flex-col items-center justify-center gap-2 bg-cyan-950/40 shadow-[inset_0_0_24px_rgba(6,182,212,0.12),inset_0_0_0_1px_rgba(6,182,212,0.35)] cursor-pointer transition-all duration-200 hover:bg-cyan-900/40 hover:shadow-[inset_0_0_32px_rgba(6,182,212,0.2),inset_0_0_0_1px_rgba(6,182,212,0.6)] group"
+            @click="showCloudOps = true"
+          >
+            <img src="/images/certifications/cloudops.webp" alt="AWS SysOps Administrator" class="w-16 sm:w-20 md:w-28 rounded drop-shadow-[0_0_14px_rgba(6,182,212,0.65)] group-hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.9)] transition-all duration-200" />
             <span class="text-xs font-mono tracking-[0.25em] uppercase text-cyan-400 animate-pulse drop-shadow-[0_0_8px_rgba(6,182,212,0.9)]">Focus</span>
           </div>
 
@@ -86,12 +89,12 @@
           <div class="flex items-center justify-between mb-3">
             <div class="flex items-center gap-2">
               <div class="bg-slate-400 rounded-full w-3 h-3"></div>
-              <span class="text-sm text-gray-400">2017 — 2024</span>
+              <span class="text-sm text-slate-400">2017 — 2024</span>
             </div>
             <span class="text-xs text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full">Healthcare</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-300 mb-3">Pharmacist - Community</h3>
-          <p class="text-gray-300 text-sm leading-relaxed">
+          <h3 class="text-xl font-bold text-slate-300 mb-3"><span class="text-purple-400">Pharmacist</span> - Community</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
             Community pharmacy within a regulated healthcare environment. Dispensed prescriptions, advised patients, and communicated clearly in high-responsibility situations. Built strong attention to detail, accountability, and the ability to operate calmly in compliance-driven settings.
           </p>
         </div>
@@ -101,13 +104,13 @@
           <div class="flex items-center justify-between mb-3">
             <div class="flex items-center gap-2">
               <div class="bg-slate-400 rounded-full w-3 h-3"></div>
-              <span class="text-sm text-gray-400">2025 — 2025</span>
+              <span class="text-sm text-slate-400">2025 — 2025</span>
             </div>
             <span class="text-xs text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full">SaaS</span>
           </div>
           <h3 class="text-xl font-bold text-slate-300 mb-3">Customer & Technical Support</h3>
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Provided application and customer support for a SaaS product, including onboarding, installations, user education, and structured troubleshooting. Documented solutions, analysed recurring issues, and collaborated closely with engineering teams to improve product reliability and customer experience.
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Provided application and customer support for a SaaS product, including onboarding, installations, user education, and structured troubleshooting. Documented solutions, analysed recurring issues, and collaborated closely with engineering teams to improve product reliability.
           </p>
         </div>
 
@@ -116,12 +119,12 @@
           <div class="flex items-center justify-between mb-3">
             <div class="flex items-center gap-2">
               <div class="bg-cyan-400 rounded-full w-3 h-3"></div>
-              <span class="text-sm text-gray-400">2026 — Present</span>
+              <span class="text-sm text-slate-400">2026 — Present</span>
             </div>
             <span class="text-xs text-cyan-300 bg-cyan-700/50 px-3 py-1 rounded-full">MSP</span>
           </div>
           <h3 class="text-xl font-bold text-cyan-300 mb-3">Helpdesk Support Technician</h3>
-          <p class="text-gray-200 text-sm leading-relaxed">
+          <p class="text-slate-200 text-sm leading-relaxed">
             Delivering Level 1 and 2 support across client environments, including Microsoft 365, Entra ID, Active Directory, endpoints, networking, and business applications. Focus on root cause analysis, repeatable fixes, and understanding how services behave across real-world infrastructure.
           </p>
         </div>
@@ -129,4 +132,13 @@
     </section>
 
   </div>
+
+  <CloudOpsModal :visible="showCloudOps" @close="showCloudOps = false" />
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import CloudOpsModal from '@/components/modals/CloudOpsModal.vue'
+
+const showCloudOps = ref(false)
+</script>

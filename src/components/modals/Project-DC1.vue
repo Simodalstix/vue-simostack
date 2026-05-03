@@ -32,7 +32,7 @@
 
     <!-- Description -->
     <div class="px-4 pb-4">
-      <p class="text-base text-gray-300 leading-relaxed">
+      <p class="text-base text-slate-300 leading-relaxed">
         <span class="text-cyan-300">Windows Server 2022</span> domain controller for
         <span class="text-cyan-300">beelink.local</span>, with Linux clients (Rocky, Ubuntu)
         joined via <span class="text-cyan-300">realmd</span> and

@@ -11,7 +11,7 @@
 
     <!-- Description -->
     <div class="px-4 pb-4">
-      <p class="text-base text-gray-300 leading-relaxed">
+      <p class="text-base text-slate-300 leading-relaxed">
         VMware Workstation lab for practicing RHEL/RHCSA and prototyping infrastructure: pfSense, Active Directory, file services, and monitoring. Fast iteration environment for testing configurations before moving to the Proxmox host.
       </p>
     </div>

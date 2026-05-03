@@ -11,7 +11,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         <span class="text-cyan-300">PostgreSQL</span> migration to <span class="text-cyan-300">Amazon RDS</span> with <span class="text-cyan-300">Terraform</span> provisioning VPC, security groups, <span class="text-cyan-300">SSM</span> bastion access, and <span class="text-cyan-300">Secrets Manager</span> credentials. Uses pg_dump/pg_restore for simple, reproducible migrations. Multi-AZ ready with enhanced monitoring and CloudWatch metrics.
       </p>
       <a

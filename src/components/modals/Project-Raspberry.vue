@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Self-hosted Node.js/Express API on Raspberry Pi with Docker Compose running API and PostgreSQL. GitHub Actions builds ARM-compatible containers and deploys over SSH with environment secrets. Compose restart policy, health checks, and named volumes for reliability.
       </p>
       <a

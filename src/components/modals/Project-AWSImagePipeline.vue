@@ -57,7 +57,7 @@
 
     <!-- Description + GitHub link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Golden AMI baking pipeline for the <span class="text-orange-300">ops-lab platform</span>. Produces hardened, pre-configured AMIs using <span class="text-[#4d8bff]">Packer</span> and publishes AMI IDs to <span class="text-cyan-300">SSM Parameter Store</span> so downstream stacks always launch from a known-good image — no hardcoded AMI IDs anywhere. <span class="text-cyan-300">CDK Python</span> deploys the IAM instance profile and <span class="text-cyan-300">CodeBuild</span> projects. Part of a modular AWS ops platform alongside <span class="text-cyan-300">aws-ops-networking</span>, <span class="text-cyan-300">aws-ops-observability</span>, and <span class="text-cyan-300">aws-3tier-platform</span>.
       </p>
       <a

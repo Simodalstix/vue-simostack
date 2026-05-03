@@ -31,7 +31,7 @@
         >
           <!-- Close button -->
           <button
-            class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-colors duration-150"
+            class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors duration-150"
             @click="$emit('close')"
             aria-label="Close"
           >
@@ -64,7 +64,7 @@ const props = defineProps({
   title: String,
   titleColor: { type: String, default: 'text-white' },
   borderClass: { type: String, default: 'border border-cyan-500/30 shadow-xl shadow-cyan-500/10' },
-  bgColor: { type: String, default: 'bg-gray-950' },
+  bgColor: { type: String, default: 'bg-slate-950' },
   width: { type: String, default: 'max-w-md' },
   height: { type: String, default: '90dvh' },
   alignment: { type: String, default: '' },

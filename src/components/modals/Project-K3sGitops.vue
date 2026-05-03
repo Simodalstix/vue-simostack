@@ -11,7 +11,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Lightweight Kubernetes platform using <span class="text-cyan-300">K3s</span> with GitOps automation via <span class="text-cyan-300">ArgoCD</span> on <span class="text-cyan-300">ARM64</span> hardware. <span class="text-cyan-300">Ansible</span> automates K3s install and config, single-node cluster with minimal resource footprint (~2GB RAM), NodePort for simplicity.
       </p>
       <a

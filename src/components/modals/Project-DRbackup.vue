@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Backup and restore disaster recovery with daily cross-region backups, automated recovery via <span class="text-cyan-300">CloudFormation</span>/<span class="text-cyan-300">CDK</span>, and <span class="text-cyan-300">Route 53</span> DNS failover. 4-hour <span class="text-cyan-300">RTO</span> with minimal ongoing costs. <span class="text-cyan-300">CloudWatch</span> monitors backup success with regular recovery testing.
       </p>
       <a

@@ -33,7 +33,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         Production-style <span class="text-cyan-300">3-tier platform</span> built with <span class="text-cyan-300">CDK Python</span>. Runs a <span class="text-cyan-300">FastAPI</span> app behind an <span class="text-cyan-300">ALB</span> and <span class="text-cyan-300">Auto Scaling Group</span>, backed by <span class="text-cyan-300">RDS PostgreSQL 16</span> and <span class="text-cyan-300">ElastiCache Redis</span> in isolated subnets. Zero hardcoded ARNs — all cross-stack config flows through <span class="text-cyan-300">SSM Parameter Store</span>. Extended with <span class="text-cyan-300">FIS fault injection</span> experiments and DR runbooks. Part of a broader ops lab sharing networking and observability stacks.
       </p>
       <a

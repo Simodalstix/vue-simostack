@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-900 text-white min-h-screen p-6">
+  <div class="bg-slate-900 text-white min-h-screen p-6">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Form Column -->
       <form @submit.prevent="submitPost" class="space-y-4">
@@ -9,7 +9,7 @@
           <input
             v-model="newPost.title"
             type="text"
-            class="w-full p-2 rounded bg-gray-800 border border-gray-700 text-white"
+            class="w-full p-2 rounded bg-slate-800 border border-slate-700 text-white"
             placeholder="Post title"
             required
           />
@@ -21,7 +21,7 @@
           <textarea
             v-model="newPost.content"
             rows="4"
-            class="w-full p-2 rounded bg-gray-800 border border-gray-700 text-white"
+            class="w-full p-2 rounded bg-slate-800 border border-slate-700 text-white"
             placeholder="Write something..."
             required
           ></textarea>
@@ -40,9 +40,9 @@
       <div>
         <h1 class="text-3xl font-bold mb-6 text-center md:text-left">Blog Posts</h1>
         <ul>
-          <li v-for="post in posts" :key="post.id" class="mb-6 border-b border-gray-700 pb-4">
+          <li v-for="post in posts" :key="post.id" class="mb-6 border-b border-slate-700 pb-4">
             <h2 class="text-xl font-semibold">{{ post.title }}</h2>
-            <p class="text-gray-400">{{ post.content }}</p>
+            <p class="text-slate-400">{{ post.content }}</p>
             <button
               @click="deletePost(post.id)"
               class="mt-2 text-sm text-red-400 hover:text-red-300"

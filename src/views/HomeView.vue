@@ -38,17 +38,17 @@
 
       <!-- Career path -->
       <div class="font-mono text-left inline-block text-base sm:text-xl md:text-lg leading-relaxed mb-6">
-        <div class="text-gray-500">$ ls ~/career</div>
-        <div class="text-gray-500">Pharmacist.tar.gz</div>
+        <div class="text-slate-500">$ ls ~/career</div>
+        <div class="text-slate-500">Pharmacist.tar.gz</div>
         <div class="text-cyan-300">Helpdesk-Support-Technician/</div>
-        <div class="flex text-gray-500">
-          <span class="mr-2 text-gray-500">└──</span>
+        <div class="flex text-slate-500">
+          <span class="mr-2 text-slate-500">└──</span>
           <span>Systems-Cloud-Engineer/</span>
         </div>
       </div>
 
       <!-- Intro -->
-      <div class="max-w-4xl text-gray-200 leading-relaxed text-sm sm:text-base md:text-lg space-y-4">
+      <div class="max-w-4xl text-slate-200 leading-relaxed text-sm sm:text-base md:text-lg space-y-4">
        <p>
   I currently work in MSP support across varied client environments, handling
   <span class="text-cyan-300">Microsoft 365</span>,

@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         <span class="text-cyan-300">ECS Fargate</span> web service with blue/green deployments via <span class="text-cyan-300">CodeDeploy</span>, multi-metric observability, and built-in chaos engineering scenarios. Auto-rollback on health check failures, <span class="text-cyan-300">X-Ray</span> tracing, and controlled failure scenarios for incident response training.
       </p>
       <a

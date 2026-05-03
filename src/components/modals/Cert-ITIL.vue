@@ -12,7 +12,7 @@ import BaseModal from './BaseModal.vue'
     width="max-w-3xl"
   >
     <div class="p-4 mb-2">
-      <p class="text-base text-gray-300 leading-relaxed mb-4">
+      <p class="text-base text-slate-300 leading-relaxed mb-4">
         Issued by PeopleCert on behalf of AXELOS. Covers
         <span class="text-cyan-300">change enablement</span>,
         <span class="text-cyan-300">incident management</span>,
@@ -32,7 +32,7 @@ import BaseModal from './BaseModal.vue'
       </div>
 
       <!-- Footer note -->
-      <p class="text-sm text-gray-300 mt-3 text-center italic">
+      <p class="text-sm text-slate-300 mt-3 text-center italic">
         Official badge sharing requires an Axelos subscription.
         Full verification available upon request.
       </p>

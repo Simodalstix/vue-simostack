@@ -7,12 +7,12 @@
         <img v-if="hero" :src="hero" alt="" class="h-10 w-10 rounded-xl object-cover" />
         <div class="min-w-0">
           <h2 class="text-xl font-semibold leading-tight truncate text-white">{{ title }}</h2>
-          <p v-if="subtitle" class="text-sm text-gray-300 mt-0.5">{{ subtitle }}</p>
+          <p v-if="subtitle" class="text-sm text-slate-300 mt-0.5">{{ subtitle }}</p>
         </div>
       </div>
 
       <!-- TABS (optional) -->
-      <div v-if="tabs && tabs.length" class="border-b border-gray-700">
+      <div v-if="tabs && tabs.length" class="border-b border-slate-700">
         <nav class="-mb-px flex flex-wrap gap-2">
           <button
             v-for="t in tabs"
@@ -22,7 +22,7 @@
             :class="
               active === t.key
                 ? 'border-b-2 border-white font-medium text-white'
-                : 'text-gray-400 hover:text-gray-200'
+                : 'text-slate-400 hover:text-slate-200'
             "
           >
             {{ t.label }}
@@ -50,9 +50,9 @@
     </div>
 
     <!-- FOOTER -->
-    <div v-if="$slots.footerText || $slots.actions" class="border-t border-gray-700 pt-4 mt-4">
+    <div v-if="$slots.footerText || $slots.actions" class="border-t border-slate-700 pt-4 mt-4">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <div class="text-sm text-gray-400">
+        <div class="text-sm text-slate-400">
           <slot name="footerText" />
         </div>
         <div class="flex flex-wrap gap-2 justify-end">

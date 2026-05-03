@@ -15,7 +15,7 @@
 
     <!-- Description -->
     <div class="px-4 pb-4">
-      <p class="text-base text-gray-300 leading-relaxed">
+      <p class="text-base text-slate-300 leading-relaxed">
         Homelab firewall configuration using <span class="text-cyan-300">OPNsense</span>.
         Configured <span class="text-cyan-300">DHCP</span>, routing, and
         <span class="text-cyan-300">VLAN</span> segmentation for network isolation, with

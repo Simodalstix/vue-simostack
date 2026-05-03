@@ -40,21 +40,21 @@
           <div class="flex flex-col space-y-2">
             <router-link
               :to="{ name: 'Home' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
+              class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
               active-class="text-white bg-white/10 border-cyan-400/40"
               @click="closeMobileMenu"
               >Home</router-link
             >
             <router-link
               :to="{ name: 'Projects' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
+              class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
               active-class="text-white bg-white/10 border-cyan-400/40"
               @click="closeMobileMenu"
               >Projects</router-link
             >
             <router-link
               :to="{ name: 'About' }"
-              class="px-3 py-2 rounded-md text-gray-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
+              class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
               active-class="text-white bg-white/10 border-cyan-400/40"
               @click="closeMobileMenu"
               >About</router-link
@@ -96,7 +96,7 @@
       <router-view />
     </main>
 
-    <footer class="bg-gray-800 text-white py-8 sm:py-10">
+    <footer class="bg-slate-800 text-white py-8 sm:py-10">
       <div class="container mx-auto px-4 sm:px-6">
         <div class="grid grid-cols-1 md:grid-cols-1 gap-6 sm:gap-8">
                     <div class="flex items-center justify-center text-center">

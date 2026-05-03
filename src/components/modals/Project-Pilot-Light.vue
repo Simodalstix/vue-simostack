@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         <span class="text-cyan-300">Pilot light</span> disaster recovery for e-commerce using <span class="text-cyan-300">RDS</span> read replica, <span class="text-cyan-300">Step Functions</span> orchestration, and <span class="text-cyan-300">Route 53</span> health checks. Achieves 5–10 minute <span class="text-cyan-300">RTO</span> with 80% cost savings vs warm standby. Automated failover with validation and rollback capabilities.
       </p>
       <a

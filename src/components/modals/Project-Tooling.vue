@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         DevOps toolchain with <span class="text-cyan-300">Terraform</span> deploying VPC, EC2, and IAM. <span class="text-cyan-300">SonarQube</span> in Docker for code quality, <span class="text-cyan-300">LaunchDarkly</span> feature flags in .NET 8 API, Playwright tests, and <span class="text-cyan-300">GitHub Actions</span> CI/CD with quality gates. Demonstrates platform team tooling patterns.
       </p>
       <a

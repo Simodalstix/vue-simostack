@@ -3,9 +3,9 @@
     :is="as"
     v-bind="attrs"
     :class="[
-      'group rounded-2xl border border-gray-700 bg-gray-800/60 p-4 transition',
-      'hover:border-gray-600 hover:bg-gray-800',
-      clickable ? 'cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-400/60' : '',
+      'group rounded-2xl border border-slate-700 bg-slate-800/60 p-4 transition',
+      'hover:border-slate-600 hover:bg-slate-800',
+      clickable ? 'cursor-pointer focus:outline-none focus:ring-2 focus:ring-slate-400/60' : '',
     ]"
     :role="clickable && as !== 'a' ? 'button' : undefined"
     :tabindex="clickable ? 0 : undefined"
@@ -38,7 +38,7 @@
         <h3 v-if="title" class="text-base font-semibold leading-tight text-white">
           {{ title }}
         </h3>
-        <p v-if="subtitle" class="text-sm text-gray-300 mt-1 line-clamp-2">
+        <p v-if="subtitle" class="text-sm text-slate-300 mt-1 line-clamp-2">
           {{ subtitle }}
         </p>
       </div>
@@ -49,7 +49,7 @@
       <span
         v-for="(b, i) in badges"
         :key="i"
-        class="text-xs rounded-full px-2 py-1 border border-gray-600 bg-gray-700/60 text-gray-200"
+        class="text-xs rounded-full px-2 py-1 border border-slate-600 bg-slate-700/60 text-slate-200"
       >
         {{ b }}
       </span>
@@ -58,11 +58,11 @@
     <!-- Meta row (small, optional) -->
     <div
       v-if="meta && meta.length"
-      class="mt-3 text-xs text-gray-400 flex flex-wrap gap-x-4 gap-y-1"
+      class="mt-3 text-xs text-slate-400 flex flex-wrap gap-x-4 gap-y-1"
     >
       <div v-for="(m, i) in meta" :key="i" class="inline-flex items-center gap-1">
         <span class="opacity-80">{{ m.label }}:</span>
-        <span class="font-medium text-gray-300">{{ m.value }}</span>
+        <span class="font-medium text-slate-300">{{ m.value }}</span>
       </div>
     </div>
 

@@ -19,14 +19,14 @@ import BaseModal from './BaseModal.vue'
       </div>
     </template>
     <div class="bg-[#F3F3F3] p-5 rounded mb-2">
-      <p class="text-base text-gray-800 mb-3">Validates the ability to implement, manage, and monitor Azure environments including identity, networking, compute, and storage.</p>
-      <ul class="text-base text-gray-600 space-y-1.5 mb-4 list-disc list-inside">
+      <p class="text-base text-slate-800 mb-3">Validates the ability to implement, manage, and monitor Azure environments including identity, networking, compute, and storage.</p>
+      <ul class="text-base text-slate-600 space-y-1.5 mb-4 list-disc list-inside">
         <li>Entra ID user and group management, RBAC, and subscription governance</li>
         <li>Virtual network design, NSGs, peering, DNS, and load balancing</li>
         <li>VM deployment, scale sets, App Service, and container instances</li>
         <li>Storage accounts, backup policies, Azure Monitor, and cost management</li>
       </ul>
-      <p class="text-sm text-gray-400 italic mb-4">This certification covers day-to-day Azure operations end to end, providing the foundation for managing production workloads with confidence.</p>
+      <p class="text-sm text-slate-400 italic mb-4">This certification covers day-to-day Azure operations end to end, providing the foundation for managing production workloads with confidence.</p>
       <div>
         <a
           href="https://learn.microsoft.com/api/credentials/share/en-us/SimonParker-8212/8AEDB76D7A75F066?sharingId=F0664CD37994DC5D"

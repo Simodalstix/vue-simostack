@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         <span class="text-cyan-300">EKS</span> deployment with GitOps workflows using <span class="text-cyan-300">ArgoCD</span> and <span class="text-cyan-300">Terraform</span>. Multi-tier application with automated deployment pipelines, drift detection, and <span class="text-cyan-300">Prometheus</span> observability. Spot instances reduce costs by 70% while maintaining reliability.
       </p>
       <a

@@ -15,7 +15,7 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-gray-300 leading-relaxed flex-1">
+      <p class="text-base text-slate-300 leading-relaxed flex-1">
         AI-powered legal contract analysis using <span class="text-cyan-300">Amazon Bedrock</span> (Claude) and <span class="text-cyan-300">Textract</span>. Serverless TypeScript stack with <span class="text-cyan-300">Lambda</span>, <span class="text-cyan-300">S3</span>, and <span class="text-cyan-300">DynamoDB</span>. Extracts key terms, assesses risks, and checks compliance in under 60 seconds with presigned URL uploads and 90-day lifecycle policies.
       </p>
       <a

@@ -12,12 +12,12 @@
           <div class="flex items-center gap-2 mb-1">
             <span class="text-green-400">●</span>
             <span class="text-white">simon.service</span>
-            <span class="text-gray-400">- Cloud Labs &amp; Projects</span>
+            <span class="text-slate-400">- Cloud Labs &amp; Projects</span>
           </div>
-          <div class="pl-4 text-gray-500">Loaded: <span class="text-gray-300">loaded (/etc/systemd/system/simon.service; <span class="text-green-400">enabled</span>)</span></div>
-          <div class="pl-4 text-gray-500">Active: <span class="text-green-400">active (running)</span><span class="text-gray-500"> since 2025</span></div>
-          <div class="pl-4 text-gray-500">Main PID: <span class="text-gray-300">simon</span></div>
-          <div class="pl-4 text-gray-500">Status: <span class="text-cyan-300">"Diving deep into infrastructure"</span></div>
+          <div class="pl-4 text-slate-500">Loaded: <span class="text-slate-300">loaded (/etc/systemd/system/simon.service; <span class="text-green-400">enabled</span>)</span></div>
+          <div class="pl-4 text-slate-500">Active: <span class="text-green-400">active (running)</span><span class="text-slate-500"> since 2025</span></div>
+          <div class="pl-4 text-slate-500">Main PID: <span class="text-slate-300">simon</span></div>
+          <div class="pl-4 text-slate-500">Status: <span class="text-cyan-300">"Diving deep into infrastructure"</span></div>
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@
               <li @click="showOPNsense = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
               <li @click="showPrometheusGrafana = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
             </ul>
-            <div class="flex items-center justify-between gap-2 text-xs text-gray-400 pt-4 mt-auto border-t border-slate-700/60">
+            <div class="flex items-center justify-between gap-2 text-xs text-slate-400 pt-4 mt-auto border-t border-slate-700/60">
               <span class="flex items-center gap-1 px-2 py-1 bg-yellow-700/30 text-yellow-300 border border-yellow-600/30 rounded-full">
                 <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
                 Archived
@@ -110,7 +110,7 @@
                 >{{ tag }}</span>
               </div>
 
-              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-gray-400 pt-4 border-t border-slate-500/60">
+              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-slate-400 pt-4 border-t border-slate-500/60">
                 <span :class="['flex items-center gap-1 px-1.5 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs rounded-full', statusClasses[project.statusColor].badge]">
                   <div :class="['w-2 h-2 rounded-full', statusClasses[project.statusColor].dot]"></div>
                   {{ project.status }}
@@ -130,7 +130,7 @@
           <template v-for="project in extraProjects" :key="project.id">
             <BaseCard
               v-if="project.id === 'coming-soon'"
-              class="p-4 rounded-xl border border-slate-600/80 bg-slate-700/80 text-gray-400"
+              class="p-4 rounded-xl border border-slate-600/80 bg-slate-700/80 text-slate-400"
             >
               <h3 class="text-lg font-bold mb-3 text-white">More Projects Coming Soon</h3>
               <p class="text-sm text-slate-300">Additional cloud infrastructure and DevOps projects in development.</p>
@@ -160,7 +160,7 @@
                 >{{ tag }}</span>
               </div>
 
-              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-gray-400 pt-4 border-t border-slate-500/60">
+              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-slate-400 pt-4 border-t border-slate-500/60">
                 <span :class="['flex items-center gap-1 px-1.5 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs rounded-full', statusClasses[project.statusColor].badge]">
                   <div :class="['w-2 h-2 rounded-full', statusClasses[project.statusColor].dot]"></div>
                   {{ project.status }}
@@ -938,7 +938,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'Experimental Lab',
-    hover: 'hover:bg-zinc-700/60 hover:border-slate-400/60 hover:shadow-lg hover:shadow-zinc-500/10',
+    hover: 'hover:bg-slate-700/60 hover:border-slate-400/60 hover:shadow-lg hover:shadow-slate-500/10',
     titleHover: 'group-hover:text-slate-100',
     section: 'extra',
   },
@@ -957,7 +957,7 @@ const projects = [
     status: 'Ready',
     statusColor: 'green',
     category: 'DevOps',
-    hover: 'hover:bg-zinc-700/60 hover:border-slate-400/60 hover:shadow-lg hover:shadow-zinc-500/10',
+    hover: 'hover:bg-slate-700/60 hover:border-slate-400/60 hover:shadow-lg hover:shadow-slate-500/10',
     titleHover: 'group-hover:text-slate-100',
     section: 'extra',
   },
