@@ -48,7 +48,7 @@
           </div>
 
           <!-- Divider: horizontal on mobile, vertical on sm+ -->
-          <div class="h-px sm:h-auto sm:w-0.5 bg-cyan-500/50 sm:self-stretch"></div>
+          <div class="h-px sm:h-auto sm:w-px bg-cyan-500/50 sm:self-stretch"></div>
 
           <!-- cert — clickable -->
           <div

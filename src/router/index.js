@@ -30,6 +30,11 @@ const routes = [
     name: 'PrepStarDetail',
     component: () => import('../views/prep/StarDetailView.vue'),
   },
+  {
+    path: '/prep/linux/processes',
+    name: 'PrepLinuxProcesses',
+    component: () => import('../views/prep/linux/ProcessesView.vue'),
+  },
 ]
 
 const router = createRouter({

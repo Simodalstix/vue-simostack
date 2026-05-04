@@ -1,11 +1,11 @@
 <template>
-  <div class="max-w-3xl mx-auto py-8 px-4">
+  <div class="max-w-5xl mx-auto py-8 px-4">
     <div class="mb-8">
       <h1 class="text-2xl font-bold text-white">STAR Stories</h1>
       <p class="text-slate-400 text-sm mt-1">{{ stories.length }} stories — tap to review</p>
     </div>
 
-    <div class="grid gap-3 sm:grid-cols-2">
+    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
       <RouterLink
         v-for="story in stories"
         :key="story.id"
