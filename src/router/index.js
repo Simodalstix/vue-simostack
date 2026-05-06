@@ -21,19 +21,9 @@ const routes = [
     component: () => import('../views/ProjectsView.vue'),
   },
   {
-    path: '/prep/stars',
-    name: 'PrepStars',
-    component: () => import('../views/prep/StarsView.vue'),
-  },
-  {
-    path: '/prep/stars/:id',
-    name: 'PrepStarDetail',
-    component: () => import('../views/prep/StarDetailView.vue'),
-  },
-  {
-    path: '/prep/linux/processes',
-    name: 'PrepLinuxProcesses',
-    component: () => import('../views/prep/linux/ProcessesView.vue'),
+    path: '/prep',
+    name: 'Prep',
+    component: () => import('../views/PrepView.vue'),
   },
 ]
 

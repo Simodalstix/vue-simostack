@@ -1,6 +1,6 @@
 <template>
-  <div class="text-white mx-auto px-4 sm:px-6 py-8 sm:py-10 max-w-[940px] lg:max-w-[1000px]">
-    <div class="rounded-2xl border border-slate-700 bg-slate-950/60 px-6 sm:px-8 py-6 pb-10">
+  <div class="text-white bg-slate-950/60">
+    <div class="max-w-[940px] lg:max-w-[1000px] mx-auto px-6 sm:px-8 py-6 pb-10">
       <div class="flex flex-col gap-4 sm:gap-5 md:flex-row md:items-center md:justify-between mb-6">
         <div class="flex items-center gap-4">
           <img src="/images/icons/oblivion_profileicon.jpg" alt="profile" class="h-20 rounded-full" />
@@ -38,11 +38,11 @@
 
       <!-- Career path -->
       <div class="font-mono text-left inline-block text-base sm:text-xl md:text-lg leading-relaxed mb-6">
-        <div class="text-slate-500">$ ls ~/career</div>
-        <div class="text-slate-500">Pharmacist.tar.gz</div>
+        <div class="text-slate-400">$ ls ~/career</div>
+        <div class="text-slate-400">Pharmacist.tar.gz</div>
         <div class="text-cyan-300">Helpdesk-Support-Technician/</div>
-        <div class="flex text-slate-500">
-          <span class="mr-2 text-slate-500">└──</span>
+        <div class="flex text-slate-400">
+          <span class="mr-2 text-slate-400">└──</span>
           <span>Systems-Cloud-Engineer/</span>
         </div>
       </div>
@@ -51,21 +51,12 @@
       <div class="max-w-4xl text-slate-200 leading-relaxed text-sm sm:text-base md:text-lg space-y-4">
        <p>
   I currently work in MSP support across varied client environments, handling
-  <span class="text-cyan-300">Microsoft 365</span>,
-  <span class="text-cyan-300">Entra ID</span>,
-  <span class="text-cyan-300">Active Directory</span>,
-  <span class="text-cyan-300">endpoints</span>, and
-  <span class="text-cyan-300">network troubleshooting</span> in day-to-day operations.
+  Microsoft 365, Entra ID, Active Directory, endpoints, and
+  network troubleshooting in day-to-day operations.
 </p>
 
        <p>
-  Outside of support, I spend much of my time building depth in
-  <span class="text-cyan-300">Linux administration</span>,
-  <span class="text-cyan-300">cloud infrastructure</span>, and
-  <span class="text-cyan-300">automation</span> through projects involving
-  <span class="text-cyan-300">Terraform</span>,
-  <span class="text-cyan-300">AWS CDK</span>,
-  <span class="text-cyan-300">Ansible</span>, and virtualized lab environments.
+  Outside of support, I spend much of my time building depth in Linux administration, cloud infrastructure, and automation through projects involving Terraform, AWS CDK, and homelabs
 </p>
       </div>
 

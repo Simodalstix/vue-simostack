@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-slate-900 text-white">
+  <router-view v-if="isPrep" />
+  <div v-else class="flex flex-col min-h-screen bg-slate-900 text-white">
     <header
       class="bg-gradient-to-r from-cyan-950 to-slate-900 shadow-xl border-b border-cyan-800/50"
     >
@@ -87,12 +88,13 @@
               exact-active-class="!bg-cyan-500 !text-white !font-semibold !border-cyan-400/40"
               >Projects</router-link
             >
+
           </div>
         </div>
       </nav>
     </header>
 
-    <main class="flex-grow container mx-auto px-2 sm:px-6 py-4">
+    <main :class="isHome ? 'flex-grow' : 'flex-grow container mx-auto px-2 sm:px-6 py-4'">
       <router-view />
     </main>
 
@@ -113,8 +115,14 @@
   </div>
 </template>
 
+
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const isPrep = computed(() => route.path.startsWith('/prep'))
+const isHome = computed(() => route.path === '/')
 
 const isMobileMenuOpen = ref(false)
 
