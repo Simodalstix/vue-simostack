@@ -23,6 +23,11 @@ function esc(s) {
 function highlightLine(raw) {
   if (!raw.trim()) return ''
 
+  // Output line (> prefix)
+  if (/^\s*>/.test(raw)) {
+    return `<span class="text-slate-400">${esc(raw)}</span>`
+  }
+
   // Full-line comment (# label)
   if (/^\s*#/.test(raw)) {
     return `<span class="text-slate-500 font-semibold">${esc(raw)}</span>`
