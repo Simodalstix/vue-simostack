@@ -59,7 +59,7 @@
                 v-for="lp in starTabLps[tab.id]"
                 :key="lp"
                 class="w-2 h-2 rounded-full"
-                :style="{ backgroundColor: LP_RING_HEX[lp] || '#475569' }"
+                :style="{ backgroundColor: LP_HEX[lp] || '#475569' }"
                 :title="lp"
               />
             </span>
@@ -279,10 +279,7 @@ const sections = [
   },
 ]
 
-const modules = import.meta.glob('/src/data/starStories.js', { eager: true })
-const storyData = Object.values(modules)[0] || {}
-const LP_DOT_COLORS = storyData.LP_DOT_COLORS || {}
-const LP_RING_HEX   = storyData.LP_RING_HEX   || {}
+import { LP_HEX } from '@/data/prep/lpConstants.js'
 
 const starTabLps = {
   'duo-mfa':           starComplexCards[0]?.lps          ?? [],

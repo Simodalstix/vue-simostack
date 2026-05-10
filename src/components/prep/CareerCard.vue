@@ -109,10 +109,7 @@ defineProps({ card: Object })
 
 const mode = ref('rehearsal')
 
-const modules = import.meta.glob('/src/data/starStories.js', { eager: true })
-const data = Object.values(modules)[0] || {}
-const LP_COLORS     = data.LP_COLORS     || {}
-const LP_SHORT_NAMES = data.LP_SHORT_NAMES || {}
+import { LP_COLORS, LP_SHORT_NAMES } from '@/data/prep/lpConstants.js'
 
 const STAR_SECTIONS = new Set(['SITUATION', 'TASK', 'ACTION', 'RESULT', 'CLOSE'])
 
