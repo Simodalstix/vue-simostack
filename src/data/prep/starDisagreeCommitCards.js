@@ -1,45 +1,57 @@
 export const starDisagreeCommitCards = [
   {
-    question: 'Tell me about a time you disagreed with a decision. How did you handle it?',
+    title: 'Register Policy — Pushed Back, Then Committed',
+    logo: '/images/companies/chemist-warehouse-logo.png',
+    question: 'Tell me about a time you disagreed with someone at work.',
     anchors: [
-      { tag: '[DATA]', text: 'Traced issue to Intune policy, not a local setting — escalated to right people first' },
-      { tag: '[DATA]', text: 'Escalated to Intune engineer → senior security engineer' },
-      { tag: '[DATA]', text: 'Proposed a concrete solution: change management, heads-up email, one week\'s notice' },
-      { tag: '[DATA]', text: 'Documented outcome clearly — technically feasible, requires planning — client got a real answer' },
-      { tag: '[LP]',   text: 'Have Backbone; Disagree and Commit — pushed back with a solution, accepted the decision, executed professionally' },
-      { tag: '[LP]',   text: 'Customer Obsession — closed the loop with the client, gave them a real answer not just a dead end' },
-      { tag: '[TONE]', text: 'Don\'t sound bitter about the outcome. The acceptance and execution are the point.' },
+      { tag: '[DATA]', text: 'Two counter spaces — both could be occupied simultaneously, compounding the bottleneck' },
+      { tag: '[DATA]', text: 'Card-only register — cash payers (the actual theft vector) could still walk to front registers' },
+      { tag: '[DATA]', text: 'Feedback was personal: "you\'re the only one causing friction" — not just a technical disagreement' },
+      { tag: '[LP]',   text: 'Have Backbone; Disagree and Commit — raised real concerns directly, received the feedback, committed once the decision was clear' },
+      { tag: '[LP]',   text: 'Earn Trust — didn\'t sulk or keep resisting, accepted the authority structure, worked with it' },
+      { tag: '[TONE]', text: 'Don\'t frame the workflow problems materialising as vindication — the point is what you learned about how to push back' },
     ],
-    rehearsal: `A client requested we set up Windows Hello for Business on his device. When I remoted in, the fingerprint scanner was greyed out — I recognised it was likely controlled by an Intune policy rather than a local setting, so I told him I'd investigate and get back to him.
+    rehearsal: `My boss introduced a payment register in the dispensary to address theft — the idea was to capture payment at the point of service rather than letting people take items to the front registers. I understood the concern. But as the pharmacist running the dispensary, I could see immediately that it was going to create real problems.
 
-I escalated internally — first to the Intune engineer, then to the senior security engineer. I raised that Windows Hello is a recommended authentication method and that it made sense to enable it. The senior flagged that enabling it would trigger all users in the tenant to enrol authentication methods, which could cause confusion. I pushed back — I suggested it could be handled with some change management, a heads-up email to staff and a week's notice to prepare them. Ultimately they decided it wasn't a priority given the current workload. I accepted that, and closed the ticket with a note documenting that while it was technically feasible, it would require further planning and change management to implement properly — so the client had a clear answer and the ticket was closed from our end.
+I raised it directly with him. The register tied up a staff member waiting for payment, which pulled me away from dispensing. It kept customers at the counter longer, which blocked the next person — and with two counter spaces that could both be occupied at once, the bottleneck compounded. It also created a privacy problem: someone waiting to pay was standing right there while I was trying to counsel another patient on their medication. I also flagged that it was card only, so cash payers — who were more likely to be the actual theft risk — could still walk out and pay at the front anyway. I thought I had a solid case and I made it clearly.
 
-The client had a full explanation rather than just a dead end. The decision was documented, and the door was left open for it to be revisited properly rather than just dropped.
+He came back and told me I was the only one of his pharmacists creating friction over this, that I wasn't following directive, and that it wasn't my decision to make.
 
-I didn't agree with the call, but I understood it. Once the decision was made I didn't keep pushing — I made sure it was documented properly and moved on. That's the part I think matters: you say your piece, you propose a solution, and if they go another way you execute cleanly.`,
+That was hard to hear. I still thought I was right about the workflow problems. But I had to acknowledge that he was right about one thing — it wasn't my store. I wasn't being asked for my opinion on the business model, I was being asked to implement a decision that had already been made. I accepted that, stopped pushing, and worked with it.
+
+The register stayed. The workflow problems I'd predicted did materialise — it was slower and more stop-start. But I'd said my piece, I'd been heard, and continuing to resist after that point would have just made the environment worse for everyone.
+
+What I took from it was the difference between being right and being effective. I went in direct and firm, which is fine, but I hadn't framed it as a proposal — here's the problem, here's an alternative. I just pushed back. If I'd approached it differently, the outcome might have been the same, but the conversation probably wouldn't have ended with him telling me I was being difficult. That's the part I'd do differently.`,
     cues: [
       'SITUATION',
-      'Client requested Windows Hello for Business — fingerprint scanner greyed out',
-      'Recognised it as an Intune policy, not a local setting',
+      'Boss introduced dispensary payment register to address theft',
+      'As the pharmacist running the dispensary, I could see it would cause workflow problems',
       '---',
       'ACTION',
-      'Escalated: Intune engineer → senior security engineer',
-      'Raised Windows Hello as a recommended auth method, worth enabling',
-      'Senior flagged: enabling it would trigger tenant-wide enrolment — confusion risk',
-      'Pushed back: proposed change management, heads-up email, one week\'s notice',
-      'Decision: not a priority given current workload',
-      'Accepted — didn\'t keep pushing',
-      'Documented outcome clearly: feasible, requires planning, door left open',
-      'Client given a real answer, ticket closed cleanly',
+      'Raised it directly — didn\'t sit on it',
+      'Register tied up a staff member → pulled me from dispensing',
+      'Two counter spaces both occupied at once → bottleneck compounded',
+      'Privacy issue: payment customer present while I counselled another patient on medication',
+      'Card-only: cash payers — the actual theft risk — could still walk to front registers',
+      'Thought I had a solid case. Made it clearly.',
+      '---',
+      'He came back: "you\'re the only one causing friction — this isn\'t your decision"',
+      'Hard to hear. Still thought I was right about the workflow problems.',
+      'Had to acknowledge: he was right about one thing — it wasn\'t my store',
+      'I was being asked to implement a decision already made, not give my opinion',
+      'Accepted it. Stopped pushing. Worked with it.',
       '---',
       'RESULT',
-      'Client had a full explanation, not just a dead end',
-      'Decision documented — revisitable later, not just dropped',
+      'Register stayed — workflow problems did materialise, it was slower',
+      'But I\'d said my piece, been heard — continuing to resist would have made things worse',
       '---',
       'CLOSE',
-      'I didn\'t agree with the call, but I understood it',
-      'You say your piece, propose a solution, and if they go another way you execute cleanly',
+      'Learned the difference between being right and being effective',
+      'Went in direct and firm, but hadn\'t framed it as a proposal — problem + alternative',
+      'I just pushed back',
+      'If I\'d approached it differently, the conversation probably wouldn\'t have ended with "you\'re being difficult"',
+      'That\'s the part I\'d do differently',
     ],
-    lps: ['Have Backbone; Disagree and Commit', 'Customer Obsession', 'Dive Deep'],
+    lps: ['Have Backbone; Disagree and Commit', 'Earn Trust'],
   },
 ]

@@ -3,14 +3,14 @@
     <div
       v-for="(card, i) in cards"
       :key="i"
-      class="rounded-lg bg-slate-800/60 border border-slate-700/50 border-l-2 flex flex-col overflow-hidden"
-      :class="[card.wide ? 'col-span-2' : '', ACCENTS[i % ACCENTS.length].border]"
+      class="rounded-lg bg-slate-800/50 border border-slate-700/50 border-l-2 flex flex-col overflow-hidden"
+      :class="[card.wide ? 'col-span-2' : '', card.code ? 'border-l-cyan-500/50' : 'border-l-orange-500/40']"
     >
       <!-- Header -->
-      <div class="px-3 pt-2.5 pb-2 border-b border-slate-700/50 bg-slate-800/80">
+      <div class="px-3 pt-2.5 pb-2 border-b border-slate-700/40 bg-slate-800/60">
         <span
-          class="text-[10px] font-bold tracking-widest uppercase"
-          :class="ACCENTS[i % ACCENTS.length].text"
+          class="text-[10px] font-semibold tracking-widest uppercase"
+          :class="card.code ? 'text-cyan-400' : 'text-orange-300'"
         >{{ card.title }}</span>
       </div>
 
@@ -35,22 +35,12 @@ defineProps({
   cards: { type: Array, required: true },
 })
 
-const ACCENTS = [
-  { text: 'text-cyan-400',    border: 'border-l-cyan-500' },
-  { text: 'text-violet-400',  border: 'border-l-violet-500' },
-  { text: 'text-emerald-400', border: 'border-l-emerald-500' },
-  { text: 'text-amber-400',   border: 'border-l-amber-500' },
-  { text: 'text-sky-400',     border: 'border-l-sky-500' },
-  { text: 'text-rose-400',    border: 'border-l-rose-500' },
-  { text: 'text-teal-400',    border: 'border-l-teal-500' },
-  { text: 'text-purple-400',  border: 'border-l-purple-500' },
-]
-
 function esc(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
 
 function renderBody(text) {
-  return esc(text).replace(/\*\*(.+?)\*\*/g, '<span class="text-amber-400 font-semibold">$1</span>')
+  return esc(text)
+    .replace(/\*\*(.+?)\*\*/g, '<span class="text-amber-400 font-semibold">$1</span>')
 }
 </script>

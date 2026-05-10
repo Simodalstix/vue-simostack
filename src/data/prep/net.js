@@ -6,7 +6,7 @@ ss -tlnp
 > LISTEN  0      128         0.0.0.0:22         0.0.0.0:*      sshd
 > LISTEN  0      511         0.0.0.0:80         0.0.0.0:*      nginx
 > LISTEN  0      511         0.0.0.0:443        0.0.0.0:*      nginx
-> LISTEN  0      128       127.0.0.1:5432       0.0.0.0:*      postgres
+> LISTEN  0      127.0.0.1:5432       0.0.0.0:*      postgres
 
 ss -tunlp                          # TCP + UDP listening with PIDs
 ss -tp                             # established TCP with process names
@@ -32,7 +32,7 @@ ip route get 10.0.2.50
 
 ip -s link show eth0
 > RX: bytes  packets  errors  dropped
->     102400    1024       0        0`,
+>     102400    1024       0        0    ← dropped > 0 = packet loss at NIC`,
 
   col2: `\
 # curl — HTTP testing
@@ -52,10 +52,21 @@ curl -v https://api.internal/health
 curl -sf http://localhost:8080/health && echo ok || echo FAIL
 curl -m 5 -s -o /dev/null -w '%{http_code}' http://<alb-dns>/health
 curl -H 'Authorization: Bearer <token>' https://<api>/endpoint
-curl -X POST -H 'Content-Type: application/json' \
-     -d '{"key":"value"}' http://localhost:8080/api
+curl -X POST -H 'Content-Type: application/json' \\
+  -d '{"key":"value"}' http://localhost:8080/api
 curl -s https://checkip.amazonaws.com   # confirm outbound/NAT IP
 curl -s --connect-timeout 2 http://<ip>:9090/metrics | head -5
+
+# EC2 instance metadata (IMDS)
+# IMDSv1 — direct (may be disabled on hardened instances)
+curl -s http://169.254.169.254/latest/meta-data/instance-id
+curl -s http://169.254.169.254/latest/meta-data/local-ipv4
+
+# IMDSv2 — token-based (required when IMDSv1 is disabled)
+TOKEN=$(curl -s -X PUT "http://169.254.169.254/latest/api/token" \\
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+curl -s -H "X-aws-ec2-metadata-token: $TOKEN" \\
+  http://169.254.169.254/latest/meta-data/instance-id
 
 # dig — DNS resolution
 dig +short api.example.com
@@ -80,7 +91,7 @@ dig @169.254.169.253 +short <hostname> # internal VPC resolution check`,
 nc -zv db.internal 5432
 > Connection to db.internal 5432 port [tcp/postgresql] succeeded!
 
-nc -zvw2 db.internal 5432     # 2s timeout
+nc -zvw2 db.internal 5432             # 2s timeout
 nc -zvw2 db.internal 5432 2>&1 | grep -i 'succeeded\|refused\|timed'
 
 for p in 80 443 8080 8443; do
@@ -90,8 +101,17 @@ done
 > Connection to app.internal 443 succeeded!
 > nc: connect to app.internal port 8080 failed: Connection refused
 
-echo | nc -w1 host 443 && echo open || echo closed
-nc -l 9999                    # throwaway listener for connectivity test
+nc -l 9999                    # throwaway listener — test connectivity from another host
+
+# iptables — host-level firewall
+# SG is open, nc says refused → check if the host itself is dropping packets
+iptables -L INPUT -n -v
+> Chain INPUT (policy ACCEPT)
+> target  prot  opt  source     destination
+> DROP    tcp   --   0.0.0.0/0  0.0.0.0/0   tcp dpt:8080   ← host dropping port
+
+iptables -L -n -v | grep DROP      # look for explicit drop rules
+iptables -L -n -v | grep -v ACCEPT # anything that isn't an accept
 
 # traceroute + ping
 traceroute app.internal
@@ -110,9 +130,24 @@ ping -c 4 app.internal
 ping -c 1 -W 1 <ip> && echo up || echo down   # scriptable host check
 ping -c 10 -i 0.2 host | tail -2              # spot intermittent loss
 
-# combined: full path diagnosis
-dig +short api.internal                        # 1. does DNS resolve?
-curl -sf http://api.internal/health            # 2. does HTTP respond?
-traceroute -T -p 443 api.internal              # 3. where does it break?
-ss -tlnp | grep :443                           # 4. is anything listening?`,
+# tcpdump — capture traffic on the wire
+# use when: port is listening, SG is open, but connection still fails
+
+tcpdump -i eth0 port 5432              # all postgres traffic
+tcpdump -i eth0 -n 'dst port 80'       # incoming HTTP requests
+tcpdump -i eth0 -n 'host 10.0.2.50'   # all traffic to/from specific IP
+
+tcpdump -i eth0 -n -c 100 port 443    # capture 100 packets then stop
+tcpdump -i eth0 -w /tmp/capture.pcap  # write to file for offline analysis
+
+# pattern: SYN with no SYN-ACK → connection dropping at network/SG level
+# pattern: RST immediately → port open but process refused connection
+# pattern: no packets at all → traffic not reaching interface (routing/SG)
+
+# common networking patterns
+# pattern: curl to ALB works, curl to EC2 direct fails → SG on instance not allowing source
+# pattern: nc succeeds from instance, fails from outside → SG allows internal only
+# pattern: dig resolves, nc times out → SG/NACL blocking the port
+# pattern: dig fails on VPC resolver → check Route 53 private hosted zone or DHCP options
+# pattern: traceroute -T succeeds, ICMP blocked → normal in AWS, not an issue`,
 }

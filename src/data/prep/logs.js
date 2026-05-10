@@ -1,5 +1,6 @@
 export const logs = {
-  col1: `# basic filtering
+  col1: `\
+# basic filtering
 grep 'ERROR' app.log
 grep -i 'error' app.log              # case-insensitive
 grep -v 'DEBUG' app.log              # exclude DEBUG lines
@@ -17,7 +18,6 @@ grep -E 'ERROR|WARN|CRIT' app.log
 grep -E '[45][0-9][0-9]' access.log
 grep -E '^ERROR' app.log             # line starts with ERROR
 grep -E 'timeout$' app.log           # line ends with timeout
-grep -E '[0-9]{1,3}(\\.[0-9]{1,3}){3}' access.log
 
 # extract match only
 grep -oE '[0-9]{1,3}(\\.[0-9]{1,3}){3}' access.log
@@ -25,9 +25,9 @@ grep -oE '[0-9]{1,3}(\\.[0-9]{1,3}){3}' access.log
 > 10.0.1.15
 
 grep -oE '[45][0-9][0-9]' access.log | sort | uniq -c
-> 142 500
->  34 404
->   8 502
+>  142 500
+>   34 404
+>    8 502
 
 # realistic targets
 grep -v '^#' /etc/ssh/sshd_config    # strip comments
@@ -37,14 +37,44 @@ grep 'Failed password' /var/log/secure | grep -oE 'from [^ ]+'
 > from 203.0.113.45
 > from 198.51.100.12
 
+# wc — line/word/byte count
+wc -l app.log                        # how many log lines total
+> 48321 app.log
+
+grep 'ERROR' app.log | wc -l        # count errors without -c (pipeline friendly)
+
 # tail / head
 tail -f /var/log/app.log             # follow live
 tail -F /var/log/app.log             # follow by name (survives rotate)
 tail -n 200 app.log | grep ERROR
 tail -f app.log | grep --line-buffered ERROR
-head -n 20 app.log`,
+head -n 20 app.log
 
-  col2: `# field extraction
+less +F /var/log/app.log             # follow mode in less — navigable (Ctrl+C to browse, F to resume)
+
+# compressed logs — rotated logs on EC2 are gzipped, don't decompress first
+zcat /var/log/app.log.2.gz           # print compressed log to stdout
+zgrep 'ERROR' /var/log/app.log.1.gz  # grep directly inside .gz file
+zless /var/log/app.log.1.gz          # page through compressed log
+
+# search across all rotated logs — current + archived
+grep 'ERROR' /var/log/app.log
+zgrep 'ERROR' /var/log/app.log.*.gz  # same query across all archives`,
+
+  col2: `\
+# cut — lightweight field extraction (faster than awk for simple cases)
+cut -d: -f1 /etc/passwd              # extract usernames only
+> root
+> simon
+> nginx
+
+cut -d: -f1,3 /etc/passwd            # username and UID
+> root:0
+> simon:1000
+
+cut -d' ' -f1 access.log             # first field (IP) from access log
+
+# field extraction with awk
 # default delimiter: whitespace
 # $0=full line  $1=first field  $NF=last field  NR=line number
 
@@ -73,8 +103,8 @@ awk '$9 == 500 {print $1, $7}' access.log
 > 10.0.1.15 /api/search
 
 awk '$9 ~ /^5/ {print $1}' access.log | sort | uniq -c | sort -rn
-> 142 203.0.113.45
->  89 10.0.1.15
+>  142 203.0.113.45
+>   89 10.0.1.15
 
 awk '$10 > 100000 {print $7, $10}' access.log
 > /api/export 524288
@@ -84,16 +114,11 @@ awk '{sum += $10} END {print "total bytes:", sum}' access.log
 
 # pattern + action
 awk '/ERROR/ {print NR, $0}' app.log
-awk 'NR==10,NR==20 {print}' app.log
 awk '{print $1}' access.log | sort | uniq -c | sort -rn | head -10
-> 312 192.168.1.45
->  89 10.0.1.15
+>  312 192.168.1.45
+>   89 10.0.1.15
 
-awk -F: '$7 ~ /bash|sh$/ {print $1, $3, $7}' /etc/passwd
-> root 0 /bin/bash
-> simon 1000 /bin/bash`,
-
-  col3: `# sed — stream editing
+# sed — stream editing
 sed 's/foo/bar/' file                # replace first match per line
 sed 's/foo/bar/g' file               # replace all matches
 sed -i 's/foo/bar/g' file            # edit in place
@@ -115,15 +140,16 @@ sort -rn file                        # reverse numeric
 sort -k2,2 file                      # sort by field 2
 sort -u file                         # sort + deduplicate
 uniq -c file                         # prefix count (needs sorted input)
-sort | uniq -c | sort -rn            # canonical frequency pipeline
+sort | uniq -c | sort -rn            # canonical frequency pipeline`,
 
+  col3: `\
 # pipelines — interview ready
 
 # top 10 IPs causing 5xx
 awk '$9 ~ /^5[0-9][0-9]/ {print $1}' access.log \\
   | sort | uniq -c | sort -rn | head -10
-> 142 203.0.113.45
->  89 198.51.100.12
+>  142 203.0.113.45
+>   89 198.51.100.12
 
 # error rate by type
 grep -E '^(ERROR|WARN|CRIT)' app.log \\
@@ -133,10 +159,13 @@ grep -E '^(ERROR|WARN|CRIT)' app.log \\
 >   87 WARN
 >    4 CRIT
 
-# unique IPs in log
-grep -oE '[0-9]{1,3}(\\.[0-9]{1,3}){3}' access.log | sort -u
-> 10.0.1.15
-> 192.168.1.45
+# requests per hour — spike detection
+awk '{print $4}' access.log \\
+  | cut -d: -f2 \\
+  | sort | uniq -c
+>  432 08
+>  891 09     ← spike
+>  412 10
 
 # slow requests over 2s
 awk '$NF > 2.0 {print $7, $NF}' access.log \\
@@ -144,22 +173,20 @@ awk '$NF > 2.0 {print $7, $NF}' access.log \\
 > /api/export 8.432
 > /api/search 3.211
 
-# users with login shells and UIDs
-awk -F: '$7 ~ /bash|sh$/ {print $1, $3, $7}' /etc/passwd
-> root 0 /bin/bash
-> simon 1000 /bin/bash
+# count 404s per path
+awk '$9 == 404 {print $7}' access.log \\
+  | sort | uniq -c | sort -rn | head -10
+>   45 /api/v1/old-endpoint
+>   12 /favicon.ico
 
 # strip comments and blanks from config
 sed '/^[[:space:]]*#/d; /^$/d' /etc/ssh/sshd_config
 
 # find processes by user
 ps aux | awk '$1 == "nginx" {print $2, $11}'
-> 1234 nginx: master process
-> 1235 nginx: worker process
+>  1234 nginx: master process
+>  1235 nginx: worker process
 
-# count 404s per path
-awk '$9 == 404 {print $7}' access.log \\
-  | sort | uniq -c | sort -rn | head -10
-> 45 /api/v1/old-endpoint
-> 12 /favicon.ico`,
+# search across rotated logs — current + all archives
+grep 'ERROR' /var/log/app.log && zgrep 'ERROR' /var/log/app.log.*.gz`,
 }

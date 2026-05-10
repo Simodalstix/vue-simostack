@@ -1,12 +1,33 @@
 <template>
-  <div class="rounded-xl bg-slate-800/60 border border-slate-700 font-mono text-xs overflow-hidden">
+  <div class="rounded-xl bg-slate-800/50 border border-slate-700 border-l-2 border-l-orange-500/40 font-mono text-xs overflow-hidden">
 
-    <!-- Question -->
-    <div class="px-4 py-3 border-b border-slate-700 bg-slate-800/80">
-      <p class="text-slate-100 text-sm font-semibold leading-snug">{{ card.question }}</p>
+    <!-- Story header: title + question + LP badges -->
+    <div v-if="card.title" class="px-4 pt-3 pb-3 border-b border-slate-700 bg-slate-800/70">
+      <div class="flex items-start justify-between gap-3 flex-wrap">
+        <div class="flex items-center gap-2.5">
+          <img v-if="card.logo" :src="card.logo" class="w-10 h-auto object-contain rounded opacity-80 shrink-0" />
+          <div class="flex flex-col gap-1">
+            <span class="text-[11px] font-semibold tracking-widest uppercase text-orange-300">{{ card.title }}</span>
+            <p class="text-slate-200 text-sm font-medium leading-snug">{{ card.question }}</p>
+          </div>
+        </div>
+        <div v-if="card.lps?.length" class="flex flex-wrap gap-1.5 pt-0.5">
+          <span
+            v-for="lp in card.lps"
+            :key="lp"
+            class="text-xs rounded px-2.5 py-1 border font-medium tracking-wide"
+            :class="LP_COLORS[lp] || 'bg-slate-700 text-slate-300 border-slate-600'"
+          >{{ LP_SHORT_NAMES[lp] || lp }}</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Simple layout: no toggle, just note -->
+    <!-- Question (career/values cards with no title) -->
+    <div v-if="!card.title" class="px-4 py-3 border-b border-slate-700/50 bg-slate-800/70">
+      <p class="text-slate-200 text-sm font-medium leading-snug">{{ card.question }}</p>
+    </div>
+
+    <!-- Simple layout (career/values cards) -->
     <div v-if="card.simple" class="p-4 flex flex-col gap-3">
       <div class="text-slate-300 leading-relaxed whitespace-pre-wrap">{{ card.note }}</div>
       <div v-if="card.toneNote" class="flex items-start gap-1.5">
@@ -15,48 +36,55 @@
       </div>
     </div>
 
-    <!-- Full layout: anchors | toggle -->
+    <!-- Full layout: anchors | rehearsal/cues toggle -->
     <template v-else>
-      <div class="grid grid-cols-5 divide-x divide-slate-700 min-h-[180px]">
+      <div class="grid grid-cols-5 divide-x divide-slate-700/60 min-h-[180px]">
 
-        <!-- Left col: talking anchors (40%) -->
+        <!-- Left: Talking Anchors (40%) -->
         <div class="col-span-2 p-4 space-y-2">
-          <div class="text-[10px] uppercase tracking-widest text-slate-500 mb-3">Talking Anchors</div>
+          <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-3">Talking Anchors</div>
           <div v-for="(anchor, i) in card.anchors" :key="i" class="flex gap-1.5 items-start leading-snug">
-            <span class="shrink-0 text-slate-600 mt-0.5">•</span>
+            <span class="shrink-0 text-slate-700 mt-0.5 select-none">•</span>
             <span>
-              <span v-if="anchor.tag" class="mr-1" :class="tagColor(anchor.tag)">{{ anchor.tag }}</span>
+              <span v-if="anchor.tag" class="mr-1 font-medium" :class="tagColor(anchor.tag)">{{ anchor.tag }}</span>
               <span class="text-slate-300">{{ anchor.text }}</span>
             </span>
           </div>
         </div>
 
-        <!-- Right col: mode toggle (60%) -->
+        <!-- Right: Toggle + content (60%) -->
         <div class="col-span-3 p-4 flex flex-col gap-3">
 
-          <!-- Toggle buttons -->
+          <!-- Toggle -->
           <div class="flex gap-1 shrink-0">
             <button
               @click="mode = 'rehearsal'"
-              class="text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded transition-colors duration-100"
-              :class="mode === 'rehearsal' ? 'bg-slate-700 text-white' : 'text-slate-500 hover:text-slate-300'"
+              class="text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded border transition-colors duration-100"
+              :class="mode === 'rehearsal'
+                ? 'bg-orange-500/15 text-orange-300 border-orange-500/30'
+                : 'text-slate-500 border-transparent hover:text-slate-300'"
             >Rehearsal</button>
             <button
               @click="mode = 'anchors'"
-              class="text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded transition-colors duration-100"
-              :class="mode === 'anchors' ? 'bg-slate-700 text-white' : 'text-slate-500 hover:text-slate-300'"
+              class="text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded border transition-colors duration-100"
+              :class="mode === 'anchors'
+                ? 'bg-orange-500/15 text-orange-300 border-orange-500/30'
+                : 'text-slate-500 border-transparent hover:text-slate-300'"
             >Anchors</button>
           </div>
 
-          <!-- Rehearsal: verbatim prose -->
+          <!-- Rehearsal: full prose -->
           <div v-if="mode === 'rehearsal'" class="text-slate-300 leading-relaxed whitespace-pre-wrap flex-1">{{ card.rehearsal }}</div>
 
-          <!-- Anchors: cue bullets -->
-          <div v-else class="flex-1 space-y-2">
+          <!-- Anchors: structured cues -->
+          <div v-else class="flex-1 space-y-1.5">
             <template v-for="(cue, i) in card.cues" :key="i">
-              <div v-if="cue === '---'" class="border-t border-slate-700/60 my-1" />
+              <div v-if="cue === '---'" class="border-t border-slate-700/50 my-2" />
+              <div v-else-if="isStarSection(cue)" class="text-orange-300 font-semibold tracking-wide mt-2 first:mt-0">
+                {{ cue }}
+              </div>
               <div v-else class="flex gap-1.5 items-start leading-snug">
-                <span class="shrink-0 text-slate-600 mt-0.5">•</span>
+                <span class="shrink-0 text-slate-600 mt-0.5 select-none">›</span>
                 <span class="text-slate-300">{{ cue }}</span>
               </div>
             </template>
@@ -65,17 +93,9 @@
         </div>
       </div>
 
-      <!-- Footer: LP badges + tone warning -->
-      <div class="px-4 py-2 border-t border-slate-700 flex flex-wrap items-center gap-2">
-        <span
-          v-for="lp in card.lps"
-          :key="lp"
-          class="text-[10px] rounded-full px-2 py-0.5 border font-medium"
-          :class="LP_COLORS[lp] || 'bg-slate-700 text-slate-300 border-slate-600'"
-        >{{ LP_SHORT_NAMES[lp] || lp }}</span>
-        <span v-if="card.toneWarning" class="ml-auto text-[10px] text-amber-400/70 uppercase tracking-widest">
-          ⚠ {{ card.toneWarning }}
-        </span>
+      <!-- Footer: tone warning only -->
+      <div v-if="card.toneWarning" class="px-4 py-2 border-t border-slate-700/50">
+        <span class="text-[10px] text-amber-400/70 uppercase tracking-widest">⚠ {{ card.toneWarning }}</span>
       </div>
     </template>
 
@@ -91,15 +111,21 @@ const mode = ref('rehearsal')
 
 const modules = import.meta.glob('/src/data/starStories.js', { eager: true })
 const data = Object.values(modules)[0] || {}
-const LP_COLORS = data.LP_COLORS || {}
+const LP_COLORS     = data.LP_COLORS     || {}
 const LP_SHORT_NAMES = data.LP_SHORT_NAMES || {}
 
+const STAR_SECTIONS = new Set(['SITUATION', 'TASK', 'ACTION', 'RESULT', 'CLOSE'])
+
+function isStarSection(cue) {
+  return STAR_SECTIONS.has(cue.trim())
+}
+
 const TAG_COLORS = {
-  '[TONE]':   'text-sky-400/80',
-  '[AVOID]':  'text-red-400/80',
-  '[LP]':     'text-purple-400/80',
-  '[ANCHOR]': 'text-amber-400/80',
   '[DATA]':   'text-emerald-400/80',
+  '[LP]':     'text-orange-400/80',
+  '[TONE]':   'text-sky-400/80',
+  '[ANCHOR]': 'text-amber-400/80',
+  '[AVOID]':  'text-red-400/80',
 }
 
 function tagColor(tag) {

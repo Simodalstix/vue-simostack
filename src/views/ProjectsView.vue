@@ -516,7 +516,7 @@ const projects = [
       { src: '/images/project-icons/redis.svg', alt: 'Redis' },
       { src: '/images/project-icons/FastAPI.svg', alt: 'FastAPI' },
     ],
-    tags: ['Database', 'Cache', '3-Tier', 'Fault Injection'],
+    tags: ['Database', 'Cache', 'Fault Injection'],
     status: 'Ready',
     statusColor: 'green',
     category: 'Cloud Infrastructure',

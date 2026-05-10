@@ -24,9 +24,14 @@ systemctl list-units --type=service --state=running
 systemctl is-active nginx        # exits 0 if active — use in scripts
 systemctl is-enabled nginx       # exits 0 if boot-enabled
 systemctl cat nginx              # show resolved unit file on disk
-
 systemctl show nginx -p MainPID
-> MainPID=1234`,
+> MainPID=1234
+
+systemd-analyze blame            # time each service took to start
+> 4.213s amazon-ssm-agent.service
+> 1.053s cloud-init.service
+> 0.421s nginx.service
+# useful when asked why boot is slow or a service took too long to come up`,
 
   col2: `\
 # journalctl — structured queries
@@ -40,7 +45,8 @@ journalctl -u nginx --since "1 hour ago"
 journalctl -u nginx --since "2024-01-15 14:00" --until "14:30"
 journalctl -xe                            # recent + catalog explanation
 journalctl --boot                         # this boot only
-journalctl -u nginx --no-pager | grep -i 'error\|warn\|fail'
+journalctl -b -1                          # previous boot — crash/reboot investigation
+journalctl -u nginx --no-pager | grep -i 'error|warn|fail'
 
 # ps — process snapshot
 ps aux
@@ -50,28 +56,29 @@ ps aux
 
 ps aux --sort=-%cpu | head -10     # top cpu consumers
 ps aux --sort=-%mem | head -10     # top memory consumers
-ps -ef | grep nginx                # shows PPID — useful for orphan detection
-ps -eo pid,ppid,stat,cmd,%cpu,%mem --sort=-%cpu | head -10
+ps -ef | grep nginx                # shows PPID — useful for orphan/zombie detection
+ps aux | grep ' Z '                # zombie processes — child not reaped by parent
+> nobody 5678  0.0  0.0      0     0  Z     [defunct]
+
+top -bn1 | head -20                # non-interactive snapshot — use in scripts or one-liners
 
 pgrep -la nginx
 > 1234 nginx: master process /etc/nginx/nginx.conf
-> 1235 nginx: worker process
-
-pstree -p 1234
-> nginx(1234)─┬─nginx(1235)
->             └─nginx(1236)`,
+> 1235 nginx: worker process`,
 
   col3: `\
 # signals
 kill <pid>           # SIGTERM (15) — graceful, process can catch
 kill -9 <pid>        # SIGKILL — force, unblockable, no cleanup
 kill -HUP <pid>      # SIGHUP — reload config (nginx, sshd)
-kill -0 <pid>        # probe existence — exits 0 if process exists
+kill -0 <pid>        # probe existence — exits 0 if process exists, use in scripts
 
 pkill -f 'python app.py'     # match full cmdline
 pkill -HUP nginx             # reload all nginx processes
 pkill -u deploy              # kill all processes by user
-killall nginx                # SIGTERM all by name
+
+renice -n 10 -p 1234         # lower priority of running process (10 = lower, -20 = highest)
+renice -n -5 -p 1234         # raise priority (requires root)
 
 # /proc — live process inspection
 cat /proc/1234/status
@@ -81,11 +88,7 @@ cat /proc/1234/status
 > VmRSS:  3012 kB
 > Threads: 1
 
-ls -la /proc/1234/fd | wc -l    # open file descriptor count
-ls -la /proc/1234/fd
-> lrwx------ 1 nginx nginx 64 Jan 15 14:00 0 -> /dev/null
-> l-wx------ 1 nginx nginx 64 Jan 15 14:00 1 -> /var/log/nginx/access.log
-
+ls -la /proc/1234/fd | wc -l    # count open file descriptors
 lsof -p 1234
 > COMMAND  PID   USER  FD  TYPE  DEVICE  SIZE  NODE  NAME
 > nginx   1234  nginx   4u  IPv4  23456    0t0   TCP  *:80 (LISTEN)
@@ -96,6 +99,26 @@ strace -p 1234 -c        # syscall summary — what is the process actually doin
 >  45.2    0.001200    120       0  epoll_wait
 >  32.1    0.000854     45       3  read
 
+# fd exhaustion — "too many open files" error
 ulimit -a | grep 'open files'
-> open files                      (-n) 1024`,
+> open files                      (-n) 1024     ← default is low for production
+
+# fix for session: raise limit for current shell
+ulimit -n 65536
+
+# fix permanently — /etc/security/limits.conf
+# nginx  soft  nofile  65536
+# nginx  hard  nofile  65536
+
+# diagnose: how many fds is a process actually using?
+ls -la /proc/1234/fd | wc -l    # compare against ulimit -n
+# if close to the limit — that's your "too many open files" root cause
+
+# common process patterns
+# pattern: service failed to start → systemctl status <unit>, journalctl -xe
+# pattern: service crash on previous boot → journalctl -b -1 -u <unit>
+# pattern: process consuming CPU → ps aux --sort=-%cpu, strace -p <pid> -c
+# pattern: "too many open files" → lsof -p <pid> | wc -l vs ulimit -n
+# pattern: zombie process → ps aux | grep ' Z ' — parent needs to reap or be restarted
+# pattern: slow boot/service start → systemd-analyze blame`,
 }

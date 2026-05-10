@@ -1,6 +1,8 @@
 export const starComplexCards = [
   {
-    question: 'A user can\'t log in. The error isn\'t descriptive. Walk me through your diagnosis.',
+    title: 'Ghost MFA Policy — Login Blocked',
+    logo: '/images/companies/cititec-logo.jpg',
+    question: 'Tell me about a technically complex problem you\'ve had to work through.',
     anchors: [
       { tag: '[DATA]', text: 'Duo redirect URL — the diagnostic clue, not the error message' },
       { tag: '[DATA]', text: '30 minutes — resolution time, within SLA, on a live call' },
@@ -49,51 +51,51 @@ What stayed with me was how much the redirect URL mattered. A generic access den
     lps: ['Dive Deep', 'Customer Obsession', 'Earn Trust', 'Deliver Results'],
   },
   {
-    question: 'Tell me about a time you identified a recurring problem and built something to fix it properly.',
+    title: 'Packer AMI Pipeline — Built from Scratch',
+    logo: '/images/project-icons/Packer.svg',
+    question: 'Tell me about something technical you built that you\'re proud of.',
     anchors: [
+      { tag: '[DATA]', text: 'Image management kept coming up as a core pattern in serious systems work — recognised a genuine gap' },
+      { tag: '[DATA]', text: 'Chose Packer deliberately — cloud-agnostic, industry standard, not AWS-specific' },
       { tag: '[DATA]', text: 'Two-layer pipeline: base → app. Each build ~10–15 min on a t3.small' },
-      { tag: '[DATA]', text: 'SSM Parameter Store as config bus — zero hardcoded AMI IDs anywhere in the platform' },
-      { tag: '[DATA]', text: 'verify_build.sh — explicit PASS/FAIL smoke tests baked into every build' },
-      { tag: '[DATA]', text: 'Retention: 3 most recent kept + current SSM AMI always protected regardless of age' },
-      { tag: '[DATA]', text: 'Sysctl hardening failure — real error, traced to builder environment, iterated to fix' },
-      { tag: '[LP]',   text: 'Learn and Be Curious — no prior Packer experience, picked it up because I wanted to understand the pattern properly' },
-      { tag: '[LP]',   text: 'Invent and Simplify — SSM as handoff between stages; downstream never touches a hardcoded ID' },
+      { tag: '[DATA]', text: 'SSM Parameter Store as config bus — zero hardcoded AMI IDs anywhere' },
+      { tag: '[DATA]', text: 'verify_build.sh — explicit PASS/FAIL smoke tests before AMI is created' },
+      { tag: '[LP]',   text: 'Learn and Be Curious — practical signal (hackathon) → went and learned it holistically, not just enough for the task' },
+      { tag: '[LP]',   text: 'Invent and Simplify — SSM as handoff; downstream never touches a hardcoded ID' },
+      { tag: '[TONE]', text: 'Enthusiasm is genuine — don\'t over-explain the architecture, let the SSM insight land naturally' },
     ],
-    rehearsal: `While building out my 3-tier platform on AWS, I kept running into the same friction point — every time I needed a new instance, I was launching a bare Amazon Linux image and either running userdata scripts or configuring things manually after the fact. There was no consistency, no versioning, no way to know what was actually on a given instance. I'd read about golden AMI patterns and wanted to understand how it actually worked in practice — so I built it.
+    rehearsal: `Image management kept coming up as a pattern in serious systems work — golden AMIs, consistent instance state, reproducible builds. I had a genuine gap there and decided to fill it properly rather than just read about it.
 
-I picked up Packer — no prior experience — and designed a two-layer pipeline. The base layer handles everything that belongs on every instance: CloudWatch agent, OS hardening with fail2ban, SSH config tightened via a drop-in file, kernel parameters, AWS CLI. The app layer inherits from base and adds the Python runtime, FastAPI, and the systemd service unit.
+I picked Packer deliberately — it's cloud-agnostic and the industry standard for image building. I wanted something transferable, not just an AWS-specific tool.
 
-The thing that clicked for me was wiring SSM Parameter Store as the config bus between layers. The base build writes its AMI ID to Parameter Store. The app template reads that ID from Parameter Store at build time — no hardcoded values anywhere. The 3-tier ASG reads the app AMI ID from Parameter Store on every deploy. Nothing downstream knows or cares what the actual ID is.
+I designed a two-layer pipeline. The base layer handles everything that belongs on every instance — OS hardening, CloudWatch agent, SSH config, kernel parameters. The app layer inherits from base and adds the Python runtime, FastAPI, and the systemd service unit. The thing I'm most proud of is how I wired the two layers together — SSM Parameter Store as the handoff. The base build writes its AMI ID to Parameter Store. The app template reads it at build time. The ASG reads the app AMI ID from Parameter Store on every deploy. Nothing downstream ever touches a hardcoded ID — you rebuild an image and the whole stack picks it up.
 
-It took a few iterations to get clean builds. The sysctl hardening step was failing because some kernel parameters aren't writable inside the Packer builder environment — I had to trace the error, understand why, and adjust the provisioner. Python was also throwing warnings about running pip as root, which I suppressed. I also added a verify_build.sh that runs inside the builder instance before the AMI is created — explicit PASS/FAIL checks for every service and dependency, so a broken build fails fast rather than producing a bad image silently.
+I also added a verify_build.sh that runs inside the builder instance before the AMI is sealed — explicit PASS/FAIL checks for every service and dependency, so a broken build fails immediately rather than producing a bad image silently.
 
-On the lifecycle side, I wrote a deprecation script that keeps the 3 most recent AMIs plus whatever the current SSM parameter points to — that one's always protected regardless of age — and marks older ones deprecated before eventually deregistering them.
+What I like about the project is how it connects things I care about. It's OS management and hardening, application packaging, and DR readiness — the same AMIs are what ASGs in a recovery region would launch from. It's not just automation, it's a pattern that makes the whole infrastructure more predictable and consistent. Build time is 10–15 minutes per layer on a t3.small.
 
-I now have a reproducible, versioned image pipeline. Every build produces a known-good AMI with consistent hardening and dependencies baked in. The 3-tier ASG always launches from that — no manual steps, no configuration drift between instances. Build time is around 10–15 minutes per layer on a t3.small builder.
-
-The part that stuck with me was the SSM pattern — using Parameter Store as the handoff between pipeline stages meant I never have to touch downstream infrastructure when I build a new image. The 3-tier stack just picks it up on the next deploy. It's the same principle as not hardcoding container image tags — you point at a reference, not a value. Once I saw it that way it felt obvious, but getting there required actually building it.`,
+The SSM pattern was the real insight — once you wire infrastructure to reference a parameter rather than a hardcoded value, you start seeing where else that applies. It's the same principle as not hardcoding container image tags.`,
     cues: [
       'SITUATION',
-      'Kept launching bare AMIs and configuring manually — no consistency, no versioning',
-      'Wanted to understand the golden AMI pattern properly — no one asked me to build it',
+      'Image management kept coming up as a core pattern in serious systems work',
+      'Had a genuine gap — decided to learn it properly, not just read about it',
       '---',
       'ACTION',
-      'Picked up Packer with no prior experience',
+      'Chose Packer deliberately — cloud-agnostic, industry standard, transferable',
       'Two layers: base (OS hardening, CW agent, SSH config) → app (Python, FastAPI, systemd)',
       'SSM Parameter Store as config bus — base writes AMI ID, app reads it, ASG reads app AMI ID',
-      'Zero hardcoded IDs anywhere in the pipeline',
-      'Sysctl step failing — traced to builder environment, not writable inside Packer → adjusted provisioner',
-      'verify_build.sh — PASS/FAIL smoke tests before AMI is created',
-      'Retention: 3 most recent + current SSM AMI always protected',
+      'Zero hardcoded IDs anywhere — rebuild and the whole stack picks it up',
+      'verify_build.sh — PASS/FAIL smoke tests before AMI is sealed',
       '---',
       'RESULT',
-      'Reproducible, versioned pipeline — every build produces a known-good AMI',
+      'Reproducible, versioned pipeline — every build produces a known-good image',
+      'Connects OS management, app packaging, and DR readiness in one pattern',
       'ASG always launches from pre-baked image — no drift, no manual steps',
       '10–15 min per layer on t3.small',
       '---',
       'CLOSE',
-      'SSM as handoff — downstream never needs to change when I rebuild an image',
-      'Same principle as not hardcoding container image tags — point at a reference, not a value',
+      'SSM pattern was the real insight — reference, not hardcoded value — applies everywhere',
+      'Same principle as not hardcoding container image tags',
     ],
     lps: ['Learn and Be Curious', 'Invent and Simplify', 'Dive Deep'],
   },

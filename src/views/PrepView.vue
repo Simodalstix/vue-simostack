@@ -17,10 +17,10 @@
               : 'text-slate-300 hover:bg-slate-700/40 hover:text-white border-l-2 border-l-transparent'"
           >
             <span>{{ section.label }}</span>
-            <span class="text-[10px] opacity-60">{{ activeSection === section.id ? '▾' : '▸' }}</span>
+            <span v-if="section.tabs.length" class="text-[10px] opacity-60">{{ activeSection === section.id ? '▾' : '▸' }}</span>
           </button>
 
-          <div v-if="activeSection === section.id">
+          <div v-if="activeSection === section.id && section.tabs.length">
             <button
               v-for="tab in section.tabs"
               :key="tab.id"
@@ -30,11 +30,42 @@
                 ? 'text-white bg-slate-700 border-l-2 border-l-slate-400'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/40 border-l-2 border-l-transparent'"
             >
-              {{ tab.label }}
+              <div class="flex items-center justify-between gap-1">
+                <span>{{ tab.label }}</span>
+              </div>
             </button>
           </div>
         </div>
       </nav>
+
+      <!-- STAR Stories — pinned -->
+      <div class="border-t border-slate-600 shrink-0 mb-8">
+        <div class="px-3 py-2 border-b border-slate-700/60">
+          <span class="text-[10px] uppercase tracking-widest text-orange-400/80 font-semibold">STAR Stories</span>
+        </div>
+        <button
+          v-for="tab in starSection.tabs"
+          :key="tab.id"
+          @click="setTab('star', tab.id)"
+          class="w-full text-left pl-3 pr-3 py-1.5 text-[12px] border-b border-slate-700/30 transition-colors duration-100"
+          :class="activeKey === 'star-' + tab.id
+            ? 'text-white bg-slate-700 border-l-2 border-l-orange-400'
+            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/40 border-l-2 border-l-transparent'"
+        >
+          <div class="flex items-center justify-between gap-1">
+            <span>{{ tab.label }}</span>
+            <span v-if="starTabLps[tab.id]?.length" class="flex gap-1.5 shrink-0">
+              <span
+                v-for="lp in starTabLps[tab.id]"
+                :key="lp"
+                class="w-2 h-2 rounded-full"
+                :style="{ backgroundColor: LP_RING_HEX[lp] || '#475569' }"
+                :title="lp"
+              />
+            </span>
+          </div>
+        </button>
+      </div>
     </aside>
 
     <!-- Main content -->
@@ -114,8 +145,14 @@
       <div v-if="activeKey === 'star-disagree-commit'">
         <CareerCard :card="starDisagreeCommitCards[0]" />
       </div>
+      <div v-if="activeKey === 'star-highest-standards'">
+        <CareerCard :card="starHighestStandardsCards[0]" />
+      </div>
       <div v-if="activeKey === 'star-invent-simplify'">
         <CareerCard :card="starInventSimplifyCards[0]" />
+      </div>
+      <div v-if="activeKey === 'star-learn-curious'">
+        <CareerCard :card="starLearnCuriousCards[0]" />
       </div>
 
       <!-- Career & Values -->
@@ -132,6 +169,11 @@
         <CareerCard v-for="(card, i) in careerQuestionsCards" :key="i" :card="card" />
       </div>
 
+      <!-- Scenarios -->
+      <div v-if="activeSection === 'scenarios' && currentScenario">
+        <ScenarioCard :scenario="currentScenario" />
+      </div>
+
     </main>
   </div>
 </template>
@@ -141,6 +183,7 @@ import { ref, computed } from 'vue'
 import PrepCodeBlock from '@/components/prep/PrepCodeBlock.vue'
 import PrepCards    from '@/components/prep/PrepCards.vue'
 import CareerCard   from '@/components/prep/CareerCard.vue'
+import ScenarioCard from '@/components/prep/ScenarioCard.vue'
 
 import { proc }                 from '@/data/prep/proc.js'
 import { logs }                 from '@/data/prep/logs.js'
@@ -158,12 +201,30 @@ import { securityCards }        from '@/data/prep/securityCards.js'
 import { iacCards }             from '@/data/prep/iacCards.js'
 import { starComplexCards }          from '@/data/prep/starComplexCards.js'
 import { starDifficultClientCards }  from '@/data/prep/starDifficultClientCards.js'
-import { starDisagreeCommitCards }   from '@/data/prep/starDisagreeCommitCards.js'
-import { starInventSimplifyCards }   from '@/data/prep/starInventSimplifyCards.js'
+import { starDisagreeCommitCards }     from '@/data/prep/starDisagreeCommitCards.js'
+import { starHighestStandardsCards }  from '@/data/prep/starHighestStandardsCards.js'
+import { starInventSimplifyCards }    from '@/data/prep/starInventSimplifyCards.js'
+import { starLearnCuriousCards }      from '@/data/prep/starLearnCuriousCards.js'
 import { careerNarrativeCards }      from '@/data/prep/careerNarrative.js'
 import { careerWhyAwsCards }    from '@/data/prep/careerWhyAws.js'
 import { careerValuesCards }    from '@/data/prep/careerValues.js'
 import { careerQuestionsCards } from '@/data/prep/careerQuestions.js'
+import { scenarios }            from '@/data/prep/scenarios.js'
+
+const starSection = {
+  id: 'star',
+  label: 'STAR Stories',
+  tabs: [
+    { id: 'duo-mfa',          label: 'Duo MFA Incident' },
+    { id: 'packer-pipeline',  label: 'Packer Pipeline' },
+    { id: 'difficult-client', label: 'Difficult Client' },
+    { id: 'above-beyond',     label: 'Above & Beyond' },
+    { id: 'disagree-commit',  label: 'Disagree & Commit' },
+    { id: 'highest-standards', label: 'Doc Certification' },
+    { id: 'invent-simplify',  label: 'Invent & Simplify' },
+    { id: 'learn-curious',    label: 'Strongroom' },
+  ],
+}
 
 const sections = [
   {
@@ -193,18 +254,6 @@ const sections = [
     ],
   },
   {
-    id: 'star',
-    label: 'STAR Stories',
-    tabs: [
-      { id: 'duo-mfa',          label: 'Duo MFA Incident' },
-      { id: 'packer-pipeline',  label: 'Packer Pipeline' },
-      { id: 'difficult-client', label: 'Difficult Client' },
-      { id: 'above-beyond',     label: 'Above & Beyond' },
-      { id: 'disagree-commit',  label: 'Disagree & Commit' },
-      { id: 'invent-simplify',  label: 'Invent & Simplify' },
-    ],
-  },
-  {
     id: 'career',
     label: 'Career & Values',
     tabs: [
@@ -214,17 +263,52 @@ const sections = [
       { id: 'questions', label: 'Questions to Ask' },
     ],
   },
+  {
+    id: 'scenarios',
+    label: 'Scenarios',
+    tabs: [
+      { id: 'app-unreachable',   label: 'App Unreachable' },
+      { id: 'disk-full',         label: 'Disk Full' },
+      { id: 'service-wont-start', label: 'Service Crash' },
+      { id: 'high-cpu',          label: 'High CPU' },
+      { id: 'oom',               label: 'OOM Killer' },
+      { id: 'alb-unhealthy',     label: 'ALB Unhealthy' },
+      { id: 'cant-ssh',          label: "Can't SSH" },
+      { id: 'latency-spike',     label: 'Latency Spike' },
+    ],
+  },
 ]
+
+const modules = import.meta.glob('/src/data/starStories.js', { eager: true })
+const storyData = Object.values(modules)[0] || {}
+const LP_DOT_COLORS = storyData.LP_DOT_COLORS || {}
+const LP_RING_HEX   = storyData.LP_RING_HEX   || {}
+
+const starTabLps = {
+  'duo-mfa':           starComplexCards[0]?.lps          ?? [],
+  'packer-pipeline':   starComplexCards[1]?.lps          ?? [],
+  'difficult-client':  starDifficultClientCards[0]?.lps  ?? [],
+  'above-beyond':      starDifficultClientCards[1]?.lps  ?? [],
+  'disagree-commit':   starDisagreeCommitCards[0]?.lps   ?? [],
+  'highest-standards': starHighestStandardsCards[0]?.lps ?? [],
+  'invent-simplify':   starInventSimplifyCards[0]?.lps   ?? [],
+  'learn-curious':     starLearnCuriousCards[0]?.lps    ?? [],
+}
 
 const activeSection = ref('linux')
 const activeTab     = ref('processes')
 
 const activeKey = computed(() => `${activeSection.value}-${activeTab.value}`)
 
+const currentScenario = computed(() =>
+  scenarios.find(s => s.id === activeTab.value)
+)
+
 function toggleSection(sectionId) {
   if (activeSection.value !== sectionId) {
     activeSection.value = sectionId
-    activeTab.value = sections.find(s => s.id === sectionId).tabs[0].id
+    const section = sections.find(s => s.id === sectionId)
+    activeTab.value = section.tabs.length ? section.tabs[0].id : ''
   }
 }
 

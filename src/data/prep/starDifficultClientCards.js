@@ -1,48 +1,59 @@
 export const starDifficultClientCards = [
   {
-    question: 'Tell me about a time you dealt with a frustrated customer under pressure.',
+    title: 'Frustrated Client — Access Restored Live',
+    logo: '/images/companies/cititec-logo.jpg',
+    question: 'Tell me about a challenging customer or stakeholder interaction.',
     anchors: [
-      { tag: '[DATA]', text: 'Access restored during the call — tone shifted before she hung up' },
-      { tag: '[DATA]', text: 'No access to previous tech\'s context, couldn\'t reach him quickly' },
-      { tag: '[DATA]', text: 'Secondary audio issue captured and escalated cleanly — not dropped' },
-      { tag: '[DATA]', text: 'Found out after: known difficult customer. Reassuring, not validating.' },
-      { tag: '[LP]',   text: 'Bias for Action — moved without full information, prioritised restoring access' },
-      { tag: '[LP]',   text: 'Ownership — followed up with both techs proactively, didn\'t wait to be asked' },
-      { tag: '[TONE]', text: 'Don\'t dwell on "difficult customer" framing — focus on the action taken' },
+      { tag: '[DATA]', text: 'Existing open ticket found mid-call — flagged it before she raised it' },
+      { tag: '[DATA]', text: 'Access restored during the call — tone shifted before she brought up the secondary issue' },
+      { tag: '[DATA]', text: 'Two follow-ups after the call: previous tech and senior — nobody had to chase me' },
+      { tag: '[DATA]', text: 'Learned post-call she was a known difficult customer — validates instinct, not self-congratulation' },
+      { tag: '[LP]',   text: 'Bias for Action — moved to the solution without waiting for context I couldn\'t get' },
+      { tag: '[LP]',   text: 'Customer Obsession — de-escalated before fixing, spotted open ticket unprompted, set expectations before she asked' },
+      { tag: '[LP]',   text: 'Ownership — followed up with both techs proactively, nothing dropped' },
+      { tag: '[TONE]', text: 'Don\'t dwell on "difficult customer" framing — the point is not getting defensive, not throwing anyone under the bus' },
     ],
     rehearsal: `A frustrated client called in blaming a previous technician for breaking her login. I didn't have full context on what had been done, and I couldn't get hold of the previous tech quickly.
 
-Rather than wait for clarity I didn't have, I made the call to prioritise restoring access — reset her password through the M365 admin centre and got her back in during the call. Once she was in and her tone shifted, she raised a secondary audio issue. I made a judgment call not to dig into it on the same call — captured the details and escalated to a senior tech. After the call I followed up with both the previous tech and the senior to make sure the team had full context.
+Before touching anything I let her say her piece. She was frustrated and needed to be heard first. I didn't have enough context to defend or explain what the previous tech had done, so I didn't try — I just acknowledged that her access was broken and that fixing it was my immediate priority. Rather than wait for clarity I didn't have, I made the call to move straight to the solution — reset her password through the M365 admin centre and got her back in during the call.
 
-She regained access during the call, the secondary issue was handed off cleanly, and the team was across everything without me waiting to be asked.
+While she was talking I'd pulled up her account and noticed an existing open ticket for a separate audio issue. I flagged it — told her I could see it was already being worked on and that I'd make sure the right person followed up. She hadn't even raised it yet. Once she was back in and her tone shifted, she brought up the audio issue herself. I made a judgment call not to dig into it on the same call — I'd already set the expectation it was being handled, captured the details, and escalated directly to the senior tech responsible.
 
-I found out after the call that she was known as a difficult customer. That was actually reassuring — not because I needed the validation, but because it told me my instincts under pressure were sound. I'd handled it without knowing the context, which gave me more confidence in how I approach those situations.`,
+After the call I followed up with both the previous tech and the senior to make sure the team had full context — nobody had to chase me for it.
+
+She regained access during the call, her secondary issue was handed off cleanly with a clear owner, and the team was across everything without me waiting to be asked.
+
+I found out after the call that she was known as a difficult customer. That was actually reassuring — not because I needed the validation, but because it told me my instincts under pressure were sound. I'd handled it without knowing the context, and the thing that mattered wasn't the password reset — it was not getting defensive, not throwing anyone under the bus, and making sure she felt like someone was actually paying attention.`,
     cues: [
       'SITUATION',
       'Frustrated client — blaming previous tech for breaking her login',
       'No context on what had been done, couldn\'t reach the previous tech',
       '---',
       'ACTION',
-      'Didn\'t wait — prioritised restoring access immediately',
-      'Reset password via M365 admin centre, got her back in during the call',
-      'Tone shifted once she was back in',
-      'Secondary audio issue raised → captured details, escalated to senior tech',
-      'Judgment call: don\'t dig into second issue on same call',
-      'After call: followed up with both techs proactively so team had full context',
+      'Let her say her piece first — she needed to be heard before touching anything',
+      'Didn\'t defend or explain the previous tech — acknowledged access was broken, made it the priority',
+      'Moved straight to solution — reset password via M365 admin centre, restored access during the call',
+      'Mid-call: noticed existing open ticket for audio issue — flagged it before she raised it',
+      'Set the expectation it was being handled — pre-empted her second concern',
+      'Judgment call: don\'t dig into audio on same call — captured details, escalated to senior tech responsible',
+      'After call: followed up with both previous tech and senior — nobody had to chase me',
       '---',
       'RESULT',
-      'Access restored during the call',
-      'Secondary issue handed off cleanly, not dropped',
+      'Access restored during the call — tone shifted',
+      'Secondary issue handed off cleanly with a clear owner',
       'Team across everything without waiting to be asked',
       '---',
       'CLOSE',
       'Found out after: known difficult customer',
       'Reassuring — instincts held under pressure without knowing the context',
+      'The point wasn\'t the password reset — it was not getting defensive, not throwing anyone under the bus',
     ],
     lps: ['Bias for Action', 'Customer Obsession', 'Ownership'],
   },
   {
-    question: 'Tell me about a time you went above and beyond for a customer when the easy answer was already available.',
+    title: 'Overseas Script — Real Answer, Not a Dead End',
+    logo: '/images/companies/chemist-warehouse-logo.png',
+    question: 'Tell me about a time you exceeded what was expected of you.',
     anchors: [
       { tag: '[DATA]', text: 'Late evening — patient already frustrated, in pain' },
       { tag: '[DATA]', text: 'Already turned away once — the easy answer had already been given by another pharmacy' },

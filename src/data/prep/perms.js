@@ -4,10 +4,10 @@ export const perms = {
 chmod 644 config.yaml            # rw-r--r--  standard file
 chmod 755 /usr/local/bin/script  # rwxr-xr-x  standard binary/dir
 chmod 600 ~/.ssh/id_rsa          # rw-------  private key — sshd rejects wider
-chmod 440 /etc/sudoers.d/deploy  # cron/sudoers files must not be world-writable
+chmod 440 /etc/sudoers.d/deploy  # sudoers drop-ins must not be world-writable
 chmod +x deploy.sh               # add execute bit
-chmod -R 755 /var/www/html       # recursive — web root dirs
-find /var/www -type f -exec chmod 644 {} \;   # files only, not dirs
+chmod -R 755 /var/www/html       # recursive — applies same perms to files AND dirs
+find /var/www -type f -exec chmod 644 {} \;   # files only — preferred over -R
 find /var/www -type d -exec chmod 755 {} \;   # dirs only
 
 ls -la /etc/app/
@@ -25,6 +25,14 @@ ls -la /var/www/
 > drwxr-xr-x 3 nginx  nginx  4096 Jan 15 html/
 > drwxr-x--- 2 deploy deploy 4096 Jan 15 releases/
 
+# id / groups — who am I, what can I access?
+id
+> uid=1000(simon) gid=1000(simon) groups=1000(simon),4(adm),10(wheel),992(docker)
+
+id nginx                             # check service account's groups
+groups                               # current user's group membership
+groups ec2-user                      # check another user
+
 # stat — full file metadata
 stat /etc/shadow
 > File: /etc/shadow
@@ -35,7 +43,26 @@ stat /etc/shadow
 stat -c '%a %U %G' /etc/shadow       # scriptable: octal owner group
 > 640 root shadow
 
-stat -c '%a %U %G' /etc/passwd /etc/shadow /etc/sudoers`,
+stat -c '%a %U %G' /etc/passwd /etc/shadow /etc/sudoers
+
+# umask — default creation permissions
+umask
+> 0022                               # files created as 644, dirs as 755
+
+umask 0027                           # tighten: files as 640, dirs as 750
+# set in /etc/profile or ~/.bashrc for persistence
+# common in security-hardened environments — new files not world-readable
+
+# SSH directory permissions — sshd is strict, rejects misconfigured paths
+chmod 700 ~/.ssh                     # directory must not be group/world readable
+chmod 600 ~/.ssh/authorized_keys     # sshd rejects if group or world can read
+chmod 600 ~/.ssh/id_rsa              # private key — same rule
+
+# diagnosis: SSH auth failing on EC2
+stat -c '%a %U %G' ~/.ssh ~/.ssh/authorized_keys
+# must be: 700 ec2-user ec2-user / 600 ec2-user ec2-user
+ls -la ~/.ssh/
+# look for wrong owner (e.g. root after sudo operations) or permissions > 600`,
 
   col2: `\
 # sudo
@@ -51,7 +78,7 @@ sudo -l
 >     (ALL) NOPASSWD: /usr/bin/journalctl
 
 visudo                               # safely edit sudoers with lock
-# drop-ins: /etc/sudoers.d/ — mode 440, no world-write or sudo ignores it
+# drop-ins: /etc/sudoers.d/ — mode 440, root:root, no world-write or sudo ignores it
 
 # SELinux — status
 getenforce
@@ -69,7 +96,6 @@ setenforce 1                         # re-enforce
 
 # SELinux — audit
 ausearch -m avc -ts recent
-> time->Mon Jan 15 14:32:01 2024
 > type=AVC msg=audit(1705329121.456:789):
 >   avc: denied { read } for pid=1234 comm="nginx"
 >   path="/etc/app/config" scontext=system_u:system_r:httpd_t:s0
@@ -79,13 +105,12 @@ ausearch -m avc -ts recent | audit2why
 > Was caused by: Missing type enforcement (TE) allow rule
 > Allow this access by executing: restorecon -Rv /etc/app/config
 
-ausearch -m avc -c nginx             # denials for nginx process only
-ausearch -m avc -ts today | wc -l   # count today's denials`,
+ausearch -m avc -c nginx             # denials for nginx process only`,
 
   col3: `\
 # SELinux — context inspection
 ls -Z /etc/app/
-> -rw-r--r--. root root unconfined_u:object_r:user_home_t:s0  config   ← wrong
+> -rw-r--r--. root root unconfined_u:object_r:user_home_t:s0  config    ← wrong
 > -rw-r--r--. root root system_u:object_r:httpd_config_t:s0   nginx.conf ← correct
 
 ps -eZ | grep nginx
@@ -96,8 +121,6 @@ restorecon -v /etc/app/config
 > Relabeled /etc/app/config from user_home_t to httpd_config_t
 
 restorecon -Rv /var/www/html
-> Relabeled /var/www/html/index.html
-> Relabeled /var/www/html/assets/app.js
 
 # common boolean fixes
 setsebool -P httpd_can_network_connect 1      # nginx proxying upstream
@@ -108,7 +131,7 @@ getenforce                                    # 1. is it enforcing?
 ausearch -m avc -ts recent | tail -20         # 2. what is it blocking?
 ausearch -m avc -ts recent | audit2why        # 3. plain-English reason
 restorecon -Rv <path>                         # 4. restore context
-setenforce 0 && <test> && setenforce 1        # confirm SELinux is the cause
+setenforce 0 && <test> && setenforce 1        # 5. confirm SELinux is the cause
 
 # lsattr — immutable file flags
 lsattr /etc/resolv.conf

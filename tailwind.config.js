@@ -15,6 +15,8 @@ export default {
     'hover:shadow-lg',
     // Title hover colours
     'group-hover:text-cyan-100', 'group-hover:text-indigo-100', 'group-hover:text-slate-100',
+    // LP badge border — violet doesn't appear in committed files so JIT misses it
+    'border-violet-500/40',
   ],
   theme: {
     extend: {

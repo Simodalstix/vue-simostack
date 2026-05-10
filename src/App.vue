@@ -1,96 +1,48 @@
 <template>
   <router-view v-if="isPrep" />
   <div v-else class="flex flex-col min-h-screen bg-slate-900 text-white">
-    <header
-      class="bg-gradient-to-r from-cyan-950 to-slate-900 shadow-xl border-b border-cyan-800/50"
-    >
-      <nav class="container mx-auto px-6 py-4">
-        <div class="flex justify-between items-center">
-          <!-- Mobile menu button -->
-          <button
-            @click="toggleMobileMenu"
-            class="md:hidden focus:outline-none text-white"
-            aria-label="Toggle menu"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                v-if="!isMobileMenuOpen"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              ></path>
-              <path
-                v-else
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
+    <header class="relative bg-slate-900 border-b border-slate-700/60">
+      <div class="absolute inset-0 bg-gradient-to-r from-cyan-900/20 via-transparent to-purple-900/20 pointer-events-none" />
+      <nav class="relative container mx-auto px-6 py-3">
+
+        <!-- Mobile -->
+        <div class="flex justify-between items-center md:hidden">
+          <span class="text-sm font-semibold tracking-widest text-cyan-400/80 uppercase">SP</span>
+          <button @click="toggleMobileMenu" class="focus:outline-none text-slate-400 hover:text-white transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path v-if="!isMobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <!-- Mobile menu -->
-        <div v-if="isMobileMenuOpen" class="md:hidden mt-4 pb-4">
-          <div class="flex flex-col space-y-2">
+        <div v-if="isMobileMenuOpen" class="md:hidden mt-3 pb-3 flex flex-col gap-1">
+          <router-link :to="{ name: 'Home' }"     class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/8 transition-all duration-150" active-class="text-white bg-white/10" @click="closeMobileMenu">Home</router-link>
+          <router-link :to="{ name: 'About' }"    class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/8 transition-all duration-150" active-class="text-white bg-white/10" @click="closeMobileMenu">About</router-link>
+          <router-link :to="{ name: 'Projects' }" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/8 transition-all duration-150" active-class="text-white bg-white/10" @click="closeMobileMenu">Projects</router-link>
+        </div>
+
+        <!-- Desktop -->
+        <div class="hidden md:flex items-center justify-between">
+          <span class="text-sm font-bold tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 uppercase select-none">Simon Parker</span>
+          <div class="flex items-center gap-1">
             <router-link
               :to="{ name: 'Home' }"
-              class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
-              active-class="text-white bg-white/10 border-cyan-400/40"
-              @click="closeMobileMenu"
-              >Home</router-link
-            >
-            <router-link
-              :to="{ name: 'Projects' }"
-              class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
-              active-class="text-white bg-white/10 border-cyan-400/40"
-              @click="closeMobileMenu"
-              >Projects</router-link
-            >
+              class="px-4 py-1.5 rounded-full text-sm text-slate-400 border border-transparent hover:text-white hover:border-slate-600 hover:bg-slate-800 transition-all duration-150"
+              exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
+            >Home</router-link>
             <router-link
               :to="{ name: 'About' }"
-              class="px-3 py-2 rounded-md text-slate-300 hover:text-white hover:bg-white/10 border border-transparent hover:border-cyan-400/30 transition-all duration-200"
-              active-class="text-white bg-white/10 border-cyan-400/40"
-              @click="closeMobileMenu"
-              >About</router-link
-            >
-          </div>
-        </div>
-        <!-- Desktop menu -->
-        <div class="hidden md:flex justify-center items-center">
-          <div class="flex items-center gap-12">
-            <!-- Main navigation pair (centered) -->
-            <div class="flex space-x-1">
-              <router-link
-                :to="{ name: 'Home' }"
-                class="px-5 py-1.5 rounded-full text-lg text-cyan-200/70 border border-transparent hover:text-white hover:bg-cyan-800/40 transition-all duration-200"
-                exact-active-class="!bg-cyan-500 !text-white !font-semibold !border-cyan-400/40"
-                >Home</router-link
-              >
-              <router-link
-                :to="{ name: 'About' }"
-                class="px-5 py-1.5 rounded-full text-lg text-cyan-200/70 border border-transparent hover:text-white hover:bg-cyan-800/40 transition-all duration-200"
-                exact-active-class="!bg-cyan-500 !text-white !font-semibold !border-cyan-400/40"
-                >About</router-link
-              >
-            </div>
-
-            <!-- Projects (offset right) -->
+              class="px-4 py-1.5 rounded-full text-sm text-slate-400 border border-transparent hover:text-white hover:border-slate-600 hover:bg-slate-800 transition-all duration-150"
+              exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
+            >About</router-link>
             <router-link
               :to="{ name: 'Projects' }"
-              class="px-5 py-1.5 rounded-full text-lg text-cyan-200/70 border border-transparent hover:text-white hover:bg-cyan-800/40 transition-all duration-200"
-              exact-active-class="!bg-cyan-500 !text-white !font-semibold !border-cyan-400/40"
-              >Projects</router-link
-            >
-
+              class="px-4 py-1.5 rounded-full text-sm text-slate-400 border border-transparent hover:text-white hover:border-slate-600 hover:bg-slate-800 transition-all duration-150"
+              exact-active-class="!bg-purple-600 !text-white !font-semibold !border-purple-400/40"
+            >Projects</router-link>
           </div>
         </div>
+
       </nav>
     </header>
 
