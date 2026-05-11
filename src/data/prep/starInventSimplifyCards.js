@@ -13,16 +13,17 @@ export const starInventSimplifyCards = [
       { tag: '[LP]',   text: 'Invent and Simplify — eliminated an entire category of manual work, not just sped it up' },
       { tag: '[LP]',   text: 'Bias for Action — identified the problem was mine to fix, didn\'t wait for someone to assign it' },
       { tag: '[LP]',   text: 'Frugality — right-sized every layer: no tooling beyond what already existed, no idle compute, scales if needed' },
+      { tag: '[TONE]', text: 'Practical and direct. Don\'t turn it into an AWS tour — the story is removing friction, not the architecture.' },
     ],
     rehearsal: `I run my own site on AWS — S3, CloudFront, Route 53. Every change meant manually building the Vue app, uploading the dist folder through the console, then triggering a CloudFront cache invalidation by hand. I was pushing changes multiple times a day — it was becoming genuinely disruptive.
 
-I set up a GitHub Actions pipeline to own the whole process. Scoped an IAM user to just what the workflow needed, stored the credentials as GitHub secrets, and wrote a workflow that builds and syncs to S3 on every push to main, then automatically invalidates the cache. I also had to configure CloudFront to return index.html on unmatched paths — otherwise client-side routing breaks at the CDN level.
+I set up a GitHub Actions pipeline to own the whole process. Scoped an IAM user to just what the workflow needed, stored the credentials as GitHub secrets, and wrote a workflow that builds and syncs to S3 on every push to main, then automatically invalidates the cache. I also had to configure CloudFront to return index.html on unmatched paths — otherwise client-side routing breaks at the CDN level. CloudFront was returning a 403 on direct navigation because the path doesn't exist as an S3 object — the fix is a custom error response that serves index.html and lets the client-side router take over.
 
-For the visitor counter I went serverless — Lambda behind API Gateway, DynamoDB for state. On-demand execution, essentially free at personal site traffic levels. No idle compute, no server to manage.
+Same principle on the dynamic parts — visitor counter runs on Lambda behind API Gateway with DynamoDB for state. No idle compute, no server to manage, essentially free at personal site traffic levels.
 
-The whole stack costs pennies a month. S3 and CloudFront for static assets, serverless for the dynamic parts. If the traffic justified it, the architecture scales — but right-sizing it to what I actually needed was the deliberate call.
+The whole stack costs pennies a month. S3 and CloudFront for static assets, serverless for the dynamic parts. Right-sized to what I actually needed — but the architecture scales if traffic justifies it.
 
-What used to be 10–15 minutes of manual steps with room for error on each one just runs in the background. Removed an entire category of friction from my workflow.`,
+What used to be 10-15 minutes of manual steps with room for error on each one just runs in the background. Removed an entire category of friction from the workflow. Right-sizing every layer was as important as automating it.`,
     cues: [
       'SITUATION',
       'Personal site on S3 + CloudFront + Route 53',
@@ -47,5 +48,6 @@ What used to be 10–15 minutes of manual steps with room for error on each one 
       'Right-sizing every layer was as important as automating it',
     ],
     lps: ['Invent and Simplify', 'Bias for Action', 'Frugality'],
+    toneWarning: 'Practical and direct. Don\'t turn it into an AWS tour — the story is removing friction, not the architecture.',
   },
 ]

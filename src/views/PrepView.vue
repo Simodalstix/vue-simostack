@@ -69,7 +69,10 @@
     </aside>
 
     <!-- Main content -->
-    <main class="flex-1 overflow-y-auto bg-slate-900 p-6 text-slate-300">
+    <main
+      class="flex-1 bg-slate-900 text-slate-300"
+      :class="(activeSection === 'career' || activeSection === 'scenarios') ? 'overflow-hidden' : 'overflow-y-auto p-6'"
+    >
 
       <!-- Linux Raw -->
       <div v-if="activeKey === 'linux-processes'" class="grid grid-cols-3 gap-8 h-full">
@@ -156,23 +159,10 @@
       </div>
 
       <!-- Career & Values -->
-      <div v-if="activeKey === 'career-narrative'" class="flex flex-col gap-4">
-        <CareerCard v-for="(card, i) in careerNarrativeCards" :key="i" :card="card" />
-      </div>
-      <div v-if="activeKey === 'career-why-aws'" class="flex flex-col gap-4">
-        <CareerCard v-for="(card, i) in careerWhyAwsCards" :key="i" :card="card" />
-      </div>
-      <div v-if="activeKey === 'career-values'" class="flex flex-col gap-4">
-        <CareerCard v-for="(card, i) in careerValuesCards" :key="i" :card="card" />
-      </div>
-      <div v-if="activeKey === 'career-questions'" class="flex flex-col gap-4">
-        <CareerCard v-for="(card, i) in careerQuestionsCards" :key="i" :card="card" />
-      </div>
+      <CareerValuesPane v-if="activeSection === 'career'" />
 
       <!-- Scenarios -->
-      <div v-if="activeSection === 'scenarios' && currentScenario">
-        <ScenarioCard :scenario="currentScenario" />
-      </div>
+      <TroubleshootingPane v-if="activeSection === 'scenarios'" />
 
     </main>
   </div>
@@ -182,8 +172,9 @@
 import { ref, computed } from 'vue'
 import PrepCodeBlock from '@/components/prep/PrepCodeBlock.vue'
 import PrepCards    from '@/components/prep/PrepCards.vue'
-import CareerCard   from '@/components/prep/CareerCard.vue'
-import ScenarioCard from '@/components/prep/ScenarioCard.vue'
+import CareerCard        from '@/components/prep/CareerCard.vue'
+import CareerValuesPane    from '@/components/prep/CareerValuesPane.vue'
+import TroubleshootingPane from '@/components/prep/TroubleshootingPane.vue'
 
 import { proc }                 from '@/data/prep/proc.js'
 import { logs }                 from '@/data/prep/logs.js'
@@ -205,24 +196,19 @@ import { starDisagreeCommitCards }     from '@/data/prep/starDisagreeCommitCards
 import { starHighestStandardsCards }  from '@/data/prep/starHighestStandardsCards.js'
 import { starInventSimplifyCards }    from '@/data/prep/starInventSimplifyCards.js'
 import { starLearnCuriousCards }      from '@/data/prep/starLearnCuriousCards.js'
-import { careerNarrativeCards }      from '@/data/prep/careerNarrative.js'
-import { careerWhyAwsCards }    from '@/data/prep/careerWhyAws.js'
-import { careerValuesCards }    from '@/data/prep/careerValues.js'
-import { careerQuestionsCards } from '@/data/prep/careerQuestions.js'
-import { scenarios }            from '@/data/prep/scenarios.js'
 
 const starSection = {
   id: 'star',
   label: 'STAR Stories',
   tabs: [
-    { id: 'duo-mfa',          label: 'Duo MFA Incident' },
-    { id: 'packer-pipeline',  label: 'Packer Pipeline' },
-    { id: 'difficult-client', label: 'Difficult Client' },
-    { id: 'above-beyond',     label: 'Above & Beyond' },
+    { id: 'duo-mfa',          label: 'Dive Deep' },
+    { id: 'packer-pipeline',  label: 'Learn & Be Curious' },
+    { id: 'difficult-client', label: 'Bias for Action' },
+    { id: 'above-beyond',     label: 'Customer Obsession' },
     { id: 'disagree-commit',  label: 'Disagree & Commit' },
-    { id: 'highest-standards', label: 'Doc Certification' },
+    { id: 'highest-standards', label: 'Highest Standards' },
     { id: 'invent-simplify',  label: 'Invent & Simplify' },
-    { id: 'learn-curious',    label: 'Strongroom' },
+    { id: 'learn-curious',    label: 'Learn & Be Curious' },
   ],
 }
 
@@ -256,26 +242,12 @@ const sections = [
   {
     id: 'career',
     label: 'Career & Values',
-    tabs: [
-      { id: 'narrative', label: 'Career Narrative' },
-      { id: 'why-aws',   label: 'Why AWS & This Role' },
-      { id: 'values',    label: 'Values & Self-Awareness' },
-      { id: 'questions', label: 'Questions to Ask' },
-    ],
+    tabs: [],
   },
   {
     id: 'scenarios',
     label: 'Scenarios',
-    tabs: [
-      { id: 'app-unreachable',   label: 'App Unreachable' },
-      { id: 'disk-full',         label: 'Disk Full' },
-      { id: 'service-wont-start', label: 'Service Crash' },
-      { id: 'high-cpu',          label: 'High CPU' },
-      { id: 'oom',               label: 'OOM Killer' },
-      { id: 'alb-unhealthy',     label: 'ALB Unhealthy' },
-      { id: 'cant-ssh',          label: "Can't SSH" },
-      { id: 'latency-spike',     label: 'Latency Spike' },
-    ],
+    tabs: [],
   },
 ]
 
@@ -297,9 +269,6 @@ const activeTab     = ref('processes')
 
 const activeKey = computed(() => `${activeSection.value}-${activeTab.value}`)
 
-const currentScenario = computed(() =>
-  scenarios.find(s => s.id === activeTab.value)
-)
 
 function toggleSection(sectionId) {
   if (activeSection.value !== sectionId) {

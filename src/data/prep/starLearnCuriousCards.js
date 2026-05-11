@@ -5,21 +5,26 @@ export const starLearnCuriousCards = [
     question: 'Tell me about a time you had to get up to speed quickly with no formal training.',
     anchors: [
       { tag: '[DATA]', text: '4 days onboarding — 1 day setup, 3 days of limited shadowing and reading. Live calls from week one' },
-      { tag: '[DATA]', text: '~30% fewer escalations in first month — each category mastered was roughly 5% of call volume' },
+      { tag: '[DATA]', text: 'End of months 1–2: escalating ~10–20% of calls, down from most in week one. Remaining: invoice integration and rarer vendor setups' },
       { tag: '[DATA]', text: 'Local SQL Express + app installed — reproduced real workflows (Methadone setups, billing, reports) to build muscle memory before doing it live' },
       { tag: '[DATA]', text: 'SQL fix — told to wait for manager via TeamViewer. Assessed the risk (single field, single column), validated with AI, executed independently' },
       { tag: '[DATA]', text: 'Free SQL course + AI conversations on SSMS and SQL Server Configuration Manager — done outside work hours' },
       { tag: '[LP]',   text: 'Learn and Be Curious — nobody told me to set up the lab, take the SQL course, or map the connection layer. I did it because I needed to understand it properly' },
       { tag: '[LP]',   text: 'Bias for Action — manager said wait. I assessed the risk, confirmed it was safe, and made the call' },
       { tag: '[LP]',   text: 'Deliver Results — measurable reduction in escalations, cannabis queries made me the go-to on a high-frequency issue type' },
+      { tag: '[TONE]', text: 'Confident about the pace, not boastful. Don\'t apologise for the four months — own it.' },
     ],
-    rehearsal: `It was my first tech role. Onboarding was four days — one day of setup, three days of limited shadowing and reading. Remote work made proper shadowing impractical, and from week one I was on live calls independently on a complex, regulated SaaS used by pharmacy clients nationally.
+    rehearsal: `First tech role. Four days onboarding — one day setup, three days of limited shadowing and reading. Remote work made proper shadowing impractical, and from week one I was on live calls independently on a complex, regulated SaaS used by pharmacy clients nationally.
 
-I didn't wait for more training. I set up SQL Express locally, installed the app, and reproduced real workflows — Methadone setups, billing, dispensing — to build muscle memory before doing them live. I mapped the high-frequency issue categories and learned them specifically: cannabis entries, connection errors, RAM issues. Each one was roughly 5% of call volume. I did a free SQL course in my own time and used AI to properly understand the connection layer, not just follow a script.
+I didn't wait for more training. I set up SQL Express locally, installed the app, and reproduced real workflows — Methadone setups, billing, dispensing — to build muscle memory before doing them live. I mapped the high-frequency issue categories and learned them specifically.
 
-The moment that best illustrates it: there was a role glitch affecting an intern-pharmacist that needed a single-field SQL update. The default was for the manager to join via TeamViewer and run it himself. By that point I'd learned enough SQL to understand exactly what the command was doing — I validated it with AI, confirmed it was a single field on a single column, and ran it myself. I assessed the risk and acted rather than waiting.
+Cannabis queries alone were probably 20-25% of call volume across three distinct problem types: data entry errors — products like pastilles and gummies need to be entered per unit, not per pack, so a pack of 30 gets entered as 30 in the drug register, which isn't intuitive; invoicing — if it wasn't entered correctly in the dispensing software, Fred or others, it wouldn't show up in StrongER at all; and manual product entry had a steep learning curve to get right consistently. Understanding all three meant I could resolve most of those calls without escalating. Login issues, database connection errors, and user education were probably another 15-20% — high frequency but faster to resolve once you knew the pattern.
 
-By the end of the first month I'd reduced escalations by roughly 30%. The SQL fix closed a category that previously needed manager intervention. Cannabis troubleshooting made me the go-to on one of the highest-frequency issue types on the team.`,
+I also did a free SQL course in my own time and used AI to properly understand the connection layer. The moment that illustrates it best — there was a role glitch affecting an intern-pharmacist that needed a single-field SQL update. Default was to wait for the manager on TeamViewer. I understood exactly what the command was doing, validated it, confirmed it was a single field on a single column, and ran it myself.
+
+By the end of months one and two I was escalating maybe 10-20% of calls — down from escalating most of them in week one. The remaining escalations were invoice integration issues and rarer vendor setups I hadn't encountered enough to handle confidently yet. I knew I didn't need to master everything immediately — I focused on the highest-frequency categories first and worked outward. I was made redundant at four months, but by twelve I'd have been very capable across the full platform.
+
+Nobody told me to set up the local environment, take the SQL course, or map the call categories. I did it because I could see what the job actually required and I wasn't going to get there by waiting.`,
     cues: [
       'SITUATION',
       'First tech role — four days onboarding: day one setup, three days of limited shadowing and reading',
@@ -48,5 +53,6 @@ By the end of the first month I'd reduced escalations by roughly 30%. The SQL fi
       'The SQL moment was the proof point: I could assess risk independently and act',
     ],
     lps: ['Learn and Be Curious', 'Bias for Action', 'Deliver Results'],
+    toneWarning: 'Confident about the pace, not boastful. Don\'t apologise for the four months — own it.',
   },
 ]

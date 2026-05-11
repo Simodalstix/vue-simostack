@@ -13,17 +13,17 @@ export const starDifficultClientCards = [
       { tag: '[LP]',   text: 'Ownership — followed up with both techs proactively, nothing dropped' },
       { tag: '[TONE]', text: 'Don\'t dwell on "difficult customer" framing — the point is not getting defensive, not throwing anyone under the bus' },
     ],
-    rehearsal: `A frustrated client called in blaming a previous technician for breaking her login. I didn't have full context on what had been done, and I couldn't get hold of the previous tech quickly.
+    rehearsal: `Frustrated client called in blaming a previous tech for breaking her login. I had no context on what had been done and couldn't reach him quickly.
 
-Before touching anything I let her say her piece. She was frustrated and needed to be heard first. I didn't have enough context to defend or explain what the previous tech had done, so I didn't try — I just acknowledged that her access was broken and that fixing it was my immediate priority. Rather than wait for clarity I didn't have, I made the call to move straight to the solution — reset her password through the M365 admin centre and got her back in during the call.
+Before touching anything I let her say her piece. She mentioned her computer had never been properly fixed — that told me the login issue was the trigger, not the real frustration. I searched her account mid-call and found an existing open ticket for an audio issue. I flagged it before she had a chance to raise it — told her I could see it was being worked on and I'd make sure it got followed up properly.
 
-While she was talking I'd pulled up her account and noticed an existing open ticket for a separate audio issue. I flagged it — told her I could see it was already being worked on and that I'd make sure the right person followed up. She hadn't even raised it yet. Once she was back in and her tone shifted, she brought up the audio issue herself. I made a judgment call not to dig into it on the same call — I'd already set the expectation it was being handled, captured the details, and escalated directly to the senior tech responsible.
+Then I focused on what I could actually solve: reset her password through the M365 admin centre and got her back in during the call. Once she was back in, she brought up the audio issue herself. I made a deliberate call not to dig into it — it was already assigned to a senior tech, and clicking around pretending to help would've just extended her frustration without resolving anything. I captured the details and escalated directly to the right person.
 
-After the call I followed up with both the previous tech and the senior to make sure the team had full context — nobody had to chase me for it.
+I flagged to both the engineer and my manager that she wasn't happy with the progress — that communication resulted in her getting a callback within 30 minutes to troubleshoot the audio issue directly. After the call I followed up with both techs — nobody had to chase me.
 
-She regained access during the call, her secondary issue was handed off cleanly with a clear owner, and the team was across everything without me waiting to be asked.
+Access restored during the call, tone shifted. Secondary issue handed off with a clear owner and she knew it. Team had full context without waiting to be asked.
 
-I found out after the call that she was known as a difficult customer. That was actually reassuring — not because I needed the validation, but because it told me my instincts under pressure were sound. I'd handled it without knowing the context, and the thing that mattered wasn't the password reset — it was not getting defensive, not throwing anyone under the bus, and making sure she felt like someone was actually paying attention.`,
+Found out after that she was a known difficult customer. Reassuring — not for the validation, but because it confirmed the instincts held without knowing that. The password reset was the easy part. What actually mattered was not getting defensive, not pretending to fix things outside my scope, and making sure she felt like someone was paying attention.`,
     cues: [
       'SITUATION',
       'Frustrated client — blaming previous tech for breaking her login',
@@ -49,6 +49,7 @@ I found out after the call that she was known as a difficult customer. That was 
       'The point wasn\'t the password reset — it was not getting defensive, not throwing anyone under the bus',
     ],
     lps: ['Bias for Action', 'Customer Obsession', 'Ownership'],
+    toneWarning: 'Don\'t frame this as handling a difficult person. It\'s a composure and ownership story.',
   },
   {
     title: 'Overseas Script — Real Answer, Not a Dead End',
@@ -64,19 +65,17 @@ I found out after the call that she was known as a difficult customer. That was 
       { tag: '[LP]',   text: 'Dive Deep — didn\'t accept "not in stock", kept investigating until she had a real explanation' },
       { tag: '[TONE]', text: 'Don\'t frame as "I was better than the other pharmacy" — frame as a personal choice to keep going' },
     ],
-    rehearsal: `A woman came in late in the evening with a prescription for a painkiller I didn't recognise — brand or drug name. She mentioned she'd already been turned away by another pharmacy who said they didn't have it in stock.
+    rehearsal: `Late evening — woman came in with a prescription for a painkiller I didn't recognise, brand or drug name. She'd already been turned away by another pharmacy who told her they didn't have it in stock. She was clearly in pain.
 
-We didn't have it either, but something was off — it wasn't just out of stock, it wasn't showing up in our system at all. I checked the AMH and a couple of other Australian references. Nothing. I could have stopped there and sent her away with the same answer she'd already gotten. But she was clearly in pain, and I knew that answer wasn't actually helpful.
+We didn't have it either, but something was off — it wasn't just out of stock, it wasn't appearing in our system at all. I checked the AMH and another Australian reference. Nothing. That told me this wasn't a stock issue.
 
-I kept digging and worked out that this drug is prescribed in other countries but isn't available in Australia. I pieced together that the doctor — who I suspected was an overseas practitioner doing after-hours work — had prescribed something that simply can't be dispensed here.
+I kept digging and worked out the drug isn't available in Australia — it's prescribed in other countries but simply can't be dispensed here. When I explained that to her, she said she thought the doctor had recently moved from overseas — which confirmed it. The prescription had come from someone who'd prescribed something that doesn't exist in this market. She could have gone to every pharmacy in the city and gotten the same answer.
 
-At that point I made a conscious call. I'd seen how easy it is to palm a problem off the moment you have a halfway-decent reason to — and this was one of those moments. I knew that once I told her what was actually going on, she'd have more questions and it would take longer. But the alternative was sending her away, still unable to solve her problem. She wasn't just trying to fill a script — she was in pain, already turned away once, and running out of options. So I gave her the full picture.
+I gave her the full picture — what had gone wrong, why she couldn't find it anywhere, and what she actually needed to do: go back to the after-hours service and get something equivalent that's actually available here. In the meantime I gave her the strongest OTC analgesics we had to take the edge off while she sorted it.
 
-I explained what had gone wrong, why she couldn't find it anywhere, and what she actually needed to do: go back to the after-hours service and explain the situation so they could prescribe something equivalent available here. In the meantime I gave her the strongest over-the-counter analgesics we had to take the edge off while she sorted it.
+She left knowing exactly what had happened and exactly what to do next — not just that no one had what she needed.
 
-She left knowing exactly what had happened and exactly what to do next — not just that no one had what she needed. That's the difference between closing a transaction and actually solving someone's problem.
-
-The easy answer was already available — the previous pharmacy gave it. I don't think it was good enough. She'd been in pain, turned away once, and was running out of options. The extra time was worth it — not just for her outcome, but because it was the right way to treat someone navigating a system that had already failed her once.`,
+The easy answer was already available — the other pharmacy gave it. She'd already been failed once. The difference between 'we don't have it' and 'here's why and here's what you do next' was maybe fifteen minutes of my time. That felt like a straightforward call.`,
     cues: [
       'SITUATION',
       'Late evening — patient in pain, already turned away once by another pharmacy',

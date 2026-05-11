@@ -5,7 +5,7 @@
     <div v-if="card.title" class="px-4 pt-3 pb-3 border-b border-slate-700 bg-slate-800/70">
       <div class="flex items-start justify-between gap-3 flex-wrap">
         <div class="flex items-center gap-2.5">
-          <img v-if="card.logo" :src="card.logo" class="w-10 h-auto object-contain rounded opacity-80 shrink-0" />
+          <img v-if="card.logo" :src="card.logo" class="w-10 h-auto object-contain rounded-md opacity-80 shrink-0" />
           <div class="flex flex-col gap-1">
             <span class="text-[11px] font-semibold tracking-widest uppercase text-orange-300">{{ card.title }}</span>
             <p class="text-slate-200 text-sm font-medium leading-snug">{{ card.question }}</p>

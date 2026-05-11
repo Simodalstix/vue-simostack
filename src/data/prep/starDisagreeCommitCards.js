@@ -11,17 +11,17 @@ export const starDisagreeCommitCards = [
       { tag: '[LP]',   text: 'Earn Trust — didn\'t sulk or keep resisting, accepted the authority structure, worked with it' },
       { tag: '[TONE]', text: 'Don\'t frame the workflow problems materialising as vindication — the point is what you learned about how to push back' },
     ],
-    rehearsal: `My boss introduced a payment register in the dispensary to address theft — the idea was to capture payment at the point of service rather than letting people take items to the front registers. I understood the concern. But as the pharmacist running the dispensary, I could see immediately that it was going to create real problems.
+    rehearsal: `My boss introduced a payment register in the dispensary to address theft — capture payment at point of service rather than letting people walk to the front. I understood the concern, but as the pharmacist running it I could see it was going to cause real problems.
 
-I raised it directly with him. The register tied up a staff member waiting for payment, which pulled me away from dispensing. It kept customers at the counter longer, which blocked the next person — and with two counter spaces that could both be occupied at once, the bottleneck compounded. It also created a privacy problem: someone waiting to pay was standing right there while I was trying to counsel another patient on their medication. I also flagged that it was card only, so cash payers — who were more likely to be the actual theft risk — could still walk out and pay at the front anyway. I thought I had a solid case and I made it clearly.
+The register tied up a staff member waiting for payment, pulling me away from dispensing. With two counter spaces both occupied at once, the bottleneck compounded. It also created a privacy issue — someone waiting to pay standing there while I'm counselling another patient on their medication. And it was card only, so cash payers — the actual theft risk — could still walk to the front anyway.
 
-He came back and told me I was the only one of his pharmacists creating friction over this, that I wasn't following directive, and that it wasn't my decision to make.
+I raised it directly with him. I thought I had a solid case and I made it clearly.
 
-That was hard to hear. I still thought I was right about the workflow problems. But I had to acknowledge that he was right about one thing — it wasn't my store. I wasn't being asked for my opinion on the business model, I was being asked to implement a decision that had already been made. I accepted that, stopped pushing, and worked with it.
+He came back and told me I was the only one of his pharmacists creating friction, that it wasn't my decision to make. Hard to hear. I still thought I was right about the workflow problems — but I had to acknowledge he was right about one thing. It wasn't my store. I was being asked to implement a decision already made, not weigh in on it. I accepted that, stopped pushing, and worked with it.
 
-The register stayed. The workflow problems I'd predicted did materialise — it was slower and more stop-start. But I'd said my piece, I'd been heard, and continuing to resist after that point would have just made the environment worse for everyone.
+The register stayed. The workflow problems did materialise. But I'd said my piece, been heard, and continuing to resist after that point would have just made things worse for everyone.
 
-What I took from it was the difference between being right and being effective. I went in direct and firm, which is fine, but I hadn't framed it as a proposal — here's the problem, here's an alternative. I just pushed back. If I'd approached it differently, the outcome might have been the same, but the conversation probably wouldn't have ended with him telling me I was being difficult. That's the part I'd do differently.`,
+What I took from it was the difference between being right and being effective. I went in direct and firm, but I hadn't framed it as a proposal — here's the problem, here's an alternative. I just pushed back. The outcome probably would've been the same, but the conversation wouldn't have ended with him telling me I was being difficult. That's the part I'd do differently.`,
     cues: [
       'SITUATION',
       'Boss introduced dispensary payment register to address theft',
@@ -53,5 +53,6 @@ What I took from it was the difference between being right and being effective. 
       'That\'s the part I\'d do differently',
     ],
     lps: ['Have Backbone; Disagree and Commit', 'Earn Trust'],
+    toneWarning: 'Not vindication — the lesson is how to push back more effectively, not that you were right.',
   },
 ]

@@ -12,13 +12,13 @@ export const starHighestStandardsCards = [
       { tag: '[LP]',   text: 'Ownership — didn\'t deflect to a JP or hide behind the workload' },
       { tag: '[TONE]', text: 'Don\'t sound self-congratulatory — "it made my shifts harder, nobody rewarded me" is what grounds it' },
     ],
-    rehearsal: `In pharmacy, customers regularly came in needing documents certified — statutory declarations, ID copies, that kind of thing. It's not a paid service, it's not part of the core job, and it almost always came at the worst time — lunch, when prescription volume peaks. I noticed the default response from a lot of pharmacists was to deflect: too busy, try a JP, come back after 3. I understood the instinct — it genuinely does add friction to an already pressured shift.
+    rehearsal: `In pharmacy, customers regularly came in needing documents certified — statutory declarations, ID copies, that kind of thing. Pharmacists aren't actually obligated to certify documents — we can decline, and most customers don't know that. The default response from a lot of pharmacists was to do exactly that: too busy, try a JP, come back after 3. It almost always came at the worst time — lunch, peak prescription volume. I understood the instinct. It genuinely adds friction.
 
-I made a deliberate choice to handle it differently. If someone came in for a certification, I'd acknowledge them immediately, be honest that prescriptions come first, and commit to a timeframe — usually ten minutes, often less. I'd built an efficient enough dispensary workflow that I could absorb the extra task without it derailing everything else. For statutory declarations especially, I'd often just do it on the spot.
+I made a deliberate choice to handle it differently. If someone came in I'd acknowledge them immediately, be honest that prescriptions came first, and commit to a timeframe — usually ten minutes, often less. The store had a policy of capping certifications at three documents. I didn't impose that. If it was a large pile — and sometimes it was twenty, thirty pages — I'd set realistic expectations: leave them with me, come back after this time, I'll work through them in my downtime. I certified those documents with three stamps — one for the business details, one for my name and AHPRA number, one for the certification template. You do that thirty times, it takes a while.
 
-People were genuinely relieved. A lot of them had already been turned away somewhere else — so showing up when others hadn't was the whole experience for them. I didn't track numbers, but the gratitude was consistent enough that I knew it mattered.
+A lot of them had already been turned away somewhere else — so showing up when others hadn't was the whole experience for them. The relief was obvious and consistent.
 
-The honest version is that it made my shifts harder. Nobody was rewarding me for it. But I know how frustrating it is to need a certification done and not be able to find anyone — it's one of those tasks that feels disproportionately stressful when you're stuck. Getting it sorted for someone in ten minutes, when they'd already been knocked back somewhere else — the relief on their face was obvious. That made it worth doing.`,
+The honest version is it made my shifts harder and nobody rewarded me for it. But there's a systemic problem underneath it — when pharmacies deflect, the load concentrates on the ones that don't. If everyone did their share there'd be no burden. The laziness of others pushes toward whoever's willing to hold the line. I knew that, and I didn't want to be part of the problem.`,
     cues: [
       'SITUATION',
       'Pharmacy customers regularly needed documents certified — stat decs, ID copies',
@@ -46,5 +46,6 @@ The honest version is that it made my shifts harder. Nobody was rewarding me for
       'That made it worth doing',
     ],
     lps: ['Insist on Highest Standards', 'Customer Obsession', 'Ownership'],
+    toneWarning: 'Matter-of-fact, not martyred. Don\'t make it sound like you expect to be recognised for it.',
   },
 ]
