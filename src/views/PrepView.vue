@@ -71,66 +71,17 @@
     <!-- Main content -->
     <main
       class="flex-1 bg-slate-900 text-slate-300"
-      :class="(activeSection === 'career' || activeSection === 'scenarios') ? 'overflow-hidden' : 'overflow-y-auto p-6'"
+      :class="(activeSection === 'career' || activeSection === 'scenarios' || activeSection === 'linux' || activeSection === 'aws' || activeSection === 'iac') ? 'overflow-hidden' : 'overflow-y-auto p-6'"
     >
 
       <!-- Linux Raw -->
-      <div v-if="activeKey === 'linux-processes'" class="grid grid-cols-3 gap-8 h-full">
-        <PrepCodeBlock :code="proc.col1" />
-        <PrepCodeBlock :code="proc.col2" />
-        <PrepCodeBlock :code="proc.col3" />
-      </div>
-      <div v-if="activeKey === 'linux-logs'" class="grid grid-cols-3 gap-8 h-full">
-        <PrepCodeBlock :code="logs.col1" />
-        <PrepCodeBlock :code="logs.col2" />
-        <PrepCodeBlock :code="logs.col3" />
-      </div>
-      <div v-if="activeKey === 'linux-networking'" class="grid grid-cols-3 gap-8 h-full">
-        <PrepCodeBlock :code="net.col1" />
-        <PrepCodeBlock :code="net.col2" />
-        <PrepCodeBlock :code="net.col3" />
-      </div>
-      <div v-if="activeKey === 'linux-permissions'" class="grid grid-cols-3 gap-8 h-full">
-        <PrepCodeBlock :code="perms.col1" />
-        <PrepCodeBlock :code="perms.col2" />
-        <PrepCodeBlock :code="perms.col3" />
-      </div>
-      <div v-if="activeKey === 'linux-disk'" class="grid grid-cols-3 gap-8 h-full">
-        <PrepCodeBlock :code="disk.col1" />
-        <PrepCodeBlock :code="disk.col2" />
-        <PrepCodeBlock :code="disk.col3" />
-      </div>
-      <div v-if="activeKey === 'linux-scripting'" class="grid grid-cols-3 gap-8 h-full">
-        <PrepCodeBlock :code="script.col1" />
-        <PrepCodeBlock :code="script.col2" />
-        <PrepCodeBlock :code="script.col3" />
-      </div>
+      <LinuxRawPane v-if="activeSection === 'linux'" />
 
       <!-- AWS & Systems -->
-      <div v-if="activeKey === 'aws-net-fundamentals'" class="h-full overflow-y-auto">
-        <PrepCards :cards="netFundCards" />
-      </div>
-      <div v-if="activeKey === 'aws-cloud-aws'" class="h-full overflow-y-auto">
-        <PrepCards :cards="cloudAwsCards" />
-      </div>
-      <div v-if="activeKey === 'aws-compute'" class="h-full overflow-y-auto">
-        <PrepCards :cards="computeCards" />
-      </div>
-      <div v-if="activeKey === 'aws-data-messaging'" class="h-full overflow-y-auto">
-        <PrepCards :cards="dataMessagingCards" />
-      </div>
-      <div v-if="activeKey === 'aws-observability'" class="h-full overflow-y-auto">
-        <PrepCards :cards="observabilityCards" />
-      </div>
-      <div v-if="activeKey === 'aws-ha-dr'" class="h-full overflow-y-auto">
-        <PrepCards :cards="haDrCards" />
-      </div>
-      <div v-if="activeKey === 'aws-security'" class="h-full overflow-y-auto">
-        <PrepCards :cards="securityCards" />
-      </div>
-      <div v-if="activeKey === 'aws-iac'" class="h-full overflow-y-auto">
-        <PrepCards :cards="iacCards" />
-      </div>
+      <AwsRawPane v-if="activeSection === 'aws'" />
+
+      <!-- IaC & Python -->
+      <IacPythonPane v-if="activeSection === 'iac'" />
 
       <!-- STAR Stories -->
       <div v-if="activeKey === 'star-duo-mfa'">
@@ -170,26 +121,12 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import PrepCodeBlock from '@/components/prep/PrepCodeBlock.vue'
-import PrepCards    from '@/components/prep/PrepCards.vue'
-import CareerCard        from '@/components/prep/CareerCard.vue'
+import CareerCard          from '@/components/prep/CareerCard.vue'
 import CareerValuesPane    from '@/components/prep/CareerValuesPane.vue'
 import TroubleshootingPane from '@/components/prep/TroubleshootingPane.vue'
-
-import { proc }                 from '@/data/prep/proc.js'
-import { logs }                 from '@/data/prep/logs.js'
-import { net }                  from '@/data/prep/net.js'
-import { perms }                from '@/data/prep/perms.js'
-import { disk }                 from '@/data/prep/disk.js'
-import { script }               from '@/data/prep/script.js'
-import { netFundCards }         from '@/data/prep/netFundCards.js'
-import { cloudAwsCards }        from '@/data/prep/cloudAwsCards.js'
-import { computeCards }         from '@/data/prep/computeCards.js'
-import { dataMessagingCards }   from '@/data/prep/dataMessagingCards.js'
-import { observabilityCards }   from '@/data/prep/observabilityCards.js'
-import { haDrCards }            from '@/data/prep/haDrCards.js'
-import { securityCards }        from '@/data/prep/securityCards.js'
-import { iacCards }             from '@/data/prep/iacCards.js'
+import LinuxRawPane        from '@/components/prep/LinuxRawPane.vue'
+import AwsRawPane          from '@/components/prep/AwsRawPane.vue'
+import IacPythonPane       from '@/components/prep/IacPythonPane.vue'
 import { starComplexCards }          from '@/data/prep/starComplexCards.js'
 import { starDifficultClientCards }  from '@/data/prep/starDifficultClientCards.js'
 import { starDisagreeCommitCards }     from '@/data/prep/starDisagreeCommitCards.js'
@@ -216,28 +153,17 @@ const sections = [
   {
     id: 'linux',
     label: 'Linux Raw',
-    tabs: [
-      { id: 'processes',   label: 'Processes & Services' },
-      { id: 'logs',        label: 'Logs & Text Processing' },
-      { id: 'networking',  label: 'Networking' },
-      { id: 'permissions', label: 'Permissions & Security' },
-      { id: 'disk',        label: 'Disk & Filesystem' },
-      { id: 'scripting',   label: 'Scripting' },
-    ],
+    tabs: [],
   },
   {
     id: 'aws',
     label: 'AWS & Systems',
-    tabs: [
-      { id: 'net-fundamentals', label: 'Networking Fundamentals' },
-      { id: 'cloud-aws',        label: 'Cloud & AWS Foundations' },
-      { id: 'compute',          label: 'Compute & Scaling' },
-      { id: 'data-messaging',   label: 'Data & Messaging' },
-      { id: 'observability',    label: 'Observability' },
-      { id: 'ha-dr',            label: 'HA & DR Patterns' },
-      { id: 'security',         label: 'Security Posture' },
-      { id: 'iac',              label: 'IaC — CDK & Terraform' },
-    ],
+    tabs: [],
+  },
+  {
+    id: 'iac',
+    label: 'IaC & Python',
+    tabs: [],
   },
   {
     id: 'career',

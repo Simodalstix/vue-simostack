@@ -3,7 +3,7 @@
     <div
       v-for="(line, i) in processedLines"
       :key="i"
-      class="whitespace-pre"
+      class="whitespace-pre-wrap"
       v-html="line || '&nbsp;'"
     />
   </div>

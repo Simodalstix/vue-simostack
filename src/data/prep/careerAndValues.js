@@ -2,6 +2,7 @@ export const careerAndValues = [
   // ── Career Narrative ──────────────────────────────────────────────────────
   {
     question: 'Tell me about yourself.',
+    coreLine: 'Pharmacy → tech. Builder mentality. Aiming for depth at systems engineering level.',
     blocks: ['transition', 'builder', 'ceiling'],
     anchors: [
       { tag: '[ANCHOR]', text: 'Pharmacy was a natural fit — science, health, helping people. Sets up the pivot as considered, not impulsive.' },
@@ -38,6 +39,7 @@ What I'm looking for now is a role where I can go deeper into cloud and infrastr
   },
   {
     question: 'What does your current role involve day to day?',
+    coreLine: 'MSP L1/L2 — breadth, real production, IAM experience. Ready for the next layer.',
     blocks: ['owner'],
     anchors: [
       { tag: '[ANCHOR]', text: 'MSP, L1/L2, varied client environments' },
@@ -57,29 +59,10 @@ What I'm looking for now is a role where I can go deeper into cloud and infrastr
     lps: ['Deliver Results', 'Ownership'],
     toneWarning: null,
   },
-  {
-    question: 'Why are you leaving your current role?',
-    blocks: ['ceiling', 'builder'],
-    anchors: [
-      { tag: '[TONE]',   text: 'Say "good team, real production experience" and mean it — don\'t skip it' },
-      { tag: '[ANCHOR]', text: 'It\'s not Linux and it\'s not AWS — simple and honest' },
-      { tag: '[ANCHOR]', text: 'Next logical step, not an escape' },
-      { tag: '[AVOID]',  text: '"I want more opportunities" / "I need a bigger challenge" / anything vague' },
-      { tag: '[TONE]',   text: 'Confident, not apologetic — this is a clear direction' },
-    ],
-    rehearsal: `It's a good team and I'm getting real production experience — but the work isn't Linux and it isn't AWS. This is the next logical step in the direction I've been building toward, not an exit.`,
-    cues: [
-      '[ANCHOR] Good team, real production experience — say this and mean it, don\'t skip it',
-      '[ANCHOR] But: not Linux, not AWS — simple and honest, don\'t elaborate',
-      '[ANCHOR] Next logical step in the direction I\'ve been building toward. Not an exit.',
-      '[AVOID] "I want more opportunities" / "I need a bigger challenge" / anything vague',
-    ],
-    lps: ['Ownership', 'Bias for Action'],
-    toneWarning: 'Confident, not apologetic.',
-  },
   // ── Why AWS ───────────────────────────────────────────────────────────────
   {
     question: 'Why AWS? Why this role?',
+    coreLine: 'AWS is where I actually learned to reason about systems. This team\'s scope is the kind of work I want to be accountable for.',
     blocks: ['ceiling', 'builder', 'curious'],
     anchors: [
       { tag: '[ANCHOR]', text: 'Pharmacy was a ceiling — want to be the least capable person in the room' },
@@ -113,6 +96,7 @@ And then the nature of this team specifically — the clearance requirement, the
   },
   {
     question: 'Why Systems Engineering specifically?',
+    coreLine: 'Linux and AWS intersection. Root cause → automate it. Foundation I want to build on.',
     blocks: ['builder', 'ceiling'],
     anchors: [
       { tag: '[ANCHOR]', text: 'Linux + AWS intersection — this role is literally that' },
@@ -132,6 +116,7 @@ And then the nature of this team specifically — the clearance requirement, the
   },
   {
     question: 'What experience do you have with cloud infrastructure?',
+    coreLine: 'Self-directed AWS projects — ECS, serverless, DR, CDK. This is where my focus has been.',
     blocks: ['builder'],
     anchors: [
       { tag: '[TONE]',   text: 'Own this confidently — don\'t apologise for self-directed work' },
@@ -161,6 +146,7 @@ And then the nature of this team specifically — the clearance requirement, the
   },
   {
     question: 'What are you looking for in your next role?',
+    coreLine: 'Depth at the infrastructure layer. Building and troubleshooting, not supporting from the outside.',
     blocks: ['ceiling', 'builder', 'curious'],
     anchors: [
       { tag: '[ANCHOR]', text: 'Depth — not supporting from outside but building, managing, troubleshooting properly' },
@@ -181,6 +167,7 @@ And then the nature of this team specifically — the clearance requirement, the
   // ── Career Values ─────────────────────────────────────────────────────────
   {
     question: 'What does success look like to you?',
+    coreLine: 'Genuine fluency in complex AWS environments — confident navigating, not just certificated.',
     blocks: ['curious', 'builder'],
     anchors: [
       { tag: '[ANCHOR]', text: 'Genuine fluency — complex situations, feel confident navigating' },
@@ -200,6 +187,7 @@ And then the nature of this team specifically — the clearance requirement, the
   },
   {
     question: 'What are you most proud of professionally?',
+    coreLine: 'The transition itself. No track record, real doubt, pushed through, landed a role.',
     blocks: ['transition'],
     anchors: [
       { tag: '[ANCHOR]', text: 'The career transition itself — not a project, not a cert' },
@@ -222,6 +210,7 @@ And then the nature of this team specifically — the clearance requirement, the
   },
   {
     question: 'What\'s your biggest weakness?',
+    coreLine: 'I reach for complexity before ruling out the simple cause. Now I check obvious first.',
     blocks: [],
     anchors: [
       { tag: '[ANCHOR]', text: 'Recency bias — brain reaches for complex before ruling out simple' },
@@ -241,6 +230,7 @@ And then the nature of this team specifically — the clearance requirement, the
   },
   {
     question: 'How do you handle making a mistake?',
+    coreLine: 'Own it immediately, fix fast, change the behaviour permanently.',
     blocks: ['owner'],
     anchors: [
       { tag: '[ANCHOR]', text: 'Mistakes stick in a way reading doesn\'t — lead with this, sets the frame' },
@@ -264,6 +254,7 @@ And then the nature of this team specifically — the clearance requirement, the
   },
   {
     question: 'Outside of work?',
+    coreLine: 'Always building — home lab, cert progression, things I can\'t replicate in AWS.',
     blocks: ['builder', 'curious'],
     anchors: [
       { tag: '[ANCHOR]', text: 'Always building something — projects consolidate learning' },
