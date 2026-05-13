@@ -1,8 +1,8 @@
 <template>
   <div class="flex h-full overflow-hidden font-mono">
 
-    <!-- ── Left rail ── -->
-    <aside class="w-64 shrink-0 bg-slate-800 border-r border-slate-700 flex flex-col h-full">
+    <!-- ── Left sidebar ── -->
+    <aside class="w-56 shrink-0 bg-slate-800 border-r border-slate-700 flex flex-col h-full">
 
       <div class="px-3 py-2 border-b border-slate-700/60">
         <span class="text-[10px] uppercase tracking-widest text-slate-400">Questions</span>
@@ -39,16 +39,6 @@
         </button>
       </div>
 
-      <!-- Questions to Ask — pinned -->
-      <div class="border-t border-slate-600 shrink-0">
-        <div class="px-3 py-2 border-b border-slate-700/60">
-          <span class="text-[10px] uppercase tracking-widest text-orange-400/80 font-semibold">Questions to Ask</span>
-        </div>
-        <div v-for="(q, i) in careerQuestionsCards" :key="i" class="px-3 py-2 border-b border-slate-700/30">
-          <p class="text-[11px] text-slate-300 leading-snug italic">{{ q.question }}</p>
-          <p v-if="q.toneNote" class="text-[10px] text-sky-400/60 mt-1">{{ q.toneNote }}</p>
-        </div>
-      </div>
     </aside>
 
     <!-- ── Main panel ── -->
@@ -59,57 +49,6 @@
         <div class="mb-4">
           <p class="text-[15px] font-semibold text-slate-100 leading-snug mb-1">{{ selected.question }}</p>
           <p v-if="selected.coreLine" class="text-[11px] text-slate-500 italic">{{ selected.coreLine }}</p>
-        </div>
-
-        <!-- Block cards -->
-        <div v-if="selected.blocks?.length" class="flex flex-wrap gap-3 mb-5">
-          <div
-            v-for="bid in selected.blocks"
-            :key="bid"
-            class="flex-1 min-w-[190px] p-3 bg-slate-800 rounded-lg border border-slate-700/50 border-l-[3px]"
-            :style="{ borderLeftColor: blockMap[bid]?.color }"
-          >
-            <!-- Icon + label -->
-            <div class="flex items-center gap-1.5 mb-1">
-              <svg
-                class="w-3.5 h-3.5 shrink-0"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                :style="{ color: blockMap[bid]?.color }"
-              >
-                <path :d="blockMap[bid]?.icon" />
-              </svg>
-              <div class="text-[13px] font-semibold" :style="{ color: blockMap[bid]?.color }">
-                {{ blockMap[bid]?.label }}
-              </div>
-            </div>
-
-            <p class="text-slate-400 text-[11px] italic mb-2 leading-snug">{{ blockMap[bid]?.tagline }}</p>
-
-            <ul class="space-y-1 mb-2.5">
-              <li
-                v-for="anchor in blockMap[bid]?.anchors"
-                :key="anchor"
-                class="text-slate-300 text-[12px] flex gap-1.5 leading-snug"
-              >
-                <span class="text-slate-600 shrink-0 mt-0.5 select-none">›</span>
-                {{ anchor }}
-              </li>
-            </ul>
-
-            <div class="flex flex-wrap gap-1">
-              <span
-                v-for="lp in blockMap[bid]?.lps"
-                :key="lp"
-                class="text-[10px] px-1.5 py-0.5 rounded border"
-                :class="LP_COLORS[lp] || 'bg-slate-700 text-slate-300 border-slate-600'"
-              >{{ lp }}</span>
-            </div>
-          </div>
         </div>
 
         <!-- Cues -->
@@ -146,15 +85,44 @@
 
       </div>
     </main>
+
+    <!-- ── Right blocks strip ── -->
+    <aside class="w-44 shrink-0 border-l border-slate-700/60 overflow-y-auto flex flex-col gap-2 p-3">
+      <div class="text-[9px] uppercase tracking-widest text-slate-600 font-semibold mb-1 px-1">
+        Traits
+      </div>
+      <div
+        v-for="block in simonBlocks"
+        :key="block.id"
+        class="rounded-lg border border-slate-700/30 border-l-2 p-2.5 transition-opacity duration-150"
+        :style="{ borderLeftColor: block.color }"
+        :class="isActive(block.id)
+          ? 'bg-slate-800/60 border-slate-700/60 opacity-100'
+          : 'bg-slate-800/20 opacity-25'"
+      >
+        <div class="text-[11px] font-semibold mb-0.5" :style="{ color: block.color }">
+          {{ block.label }}
+        </div>
+        <p class="text-[10px] text-slate-400 leading-snug">{{ block.tagline }}</p>
+        <div class="flex flex-wrap gap-1 mt-1.5">
+          <span
+            v-for="lp in block.lps"
+            :key="lp"
+            class="text-[9px] px-1.5 py-0.5 rounded border"
+            :class="LP_COLORS[lp] || 'bg-slate-700 text-slate-300 border-slate-600'"
+          >{{ LP_SHORT_NAMES[lp] || lp }}</span>
+        </div>
+      </div>
+    </aside>
+
   </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue'
-import { simonBlocks }        from '@/data/prep/simonBlocks.js'
-import { careerAndValues }    from '@/data/prep/careerAndValues.js'
-import { careerQuestionsCards } from '@/data/prep/careerQuestions.js'
-import { LP_COLORS }          from '@/data/prep/lpConstants.js'
+import { simonBlocks }     from '@/data/prep/simonBlocks.js'
+import { careerAndValues } from '@/data/prep/careerAndValues.js'
+import { LP_COLORS, LP_SHORT_NAMES } from '@/data/prep/lpConstants.js'
 
 const blockMap = Object.fromEntries(simonBlocks.map(b => [b.id, b]))
 
@@ -163,6 +131,10 @@ const selected = computed(() => careerAndValues[selectedIdx.value])
 
 function selectQuestion(idx) {
   selectedIdx.value = idx
+}
+
+function isActive(blockId) {
+  return selected.value?.blocks?.includes(blockId) ?? false
 }
 
 const TAG_RE = /^\[(ANCHOR|DATA|LP|AVOID|TONE)\]\s*/
@@ -191,7 +163,6 @@ function cueTextClass(cue) {
   return 'text-slate-300'
 }
 
-// Separate AVOID items out so they render as a distinct callout
 const mainCues = computed(() =>
   (selected.value?.cues ?? []).filter(c => !c.startsWith('[AVOID]'))
 )

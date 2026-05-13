@@ -1,8 +1,8 @@
 <template>
-  <div class="flex h-full text-[12px]">
+  <div class="flex items-start text-[12px]">
 
     <!-- ═══ LEFT: Terraform ═══ -->
-    <div class="w-[42%] shrink-0 overflow-y-auto border-r border-slate-700/60 p-4 space-y-3 min-h-0">
+    <div class="w-[42%] shrink-0 border-r border-slate-700/60 p-4 space-y-3">
 
       <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold pb-1.5 border-b border-slate-700/40">
         Terraform / IaC
@@ -36,9 +36,7 @@
         <div class="px-3 py-2 border-b border-slate-700/40">
           <span class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold">S3 Bucket Example</span>
         </div>
-        <div class="max-h-[190px] overflow-y-auto">
-          <PrepCodeBlock :code="tfS3Example" />
-        </div>
+        <PrepCodeBlock :code="tfS3Example" />
       </div>
 
       <!-- Workflow -->
@@ -46,9 +44,7 @@
         <div class="px-3 py-2 border-b border-slate-700/40">
           <span class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold">Workflow Commands</span>
         </div>
-        <div class="max-h-[145px] overflow-y-auto">
-          <PrepCodeBlock :code="tfWorkflowExample" />
-        </div>
+        <PrepCodeBlock :code="tfWorkflowExample" />
       </div>
 
       <!-- Remote state -->
@@ -56,9 +52,7 @@
         <div class="px-3 py-2 border-b border-slate-700/40">
           <span class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold">Remote State</span>
         </div>
-        <div class="max-h-[130px] overflow-y-auto">
-          <PrepCodeBlock :code="tfRemoteStateExample" />
-        </div>
+        <PrepCodeBlock :code="tfRemoteStateExample" />
       </div>
 
       <!-- CDK vs Terraform comparison table -->
@@ -137,7 +131,7 @@
     </div>
 
     <!-- ═══ RIGHT: Python ═══ -->
-    <div class="flex-1 overflow-y-auto p-4 space-y-3 min-h-0">
+    <div class="flex-1 p-4 space-y-3">
 
       <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold pb-1.5 border-b border-slate-700/40">
         Python Automation Patterns
@@ -191,12 +185,55 @@
           </div>
         </div>
 
-        <!-- Scroll-contained code -->
-        <div class="max-h-[195px] overflow-y-auto border-b border-slate-700/40">
+        <div class="border-b border-slate-700/40">
           <PrepCodeBlock :code="script.code" />
         </div>
 
         <!-- Interview line -->
+        <div class="px-3 py-2 bg-amber-950/20 flex items-start gap-2 text-[11px]">
+          <span class="text-[9px] uppercase tracking-widest text-amber-500 font-semibold shrink-0 mt-px">In the interview</span>
+          <span class="text-slate-300 leading-relaxed">{{ script.interview }}</span>
+        </div>
+
+      </div>
+
+      <!-- Operational scripts section -->
+      <div class="pt-1">
+        <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold pb-1.5 border-b border-slate-700/40">
+          Operational Scripts
+        </div>
+        <p class="text-[11px] text-slate-500 mt-1.5 mb-2">Patterns for automation — log parsing, health polling, AWS API checks.</p>
+      </div>
+
+      <div v-for="script in operationalScripts" :key="script.id" class="border border-slate-700/50 rounded-lg bg-slate-800/25 overflow-hidden">
+
+        <div class="px-3 py-2 border-b border-slate-700/40 flex items-center gap-2 flex-wrap">
+          <span class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold">{{ script.heading }}</span>
+          <div class="flex gap-1 ml-auto flex-wrap justify-end">
+            <span
+              v-for="tag in script.tags"
+              :key="tag"
+              class="px-1.5 py-0.5 text-[9px] bg-slate-700/80 text-slate-300 rounded font-mono"
+            >{{ tag }}</span>
+            <span class="px-1.5 py-0.5 text-[9px] bg-emerald-900/50 text-emerald-400 rounded">stdlib</span>
+          </div>
+        </div>
+
+        <div class="px-3 py-2 border-b border-slate-700/40 grid grid-cols-2 gap-4 text-[11px]">
+          <div>
+            <div class="text-[9px] uppercase tracking-widest text-slate-500 mb-1 font-semibold">What it demonstrates</div>
+            <div class="text-slate-400 leading-relaxed">{{ script.demonstrates }}</div>
+          </div>
+          <div>
+            <div class="text-[9px] uppercase tracking-widest text-slate-500 mb-1 font-semibold">When to use</div>
+            <div class="text-slate-400 leading-relaxed">{{ script.whenToUse }}</div>
+          </div>
+        </div>
+
+        <div class="max-h-[195px] overflow-y-auto border-b border-slate-700/40">
+          <PrepCodeBlock :code="script.code" />
+        </div>
+
         <div class="px-3 py-2 bg-amber-950/20 flex items-start gap-2 text-[11px]">
           <span class="text-[9px] uppercase tracking-widest text-amber-500 font-semibold shrink-0 mt-px">In the interview</span>
           <span class="text-slate-300 leading-relaxed">{{ script.interview }}</span>
@@ -224,5 +261,5 @@
 
 <script setup>
 import PrepCodeBlock from './PrepCodeBlock.vue'
-import { tfS3Example, tfWorkflowExample, tfRemoteStateExample, pythonScripts } from '@/data/prep/iacPythonData.js'
+import { tfS3Example, tfWorkflowExample, tfRemoteStateExample, pythonScripts, operationalScripts } from '@/data/prep/iacPythonData.js'
 </script>

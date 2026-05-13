@@ -44,106 +44,135 @@ export const pythonScripts = [
   {
     id: 'log-parser',
     heading: 'LOG PARSER',
-    tags: ['file I/O', 'regex', 'Counter'],
+    tags: ['file I/O', 'Counter'],
     stdlib: true,
-    demonstrates: 'Line-by-line file reading, regex matching, and Counter for frequency aggregation — the core pattern for any log analysis task.',
-    whenToUse: 'Parse access logs, error logs, audit trails. Pure stdlib, zero dependencies, works everywhere.',
-    interview: 'Mention Counter.most_common(n) — cleaner than sorting a dict. Walk through why parts[8] is the status field in CLF format.',
+    demonstrates: 'Line-by-line file reading and Counter for frequency analysis — the core pattern for any log task.',
+    whenToUse: 'Parse access logs to find 5xx sources. Pure stdlib, no dependencies.',
+    interview: 'Mention Counter.most_common(n) — cleaner than sorting a dict. parts[8] is the status field in CLF format.',
     code: `#!/usr/bin/env python3
-"""Parse access log — top N source IPs causing 5xx errors."""
-import sys, re
 from collections import Counter
 
-def top_5xx_ips(path, n=10):
-    ips = []
-    with open(path) as f:
-        for line in f:
-            parts = line.split()
-            if len(parts) > 9 and parts[8].startswith('5'):
-                ips.append(parts[0])
-    for ip, count in Counter(ips).most_common(n):
-        print(f"{count:>6}  {ip}")
+ips = []
 
-def count_levels(path):
-    counts = Counter()
-    with open(path) as f:
-        for line in f:
-            m = re.match(r'^(ERROR|WARN|CRIT)', line)
-            if m:
-                counts[m.group(1)] += 1
-    for level, n in counts.most_common():
-        print(f"{n:>6}  {level}")
+with open("access.log") as f:
+    for line in f:
+        parts = line.split()
+        if len(parts) > 8 and parts[8].startswith("5"):
+            ips.append(parts[0])
 
-if __name__ == '__main__':
-    path = sys.argv[1] if len(sys.argv) > 1 else '/var/log/access.log'
-    top_5xx_ips(path)`,
+counts = Counter(ips)
+
+for ip, count in counts.most_common(5):
+    print(ip, count)`,
   },
   {
     id: 'health-checker',
     heading: 'HEALTH CHECKER',
     tags: ['HTTP check', 'exit codes'],
     stdlib: true,
-    demonstrates: 'Checking service availability with urllib, using exit codes correctly so the script is safe to call from cron or a CI pipeline.',
-    whenToUse: 'Pre-deployment readiness checks, cron-based monitoring, pipeline gates. No external deps.',
-    interview: 'The key design point: exit 0 = all clear, exit 1 = action needed. Pipelines and cron depend on this contract.',
+    demonstrates: 'Checking service availability with urllib and using exit codes so the script is safe in cron or a pipeline.',
+    whenToUse: 'Pre-deployment readiness checks, cron monitoring, pipeline gates. No external deps.',
+    interview: 'Key design point: exit 0 = all clear, exit 1 = action needed. Pipelines and cron depend on this contract.',
     code: `#!/usr/bin/env python3
-"""Check endpoints, report status, exit 1 if any fail."""
-import sys
 import urllib.request
+import sys
 
-CHECKS = [
-    ('app',     'http://localhost:8080/health'),
-    ('metrics', 'http://localhost:9090/metrics'),
+urls = [
+    ("app",     "http://localhost:8080/health"),
+    ("metrics", "http://localhost:9090/metrics"),
 ]
 
-def check(name, url, timeout=3):
-    try:
-        with urllib.request.urlopen(url, timeout=timeout) as r:
-            ok = r.status == 200
-            print(f"{'  OK' if ok else 'FAIL'}  {name}  HTTP {r.status}")
-            return ok
-    except Exception as e:
-        print(f"FAIL  {name}  {e}")
-        return False
+failed = 0
 
-results = [check(name, url) for name, url in CHECKS]
-sys.exit(0 if all(results) else 1)
-# exit 0 = all healthy  |  exit 1 = one or more failed`,
+for name, url in urls:
+    try:
+        r = urllib.request.urlopen(url, timeout=3)
+        print("OK  ", name, r.status)
+    except Exception as e:
+        print("FAIL", name, e)
+        failed += 1
+
+sys.exit(1 if failed else 0)`,
   },
   {
     id: 'boto3-target-health',
     heading: 'BOTO3 — ALB TARGET HEALTH',
     tags: ['AWS SDK', 'ALB', 'IAM role'],
     stdlib: false,
-    demonstrates: 'Calling the AWS API via boto3, extracting nested data from the response, and exiting with a meaningful status code.',
-    whenToUse: 'Operational scripts on EC2 or Lambda. boto3 picks up the instance profile automatically — no keys needed.',
+    demonstrates: 'Calling the AWS API via boto3, pulling nested data from the response, exiting with a meaningful status code.',
+    whenToUse: 'Operational scripts on EC2 or Lambda. boto3 picks up the instance profile — no keys needed.',
     interview: 'Mention: instance profile = no hardcoded keys. The role needs elbv2:DescribeTargetHealth — scope it tightly.',
     code: `#!/usr/bin/env python3
-"""Check ALB target group health, exit 1 if any target unhealthy."""
-import boto3, sys
+import boto3
+import sys
 
-def check_targets(tg_arn):
-    client = boto3.client('elbv2')
-    resp = client.describe_target_health(TargetGroupArn=tg_arn)
+tg_arn = sys.argv[1]
 
-    unhealthy = []
-    for t in resp['TargetHealthDescriptions']:
-        state  = t['TargetHealth']['State']
-        target = t['Target']['Id']
-        reason = t['TargetHealth'].get('Reason', '')
-        print(f"{'  OK' if state == 'healthy' else 'FAIL'}  {target:20}  {state}  {reason}")
-        if state != 'healthy':
-            unhealthy.append(target)
+client = boto3.client("elbv2")
+resp = client.describe_target_health(TargetGroupArn=tg_arn)
 
-    if unhealthy:
-        print(f"\\n{len(unhealthy)} unhealthy target(s)")
-        sys.exit(1)
+failed = 0
 
-if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("usage: check_targets.py <tg-arn>", file=sys.stderr)
-        sys.exit(2)
-    check_targets(sys.argv[1])
-# boto3 uses instance profile on EC2 — no static keys required`,
+for t in resp["TargetHealthDescriptions"]:
+    state  = t["TargetHealth"]["State"]
+    target = t["Target"]["Id"]
+    reason = t["TargetHealth"].get("Reason", "")
+    print(state, target, reason)
+    if state != "healthy":
+        failed += 1
+
+sys.exit(1 if failed else 0)`,
+  },
+]
+
+export const operationalScripts = [
+  {
+    id: 'disk-usage-reporter',
+    heading: 'DISK USAGE REPORTER',
+    tags: ['disk', 'lsof', 'deleted files'],
+    stdlib: true,
+    demonstrates: 'subprocess to run shell commands, lsof +L1 to catch deleted-but-held files that du misses.',
+    whenToUse: 'Disk full incidents. Finds what is consuming space including files deleted but still held open.',
+    interview: 'Mention lsof +L1 — files deleted but held open by a process. du misses them, df counts them. That gap trips people up.',
+    code: `#!/usr/bin/env python3
+import subprocess
+
+result = subprocess.run(["du", "-sh", "/var/log"], capture_output=True, text=True)
+
+for line in result.stdout.splitlines():
+    size, path = line.split("\\t", 1)
+    print(size, path)
+
+lsof = subprocess.run(["lsof", "+L1"], capture_output=True, text=True)
+
+if lsof.stdout.strip():
+    print("\\nDeleted files still held open:")
+    print(lsof.stdout)`,
+  },
+  {
+    id: 'db-connection-monitor',
+    heading: 'DB CONNECTION MONITOR',
+    tags: ['connections', 'ss', 'monitoring'],
+    stdlib: true,
+    demonstrates: 'Polling loop with subprocess and time.sleep to build a timestamped trend.',
+    whenToUse: 'Connection exhaustion incidents. Watch the trend over time, not just a single snapshot.',
+    interview: 'The value is the trend. 90 connections is ambiguous — watching it climb from 10 to 90 in 2 minutes means leak.',
+    code: `#!/usr/bin/env python3
+import subprocess
+import time
+import datetime
+
+port = "5432"
+interval = 5
+
+while True:
+    result = subprocess.run(
+        f"ss -tp | grep ESTABLISHED | grep :{port} | wc -l",
+        shell=True, capture_output=True, text=True
+    )
+    count = result.stdout.strip()
+    ts = datetime.datetime.now().strftime("%H:%M:%S")
+    print(ts, "connections:", count)
+    time.sleep(interval)`,
   },
 ]

@@ -71,7 +71,7 @@
     <!-- Main content -->
     <main
       class="flex-1 bg-slate-900 text-slate-300"
-      :class="(activeSection === 'career' || activeSection === 'scenarios' || activeSection === 'linux' || activeSection === 'aws' || activeSection === 'iac') ? 'overflow-hidden' : 'overflow-y-auto p-6'"
+      :class="(['career', 'scenarios', 'linux', 'aws', 'questions', 'projects'].includes(activeSection)) ? 'overflow-hidden' : 'overflow-y-auto p-6'"
     >
 
       <!-- Linux Raw -->
@@ -115,6 +115,12 @@
       <!-- Scenarios -->
       <TroubleshootingPane v-if="activeSection === 'scenarios'" />
 
+      <!-- Questions to Ask -->
+      <InterviewerQuestionsPane v-if="activeSection === 'questions'" />
+
+      <!-- Projects -->
+      <ProjectsPane v-if="activeSection === 'projects'" />
+
     </main>
   </div>
 </template>
@@ -126,7 +132,9 @@ import CareerValuesPane    from '@/components/prep/CareerValuesPane.vue'
 import TroubleshootingPane from '@/components/prep/TroubleshootingPane.vue'
 import LinuxRawPane        from '@/components/prep/LinuxRawPane.vue'
 import AwsRawPane          from '@/components/prep/AwsRawPane.vue'
-import IacPythonPane       from '@/components/prep/IacPythonPane.vue'
+import IacPythonPane              from '@/components/prep/IacPythonPane.vue'
+import InterviewerQuestionsPane  from '@/components/prep/InterviewerQuestionsPane.vue'
+import ProjectsPane              from '@/components/prep/ProjectsPane.vue'
 import { starComplexCards }          from '@/data/prep/starComplexCards.js'
 import { starDifficultClientCards }  from '@/data/prep/starDifficultClientCards.js'
 import { starDisagreeCommitCards }     from '@/data/prep/starDisagreeCommitCards.js'
@@ -173,6 +181,16 @@ const sections = [
   {
     id: 'scenarios',
     label: 'Scenarios',
+    tabs: [],
+  },
+  {
+    id: 'questions',
+    label: 'Questions to Ask',
+    tabs: [],
+  },
+  {
+    id: 'projects',
+    label: 'Projects',
     tabs: [],
   },
 ]
