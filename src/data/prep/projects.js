@@ -56,6 +56,15 @@ echo "All checks passed — AMI build approved"`,
       },
     ],
 
+    stack: [
+      'GitHub Actions (trigger on push)',
+      '└─ Packer',
+      '     ├─ base.pkr.hcl → hardening + agents → SSM: /ami/base/latest',
+      '     └─ app.pkr.hcl → reads base from SSM → runtime + service → verify_build.sh',
+      '          └─ SSM: /ami/app/latest',
+      'ASG Launch Template → reads /ami/app/latest from SSM at deploy time',
+    ],
+
     probes: [
       { q: 'Why SSM Parameter Store instead of hardcoding the AMI ID?', a: 'Downstream infrastructure never needs to change when a new image is built. The ASG reads the parameter at deploy time — rebuild the image and the whole stack picks it up automatically. Same principle as not hardcoding container image tags.' },
       { q: 'What does verify_build.sh actually protect against?', a: 'A broken image being sealed and pushed to production. Without it, a failed service install produces an AMI that launches, passes EC2 health checks, and serves traffic — until the app layer fails. Fail fast at build time, not at 3am.' },
@@ -112,6 +121,15 @@ cfn_dr = dr.node.default_child
 cfn_dr.failover = "SECONDARY"
 cfn_dr.set_identifier = "dr"`,
       },
+    ],
+
+    stack: [
+      'ap-southeast-2 (Primary)          ap-southeast-4 (DR)',
+      '  VPC + ALB + ASG (running)          VPC + ALB + ASG (desired=0)',
+      '  RDS primary ──async repl──→       RDS read replica (running, promotable)',
+      '  Route 53 (primary record)         Route 53 (failover record)',
+      '       └─ health check on ALB',
+      'Failover: promote replica → scale ASG → health check fails → DNS flips',
     ],
 
     probes: [
@@ -203,6 +221,15 @@ class LoggingStack(Stack):
       },
     ],
 
+    stack: [
+      'AWS Organizations',
+      '  └─ SCP: deny API calls outside ap-southeast-2 / ap-southeast-4',
+      '  ├─ Workload account — VPC + application stack',
+      '  ├─ Logging account — S3 (CloudTrail + CW Logs, immutable)',
+      '  └─ Security account — GuardDuty delegated admin + Security Hub',
+      'CDK Python → CloudFormation → deployed via changesets',
+    ],
+
     probes: [
       { q: 'Why use an SCP rather than just IAM policies for region locking?', a: 'SCP evaluation happens before IAM — an explicit deny in an SCP cannot be overridden by any IAM policy, including root. IAM alone can be misconfigured or overridden by a privileged user. SCP is the organisation-level hard boundary required for sovereignty.' },
       { q: 'What does the CDK L2 construct bucket.grant_read() actually do?', a: 'Generates the IAM policy statements required for read access and attaches them to the principal automatically. No need to write the JSON policy by hand. The construct knows which actions are required for read and scopes them correctly to the resource ARN.' },
@@ -259,6 +286,16 @@ processor.add_event_source(
     )
 )`,
       },
+    ],
+
+    stack: [
+      'API Gateway POST /ingest',
+      '  └─ Lambda (validate + enqueue)',
+      '       └─ SQS (IngestionQueue, visibilityTimeout=300s)',
+      '            ├─ Lambda (processor, batch_size=10, bisect_on_error=true)',
+      '            │    └─ DynamoDB (on-demand)',
+      '            └─ DLQ (maxReceiveCount=3)',
+      '                 └─ EventBridge rule → SNS alert',
     ],
 
     probes: [
@@ -330,6 +367,16 @@ aws ssm list-command-invocations \\
   --details \\
   --query 'CommandInvocations[*].[InstanceId,Status,CommandPlugins[0].Output]'`,
       },
+    ],
+
+    stack: [
+      'CDK Stack',
+      '  ├─ IAM Role: AmazonSSMManagedInstanceCore',
+      '  ├─ EC2 Fleet (tagged Env=prod) — no SSH, no port 22',
+      '  └─ SSM Parameter Store (config distribution)',
+      'Access: aws ssm start-session (terminal)',
+      'Ops:    aws ssm send-command (fleet-wide)',
+      'Config: aws ssm get-parameter (at boot, no hardcoded values)',
     ],
 
     probes: [

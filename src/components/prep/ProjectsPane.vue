@@ -1,32 +1,21 @@
 <template>
-  <div class="flex h-full overflow-hidden font-mono">
+  <div class="flex flex-col h-full overflow-hidden font-mono">
 
-    <!-- Left sidebar — project list -->
-    <aside class="w-56 shrink-0 bg-slate-800 border-r border-slate-700 overflow-y-auto">
-      <div class="px-3 py-2.5 border-b border-slate-700">
-        <span class="text-[10px] uppercase tracking-widest text-slate-400">Projects</span>
-      </div>
+    <!-- Project tab bar -->
+    <div class="shrink-0 flex gap-1.5 px-4 py-2 border-b border-slate-700 bg-slate-800/20 flex-wrap">
       <button
-        v-for="(p, i) in projects"
-        :key="p.id"
+        v-for="(p, i) in projects" :key="p.id"
         @click="selectedIdx = i"
-        class="w-full text-left px-3 py-2.5 border-b border-slate-700/40 border-l-2 transition-colors"
+        class="px-3 py-1 text-[12px] rounded border transition-colors"
         :class="selectedIdx === i
-          ? 'bg-slate-700 text-white border-l-orange-400'
-          : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/40 border-l-transparent'"
+          ? 'text-orange-300 bg-orange-500/15 border-orange-400/40'
+          : 'text-slate-400 hover:text-slate-200 bg-slate-800/40 border-slate-700/40 hover:bg-slate-700/30'"
       >
-        <div class="text-[12px] font-medium leading-snug">{{ p.label }}</div>
-        <div class="flex flex-wrap gap-1 mt-1">
-          <span
-            v-for="tag in p.tags"
-            :key="tag"
-            class="text-[9px] px-1.5 py-0.5 rounded bg-slate-700/60 text-slate-400 border border-slate-600/40"
-          >{{ tag }}</span>
-        </div>
+        {{ p.label }}
       </button>
-    </aside>
+    </div>
 
-    <!-- Main content -->
+    <!-- Main content — full width -->
     <main class="flex-1 overflow-y-auto p-6 bg-slate-900 space-y-6">
       <template v-if="project">
 
@@ -46,10 +35,9 @@
 
         <div class="border-t border-slate-700/50" />
 
-        <!-- Thing + Point stacked | Memory Anchors -->
+        <!-- Thing + Point | Memory Anchors -->
         <div class="flex gap-6 items-start">
 
-          <!-- Left: thing + point stacked -->
           <div class="w-[40%] shrink-0 space-y-4">
             <div>
               <div class="text-[10px] uppercase tracking-widest text-slate-500 mb-2">The thing</div>
@@ -61,7 +49,6 @@
             </div>
           </div>
 
-          <!-- Right: memory anchors -->
           <div class="flex-1 min-w-0">
             <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-3">
               Memory Anchors
@@ -80,12 +67,22 @@
 
         </div>
 
+        <!-- Stack -->
+        <div v-if="project.stack?.length">
+          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">
+            Stack
+          </div>
+          <div class="bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3">
+            <div v-for="(line, i) in project.stack" :key="i"
+                 class="text-[11px] font-mono text-slate-300 leading-relaxed whitespace-pre">{{ line }}</div>
+          </div>
+        </div>
+
         <div class="border-t border-slate-700/50" />
 
-        <!-- Must Know Cold + Likely Probes — side by side -->
+        <!-- Must Know Cold + Likely Probes -->
         <div class="flex gap-6 items-start">
 
-          <!-- Must Know Cold (40%) -->
           <div class="w-[40%] shrink-0">
             <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-3">
               Must Know Cold
@@ -96,7 +93,6 @@
             </div>
           </div>
 
-          <!-- Likely Probes (60%) -->
           <div class="flex-1 min-w-0">
             <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-3">
               Likely Probes
@@ -113,7 +109,6 @@
 
       </template>
     </main>
-
   </div>
 </template>
 

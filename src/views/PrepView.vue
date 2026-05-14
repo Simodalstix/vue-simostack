@@ -71,7 +71,7 @@
     <!-- Main content -->
     <main
       class="flex-1 bg-slate-900 text-slate-300"
-      :class="(['career', 'scenarios', 'linux', 'aws', 'questions', 'projects'].includes(activeSection)) ? 'overflow-hidden' : 'overflow-y-auto p-6'"
+      :class="(['career', 'scenarios', 'linux', 'aws', 'questions', 'projects', 'terraform', 'python'].includes(activeSection)) ? 'overflow-hidden' : 'overflow-y-auto p-6'"
     >
 
       <!-- Linux Raw -->
@@ -80,8 +80,11 @@
       <!-- AWS & Systems -->
       <AwsRawPane v-if="activeSection === 'aws'" />
 
-      <!-- IaC & Python -->
-      <IacPythonPane v-if="activeSection === 'iac'" />
+      <!-- Terraform -->
+      <TerraformPane v-if="activeSection === 'terraform'" />
+
+      <!-- Python -->
+      <PythonPane v-if="activeSection === 'python'" />
 
       <!-- STAR Stories -->
       <div v-if="activeKey === 'star-duo-mfa'">
@@ -109,8 +112,8 @@
         <CareerCard :card="starLearnCuriousCards[0]" />
       </div>
 
-      <!-- Career & Values -->
-      <CareerValuesPane v-if="activeSection === 'career'" />
+      <!-- Career Map -->
+      <CareerMapView v-if="activeSection === 'career'" />
 
       <!-- Scenarios -->
       <TroubleshootingPane v-if="activeSection === 'scenarios'" />
@@ -128,11 +131,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 import CareerCard          from '@/components/prep/CareerCard.vue'
-import CareerValuesPane    from '@/components/prep/CareerValuesPane.vue'
+import CareerMapView       from '@/components/prep/CareerMapView.vue'
 import TroubleshootingPane from '@/components/prep/TroubleshootingPane.vue'
 import LinuxRawPane        from '@/components/prep/LinuxRawPane.vue'
 import AwsRawPane          from '@/components/prep/AwsRawPane.vue'
-import IacPythonPane              from '@/components/prep/IacPythonPane.vue'
+import TerraformPane              from '@/components/prep/TerraformPane.vue'
+import PythonPane                 from '@/components/prep/PythonPane.vue'
 import InterviewerQuestionsPane  from '@/components/prep/InterviewerQuestionsPane.vue'
 import ProjectsPane              from '@/components/prep/ProjectsPane.vue'
 import { starComplexCards }          from '@/data/prep/starComplexCards.js'
@@ -153,7 +157,7 @@ const starSection = {
     { id: 'disagree-commit',  label: 'Disagree & Commit' },
     { id: 'highest-standards', label: 'Highest Standards' },
     { id: 'invent-simplify',  label: 'Invent & Simplify' },
-    { id: 'learn-curious',    label: 'Learn & Be Curious' },
+    { id: 'learn-curious',    label: 'Bias for Action' },
   ],
 }
 
@@ -169,8 +173,13 @@ const sections = [
     tabs: [],
   },
   {
-    id: 'iac',
-    label: 'IaC & Python',
+    id: 'terraform',
+    label: 'Terraform',
+    tabs: [],
+  },
+  {
+    id: 'python',
+    label: 'Python',
     tabs: [],
   },
   {

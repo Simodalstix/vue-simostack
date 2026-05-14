@@ -161,6 +161,35 @@ curl -s http://169.254.169.254/latest/meta-data/local-ipv4`,
   },
 
   {
+    heading: 'CURL — FLAGS AND PATTERNS',
+    code: String.raw`# Core flags — memorise these
+curl -I <url>                           # HEAD request — headers + status only
+curl -s <url>                           # silent — suppress progress meter
+curl -f <url>                           # fail — exit non-zero on 4xx/5xx (script-safe)
+curl -v <url>                           # verbose — full TLS handshake + headers + body
+curl -k <url>                           # insecure — skip TLS cert verification
+curl -L <url>                           # follow redirects
+curl -m 5 <url>                         # max time 5 seconds — hard timeout
+
+# Combinations used in scenarios
+curl -I https://app.example.com         # ALB check — what does the LB return?
+curl -sf http://localhost:8080/health   # silent + fail — health check in scripts
+curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/health
+                                        # status code only — pipe-friendly
+curl -v https://internal.api/health     # TLS + full response — debug certificate issues
+curl -m 5 -sf http://<ip>:8080/health && echo ok || echo FAIL
+
+# Adding headers and body
+curl -H 'Authorization: Bearer <token>' https://api/endpoint
+curl -X POST -H 'Content-Type: application/json' \
+  -d '{"key":"value"}' http://localhost:8080/api
+
+# Timing a request
+curl -s -o /dev/null -w '%{time_total}' http://localhost:8080/api/orders
+# time_total > 2.0 = slow endpoint — compare /health vs /api/* to isolate layer`,
+  },
+
+  {
     heading: 'RESOURCE PRESSURE — CPU / MEMORY / I/O',
     code: String.raw`uptime
 # Load average vs core count (nproc) — above core count = queue building
@@ -213,5 +242,40 @@ while true; do
   | load: $(uptime | awk -F'load average:' '{print $2}')"
   sleep 5
 done`,
+  },
+
+  {
+    heading: 'EDIT FILES IN PLACE — SED AND SUDO TEE',
+    code: String.raw`# sed — in-place substitution
+sed -i 's/old/new/' file                         # replace first match per line
+sed -i 's/old/new/g' file                        # replace all matches per line
+sed -i 's/^#\(Listen 80\)/\1/' /etc/httpd.conf   # uncomment a line
+sed -i '/^#/d' file                              # delete all comment lines
+sed -n '10,20p' file                             # print lines 10-20 without editing
+
+# Always preview before committing — drop -i to dry-run:
+sed 's/worker_processes 1/worker_processes 4/' /etc/nginx/nginx.conf
+# Output goes to stdout, file untouched — verify before adding -i
+
+# sudo tee — write to privileged files without running the whole pipe as root
+# (sudo echo > file doesn't work — the redirect runs as your user, not root)
+echo 'vm.swappiness=10' | sudo tee /etc/sysctl.d/99-swappiness.conf
+echo 'myapp soft nofile 65536' | sudo tee -a /etc/security/limits.conf
+# -a = append   without -a, tee overwrites the file entirely
+
+# Reload sysctl after writing — applies all /etc/sysctl.d/ files, no reboot needed
+sudo sysctl --system
+
+# Write a multi-line config block with tee + heredoc
+sudo tee /etc/systemd/system/myapp.service > /dev/null << 'EOF'
+[Service]
+ExecStart=/usr/local/bin/myapp
+Restart=on-failure
+RestartSec=5s
+EOF
+sudo systemctl daemon-reload && sudo systemctl restart myapp
+
+# tee to stdout and a file simultaneously — useful for logging output
+some-command | sudo tee /var/log/deploy.log`,
   },
 ]

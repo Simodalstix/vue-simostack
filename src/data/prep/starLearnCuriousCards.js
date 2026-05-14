@@ -1,6 +1,6 @@
 export const starLearnCuriousCards = [
   {
-    title: 'Strongroom — 4 Days Onboarding, Solo from Week One',
+    title: 'Strongroom — Solo from Day One',
     logo: '/images/companies/strongroom-logo.jpg',
     question: 'Tell me about a time you had to get up to speed quickly with no formal training.',
     anchors: [
@@ -9,8 +9,8 @@ export const starLearnCuriousCards = [
       { tag: '[DATA]', text: 'Local SQL Express + app installed — reproduced real workflows (Methadone setups, billing, reports) to build muscle memory before doing it live' },
       { tag: '[DATA]', text: 'SQL fix — told to wait for manager via TeamViewer. Assessed the risk (single field, single column), validated with AI, executed independently' },
       { tag: '[DATA]', text: 'Free SQL course + AI conversations on SSMS and SQL Server Configuration Manager — done outside work hours' },
-      { tag: '[LP]',   text: 'Learn and Be Curious — nobody told me to set up the lab, take the SQL course, or map the connection layer. I did it because I needed to understand it properly' },
       { tag: '[LP]',   text: 'Bias for Action — manager said wait. I assessed the risk, confirmed it was safe, and made the call' },
+      { tag: '[LP]',   text: 'Learn and Be Curious — nobody told me to set up the lab, take the SQL course, or map the connection layer. I did it because I needed to understand it properly' },
       { tag: '[LP]',   text: 'Deliver Results — measurable reduction in escalations, cannabis queries made me the go-to on a high-frequency issue type' },
       { tag: '[TONE]', text: 'Confident about the pace, not boastful. Don\'t apologise for the four months — own it.' },
     ],
@@ -42,6 +42,8 @@ Nobody told me to set up the local environment, take the SQL course, or map the 
       'Manager\'s default: join via TeamViewer and run it himself',
       'Understood what the command did, validated it with AI, confirmed single field on single column',
       'Assessed the risk and ran it myself — didn\'t wait',
+      '[DATA] SELECT * FROM user_roles WHERE user_id = ?    -- validate before touching',
+      '[DATA] UPDATE user_roles SET role = ? WHERE user_id = ?    -- single field, single row',
       '---',
       'RESULT',
       'Each category mastered was ~5% of call volume — ~30% fewer escalations in the first month',
@@ -52,7 +54,7 @@ Nobody told me to set up the local environment, take the SQL course, or map the 
       'First tech role — no roadmap, no one told me to build the lab or take the course',
       'The SQL moment was the proof point: I could assess risk independently and act',
     ],
-    lps: ['Learn and Be Curious', 'Bias for Action', 'Deliver Results'],
+    lps: ['Bias for Action', 'Learn and Be Curious', 'Deliver Results'],
     toneWarning: 'Confident about the pace, not boastful. Don\'t apologise for the four months — own it.',
   },
 ]

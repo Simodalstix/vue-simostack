@@ -29,10 +29,19 @@
 
     <!-- Prevention footer -->
     <div v-if="prevention?.length" class="pt-3 mt-1 border-t border-slate-700/50">
-      <span class="text-[9px] uppercase tracking-widest text-emerald-500/70 font-semibold mr-2">
-        Prevent
-      </span>
-      <span class="text-[10px] text-slate-400">{{ prevention.join(' · ') }}</span>
+      <div class="text-[11px] uppercase tracking-widest text-emerald-500/70 font-semibold mb-2">
+        Prevention
+      </div>
+      <ul class="space-y-1">
+        <li
+          v-for="item in prevention"
+          :key="item"
+          class="flex items-start gap-1.5 text-[12px] text-slate-300"
+        >
+          <span class="text-emerald-500/50 shrink-0 mt-px">›</span>
+          <span>{{ item }}</span>
+        </li>
+      </ul>
     </div>
 
   </div>
