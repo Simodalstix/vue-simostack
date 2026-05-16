@@ -8,74 +8,148 @@
 
         <!-- Boot chain -->
         <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1.5">Boot Chain</div>
-          <div class="space-y-0.5 text-[11px]">
-            <div class="flex gap-1.5 items-baseline">
-              <span class="text-slate-700 shrink-0">→</span>
-              <span><span class="text-amber-300/80">BIOS/UEFI</span><span class="text-slate-500"> — firmware, hardware init, locates bootloader</span></span>
+          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-2">Boot Chain — ownership transfer</div>
+          <div class="space-y-1.5 text-[11px]">
+
+            <div class="pl-2 border-l-2 border-slate-700/50 space-y-0">
+              <div class="text-amber-300/80 font-semibold">BIOS / UEFI</div>
+              <div class="text-slate-400">Firmware. Initialises hardware.</div>
+              <div class="text-slate-400">Finds first bootable media → hands off.</div>
+              <div class="text-slate-600 italic">Does not load the OS.</div>
             </div>
-            <div class="flex gap-1.5 items-baseline">
-              <span class="text-slate-700 shrink-0">→</span>
-              <span><span class="text-amber-300/80">GRUB</span><span class="text-slate-500"> — presents menu, loads kernel + initramfs into RAM</span></span>
+
+            <div class="text-slate-700 pl-2 leading-none">↓</div>
+
+            <div class="pl-2 border-l-2 border-slate-700/50 space-y-0">
+              <div class="text-amber-300/80 font-semibold">GRUB (bootloader)</div>
+              <div class="text-slate-400">Loads kernel + initramfs into RAM.</div>
+              <div class="text-slate-400">Passes kernel parameters (cmdline).</div>
+              <div class="text-slate-600 italic">Does not manage services or targets.</div>
+              <div class="text-orange-400/60 text-[10px]">Failure → boot menu drops. Edit kernel line: <code class="text-emerald-400/60">init=/bin/bash</code> for recovery shell.</div>
             </div>
-            <div class="flex gap-1.5 items-baseline">
-              <span class="text-slate-700 shrink-0">→</span>
-              <span><span class="text-amber-300/80">kernel</span><span class="text-slate-500"> — decompresses, detects hardware, mounts root FS</span></span>
+
+            <div class="text-slate-700 pl-2 leading-none">↓</div>
+
+            <div class="pl-2 border-l-2 border-slate-700/50 space-y-0">
+              <div class="text-amber-300/80 font-semibold">initramfs</div>
+              <div class="text-slate-400">Early userspace — runs entirely in RAM.</div>
+              <div class="text-slate-400">Loads storage, LVM, RAID drivers.</div>
+              <div class="text-slate-400">Mounts the real root filesystem.</div>
+              <div class="text-orange-400/60 text-[10px]">Failure → <span class="text-slate-400">cannot mount root filesystem</span> / dracut emergency shell.</div>
             </div>
-            <div class="flex gap-1.5 items-baseline">
-              <span class="text-slate-700 shrink-0">→</span>
-              <span><span class="text-amber-300/80">initramfs</span><span class="text-slate-500"> — early userspace, loads drivers, unlocks disk</span></span>
+
+            <div class="text-slate-700 pl-2 leading-none">↓</div>
+
+            <div class="pl-2 border-l-2 border-slate-700/50 space-y-0">
+              <div class="text-amber-300/80 font-semibold">kernel</div>
+              <div class="text-slate-400">Decompresses. Detects hardware.</div>
+              <div class="text-slate-400">Spawns PID 1 — control transfers permanently.</div>
+              <div class="text-slate-600 italic">Does not start services directly.</div>
             </div>
-            <div class="flex gap-1.5 items-baseline">
-              <span class="text-slate-700 shrink-0">→</span>
-              <span><span class="text-amber-300/80">systemd PID 1</span><span class="text-slate-500"> — first real process, takes over from kernel</span></span>
+
+            <div class="text-slate-700 pl-2 leading-none">↓</div>
+
+            <div class="pl-2 border-l-2 border-amber-500/30 space-y-0">
+              <div class="text-amber-300/80 font-semibold">systemd (PID 1)</div>
+              <div class="text-slate-400">First real process. Owns the rest of boot.</div>
+              <div class="text-slate-400">Reads unit files → resolves deps → activates targets.</div>
+              <div class="text-slate-400"><code class="text-emerald-400/60">multi-user.target</code> — servers. <code class="text-emerald-400/60">graphical.target</code> adds display.</div>
+              <div class="text-orange-400/60 text-[10px]">Unit failure → <code class="text-emerald-400/60">systemctl status &lt;unit&gt;</code> / <code class="text-emerald-400/60">journalctl -b -u &lt;unit&gt;</code></div>
             </div>
-            <div class="flex gap-1.5 items-baseline">
-              <span class="text-slate-700 shrink-0">→</span>
-              <span><span class="text-amber-300/80">target</span><span class="text-slate-500"> — multi-user.target or graphical.target</span></span>
-            </div>
-            <div class="flex gap-1.5 items-baseline">
-              <span class="text-slate-700 shrink-0">→</span>
-              <span><span class="text-amber-300/80">services</span><span class="text-slate-500"> — started by systemd units per target</span></span>
-            </div>
-            <div class="mt-2.5 pl-2.5 border-l-2 border-slate-700/60 text-[10px] text-slate-500 leading-snug space-y-1">
-              <div>Recovery: add <code class="text-emerald-400/70">init=/bin/bash</code> to kernel line in GRUB → drops to root shell before systemd. Useful for password reset or mount debugging.</div>
-              <div><code class="text-emerald-400/70">systemctl get-default</code> — shows the current boot target</div>
-            </div>
+
           </div>
         </div>
 
         <!-- Process model -->
         <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1.5">Process Model</div>
+          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-2">Process Model — scheduler view</div>
           <div class="text-[11px] space-y-1.5">
-            <div class="text-slate-400">Kernel scheduler (CFS) allocates CPU time in time slices. Every process is either using CPU, waiting for it, or waiting for I/O.</div>
-            <div class="space-y-0.5 mt-1">
-              <div><code class="text-emerald-400/80">R</code><span class="text-slate-500"> — running or runnable, on the CPU or in the run queue</span></div>
-              <div><code class="text-emerald-400/80">S</code><span class="text-slate-500"> — interruptible sleep, waiting for event or signal</span></div>
-              <div><code class="text-emerald-400/80 font-semibold">D</code><span class="text-slate-400"> — uninterruptible I/O wait — <span class="text-amber-300/70">cannot be killed</span></span></div>
-              <div><code class="text-emerald-400/80">Z</code><span class="text-slate-500"> — zombie, exited but parent hasn't reaped it</span></div>
-              <div><code class="text-emerald-400/80">T</code><span class="text-slate-500"> — stopped via SIGSTOP or debugger</span></div>
+
+            <div class="text-slate-500 leading-snug">CFS scheduler sees every process as a queue state — not a label to memorise.</div>
+
+            <div class="space-y-1 mt-0.5">
+              <div class="flex gap-2 items-baseline">
+                <code class="text-emerald-400/80 shrink-0 w-4">R</code>
+                <span class="text-slate-400">On CPU or waiting for CPU. Runnable.</span>
+              </div>
+              <div class="flex gap-2 items-baseline">
+                <code class="text-emerald-400/80 shrink-0 w-4">S</code>
+                <span class="text-slate-500">Sleeping — waiting for an event or signal. Killable.</span>
+              </div>
+              <div class="flex gap-2 items-baseline">
+                <code class="text-amber-300/80 font-bold shrink-0 w-4">D</code>
+                <span class="text-slate-400">Uninterruptible I/O wait. <span class="text-amber-300/70">Cannot be killed.</span> Storage pain.</span>
+              </div>
+              <div class="flex gap-2 items-baseline">
+                <code class="text-emerald-400/80 shrink-0 w-4">Z</code>
+                <span class="text-slate-500">Zombie — exited, parent hasn't reaped it. Holds a PID slot.</span>
+              </div>
+              <div class="flex gap-2 items-baseline">
+                <code class="text-emerald-400/80 shrink-0 w-4">T</code>
+                <span class="text-slate-500">Stopped by SIGSTOP or debugger.</span>
+              </div>
             </div>
-            <div class="mt-1.5 text-slate-500">Load average = count of R + D state processes. High load + low CPU = high D count = I/O bottleneck, not compute. Load average ≠ CPU utilisation.</div>
-            <div class="mt-1 text-slate-500"><code class="text-emerald-400/60">/proc/&lt;pid&gt;/</code> — live view: fd, maps, status, limits. The kernel's truth about any process.</div>
-            <div class="text-slate-500">cgroups enforce resource limits (CPU, memory, I/O) per process group — what containers use under the hood.</div>
+
+            <div class="border-t border-slate-700/40 pt-1.5 space-y-1 text-slate-500">
+              <div>Load avg = R + D count at any instant.</div>
+              <div><span class="text-slate-300">High load + low CPU</span> → high D count → I/O bottleneck, not compute.</div>
+              <div><span class="text-slate-300">High load + high CPU</span> → genuine compute pressure.</div>
+              <div><span class="text-slate-300">D state won't clear</span> until I/O completes or times out.</div>
+              <div class="text-slate-600 italic">CPU busy ≠ system healthy. Load average ≠ CPU utilisation.</div>
+            </div>
+
+            <div class="border-t border-slate-700/40 pt-1.5 space-y-0.5 text-slate-500">
+              <div><code class="text-emerald-400/60">/proc/&lt;pid&gt;/</code> — kernel's live truth: fd, maps, status, limits.</div>
+              <div>cgroups limit CPU, memory, I/O per group — what containers use under the hood.</div>
+            </div>
+
           </div>
         </div>
 
         <!-- Memory model -->
         <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1.5">Memory Model</div>
+          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-2">Memory Model — symptom thinking</div>
           <div class="text-[11px] space-y-1.5">
-            <div class="text-slate-400">Each process gets a private virtual address space. The MMU + kernel map virtual pages → physical pages transparently.</div>
-            <div class="space-y-0.5 mt-1">
-              <div><span class="text-sky-400/80">page fault</span><span class="text-slate-500"> — page not in RAM, kernel loads it from disk or swap. Normal unless constant.</span></div>
-              <div><span class="text-sky-400/80">page cache</span><span class="text-slate-500"> — kernel uses spare RAM to cache file reads. <code class="text-emerald-400/60">free -h</code> "available" includes this.</span></div>
-              <div><span class="text-sky-400/80">anon memory</span><span class="text-slate-500"> — heap + stack, not file-backed. <code class="text-emerald-400/60">anon-rss</code> in OOM output = actual RAM consumed.</span></div>
-              <div><span class="text-sky-400/80">swap</span><span class="text-slate-500"> — overflow when physical RAM exhausted. Swap in use = paging to disk on every access. Everything slows.</span></div>
+
+            <div class="text-slate-500 leading-snug">Each process has a private virtual address space. MMU maps virtual → physical transparently. Abstractions break down under pressure — that's when it matters.</div>
+
+            <div class="space-y-1.5 mt-0.5">
+
+              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0">
+                <div class="text-sky-400/80 font-semibold">page cache</div>
+                <div class="text-slate-400">Kernel fills spare RAM with cached file reads.</div>
+                <div class="text-slate-400">Repeated disk access hits RAM instead. Fast.</div>
+                <div class="text-slate-600 italic">Free RAM is wasted RAM. <code class="text-emerald-400/60">available</code> in <code class="text-emerald-400/60">free -h</code> includes reclaimable cache.</div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0">
+                <div class="text-sky-400/80 font-semibold">page fault</div>
+                <div class="text-slate-400">Page not in RAM — kernel must fetch it.</div>
+                <div class="text-slate-500">Minor = memory lookup (fast). Major = disk access (slow).</div>
+                <div class="text-orange-400/60 text-[10px]">Constant major faults = memory pressure. System feels sluggish before OOM.</div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0">
+                <div class="text-sky-400/80 font-semibold">anon memory</div>
+                <div class="text-slate-400">Heap + stack — not file-backed.</div>
+                <div class="text-slate-500"><code class="text-emerald-400/60">anon-rss</code> in OOM output = actual RAM this process consumed.</div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-amber-500/30 space-y-0">
+                <div class="text-amber-300/70 font-semibold">swap</div>
+                <div class="text-slate-400">RAM overflow area on disk.</div>
+                <div class="text-slate-400">Heavy swap = every access goes to disk.</div>
+                <div class="text-orange-400/60 text-[10px]">Latency explosion. <code class="text-emerald-400/60">vmstat 1</code> → <code class="text-emerald-400/60">si</code>/<code class="text-emerald-400/60">so</code> non-zero = you have a problem.</div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-red-700/40 space-y-0">
+                <div class="text-red-400/70 font-semibold">OOM killer</div>
+                <div class="text-slate-400">RAM + swap both exhausted. Kernel selects a process to kill.</div>
+                <div class="text-slate-500">Scores by anon memory usage — biggest anonymous consumer usually dies.</div>
+                <div class="text-orange-400/60 text-[10px]">Evidence: <code class="text-emerald-400/60">dmesg | grep -i killed</code> or <code class="text-emerald-400/60">journalctl -k</code>. Always follows a pattern.</div>
+              </div>
+
             </div>
-            <div class="mt-1.5 text-slate-500">OOM killer — RAM + swap both exhausted, kernel picks a process to kill. Scored by memory usage and heuristics. Evidence: <code class="text-emerald-400/60">dmesg | grep -i killed</code> or <code class="text-emerald-400/60">journalctl -k</code>.</div>
-            <div class="text-slate-500"><code class="text-emerald-400/60">free -h</code> — the <span class="text-slate-300">available</span> column is what matters, not free. Available = free + reclaimable page cache.</div>
           </div>
         </div>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 overflow-y-auto p-6 font-mono">
+  <div class="h-full overflow-y-auto p-6 font-mono">
 
     <div class="text-[10px] uppercase tracking-widest text-slate-500 mb-4">
       Research each interviewer before May 20 — tailor 1–2 questions per person
@@ -66,71 +66,67 @@ const interviewers = [
   {
     id: 'joel',
     name: 'Joel Pollett',
-    role: 'SDE II — Region Services',
+    role: 'Software Development Engineer II — Region Services',
     color: '#6366f1',
     insights: [
-      'Peer-level interviewer — likely assessing day-to-day technical fit',
-      'SDE II on the team you would join — knows what the actual work looks like',
-      'Questions from him will be practical and grounded in real operations',
-      'This is a two-way conversation — he is also selling you on the team',
+      'Peer-level — knows what the actual day-to-day work looks like from the inside',
+      'This is genuinely two-way: he is also sizing up whether you would be good to work with',
+      'Practical and grounded — his questions will be about real operations, not theory',
+      'He can tell you things a hiring manager will not say out loud',
     ],
     questions: [
-      'What does a typical on-call week actually look like, and how does the team run postmortems when something goes wrong?',
-      'What separates the engineers who thrive on this team from the ones who struggle?',
+      'What\'s something about working on this team that genuinely surprised you when you first joined?',
+      'Is there a type of problem that comes up in this work that you\'ve found yourself actually starting to enjoy?',
     ],
   },
   {
     id: 'bojan',
     name: 'Bojan Smojver',
-    role: 'AWS — no public profile',
+    role: 'Unknown — Principal Engineer?',
     color: '#10b981',
     insights: [
       'No LinkedIn presence — intentionally low profile, common in cleared/security-adjacent roles',
-      'Has contributed patches to the Linux kernel — LZO hibernation performance (2011)',
-      'Active in Australian Linux/security community since at least 2002',
-      'Depth over breadth — cares about genuine understanding, not command recall',
-      'Will respect intellectual honesty and "I don\'t know but here\'s how I\'d find out"',
-      'Do not try to impress with surface knowledge — he will see through it immediately',
+      'Has contributed patches to the Linux kernel — depth is real, not a line on a CV',
+      'Active in Australian Linux and open source community for a long time',
+      'Cares about genuine understanding — intellectual honesty lands better than confident wrong answers',
+      'Do not try to impress with surface knowledge — ask things you are actually curious about',
     ],
     questions: [
-      'What\'s the most interesting low-level system behaviour you\'ve encountered operating at AWS scale?',
-      'How does working with Linux at this scale change how you think about problems you\'d normally solve differently on a single machine?',
+      'Do you still run into Linux behaviour at this scale that genuinely surprises you, or does it start to feel predictable after a while?',
+      'Is there a particular area you\'re deep in right now that you find yourself thinking about outside of work?',
     ],
   },
   {
     id: 'michael',
     name: 'Michael Aquilina',
-    role: 'Hiring Manager — Region Services',
+    role: 'Systems Development Manager — Region Services',
     color: '#f97316',
     insights: [
-      'Already has context from the phone screen — he advocated for you to get this loop',
-      'Knows your background and saw something worth pursuing',
-      'Will likely cover motivation, fit, and technical depth — not just process knowledge',
-      'Prior relationship is a confidence signal, not a scoring advantage — still scores independently',
+      'Already has context — he saw something in the phone screen and pushed for the loop',
+      'Prior relationship is a confidence signal, not a free pass — he still scores independently',
       'He asked the disk space / script question in the phone screen — that pattern may recur',
+      'Can speak candidly about the team in a way others in the loop will not',
     ],
     questions: [
-      'What made you build Region Services the way you have — what problem were you specifically solving?',
-      'What does the on-call rotation look like in practice, and how has the team improved it over time?',
+      'What\'s something about the culture here that people don\'t fully appreciate until they\'re actually in it?',
+      'What would success look like for someone joining the team right now — what would make you think that\'s exactly who we needed?',
     ],
   },
   {
     id: 'baljeet',
     name: 'Baljeet Singh',
-    role: 'Engineering Manager — AWS (Mar 2025)',
+    role: 'Engineering Manager — AWS',
     color: '#0ea5e9',
     insights: [
-      'Most likely bar raiser — EM role gives him independence from the hiring team',
-      '17+ years in cybersecurity and technical leadership — not a generalist',
-      'Previous: Senior EM at Commonwealth Bank, Founder at Zyg (DevSecOps consultancy), EIR at Antler',
-      'Deep specialisation: cloud security at scale, DevSecOps, containers, Kubernetes',
+      'Most likely bar raiser — Engineering Manager role gives him full independence from the hiring team',
+      '17+ years across cybersecurity, technical leadership, DevSecOps — not a generalist',
+      'Previous: Senior Engineering Manager at Commonwealth Bank, Founder at Zyg, Entrepreneur in Residence at Antler',
       'Will push on security thinking — clearance context, IAM, least privilege, audit trails',
-      'Bar raiser has effective veto power — must perform as if Michael is not in the room',
-      'Expect LP-heavy questions — he will probe ownership, dive deep, earn trust specifically',
+      'Bar raiser has effective veto power — perform as if Michael is not in the room',
     ],
     questions: [
-      'With the clearance requirement and isolated regions, how does the security posture here differ from commercial AWS — and what does that mean for how engineers operate day to day?',
-      'What does the intersection of DevSecOps and systems engineering look like on this team?',
+      'As an engineering manager here — does that mean you\'re managing other engineering managers as well, or are you working closer to the individual engineers day-to-day?',
+      'What\'s the most important thing you\'ve learned about communicating well across those different layers?',
     ],
   },
 ]

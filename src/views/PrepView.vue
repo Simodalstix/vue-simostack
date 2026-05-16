@@ -71,7 +71,7 @@
     <!-- Main content -->
     <main
       class="flex-1 bg-slate-900 text-slate-300"
-      :class="(['career', 'scenarios', 'linux', 'aws', 'questions', 'projects', 'terraform', 'python', 'proxmox'].includes(activeSection)) ? 'overflow-hidden' : 'overflow-y-auto p-6'"
+      :class="(['career', 'scenarios', 'linux', 'aws', 'questions', 'projects', 'python', 'proxmox'].includes(activeSection)) ? 'overflow-hidden' : 'overflow-y-auto p-6'"
     >
 
       <!-- Linux Raw -->
@@ -79,9 +79,6 @@
 
       <!-- AWS & Systems -->
       <AwsRawPane v-if="activeSection === 'aws'" />
-
-      <!-- Terraform -->
-      <TerraformPane v-if="activeSection === 'terraform'" />
 
       <!-- Python -->
       <PythonPane v-if="activeSection === 'python'" />
@@ -138,7 +135,6 @@ import CareerMapView       from '@/components/prep/CareerMapView.vue'
 import TroubleshootingPane from '@/components/prep/TroubleshootingPane.vue'
 import LinuxRawPane        from '@/components/prep/LinuxRawPane.vue'
 import AwsRawPane          from '@/components/prep/AwsRawPane.vue'
-import TerraformPane              from '@/components/prep/TerraformPane.vue'
 import PythonPane                 from '@/components/prep/PythonPane.vue'
 import ProxmoxNetPane             from '@/components/prep/ProxmoxNetPane.vue'
 import InterviewerQuestionsPane  from '@/components/prep/InterviewerQuestionsPane.vue'
@@ -174,11 +170,6 @@ const sections = [
   {
     id: 'aws',
     label: 'AWS & Systems',
-    tabs: [],
-  },
-  {
-    id: 'terraform',
-    label: 'Terraform',
     tabs: [],
   },
   {

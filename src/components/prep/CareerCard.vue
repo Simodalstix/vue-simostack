@@ -52,32 +52,10 @@
           </div>
         </div>
 
-        <!-- Right: Toggle + content (60%) -->
+        <!-- Right: Structured cues (60%) -->
         <div class="col-span-3 p-4 flex flex-col gap-3">
 
-          <!-- Toggle -->
-          <div class="flex gap-1 shrink-0">
-            <button
-              @click="mode = 'rehearsal'"
-              class="text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded border transition-colors duration-100"
-              :class="mode === 'rehearsal'
-                ? 'bg-orange-500/15 text-orange-300 border-orange-500/30'
-                : 'text-slate-500 border-transparent hover:text-slate-300'"
-            >Rehearsal</button>
-            <button
-              @click="mode = 'anchors'"
-              class="text-[10px] uppercase tracking-widest px-2.5 py-0.5 rounded border transition-colors duration-100"
-              :class="mode === 'anchors'
-                ? 'bg-orange-500/15 text-orange-300 border-orange-500/30'
-                : 'text-slate-500 border-transparent hover:text-slate-300'"
-            >Anchors</button>
-          </div>
-
-          <!-- Rehearsal: full prose -->
-          <div v-if="mode === 'rehearsal'" class="text-slate-300 leading-relaxed whitespace-pre-wrap flex-1">{{ card.rehearsal }}</div>
-
-          <!-- Anchors: structured cues -->
-          <div v-else class="flex-1 space-y-1.5">
+          <div class="flex-1 space-y-1.5">
             <template v-for="(cue, i) in card.cues" :key="i">
               <div v-if="cue === '---'" class="border-t border-slate-700/50 my-2" />
               <div v-else-if="isStarSection(cue)" class="text-orange-300 font-semibold tracking-wide mt-2 first:mt-0">
@@ -103,11 +81,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
 defineProps({ card: Object })
-
-const mode = ref('rehearsal')
 
 import { LP_COLORS, LP_SHORT_NAMES } from '@/data/prep/lpConstants.js'
 

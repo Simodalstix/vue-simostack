@@ -57,7 +57,7 @@ What stayed with me was how much the redirect URL mattered. A generic access den
     logo: '/images/project-icons/Packer.svg',
     question: 'Tell me about something technical you built that you\'re proud of.',
     anchors: [
-      { tag: '[DATA]', text: 'Image management kept coming up as a core pattern in serious systems work — recognised a genuine gap' },
+      { tag: '[DATA]', text: 'Recognised AMI management as foundational to AWS at scale — underpins DR, fleet consistency, reproducible deployments. Deliberate learning target.' },
       { tag: '[DATA]', text: 'Chose Packer deliberately — cloud-agnostic, industry standard, not AWS-specific' },
       { tag: '[DATA]', text: 'Two-layer pipeline: base → app. Each build ~10–15 min on a t3.small' },
       { tag: '[DATA]', text: 'SSM Parameter Store as config bus — zero hardcoded AMI IDs anywhere' },
@@ -79,8 +79,8 @@ I also added a verify_build.sh that runs inside the builder instance before the 
 The SSM pattern was the real insight — once you wire infrastructure to reference a parameter rather than a hardcoded value, you start seeing where else that applies. It's the same principle as not hardcoding container image tags. And the pre-baked images have a direct connection to DR — an ASG in a recovery region launching from a known-good AMI is meaningfully faster than bootstrapping from scratch at launch time.`,
     cues: [
       'SITUATION',
-      'Image management kept coming up as a core pattern in serious systems work',
-      'Had a genuine gap — decided to learn it properly, not just read about it',
+      'Recognised AMI management as foundational to AWS at scale — underpins DR, fleet consistency, reproducible deployments',
+      'Deliberate learning target — closed the gap properly, built the full pipeline',
       '---',
       'ACTION',
       'Chose Packer deliberately — cloud-agnostic, industry standard, transferable',
