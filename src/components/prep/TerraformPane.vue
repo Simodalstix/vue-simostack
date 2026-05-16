@@ -32,7 +32,7 @@
       </div>
 
       <!-- S3 Bucket Example -->
-      <div class="border border-slate-700/50 rounded-lg bg-slate-800/25 overflow-hidden">
+      <div class="row-span-2 border border-slate-700/50 rounded-lg bg-slate-800/25 overflow-hidden">
         <div class="px-3 py-2 border-b border-slate-700/40">
           <span class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold">S3 Bucket Example</span>
         </div>
@@ -69,22 +69,10 @@
         </div>
       </div>
 
-      <!-- Speak This Out Loud -->
-      <div class="border border-slate-700/50 rounded-lg bg-slate-800/25 overflow-hidden">
-        <div class="px-3 py-2 border-b border-slate-700/40">
-          <span class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold">Speak This Out Loud</span>
-        </div>
-        <div class="px-3 py-2.5 space-y-2 text-[11px]">
-          <div class="pl-3 border-l-2 border-amber-500/40 text-slate-300 italic leading-relaxed">"Terraform is declarative — I describe the end state and let it work out the plan."</div>
-          <div class="pl-3 border-l-2 border-amber-500/40 text-slate-300 italic leading-relaxed">"I always run plan before apply. It's the diff before the commit — non-negotiable."</div>
-          <div class="pl-3 border-l-2 border-amber-500/40 text-slate-300 italic leading-relaxed">"Remote state with DynamoDB locking is how a team uses Terraform safely — without it, two concurrent applies will corrupt state."</div>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Bottom row — 50/50 -->
-    <div class="grid grid-cols-2 gap-3">
+    <!-- Bottom row — 3-col -->
+    <div class="grid grid-cols-3 gap-3">
 
       <!-- CDK vs Terraform -->
       <div class="border border-slate-700/50 rounded-lg bg-slate-800/25 overflow-hidden">
@@ -136,12 +124,26 @@
         <div class="px-3 py-2 border-b border-slate-700/40">
           <span class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold">Interview Talking Points</span>
         </div>
-        <div class="px-3 py-2.5 space-y-1.5 text-[11px]">
-          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">Terraform is declarative — describe end state, it figures out the plan.</span></div>
-          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300"><span class="text-sky-300">plan</span> before <span class="text-sky-300">apply</span> every time — it's the diff before the commit.</span></div>
-          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">Remote state in S3 + DynamoDB locking = safe team collaboration.</span></div>
-          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">State drift: infra changed outside Terraform. <span class="text-sky-300">plan</span> reveals the gap.</span></div>
-          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">Don't mix CDK and Terraform ownership for the same resources.</span></div>
+        <div class="px-3 py-2.5 space-y-2 text-[11px]">
+          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">Declarative means TF owns the diff — HCL describes end state, TF builds a <span class="text-sky-300">dependency graph (DAG)</span> to reach it. Idempotent: same config → same outcome.</span></div>
+          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300"><span class="text-sky-300">plan -out</span> in CI freezes the diff so apply executes exactly what was reviewed. Without it there's a race between plan and apply.</span></div>
+          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">S3 stores state, DynamoDB provides a <span class="text-sky-300">single-writer lock</span>. Two concurrent applies without it → state corruption, no clean rollback.</span></div>
+          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">State drift: plan on untouched code still shows changes if someone edited in console. Fix: <span class="text-sky-300">terraform import</span> to adopt it, or realign the real resource.</span></div>
+          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300"><span class="text-sky-300">for_each</span> over <span class="text-sky-300">count</span> for lists — count uses a numeric index so renaming an item destroys everything after it. for_each uses a stable string key.</span></div>
+          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">State holds secrets in <span class="text-sky-300">plaintext</span> — restrict the S3 bucket, enable SSE, never commit tfstate to git.</span></div>
+          <div class="flex gap-1.5"><span class="text-slate-500 shrink-0">•</span><span class="text-slate-300">Don't share resource ownership with CDK — two tools managing the same resource means last apply wins and breaks the other.</span></div>
+        </div>
+      </div>
+
+      <!-- Speak This Out Loud -->
+      <div class="border border-slate-700/50 rounded-lg bg-slate-800/25 overflow-hidden">
+        <div class="px-3 py-2 border-b border-slate-700/40">
+          <span class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold">Speak This Out Loud</span>
+        </div>
+        <div class="px-3 py-2.5 space-y-2 text-[11px]">
+          <div class="pl-3 border-l-2 border-amber-500/40 text-slate-300 italic leading-relaxed">"plan -out saves the exact plan to a file so CI applies precisely what was reviewed. Without it there's a race condition between plan and apply."</div>
+          <div class="pl-3 border-l-2 border-amber-500/40 text-slate-300 italic leading-relaxed">"plan on a clean codebase still shows changes if someone touched the resource manually — that's drift, and it's how you catch console cowboys."</div>
+          <div class="pl-3 border-l-2 border-amber-500/40 text-slate-300 italic leading-relaxed">"state rm removes a resource from state without destroying it — useful when you want Terraform to stop managing something without touching the real resource."</div>
         </div>
       </div>
 

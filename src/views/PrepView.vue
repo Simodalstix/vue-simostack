@@ -71,7 +71,7 @@
     <!-- Main content -->
     <main
       class="flex-1 bg-slate-900 text-slate-300"
-      :class="(['career', 'scenarios', 'linux', 'aws', 'questions', 'projects', 'terraform', 'python'].includes(activeSection)) ? 'overflow-hidden' : 'overflow-y-auto p-6'"
+      :class="(['career', 'scenarios', 'linux', 'aws', 'questions', 'projects', 'terraform', 'python', 'proxmox'].includes(activeSection)) ? 'overflow-hidden' : 'overflow-y-auto p-6'"
     >
 
       <!-- Linux Raw -->
@@ -85,6 +85,9 @@
 
       <!-- Python -->
       <PythonPane v-if="activeSection === 'python'" />
+
+      <!-- Proxmox & Networking -->
+      <ProxmoxNetPane v-if="activeSection === 'proxmox'" />
 
       <!-- STAR Stories -->
       <div v-if="activeKey === 'star-duo-mfa'">
@@ -137,6 +140,7 @@ import LinuxRawPane        from '@/components/prep/LinuxRawPane.vue'
 import AwsRawPane          from '@/components/prep/AwsRawPane.vue'
 import TerraformPane              from '@/components/prep/TerraformPane.vue'
 import PythonPane                 from '@/components/prep/PythonPane.vue'
+import ProxmoxNetPane             from '@/components/prep/ProxmoxNetPane.vue'
 import InterviewerQuestionsPane  from '@/components/prep/InterviewerQuestionsPane.vue'
 import ProjectsPane              from '@/components/prep/ProjectsPane.vue'
 import { starComplexCards }          from '@/data/prep/starComplexCards.js'
@@ -180,6 +184,11 @@ const sections = [
   {
     id: 'python',
     label: 'Python',
+    tabs: [],
+  },
+  {
+    id: 'proxmox',
+    label: 'Proxmox & Networking',
     tabs: [],
   },
   {

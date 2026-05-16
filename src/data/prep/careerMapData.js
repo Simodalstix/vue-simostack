@@ -8,7 +8,7 @@ export const careerBlocks = [
 
 export const careerQuestions = [
   {
-    label: 'About yourself', full: 'Tell me about yourself.',
+    label: 'Tell me about yourself', full: 'Tell me about yourself.',
     blockAnchors: {
       0: ['Pharmacy: natural fit — science, health, helping people', "Environment didn't reward curiosity — ceiling became obvious"],
       1: ['Went all in: study, labs, certs as structured milestones', '"I absorb things by building and breaking, not just reading"', 'Healthtech startup — natural bridge. Intentional sequencing.', 'MSP: breadth, varied clients, real production at pace'],
@@ -16,13 +16,13 @@ export const careerQuestions = [
     },
   },
   {
-    label: 'Most proud of', full: 'What are you most proud of professionally?',
+    label: "What are you most proud of?", full: 'What are you most proud of professionally?',
     blockAnchors: {
       0: ['The career transition — not a project, not a cert', 'Left pharmacy with no tech track record', 'Real doubt — people close to me pushing back', 'Pushed through, landed a role in a tough market. Let it land.'],
     },
   },
   {
-    label: 'Why AWS', full: 'Why AWS? Why this role?',
+    label: 'Why AWS, why this role?', full: 'Why AWS? Why this role?',
     blockAnchors: {
       2: ['Pharmacy eventually made me one of the most capable people in the room — visible ceiling', 'AWS is the opposite — constant depth, stronger people everywhere, endless room to grow'],
       1: ['Linux + AWS is where I naturally spend time — labs, debugging, building, breaking things', 'Automation is expected here, not optional — scripting and tooling are part of the work', 'Want to become extremely strong: Python, Bash, Linux tooling, operational workflows'],
@@ -31,23 +31,24 @@ export const careerQuestions = [
     },
   },
   {
-    label: 'Why Systems Eng.', full: 'Why Systems Engineering specifically?',
+    label: 'Why systems engineering?', full: 'Why Systems Engineering specifically?',
     blockAnchors: {
       1: ['CLI → logs → root cause → automate the problem away', 'Turning repeated operational pain into tooling genuinely appeals to me'],
       2: ['Strong systems engineers understand Linux, networking, debugging and automation deeply', 'That foundation compounds into everything else I want to become technically'],
+      4: ['Build to learn — understanding comes from breaking things, not reading about them', 'Systems thinking — how components interact, not just what each one does', 'Comfortable with ambiguity — can move forward with incomplete information and iterate'],
       5: ["The people strongest at systems engineering tend to think clearly under pressure — that's the environment I want", 'I learn fastest around people operating at a high technical level'],
     },
   },
   {
-    label: 'Next role', full: 'What are you looking for in your next role?',
+    label: "What are you looking for in a new role?", full: 'What are you looking for in your next role?',
     blockAnchors: {
-      2: ['Environment where learning is expected and the work is genuinely complex', 'Systems engineering at AWS — say it directly'],
+      2: ['Environment where learning is expected and the work is genuinely complex', 'Systems engineering at AWS — say it directly', 'Root cause instinct — not satisfied until I know why, not just what', 'Ownership by default — sees things through, doesn\'t throw problems over fences'],
       1: ['Depth — building and troubleshooting real systems, not supporting from outside'],
       4: ['Genuinely want complex, intellectually demanding work — not just a step up'],
     },
   },
   {
-    label: 'Success', full: 'What does success look like to you?',
+    label: 'What does success look like for you?', full: 'What does success look like to you?',
     blockAnchors: {
       4: ['Genuine fluency — sit in complex situations and feel like I belong', 'Real depth. Not cert-shaped depth — actually knowing why things behave the way they do'],
       1: ['Build deep troubleshooting ability across Linux, networking and core AWS services', 'Eventually validate that depth with a professional-level cert — likely DevOps Professional'],
@@ -58,12 +59,12 @@ export const careerQuestions = [
 
 export const standaloneItems = [
   {
-    label: "Biggest weakness",
+    label: "What's your biggest weakness?",
     full: "What's your biggest weakness?",
     anchors: ['Brain reaches for complex before ruling out simple', "Real cause often something simpler I haven't seen hands-on", 'Fix: pause, clarifying questions, check obvious layer first', 'Usually leads to faster resolutions anyway'],
   },
   {
-    label: 'Handle mistakes',
+    label: 'How do you handle making a mistake?',
     full: 'How do you handle making a mistake?',
     anchors: ["Mistakes stick in a way reading doesn't — set the frame", 'Offboarding error — deactivated user a week early', 'Owned immediately, fixed fast, transparent with manager + requestor', 'Changed permanently — effective date is the first thing checked now'],
   },

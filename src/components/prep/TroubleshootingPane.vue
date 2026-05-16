@@ -2,15 +2,15 @@
   <div class="flex flex-col h-full overflow-hidden font-mono">
 
     <!-- Scenario tab bar -->
-    <div class="shrink-0 flex gap-1.5 px-4 py-2 border-b border-slate-700 bg-slate-800/20 flex-wrap">
+    <div class="shrink-0 flex border-b border-slate-700 bg-slate-800/20 flex-wrap">
       <button
         v-for="(s, i) in scenarios"
         :key="s.id"
         @click="selectedTab = i"
-        class="px-3 py-1 text-[12px] rounded border transition-colors"
+        class="px-4 py-2 text-[12px] border-r border-slate-700/60 border-b-2 -mb-px transition-colors"
         :class="selectedTab === i
-          ? 'text-orange-300 bg-orange-500/15 border-orange-400/40'
-          : 'text-slate-400 hover:text-slate-200 bg-slate-800/40 border-slate-700/40 hover:bg-slate-700/30'"
+          ? 'text-orange-300 border-b-orange-400 bg-orange-500/10'
+          : 'text-slate-400 hover:text-slate-200 border-b-transparent'"
       >{{ s.label }}</button>
     </div>
 

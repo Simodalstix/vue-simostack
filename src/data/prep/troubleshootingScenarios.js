@@ -5,14 +5,14 @@ export const scenarios = [
     label: "Can't Reach It",
     spineGroups: [
       { id: 'dns',
-        layers: [{ layer: 'dns', tool: 'dig', status: 'cleared', signal: 'resolves' }] },
+        layers: [{ layer: 'dns', tool: 'dig app.example.com', status: 'cleared', signal: 'resolves' }] },
 
       { id: 'alb',
-        layers: [{ layer: 'alb', tool: 'curl -I', status: 'cleared', signal: 'responds' }] },
+        layers: [{ layer: 'alb', tool: 'curl -I https://app.example.com', status: 'cleared', signal: 'responds' }] },
 
       { id: 'targetgroup',
         layers: [{
-          layer: 'targetgroup', tool: 'aws elbv2', status: 'stuck', signal: '',
+          layer: 'targetgroup', tool: 'aws elbv2 describe-target-health --target-group-arn <arn>', status: 'stuck', signal: '',
           branches: [
             { signal: '503', meaning: 'no healthy targets — all instances down or not registered' },
             { signal: '502', meaning: 'targets exist but not responding — investigate instance' },
@@ -75,7 +75,7 @@ export const scenarios = [
         interpretation: 'The service is down or misconfigured. Root cause is at the Process or App layer.',
         nextHop: 'Read the exit code — it determines the branch.',
         validate: [
-          { cmd: 'systemctl status myapp', lookFor: 'failed = crashed. inactive = stopped intentionally. activating = stuck starting. exit code 137 = OOM killed.' },
+          { cmd: 'systemctl status myapp', lookFor: '`failed` = crashed or exited non-zero — systemd will restart. `inactive` = stopped, not scheduled to restart — usually intentional. `activating` = stuck in startup. exit code 137 = OOM killed.' },
           { cmd: 'journalctl -u myapp -n 100', lookFor: 'the last lines before the crash — config error / dependency missing / port conflict' },
           { cmd: 'journalctl -b -1 -u myapp', lookFor: 'if the crash was on a previous boot — OOM / kernel kill events' },
         ],
@@ -98,12 +98,12 @@ export const scenarios = [
     rootCauses: [
       {
         cause: 'Process not listening on expected port',
-        fix: 'Service crashed or was never started. Restart and check journalctl for the reason.',
-        cmd: 'systemctl restart myapp && journalctl -u myapp -n 30',
+        fix: 'Collect evidence first — read journalctl before restarting. The reason is in the last log lines before the crash.',
+        cmd: 'journalctl -u myapp -n 30 && systemctl restart myapp',
       },
       {
         cause: 'Process bound to 127.0.0.1 (localhost only)',
-        fix: 'App config has bind address set to localhost. Update to 0.0.0.0 and restart — ALB cannot reach a process bound to loopback.',
+        fix: 'App config has bind address set to localhost. Validate the current bind address before changing, then update to 0.0.0.0 and restart — ALB cannot reach a process bound to loopback.',
         cmd: 'ss -tlnp | grep 8080  # confirm bind address before and after fix',
       },
       {
@@ -116,7 +116,7 @@ export const scenarios = [
       },
       {
         cause: 'HealthCheckGracePeriod too short',
-        fix: 'App not ready when first check fires on a new instance. Set grace period to actual measured startup time plus a buffer.',
+        fix: 'App not ready when first check fires on a new instance. Measure actual startup time, then set grace period to that value plus a buffer.',
       },
       {
         cause: 'SSH blocked, no SSM role',
@@ -125,7 +125,7 @@ export const scenarios = [
     ],
 
     rollback: [
-      "If a bad deployment caused the issue, roll back before investigating further — restore service first, then find root cause.",
+      "Restore service first, then investigate root cause — do not layer further changes onto a broken state.",
       "**Blue/green:** flip the ALB listener back to the stable target group — traffic shifts in seconds, no rebuild needed.",
       { cmd: 'aws elbv2 modify-listener --listener-arn <arn> --default-actions Type=forward,TargetGroupArn=<stable-tg-arn>' },
       "**Rolling deploy:** redeploy the previous AMI ID from Parameter Store.",
@@ -139,7 +139,7 @@ echo "Rolling back to: $BASE"` },
         q: 'ALB returning 502. Walk me through what you check.',
         a: [
           '502 = bad gateway — ALB is up, its targets are not responding',
-          'Check target group: `aws elbv2 describe-target-health`',
+          'Isolate the layer: `aws elbv2 describe-target-health --target-group-arn <arn>`',
           'Test from instance directly: `curl -s http://localhost:8080/health`',
           'Process down → systemctl + journalctl. Process up but 127.0.0.1 bound → fix bind address',
         ],
@@ -171,9 +171,10 @@ echo "Rolling back to: $BASE"` },
       {
         q: 'SG vs NACL — the key operational difference.',
         a: [
-          'SG = stateful, instance-level, allow-only rules — return traffic automatic',
-          'NACL = stateless, subnet-level, allow and deny — both directions must be explicit',
-          'NACL missing outbound ephemeral (1024-65535) = SSH or response traffic silently dropped',
+          'SG = stateful, instance-level, allow-only rules — return traffic is automatic, no explicit outbound rule needed',
+          'NACL = stateless, subnet-level, allow and deny — both inbound and outbound must be explicitly permitted',
+          'NACL missing outbound ephemeral (1024-65535) = response traffic silently dropped',
+          'Default NACL allows all traffic including ephemeral ports — custom NACLs must add ephemeral outbound rules explicitly',
         ],
       },
     ],
@@ -185,13 +186,13 @@ echo "Rolling back to: $BASE"` },
     label: "It's Slow",
     spineGroups: [
       { id: 'dns',
-        layers: [{ layer: 'dns', tool: 'dig', status: 'cleared', signal: 'resolves' }] },
+        layers: [{ layer: 'dns', tool: 'dig app.example.com', status: 'cleared', signal: 'resolves' }] },
 
       { id: 'alb',
-        layers: [{ layer: 'alb', tool: 'curl -I', status: 'cleared', signal: '200 — TargetResponseTime high' }] },
+        layers: [{ layer: 'alb', tool: 'curl -I https://app.example.com', status: 'cleared', signal: '200 — TargetResponseTime high' }] },
 
       { id: 'targetgroup',
-        layers: [{ layer: 'targetgroup', tool: 'aws elbv2', status: 'cleared', signal: 'targets healthy' }] },
+        layers: [{ layer: 'targetgroup', tool: 'aws elbv2 describe-target-health --target-group-arn <arn>', status: 'cleared', signal: 'targets healthy' }] },
 
       { id: 'instance', label: 'Instance',
         layers: [
@@ -212,8 +213,8 @@ echo "Rolling back to: $BASE"` },
           layer: 'data', tool: 'ss / CW RDS', status: 'failing', signal: '',
           branches: [
             { signal: 'connections near max', meaning: 'pool exhaustion — add RDS Proxy' },
-            { signal: 'slow query log',       meaning: 'specific query needs index' },
-            { signal: 'cache hit rate low',   meaning: 'cold cache or invalidation bug' },
+            { signal: 'slow query log',       meaning: 'identify specific query, then evaluate indexing' },
+            { signal: 'cache hit rate low',   meaning: 'cold cache, short TTL, eviction pressure, or bad invalidation' },
           ]
         }]
       },
@@ -238,11 +239,11 @@ echo "Rolling back to: $BASE"` },
         type: 'decision',
         signal: 'high %iowait',
         color: 'amber',
-        interpretation: 'CPU is idle but waiting for disk I/O. EBS is saturated or gp2 burst credits are exhausted. The OS metric understates the problem — check CloudWatch.',
-        nextHop: 'Check CloudWatch VolumeQueueLength — above 1 is the real signal.',
+        interpretation: 'CPU is idle but waiting for disk I/O. Signal chain: system slows gradually under sustained load → VolumeQueueLength rises → BurstBalance drains → iowait climbs while CPU stays low. This is the gp2 burst exhaustion pattern. The OS metric understates the problem — validate in CloudWatch.',
+        nextHop: 'Check CloudWatch VolumeQueueLength and BurstBalance — queue above 1 and draining credits confirm gp2 exhaustion.',
         validate: [
           { cmd: 'iostat -x 1', lookFor: '%iowait > 10% and %util near 100% = disk saturated' },
-          { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/EBS --metric-name VolumeQueueLength ...', lookFor: 'above 1 = queue building. gp2 burst credits exhausted = gets worse over time' },
+          { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/EBS --metric-name VolumeQueueLength ...', lookFor: 'above 1 = queue building. check BurstBalance alongside — if draining, gp2 credits are the cause' },
         ],
       },
 
@@ -262,22 +263,22 @@ echo "Rolling back to: $BASE"` },
         type: 'decision',
         signal: 'cache hit rate low',
         color: 'rose',
-        interpretation: 'ElastiCache is serving misses — queries are falling through to RDS that should be cached. Either the cache is cold after a restart, or an invalidation bug is evicting keys too aggressively.',
+        interpretation: 'ElastiCache is serving misses — queries falling through to RDS that should be cached. A cache miss spike directly increases downstream DB load. Causes: cold cache after restart, TTL too short, eviction pressure (maxmemory-policy too aggressive), or bad invalidation logic clearing keys on every write.',
         nextHop: 'Check when the cache was last restarted and trace the cache invalidation logic.',
         validate: [
-          { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/ElastiCache --metric-name CacheHitRate ...', lookFor: 'sudden drop = cache restart or key eviction. gradual decline = TTL too short or over-invalidation' },
+          { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/ElastiCache --metric-name CacheHitRate ...', lookFor: 'sudden drop = cache restart or mass eviction. gradual decline = TTL too short or over-invalidation' },
         ],
       },
 
       "If the host looks healthy, check memory:",
       { cmd: 'free -h' },
-      "Swap in use = system ran out of RAM and is paging to disk. Everything slows. Find what consumed the memory with `ps aux --sort=-%mem`.",
+      "Swap in use = system ran out of RAM and is paging to disk. Measure first: `ps aux --sort=-%mem | head -5` — identify the consuming process before deciding whether to restart or scale up.",
     ],
 
     rootCauses: [
       {
         cause: 'EBS burst credits exhausted (gp2)',
-        fix: 'gp2 volumes draw from a burst credit bucket. Once exhausted, IOPS drop to the baseline (3 IOPS/GB). Migrate to gp3 for provisioned IOPS without burst dependency.',
+        fix: 'gp2 volumes draw IOPS from a burst credit bucket. Signal chain: system slows gradually under sustained load, VolumeQueueLength rises, BurstBalance drains, iowait climbs while CPU stays low. Once exhausted, IOPS drop to baseline (3 IOPS/GB). Migrate to gp3 for provisioned IOPS without burst dependency.',
         cmd: 'aws ec2 modify-volume --volume-id <vol-id> --volume-type gp3 --iops 3000',
       },
       {
@@ -286,17 +287,17 @@ echo "Rolling back to: $BASE"` },
       },
       {
         cause: 'Missing index on slow query',
-        fix: 'Enable slow query log and identify the query. Add an index on the filtered column. Use Performance Insights for real-time visibility without config changes.',
-        cmd: '# RDS parameter group: slow_query_log=1, long_query_time=1, log_output=FILE',
+        fix: 'Sequence: enable slow_query_log=1 and set long_query_time in the RDS parameter group → identify the specific slow query → run EXPLAIN → then evaluate indexing. Never add indexes before identifying the query. Performance Insights shows top SQL by load in real time without config changes.',
+        cmd: '# RDS parameter group: slow_query_log=1, long_query_time=1, log_output=FILE\n# Then: SHOW VARIABLES LIKE "slow_query_log"; to confirm',
       },
       {
         cause: 'Memory exhausted — swap in use',
-        fix: 'A process is consuming too much RAM, forcing the kernel to page to disk. Identify with ps aux, then scale up the instance type or reduce memory pressure.',
+        fix: 'A process is consuming too much RAM, forcing the kernel to page to disk. Measure with ps aux first, then scale up the instance type or reduce memory pressure.',
         cmd: 'ps aux --sort=-%mem | head -5',
       },
       {
         cause: 'ElastiCache cache miss rate high',
-        fix: 'Cache cold after restart, or TTL too short, or keys evicted too aggressively. Check invalidation logic. Warm the cache or increase TTL for stable data.',
+        fix: 'Cache miss spikes increase downstream DB load directly — the DB absorbs every request that should have been cached. Causes: cold cache after restart, TTL too short, eviction pressure (maxmemory-policy), or invalidation logic clearing keys too aggressively. Warm the cache or increase TTL for stable data.',
       },
     ],
 
@@ -315,9 +316,10 @@ echo "Rolling back to: $BASE"` },
       {
         q: 'High load average but CPU looks normal. What does that tell you?',
         a: [
-          'Load average includes I/O-waiting processes, not just CPU-active ones',
+          'Load average counts I/O-waiting processes, not just CPU-active ones — load average ≠ CPU utilization',
           'High load + low CPU% = disk or network bottleneck, not compute',
-          'Confirm with `iostat -x 1` — %iowait and %util columns tell the real story',
+          'High load + low CPU + low iowait = network waits, lock contention, or kernel-level blocking',
+          'Measure first: `iostat -x 1` — %iowait and %util columns tell the real story',
         ],
       },
       {
@@ -341,7 +343,8 @@ echo "Rolling back to: $BASE"` },
         q: 'EBS looks fine at the OS level but the app is still slow.',
         a: [
           'OS metrics show what the instance sees — not EBS burst credit state',
-          'gp2 IOPS burst from a credit bucket — exhaustion looks like sudden slowdown',
+          'gp2 burst credits drain gradually under sustained load — exhaustion looks like a progressive slowdown',
+          'Signal chain: VolumeQueueLength rises → BurstBalance drains → iowait climbs, CPU stays low',
           'Check CloudWatch VolumeQueueLength — above 1 means disk is backed up',
           'gp3 is provisioned, no burst credits — prefer it over gp2 for consistent workloads',
         ],
@@ -349,8 +352,9 @@ echo "Rolling back to: $BASE"` },
       {
         q: 'How do you find which query is causing the slowdown?',
         a: [
-          'Enable slow query log in RDS parameter group: long_query_time, log_slow_queries',
+          'Sequence: enable slow_query_log=1, set long_query_time → identify the specific query → EXPLAIN → then evaluate indexing',
           'Performance Insights if enabled — shows top SQL by load in real time, no config change needed',
+          'Never add indexes before identifying the query — confirm first, then remediate',
         ],
       },
     ],
@@ -362,13 +366,13 @@ echo "Rolling back to: $BASE"` },
     label: "It's Crashing",
     spineGroups: [
       { id: 'dns',
-        layers: [{ layer: 'dns', tool: 'dig', status: 'cleared', signal: 'resolves' }] },
+        layers: [{ layer: 'dns', tool: 'dig app.example.com', status: 'cleared', signal: 'resolves' }] },
 
       { id: 'alb',
-        layers: [{ layer: 'alb', tool: 'curl -I', status: 'cleared', signal: 'responds (502 intermittent)' }] },
+        layers: [{ layer: 'alb', tool: 'curl -I https://app.example.com', status: 'cleared', signal: 'responds (502 intermittent)' }] },
 
       { id: 'targetgroup',
-        layers: [{ layer: 'targetgroup', tool: 'aws elbv2', status: 'stuck', signal: 'targets flapping' }] },
+        layers: [{ layer: 'targetgroup', tool: 'aws elbv2 describe-target-health --target-group-arn <arn>', status: 'stuck', signal: 'transitions: healthy → unhealthy → initial' }] },
 
       { id: 'instance', label: 'Instance',
         layers: [
@@ -399,16 +403,25 @@ echo "Rolling back to: $BASE"` },
     flow: [
       "Start with systemd — the exit code is the branch indicator.",
       { cmd: 'systemctl status myapp' },
-      "Read the state carefully: `active (running)` = process is up. `failed` = crashed or exited non-zero. `inactive` = stopped, may be intentional. `activating` = stuck in startup loop. The exit code and last log lines are in the status output — read them before going anywhere else.",
+      "Read the state carefully: `failed` = crashed or exited non-zero — systemd will attempt restart. `inactive` = stopped, not scheduled to restart — likely intentional. `activating` = stuck in startup, not yet ready. Exit code and last log lines are in the status output — read them before going anywhere else.",
+
+      "**Log source hierarchy — use the right tool before grepping blindly:**",
+      { list: [
+        "systemd-managed service logs → `journalctl -u myapp -n 100`",
+        "kernel-level events (OOM, hardware faults) → `dmesg` or `journalctl -k`",
+        "plain file logs → `grep` / `tail` / `awk` against `/var/log/*`",
+        "all currently failed units → `systemctl list-units --failed`",
+      ]},
 
       {
         type: 'decision',
         signal: 'exit 137',
         color: 'amber',
-        interpretation: 'SIGKILL — the process was killed externally, not crashed. The OOM killer is the most common cause at AWS scale. Confirm in kernel logs before assuming anything else.',
-        nextHop: 'Check dmesg for OOM evidence — anon-rss in the output shows actual RAM consumed.',
+        interpretation: 'SIGKILL — the process was killed externally, not crashed by app logic. The OOM killer is the most common cause at AWS scale. anon-rss in the kernel log is the actual RAM the process was consuming at kill time.',
+        nextHop: 'Check kernel logs for OOM evidence — anon-rss tells you actual RAM resident at kill.',
         validate: [
-          { cmd: "dmesg | grep -i 'killed process'", lookFor: 'process name, anon-rss (actual RAM), and timestamp — correlates with the crash time' },
+          { cmd: "dmesg | grep -i 'killed process'", lookFor: 'process name, anon-rss (actual RAM at kill), and timestamp — correlates with the crash time' },
+          { cmd: "journalctl -k | grep -i 'killed process'", lookFor: 'alternative to dmesg — persistent across reboots, same kernel ring buffer content' },
           { cmd: 'free -h', lookFor: 'swap in use = RAM exhausted. available < 100MB = under memory pressure right now' },
           { cmd: 'ps aux --sort=-%mem | head -5', lookFor: 'which process is consuming most RAM currently' },
         ],
@@ -430,12 +443,12 @@ echo "Rolling back to: $BASE"` },
         type: 'decision',
         signal: 'df 100%',
         color: 'rose',
-        interpretation: 'Filesystem full. The app cannot write log files, PID files, or temp files — it fails silently with no useful error. Space must be freed before restarting.',
-        nextHop: 'Free space first, then restart. Do not restart on a full disk — it will crash again immediately.',
+        interpretation: 'Filesystem full. The app cannot write log files, PID files, or temp files — it fails silently with no useful error. Free space first, then restart.',
+        nextHop: 'Free space before restarting. Restarting on a full disk will crash again immediately.',
         validate: [
           { cmd: 'du -sh /var/log/* | sort -rh | head -10', lookFor: 'logs are almost always the culprit' },
           { cmd: "lsof | grep deleted | awk '{print $2, $7, $9}' | sort -k2 -rn | head -5", lookFor: 'large deleted files held open — space not freed until process closes the fd' },
-          { cmd: 'journalctl --disk-usage', lookFor: 'systemd journal often grows unnoticed — check and vacuum it' },
+          { cmd: 'journalctl --disk-usage', lookFor: 'systemd journal grows silently and is often the overlooked culprit during disk-full incidents' },
         ],
       },
 
@@ -448,17 +461,17 @@ echo "Rolling back to: $BASE"` },
     rootCauses: [
       {
         cause: 'OOM kill (exit 137)',
-        fix: 'Process was consuming too much RAM — kernel killed it. Memory leak pattern: RSS climbs over hours, OOM kills, ASG replaces, repeats. Only catchable with MemoryUtilization over time from CW Agent.',
-        cmd: "dmesg | grep -i 'killed process'  # confirm and see anon-rss",
+        fix: 'Process was consuming too much RAM — kernel killed it. anon-rss in dmesg / journalctl -k output is the actual RAM resident at kill time. Memory leak pattern: RSS climbs over hours, OOM kills, ASG replaces, repeats. Only catchable with MemoryUtilization over time from CW Agent.',
+        cmd: "dmesg | grep -i 'killed process'\n# or: journalctl -k | grep -i 'killed process'",
       },
       {
         cause: 'Disk full (df 100%)',
-        fix: 'Zero the log file in place — the fd stays valid, process keeps running, space freed immediately. Then set up logrotate to prevent recurrence.',
-        cmd: 'truncate -s 0 /var/log/app/access.log',
+        fix: 'Zero the log file in place — the fd stays valid, process keeps running, space freed immediately. Then set up logrotate to prevent recurrence. journalctl journal growth is often overlooked — check and vacuum it proactively.',
+        cmd: 'truncate -s 0 /var/log/app/access.log\njournalctl --disk-usage\njournalctl --vacuum-size=500M',
       },
       {
         cause: 'App startup error (exit 1)',
-        fix: 'Read the last lines in journalctl — config parse error, missing dependency, port conflict. Fix the root cause, reload the daemon, restart.',
+        fix: 'Collect evidence first — read the last lines in journalctl before restarting. Config parse error, missing dependency, port conflict. Fix the root cause, reload the daemon, restart.',
         cmd: 'journalctl -u myapp -n 50\nsystemctl daemon-reload && systemctl restart myapp',
       },
       {
@@ -478,6 +491,8 @@ echo "Rolling back to: $BASE"` },
       { cmd: 'aws elbv2 modify-listener --listener-arn <arn> --default-actions Type=forward,TargetGroupArn=<stable-tg-arn>' },
       "If disk is full on a running instance, free space immediately without restarting the process:",
       { cmd: 'truncate -s 0 /var/log/app/access.log\njournalctl --vacuum-size=500M' },
+      "**journalctl maintenance:** systemd journal growth is often overlooked during disk-full incidents — it accumulates silently across reboots. Check size and vacuum proactively:",
+      { cmd: 'journalctl --disk-usage\njournalctl --vacuum-size=500M' },
       "To buy investigation time before the ASG terminates a crashing instance, add a Terminating:Wait lifecycle hook:",
       { cmd: String.raw`aws autoscaling put-lifecycle-hook \
   --auto-scaling-group-name prod-asg \
@@ -490,19 +505,19 @@ echo "Rolling back to: $BASE"` },
       {
         q: 'Service keeps restarting. Exit code 137. What happened?',
         a: [
-          'Exit 137 = SIGKILL — process was killed, not crashed',
-          'OOM killer is the most common cause: `dmesg | grep -i "killed process"`',
-          'anon-rss in the dmesg output = actual RAM the process was consuming',
-          'Also check: journalctl shows if it was killed manually vs kernel',
+          'Exit 137 = SIGKILL — process was killed externally, not crashed by app logic',
+          'OOM killer is the most common cause: `dmesg | grep -i "killed process"` or `journalctl -k | grep -i "killed process"`',
+          'anon-rss in the output = actual RAM the process was consuming at kill time',
+          'Also check `free -h` — swap in use confirms RAM was exhausted',
         ],
       },
       {
         q: 'ASG keeps launching new instances every 10 minutes. How do you investigate?',
         a: [
-          'Instances terminate before you can get on them',
-          'Check CloudWatch Logs — requires agent shipping logs before termination',
-          'ASG activity log: `aws autoscaling describe-scaling-activities`',
+          'Instances terminate before you can get on them — collect evidence from CloudWatch Logs first',
+          'ASG activity log: `aws autoscaling describe-scaling-activities --auto-scaling-group-name <name>`',
           'Add lifecycle hook (Terminating:Wait) to pause termination for investigation',
+          'Requires CW Logs agent shipping logs before termination — otherwise evidence is gone',
         ],
       },
       {
@@ -521,7 +536,7 @@ echo "Rolling back to: $BASE"` },
           '`df -ih` — check inode exhaustion separately (millions of tiny files = inodes, not blocks)',
           '`du -sh /var/log/* | sort -rh` — logs are almost always the culprit',
           '`lsof | grep deleted` — deleted files held open not visible to du',
-          '`journalctl --disk-usage` then `--vacuum-size=500M` — systemd journal often unnoticed',
+          '`journalctl --disk-usage` then `--vacuum-size=500M` — systemd journal grows silently and is often missed',
         ],
       },
       {
@@ -542,14 +557,14 @@ echo "Rolling back to: $BASE"` },
     label: 'A Change Broke It',
     spineGroups: [
       { id: 'dns',
-        layers: [{ layer: 'dns', tool: 'dig', status: 'cleared', signal: 'resolves' }] },
+        layers: [{ layer: 'dns', tool: 'dig app.example.com', status: 'cleared', signal: 'resolves' }] },
 
       { id: 'alb',
-        layers: [{ layer: 'alb', tool: 'curl -I', status: 'cleared', signal: 'responds' }] },
+        layers: [{ layer: 'alb', tool: 'curl -I https://app.example.com', status: 'cleared', signal: 'responds' }] },
 
       { id: 'targetgroup',
         layers: [{
-          layer: 'targetgroup', tool: 'aws elbv2', status: 'stuck', signal: '',
+          layer: 'targetgroup', tool: 'aws elbv2 describe-target-health --target-group-arn <arn>', status: 'stuck', signal: '',
           branches: [
             { signal: 'some healthy some not', meaning: 'mixed versions — rolling update partial' },
             { signal: 'all unhealthy',         meaning: 'bad deploy landed everywhere' },
@@ -628,7 +643,7 @@ echo "Rolling back to: $BASE"` },
         "Rolling: redeploy previous AMI ID from Parameter Store",
         "IaC: revert commit, re-apply — `terraform plan` shows the diff before apply",
       ]},
-      "Never layer further changes on a broken state before capturing root cause evidence.",
+      "Collect evidence before layering further changes. Do not remediate on top of a broken state without capturing root cause first.",
     ],
 
     rootCauses: [
@@ -662,9 +677,18 @@ echo "Rolling back to: $BASE"` },
       "Choose the fastest rollback path first — restore service, then investigate root cause.",
       "**Blue/green:** flip the ALB listener back to the stable target group — traffic shifts in seconds.",
       { cmd: 'aws elbv2 modify-listener --listener-arn <arn> --default-actions Type=forward,TargetGroupArn=<stable-tg-arn>' },
-      "**Rolling deploy:** redeploy the previous AMI ID from Parameter Store.",
+      "**Rolling deploy — two rollback models:**",
+      { list: [
+        "**Revert ASG to previous launch template version** — fast, modifies the version in-place.",
+        "**Create a new launch template version referencing the previous AMI** — preferred for audit consistency. Every change is a forward revision, history is clean, reviewable, and never rewritten.",
+      ]},
       { cmd: String.raw`PREV_AMI=$(aws ssm get-parameter --name /prod/ami/app-latest --query Parameter.Value --output text)
-echo "Rolling back to: $PREV_AMI"` },
+# Create a new LT version pointing at the previous AMI (preferred — preserves audit history)
+aws ec2 create-launch-template-version \
+  --launch-template-id <lt-id> \
+  --source-version '$Latest' \
+  --launch-template-data "{\"ImageId\":\"$PREV_AMI\"}"
+# Then update ASG to use the new version number` },
       "**IaC change (Terraform/CDK):** revert the commit and re-apply. Always run plan before apply — confirms exactly what will change.",
       { cmd: 'terraform plan  # verify the revert diff before applying' },
       "**IAM policy change:** restore the removed permission in IaC. Never manually edit IAM policies to fix — that creates drift with no audit trail.",
@@ -714,13 +738,13 @@ echo "Rolling back to: $PREV_AMI"` },
     label: 'Intermittent',
     spineGroups: [
       { id: 'dns',
-        layers: [{ layer: 'dns', tool: 'dig', status: 'cleared', signal: 'resolves' }] },
+        layers: [{ layer: 'dns', tool: 'dig app.example.com', status: 'cleared', signal: 'resolves' }] },
 
       { id: 'alb',
         layers: [{ layer: 'alb', tool: 'CW metrics', status: 'stuck', signal: 'TargetResponseTime spiking intermittently' }] },
 
       { id: 'targetgroup',
-        layers: [{ layer: 'targetgroup', tool: 'aws elbv2', status: 'stuck', signal: 'healthy ↔ unhealthy cycling' }] },
+        layers: [{ layer: 'targetgroup', tool: 'aws elbv2 describe-target-health --target-group-arn <arn>', status: 'stuck', signal: 'healthy ↔ unhealthy cycling' }] },
 
       { id: 'instance', label: 'Instance',
         layers: [
@@ -875,14 +899,14 @@ echo "Rolling back to: $PREV_AMI"` },
     label: 'ASG / Scaling',
     spineGroups: [
       { id: 'dns',
-        layers: [{ layer: 'dns', tool: 'dig', status: 'cleared', signal: 'resolves' }] },
+        layers: [{ layer: 'dns', tool: 'dig app.example.com', status: 'cleared', signal: 'resolves' }] },
 
       { id: 'alb',
-        layers: [{ layer: 'alb', tool: 'curl -I', status: 'cleared', signal: 'responds' }] },
+        layers: [{ layer: 'alb', tool: 'curl -I https://app.example.com', status: 'cleared', signal: 'responds' }] },
 
       { id: 'targetgroup',
         layers: [{
-          layer: 'targetgroup', tool: 'aws elbv2', status: 'stuck', signal: '',
+          layer: 'targetgroup', tool: 'aws elbv2 describe-target-health --target-group-arn <arn>', status: 'stuck', signal: '',
           branches: [
             { signal: 'no scale out despite alarm',    meaning: 'cooldown blocking or desired == max' },
             { signal: 'instances unhealthy on launch', meaning: 'grace period or health check type' },

@@ -44,18 +44,15 @@
             <div class="text-cyan-300">ownership: Enforcing</div>
                   <div class="text-cyan-300">team_morale: +3</div>
             <div class="text-cyan-300">root_cause: required</div>
-            <div class="text-cyan-300">logical_fallacies: none</div>
+            <div class="text-cyan-300">mindset: <span style="color: #d8b4fe; font-weight: 600;">Engineer</span></div>
           </div>
 
           <!-- Divider: horizontal on mobile, vertical on sm+ -->
           <div class="h-px sm:h-auto sm:w-px bg-cyan-500/50 sm:self-stretch"></div>
 
-          <!-- cert — clickable -->
-          <div
-            class="px-4 py-4 flex flex-col items-center justify-center gap-2 bg-cyan-950/40 shadow-[inset_0_0_24px_rgba(6,182,212,0.12),inset_0_0_0_1px_rgba(6,182,212,0.35)] cursor-pointer transition-all duration-200 hover:bg-cyan-900/40 hover:shadow-[inset_0_0_32px_rgba(6,182,212,0.2),inset_0_0_0_1px_rgba(6,182,212,0.6)] group"
-            @click="showCloudOps = true"
-          >
-            <img src="/images/certifications/cloudops.webp" alt="AWS SysOps Administrator" class="w-16 sm:w-20 md:w-28 rounded drop-shadow-[0_0_14px_rgba(6,182,212,0.65)] group-hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.9)] transition-all duration-200" />
+          <!-- cert — static -->
+          <div class="px-4 py-4 flex flex-col items-center justify-center gap-2 bg-cyan-950/40 shadow-[inset_0_0_24px_rgba(6,182,212,0.12),inset_0_0_0_1px_rgba(6,182,212,0.35)]">
+            <img src="/images/certifications/cloudops.webp" alt="AWS SysOps Administrator" class="w-16 sm:w-20 md:w-28 rounded drop-shadow-[0_0_14px_rgba(6,182,212,0.65)]" />
             <span class="text-base font-semibold text-cyan-400 animate-pulse drop-shadow-[0_0_8px_rgba(6,182,212,0.9)]">Current Focus</span>
           </div>
 
@@ -133,12 +130,8 @@
 
   </div>
 
-  <CloudOpsModal :visible="showCloudOps" @close="showCloudOps = false" />
+
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import CloudOpsModal from '@/components/modals/CloudOpsModal.vue'
-
-const showCloudOps = ref(false)
 </script>
