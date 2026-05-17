@@ -123,12 +123,69 @@ chown -R ec2-user:ec2-user /app   # after a root deploy
 # authorized_keys  must be 600
 # Both must be owned by the connecting user, not root
 
+# ACLs — when standard ugo permissions aren't granular enough
+getfacl /var/www/html
+# Shows standard perms + any ACL entries on top
+
+setfacl -m u:nginx:rX /var/www/html
+# Grant nginx user read+execute without changing owner or group
+# -m = modify   u: = user   g: = group
+
+setfacl -m d:u:nginx:rX /var/www/html
+# d: = default — new files inside inherit this ACL automatically
+
+setfacl -x u:nginx /var/www/html
+# Remove a specific ACL entry
+
+setfacl -b /var/www/html
+# Remove all ACLs — back to standard permissions only
+
+# ls -la shows + at end of permission string if ACLs are set
+# e.g. drwxr-xr-x+ means there's more than chmod can show
+
 # SELinux — when permissions look right but it still fails
 getenforce                             # Enforcing / Permissive?
 ausearch -m avc -ts recent | audit2why
 # Plain English: what was denied and the exact fix command
 restorecon -Rv /etc/app/              # reset file context to what policy expects
 setenforce 0                          # temporarily permissive — confirm SELinux is the cause`,
+  },
+
+  {
+    heading: 'USER ACCOUNTS — useradd / passwd / chage',
+    code: String.raw`# Create a user
+useradd -m -s /bin/bash alice
+# -m = create home dir   -s = login shell
+# Without -m: no home dir (service accounts often skip it)
+
+useradd -r -s /sbin/nologin appuser
+# -r = system account (lower UID range, no ageing defaults)
+# nologin = can own files/run processes, can't log in interactively
+
+usermod -aG sudo alice
+# -aG = append to group — drop the -a and you remove all other groups
+
+userdel -r alice
+# -r = remove home dir and mail spool too
+
+# Passwords
+passwd alice                 # set/change password interactively
+passwd -l alice              # lock account — prepends ! to hash in /etc/shadow
+passwd -u alice              # unlock
+
+# Password ageing — chage
+chage -l alice               # list current expiry settings
+chage -d 0 alice             # force password change on next login (sets last-change to epoch)
+chage -M 90 alice            # max 90 days before expiry
+chage -E 2025-12-31 alice    # hard account expiry date
+
+# /etc/shadow fields (colon-separated)
+# username : hash : last-change : min-age : max-age : warn : inactive : expiry
+# last-change = days since epoch — 0 = must change now
+
+# Check who can sudo
+cat /etc/sudoers | grep -v '^#' | grep -v '^$'
+getent group sudo            # members of sudo group`,
   },
 
   {

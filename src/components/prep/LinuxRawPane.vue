@@ -1,14 +1,14 @@
 <template>
   <div class="flex flex-col h-full overflow-hidden font-mono">
 
-    <!-- OS Mental Model banner -->
-    <div class="shrink-0 px-6 pt-4 pb-4 border-b border-slate-700/60 bg-slate-800/20">
-      <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-3">Linux — OS Mental Model</div>
-      <div class="grid grid-cols-4 gap-6">
+    <!-- Code columns -->
+    <div class="flex-1 min-h-0 grid grid-cols-3 gap-6 p-6">
 
-        <!-- Boot chain -->
+      <!-- Column 1: Boot Chain + linuxRaw[0–2] -->
+      <div class="overflow-y-auto space-y-6 min-h-0">
+
         <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-2">Boot Chain — ownership transfer</div>
+          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">Boot Chain — ownership transfer</div>
           <div class="space-y-1.5 text-[11px]">
 
             <div class="pl-2 border-l-2 border-slate-700/50 space-y-0">
@@ -60,9 +60,76 @@
           </div>
         </div>
 
-        <!-- Process model -->
+        <div v-for="section in cols[0]" :key="section.heading">
+          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">{{ section.heading }}</div>
+          <PrepCodeBlock :code="section.code" />
+        </div>
+
+      </div>
+
+      <!-- Column 2: Memory Model + linuxRaw[3–4] -->
+      <div class="overflow-y-auto space-y-6 min-h-0">
+
         <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-2">Process Model — scheduler view</div>
+          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">Memory Model — symptom thinking</div>
+          <div class="text-[11px] space-y-1.5">
+
+            <div class="text-slate-500 leading-snug">Each process has a private virtual address space. The MMU maps virtual → physical memory transparently. You usually ignore this abstraction — until the system comes under pressure.</div>
+
+            <div class="space-y-1.5 mt-0.5">
+
+              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0.5">
+                <div class="text-sky-400/80 font-semibold">page cache</div>
+                <div class="text-slate-400">Kernel uses spare RAM to cache file reads.</div>
+                <div class="text-slate-400">Repeated disk access hits RAM instead → much faster.</div>
+                <div class="text-slate-600 italic">Free RAM is wasted RAM. <code class="text-emerald-400/60">available</code> in <code class="text-emerald-400/60">free -h</code> includes reclaimable cache.</div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0.5">
+                <div class="text-sky-400/80 font-semibold">page fault</div>
+                <div class="text-slate-400">Requested page not currently in RAM.</div>
+                <div class="text-slate-500">Minor fault = resolved from existing memory mappings.</div>
+                <div class="text-slate-500">Major fault = requires disk/storage access.</div>
+                <div class="text-orange-400/60 text-[10px]">Sustained major faults usually indicate memory pressure. System performance degrades before OOM occurs.</div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0.5">
+                <div class="text-sky-400/80 font-semibold">anon memory</div>
+                <div class="text-slate-400">Heap + stack allocations — not file-backed.</div>
+                <div class="text-slate-500"><code class="text-emerald-400/60">anon-rss</code> in OOM output represents actual private RAM consumed by the process.</div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-amber-500/30 space-y-0.5">
+                <div class="text-amber-300/70 font-semibold">swap</div>
+                <div class="text-slate-400">Disk used as RAM overflow.</div>
+                <div class="text-slate-400">Heavy swap activity causes massive latency because memory access becomes disk I/O.</div>
+                <div class="text-orange-400/60 text-[10px]"><code class="text-emerald-400/60">vmstat 1</code> → <code class="text-emerald-400/60">si</code>/<code class="text-emerald-400/60">so</code> non-zero = active swapping.</div>
+              </div>
+
+              <div class="pl-2 border-l-2 border-red-700/40 space-y-0.5">
+                <div class="text-red-400/70 font-semibold">OOM killer</div>
+                <div class="text-slate-400">Triggered when RAM + swap are exhausted.</div>
+                <div class="text-slate-400">Kernel selects a process to kill using an OOM scoring heuristic.</div>
+                <div class="text-slate-500">Large anonymous memory consumers are common targets because that memory is difficult to reclaim.</div>
+                <div class="text-orange-400/60 text-[10px]">Evidence: <code class="text-emerald-400/60">dmesg | grep -i killed</code> or <code class="text-emerald-400/60">journalctl -k</code></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div v-for="section in cols[1]" :key="section.heading">
+          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">{{ section.heading }}</div>
+          <PrepCodeBlock :code="section.code" />
+        </div>
+
+      </div>
+
+      <!-- Column 3: Process Model + linuxRaw[5+] -->
+      <div class="overflow-y-auto space-y-6 min-h-0">
+
+        <div>
+          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">Process Model — scheduler view</div>
           <div class="text-[11px] space-y-1.5">
 
             <div class="text-slate-500 leading-snug">CFS scheduler sees every process as a queue state — not a label to memorise.</div>
@@ -106,85 +173,13 @@
           </div>
         </div>
 
-        <!-- Memory model -->
-        <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-2">Memory Model — symptom thinking</div>
-          <div class="text-[11px] space-y-1.5">
-
-            <div class="text-slate-500 leading-snug">Each process has a private virtual address space. MMU maps virtual → physical transparently. Abstractions break down under pressure — that's when it matters.</div>
-
-            <div class="space-y-1.5 mt-0.5">
-
-              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0">
-                <div class="text-sky-400/80 font-semibold">page cache</div>
-                <div class="text-slate-400">Kernel fills spare RAM with cached file reads.</div>
-                <div class="text-slate-400">Repeated disk access hits RAM instead. Fast.</div>
-                <div class="text-slate-600 italic">Free RAM is wasted RAM. <code class="text-emerald-400/60">available</code> in <code class="text-emerald-400/60">free -h</code> includes reclaimable cache.</div>
-              </div>
-
-              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0">
-                <div class="text-sky-400/80 font-semibold">page fault</div>
-                <div class="text-slate-400">Page not in RAM — kernel must fetch it.</div>
-                <div class="text-slate-500">Minor = memory lookup (fast). Major = disk access (slow).</div>
-                <div class="text-orange-400/60 text-[10px]">Constant major faults = memory pressure. System feels sluggish before OOM.</div>
-              </div>
-
-              <div class="pl-2 border-l-2 border-sky-700/40 space-y-0">
-                <div class="text-sky-400/80 font-semibold">anon memory</div>
-                <div class="text-slate-400">Heap + stack — not file-backed.</div>
-                <div class="text-slate-500"><code class="text-emerald-400/60">anon-rss</code> in OOM output = actual RAM this process consumed.</div>
-              </div>
-
-              <div class="pl-2 border-l-2 border-amber-500/30 space-y-0">
-                <div class="text-amber-300/70 font-semibold">swap</div>
-                <div class="text-slate-400">RAM overflow area on disk.</div>
-                <div class="text-slate-400">Heavy swap = every access goes to disk.</div>
-                <div class="text-orange-400/60 text-[10px]">Latency explosion. <code class="text-emerald-400/60">vmstat 1</code> → <code class="text-emerald-400/60">si</code>/<code class="text-emerald-400/60">so</code> non-zero = you have a problem.</div>
-              </div>
-
-              <div class="pl-2 border-l-2 border-red-700/40 space-y-0">
-                <div class="text-red-400/70 font-semibold">OOM killer</div>
-                <div class="text-slate-400">RAM + swap both exhausted. Kernel selects a process to kill.</div>
-                <div class="text-slate-500">Scores by anon memory usage — biggest anonymous consumer usually dies.</div>
-                <div class="text-orange-400/60 text-[10px]">Evidence: <code class="text-emerald-400/60">dmesg | grep -i killed</code> or <code class="text-emerald-400/60">journalctl -k</code>. Always follows a pattern.</div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Interview posture -->
-        <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1.5">Interview Posture</div>
-          <div class="space-y-3 text-[11px]">
-            <div>
-              <div class="text-slate-200 font-semibold mb-0.5">Discuss commands — don't just recall them</div>
-              <div class="text-slate-500">For every command: why you'd reach for it, what it tells you, and what you'd do with the output. That's the gap between someone who's used a thing and someone who understands it.</div>
-            </div>
-            <div>
-              <div class="text-slate-200 font-semibold mb-0.5">Interviewer as Google</div>
-              <div class="text-slate-500">If you hit a wall, narrate your thinking and ask. <span class="text-slate-400 italic">"I'd normally check X here — is that the direction you want me to go?"</span> shows structured thinking. Not weakness.</div>
-            </div>
-            <div>
-              <div class="text-slate-200 font-semibold mb-0.5">The ceiling test</div>
-              <div class="text-slate-500">They're probing until you reach your limit — that's the point. When you genuinely don't know, say so cleanly and offer what you'd do next. That's exactly what they're watching for.</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Code columns -->
-    <div class="flex-1 min-h-0 grid grid-cols-3 gap-6 p-6">
-      <div v-for="(col, ci) in cols" :key="ci" class="overflow-y-auto space-y-6 min-h-0">
-        <div v-for="section in col" :key="section.heading">
-          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">
-            {{ section.heading }}
-          </div>
+        <div v-for="section in cols[2]" :key="section.heading">
+          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">{{ section.heading }}</div>
           <PrepCodeBlock :code="section.code" />
         </div>
+
       </div>
+
     </div>
 
   </div>
@@ -196,7 +191,7 @@ import { linuxRaw } from '@/data/prep/linuxRaw.js'
 
 const cols = [
   linuxRaw.slice(0, 3),
-  linuxRaw.slice(3, 5),
-  linuxRaw.slice(5),
+  linuxRaw.slice(3, 6),
+  linuxRaw.slice(6),
 ]
 </script>

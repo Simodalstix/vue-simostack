@@ -131,7 +131,7 @@ function primaryColor(qi) {
   for (const block of careerBlocks) {
     if (q.blockAnchors[block.id]?.length) return block.color
   }
-  return '#475569'
+  return '#22d3ee'
 }
 
 function headerCellStyle(qi) {
@@ -140,7 +140,9 @@ function headerCellStyle(qi) {
     borderBottom: `1.5px solid ${color}`,
     display: 'flex',
     alignItems: 'flex-end',
-    padding: '6px 6px 6px 3px',
+    justifyContent: 'center',
+    padding: '6px 6px 6px 6px',
+    textAlign: 'center',
   }
 }
 

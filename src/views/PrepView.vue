@@ -47,19 +47,20 @@
           v-for="tab in starSection.tabs"
           :key="tab.id"
           @click="setTab('star', tab.id)"
-          class="w-full text-left pl-3 pr-3 py-1.5 text-[12px] border-b border-slate-700/30 transition-colors duration-100"
+          class="w-full text-left pl-3 pr-2 py-1.5 text-[12px] border-b border-slate-700/30 border-l-[5px] transition-colors duration-100"
           :class="activeKey === 'star-' + tab.id
-            ? 'text-white bg-slate-700 border-l-2 border-l-orange-400'
-            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/40 border-l-2 border-l-transparent'"
+            ? 'text-slate-100 bg-slate-700/60'
+            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/30'"
+          :style="{ borderLeftColor: lpBorderColor(tab.id, activeKey === 'star-' + tab.id) }"
         >
-          <div class="flex items-center justify-between gap-1">
-            <span>{{ tab.label }}</span>
-            <span v-if="starTabLps[tab.id]?.length" class="flex gap-1.5 shrink-0">
+          <div class="flex items-center justify-between gap-1 min-w-0">
+            <span class="truncate">{{ tab.label }}</span>
+            <span v-if="secondaryLps(tab.id).length" class="flex gap-px shrink-0 ml-1">
               <span
-                v-for="lp in starTabLps[tab.id]"
+                v-for="lp in secondaryLps(tab.id)"
                 :key="lp"
-                class="w-2 h-2 rounded-full"
-                :style="{ backgroundColor: LP_HEX[lp] || '#475569' }"
+                class="block w-1.5 h-4 rounded-sm"
+                :style="{ backgroundColor: LP_HEX[lp] || '#475569', opacity: activeKey === 'star-' + tab.id ? '0.8' : '0.55' }"
                 :title="lp"
               />
             </span>
@@ -150,14 +151,14 @@ const starSection = {
   id: 'star',
   label: 'STAR Stories',
   tabs: [
-    { id: 'duo-mfa',          label: 'Dive Deep' },
-    { id: 'packer-pipeline',  label: 'Learn & Be Curious' },
-    { id: 'difficult-client', label: 'Bias for Action' },
-    { id: 'above-beyond',     label: 'Customer Obsession' },
-    { id: 'disagree-commit',  label: 'Disagree & Commit' },
+    { id: 'duo-mfa',           label: 'Dive Deep' },
+    { id: 'learn-curious',     label: 'Bias for Action' },
+    { id: 'difficult-client',  label: 'Bias for Action' },
+    { id: 'above-beyond',      label: 'Customer Obsession' },
+    { id: 'disagree-commit',   label: 'Disagree & Commit' },
     { id: 'highest-standards', label: 'Highest Standards' },
-    { id: 'invent-simplify',  label: 'Invent & Simplify' },
-    { id: 'learn-curious',    label: 'Bias for Action' },
+    { id: 'invent-simplify',   label: 'Invent & Simplify' },
+    { id: 'packer-pipeline',   label: 'Learn & Be Curious' },
   ],
 }
 
@@ -222,6 +223,16 @@ const activeTab     = ref('processes')
 
 const activeKey = computed(() => `${activeSection.value}-${activeTab.value}`)
 
+
+function lpBorderColor(tabId, isActive) {
+  const lps = starTabLps[tabId] ?? []
+  const hex = LP_HEX[lps[0]] || '#475569'
+  return isActive ? hex + 'ee' : hex + '90'
+}
+
+function secondaryLps(tabId) {
+  return (starTabLps[tabId] ?? []).slice(1)
+}
 
 function toggleSection(sectionId) {
   if (activeSection.value !== sectionId) {

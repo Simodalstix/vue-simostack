@@ -30,7 +30,7 @@
               >{{ tag }}</span>
             </div>
           </div>
-          <div v-if="project.summary" class="flex-1 text-[12px] text-slate-400 leading-relaxed border-l border-slate-700/60 pl-5 pt-0.5">
+          <div v-if="project.summary" class="flex-1 text-[12px] text-cyan-300/80 leading-relaxed border-l border-slate-700/60 pl-5 pt-0.5">
             {{ project.summary }}
           </div>
         </div>

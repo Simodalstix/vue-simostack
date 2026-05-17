@@ -45,9 +45,10 @@
           <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-3">Talking Anchors</div>
           <div v-for="(anchor, i) in card.anchors" :key="i" class="flex gap-1.5 items-start leading-snug">
             <span class="shrink-0 text-slate-700 mt-0.5 select-none">•</span>
-            <span>
+            <span class="min-w-0">
               <span v-if="anchor.tag" class="mr-1 font-medium" :class="tagColor(anchor.tag)">{{ anchor.tag }}</span>
-              <span class="text-slate-300">{{ anchor.text }}</span>
+              <code v-if="anchor.code" class="block mt-0.5 px-2 py-1 rounded bg-slate-900/80 border border-slate-700/50 text-emerald-300/90 text-[10.5px] leading-snug whitespace-pre-wrap break-all">{{ anchor.code }}</code>
+              <span v-else class="text-slate-300">{{ anchor.text }}</span>
             </span>
           </div>
         </div>
@@ -74,6 +75,61 @@
       <!-- Footer: tone warning only -->
       <div v-if="card.toneWarning" class="px-4 py-2 border-t border-slate-700/50">
         <span class="text-[10px] text-amber-400/70 uppercase tracking-widest">⚠ {{ card.toneWarning }}</span>
+      </div>
+
+      <!-- Workflow block -->
+      <div v-if="card.workflow" class="border-t border-slate-700/50 bg-slate-950/40">
+        <div class="px-4 py-2 border-b border-slate-700/40 flex items-center gap-3">
+          <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Workflow</span>
+          <code class="text-[10px] text-emerald-300/80 font-mono">{{ card.workflow.name }}</code>
+        </div>
+        <div class="px-4 py-3 space-y-3">
+
+          <!-- Setup once row -->
+          <div v-if="card.workflow.setup" class="flex items-center gap-2">
+            <span class="text-[9px] uppercase tracking-widest text-slate-600 font-semibold shrink-0 w-20">Setup once</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span
+                v-for="(item, i) in card.workflow.setup" :key="i"
+                class="text-[10px] text-slate-500 px-2 py-0.5 rounded border border-slate-700/40 bg-slate-800/30"
+              >{{ item }}</span>
+            </div>
+          </div>
+
+          <!-- Pipeline row -->
+          <div v-if="card.workflow.pipeline" class="flex items-center gap-1 flex-wrap">
+            <span class="text-[9px] uppercase tracking-widest text-orange-400/80 font-semibold shrink-0 w-20">Every push</span>
+            <template v-for="(step, i) in card.workflow.pipeline" :key="i">
+              <div class="flex flex-col items-center px-2 py-1 rounded border border-slate-700/50 bg-slate-800/60">
+                <span class="text-[11px] text-slate-200 font-medium leading-snug">{{ typeof step === 'string' ? step : step.name }}</span>
+                <span v-if="step.sub" class="text-[9px] text-slate-500 leading-snug">({{ step.sub }})</span>
+              </div>
+              <span v-if="i < card.workflow.pipeline.length - 1" class="text-orange-500/50 text-[11px] shrink-0">→</span>
+            </template>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scripts block -->
+      <div v-if="card.scripts" class="border-t border-slate-700/50 bg-slate-950/40">
+        <div class="px-4 py-2 border-b border-slate-700/40">
+          <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Scripts</span>
+        </div>
+        <div class="grid grid-cols-3 divide-x divide-slate-700/40">
+          <div v-for="s in card.scripts" :key="s.name" class="px-4 py-3 flex flex-col gap-2">
+            <code class="text-[11px] text-emerald-300/90 font-mono font-semibold">{{ s.name }}</code>
+            <p class="text-[11px] text-slate-300 leading-snug">{{ s.description }}</p>
+            <ul v-if="s.policy" class="space-y-0.5">
+              <li v-for="(p, i) in s.policy" :key="i" class="text-[10.5px] text-slate-400 leading-snug flex gap-1.5">
+                <span class="text-slate-600 shrink-0">–</span>{{ p }}
+              </li>
+            </ul>
+            <div v-if="s.usage" class="mt-auto pt-1 space-y-0.5">
+              <code v-for="(u, i) in s.usage" :key="i" class="block text-[10px] text-slate-500 font-mono leading-snug">{{ u }}</code>
+            </div>
+          </div>
+        </div>
       </div>
     </template>
 
