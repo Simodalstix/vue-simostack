@@ -62,9 +62,9 @@ export const scenarios = [
         interpretation: 'ALB reached the target and sent traffic, but the backend returned an invalid or refused response. Target exists — problem is at the Process or App layer.',
         nextHop: 'Move inward — investigate Process and App layers on the instance.',
         validate: [
-          { cmd: 'curl -s http://localhost:8080/health', lookFor: 'connection refused = process down. 5xx = running but unhealthy.' },
-          { cmd: 'ss -tlnp | grep 8080', lookFor: 'nothing = not listening. 127.0.0.1 = bound to localhost only, invisible to ALB — needs 0.0.0.0.' },
-          { cmd: 'journalctl -u myapp -n 50', lookFor: 'crash loop / bad config / port conflict / permission denied' },
+          { cmd: 'curl -s http://localhost:8080/health', lookFor: 'does the app respond? connection refused = process down, 5xx = running but unhealthy' },
+          { cmd: 'ss -tlnp | grep 8080', lookFor: 'is the process listening on the right address? nothing = not listening, 127.0.0.1 = localhost only — ALB cannot reach it' },
+          { cmd: 'journalctl -u myapp -n 50', lookFor: 'what caused the last exit? look for crash loop, bad config, port conflict, or permission denied' },
         ],
       },
 
@@ -75,9 +75,9 @@ export const scenarios = [
         interpretation: 'The service is down or misconfigured. Root cause is at the Process or App layer.',
         nextHop: 'Read the exit code — it determines the branch.',
         validate: [
-          { cmd: 'systemctl status myapp', lookFor: '`failed` = crashed or exited non-zero — systemd will restart. `inactive` = stopped, not scheduled to restart — usually intentional. `activating` = stuck in startup. exit code 137 = OOM killed.' },
-          { cmd: 'journalctl -u myapp -n 100', lookFor: 'the last lines before the crash — config error / dependency missing / port conflict' },
-          { cmd: 'journalctl -b -1 -u myapp', lookFor: 'if the crash was on a previous boot — OOM / kernel kill events' },
+          { cmd: 'systemctl status myapp', lookFor: 'what is the current state and exit code? failed = crashed, inactive = stopped intentionally, activating = stuck, exit 137 = OOM killed' },
+          { cmd: 'journalctl -u myapp -n 100', lookFor: 'what do the last log lines before exit reveal? config error, missing dependency, or port conflict' },
+          { cmd: 'journalctl -b -1 -u myapp', lookFor: 'were there OOM kills or kernel events on the previous boot?' },
         ],
       },
 
@@ -89,8 +89,8 @@ export const scenarios = [
         interpretation: 'Port 22 is blocked or the instance is in a private subnet. This is a network path problem, not an app problem.',
         nextHop: 'Use SSM — no port 22 required.',
         validate: [
-          { cmd: 'aws ssm start-session --target <instance-id>', lookFor: 'session opens = SSM agent running and IAM role attached. fails = check AmazonSSMManagedInstanceCore role + outbound 443.' },
-          { cmd: 'aws ec2 describe-instances --instance-ids <id> --query "Reservations[*].Instances[*].State"', lookFor: 'confirm instance is running before assuming network issue' },
+          { cmd: 'aws ssm start-session --target <instance-id>', lookFor: 'does SSM have a path to this instance? failure means missing AmazonSSMManagedInstanceCore role or blocked outbound 443' },
+          { cmd: 'aws ec2 describe-instances --instance-ids <id> --query "Reservations[*].Instances[*].State"', lookFor: 'is the instance actually running, or is the state itself the problem?' },
         ],
       },
     ],
@@ -196,11 +196,12 @@ echo "Rolling back to: $BASE"` },
 
       { id: 'instance', label: 'Instance',
         layers: [
-          { layer: 'system', tool: 'top / iostat', status: 'stuck', signal: '',
+          { layer: 'system', tool: 'top / free / iostat / ss', status: 'stuck', signal: '',
             branches: [
-              { signal: 'high CPU',    meaning: 'runaway process or traffic spike' },
-              { signal: 'high iowait', meaning: 'disk saturated — check EBS VolumeQueueLength' },
-              { signal: 'swap in use', meaning: 'memory exhausted — paging to disk' },
+              { signal: 'high CPU',         meaning: 'runaway process or traffic spike' },
+              { signal: 'high iowait',      meaning: 'disk saturated — check EBS VolumeQueueLength' },
+              { signal: 'swap in use',      meaning: 'memory exhausted — paging to disk' },
+              { signal: 'host looks healthy', meaning: 'constraint is in the dependency layer — RDS connections, cache hit rate, or external service waits' },
             ]
           },
           { layer: 'process', tool: 'ss -tp',       status: 'reached', signal: 'running' },
@@ -237,13 +238,29 @@ echo "Rolling back to: $BASE"` },
 
       {
         type: 'decision',
+        signal: 'host triage — rule out constraint before investigating services',
+        color: 'amber',
+        interpretation: 'Check host health first. Latency can originate from dependency exhaustion — RDS connections, cache misses, external waits — while CPU and memory remain completely healthy. Rule out host constraint before moving into sockets, services, logs, and dependencies.',
+        nextHop: 'If the host looks reasonable, the constraint is in the service or dependency layer.',
+        validate: [
+          { cmd: 'top', lookFor: 'is the host CPU saturated or load average well above nproc?' },
+          { cmd: 'free -h', lookFor: 'is memory pressure real, or just Linux page cache filling unused RAM?' },
+          { cmd: 'ps aux --sort=-%cpu | head -5', lookFor: 'which process owns the CPU pressure?' },
+          { cmd: 'ps aux --sort=-%mem | head -5', lookFor: 'which process owns the memory pressure?' },
+          { cmd: 'iostat -x 1', lookFor: 'is the CPU waiting on disk I/O rather than executing?' },
+          { cmd: 'ss -tp', lookFor: 'are connections queuing or accumulating beyond expected?' },
+        ],
+      },
+
+      {
+        type: 'decision',
         signal: 'high %iowait',
         color: 'amber',
         interpretation: 'CPU is idle but waiting for disk I/O. Signal chain: system slows gradually under sustained load → VolumeQueueLength rises → BurstBalance drains → iowait climbs while CPU stays low. This is the gp2 burst exhaustion pattern. The OS metric understates the problem — validate in CloudWatch.',
         nextHop: 'Check CloudWatch VolumeQueueLength and BurstBalance — queue above 1 and draining credits confirm gp2 exhaustion.',
         validate: [
-          { cmd: 'iostat -x 1', lookFor: '%iowait > 10% and %util near 100% = disk saturated' },
-          { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/EBS --metric-name VolumeQueueLength ...', lookFor: 'above 1 = queue building. check BurstBalance alongside — if draining, gp2 credits are the cause' },
+          { cmd: 'iostat -x 1', lookFor: 'is the CPU waiting on disk rather than doing work, and is disk utilisation near 100%?' },
+          { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/EBS --metric-name VolumeQueueLength ...', lookFor: 'is the disk queue growing? if BurstBalance is also draining, gp2 credit exhaustion is the cause' },
         ],
       },
 
@@ -251,10 +268,10 @@ echo "Rolling back to: $BASE"` },
         type: 'decision',
         signal: 'ESTABLISHED connections climbing toward max_connections',
         color: 'amber',
-        interpretation: 'New requests are queuing for a database connection before they start. This looks like latency but is a connection pool exhaustion problem. Adding instances makes it worse.',
+        interpretation: 'New requests are queuing for a database connection before they start. This looks like latency but is a connection pool exhaustion problem — the host CPU and memory may look completely healthy. Adding instances makes it worse.',
         nextHop: 'Confirm connection count against RDS max_connections. Fix is RDS Proxy, not more instances.',
         validate: [
-          { cmd: 'ss -tp | grep ESTABLISHED | grep 5432 | wc -l', lookFor: 'compare against max_connections in the RDS parameter group' },
+          { cmd: 'ss -tp | grep ESTABLISHED | grep 5432 | wc -l', lookFor: 'how close is the live connection count to RDS max_connections?' },
           { cmd: 'watch -n 2 "ss -tp | grep ESTABLISHED | grep 5432 | wc -l"', lookFor: 'watch at peak — is it climbing? reaching max? requests failing after?' },
         ],
       },
@@ -266,7 +283,7 @@ echo "Rolling back to: $BASE"` },
         interpretation: 'ElastiCache is serving misses — queries falling through to RDS that should be cached. A cache miss spike directly increases downstream DB load. Causes: cold cache after restart, TTL too short, eviction pressure (maxmemory-policy too aggressive), or bad invalidation logic clearing keys on every write.',
         nextHop: 'Check when the cache was last restarted and trace the cache invalidation logic.',
         validate: [
-          { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/ElastiCache --metric-name CacheHitRate ...', lookFor: 'sudden drop = cache restart or mass eviction. gradual decline = TTL too short or over-invalidation' },
+          { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/ElastiCache --metric-name CacheHitRate ...', lookFor: 'did the hit rate drop suddenly (restart or eviction) or decline gradually (TTL too short, over-invalidation)?' },
         ],
       },
 
@@ -415,15 +432,31 @@ echo "Rolling back to: $BASE"` },
 
       {
         type: 'decision',
+        signal: 'host triage — rule out constraint before investigating services',
+        color: 'amber',
+        interpretation: 'Check host health first. Crashes from OOM kill originate at the host RAM level — but dependency exhaustion can also drive a process to crash while CPU looks healthy. Rule out host constraint before reading exit codes and logs.',
+        nextHop: 'If the host looks reasonable, move to exit code and log investigation.',
+        validate: [
+          { cmd: 'top', lookFor: 'is the host CPU saturated or load average well above nproc?' },
+          { cmd: 'free -h', lookFor: 'is memory pressure real, or just Linux page cache filling unused RAM?' },
+          { cmd: 'ps aux --sort=-%cpu | head -5', lookFor: 'which process owns the CPU pressure?' },
+          { cmd: 'ps aux --sort=-%mem | head -5', lookFor: 'which process owns the memory pressure?' },
+          { cmd: 'iostat -x 1', lookFor: 'is the CPU waiting on disk I/O rather than executing?' },
+          { cmd: 'ss -tp', lookFor: 'are connections queuing or accumulating beyond expected?' },
+        ],
+      },
+
+      {
+        type: 'decision',
         signal: 'exit 137',
         color: 'amber',
         interpretation: 'SIGKILL — the process was killed externally, not crashed by app logic. The OOM killer is the most common cause at AWS scale. anon-rss in the kernel log is the actual RAM the process was consuming at kill time.',
         nextHop: 'Check kernel logs for OOM evidence — anon-rss tells you actual RAM resident at kill.',
         validate: [
-          { cmd: "dmesg | grep -i 'killed process'", lookFor: 'process name, anon-rss (actual RAM at kill), and timestamp — correlates with the crash time' },
-          { cmd: "journalctl -k | grep -i 'killed process'", lookFor: 'alternative to dmesg — persistent across reboots, same kernel ring buffer content' },
-          { cmd: 'free -h', lookFor: 'swap in use = RAM exhausted. available < 100MB = under memory pressure right now' },
-          { cmd: 'ps aux --sort=-%mem | head -5', lookFor: 'which process is consuming most RAM currently' },
+          { cmd: "dmesg | grep -i 'killed process'", lookFor: 'which process was killed, how much RAM was it consuming (anon-rss), and does the timestamp match the crash?' },
+          { cmd: "journalctl -k | grep -i 'killed process'", lookFor: 'was this process OOM-killed? persistent across reboots, unlike dmesg' },
+          { cmd: 'free -h', lookFor: 'is memory exhausted or under active pressure right now?' },
+          { cmd: 'ps aux --sort=-%mem | head -5', lookFor: 'which process is consuming the most RAM right now?' },
         ],
       },
 
@@ -434,8 +467,8 @@ echo "Rolling back to: $BASE"` },
         interpretation: 'Application error — the process started but exited with a non-zero code. The reason is in the application logs, not the kernel. Do not go to dmesg.',
         nextHop: 'Read journalctl — the last lines before exit are the answer.',
         validate: [
-          { cmd: 'journalctl -u myapp -n 100', lookFor: 'config file not found / port already in use / DB connection refused / permission denied / missing env var' },
-          { cmd: 'journalctl -u myapp -p err --no-pager', lookFor: 'errors only — cuts through INFO noise to expose the failure reason' },
+          { cmd: 'journalctl -u myapp -n 100', lookFor: 'what caused the exit? look for config errors, port conflicts, DB connection failures, or missing env vars' },
+          { cmd: 'journalctl -u myapp -p err --no-pager', lookFor: 'what errors does the service log at exit? err-level filter cuts through INFO noise' },
         ],
       },
 
@@ -446,9 +479,9 @@ echo "Rolling back to: $BASE"` },
         interpretation: 'Filesystem full. The app cannot write log files, PID files, or temp files — it fails silently with no useful error. Free space first, then restart.',
         nextHop: 'Free space before restarting. Restarting on a full disk will crash again immediately.',
         validate: [
-          { cmd: 'du -sh /var/log/* | sort -rh | head -10', lookFor: 'logs are almost always the culprit' },
-          { cmd: "lsof | grep deleted | awk '{print $2, $7, $9}' | sort -k2 -rn | head -5", lookFor: 'large deleted files held open — space not freed until process closes the fd' },
-          { cmd: 'journalctl --disk-usage', lookFor: 'systemd journal grows silently and is often the overlooked culprit during disk-full incidents' },
+          { cmd: 'du -sh /var/log/* | sort -rh | head -10', lookFor: 'which directories or files are consuming the most space?' },
+          { cmd: "lsof | grep deleted | awk '{print $2, $7, $9}' | sort -k2 -rn | head -5", lookFor: 'are large deleted files being held open by a process, preventing space from being freed?' },
+          { cmd: 'journalctl --disk-usage', lookFor: 'how much disk space is the systemd journal consuming?' },
         ],
       },
 
@@ -607,8 +640,8 @@ echo "Rolling back to: $BASE"` },
         interpretation: 'Rolling deploy landed on some instances but not all. ALB routes round-robin — different users hit different versions. The broken version is on a subset of instances.',
         nextHop: 'Identify which instances have the new version. Roll back or complete the deploy.',
         validate: [
-          { cmd: 'curl http://<instance-ip>:8080/version', lookFor: 'compare version across instances — identifies which ones have the broken deploy' },
-          { cmd: 'aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <name>', lookFor: 'launch template version per instance — confirms mixed state' },
+          { cmd: 'curl http://<instance-ip>:8080/version', lookFor: 'which instances are running the new broken version?' },
+          { cmd: 'aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <name>', lookFor: 'are instances running different launch template versions?' },
         ],
       },
 
@@ -621,7 +654,7 @@ echo "Rolling back to: $BASE"` },
         validate: [
           { cmd: 'aws sts get-caller-identity', lookFor: 'confirm which role the instance is using' },
           { cmd: 'aws s3 ls s3://my-bucket', lookFor: 'test the specific dependency directly from the instance' },
-          { cmd: 'journalctl -u myapp | grep -i "access denied"', lookFor: 'which API call is failing — tells you the exact permission needed' },
+          { cmd: 'journalctl -u myapp | grep -i "access denied"', lookFor: 'which specific API call is failing due to missing permissions?' },
         ],
       },
 
@@ -632,8 +665,8 @@ echo "Rolling back to: $BASE"` },
         interpretation: 'Most services read config at startup only. Updating the config file does not take effect until the service restarts. The running process is still using its in-memory config from before the change.',
         nextHop: 'Restart the service. Check journalctl after for config parse errors.',
         validate: [
-          { cmd: 'systemctl restart myapp', lookFor: 'check exit code — if it fails, the new config has an error' },
-          { cmd: 'journalctl -u myapp -n 30', lookFor: 'config parse error = file is wrong. started successfully = change applied' },
+          { cmd: 'systemctl restart myapp', lookFor: 'did the service start cleanly with the new config, or did it exit immediately?' },
+          { cmd: 'journalctl -u myapp -n 30', lookFor: 'does the service log a config parse error, or did it start cleanly?' },
         ],
       },
 
@@ -748,7 +781,7 @@ aws ec2 create-launch-template-version \
 
       { id: 'instance', label: 'Instance',
         layers: [
-          { layer: 'system',  tool: 'top / free',  status: 'reached', signal: 'resource pressure at peak' },
+          { layer: 'system',  tool: 'top / free',  status: 'reached', signal: 'is the host constrained?' },
           { layer: 'process', tool: 'ss -tp',       status: 'reached', signal: 'ESTABLISHED connections climbing' },
           { layer: 'app',     tool: 'curl · logs',  status: 'failing', signal: '',
             branches: [
@@ -779,14 +812,30 @@ aws ec2 create-launch-template-version \
 
       {
         type: 'decision',
+        signal: 'host triage — rule out constraint before investigating services',
+        color: 'amber',
+        interpretation: 'Check host health first. Intermittent latency and timeouts can originate from dependency exhaustion — RDS connections, cache misses, external waits — while CPU and memory remain completely healthy. Rule out host constraint before moving into sockets, services, logs, and dependencies.',
+        nextHop: 'If the host looks reasonable, the constraint is in the service or dependency layer.',
+        validate: [
+          { cmd: 'top', lookFor: 'is the host CPU saturated or load average well above nproc?' },
+          { cmd: 'free -h', lookFor: 'is memory pressure real, or just Linux page cache filling unused RAM?' },
+          { cmd: 'ps aux --sort=-%cpu | head -5', lookFor: 'which process owns the CPU pressure?' },
+          { cmd: 'ps aux --sort=-%mem | head -5', lookFor: 'which process owns the memory pressure?' },
+          { cmd: 'iostat -x 1', lookFor: 'is the CPU waiting on disk I/O rather than executing?' },
+          { cmd: 'ss -tp', lookFor: 'are connections queuing or accumulating beyond expected?' },
+        ],
+      },
+
+      {
+        type: 'decision',
         signal: 'TargetResponseTime spiking at peak',
         color: 'amber',
-        interpretation: 'Latency correlates with load — this is a capacity or queuing problem, not a code bug. Something is saturating at peak: DB connections, memory, disk I/O, or the instance CPU.',
-        nextHop: 'Pull CloudWatch metrics across the failure window. Find what else was spiking at the same moment.',
+        interpretation: 'Latency correlates with load — this is a capacity or queuing problem, not a code bug. The constraint may be dependency-level: RDS max_connections exhaustion, connection pool saturation, or ElastiCache miss spikes can all cause latency while CPU and memory stay completely healthy. Pull metrics across the failure window to find what else was spiking.',
+        nextHop: 'Check host health first with the triage block above, then move to dependency metrics if the host looks reasonable.',
         validate: [
           { cmd: 'aws cloudwatch get-metric-statistics --namespace AWS/ApplicationELB --metric-name TargetResponseTime ...', lookFor: 'when did it start? what else changed at that exact moment?' },
-          { cmd: 'top', lookFor: 'CPU, load average vs nproc — is the host saturated?' },
-          { cmd: 'free -h', lookFor: 'swap in use = memory exhausted. available < 100MB = under pressure now' },
+          { cmd: 'top', lookFor: 'is the host CPU saturated, or is load average well above nproc?' },
+          { cmd: 'free -h', lookFor: 'is memory exhausted or under active pressure right now?' },
         ],
       },
 
@@ -797,7 +846,7 @@ aws ec2 create-launch-template-version \
         interpretation: 'Requests are queuing for a database connection. New requests start late, respond late, ALB sees timeouts. This is connection pool exhaustion — it looks like latency but is not a latency problem.',
         nextHop: 'Compare live connection count to RDS max_connections. Fix is RDS Proxy.',
         validate: [
-          { cmd: 'ss -tp | grep ESTABLISHED | grep 5432 | wc -l', lookFor: 'compare against max_connections in the RDS parameter group' },
+          { cmd: 'ss -tp | grep ESTABLISHED | grep 5432 | wc -l', lookFor: 'how close is the live connection count to RDS max_connections?' },
           { cmd: 'watch -n 2 "ss -tp | grep ESTABLISHED | grep 5432 | wc -l"', lookFor: 'watch at peak — is it climbing to max? requests failing immediately after?' },
         ],
       },
@@ -810,7 +859,7 @@ aws ec2 create-launch-template-version \
         nextHop: 'Time the /health endpoint under load. Compare to the ALB health check timeout setting.',
         validate: [
           { cmd: "curl -s -o /dev/null -w '%{time_total}' http://localhost:8080/health", lookFor: 'how long does /health take? close to ALB timeout = it will flap under load' },
-          { cmd: 'aws elbv2 describe-target-groups --load-balancer-arn <arn>', lookFor: 'HealthCheckTimeoutSeconds — if /health response time approaches this, flapping is expected under load' },
+          { cmd: 'aws elbv2 describe-target-groups --load-balancer-arn <arn>', lookFor: 'does the /health response time approach the ALB HealthCheckTimeoutSeconds threshold?' },
         ],
       },
     ],
@@ -955,9 +1004,9 @@ aws ec2 create-launch-template-version \
         interpretation: 'The CloudWatch alarm has fired but the ASG is not adding instances. Either a cooldown period is blocking the trigger, or desired capacity has already reached max and there is nowhere to go.',
         nextHop: 'Check desired vs max capacity first, then cooldown state in the activity log.',
         validate: [
-          { cmd: 'aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <name>', lookFor: 'desired == max = ceiling hit. check cooldown timestamp in the activity log' },
+          { cmd: 'aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <name>', lookFor: 'has desired capacity hit the max ceiling, or is a cooldown blocking the trigger?' },
           { cmd: 'aws autoscaling describe-scaling-activities --auto-scaling-group-name <name>', lookFor: 'was a scale event attempted and blocked? what was the stated reason?' },
-          { cmd: 'aws cloudwatch describe-alarms --alarm-names <name>', lookFor: 'confirm alarm is actually in ALARM state. check metric period and evaluation window' },
+          { cmd: 'aws cloudwatch describe-alarms --alarm-names <name>', lookFor: 'is the alarm actually in ALARM state? check the metric period and evaluation window' },
         ],
       },
 
@@ -968,9 +1017,9 @@ aws ec2 create-launch-template-version \
         interpretation: 'New instances are launched but fail health checks before the app finishes starting. HealthCheckGracePeriod is shorter than actual startup time — the instance is terminated before it has a chance.',
         nextHop: 'Measure actual startup time, increase grace period, and check bootstrap logs for errors.',
         validate: [
-          { cmd: "aws autoscaling describe-auto-scaling-groups | jq '.[].HealthCheckGracePeriod'", lookFor: 'compare to actual startup time — should be startup + buffer (30-60s)' },
-          { cmd: 'cat /var/log/cloud-init-output.log', lookFor: 'bootstrap errors — a failure here means the app never starts at all' },
-          { cmd: 'journalctl -u myapp -n 50', lookFor: 'app startup errors that prevent it from passing health checks' },
+          { cmd: "aws autoscaling describe-auto-scaling-groups | jq '.[].HealthCheckGracePeriod'", lookFor: 'is the grace period longer than actual startup time plus a buffer?' },
+          { cmd: 'cat /var/log/cloud-init-output.log', lookFor: 'did the bootstrap script error? a failure here means the app never starts' },
+          { cmd: 'journalctl -u myapp -n 50', lookFor: 'is the app logging startup errors that would prevent it passing health checks?' },
         ],
       },
 
@@ -981,7 +1030,7 @@ aws ec2 create-launch-template-version \
         interpretation: 'EC2 health check only verifies the instance is running and passes system status checks. A running instance with a broken app is permanently healthy to EC2 checks — it will never be replaced by the ASG.',
         nextHop: 'Switch ASG health check type to ELB. The ASG then adopts the ALB verdict.',
         validate: [
-          { cmd: 'aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <name>', lookFor: 'HealthCheckType: EC2 = broken app stays in rotation. needs to be ELB for web-facing workloads' },
+          { cmd: 'aws autoscaling describe-auto-scaling-groups --auto-scaling-group-names <name>', lookFor: 'is the health check type EC2 (hardware only) or ELB (adopts ALB verdict on app health)?' },
           { cmd: 'aws elbv2 describe-target-health --target-group-arn <arn>', lookFor: 'is the ALB already seeing the targets as unhealthy? if so, ASG just does not know yet.' },
         ],
       },

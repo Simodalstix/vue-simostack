@@ -102,7 +102,7 @@
             <template v-for="(step, i) in card.workflow.pipeline" :key="i">
               <div class="flex flex-col items-center px-2 py-1 rounded border border-slate-700/50 bg-slate-800/60">
                 <span class="text-[11px] text-slate-200 font-medium leading-snug">{{ typeof step === 'string' ? step : step.name }}</span>
-                <span v-if="step.sub" class="text-[9px] text-slate-500 leading-snug">({{ step.sub }})</span>
+                <span v-if="typeof step === 'object' && step.sub" class="text-[9px] text-slate-500 leading-snug">({{ step.sub }})</span>
               </div>
               <span v-if="i < card.workflow.pipeline.length - 1" class="text-orange-500/50 text-[11px] shrink-0">→</span>
             </template>

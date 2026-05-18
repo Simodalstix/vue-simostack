@@ -68,6 +68,7 @@ What stayed with me was how much the redirect URL mattered. A generic access den
       { tag: '[LP]',   text: 'Learn and Be Curious — practical signal (hackathon) → went and learned it holistically, not just enough for the task' },
       { tag: '[LP]',   text: 'Invent and Simplify — SSM as handoff; downstream never touches a hardcoded ID' },
       { tag: '[TONE]', text: 'Enthusiasm is genuine — don\'t over-explain the architecture, let the SSM insight land naturally' },
+      { code: 'aws ec2 create-image \\\n  --instance-id i-1234567890abcdef0 \\\n  --name "my-manual-ami" \\\n  --no-reboot' },
     ],
     rehearsal: `Image management kept coming up as a pattern in serious systems work — golden AMIs, consistent instance state, reproducible builds. I had a genuine gap there and decided to fill it properly rather than just read about it.
 
@@ -82,30 +83,33 @@ I also added a verify_build.sh that runs inside the builder instance before the 
 The SSM pattern was the real insight — once you wire infrastructure to reference a parameter rather than a hardcoded value, you start seeing where else that applies. It's the same principle as not hardcoding container image tags. And the pre-baked images have a direct connection to DR — an ASG in a recovery region launching from a known-good AMI is meaningfully faster than bootstrapping from scratch at launch time.`,
     cues: [
       'SITUATION',
-      'As I learned more AWS, I realised AMI management was far more foundational than I first thought — underpins reproducible deployments, scaling, and DR',
-      'So I set out to build the whole thing — two-layer Packer pipeline, AMI IDs written into SSM Parameter Store on every build',
+      'During the hackathon I hit a point where I needed to build an image manually — and I was caught out. Didn\'t have the fundamentals.',
+      'That\'s when I understood how foundational AMI management actually is — reproducible deployments, scaling, DR. All of it depends on getting this right.',
       '---',
       'ACTION',
       'Chose Packer — cloud-agnostic and widely used',
-      'Split builds into two layers: reusable base (OS hardening + config) → app image (Python/FastAPI service)',
+      'Split builds into two layers: hardened base (OS hardening, fail2ban, sysctl, CW agent) → app image (Python 3.11, FastAPI, systemd unit)',
       'Biggest design choice: avoid hardcoded AMI IDs entirely',
       'Used SSM Parameter Store as the handoff point — base writes its AMI ID, app layer reads it, ASG consumes the latest automatically',
       'Made the whole stack modular and rebuildable',
       'Wrote smoke tests to validate the image before sealing it',
       '---',
       'RESULT',
-      'Biggest thing I learned: how much cleaner infrastructure becomes when components are loosely coupled instead of manually wired together',
-      'Rebuilding infrastructure stopped feeling handcrafted and started feeling reproducible',
+      'Pipeline runs on demand via CodeBuild — one CLI command triggers the build, AMI ID lands in SSM automatically',
+      'Went from not being able to create an image manually to having a fully automated two-layer pipeline',
       '---',
       'CLOSE',
-      'Real insight wasn\'t Packer itself — it was the SSM pattern',
-      'Passing references instead of hardcoding values turned out to be useful everywhere',
-      'Changed how I think about building infrastructure in general',
+      'Breakthrough project — SSM as a config bus was the real insight, downstream stacks read a parameter, never a hardcoded ID',
+      'I reused that exact pattern across the rest of the ops-lab platform to wire five projects together',
     ],
     scripts: [
       {
         name: 'publish_ami.py',
         description: 'Write a newly baked AMI ID to SSM Parameter Store and tag the AMI.',
+        policy: [
+          'Verifies AMI is in available state before promoting — fails fast rather than publishing a bad image',
+          'Writes both the AMI ID and a build version timestamp (YYYYMMDD-hhmm) to SSM',
+        ],
         usage: [
           'publish_ami.py --ami-id ami-0abc1234 --type base',
           'publish_ami.py --ami-id ami-0abc1234 --type app --region ap-southeast-2',
@@ -114,6 +118,10 @@ The SSM pattern was the real insight — once you wire infrastructure to referen
       {
         name: 'verify_ami.py',
         description: 'Verify the AMI in Parameter Store exists, is available, and has consistent tags.',
+        policy: [
+          'Reads the AMI ID from SSM and describes it in EC2 directly — confirms SSM and reality are in sync',
+          'Explicit PASS/FAIL checks for state, Name, Project, Type, and PublishedAt tags',
+        ],
         usage: [
           'verify_ami.py --type base',
           'verify_ami.py --type app --region ap-southeast-2',
