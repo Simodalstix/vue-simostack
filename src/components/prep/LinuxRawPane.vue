@@ -118,7 +118,23 @@
           </div>
         </div>
 
-        <div v-for="section in cols[1]" :key="section.heading">
+        <div>
+          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">{{ cols[1][0].heading }}</div>
+          <PrepCodeBlock :code="cols[1][0].code" />
+        </div>
+
+        <details class="group">
+          <summary class="cursor-pointer select-none text-[10px] uppercase tracking-widest text-orange-400/50 font-semibold hover:text-orange-400 transition-colors list-none flex items-center gap-1.5">
+            <span class="group-open:rotate-90 transition-transform inline-block">▶</span>
+            BONUS — MAKE JOURNAL LOGS PERSIST ACROSS REBOOTS
+          </summary>
+          <div class="mt-2 space-y-1.5 text-[11px]">
+            <div class="text-slate-500 leading-snug">By default <code class="text-emerald-400/60">journald</code> stores logs in <code class="text-emerald-400/60">/run/log/journal</code> (RAM) — wiped on reboot. To persist them:</div>
+            <PrepCodeBlock :code="persistJournalCode" />
+          </div>
+        </details>
+
+        <div v-for="section in cols[1].slice(1)" :key="section.heading">
           <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">{{ section.heading }}</div>
           <PrepCodeBlock :code="section.code" />
         </div>
@@ -194,4 +210,18 @@ const cols = [
   linuxRaw.slice(3, 6),
   linuxRaw.slice(6),
 ]
+
+const persistJournalCode = String.raw`# 1. Create the persistent log directory
+sudo mkdir -p /var/log/journal
+
+# 2. Tell journald to use it
+# /etc/systemd/journald.conf
+# [Journal]
+# Storage=persistent
+
+# 3. Apply
+sudo systemctl restart systemd-journald
+
+# Verify — should now show /var/log/journal/<machine-id>/
+journalctl --disk-usage`
 </script>
