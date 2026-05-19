@@ -56,7 +56,7 @@ ips = []
 
 with open("access.log") as f:
     for line in f:
-        parts = line.split()
+        parts = line.split()  # split(",") for CSV
         if len(parts) > 8 and parts[8].startswith("5"):
             ips.append(parts[0])
 
@@ -64,6 +64,22 @@ counts = Counter(ips)
 
 for ip, count in counts.most_common(5):
     print(ip, count)`,
+    extras: [
+      {
+        label: 'dict alternative (no Counter)',
+        code: `counts = {}
+
+for ip in ips:
+    counts[ip] = counts.get(ip, 0) + 1
+
+# sorting:
+sorted_counts = sorted(
+    counts.items(),
+    key=lambda x: x[1],
+    reverse=True
+)`,
+      },
+    ],
   },
   {
     id: 'health-checker',
@@ -101,15 +117,31 @@ sys.exit(1 if failed else 0)`,
     stdlib: false,
     demonstrates: 'Calling the AWS API via boto3, pulling nested data from the response, exiting with a meaningful status code.',
     whenToUse: 'Operational scripts on EC2 or Lambda. boto3 picks up the instance profile — no keys needed.',
-    interview: 'Mention: instance profile = no hardcoded keys. The role needs elbv2:DescribeTargetHealth — scope it tightly.',
+    interview: 'Mention: instance profile = no hardcoded keys. The role needs alb:DescribeTargetHealth — scope it tightly.',
+    extras: [
+      {
+        label: 'real-world improvement',
+        code: `# Real-world improvement:
+# dynamically discover the Target Group ARN instead
+# of passing it manually.
+
+# Example:
+#
+# resp = alb.describe_target_groups(Names=["my-target-group"])
+# tg_arn = resp["TargetGroups"][0]["TargetGroupArn"]`,
+      },
+    ],
     code: `#!/usr/bin/env python3
 import boto3
 import sys
 
+# s3 = boto3.client("s3")
+# ec2 = boto3.client("ec2")
+
 tg_arn = sys.argv[1]
 
-client = boto3.client("elbv2")
-resp = client.describe_target_health(TargetGroupArn=tg_arn)
+alb = boto3.client("alb")
+resp = alb.describe_target_health(TargetGroupArn=tg_arn)
 
 failed = 0
 

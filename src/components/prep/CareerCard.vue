@@ -45,9 +45,12 @@
           <div class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-3">Talking Anchors</div>
           <div v-for="(anchor, i) in card.anchors" :key="i" class="flex gap-1.5 items-start leading-snug">
             <span class="shrink-0 text-slate-700 mt-0.5 select-none">•</span>
-            <span class="min-w-0">
+            <span class="min-w-0 w-full">
               <span v-if="anchor.tag" class="mr-1 font-medium" :class="tagColor(anchor.tag)">{{ anchor.tag }}</span>
-              <code v-if="anchor.code" class="block mt-0.5 px-2 py-1 rounded bg-slate-900/80 border border-slate-700/50 text-emerald-300/90 text-[10.5px] leading-snug whitespace-pre-wrap break-all">{{ anchor.code }}</code>
+              <div v-if="anchor.codes" class="flex gap-1.5 mt-0.5">
+                <code v-for="(c, ci) in anchor.codes" :key="ci" class="flex-1 px-2 py-1 rounded bg-slate-900/80 border border-slate-700/50 text-emerald-300/90 text-[10.5px] leading-snug whitespace-pre-wrap">{{ c }}</code>
+              </div>
+              <code v-else-if="anchor.code" class="block mt-0.5 px-2 py-1 rounded bg-slate-900/80 border border-slate-700/50 text-emerald-300/90 text-[10.5px] leading-snug whitespace-pre-wrap break-all">{{ anchor.code }}</code>
               <span v-else class="text-slate-300">{{ anchor.text }}</span>
             </span>
           </div>
