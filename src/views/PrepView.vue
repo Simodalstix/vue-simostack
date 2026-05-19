@@ -1,5 +1,21 @@
 <template>
-  <div class="flex h-screen overflow-hidden font-mono bg-slate-900 text-slate-300">
+  <div class="flex flex-col h-screen overflow-hidden font-mono bg-slate-900 text-slate-300">
+
+    <!-- STAR top nav -->
+    <nav class="shrink-0 flex items-center gap-1 px-2 py-1.5 bg-slate-800 border-b border-slate-600 overflow-x-auto">
+      <span class="text-[10px] uppercase tracking-widest text-orange-400/80 font-semibold shrink-0 pr-2">STAR</span>
+      <button
+        v-for="tab in starSection.tabs"
+        :key="tab.id"
+        @click="setTab('star', tab.id)"
+        class="shrink-0 px-3 py-1 text-[12px] rounded border transition-colors duration-100"
+        :style="activeKey === 'star-' + tab.id
+          ? { backgroundColor: (LP_HEX[starTabLps[tab.id]?.[0]] || '#7c3aed') + '33', borderColor: LP_HEX[starTabLps[tab.id]?.[0]] || '#7c3aed', color: '#e2e8f0' }
+          : { backgroundColor: 'transparent', borderColor: (LP_HEX[starTabLps[tab.id]?.[0]] || '#475569') + '60', color: '#94a3b8' }"
+      >{{ tab.label }}</button>
+    </nav>
+
+    <div class="flex flex-1 overflow-hidden">
 
     <!-- Sidebar -->
     <aside class="w-[200px] shrink-0 bg-slate-800 border-r border-slate-700 overflow-y-auto flex flex-col">
@@ -126,7 +142,8 @@
       <ProjectsPane v-if="activeSection === 'projects'" />
 
     </main>
-  </div>
+  </div><!-- end flex row -->
+  </div><!-- end outer column -->
 </template>
 
 <script setup>
