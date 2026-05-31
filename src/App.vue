@@ -73,7 +73,7 @@ import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const isPrep = computed(() => route.path.startsWith('/prep'))
+const isPrep = computed(() => route.path.startsWith('/prep') || route.path.startsWith('/clearance'))
 const isHome = computed(() => route.path === '/')
 
 const isMobileMenuOpen = ref(false)

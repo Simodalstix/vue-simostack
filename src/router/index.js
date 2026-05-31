@@ -25,6 +25,11 @@ const routes = [
     name: 'Prep',
     component: () => import('../views/PrepView.vue'),
   },
+  {
+    path: '/clearance',
+    name: 'Clearance',
+    component: () => import('../views/ClearanceView.vue'),
+  },
 ]
 
 const router = createRouter({
