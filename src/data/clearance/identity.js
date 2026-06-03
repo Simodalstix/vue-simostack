@@ -1,20 +1,21 @@
 // src/data/clearance/identity.js
+// PV framing — Jeanie is household/family, not a foreign association category
 
 export const simon = {
   name: 'Simon Parker',
   born: 'Christchurch, New Zealand',
   bornFlag: 'nz',
   citizenships: [
-    { country: 'Australia', code: 'au', basis: 'By descent (father Australian — obtained near birth)' },
+    { country: 'Australia', code: 'au', basis: 'By descent — father Australian, obtained near birth' },
     { country: 'New Zealand', code: 'nz', basis: 'By birth' },
   ],
   residence: 'Southbank, Melbourne VIC',
   residenceFlag: 'au',
+  physique: 'Mesomorphic — lifelong athlete, maintained throughout adulthood',
   sport: [
     { name: 'Rugby Union', note: 'Grew up playing, maintained through adulthood' },
-    { name: 'Gymnastics', note: 'Competitive youth, developed lifelong physical foundation' },
+    { name: 'Gymnastics', note: 'Competitive youth — lifelong physical foundation' },
   ],
-  physique: 'Mesomorphic — lifelong athlete, maintained throughout adulthood',
 }
 
 export const jeanie = {
@@ -27,12 +28,13 @@ export const jeanie = {
     { country: 'Hong Kong SAR', code: 'hk', basis: 'By birth — retains SAR passport' },
   ],
   residence: 'Southbank, Melbourne VIC (joint)',
-  residenceFlag: 'au',
   metContext: 'Met on pharmacy placement at Geelong hospital',
-  career: 'Practising pharmacist — Student → Intern → Registered Pharmacist (Australia)',
-  priorWork: 'Retail work in Hong Kong (student era, pre-immigration)',
-  familyInHK: 'Parents — ordinary civilians, no government or military affiliations',
-  note: 'Moved to Australia to study pharmacy. Permanent resident → Australian citizen.',
+  career: 'Practising pharmacist — Student → Intern → Registered Pharmacist',
+  priorWork: 'Retail work, Hong Kong (student era, pre-immigration only)',
+  familyInHK: 'Mother — civilian, no government or military affiliations. Father not in regular contact.',
+  governmentLinks: 'None known',
+  immigrationPath: 'Student visa → Permanent Resident → Australian Citizen (post-marriage)',
+  note: 'Moved to Australia to study pharmacy. Fully integrated. No foreign financial ties.',
 }
 
 export const household = {
@@ -49,6 +51,7 @@ export const household = {
   },
 }
 
+// Education — Simon
 export const education = [
   {
     degree: 'Bachelor of Biomedical Science',
@@ -74,12 +77,13 @@ export const education = [
     location: 'Melbourne, Australia',
     flag: 'au',
     years: '2014 – 2016',
-    note: 'Graduate entry (2-year accelerated from 4-year program)',
+    note: 'Graduate entry — 2-year accelerated from 4-year program',
     logoUrl: '/images/education/monash_icon.jpg',
     colour: '#006DAE',
   },
 ]
 
+// Education — Jeanie
 export const jeanieEducation = [
   {
     degree: 'Bachelor of Pharmacy (Honours)',
@@ -89,9 +93,11 @@ export const jeanieEducation = [
     years: '2010 – 2014',
     note: 'Standard 4-year program',
     logoUrl: '/images/education/monash_icon.jpg',
+    colour: '#006DAE',
   },
 ]
 
+// Health & physical
 export const health = {
   physique: 'Mesomorphic — lifelong athlete, maintained throughout adulthood',
   sport: [
@@ -108,19 +114,12 @@ export const health = {
   bloodwork: {
     date: 'Early 2026',
     summary: 'All markers within healthy range. Doctor confirmed excellent overall health.',
-    link: null,
-    markers: [
-      // Add specific values here when available, e.g.:
-      // { label: 'Total Cholesterol', value: '4.2 mmol/L', status: 'optimal' },
-      // { label: 'HDL', value: '1.8 mmol/L', status: 'optimal' },
-      // { label: 'LDL', value: '2.1 mmol/L', status: 'optimal' },
-      // { label: 'Triglycerides', value: '0.9 mmol/L', status: 'optimal' },
-      // { label: 'Fasting Glucose', value: '4.8 mmol/L', status: 'optimal' },
-      // { label: 'eGFR', value: '>90', status: 'optimal' },
-    ],
+    markers: [],
   },
 }
 
+// Voluntary disclosures — on Identity page because they are about who you are,
+// not about risk categorisation
 export const disclosures = [
   {
     id: 'cannabis',
@@ -135,7 +134,7 @@ export const disclosures = [
       'Intent: willing to cease entirely for this role — straightforward decision',
       'No legal incidents, no dependency, no treatment history',
     ],
-    framing: 'Voluntary disclosure is a character indicator. The assessment is about judgement and susceptibility to coercion — not whether use occurred. Honest disclosure with clear intent to cease is the correct approach.',
+    framing: 'Voluntary disclosure is a character indicator. The assessment is about judgement and susceptibility to coercion — not whether use occurred. Honest disclosure with clear intent to cease is the correct approach. At PV level, concealment is the real risk.',
   },
   {
     id: 'mental-health',
@@ -146,10 +145,69 @@ export const disclosures = [
     detail: [
       'Prescription: Escitalopram (Lexapro) 10mg — SSRI',
       'Condition: mild anxiety — sleep disruption from planning/rumination',
-      'Functional impact: none — high-functioning, confident, socially engaged',
+      'Functional impact: none — high-functioning, confident, socially engaged at work',
       'Work presentation: calm, direct, joking in nature — mature and grounded',
-      'Disclosed during security screen',
+      'Disclosed in security screen',
     ],
     framing: 'PSPF guidance: treated mental health conditions are not a barrier to security clearance. The relevant question is functional capacity — not whether a prescription exists. 10mg Escitalopram for mild anxiety is one of the most common management tools in Australia.',
   },
 ]
+
+// Family members required for PV questionnaire
+// PV requires: partner + parents + siblings + cohabitants over 18 + children
+export const pvFamily = {
+  partner: {
+    label: 'Spouse',
+    name: 'Jeanie Tzs Yan Ng (Parker)',
+    dob: 'To confirm',
+    citizenship: 'Australian + Hong Kong SAR',
+    flags: ['au', 'hk'],
+    address: 'Southbank, Melbourne VIC (joint)',
+    occupation: 'Registered Pharmacist',
+  },
+  parents: [
+    {
+      label: 'Father',
+      name: 'To confirm with family',
+      dob: 'To confirm',
+      citizenship: 'Australian',
+      flags: ['au'],
+      address: 'New Zealand (to confirm)',
+      occupation: 'To confirm',
+      note: 'Australian citizen — basis for Simon\'s citizenship by descent',
+    },
+    {
+      label: 'Mother',
+      name: 'To confirm with family',
+      dob: 'To confirm',
+      citizenship: 'To confirm (NZ)',
+      flags: ['nz'],
+      address: 'New Zealand (to confirm)',
+      occupation: 'To confirm',
+    },
+  ],
+  siblings: [
+    { label: 'Sibling 1', name: 'To confirm', citizenship: 'NZ', flags: ['nz'], address: 'New Zealand', occupation: 'To confirm' },
+    { label: 'Sibling 2', name: 'To confirm', citizenship: 'NZ', flags: ['nz'], address: 'New Zealand', occupation: 'To confirm' },
+    { label: 'Sibling 3', name: 'To confirm', citizenship: 'NZ', flags: ['nz'], address: 'New Zealand', occupation: 'To confirm' },
+  ],
+  overseasRelatives: [
+    {
+      label: 'Mother-in-law',
+      name: 'To confirm with Jeanie',
+      relationship: 'Jeanie\'s mother',
+      country: 'Hong Kong SAR',
+      flags: ['hk'],
+      citizenship: 'Hong Kong SAR',
+      address: 'Hong Kong (to confirm)',
+      occupation: 'To confirm',
+      note: 'Civilian — no known government or military affiliations',
+    },
+  ],
+  daughter: {
+    name: 'Lulu Artemis Parker',
+    dob: '~2021',
+    citizenship: 'Australian',
+    flags: ['au'],
+  },
+}
