@@ -84,6 +84,7 @@
           <!-- Row 1: ITIL then Microsoft lowest to best right (flush right) -->
           <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4">
             <img src="/images/certifications/itil.png" class="rounded-full w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showITILModal = true" alt="ITIL Foundation" />
+            <img src="/images/certifications/a-plus.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showAPlusModal = true" alt="CompTIA A+" />
             <img src="/images/certifications/ms-900.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showMS900Modal = true" alt="Microsoft 365 Fundamentals" />
             <img src="/images/certifications/sc-300.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSC300Modal = true" alt="Microsoft SC-300 Identity and Access Administrator" />
             <img src="/images/certifications/azure-admin.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showAzureAdminModal = true" alt="Azure Administrator Associate" />
@@ -119,6 +120,7 @@
   <SC300Modal :visible="showSC300Modal" @close="showSC300Modal = false" />
   <AWSPractitioner :visible="showCloudPractitionerModal" @close="showCloudPractitionerModal = false" />
   <PythonModal :visible="showPCAPModal" @close="showPCAPModal = false" />
+  <APlusModal :visible="showAPlusModal" @close="showAPlusModal = false" />
 </template>
 
 <script setup>
@@ -134,6 +136,7 @@ import SecurityPlus from '../components/modals/Cert-SecurityPlus.vue'
 import SC300Modal from '../components/modals/Cert-SC300.vue'
 import AWSPractitioner from '../components/modals/Cert-AWSPractioner.vue'
 import PythonModal from '../components/modals/Cert-PythonModal.vue'
+import APlusModal from '../components/modals/Cert-CompTIA-A+.vue'
 
 
 const showArchitectModal = ref(false)
@@ -147,4 +150,5 @@ const showCloudPractitionerModal = ref(false)
 const showITILModal = ref(false)
 const showSecurityPlusModal = ref(false)
 const showPCAPModal = ref(false)
+const showAPlusModal = ref(false)
 </script>
