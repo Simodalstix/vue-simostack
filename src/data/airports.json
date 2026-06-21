@@ -1,0 +1,19 @@
+{
+  "CHC": { "lon": 172.532, "lat": -43.489, "name": "Christchurch", "country": "nz" },
+  "MEL": { "lon": 144.843, "lat": -37.673, "name": "Melbourne", "country": "au" },
+  "WLG": { "lon": 174.805, "lat": -41.327, "name": "Wellington", "country": "nz" },
+  "KUL": { "lon": 101.710, "lat": 2.745, "name": "Kuala Lumpur", "country": "my" },
+  "SIN": { "lon": 103.994, "lat": 1.359, "name": "Singapore", "country": "sg" },
+  "HKG": { "lon": 113.915, "lat": 22.309, "name": "Hong Kong", "country": "hk" },
+  "NRT": { "lon": 140.386, "lat": 35.765, "name": "Tokyo Narita", "country": "jp" },
+  "BCN": { "lon": 2.078, "lat": 41.297, "name": "Barcelona", "country": "es" },
+  "TLS": { "lon": 1.363, "lat": 43.629, "name": "Toulouse", "country": "fr" },
+  "ATH": { "lon": 23.946, "lat": 37.936, "name": "Athens", "country": "gr" },
+  "EFL": { "lon": 20.500, "lat": 38.120, "name": "Kefalonia", "country": "gr" },
+  "OTP": { "lon": 26.085, "lat": 44.572, "name": "Bucharest", "country": "ro" },
+  "AMS": { "lon": 4.764, "lat": 52.309, "name": "Amsterdam", "country": "nl" },
+  "ZRH": { "lon": 8.549, "lat": 47.458, "name": "Zurich", "country": "ch" },
+  "FCO": { "lon": 12.251, "lat": 41.800, "name": "Rome Fiumicino", "country": "it" },
+  "ORY": { "lon": 2.359, "lat": 48.726, "name": "Paris Orly", "country": "fr" },
+  "CDG": { "lon": 2.548, "lat": 49.010, "name": "Paris CDG", "country": "fr" }
+}

@@ -1,0 +1,57 @@
+[
+  { "date": "2011-04-25", "from": "CHC", "to": "KUL", "carrier": null, "ref": "SCRN", "pax": ["Simon", "Melissa"], "tripId": "kul-2011", "status": "gap" },
+  { "date": "2011-04-29", "from": "KUL", "to": "CHC", "carrier": null, "ref": "SCRN", "pax": ["Simon", "Melissa"], "tripId": "kul-2011", "status": "gap" },
+
+  { "date": "2014-01-15", "from": "CHC", "to": "MEL", "carrier": "Air New Zealand NZ891", "ref": "JPNKYH", "pax": ["Simon"], "tripId": "relocation-2014", "status": "confirmed" },
+
+  { "date": "2015-07-02", "from": "MEL", "to": "CHC", "carrier": "Jetstar JQ171", "ref": "FEHKYQ", "pax": ["Simon"], "tripId": "nz-2015-jul", "status": "confirmed" },
+  { "date": "2015-07-06", "from": "CHC", "to": "MEL", "carrier": "Jetstar JQ166", "ref": "FEHKYQ", "pax": ["Simon"], "tripId": "nz-2015-jul", "status": "confirmed" },
+
+  { "date": "2015-11-19", "from": "MEL", "to": "WLG", "carrier": "Jetstar JQ163", "ref": "RFZKRD", "pax": ["Simon"], "tripId": "nz-2015-nov", "status": "confirmed" },
+  { "date": "2015-11-19", "from": "WLG", "to": "CHC", "carrier": "Jetstar JQ287", "ref": "RFZKRD", "pax": ["Simon"], "tripId": "nz-2015-nov", "status": "confirmed" },
+  { "date": "2015-11-22", "from": "CHC", "to": "MEL", "carrier": "Jetstar JQ174", "ref": "RFZKRD", "pax": ["Simon"], "tripId": "nz-2015-nov", "status": "confirmed" },
+
+  { "date": "2017-03-03", "from": "MEL", "to": "CHC", "carrier": "Virgin Australia VA100", "ref": "GPRZNK", "pax": ["Simon", "Jeanie"], "tripId": "nz-2017-mar", "status": "confirmed" },
+  { "date": "2017-03-05", "from": "CHC", "to": "MEL", "carrier": "Qantas QF132", "ref": "25F8KU", "pax": ["Simon", "Jeanie"], "tripId": "nz-2017-mar", "status": "confirmed" },
+
+  { "date": "2017-08-20", "from": "MEL", "to": "SIN", "carrier": "Singapore Airlines SQ228", "ref": "P9IP2Z", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-08-20", "from": "SIN", "to": "BCN", "carrier": "Singapore Airlines SQ388", "ref": "P9IP2Z", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-08-28", "from": "TLS", "to": "ATH", "carrier": "Aegean A3641", "ref": "3PFHH9", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-08-30", "from": "ATH", "to": "EFL", "carrier": "Aegean Airlines", "ref": "3Q3VT3", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-09-05", "from": "EFL", "to": "ATH", "carrier": "Aegean OA411", "ref": "3O9JCU", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-09-06", "from": "ATH", "to": "OTP", "carrier": null, "ref": null, "pax": ["Simon"], "tripId": "europe-2017", "status": "gap", "approx": true },
+  { "date": "2017-09-10", "from": "OTP", "to": "AMS", "carrier": "KLM KL1374", "ref": "PJP55H", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-09-20", "from": "ZRH", "to": "FCO", "carrier": "Swiss LX1736", "ref": "LTP3FB", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-09-23", "from": "FCO", "to": "ORY", "carrier": "British Airways BA8120", "ref": "LUZSIO", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-09-27", "from": "CDG", "to": "HKG", "carrier": "Cathay Pacific CX0260", "ref": "NKI886", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+  { "date": "2017-10-05", "from": "HKG", "to": "MEL", "carrier": "Cathay Pacific CX0135", "ref": "NKI886", "pax": ["Simon"], "tripId": "europe-2017", "status": "confirmed" },
+
+  { "date": "2017-12-22", "from": "MEL", "to": "CHC", "carrier": "Air New Zealand NZ7900 (op. Virgin Australia VA130)", "ref": "GMU4JH", "pax": ["Simon"], "tripId": "nz-2017-dec", "status": "confirmed" },
+  { "date": "2018-01-05", "from": "CHC", "to": "MEL", "carrier": "Air New Zealand NZ7915 (op. Virgin Australia VA131)", "ref": "GMU4JH", "pax": ["Simon"], "tripId": "nz-2017-dec", "status": "confirmed" },
+
+  { "date": "2018-11-14", "from": "MEL", "to": "CHC", "carrier": "Virgin Australia VA99", "ref": "NNHC9P", "pax": ["Simon"], "tripId": "nz-2018-nov", "status": "confirmed" },
+  { "date": "2018-11-19", "from": "CHC", "to": "MEL", "carrier": "Jetstar JQ174", "ref": "PEJ2PC", "pax": ["Simon"], "tripId": "nz-2018-nov", "status": "confirmed" },
+
+  { "date": "2019-04-01", "from": "MEL", "to": "HKG", "carrier": "Qantas QF29", "ref": "L2C66M", "pax": ["Simon", "Jeanie"], "tripId": "japan-2019", "status": "confirmed" },
+  { "date": "2019-04-06", "from": "HKG", "to": "NRT", "carrier": "HK Express UO870", "ref": "A7NQYW", "pax": ["Simon", "Jeanie"], "tripId": "japan-2019", "status": "confirmed" },
+  { "date": "2019-04-13", "from": "NRT", "to": "HKG", "carrier": "HK Express UO871", "ref": "A7NQYW", "pax": ["Simon", "Jeanie"], "tripId": "japan-2019", "status": "confirmed" },
+  { "date": "2019-04-16", "from": "HKG", "to": "MEL", "carrier": "Qantas QF30", "ref": "L2C66M", "pax": ["Simon", "Jeanie"], "tripId": "japan-2019", "status": "confirmed" },
+
+  { "date": "2020-04-09", "from": "MEL", "to": "CHC", "carrier": "Air New Zealand NZ212", "ref": "CE2ANH", "pax": ["Simon"], "tripId": "nz-2020-covid", "status": "cancelled" },
+  { "date": "2020-04-18", "from": "CHC", "to": "MEL", "carrier": "Virgin Australia VA96", "ref": "UEIPDV", "pax": ["Simon"], "tripId": "nz-2020-covid", "status": "cancelled" },
+
+  { "date": "2021-07-15", "from": "MEL", "to": "CHC", "carrier": "Air New Zealand NZ212", "ref": "GLCJ6H", "pax": ["Simon", "Jeanie"], "tripId": "nz-2021-jul", "status": "confirmed" },
+  { "date": "2021-07-26", "from": "CHC", "to": "MEL", "carrier": "Air New Zealand NZ211", "ref": "GLCJ6H", "pax": ["Simon", "Jeanie"], "tripId": "nz-2021-jul", "status": "confirmed" },
+
+  { "date": "2023-04-01", "from": "MEL", "to": "CHC", "carrier": "Air New Zealand NZ214", "ref": "UNNUJH", "pax": ["Simon"], "tripId": "nz-2023-apr", "status": "confirmed" },
+  { "date": "2023-04-12", "from": "CHC", "to": "MEL", "carrier": "Air New Zealand NZ211", "ref": "UNNUJH", "pax": ["Simon"], "tripId": "nz-2023-apr", "status": "confirmed" },
+
+  { "date": "2023-12-18", "from": "MEL", "to": "CHC", "carrier": "Air New Zealand NZ216", "ref": "J2PAIH", "pax": ["Simon", "Jeanie", "Lulu"], "tripId": "nz-2023-dec", "status": "confirmed" },
+  { "date": "2024-01-01", "from": "CHC", "to": "MEL", "carrier": "Air New Zealand NZ215", "ref": "J2PAIH", "pax": ["Simon", "Jeanie"], "tripId": "nz-2023-dec", "status": "confirmed" },
+
+  { "date": "2024-10-09", "from": "MEL", "to": "CHC", "carrier": "Air New Zealand NZ216", "ref": "FJESNH", "pax": ["Simon"], "tripId": "nz-2024-oct", "status": "confirmed" },
+  { "date": "2024-11-04", "from": "CHC", "to": "MEL", "carrier": "Air New Zealand NZ215", "ref": "FJESNH", "pax": ["Simon"], "tripId": "nz-2024-oct", "status": "confirmed" },
+
+  { "date": "2025-06-25", "from": "MEL", "to": "CHC", "carrier": "Air New Zealand NZ214", "ref": "D7NFIH", "pax": ["Simon"], "tripId": "nz-2025-jun", "status": "confirmed" },
+  { "date": "2025-07-08", "from": "CHC", "to": "MEL", "carrier": "Air New Zealand NZ217", "ref": "D7NFIH", "pax": ["Simon"], "tripId": "nz-2025-jun", "status": "confirmed" }
+]

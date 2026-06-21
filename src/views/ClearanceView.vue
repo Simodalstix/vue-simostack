@@ -48,6 +48,7 @@
     <main class="flex-1 overflow-y-auto">
       <IdentitySection   v-if="activeSection === 'identity'" />
       <TimelineSection   v-if="activeSection === 'timeline'" />
+      <TravelSection     v-if="activeSection === 'travel'" />
       <ProfileSection    v-if="activeSection === 'profile'" />
       <ClearanceSection  v-if="activeSection === 'clearance'" />
     </main>
@@ -59,6 +60,7 @@
 import { ref } from 'vue'
 import IdentitySection  from '@/components/clearance/IdentitySection.vue'
 import TimelineSection  from '@/components/clearance/TimelineSection.vue'
+import TravelSection    from '@/components/clearance/TravelSection.vue'
 import ProfileSection   from '@/components/clearance/ProfileSection.vue'
 import ClearanceSection from '@/components/clearance/ClearanceSection.vue'
 
@@ -67,6 +69,7 @@ const activeSection = ref('identity')
 const sections = [
   { id: 'identity',  label: 'Identity',  icon: '🪪', sub: 'People & background'   },
   { id: 'timeline',  label: 'Timeline',  icon: '🗺️', sub: 'Life since age 16'      },
+  { id: 'travel',    label: 'Travel',    icon: '✈️', sub: 'Flight history map'     },
   { id: 'profile',   label: 'Profile',   icon: '🔍', sub: 'Foreign ties & finances' },
   { id: 'clearance', label: 'Clearance', icon: '📋', sub: 'AGSVA criteria & prep'   },
 ]
