@@ -1,137 +1,121 @@
 <template>
-  <div class="text-white container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-    <!-- Header -->
-    <section class="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div class="flex items-center gap-4">
-
-        <h1 class="text-4xl sm:text-5xl font-bold text-center sm:text-left">Background &amp; Direction</h1>
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-11">
+    <!-- header -->
+    <section class="pt-12 sm:pt-14 pb-9">
+      <div class="flex items-center gap-[14px] mb-6">
+        <span class="w-7 h-[1.5px] bg-ob-bronze"></span>
+        <span class="font-mono text-[12px] leading-none tracking-[0.2em] uppercase text-ob-sand">About</span>
       </div>
+      <h1 class="font-extrabold text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.0] tracking-[-0.03em] text-ob-bright max-w-[820px]">
+        Background &amp; direction
+      </h1>
     </section>
 
-    <!-- Main container with L-shaped border -->
-    <section class="relative border-l-4 border-b-4 md:border-cyan-500 border-transparent md:rounded-bl-3xl pl-4 md:pl-6 sm:pl-8 pb-4 mb-4 md:mb-8">
-      <!-- Start point circle (desktop only) -->
-      <div class="hidden md:block absolute -left-[9px] top-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
-      <!-- End point circle (desktop only) -->
-      <div class="hidden md:block absolute -bottom-[9px] right-0 w-4 h-4 bg-cyan-500 rounded-full border-6 border-slate-900"></div>
-
-    <div class="flex flex-col md:flex-row gap-6">
-
-      <!-- Paragraphs (left) -->
-      <div class="space-y-4 md:space-y-6 flex-1 min-w-0">
-        <p class="text-base md:text-lg text-slate-200 leading-relaxed">
+    <!-- intro + traits -->
+    <section class="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-14 pb-12 items-start">
+      <div class="flex flex-col gap-5">
+        <p class="text-[17px] sm:text-[19px] leading-[1.65] text-ob-muted2">
           Before moving into technology I worked in healthcare, where mistakes carry real consequences. That environment trained me to slow down, verify assumptions, and think carefully about what might be missing before acting. Those habits translate naturally into troubleshooting complex systems.
         </p>
-        <p class="text-base md:text-lg text-slate-200 leading-relaxed">
-         Cloud and infrastructure feel like a playground for systems thinking, where I design, test, and refine how systems behave under change, failure, and scale. Outside of work, I explore this through hands-on labs and projects, building and refining code in GitHub, working in <span style="color: #FFB347; -webkit-text-stroke: 0.5px #FF9900; font-weight: 600;">Linux</span>, and deploying systems across cloud platforms.
+        <p class="text-[17px] sm:text-[19px] leading-[1.65] text-ob-dim">
+          Cloud and infrastructure feel like a playground for systems thinking, where I design, test and refine how systems behave under change, failure and scale. Outside of work I explore this through hands-on labs and projects, building and refining code on GitHub, working in <span class="text-ob-sand font-semibold">Linux</span>, and deploying across cloud platforms.
         </p>
       </div>
 
-      <!-- Traits + Current Pursuit merged card -->
-      <div class="bg-slate-900/80 border border-slate-700 rounded-lg shrink-0 self-start overflow-hidden">
-        <div class="flex flex-col sm:flex-row">
-
-          <!-- Traits -->
-          <div class="font-mono text-sm md:text-base px-4 py-4 flex flex-col">
-            <div class="text-slate-500 mb-2">$ simon --traits</div>
-            <div class="text-cyan-300">curiosity: high</div>
-            <div class="relative flex items-center text-cyan-300">
-              <span class="whitespace-nowrap">learning: continuous</span>
-              <div class="w-1.5 h-1.5 rounded-full bg-cyan-500/80 shrink-0 ml-2 shadow-[0_0_5px_rgba(6,182,212,0.9)]"></div>
-              <div class="flex-1 h-0.5 bg-cyan-500/50"></div>
-              <div class="hidden sm:block absolute top-1/2 -translate-y-1/2 right-[-1rem] w-4 h-0.5 bg-cyan-500/50"></div>
+      <!-- traits panel -->
+      <aside class="border border-ob-sand/16 border-t-2 !border-t-ob-bronze rounded-[6px] bg-ob-surface overflow-hidden">
+        <div class="px-6 py-[22px]">
+          <div class="font-mono text-[12px] leading-none text-ob-faint mb-[18px]">$ simon --traits</div>
+          <div class="flex flex-col gap-[13px] font-mono text-[13.5px] leading-none">
+            <div v-for="t in traits" :key="t.key" class="flex justify-between">
+              <span class="text-ob-faint">{{ t.key }}</span>
+              <span :class="t.accent ? 'text-ob-sand' : 'text-ob-text'">{{ t.value }}</span>
             </div>
-            <div class="text-cyan-300">ownership: Enforcing</div>
-                  <div class="text-cyan-300">team_morale: +3</div>
-            <div class="text-cyan-300">root_cause: required</div>
-            <div class="text-cyan-300">mindset: <span style="color: #d8b4fe; font-weight: 600;">Engineer</span></div>
           </div>
-
-          <!-- Divider: horizontal on mobile, vertical on sm+ -->
-          <div class="h-px sm:h-auto sm:w-px bg-cyan-500/50 sm:self-stretch"></div>
-
-          <!-- cert — static -->
-          <div class="px-4 py-4 flex flex-col items-center justify-center gap-2 bg-cyan-950/40 shadow-[inset_0_0_24px_rgba(6,182,212,0.12),inset_0_0_0_1px_rgba(6,182,212,0.35)]">
-            <img src="/images/certifications/cloudops.webp" alt="AWS SysOps Administrator" class="w-16 sm:w-20 md:w-28 rounded drop-shadow-[0_0_14px_rgba(6,182,212,0.65)]" />
-            <span class="text-base font-semibold text-cyan-400 animate-pulse drop-shadow-[0_0_8px_rgba(6,182,212,0.9)]">Current Focus</span>
-          </div>
-
         </div>
-      </div>
-
-    </div>
-
+        <div class="px-6 py-[18px] border-t border-ob-sand/14 bg-ob-bronze/8 flex items-center justify-between gap-4">
+          <div>
+            <div class="font-mono text-[11px] leading-none tracking-[0.1em] uppercase text-ob-faint mb-[7px]">Current focus</div>
+            <div class="font-semibold text-[14px] leading-[1.3] text-ob-text">AWS SysOps Administrator</div>
+          </div>
+          <span class="font-mono text-[11px] leading-none text-ob-sand whitespace-nowrap">in progress</span>
+        </div>
+      </aside>
     </section>
 
-    <!-- Role cards below the timeline -->
-    <section class="relative pt-0 md:pt-8">
-      <!-- Connector lines from bottom border to cards -->
-      <div class="hidden md:block absolute -top-8 left-0 right-0 h-16">
-        <!-- Line to Pharmacist (left) -->
-        <div class="absolute left-[16.84%] top-0 w-0.5 h-full bg-slate-600"></div>
-        <div class="absolute left-[16.66%] -top-[6px] w-3 h-3 bg-cyan-500 rounded-full -translate-x-[3px]"></div>
-
-        <!-- Line to SaaS (center) -->
-        <div class="absolute left-1/2 top-0 w-0.5 h-full bg-slate-600"></div>
-        <div class="absolute left-1/2 -top-[6px] w-3 h-3 bg-cyan-500 rounded-full -translate-x-1"></div>
-
-        <!-- Line to MSP (right) -->
-        <div class="absolute left-[83.54%] top-0 w-0.5 h-full bg-cyan-500"></div>
-        <div class="absolute left-[83.33%] -top-[6px] w-3 h-3 bg-cyan-500 rounded-full -translate-x-[3px]"></div>
+    <!-- career path -->
+    <section class="pt-11 pb-14 border-t border-ob-sand/14">
+      <div class="flex items-baseline gap-[18px] mb-10">
+        <span class="font-mono text-[13px] leading-none text-ob-sand">02</span>
+        <h2 class="font-bold text-[28px] leading-none tracking-[-0.02em] text-ob-bright">Career path</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Pharmacist (LEFT - earliest) -->
-        <div class="rounded-xl bg-slate-800/50 border border-slate-600 p-6">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <div class="bg-slate-400 rounded-full w-3 h-3"></div>
-              <span class="text-sm text-slate-400">2017 — 2024</span>
-            </div>
-            <span class="text-xs text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full">Healthcare</span>
-          </div>
-          <h3 class="text-xl font-bold text-slate-300 mb-3"><span style="color: #d8b4fe; -webkit-text-stroke: 0.5px #c084fc; font-weight: 600;">Pharmacist</span> - Community</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Community pharmacy within a regulated healthcare environment. Dispensed prescriptions, advised patients, and communicated clearly in high-responsibility situations. Built strong attention to detail, accountability, and the ability to operate calmly in compliance-driven settings.
-          </p>
+      <!-- node track (desktop) -->
+      <div class="relative mb-[22px] hidden md:block">
+        <div class="absolute top-1/2 left-[16%] right-[16%] h-[2px] bg-ob-sand/18 -translate-y-1/2"></div>
+        <div class="relative grid grid-cols-3">
+          <div class="flex justify-center"><span class="w-[13px] h-[13px] rounded-full bg-[#4A3D28] border-[3px] border-ob-bg"></span></div>
+          <div class="flex justify-center"><span class="w-[13px] h-[13px] rounded-full bg-[#4A3D28] border-[3px] border-ob-bg"></span></div>
+          <div class="flex justify-center"><span class="w-[15px] h-[15px] rounded-full bg-ob-sand border-[3px] border-ob-bg shadow-[0_0_0_4px_rgba(221,194,154,0.16)]"></span></div>
         </div>
+      </div>
 
-        <!-- SaaS Technical Support (CENTER) -->
-        <div class="rounded-xl bg-slate-800/50 border border-slate-600 p-6">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <div class="bg-slate-400 rounded-full w-3 h-3"></div>
-              <span class="text-sm text-slate-400">2025 — 2025</span>
-            </div>
-            <span class="text-xs text-slate-400 bg-slate-700/50 px-3 py-1 rounded-full">SaaS</span>
+      <!-- role cards -->
+      <div class="grid md:grid-cols-3 gap-6 items-stretch">
+        <div
+          v-for="role in roles"
+          :key="role.title"
+          :class="[
+            'rounded-[6px] bg-ob-surface p-7',
+            role.current
+              ? 'border-[1.5px] border-ob-bronze shadow-[0_0_0_4px_rgba(188,145,99,0.10)]'
+              : 'border border-ob-sand/16',
+          ]"
+        >
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-[13px] leading-none" :class="role.current ? 'text-ob-text' : 'text-ob-dim'">{{ role.date }}</span>
+            <span
+              class="font-mono text-[10px] leading-none tracking-[0.1em] uppercase rounded-full px-[11px] py-[5px]"
+              :class="role.current ? 'text-ob-sand bg-ob-sand/14' : 'text-ob-faint border border-ob-sand/18'"
+            >{{ role.tag }}</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-300 mb-3">Customer & Technical Support</h3>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            Provided application and customer support for a SaaS product, including onboarding, installations, user education, and structured troubleshooting. Documented solutions, analysed recurring issues, and collaborated closely with engineering teams to improve product reliability.
-          </p>
-        </div>
-
-        <!-- MSP Helpdesk Support (RIGHT - current) -->
-        <div class="rounded-xl bg-gradient-to-br from-cyan-900 to-slate-900 border border-cyan-500 p-6">
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex items-center gap-2">
-              <div class="bg-cyan-400 rounded-full w-3 h-3"></div>
-              <span class="text-sm text-slate-400">2026 — Present</span>
-            </div>
-            <span class="text-xs text-cyan-300 bg-cyan-700/50 px-3 py-1 rounded-full">MSP</span>
-          </div>
-          <h3 class="text-xl font-bold text-cyan-300 mb-3">Helpdesk Support Technician</h3>
-          <p class="text-slate-200 text-sm leading-relaxed">
-            Delivering Level 1 and 2 support across client environments, including Microsoft 365, Entra ID, Active Directory, endpoints, networking, and business applications. Focus on root cause analysis, repeatable fixes, and understanding how services behave across real-world infrastructure.
-          </p>
+          <h3 class="font-bold text-[21px] leading-[1.2] tracking-[-0.01em] mb-3" :class="role.current ? 'text-ob-bright' : 'text-ob-text'">{{ role.title }}</h3>
+          <p class="text-[14.5px] leading-[1.6]" :class="role.current ? 'text-ob-muted2' : 'text-ob-dim'">{{ role.body }}</p>
         </div>
       </div>
     </section>
-
   </div>
-
-
 </template>
 
 <script setup>
+const traits = [
+  { key: 'curiosity', value: 'high' },
+  { key: 'learning', value: 'continuous' },
+  { key: 'ownership', value: 'enforcing' },
+  { key: 'root_cause', value: 'required' },
+  { key: 'team_morale', value: '+3', accent: true },
+  { key: 'mindset', value: 'engineer', accent: true },
+]
+
+const roles = [
+  {
+    date: '2017 - 2024',
+    tag: 'Healthcare',
+    title: 'Pharmacist - Community',
+    body: 'Community pharmacy in a regulated healthcare environment. Dispensed prescriptions, advised patients, and communicated clearly in high-responsibility situations. Built strong attention to detail, accountability, and the ability to stay calm in compliance-driven settings.',
+  },
+  {
+    date: '2025',
+    tag: 'SaaS',
+    title: 'Customer & Technical Support',
+    body: 'Application and customer support for a SaaS product: onboarding, installations, user education and structured troubleshooting. Documented solutions, analysed recurring issues, and worked closely with engineering to improve product reliability.',
+  },
+  {
+    date: '2026 - Present',
+    tag: 'MSP · Current',
+    title: 'Helpdesk Support Technician',
+    body: 'Level 1 and 2 support across client environments: Microsoft 365, Entra ID, Active Directory, endpoints, networking and business applications. Focused on root-cause analysis, repeatable fixes, and understanding how services behave across real-world infrastructure.',
+    current: true,
+  },
+]
 </script>

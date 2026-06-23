@@ -1,26 +1,18 @@
 <template>
-  <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-    <div class="flex flex-col min-[1150px]:flex-row gap-4 min-[1150px]:gap-8 mb-6 sm:mb-8 mt-4 sm:mt-6">
-      <div class="min-[1150px]:w-2/3">
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-center min-[1150px]:text-left">Systems, Cloud &amp; Infra Projects</h1>
-        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-       Cloud infrastructure, platform engineering, and systems work built across AWS, Azure, Kubernetes, and a bare-metal Proxmox lab. Projects range from multi-account landing zones and GitOps pipelines to disaster recovery, observability platforms, and Java CI/CD. Current shift: moving beyond pure IaC into AWS operations — understanding how services behave, break, and recover in practice.
-        </p>
-      </div>
-      <div class="min-[1150px]:w-1/3 flex flex-col justify-start">
-        <div class="font-mono text-xs sm:text-sm bg-slate-900/80 border border-cyan-500/40 rounded-lg px-3 py-2 sm:px-4 sm:py-3 w-fit">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-green-400">●</span>
-            <span class="text-white">simon.service</span>
-            <span class="text-slate-400">- Cloud Labs &amp; Projects</span>
-          </div>
-          <div class="pl-4 text-slate-500">Loaded: <span class="text-slate-300">loaded (/etc/systemd/system/simon.service; <span class="text-green-400">enabled</span>)</span></div>
-          <div class="pl-4 text-slate-500">Active: <span class="text-green-400">active (running)</span><span class="text-slate-500"> since 2025</span></div>
-          <div class="pl-4 text-slate-500">Main PID: <span class="text-slate-300">simon</span></div>
-          <div class="pl-4 text-slate-500">Status: <span class="text-cyan-300">"Diving deep into infrastructure"</span></div>
+  <div id="cloud-projects" class="max-w-[1440px] mx-auto px-6 sm:px-11 pb-6">
+    <!-- header -->
+    <section class="grid lg:grid-cols-[1fr_480px] gap-8 lg:gap-14 items-end pt-12 sm:pt-14 pb-9">
+      <div>
+        <div class="flex items-center gap-[14px] mb-6">
+          <span class="w-7 h-[1.5px] bg-ob-bronze"></span>
+          <span class="font-mono text-[12px] leading-none tracking-[0.2em] uppercase text-ob-sand">Selected work</span>
         </div>
+        <h1 class="font-extrabold text-[36px] sm:text-[48px] lg:text-[60px] leading-[1.0] tracking-[-0.03em] text-ob-bright">Cloud &amp; infrastructure</h1>
       </div>
-    </div>
+      <p class="text-[15px] sm:text-[16px] leading-[1.6] text-ob-dim">
+        Platform engineering and systems work built across AWS, Azure, Kubernetes and a bare-metal Proxmox lab, from multi-account landing zones and GitOps pipelines to disaster recovery and observability. Current shift: moving beyond pure IaC into AWS operations, understanding how services behave, break and recover.
+      </p>
+    </section>
 
     <div class="space-y-8">
       <!-- Cloud Platforms & Infrastructure -->
@@ -29,10 +21,10 @@
 
           <!-- Proxmox Infrastructure Lab Card (hardcoded — row-span, sub-items, custom emits) -->
           <BaseCard
-            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800"
+            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-[6px] border border-ob-sand/16 border-t-2 !border-t-ob-bronze bg-ob-surface"
           >
             <div class="flex items-start justify-between mb-3 min-[1400px]:mb-4">
-              <h3 class="text-base min-[1400px]:text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
+              <h3 class="text-base min-[1400px]:text-lg font-bold text-ob-text">Beelink SER8 Proxmox Hypervisor</h3>
               <img src="/images/project-icons/beelink.png" alt="Beelink" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
             </div>
             <div class="flex items-center justify-evenly mb-3 min-[1400px]:mb-4">
@@ -44,43 +36,39 @@
               <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
             </div>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Hypervisor</span>
-              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Firewall</span>
-              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Linux</span>
+              <span class="font-mono text-[10.5px] text-ob-soft border border-ob-sand/18 rounded-[3px] px-2 py-1">Hypervisor</span>
+              <span class="font-mono text-[10.5px] text-ob-soft border border-ob-sand/18 rounded-[3px] px-2 py-1">Firewall</span>
+              <span class="font-mono text-[10.5px] text-ob-soft border border-ob-sand/18 rounded-[3px] px-2 py-1">Linux</span>
             </div>
-            <div class="border-t border-slate-700/60 pb-2 pt-4">
-              <p class="text-xs white font-medium">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
-              <p class="text-xs text-white mt-1.5">6 VMs running services on a single node.</p>
+            <div class="border-t border-ob-sand/14 pb-2 pt-4">
+              <p class="text-xs text-ob-dim font-mono">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
+              <p class="text-xs text-ob-dim mt-1.5">6 VMs running services on a single node.</p>
             </div>
-            <ul class="space-y-1.5 min-[1400px]:space-y-2 text-xs min-[1400px]:text-sm mt-2">
-              <li @click="showDC1 = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Windows Server Domain Controller</span></li>
-              <li @click="showFileServer = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Rocky Linux Samba File Server</span></li>
-              <li @click="showVaultPki = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">HashiCorp Vault PKI</span></li>
-              <li @click="showOPNsense = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
-              <li @click="showPrometheusGrafana = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
+            <ul class="mt-3 flex flex-col">
+              <li @click="showDC1 = true" class="flex items-center gap-[14px] py-[11px] border-b border-ob-sand/10 cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">01</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">Windows Server Domain Controller</span></li>
+              <li @click="showFileServer = true" class="flex items-center gap-[14px] py-[11px] border-b border-ob-sand/10 cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">02</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">Rocky Linux Samba File Server</span></li>
+              <li @click="showVaultPki = true" class="flex items-center gap-[14px] py-[11px] border-b border-ob-sand/10 cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">03</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">HashiCorp Vault PKI</span></li>
+              <li @click="showOPNsense = true" class="flex items-center gap-[14px] py-[11px] border-b border-ob-sand/10 cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">04</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">OPNsense Firewall &amp; WireGuard VPN</span></li>
+              <li @click="showPrometheusGrafana = true" class="flex items-center gap-[14px] py-[11px] cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">05</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">Prometheus + Grafana Monitoring</span></li>
             </ul>
-            <div class="flex items-center justify-between gap-2 text-xs text-slate-400 pt-4 mt-auto border-t border-slate-700/60">
-              <span class="flex items-center gap-1 px-2 py-1 bg-yellow-700/30 text-yellow-300 border border-yellow-600/30 rounded-full">
-                <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
+            <div class="flex items-center justify-between gap-2 text-xs text-ob-faint pt-4 mt-auto border-t border-ob-sand/14">
+              <span class="inline-flex items-center gap-1.5 font-mono">
+                <span class="w-[6px] h-[6px] rounded-full bg-ob-faint"></span>
                 Archived
               </span>
-              <span>Systems Infrastructure</span>
+              <span class="font-mono">Systems Infrastructure</span>
             </div>
           </BaseCard>
 
           <!-- Data-driven project cards -->
           <template v-for="project in mainProjects" :key="project.id">
             <BaseCard
-              :class="[
-                'relative group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100 overflow-hidden',
-                project.hover,
-                project.githubUrl ? '' : '',
-              ]"
+              class="relative group cursor-pointer p-4 flex flex-col rounded-[6px] border border-ob-sand/16 bg-ob-surface hover:border-ob-sand/30 transition-colors overflow-hidden"
               @click="handleCardClick(project)"
             >
               <!-- New ribbon -->
               <div v-if="project.isNew" class="absolute top-0 right-0 w-20 h-20 z-20 pointer-events-none">
-                <div class="absolute top-3 -right-6 w-24 bg-cyan-400 text-cyan-950 text-[10px] font-bold text-center py-0.5 rotate-45 tracking-widest shadow-[0_0_12px_rgba(34,211,238,0.85)]">NEW</div>
+                <div class="absolute top-3 -right-6 w-24 bg-ob-sand text-ob-bg text-[10px] font-bold text-center py-0.5 rotate-45 tracking-widest">NEW</div>
               </div>
 
               <a
@@ -88,14 +76,14 @@
                 :href="project.githubUrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="absolute inset-0 z-10 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+                class="absolute inset-0 z-10 rounded-[6px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ob-teal-bright"
                 :aria-label="`Open GitHub repo: ${project.title}`"
               >
                 <span class="sr-only">Open GitHub repo</span>
               </a>
 
               <div class="flex items-center justify-between mb-4">
-                <h3 :class="['text-base font-bold text-white', project.titleHover]" v-html="project.titleHtml || project.title"></h3>
+                <h3 class="text-base font-bold text-ob-text group-hover:text-ob-bright transition-colors">{{ project.title }}</h3>
               </div>
 
               <div class="flex items-center justify-evenly mb-4">
@@ -106,16 +94,16 @@
                 <span
                   v-for="tag in project.tags"
                   :key="tag"
-                  class="px-1 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                  class="font-mono text-[10px] min-[1400px]:text-[10.5px] text-ob-soft border border-ob-sand/18 rounded-[3px] px-2 py-1"
                 >{{ tag }}</span>
               </div>
 
-              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-slate-400 pt-4 border-t border-slate-500/60">
-                <span :class="['flex items-center gap-1 px-1.5 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs rounded-full', statusClasses[project.statusColor].badge]">
-                  <div :class="['w-2 h-2 rounded-full', statusClasses[project.statusColor].dot]"></div>
+              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs pt-4 border-t border-ob-sand/14">
+                <span class="inline-flex items-center gap-1.5 font-mono" :class="statusClasses[project.statusColor].text">
+                  <span class="w-[6px] h-[6px] rounded-full" :class="statusClasses[project.statusColor].dot"></span>
                   {{ project.status }}
                 </span>
-                <span class="text-slate-300">{{ project.category }} - {{ project.githubUrl ? 'View on GitHub' : 'View details' }}</span>
+                <span class="font-mono text-ob-faint">{{ project.category }} · {{ project.githubUrl ? 'GitHub' : 'Details' }}</span>
               </div>
             </BaseCard>
           </template>
@@ -125,27 +113,27 @@
 
       <!-- Extra Projects & Experiments -->
       <div>
-        <h3 class="text-lg font-semibold text-slate-200 mb-6 text-center sm:text-left">Extra Projects &amp; Experiments</h3>
+        <div class="flex items-baseline gap-[18px] mb-6 pt-2 border-t border-ob-sand/14">
+          <span class="font-mono text-[13px] leading-none text-ob-sand mt-6">02</span>
+          <h2 class="font-bold text-[22px] leading-none tracking-[-0.02em] text-ob-bright mt-6">Extra projects &amp; experiments</h2>
+        </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <template v-for="project in extraProjects" :key="project.id">
             <BaseCard
               v-if="project.id === 'coming-soon'"
-              class="p-4 rounded-xl border border-slate-600/80 bg-slate-700/80 text-slate-400"
+              class="p-4 rounded-[6px] border border-ob-sand/16 bg-ob-surface text-ob-faint"
             >
-              <h3 class="text-lg font-bold mb-3 text-white">More Projects Coming Soon</h3>
-              <p class="text-sm text-slate-300">Additional cloud infrastructure and DevOps projects in development.</p>
+              <h3 class="text-lg font-bold mb-3 text-ob-text">More Projects Coming Soon</h3>
+              <p class="text-sm text-ob-dim">Additional cloud infrastructure and DevOps projects in development.</p>
             </BaseCard>
 
             <BaseCard
               v-else
-              :class="[
-                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100',
-                project.hover,
-              ]"
+              class="group cursor-pointer p-4 flex flex-col rounded-[6px] border border-ob-sand/16 bg-ob-surface hover:border-ob-sand/30 transition-colors"
               @click="handleCardClick(project)"
             >
               <div class="flex items-center justify-between mb-4">
-                <h3 :class="['text-base font-bold text-white', project.titleHover]" v-html="project.titleHtml || project.title"></h3>
+                <h3 class="text-base font-bold text-ob-text group-hover:text-ob-bright transition-colors">{{ project.title }}</h3>
               </div>
 
               <div class="flex items-center justify-evenly mb-4">
@@ -156,16 +144,16 @@
                 <span
                   v-for="tag in project.tags"
                   :key="tag"
-                  class="px-1 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
+                  class="font-mono text-[10px] min-[1400px]:text-[10.5px] text-ob-soft border border-ob-sand/18 rounded-[3px] px-2 py-1"
                 >{{ tag }}</span>
               </div>
 
-              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-slate-400 pt-4 border-t border-slate-500/60">
-                <span :class="['flex items-center gap-1 px-1.5 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs rounded-full', statusClasses[project.statusColor].badge]">
-                  <div :class="['w-2 h-2 rounded-full', statusClasses[project.statusColor].dot]"></div>
+              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs pt-4 border-t border-ob-sand/14">
+                <span class="inline-flex items-center gap-1.5 font-mono" :class="statusClasses[project.statusColor].text">
+                  <span class="w-[6px] h-[6px] rounded-full" :class="statusClasses[project.statusColor].dot"></span>
                   {{ project.status }}
                 </span>
-                <span class="text-slate-300">{{ project.category }} - View details</span>
+                <span class="font-mono text-ob-faint">{{ project.category }} · Details</span>
               </div>
             </BaseCard>
           </template>
@@ -1000,11 +988,11 @@ const mainProjects = computed(() => projects.filter(p => p.section === 'main'))
 const extraProjects = computed(() => projects.filter(p => p.section === 'extra'))
 
 const statusClasses = {
-  green:  { badge: 'bg-green-500/30 text-green-300 border border-green-500/20',    dot: 'bg-green-400' },
-  amber:  { badge: 'bg-amber-500/30 text-amber-300 border border-amber-500/20',    dot: 'bg-amber-400' },
-  stone:  { badge: 'bg-stone-500/30 text-stone-300 border border-stone-500/20',    dot: 'bg-stone-400' },
-  purple: { badge: 'bg-purple-500/30 text-purple-300 border border-purple-500/20', dot: 'bg-purple-400' },
-  orange: { badge: 'bg-orange-500/30 text-orange-300 border border-orange-500/20', dot: 'bg-orange-400' },
+  green:  { text: 'text-ob-teal-bright', dot: 'bg-ob-teal-bright' },
+  amber:  { text: 'text-ob-sand',        dot: 'bg-ob-sand' },
+  stone:  { text: 'text-ob-faint',       dot: 'bg-ob-faint' },
+  purple: { text: 'text-ob-sand',        dot: 'bg-ob-sand' },
+  orange: { text: 'text-ob-sand',        dot: 'bg-ob-sand' },
 }
 
 // ─── Modal routing ────────────────────────────────────────────────────────────

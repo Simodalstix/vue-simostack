@@ -1,154 +1,157 @@
 <template>
-  <div class="text-white bg-slate-950/60">
-    <div class="max-w-[940px] lg:max-w-[1000px] mx-auto px-6 sm:px-8 py-6 pb-10">
-      <div class="flex flex-col gap-4 sm:gap-5 md:flex-row md:items-center md:justify-between mb-6">
-        <div class="flex items-center gap-4">
-          <img src="/images/icons/oblivion_profileicon.jpg" alt="profile" class="h-20 rounded-full" />
-          <h1 class="text-4xl sm:text-5xl md:text-5xl font-extrabold tracking-tight">
-            Simon Parker
-          </h1>
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-11">
+    <!-- hero -->
+    <section class="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 pt-12 pb-14 sm:pt-16 items-start">
+      <div class="flex flex-col">
+        <div class="flex items-center gap-[14px] mb-6">
+          <span class="w-7 h-[1.5px] bg-ob-bronze"></span>
+          <span class="font-mono text-[12px] leading-none tracking-[0.2em] uppercase text-ob-sand">Cloud &amp; Infrastructure Engineer</span>
         </div>
 
-        <div class="flex items-center gap-2 sm:gap-3">
-          <a
-            href="https://www.linkedin.com/in/simonparker-dev/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-[#0A66C2] border border-slate-700 hover:border-[#0A66C2] rounded-lg transition-all duration-200 text-slate-300 hover:text-white font-medium"
-          >
-            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-            <span class="text-sm">LinkedIn</span>
-          </a>
+        <h1 class="font-extrabold text-[40px] sm:text-[56px] lg:text-[72px] leading-[1.0] tracking-[-0.035em] text-ob-bright">
+          Simon Parker
+        </h1>
 
-          <a
-            href="https://github.com/Simodalstix"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-cyan-600 border border-slate-700 hover:border-cyan-400 rounded-lg transition-all duration-200 text-slate-300 hover:text-white font-medium"
-          >
-            <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
-            </svg>
-            <span class="text-sm">GitHub</span>
-          </a>
+        <div class="flex items-center flex-wrap gap-x-3 gap-y-1 mt-6 font-mono text-[13px] text-ob-faint tracking-[0.02em]">
+          <span>pharmacy</span><span class="text-ob-bronze">&rarr;</span>
+          <span>helpdesk</span><span class="text-ob-bronze">&rarr;</span>
+          <span class="text-ob-soft">systems &amp; cloud</span>
         </div>
-      </div>
 
-      <!-- Career path -->
-      <div class="font-mono text-left inline-block text-base sm:text-xl md:text-lg leading-relaxed mb-6">
-        <div class="text-slate-400">$ ls ~/career</div>
-        <div class="text-slate-400">Pharmacist.tar.gz</div>
-        <div class="text-cyan-300">Helpdesk-Support-Technician/</div>
-        <div class="flex text-slate-400">
-          <span class="mr-2 text-slate-400">└──</span>
-          <span>Systems-Cloud-Engineer/</span>
+        <div class="max-w-[580px] mt-7 flex flex-col gap-4">
+          <p class="text-[17px] sm:text-[18px] leading-[1.6] text-ob-muted">
+            I work in MSP support across varied client environments, Microsoft&nbsp;365, Entra&nbsp;ID, Active Directory, endpoints and networking, bringing a deliberate, root-cause approach carried over from years in regulated healthcare.
+          </p>
+          <p class="text-[17px] sm:text-[18px] leading-[1.6] text-ob-dim">
+            Outside support I build depth in Linux, cloud infrastructure and automation through Terraform, AWS&nbsp;CDK and a bare-metal homelab, learning how systems behave, break and recover.
+          </p>
         </div>
+
       </div>
 
-      <!-- Intro -->
-      <div class="max-w-4xl text-slate-200 leading-relaxed text-sm sm:text-base md:text-lg space-y-4">
-       <p>
-  I currently work in MSP support across varied client environments, handling
-  Microsoft 365, Entra ID, Active Directory, endpoints, and
-  network troubleshooting in day-to-day operations.
-</p>
+      <!-- connect card + CTAs -->
+      <div class="flex flex-col gap-6">
+      <aside class="border border-ob-sand/16 border-t-2 !border-t-ob-bronze rounded-[6px] bg-ob-surface">
+        <div class="p-[26px]">
+          <div class="font-mono text-[11px] leading-none tracking-[0.16em] uppercase text-ob-sand mb-[18px]">Connect</div>
+          <div class="flex flex-col gap-[10px]">
+            <a
+              v-for="link in connectLinks"
+              :key="link.label"
+              :href="link.href"
+              :target="link.external ? '_blank' : undefined"
+              :rel="link.external ? 'noopener noreferrer' : undefined"
+              class="flex items-center gap-[13px] px-[15px] py-[13px] border border-ob-sand/14 rounded-[4px] bg-ob-surface2 hover:border-ob-sand/30 transition-colors"
+            >
+              <span class="text-ob-teal-bright shrink-0" v-html="link.icon"></span>
+              <span class="flex flex-col gap-[3px] min-w-0">
+                <span class="font-mono text-[10px] leading-none tracking-[0.08em] uppercase text-ob-faint">{{ link.label }}</span>
+                <span class="font-semibold text-[14px] leading-none text-ob-text truncate">{{ link.value }}</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </aside>
 
-       <p>
-  Outside of support, I spend much of my time building depth in Linux administration, cloud infrastructure, and automation through projects involving Terraform, AWS CDK, and homelabs
-</p>
-      </div>
-
-      <!-- CTA + Certifications -->
-      <div class="mt-8 flex flex-col md:flex-row gap-6 md:gap-8 items-center">
-
-        <!-- Left: Buttons -->
-        <div class="flex flex-row md:flex-col gap-3 shrink-0 md:self-end relative z-10">
+        <div class="flex flex-wrap gap-[14px]">
           <router-link
-            to="/about"
-            class="px-5 py-3 bg-slate-800 hover:bg-cyan-500 border border-slate-700 hover:border-cyan-500 rounded-lg transition-all duration-200 text-slate-300 hover:text-white font-medium text-center"
-          >
-            About Me
-          </router-link>
+            :to="{ name: 'Projects' }"
+            class="px-7 py-[14px] bg-ob-teal text-ob-text font-bold text-[14px] rounded-[3px] hover:brightness-110 transition"
+          >View Projects</router-link>
           <router-link
-            to="/projects"
-            class="px-5 py-3 bg-[#FF9900] hover:bg-[#FF9900]/70 border border-[#FF9900] rounded-lg transition-all duration-200 text-white font-medium text-center"
-          >
-            View Projects
-          </router-link>
+            :to="{ name: 'About' }"
+            class="px-7 py-[14px] text-ob-teal-bright font-bold text-[14px] rounded-[3px] border-[1.5px] border-ob-teal/45 hover:border-ob-teal-bright/70 transition-colors"
+          >About Me</router-link>
         </div>
-
-        <!-- Right: Cert pyramid (top-right to bottom-left) -->
-        <div class="flex-1 flex flex-col items-end pr-6 sm:pr-8 md:pr-10">
-          <!-- Row 1: ITIL then Microsoft lowest to best right (flush right) -->
-          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4">
-            <img src="/images/certifications/itil.png" class="rounded-full w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showITILModal = true" alt="ITIL Foundation" />
-            <img src="/images/certifications/a-plus.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showAPlusModal = true" alt="CompTIA A+" />
-            <img src="/images/certifications/ms-900.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showMS900Modal = true" alt="Microsoft 365 Fundamentals" />
-            <img src="/images/certifications/sc-300.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSC300Modal = true" alt="Microsoft SC-300 Identity and Access Administrator" />
-            <img src="/images/certifications/azure-admin.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showAzureAdminModal = true" alt="Azure Administrator Associate" />
-          </div>
-          <!-- Row 2: Security+ then AWS lowest to best right (staggered) -->
-          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4 pr-7 sm:pr-9 md:pr-16">
-            <img src="/images/certifications/securityplus.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showSecurityPlusModal = true" alt="CompTIA Security+" />
-            <img src="/images/certifications/cloudpractitioner12.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showCloudPractitionerModal = true" alt="AWS Cloud Practitioner" />
-            <img src="/images/certifications/aws-dva.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showDeveloperModal = true" alt="AWS Developer Associate" />
-            <img src="/images/certifications/aws-saa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showArchitectModal = true" alt="AWS Solutions Architect Associate" />
-          </div>
-          <!-- Row 3: Terraform + RHCSA (flush right) -->
-          <div class="grid grid-cols-2 sm:flex sm:flex-wrap justify-end gap-3 sm:gap-4 md:pr-32">
-            <img src="/images/certifications/pcap.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showPCAPModal = true" alt="PCAP Python" />
-            <img src="/images/certifications/terraform003.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(150,150,200,0.8)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showTerraformModal = true" alt="Terraform Associate" />
-            <img src="/images/certifications/rhcsa.png" class="w-16 sm:w-20 md:w-28 hover:drop-shadow-[0_0_16px_rgba(255,80,80,0.5)] hover:scale-105 transition-all duration-300 cursor-pointer rounded justify-self-end" @click="showRHCSAModal = true" alt="Red Hat Certified System Administrator" />
-          </div>
-        </div>
-
       </div>
-    </div>
+    </section>
+
+    <!-- certifications -->
+    <section class="pt-11 pb-14 border-t border-ob-sand/14">
+      <div class="flex items-baseline justify-between mb-9 gap-4">
+        <div class="flex items-baseline gap-[18px]">
+          <span class="font-mono text-[13px] leading-none text-ob-sand">01</span>
+          <h2 class="font-bold text-[28px] leading-none tracking-[-0.02em] text-ob-bright">Certifications</h2>
+        </div>
+        <span class="font-mono text-[12px] leading-none text-ob-faint tracking-[0.04em] text-right">13 credentials · 1 in progress</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8">
+        <div v-for="cat in certCategories" :key="cat.name">
+          <div class="flex items-center gap-[10px] pb-[14px] mb-[18px] border-b border-ob-sand/16">
+            <span class="w-[6px] h-[6px] bg-ob-bronze rounded-full"></span>
+            <span class="font-mono text-[11px] leading-none tracking-[0.1em] uppercase text-ob-soft">{{ cat.name }}</span>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div v-for="cert in cat.items" :key="cert.name">
+              <div class="font-semibold text-[15px] leading-[1.3]" :class="cert.inProgress ? 'text-ob-dim' : 'text-ob-text'">{{ cert.name }}</div>
+              <div class="font-mono text-[11px] leading-none mt-[6px]" :class="cert.inProgress ? 'text-ob-sand' : 'text-ob-faint'">{{ cert.code }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-
-  <!-- Modals -->
-  <ITILModal :visible="showITILModal" @close="showITILModal = false" />
-  <MS900 :visible="showMS900Modal" @close="showMS900Modal = false" />
-  <AzureAdministrator :visible="showAzureAdminModal" @close="showAzureAdminModal = false" />
-  <RHCSA :visible="showRHCSAModal" @close="showRHCSAModal = false" />
-  <AWSArchitect :visible="showArchitectModal" @close="showArchitectModal = false" />
-  <AWSDeveloper :visible="showDeveloperModal" @close="showDeveloperModal = false" />
-  <TerraformModal :visible="showTerraformModal" @close="showTerraformModal = false" />
-  <SecurityPlus :visible="showSecurityPlusModal" @close="showSecurityPlusModal = false" />
-  <SC300Modal :visible="showSC300Modal" @close="showSC300Modal = false" />
-  <AWSPractitioner :visible="showCloudPractitionerModal" @close="showCloudPractitionerModal = false" />
-  <PythonModal :visible="showPCAPModal" @close="showPCAPModal = false" />
-  <APlusModal :visible="showAPlusModal" @close="showAPlusModal = false" />
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import ITILModal from '@/components/modals/cert/Cert-ITIL.vue'
-import MS900 from '@/components/modals/cert/Cert-MS900.vue'
-import AzureAdministrator from '@/components/modals/cert/Cert-AZ104.vue'
-import RHCSA from '@/components/modals/cert/Cert-RHCSA.vue'
-import AWSArchitect from '@/components/modals/cert/Cert-AWSArchitect.vue'
-import AWSDeveloper from '@/components/modals/cert/Cert-AWSDeveloper.vue'
-import TerraformModal from '@/components/modals/cert/Cert-TerraformModal.vue'
-import SecurityPlus from '@/components/modals/cert/Cert-SecurityPlus.vue'
-import SC300Modal from '@/components/modals/cert/Cert-SC300.vue'
-import AWSPractitioner from '@/components/modals/cert/Cert-AWSPractioner.vue'
-import PythonModal from '@/components/modals/cert/Cert-PythonModal.vue'
-import APlusModal from '@/components/modals/cert/Cert-CompTIA-A+.vue'
+const connectLinks = [
+  {
+    label: 'LinkedIn',
+    value: 'in/simonparker-dev',
+    href: 'https://www.linkedin.com/in/simonparker-dev/',
+    external: true,
+    icon: '<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>',
+  },
+  {
+    label: 'GitHub',
+    value: 'Simodalstix',
+    href: 'https://github.com/Simodalstix',
+    external: true,
+    icon: '<svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>',
+  },
+  {
+    label: 'Email',
+    value: 'lastpolar@gmail.com',
+    href: 'mailto:lastpolar@gmail.com',
+    external: false,
+    icon: '<svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>',
+  },
+]
 
-
-const showArchitectModal = ref(false)
-const showDeveloperModal = ref(false)
-const showTerraformModal = ref(false)
-const showMS900Modal = ref(false)
-const showAzureAdminModal = ref(false)
-const showRHCSAModal = ref(false)
-const showSC300Modal = ref(false)
-const showCloudPractitionerModal = ref(false)
-const showITILModal = ref(false)
-const showSecurityPlusModal = ref(false)
-const showPCAPModal = ref(false)
-const showAPlusModal = ref(false)
+const certCategories = [
+  {
+    name: 'Amazon Web Services',
+    items: [
+      { name: 'Solutions Architect', code: 'SAA-C03 · Associate' },
+      { name: 'Developer', code: 'DVA-C02 · Associate' },
+      { name: 'Cloud Practitioner', code: 'CLF-C02 · Foundational' },
+      { name: 'SysOps Administrator', code: 'SOA-C02 · in progress', inProgress: true },
+    ],
+  },
+  {
+    name: 'Microsoft & Azure',
+    items: [
+      { name: 'Azure Administrator', code: 'AZ-104 · Associate' },
+      { name: 'Identity & Access Admin', code: 'SC-300 · Associate' },
+      { name: '365 Fundamentals', code: 'MS-900 · Foundational' },
+    ],
+  },
+  {
+    name: 'Linux & Automation',
+    items: [
+      { name: 'Red Hat System Admin', code: 'RHCSA · EX200' },
+      { name: 'Python Associate', code: 'PCAP' },
+      { name: 'Terraform Associate', code: 'HashiCorp · 003' },
+    ],
+  },
+  {
+    name: 'Foundations',
+    items: [
+      { name: 'CompTIA Security+', code: 'SY0-701' },
+      { name: 'CompTIA A+', code: '220-1101 / 1102' },
+      { name: 'ITIL 4 Foundation', code: 'Service Management' },
+    ],
+  },
+]
 </script>
