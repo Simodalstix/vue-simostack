@@ -3,31 +3,31 @@
   <div v-else class="flex flex-col min-h-screen bg-ob-bg text-ob-text font-display">
     <!-- nav -->
     <header class="border-b border-ob-sand/14">
-      <nav class="max-w-[1440px] mx-auto px-6 sm:px-11 py-4 sm:py-[22px] flex items-center justify-between">
+      <nav class="max-w-[1440px] mx-auto px-6 sm:px-11 py-3 sm:py-4 flex items-center justify-between">
         <!-- brand -->
         <div class="flex items-center gap-[14px]">
           <span
             class="w-[34px] h-[34px] border-[1.5px] border-ob-bronze rounded-[3px] flex items-center justify-center font-display font-extrabold text-[13px] leading-none text-ob-sand tracking-[0.02em] select-none"
           >SP</span>
-          <span class="hidden sm:inline font-mono text-[13px] leading-none tracking-[0.04em] text-ob-soft">simon&nbsp;parker</span>
+          <span class="hidden sm:inline font-mono text-[13px] leading-none tracking-[0.04em] text-ob-soft">simonparker.dev</span>
         </div>
 
         <!-- desktop links -->
         <div class="hidden md:flex items-center gap-9 font-display font-semibold text-[13px]">
           <router-link
             :to="{ name: 'Home' }"
-            class="text-ob-faint hover:text-ob-text transition-colors"
-            exact-active-class="!text-ob-text"
+            class="text-ob-faint hover:text-ob-text transition-colors border-b-2 border-transparent pb-[3px]"
+            exact-active-class="!text-ob-text !border-ob-teal"
           >Home</router-link>
           <router-link
             :to="{ name: 'About' }"
-            class="text-ob-faint hover:text-ob-text transition-colors"
-            active-class="!text-ob-text"
+            class="text-ob-faint hover:text-ob-text transition-colors border-b-2 border-transparent pb-[3px]"
+            active-class="!text-ob-text !border-ob-teal"
           >About</router-link>
           <router-link
             :to="{ name: 'Projects' }"
-            class="text-ob-faint hover:text-ob-text transition-colors"
-            active-class="!text-ob-text"
+            class="text-ob-faint hover:text-ob-text transition-colors border-b-2 border-transparent pb-[3px]"
+            active-class="!text-ob-text !border-ob-teal"
           >Projects</router-link>
           <span
             class="font-mono text-[12px] leading-none text-ob-faint tracking-[0.04em] pl-6 border-l border-ob-sand/14"
@@ -61,7 +61,7 @@
 
     <!-- footer -->
     <footer class="border-t border-ob-sand/14">
-      <div class="max-w-[1440px] mx-auto px-6 sm:px-11 py-[22px] flex items-center justify-between font-mono text-xs text-ob-faint">
+      <div class="max-w-[1440px] mx-auto px-6 sm:px-11 py-4 flex items-center justify-between font-mono text-xs text-ob-faint">
         <span>&copy; 2026 Simon Parker</span>
         <span>Melbourne · AEST</span>
       </div>

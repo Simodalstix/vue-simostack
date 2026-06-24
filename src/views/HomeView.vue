@@ -1,30 +1,36 @@
 <template>
   <div class="max-w-[1440px] mx-auto px-6 sm:px-11">
     <!-- hero -->
-    <section class="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-16 pt-12 pb-14 sm:pt-16 items-start">
+    <section class="grid lg:grid-cols-[1fr_380px] gap-8 lg:gap-12 pt-8 pb-10 sm:pt-10 items-start">
       <div class="flex flex-col">
-        <div class="flex items-center gap-[14px] mb-6">
+        <div class="flex items-center gap-[14px] mb-5">
           <span class="w-7 h-[1.5px] bg-ob-bronze"></span>
-          <span class="font-mono text-[12px] leading-none tracking-[0.2em] uppercase text-ob-sand">Cloud &amp; Infrastructure Engineer</span>
+          <span class="font-mono font-bold text-[11px] leading-none tracking-[0.2em] uppercase text-ob-sand">Systems &amp; Linux</span>
         </div>
 
-        <h1 class="font-extrabold text-[40px] sm:text-[56px] lg:text-[72px] leading-[1.0] tracking-[-0.035em] text-ob-bright">
+        <h1 class="font-bold text-[40px] sm:text-[56px] lg:text-[66px] leading-[0.96] tracking-[-0.015em] text-ob-bright">
           Simon Parker
         </h1>
 
-        <div class="flex items-center flex-wrap gap-x-3 gap-y-1 mt-6 font-mono text-[13px] text-ob-faint tracking-[0.02em]">
-          <span>pharmacy</span><span class="text-ob-bronze">&rarr;</span>
-          <span>helpdesk</span><span class="text-ob-bronze">&rarr;</span>
-          <span class="text-ob-soft">systems &amp; cloud</span>
-        </div>
-
-        <div class="max-w-[580px] mt-7 flex flex-col gap-4">
-          <p class="text-[17px] sm:text-[18px] leading-[1.6] text-ob-muted">
+        <div class="max-w-[920px] mt-6 flex flex-col gap-4">
+          <p class="text-[17px] sm:text-[18px] leading-[1.6] text-ob-text">
             I work in MSP support across varied client environments, Microsoft&nbsp;365, Entra&nbsp;ID, Active Directory, endpoints and networking, bringing a deliberate, root-cause approach carried over from years in regulated healthcare.
           </p>
           <p class="text-[17px] sm:text-[18px] leading-[1.6] text-ob-dim">
-            Outside support I build depth in Linux, cloud infrastructure and automation through Terraform, AWS&nbsp;CDK and a bare-metal homelab, learning how systems behave, break and recover.
+            Outside support I build depth in <span class="text-ob-teal-bright font-semibold">Linux</span>, cloud infrastructure and automation through Terraform, AWS&nbsp;CDK and a bare-metal homelab, learning how systems behave, break and recover.
           </p>
+        </div>
+
+        <div class="flex flex-wrap gap-[12px] mt-7">
+          <router-link
+            :to="{ name: 'Projects' }"
+            class="px-[22px] py-[13px] bg-ob-teal text-ob-ink font-semibold text-[14px] rounded-[2px] hover:brightness-110 transition"
+          >View Projects</router-link>
+          <router-link
+            :to="{ name: 'About' }"
+            class="px-[22px] py-[13px] font-semibold text-[14px] rounded-[2px] border transition-colors"
+            :class="aboutBtnClass"
+          >About Me</router-link>
         </div>
 
       </div>
@@ -52,23 +58,12 @@
           </div>
         </div>
       </aside>
-
-        <div class="flex flex-wrap gap-[14px]">
-          <router-link
-            :to="{ name: 'Projects' }"
-            class="px-7 py-[14px] bg-ob-teal text-ob-text font-bold text-[14px] rounded-[3px] hover:brightness-110 transition"
-          >View Projects</router-link>
-          <router-link
-            :to="{ name: 'About' }"
-            class="px-7 py-[14px] text-ob-teal-bright font-bold text-[14px] rounded-[3px] border-[1.5px] border-ob-teal/45 hover:border-ob-teal-bright/70 transition-colors"
-          >About Me</router-link>
-        </div>
       </div>
     </section>
 
     <!-- certifications -->
-    <section class="pt-11 pb-14 border-t border-ob-sand/14">
-      <div class="flex items-baseline justify-between mb-9 gap-4">
+    <section class="pt-8 pb-10 border-t border-ob-sand/14">
+      <div class="flex items-baseline justify-between mb-7 gap-4">
         <div class="flex items-baseline gap-[18px]">
           <span class="font-mono text-[13px] leading-none text-ob-sand">01</span>
           <h2 class="font-bold text-[28px] leading-none tracking-[-0.02em] text-ob-bright">Certifications</h2>
@@ -76,7 +71,7 @@
         <span class="font-mono text-[12px] leading-none text-ob-faint tracking-[0.04em] text-right">13 credentials · 1 in progress</span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-6">
         <div v-for="cat in certCategories" :key="cat.name">
           <div class="flex items-center gap-[10px] pb-[14px] mb-[18px] border-b border-ob-sand/16">
             <span class="w-[6px] h-[6px] bg-ob-bronze rounded-full"></span>
@@ -84,7 +79,13 @@
           </div>
           <div class="flex flex-col gap-4">
             <div v-for="cert in cat.items" :key="cert.name">
-              <div class="font-semibold text-[15px] leading-[1.3]" :class="cert.inProgress ? 'text-ob-dim' : 'text-ob-text'">{{ cert.name }}</div>
+              <div class="flex items-center gap-[8px]">
+                <span class="font-semibold text-[15px] leading-[1.3] text-ob-text">{{ cert.name }}</span>
+                <span
+                  v-if="cert.inProgress"
+                  class="font-mono text-[9px] leading-none tracking-[0.1em] uppercase text-ob-sand border border-ob-sand/50 rounded-[2px] px-[6px] py-[3px] whitespace-nowrap"
+                >In progress</span>
+              </div>
               <div class="font-mono text-[11px] leading-none mt-[6px]" :class="cert.inProgress ? 'text-ob-sand' : 'text-ob-faint'">{{ cert.code }}</div>
             </div>
           </div>
@@ -95,6 +96,18 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
+// "About Me" secondary button variant (handoff exposes a single toggle).
+// 'outline' = transparent / faint border / light text (current default);
+// 'amber'   = filled amber / dark ink text.
+const aboutVariant = 'outline'
+const aboutBtnClass = computed(() =>
+  aboutVariant === 'amber'
+    ? 'bg-ob-sand text-ob-ink border-ob-sand hover:brightness-110'
+    : 'bg-transparent text-ob-text border-ob-text/18 hover:border-ob-text/30',
+)
+
 const connectLinks = [
   {
     label: 'LinkedIn',
@@ -126,7 +139,7 @@ const certCategories = [
       { name: 'Solutions Architect', code: 'SAA-C03 · Associate' },
       { name: 'Developer', code: 'DVA-C02 · Associate' },
       { name: 'Cloud Practitioner', code: 'CLF-C02 · Foundational' },
-      { name: 'SysOps Administrator', code: 'SOA-C02 · in progress', inProgress: true },
+      { name: 'SysOps Administrator', code: 'SOA-C02 · Associate', inProgress: true },
     ],
   },
   {

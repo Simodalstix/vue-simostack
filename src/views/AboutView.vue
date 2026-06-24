@@ -1,62 +1,51 @@
 <template>
   <div class="max-w-[1440px] mx-auto px-6 sm:px-11">
     <!-- header -->
-    <section class="pt-12 sm:pt-14 pb-9">
-      <div class="flex items-center gap-[14px] mb-6">
-        <span class="w-7 h-[1.5px] bg-ob-bronze"></span>
-        <span class="font-mono text-[12px] leading-none tracking-[0.2em] uppercase text-ob-sand">About</span>
-      </div>
-      <h1 class="font-extrabold text-[40px] sm:text-[52px] lg:text-[60px] leading-[1.0] tracking-[-0.03em] text-ob-bright max-w-[820px]">
-        Background &amp; direction
-      </h1>
-    </section>
-
-    <!-- intro + traits -->
-    <section class="grid lg:grid-cols-[1fr_380px] gap-12 lg:gap-14 pb-12 items-start">
-      <div class="flex flex-col gap-5">
-        <p class="text-[17px] sm:text-[19px] leading-[1.65] text-ob-muted2">
-          Before moving into technology I worked in healthcare, where mistakes carry real consequences. That environment trained me to slow down, verify assumptions, and think carefully about what might be missing before acting. Those habits translate naturally into troubleshooting complex systems.
-        </p>
-        <p class="text-[17px] sm:text-[19px] leading-[1.65] text-ob-dim">
-          Cloud and infrastructure feel like a playground for systems thinking, where I design, test and refine how systems behave under change, failure and scale. Outside of work I explore this through hands-on labs and projects, building and refining code on GitHub, working in <span class="text-ob-sand font-semibold">Linux</span>, and deploying across cloud platforms.
+    <section class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 pt-8 sm:pt-9 pb-6">
+      <div class="max-w-[760px]">
+        <div class="flex items-center gap-[12px] mb-5">
+          <span class="font-mono font-semibold text-[13px] leading-none text-ob-sand">02</span>
+          <span class="w-6 h-px bg-ob-sand"></span>
+          <span class="font-mono font-semibold text-[11px] leading-none tracking-[0.2em] uppercase text-ob-sand">About</span>
+        </div>
+        <h1 class="font-bold text-[36px] sm:text-[44px] lg:text-[46px] leading-[1.0] tracking-[-0.02em] text-ob-bright mb-4">
+          Background &amp; trajectory
+        </h1>
+        <p class="text-[16px] leading-[1.6] text-ob-dim max-w-[680px]">
+          A non-linear path into infrastructure, eight years in regulated healthcare, then a deliberate move into technology. The discipline came first; the stack followed.
         </p>
       </div>
 
-      <!-- traits panel -->
-      <aside class="border border-ob-sand/16 border-t-2 !border-t-ob-bronze rounded-[6px] bg-ob-surface overflow-hidden">
-        <div class="px-6 py-[22px]">
-          <div class="font-mono text-[12px] leading-none text-ob-faint mb-[18px]">$ simon --traits</div>
-          <div class="flex flex-col gap-[13px] font-mono text-[13.5px] leading-none">
-            <div v-for="t in traits" :key="t.key" class="flex justify-between">
-              <span class="text-ob-faint">{{ t.key }}</span>
-              <span :class="t.accent ? 'text-ob-sand' : 'text-ob-text'">{{ t.value }}</span>
-            </div>
-          </div>
+      <!-- meta -->
+      <div class="flex flex-col gap-[7px] font-mono text-[12px] leading-none lg:text-right shrink-0">
+        <div v-for="m in meta" :key="m.label" class="flex lg:justify-end items-center gap-[8px]">
+          <span class="text-ob-faint">{{ m.label }} ·</span>
+          <span class="text-ob-text font-semibold">{{ m.value }}</span>
         </div>
-        <div class="px-6 py-[18px] border-t border-ob-sand/14 bg-ob-bronze/8 flex items-center justify-between gap-4">
-          <div>
-            <div class="font-mono text-[11px] leading-none tracking-[0.1em] uppercase text-ob-faint mb-[7px]">Current focus</div>
-            <div class="font-semibold text-[14px] leading-[1.3] text-ob-text">AWS SysOps Administrator</div>
-          </div>
-          <span class="font-mono text-[11px] leading-none text-ob-sand whitespace-nowrap">in progress</span>
-        </div>
-      </aside>
+      </div>
     </section>
 
-    <!-- career path -->
-    <section class="pt-11 pb-14 border-t border-ob-sand/14">
-      <div class="flex items-baseline gap-[18px] mb-10">
-        <span class="font-mono text-[13px] leading-none text-ob-sand">02</span>
-        <h2 class="font-bold text-[28px] leading-none tracking-[-0.02em] text-ob-bright">Career path</h2>
+    <!-- career -->
+    <section class="pb-8">
+      <div class="flex items-center gap-6 mb-6">
+        <h2 class="font-bold text-[25px] leading-none tracking-[-0.02em] text-ob-bright shrink-0">Career</h2>
+        <span class="flex-1 h-px bg-ob-sand/14"></span>
+        <span class="font-mono text-[12px] leading-none tracking-[0.08em] text-ob-faint shrink-0">2017 – PRESENT</span>
       </div>
 
       <!-- node track (desktop) -->
-      <div class="relative mb-[22px] hidden md:block">
-        <div class="absolute top-1/2 left-[16%] right-[16%] h-[2px] bg-ob-sand/18 -translate-y-1/2"></div>
-        <div class="relative grid grid-cols-3">
-          <div class="flex justify-center"><span class="w-[13px] h-[13px] rounded-full bg-[#4A3D28] border-[3px] border-ob-bg"></span></div>
-          <div class="flex justify-center"><span class="w-[13px] h-[13px] rounded-full bg-[#4A3D28] border-[3px] border-ob-bg"></span></div>
-          <div class="flex justify-center"><span class="w-[15px] h-[15px] rounded-full bg-ob-sand border-[3px] border-ob-bg shadow-[0_0_0_4px_rgba(221,194,154,0.16)]"></span></div>
+      <div class="relative mb-5 hidden md:block">
+        <div class="absolute top-[6px] left-2 right-2 h-px bg-ob-sand/14"></div>
+        <div class="relative grid grid-cols-3 gap-6">
+          <div v-for="role in roles" :key="role.title" class="flex items-center gap-3">
+            <span
+              class="rounded-full border-[3px] border-ob-bg shrink-0"
+              :class="role.current
+                ? 'w-[14px] h-[14px] bg-ob-teal shadow-[0_0_0_4px_rgba(61,184,160,0.16)]'
+                : 'w-[13px] h-[13px] bg-ob-sand'"
+            ></span>
+            <span class="font-mono text-[12px] leading-none" :class="role.current ? 'text-ob-teal-bright' : 'text-ob-dim'">{{ role.date }}</span>
+          </div>
         </div>
       </div>
 
@@ -66,21 +55,49 @@
           v-for="role in roles"
           :key="role.title"
           :class="[
-            'rounded-[6px] bg-ob-surface p-7',
-            role.current
-              ? 'border-[1.5px] border-ob-bronze shadow-[0_0_0_4px_rgba(188,145,99,0.10)]'
-              : 'border border-ob-sand/16',
+            'rounded-[4px] bg-ob-surface p-5 flex flex-col',
+            role.current ? 'border-[1.5px] border-ob-teal' : 'border border-ob-sand/16',
           ]"
         >
-          <div class="flex items-center justify-between mb-4">
-            <span class="font-mono text-[13px] leading-none" :class="role.current ? 'text-ob-text' : 'text-ob-dim'">{{ role.date }}</span>
+          <div class="md:hidden font-mono text-[12px] leading-none mb-3" :class="role.current ? 'text-ob-teal-bright' : 'text-ob-dim'">{{ role.date }}</div>
+          <h3 class="font-bold text-[20px] leading-[1.2] tracking-[-0.01em] text-ob-bright mb-[13px]">{{ role.title }}</h3>
+          <div class="font-mono text-[10.5px] leading-none tracking-[0.1em] uppercase mb-[18px]" :class="role.current ? 'text-ob-teal-bright' : 'text-ob-sand'">{{ role.label }}</div>
+          <p class="text-[13.5px] leading-[1.6] text-ob-dim mb-5">{{ role.body }}</p>
+          <div class="flex flex-wrap gap-[7px] mt-auto">
             <span
-              class="font-mono text-[10px] leading-none tracking-[0.1em] uppercase rounded-full px-[11px] py-[5px]"
-              :class="role.current ? 'text-ob-sand bg-ob-sand/14' : 'text-ob-faint border border-ob-sand/18'"
-            >{{ role.tag }}</span>
+              v-for="tag in role.tags"
+              :key="tag"
+              class="font-mono text-[10.5px] leading-none text-ob-soft border border-ob-sand/18 rounded-[2px] px-2 py-[5px]"
+            >{{ tag }}</span>
           </div>
-          <h3 class="font-bold text-[21px] leading-[1.2] tracking-[-0.01em] mb-3" :class="role.current ? 'text-ob-bright' : 'text-ob-text'">{{ role.title }}</h3>
-          <p class="text-[14.5px] leading-[1.6]" :class="role.current ? 'text-ob-muted2' : 'text-ob-dim'">{{ role.body }}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- background & principles -->
+    <section class="grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-16 pt-6 pb-8">
+      <div>
+        <h2 class="font-bold text-[22px] leading-none tracking-[-0.02em] text-ob-bright mb-6">Background &amp; direction</h2>
+        <div class="flex flex-col gap-4">
+          <p class="text-[15px] leading-[1.65] text-ob-muted2">
+            I came to infrastructure from healthcare, where precision and accountability aren't aspirations, they're the baseline. That grounding shapes how I approach systems: deliberately, with an eye on what happens when things go wrong.
+          </p>
+          <p class="text-[15px] leading-[1.65] text-ob-dim">
+            Day to day I keep client environments stable and secure. Beyond that I'm going deeper in systems and cloud, <span class="text-ob-text font-semibold">Linux</span>, Terraform, AWS CDK and a bare-metal homelab, learning the foundations that make infrastructure reliable.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="font-bold text-[22px] leading-none tracking-[-0.02em] text-ob-bright mb-7">Operating principles</h2>
+        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
+          <div v-for="p in principles" :key="p.n" class="flex gap-[12px]">
+            <span class="font-mono text-[13px] leading-none text-ob-sand pt-[2px] shrink-0">{{ p.n }}</span>
+            <div>
+              <div class="font-semibold text-[15px] leading-[1.25] text-ob-text mb-[6px]">{{ p.title }}</div>
+              <p class="text-[12px] leading-[1.5] text-ob-dim">{{ p.body }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -88,34 +105,57 @@
 </template>
 
 <script setup>
-const traits = [
-  { key: 'curiosity', value: 'high' },
-  { key: 'learning', value: 'continuous' },
-  { key: 'ownership', value: 'enforcing' },
-  { key: 'root_cause', value: 'required' },
-  { key: 'team_morale', value: '+3', accent: true },
-  { key: 'mindset', value: 'engineer', accent: true },
+const meta = [
+  { label: 'BASED', value: 'Melbourne, AU' },
+  { label: 'FOCUS', value: 'Systems / Linux' },
+  { label: 'STACK', value: 'Linux · Cloud' },
 ]
 
 const roles = [
   {
-    date: '2017 - 2024',
-    tag: 'Healthcare',
-    title: 'Pharmacist - Community',
-    body: 'Community pharmacy in a regulated healthcare environment. Dispensed prescriptions, advised patients, and communicated clearly in high-responsibility situations. Built strong attention to detail, accountability, and the ability to stay calm in compliance-driven settings.',
+    date: '2017 – 2024',
+    label: 'Community & Hospital',
+    title: 'Pharmacist',
+    body: 'Eight years of high-volume, high-consequence work governed by strict protocol, verify before acting, document everything, stay composed when the stakes are real.',
+    tags: ['Regulated', 'Accountability', 'Detail'],
   },
   {
     date: '2025',
-    tag: 'SaaS',
+    label: 'Technology · Full time',
     title: 'Customer & Technical Support',
-    body: 'Application and customer support for a SaaS product: onboarding, installations, user education and structured troubleshooting. Documented solutions, analysed recurring issues, and worked closely with engineering to improve product reliability.',
+    body: 'Moved into technology full-time, resolving issues across software and hardware. Translated a clinical mindset into structured troubleshooting and clear written communication.',
+    tags: ['Triage', 'Comms', 'Diagnostics'],
   },
   {
-    date: '2026 - Present',
-    tag: 'MSP · Current',
+    date: '2026 – Present',
+    label: 'Cititec · MSP support',
     title: 'Helpdesk Support Technician',
-    body: 'Level 1 and 2 support across client environments: Microsoft 365, Entra ID, Active Directory, endpoints, networking and business applications. Focused on root-cause analysis, repeatable fixes, and understanding how services behave across real-world infrastructure.',
+    body: 'Frontline support across varied client environments, Microsoft 365, Entra ID, Active Directory, endpoints and networking. Owning incidents end to end and pushing toward root cause, not the quick reset.',
+    tags: ['Linux', 'M365', 'Entra ID', 'Networking'],
     current: true,
+  },
+]
+
+const principles = [
+  {
+    n: '01',
+    title: 'Accurate status over comfortable',
+    body: 'I flag a risk early rather than explain a failure late.',
+  },
+  {
+    n: '02',
+    title: 'What I commit to gets done',
+    body: 'Ownership I take is followed through, with care, and without needing chasing.',
+  },
+  {
+    n: '03',
+    title: 'Composed when systems are down',
+    body: 'Methodical when pressure is high, steady, not reactive.',
+  },
+  {
+    n: '04',
+    title: 'Mistakes that carried real weight',
+    body: 'Years in a field where an error had consequences, I bring that gravity to infrastructure.',
   },
 ]
 </script>
