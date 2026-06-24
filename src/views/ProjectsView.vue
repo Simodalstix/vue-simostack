@@ -1,174 +1,106 @@
 <template>
-  <div id="cloud-projects" class="text-white container mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-    <div class="flex flex-col min-[1150px]:flex-row gap-4 min-[1150px]:gap-8 mb-6 sm:mb-8 mt-4 sm:mt-6">
-      <div class="min-[1150px]:w-2/3">
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-center min-[1150px]:text-left">Systems, Cloud &amp; Infra Projects</h1>
-        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-       Cloud infrastructure, platform engineering, and systems work built across AWS, Azure, Kubernetes, and a bare-metal Proxmox lab. Projects range from multi-account landing zones and GitOps pipelines to disaster recovery, observability platforms, and Java CI/CD. Current shift: moving beyond pure IaC into AWS operations — understanding how services behave, break, and recover in practice.
+  <div id="cloud-projects" class="max-w-[1440px] mx-auto px-6 sm:px-11 pb-6">
+    <!-- header -->
+    <section class="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-14 items-end pt-8 sm:pt-10 pb-8">
+      <div class="max-w-[640px]">
+        <div class="flex items-center gap-[12px] mb-5">
+          <span class="font-mono font-semibold text-[13px] leading-none text-ob-sand">03</span>
+          <span class="w-6 h-px bg-ob-sand"></span>
+          <span class="font-mono font-semibold text-[11px] leading-none tracking-[0.2em] uppercase text-ob-sand">Projects</span>
+        </div>
+        <h1 class="font-bold text-[36px] sm:text-[44px] lg:text-[46px] leading-[1.0] tracking-[-0.02em] text-ob-bright mb-4">Selected work</h1>
+        <p class="text-[15px] sm:text-[16px] leading-[1.6] text-ob-dim max-w-[540px]">
+          Cloud infrastructure I design and ship, multi-tier platforms, event-driven pipelines and golden-path automation, mostly on AWS with Python CDK.
         </p>
       </div>
-      <div class="min-[1150px]:w-1/3 flex flex-col justify-start">
-        <div class="font-mono text-xs sm:text-sm bg-slate-900/80 border border-cyan-500/40 rounded-lg px-3 py-2 sm:px-4 sm:py-3 w-fit">
-          <div class="flex items-center gap-2 mb-1">
-            <span class="text-green-400">●</span>
-            <span class="text-white">simon.service</span>
-            <span class="text-slate-400">- Cloud Labs &amp; Projects</span>
-          </div>
-          <div class="pl-4 text-slate-500">Loaded: <span class="text-slate-300">loaded (/etc/systemd/system/simon.service; <span class="text-green-400">enabled</span>)</span></div>
-          <div class="pl-4 text-slate-500">Active: <span class="text-green-400">active (running)</span><span class="text-slate-500"> since 2025</span></div>
-          <div class="pl-4 text-slate-500">Main PID: <span class="text-slate-300">simon</span></div>
-          <div class="pl-4 text-slate-500">Status: <span class="text-cyan-300">"Diving deep into infrastructure"</span></div>
+      <div class="flex items-center gap-4 lg:justify-end">
+        <span class="font-mono text-[10px] leading-none tracking-[0.18em] uppercase text-ob-faint">Core stack</span>
+        <div class="flex items-center gap-[20px]">
+          <img v-for="icon in coreStack" :key="icon.alt" :src="icon.src" :alt="icon.alt" class="w-8 h-8 object-contain" />
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="space-y-8">
       <!-- Cloud Platforms & Infrastructure -->
       <div>
-        <div class="grid grid-cols-2 min-[720px]:grid-cols-3 min-[1150px]:grid-cols-4 gap-4 sm:gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <!-- Proxmox Infrastructure Lab Card (hardcoded — row-span, sub-items, custom emits) -->
+          <!-- Featured Proxmox Lab card (tall — pinned top-right on lg, sub-item modals) -->
           <BaseCard
-            class="hidden min-[1150px]:flex flex-col lg:row-span-2 p-4 min-[1400px]:p-6 rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800"
+            class="flex flex-col lg:col-start-3 lg:row-start-1 lg:row-span-2 p-6 rounded-[3px] border border-ob-sand/16 border-t-2 !border-t-ob-bronze bg-ob-surface"
           >
-            <div class="flex items-start justify-between mb-3 min-[1400px]:mb-4">
-              <h3 class="text-base min-[1400px]:text-lg font-bold text-white">Beelink SER8 Proxmox Hypervisor</h3>
-              <img src="/images/project-icons/beelink.png" alt="Beelink" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
-            </div>
-            <div class="flex items-center justify-evenly mb-3 min-[1400px]:mb-4">
-              <img src="/images/project-icons/proxmox.svg" alt="Proxmox" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
-              <img src="/images/project-icons/windows.svg" alt="Windows" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-sm" />
-              <img src="/images/project-icons/rocky.svg" alt="Rocky" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
-              <img src="/images/project-icons/vault.svg" alt="Vault" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
-              <img src="/images/project-icons/ansible.svg" alt="Ansible" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
-              <img src="/images/project-icons/opnsense.webp" alt="OPNsense" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
-            </div>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Hypervisor</span>
-              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Firewall</span>
-              <span class="px-2 py-1 text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md">Linux</span>
-            </div>
-            <div class="border-t border-slate-700/60 pb-2 pt-4">
-              <p class="text-xs white font-medium">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
-              <p class="text-xs text-white mt-1.5">6 VMs running services on a single node.</p>
-            </div>
-            <ul class="space-y-1.5 min-[1400px]:space-y-2 text-xs min-[1400px]:text-sm mt-2">
-              <li @click="showDC1 = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Windows Server Domain Controller</span></li>
-              <li @click="showFileServer = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Rocky Linux Samba File Server</span></li>
-              <li @click="showVaultPki = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">HashiCorp Vault PKI</span></li>
-              <li @click="showOPNsense = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">OPNsense Firewall & WireGuard VPN</span></li>
-              <li @click="showPrometheusGrafana = true" class="flex items-center gap-1.5 min-[1400px]:gap-2.5 cursor-pointer group/item"><span class="w-1.5 h-1.5 rounded-full bg-slate-500 group-hover/item:bg-slate-300 shrink-0 transition-colors"></span><span class="bg-slate-500/20 group-hover/item:bg-slate-500/30 text-slate-300 group-hover/item:text-white border border-slate-500/20 group-hover/item:border-slate-500/30 px-1.5 py-0.5 min-[1400px]:px-2.5 rounded-md transition-colors">Prometheus + Grafana Monitoring</span></li>
-            </ul>
-            <div class="flex items-center justify-between gap-2 text-xs text-slate-400 pt-4 mt-auto border-t border-slate-700/60">
-              <span class="flex items-center gap-1 px-2 py-1 bg-yellow-700/30 text-yellow-300 border border-yellow-600/30 rounded-full">
-                <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                Archived
+            <div class="flex items-center justify-between mb-3">
+              <span class="inline-flex items-center gap-[7px] font-mono text-[10px] leading-none tracking-[0.1em] uppercase text-ob-teal-bright">
+                <span class="w-[6px] h-[6px] rounded-full bg-ob-teal-bright"></span>Live
               </span>
-              <span>Systems Infrastructure</span>
+              <span class="font-mono text-[10px] leading-none tracking-[0.08em] uppercase text-ob-sand border border-ob-sand/40 rounded-[2px] px-[8px] py-[4px]">Primary node</span>
+            </div>
+            <h3 class="text-[21px] font-semibold leading-[1.18] text-ob-text mb-[10px]">Beelink SER8 Proxmox Hypervisor</h3>
+            <p class="text-[13.5px] leading-[1.58] text-ob-dim mb-4">A single-node Proxmox host running my homelab, six VMs delivering production-style services.</p>
+            <div class="flex flex-wrap gap-[7px] mb-4">
+              <span class="font-mono text-[10.5px] leading-none text-ob-soft border border-ob-sand/18 rounded-[2px] px-2 py-[5px]">Hypervisor</span>
+              <span class="font-mono text-[10.5px] leading-none text-ob-soft border border-ob-sand/18 rounded-[2px] px-2 py-[5px]">Firewall</span>
+              <span class="font-mono text-[10.5px] leading-none text-ob-soft border border-ob-sand/18 rounded-[2px] px-2 py-[5px]">Linux</span>
+            </div>
+            <div class="border-t border-ob-sand/14 pb-1 pt-4">
+              <p class="text-xs text-ob-dim font-mono">Ryzen 7 8845HS &middot; 32 GB DDR5 &middot; 1 TB NVMe</p>
+            </div>
+            <ul class="mt-3 flex flex-col">
+              <li @click="showDC1 = true" class="flex items-center gap-[14px] py-[11px] border-b border-ob-sand/10 cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">01</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">Windows Server Domain Controller</span></li>
+              <li @click="showFileServer = true" class="flex items-center gap-[14px] py-[11px] border-b border-ob-sand/10 cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">02</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">Rocky Linux Samba File Server</span></li>
+              <li @click="showVaultPki = true" class="flex items-center gap-[14px] py-[11px] border-b border-ob-sand/10 cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">03</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">HashiCorp Vault PKI</span></li>
+              <li @click="showOPNsense = true" class="flex items-center gap-[14px] py-[11px] border-b border-ob-sand/10 cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">04</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">OPNsense Firewall &amp; WireGuard VPN</span></li>
+              <li @click="showPrometheusGrafana = true" class="flex items-center gap-[14px] py-[11px] cursor-pointer group/item"><span class="font-mono text-[12px] text-ob-sand w-6 shrink-0">05</span><span class="text-[15px] text-ob-text group-hover/item:text-ob-bright transition-colors">Prometheus + Grafana Monitoring</span></li>
+            </ul>
+            <div class="flex items-center justify-between gap-2 pt-4 mt-auto border-t border-ob-sand/14">
+              <span class="inline-flex items-center gap-[8px] font-mono text-[10.5px] leading-none text-ob-faint">
+                <span class="w-[6px] h-[6px] rounded-full bg-ob-sand"></span>
+                Systems Infrastructure
+              </span>
+              <button type="button" @click="showProxmoxLab = true" class="font-mono text-[11px] leading-none text-ob-teal-bright hover:text-ob-teal transition-colors">build notes →</button>
             </div>
           </BaseCard>
 
-          <!-- Data-driven project cards -->
-          <template v-for="project in mainProjects" :key="project.id">
-            <BaseCard
-              :class="[
-                'relative group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100 overflow-hidden',
-                project.hover,
-                project.githubUrl ? '' : '',
-              ]"
-              @click="handleCardClick(project)"
-            >
-              <!-- New ribbon -->
-              <div v-if="project.isNew" class="absolute top-0 right-0 w-20 h-20 z-20 pointer-events-none">
-                <div class="absolute top-3 -right-6 w-24 bg-cyan-400 text-cyan-950 text-[10px] font-bold text-center py-0.5 rotate-45 tracking-widest shadow-[0_0_12px_rgba(34,211,238,0.85)]">NEW</div>
-              </div>
+          <!-- Standard project cards (handoff style: LIVE + P-0N, description, repo link) -->
+          <BaseCard
+            v-for="project in mainProjects"
+            :key="project.id"
+            class="group cursor-pointer p-[22px] flex flex-col rounded-[3px] border border-ob-sand/16 bg-ob-surface hover:border-ob-sand/30 transition-colors"
+            @click="handleCardClick(project)"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center gap-[7px] font-mono text-[10px] leading-none tracking-[0.1em] uppercase text-ob-teal-bright">
+                <span class="w-[6px] h-[6px] rounded-full bg-ob-teal-bright"></span>Live
+              </span>
+              <span class="font-mono text-[11px] leading-none tracking-[0.08em] text-ob-sand">{{ project.code }}</span>
+            </div>
 
+            <h3 class="font-semibold text-[18px] leading-[1.2] tracking-[-0.01em] text-ob-text group-hover:text-ob-bright transition-colors mb-[10px]">{{ project.title }}</h3>
+            <p class="text-[13.5px] leading-[1.58] text-ob-dim mb-4">{{ project.description }}</p>
+
+            <div class="flex flex-wrap gap-[7px] mb-5">
+              <span
+                v-for="tag in project.tags"
+                :key="tag"
+                class="font-mono text-[10.5px] leading-none text-ob-soft border border-ob-sand/18 rounded-[2px] px-2 py-[5px] whitespace-nowrap"
+              >{{ tag }}</span>
+            </div>
+
+            <div class="mt-auto flex items-center justify-between pt-[18px] border-t border-ob-sand/14">
+              <span class="inline-flex items-center gap-[8px] font-mono text-[10.5px] leading-none text-ob-faint">
+                <span class="w-[6px] h-[6px] rounded-full bg-ob-sand"></span>{{ project.category }}
+              </span>
               <a
-                v-if="project.githubUrl"
-                :href="project.githubUrl"
+                :href="project.repoUrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="absolute inset-0 z-10 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
-                :aria-label="`Open GitHub repo: ${project.title}`"
-              >
-                <span class="sr-only">Open GitHub repo</span>
-              </a>
+                class="font-mono text-[11px] leading-none text-ob-teal-bright hover:text-ob-teal transition-colors"
+                @click.stop
+              >repo →</a>
+            </div>
+          </BaseCard>
 
-              <div class="flex items-center justify-between mb-4">
-                <h3 :class="['text-base font-bold text-white', project.titleHover]" v-html="project.titleHtml || project.title"></h3>
-              </div>
-
-              <div class="flex items-center justify-evenly mb-4">
-                <img v-for="icon in project.icons.slice(0, 6)" :key="icon.alt" :src="icon.src" :alt="icon.alt" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
-              </div>
-
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  v-for="tag in project.tags"
-                  :key="tag"
-                  class="px-1 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-                >{{ tag }}</span>
-              </div>
-
-              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-slate-400 pt-4 border-t border-slate-500/60">
-                <span :class="['flex items-center gap-1 px-1.5 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs rounded-full', statusClasses[project.statusColor].badge]">
-                  <div :class="['w-2 h-2 rounded-full', statusClasses[project.statusColor].dot]"></div>
-                  {{ project.status }}
-                </span>
-                <span class="text-slate-300">{{ project.category }} - {{ project.githubUrl ? 'View on GitHub' : 'View details' }}</span>
-              </div>
-            </BaseCard>
-          </template>
-
-        </div>
-      </div>
-
-      <!-- Extra Projects & Experiments -->
-      <div>
-        <h3 class="text-lg font-semibold text-slate-200 mb-6 text-center sm:text-left">Extra Projects &amp; Experiments</h3>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          <template v-for="project in extraProjects" :key="project.id">
-            <BaseCard
-              v-if="project.id === 'coming-soon'"
-              class="p-4 rounded-xl border border-slate-600/80 bg-slate-700/80 text-slate-400"
-            >
-              <h3 class="text-lg font-bold mb-3 text-white">More Projects Coming Soon</h3>
-              <p class="text-sm text-slate-300">Additional cloud infrastructure and DevOps projects in development.</p>
-            </BaseCard>
-
-            <BaseCard
-              v-else
-              :class="[
-                'group cursor-pointer p-4 flex flex-col rounded-xl border border-slate-500/60 bg-slate-700/80 bg-gradient-to-br from-slate-700 to-slate-800 transition-all duration-100',
-                project.hover,
-              ]"
-              @click="handleCardClick(project)"
-            >
-              <div class="flex items-center justify-between mb-4">
-                <h3 :class="['text-base font-bold text-white', project.titleHover]" v-html="project.titleHtml || project.title"></h3>
-              </div>
-
-              <div class="flex items-center justify-evenly mb-4">
-                <img v-for="icon in project.icons.slice(0, 6)" :key="icon.alt" :src="icon.src" :alt="icon.alt" class="w-8 h-8 min-[1400px]:w-10 min-[1400px]:h-10 rounded-md" />
-              </div>
-
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  v-for="tag in project.tags"
-                  :key="tag"
-                  class="px-1 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs font-medium bg-slate-500/20 text-slate-300 border border-slate-500/20 rounded-md"
-                >{{ tag }}</span>
-              </div>
-
-              <div class="mt-auto flex items-center justify-between text-[10px] min-[1400px]:text-xs text-slate-400 pt-4 border-t border-slate-500/60">
-                <span :class="['flex items-center gap-1 px-1.5 py-0.5 text-[10px] min-[1400px]:px-2 min-[1400px]:py-1 min-[1400px]:text-xs rounded-full', statusClasses[project.statusColor].badge]">
-                  <div :class="['w-2 h-2 rounded-full', statusClasses[project.statusColor].dot]"></div>
-                  {{ project.status }}
-                </span>
-                <span class="text-slate-300">{{ project.category }} - View details</span>
-              </div>
-            </BaseCard>
-          </template>
         </div>
       </div>
     </div>
@@ -422,41 +354,41 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import DynatraceModal from '../components/modals/Project-Dynatrace.vue'
-import AwsMigrationModal from '../components/modals/Project-Migration.vue'
-import AzureHubSpokeModal from '../components/modals/Project-Azure-Hub.vue'
-import VmwareMonitoringModal from '../components/modals/Project-VMware-Ansible.vue'
-import RaspberryPiModal from '../components/modals/Project-Raspberry.vue'
-import PrismaModal from '../components/modals/Project-Prisma.vue'
-import ProjectMultiregion from '../components/modals/Project-Multiregion.vue'
-import WazuhSOClab from '../components/modals/Projects-Wazuh.vue'
-import DeveloperTooling from '../components/modals/Project-Tooling.vue'
-import ProjectDRbackup from '@/components/modals/Project-DRbackup.vue'
-import ProjectLambdaSqsDlq from '@/components/modals/Project-LambdaSQSDLQ.vue'
-import ProjectBedrockLandingzone from '@/components/modals/Project-Bedrock-Landingzone.vue'
-import ProjectFargateGoldenPath from '@/components/modals/Project-FargateGoldenPath.vue'
-import ProjectPilotLight from '@/components/modals/Project-Pilot-Light.vue'
-import ProjectEKSGitopsGP from '@/components/modals/Project-EKSGitopsGP.vue'
-import ProjectAzureContainerApps from '@/components/modals/Project-Azure-ContainerApps.vue'
-import ProjectDocumentAnalyzer from '@/components/modals/Project-Document-Analyzer.vue'
-import ProjectJavaMavernJenkins from '@/components/modals/Project-JavaMavernJenkins.vue'
-import ProjectEnterpriseLandingZone from '@/components/modals/Project-EnterpriseLandingZone.vue'
-import ProjectAksGitopsProject from '@/components/modals/Project-AzureAKSGitops.vue'
-import ProjectObservabilityPlatform from '@/components/modals/Project-ObservabilityPlatform.vue'
-import ProjectJavaGradleJenkins from '@/components/modals/Project-JavaGradleJenkins.vue'
-import ProjectK3sGitops from '@/components/modals/Project-K3sGitops.vue'
-import ProjectAwsConfigMgmt from '@/components/modals/Project-AWSConfigMgmt.vue'
-import HackTheBoxModal from '@/components/modals/HackTheBoxModal.vue'
-import VMwareModal from '@/components/modals/VMwareModal.vue'
-import VaultPkiModal from '@/components/modals/Project-VaultPKI.vue'
-import ProjectOPNsense from '@/components/modals/Project-OPNsense.vue'
-import ProjectDC1 from '@/components/modals/Project-DC1.vue'
-import ProjectFileServer from '@/components/modals/Project-Fileserver.vue'
-import ProjectPrometheusGrafana from '@/components/modals/Project-Prometheus.vue'
-import ProjectProxmoxLab from '@/components/modals/Project-ProxmoxLab.vue'
-import ProjectAWS3TierPlatform from '@/components/modals/Project-AWS3TierPlatform.vue'
-import ProjectAWSImagePipeline from '@/components/modals/Project-AWSImagePipeline.vue'
-import ProjectAWSEventPipeline from '@/components/modals/Project-AWSEventPipeline.vue'
+import DynatraceModal from '@/components/modals/project/Project-Dynatrace.vue'
+import AwsMigrationModal from '@/components/modals/project/Project-Migration.vue'
+import AzureHubSpokeModal from '@/components/modals/project/Project-Azure-Hub.vue'
+import VmwareMonitoringModal from '@/components/modals/project/Project-VMware-Ansible.vue'
+import RaspberryPiModal from '@/components/modals/project/Project-Raspberry.vue'
+import PrismaModal from '@/components/modals/project/Project-Prisma.vue'
+import ProjectMultiregion from '@/components/modals/project/Project-Multiregion.vue'
+import WazuhSOClab from '@/components/modals/project/Projects-Wazuh.vue'
+import DeveloperTooling from '@/components/modals/project/Project-Tooling.vue'
+import ProjectDRbackup from '@/components/modals/project/Project-DRbackup.vue'
+import ProjectLambdaSqsDlq from '@/components/modals/project/Project-LambdaSQSDLQ.vue'
+import ProjectBedrockLandingzone from '@/components/modals/project/Project-Bedrock-Landingzone.vue'
+import ProjectFargateGoldenPath from '@/components/modals/project/Project-FargateGoldenPath.vue'
+import ProjectPilotLight from '@/components/modals/project/Project-Pilot-Light.vue'
+import ProjectEKSGitopsGP from '@/components/modals/project/Project-EKSGitopsGP.vue'
+import ProjectAzureContainerApps from '@/components/modals/project/Project-Azure-ContainerApps.vue'
+import ProjectDocumentAnalyzer from '@/components/modals/project/Project-Document-Analyzer.vue'
+import ProjectJavaMavernJenkins from '@/components/modals/project/Project-JavaMavernJenkins.vue'
+import ProjectEnterpriseLandingZone from '@/components/modals/project/Project-EnterpriseLandingZone.vue'
+import ProjectAksGitopsProject from '@/components/modals/project/Project-AzureAKSGitops.vue'
+import ProjectObservabilityPlatform from '@/components/modals/project/Project-ObservabilityPlatform.vue'
+import ProjectJavaGradleJenkins from '@/components/modals/project/Project-JavaGradleJenkins.vue'
+import ProjectK3sGitops from '@/components/modals/project/Project-K3sGitops.vue'
+import ProjectAwsConfigMgmt from '@/components/modals/project/Project-AWSConfigMgmt.vue'
+import HackTheBoxModal from '@/components/modals/project/HackTheBoxModal.vue'
+import VMwareModal from '@/components/modals/project/VMwareModal.vue'
+import VaultPkiModal from '@/components/modals/project/Project-VaultPKI.vue'
+import ProjectOPNsense from '@/components/modals/project/Project-OPNsense.vue'
+import ProjectDC1 from '@/components/modals/project/Project-DC1.vue'
+import ProjectFileServer from '@/components/modals/project/Project-Fileserver.vue'
+import ProjectPrometheusGrafana from '@/components/modals/project/Project-Prometheus.vue'
+import ProjectProxmoxLab from '@/components/modals/project/Project-ProxmoxLab.vue'
+import ProjectAWS3TierPlatform from '@/components/modals/project/Project-AWS3TierPlatform.vue'
+import ProjectAWSImagePipeline from '@/components/modals/project/Project-AWSImagePipeline.vue'
+import ProjectAWSEventPipeline from '@/components/modals/project/Project-AWSEventPipeline.vue'
 
 defineProps({
   releaseVersion: String,
@@ -995,17 +927,86 @@ const projects = [
   },
 ]
 
-// ─── Derived ──────────────────────────────────────────────────────────────────
-const mainProjects = computed(() => projects.filter(p => p.section === 'main'))
-const extraProjects = computed(() => projects.filter(p => p.section === 'extra'))
+// ─── Header core-stack icons ──────────────────────────────────────────────────
+const coreStack = [
+  { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+  { src: '/images/project-icons/python.svg', alt: 'Python' },
+  { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
+  { src: '/images/project-icons/ansible-icon-light.svg', alt: 'Ansible' },
+]
 
-const statusClasses = {
-  green:  { badge: 'bg-green-500/30 text-green-300 border border-green-500/20',    dot: 'bg-green-400' },
-  amber:  { badge: 'bg-amber-500/30 text-amber-300 border border-amber-500/20',    dot: 'bg-amber-400' },
-  stone:  { badge: 'bg-stone-500/30 text-stone-300 border border-stone-500/20',    dot: 'bg-stone-400' },
-  purple: { badge: 'bg-purple-500/30 text-purple-300 border border-purple-500/20', dot: 'bg-purple-400' },
-  orange: { badge: 'bg-orange-500/30 text-orange-300 border border-orange-500/20', dot: 'bg-orange-400' },
+// ─── Curated grid (handoff Selected work) ─────────────────────────────────────
+// The grid shows a curated subset of the project catalogue above. cardMeta keys
+// (in order) drive the P-0N index, copy and repo link; the matching catalogue
+// entry supplies the modal wiring via its id. The remaining catalogue entries
+// stay defined so their modals remain available for future use.
+// NOTE: aws-event-driven-pipeline and aws-config-mgmt repo slugs are best-guess
+// pending confirmation.
+const cardMeta = {
+  'aws-3tier-platform': {
+    code: 'P-01',
+    title: 'AWS 3-Tier Platform',
+    description: 'A production-style three-tier app, FastAPI behind an ALB and auto-scaling group, with RDS and ElastiCache Redis for data and caching.',
+    tags: ['Database', 'Cache'],
+    category: 'Cloud Infrastructure',
+    repoUrl: 'https://github.com/Simodalstix/aws-3tier-platform',
+  },
+  'aws-image-pipeline': {
+    code: 'P-02',
+    title: 'AWS Image Pipeline',
+    description: 'A golden-AMI factory baking hardened, pre-patched images with Packer and SSM for repeatable, drift-free fleets.',
+    tags: ['Golden AMI', 'Automation'],
+    category: 'Automation',
+    repoUrl: 'https://github.com/Simodalstix/aws-image-pipeline',
+  },
+  'aws-event-driven-pipeline': {
+    code: 'P-03',
+    title: 'AWS Event-Driven Pipeline',
+    description: 'Decoupled serverless processing across SQS, Lambda and S3, with Glue and Athena turning raw events into queryable datasets.',
+    tags: ['Serverless', 'Analytics'],
+    category: 'Serverless',
+    repoUrl: 'https://github.com/Simodalstix/aws-event-driven-pipeline',
+  },
+  'fargate-golden-path': {
+    code: 'P-04',
+    title: 'ECS Fargate Golden Path',
+    description: 'Blue/green delivery on ECS Fargate backed by Aurora Serverless, with X-Ray tracing and FIS fault-injection built in.',
+    tags: ['Containers', 'Observability'],
+    category: 'Containers',
+    repoUrl: 'https://github.com/Simodalstix/aws-fargate-golden-path',
+  },
+  'aws-config-mgmt': {
+    code: 'P-05',
+    title: 'AWS SSM Fleet',
+    description: 'Masterless Puppet configuration across an SSM-managed fleet, with keyless access, drift detection and compliance reporting.',
+    tags: ['Fleet', 'Compliance'],
+    category: 'Fleet',
+    repoUrl: 'https://github.com/Simodalstix/aws-ssm-puppet-fleet',
+  },
+  'pilot-light-dr': {
+    code: 'P-06',
+    title: 'E-commerce Pilot Light DR',
+    description: 'Pilot-light disaster recovery with RDS read replica, S3 cross-region replication, Step Functions failover and Route 53 health-check routing across Sydney and Singapore.',
+    tags: ['Multi-Region', 'Failover'],
+    category: 'Disaster Recovery',
+    repoUrl: 'https://github.com/Simodalstix/aws-dr-pilot-light',
+  },
+  'azure-hub-spoke': {
+    code: 'P-07',
+    title: 'Azure Hub-Spoke Landing Zone',
+    description: 'Azure landing zone with hub-spoke networking: Azure Firewall, VPN Gateway, NSGs, Key Vault and Private DNS, built as modular Terraform with a CI/CD pipeline.',
+    tags: ['Hub & Spoke', 'VPN'],
+    category: 'Cloud Infrastructure',
+    repoUrl: 'https://github.com/Simodalstix/azure-hub-spoke-vpn',
+  },
 }
+
+const mainProjects = computed(() =>
+  Object.entries(cardMeta).map(([id, meta]) => {
+    const base = projects.find((p) => p.id === id)
+    return { ...base, id, ...meta }
+  }),
+)
 
 // ─── Modal routing ────────────────────────────────────────────────────────────
 const activeProject = ref(null)
