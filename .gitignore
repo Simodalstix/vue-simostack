@@ -39,3 +39,6 @@ DRAFTS.vue
 claude.md
 CLEARANCE_SPEC.md
 IMPLEMENTATION_NOTES.md
+
+# Local design reference, not part of the shipped app
+design_handoff_portfolio/
