@@ -13,16 +13,10 @@
           Cloud infrastructure I design and ship, multi-tier platforms, event-driven pipelines and golden-path automation, mostly on AWS with Python CDK.
         </p>
       </div>
-      <div class="flex flex-col gap-[16px] lg:items-end lg:text-right">
-        <div class="font-mono text-[13px] leading-none text-ob-faint">7 projects · <span class="text-ob-teal-bright font-semibold">all live</span></div>
-        <div class="inline-flex items-center gap-[8px] font-mono text-[10px] leading-none tracking-[0.1em] uppercase text-ob-faint">
-          <span class="w-[7px] h-[7px] rounded-full bg-ob-teal-bright"></span>Live · Running in prod
-        </div>
-        <div class="flex items-center gap-4 mt-1">
-          <span class="font-mono text-[10px] leading-none tracking-[0.18em] uppercase text-ob-faint">Core stack</span>
-          <div class="flex items-center gap-[18px]">
-            <img v-for="icon in coreStack" :key="icon.alt" :src="icon.src" :alt="icon.alt" class="w-[26px] h-[26px] object-contain" />
-          </div>
+      <div class="flex items-center gap-4 lg:justify-end">
+        <span class="font-mono text-[10px] leading-none tracking-[0.18em] uppercase text-ob-faint">Core stack</span>
+        <div class="flex items-center gap-[20px]">
+          <img v-for="icon in coreStack" :key="icon.alt" :src="icon.src" :alt="icon.alt" class="w-8 h-8 object-contain" />
         </div>
       </div>
     </section>
@@ -938,7 +932,7 @@ const coreStack = [
   { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
   { src: '/images/project-icons/python.svg', alt: 'Python' },
   { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
-  { src: '/images/project-icons/ansible.svg', alt: 'Ansible' },
+  { src: '/images/project-icons/ansible-icon-light.svg', alt: 'Ansible' },
 ]
 
 // ─── Curated grid (handoff Selected work) ─────────────────────────────────────

@@ -131,7 +131,7 @@ const roles = [
     label: 'Cititec · MSP support',
     title: 'Helpdesk Support Technician',
     body: 'Frontline support across varied client environments, Microsoft 365, Entra ID, Active Directory, endpoints and networking. Owning incidents end to end and pushing toward root cause, not the quick reset.',
-    tags: ['Linux', 'M365', 'Entra ID', 'Networking'],
+    tags: ['M365', 'Entra ID', 'Networking'],
     current: true,
   },
 ]
