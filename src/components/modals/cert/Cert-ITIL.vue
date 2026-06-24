@@ -12,14 +12,14 @@ import BaseModal from '../BaseModal.vue'
     width="max-w-3xl"
   >
     <div class="p-4 mb-2">
-      <p class="text-base text-slate-300 leading-relaxed mb-4">
+      <p class="text-base text-ob-muted2 leading-relaxed mb-4">
         Issued by PeopleCert on behalf of AXELOS. Covers
-        <span class="text-cyan-300">change enablement</span>,
-        <span class="text-cyan-300">incident management</span>,
-        <span class="text-cyan-300">service request workflows</span>, and continual improvement —
+        <span class="text-ob-teal-bright">change enablement</span>,
+        <span class="text-ob-teal-bright">incident management</span>,
+        <span class="text-ob-teal-bright">service request workflows</span>, and continual improvement —
         the shared operational language for teams running production systems where changes follow
         a structured process, incidents have a clear escalation path, and
-        <span class="text-cyan-300">on-call ownership</span> matters.
+        <span class="text-ob-teal-bright">on-call ownership</span> matters.
       </p>
 
       <!-- Scorecard image -->
@@ -32,7 +32,7 @@ import BaseModal from '../BaseModal.vue'
       </div>
 
       <!-- Footer note -->
-      <p class="text-sm text-slate-300 mt-3 text-center italic">
+      <p class="text-sm text-ob-muted2 mt-3 text-center italic">
         Official badge sharing requires an Axelos subscription.
         Full verification available upon request.
       </p>

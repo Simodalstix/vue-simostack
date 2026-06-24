@@ -78,9 +78,17 @@
             <span class="font-mono text-[11px] leading-none tracking-[0.1em] uppercase text-ob-soft">{{ cat.name }}</span>
           </div>
           <div class="flex flex-col gap-4">
-            <div v-for="cert in cat.items" :key="cert.name">
+            <div
+              v-for="cert in cat.items"
+              :key="cert.name"
+              :class="cert.modal ? 'cursor-pointer group/cert' : ''"
+              @click="openCert(cert)"
+            >
               <div class="flex items-center gap-[8px]">
-                <span class="font-semibold text-[15px] leading-[1.3] text-ob-text">{{ cert.name }}</span>
+                <span
+                  class="font-semibold text-[15px] leading-[1.3] text-ob-text"
+                  :class="cert.modal ? 'group-hover/cert:text-ob-teal-bright transition-colors' : ''"
+                >{{ cert.name }}</span>
                 <span
                   v-if="cert.inProgress"
                   class="font-mono text-[9px] leading-none tracking-[0.1em] uppercase text-ob-sand border border-ob-sand/50 rounded-[2px] px-[6px] py-[3px] whitespace-nowrap"
@@ -92,11 +100,44 @@
         </div>
       </div>
     </section>
+
+    <!-- cert modals -->
+    <CertAWSArchitect :visible="activeCert === 'architect'" @close="activeCert = null" />
+    <CertAWSDeveloper :visible="activeCert === 'aws-developer'" @close="activeCert = null" />
+    <CertAWSPractitioner :visible="activeCert === 'aws-practitioner'" @close="activeCert = null" />
+    <CertAZ104 :visible="activeCert === 'az104'" @close="activeCert = null" />
+    <CertSC300 :visible="activeCert === 'sc300'" @close="activeCert = null" />
+    <CertMS900 :visible="activeCert === 'ms900'" @close="activeCert = null" />
+    <CertRHCSA :visible="activeCert === 'rhcsa'" @close="activeCert = null" />
+    <CertPython :visible="activeCert === 'python'" @close="activeCert = null" />
+    <CertTerraform :visible="activeCert === 'terraform'" @close="activeCert = null" />
+    <CertSecurityPlus :visible="activeCert === 'security-plus'" @close="activeCert = null" />
+    <CertCompTIAA :visible="activeCert === 'comptia-a'" @close="activeCert = null" />
+    <CertITIL :visible="activeCert === 'itil'" @close="activeCert = null" />
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
+import CertAWSArchitect from '@/components/modals/cert/Cert-AWSArchitect.vue'
+import CertAWSDeveloper from '@/components/modals/cert/Cert-AWSDeveloper.vue'
+import CertAWSPractitioner from '@/components/modals/cert/Cert-AWSPractioner.vue'
+import CertAZ104 from '@/components/modals/cert/Cert-AZ104.vue'
+import CertSC300 from '@/components/modals/cert/Cert-SC300.vue'
+import CertMS900 from '@/components/modals/cert/Cert-MS900.vue'
+import CertRHCSA from '@/components/modals/cert/Cert-RHCSA.vue'
+import CertPython from '@/components/modals/cert/Cert-PythonModal.vue'
+import CertTerraform from '@/components/modals/cert/Cert-TerraformModal.vue'
+import CertSecurityPlus from '@/components/modals/cert/Cert-SecurityPlus.vue'
+import CertCompTIAA from '@/components/modals/cert/Cert-CompTIA-A+.vue'
+import CertITIL from '@/components/modals/cert/Cert-ITIL.vue'
+
+// Cert modals open from the certifications list. Each clickable cert item
+// carries a `modal` key; the matching modal below is shown when active.
+const activeCert = ref(null)
+function openCert(cert) {
+  if (cert.modal) activeCert.value = cert.modal
+}
 
 // "About Me" secondary button variant (handoff exposes a single toggle).
 // 'outline' = transparent / faint border / light text (current default);
@@ -136,34 +177,34 @@ const certCategories = [
   {
     name: 'Amazon Web Services',
     items: [
-      { name: 'Solutions Architect', code: 'SAA-C03 · Associate' },
-      { name: 'Developer', code: 'DVA-C02 · Associate' },
-      { name: 'Cloud Practitioner', code: 'CLF-C02 · Foundational' },
+      { name: 'Solutions Architect', code: 'SAA-C03 · Associate', modal: 'architect' },
+      { name: 'Developer', code: 'DVA-C02 · Associate', modal: 'aws-developer' },
+      { name: 'Cloud Practitioner', code: 'CLF-C02 · Foundational', modal: 'aws-practitioner' },
       { name: 'SysOps Administrator', code: 'SOA-C02 · Associate', inProgress: true },
     ],
   },
   {
     name: 'Microsoft & Azure',
     items: [
-      { name: 'Azure Administrator', code: 'AZ-104 · Associate' },
-      { name: 'Identity & Access Admin', code: 'SC-300 · Associate' },
-      { name: '365 Fundamentals', code: 'MS-900 · Foundational' },
+      { name: 'Azure Administrator', code: 'AZ-104 · Associate', modal: 'az104' },
+      { name: 'Identity & Access Admin', code: 'SC-300 · Associate', modal: 'sc300' },
+      { name: '365 Fundamentals', code: 'MS-900 · Foundational', modal: 'ms900' },
     ],
   },
   {
     name: 'Linux & Automation',
     items: [
-      { name: 'Red Hat System Admin', code: 'RHCSA · EX200' },
-      { name: 'Python Associate', code: 'PCAP' },
-      { name: 'Terraform Associate', code: 'HashiCorp · 003' },
+      { name: 'Red Hat System Admin', code: 'RHCSA · EX200', modal: 'rhcsa' },
+      { name: 'Python Associate', code: 'PCAP', modal: 'python' },
+      { name: 'Terraform Associate', code: 'HashiCorp · 003', modal: 'terraform' },
     ],
   },
   {
     name: 'Foundations',
     items: [
-      { name: 'CompTIA Security+', code: 'SY0-701' },
-      { name: 'CompTIA A+', code: '220-1101 / 1102' },
-      { name: 'ITIL 4 Foundation', code: 'Service Management' },
+      { name: 'CompTIA Security+', code: 'SY0-701', modal: 'security-plus' },
+      { name: 'CompTIA A+', code: '220-1101 / 1102', modal: 'comptia-a' },
+      { name: 'ITIL 4 Foundation', code: 'Service Management', modal: 'itil' },
     ],
   },
 ]
