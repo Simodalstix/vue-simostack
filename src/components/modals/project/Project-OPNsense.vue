@@ -15,11 +15,11 @@
 
     <!-- Description -->
     <div class="px-4 pb-4">
-      <p class="text-base text-slate-300 leading-relaxed">
-        Homelab firewall configuration using <span class="text-cyan-300">OPNsense</span>.
-        Configured <span class="text-cyan-300">DHCP</span>, routing, and
-        <span class="text-cyan-300">VLAN</span> segmentation for network isolation, with
-        <span class="text-cyan-300">WireGuard VPN</span> for secure remote access — preserved
+      <p class="text-base text-ob-muted2 leading-relaxed">
+        Homelab firewall configuration using <span class="text-ob-teal-bright">OPNsense</span>.
+        Configured <span class="text-ob-teal-bright">DHCP</span>, routing, and
+        <span class="text-ob-teal-bright">VLAN</span> segmentation for network isolation, with
+        <span class="text-ob-teal-bright">WireGuard VPN</span> for secure remote access — preserved
         as a reference setup for earlier routing and VPN experiments.
       </p>
     </div>

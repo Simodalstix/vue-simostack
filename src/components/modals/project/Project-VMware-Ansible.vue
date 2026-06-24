@@ -15,13 +15,13 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-slate-300 leading-relaxed flex-1">
-        Single-VM deployment using <span class="text-cyan-300">Ansible</span> to configure Django polls app, <span class="text-cyan-300">PostgreSQL</span>, <span class="text-cyan-300">Prometheus</span> metrics, <span class="text-cyan-300">Grafana</span> dashboards, and <span class="text-cyan-300">Loki</span> log aggregation with Nginx reverse proxy. Five idempotent roles with templated configs and one-command deployment.
+      <p class="text-base text-ob-muted2 leading-relaxed flex-1">
+        Single-VM deployment using <span class="text-ob-teal-bright">Ansible</span> to configure Django polls app, <span class="text-ob-teal-bright">PostgreSQL</span>, <span class="text-ob-teal-bright">Prometheus</span> metrics, <span class="text-ob-teal-bright">Grafana</span> dashboards, and <span class="text-ob-teal-bright">Loki</span> log aggregation with Nginx reverse proxy. Five idempotent roles with templated configs and one-command deployment.
       </p>
       <a
         href="https://github.com/Simodalstix/ansible-monitoring-lab"
         target="_blank"
-        class="bg-cyan-500 hover:bg-cyan-400 text-white font-medium py-2 px-6 rounded-md shadow-sm shadow-cyan-400/40 hover:shadow-cyan-300/60 transition-all duration-200 text-center whitespace-nowrap"
+        class="bg-ob-teal hover:brightness-110 text-ob-ink font-semibold py-2 px-6 rounded-[2px] transition-all duration-200 text-center whitespace-nowrap"
       >
         View on GitHub
       </a>

@@ -25,13 +25,13 @@
       >
         <div
           v-if="visible"
-          class="text-white pt-4 px-4 pb-2 rounded-xl relative shadow-2xl overflow-y-auto w-full min-h-0 overscroll-contain mt-4 md:mt-0 scrollbar-thin"
+          class="text-ob-text pt-4 px-4 pb-2 rounded-[6px] relative shadow-2xl overflow-y-auto w-full min-h-0 overscroll-contain mt-4 md:mt-0 scrollbar-thin"
           :class="[width, bgColor, borderClass]"
           :style="{ maxHeight: 'min(90dvh, ' + maxHeightPx + ')' }"
         >
           <!-- Close button -->
           <button
-            class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors duration-150"
+            class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full text-ob-faint hover:text-ob-text hover:bg-ob-sand/10 transition-colors duration-150"
             @click="$emit('close')"
             aria-label="Close"
           >
@@ -62,9 +62,9 @@
 const props = defineProps({
   visible: Boolean,
   title: String,
-  titleColor: { type: String, default: 'text-white' },
-  borderClass: { type: String, default: 'border border-cyan-500/30 shadow-xl shadow-cyan-500/10' },
-  bgColor: { type: String, default: 'bg-slate-950' },
+  titleColor: { type: String, default: 'text-ob-bright' },
+  borderClass: { type: String, default: 'border border-ob-sand/16 border-t-2 !border-t-ob-bronze shadow-2xl shadow-black/50' },
+  bgColor: { type: String, default: 'bg-ob-bg' },
   width: { type: String, default: 'max-w-md' },
   height: { type: String, default: '90dvh' },
   alignment: { type: String, default: '' },

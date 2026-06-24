@@ -16,19 +16,19 @@
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
      <p>
-  AWS Landing Zone built with <span class="text-cyan-300">CDK</span> implementing
-  <span class="text-cyan-300">zero trust</span> principles — no implicit cross-account
-  trust, identity-based access boundaries, and <span class="text-cyan-300">SCPs</span>
+  AWS Landing Zone built with <span class="text-ob-teal-bright">CDK</span> implementing
+  <span class="text-ob-teal-bright">zero trust</span> principles — no implicit cross-account
+  trust, identity-based access boundaries, and <span class="text-ob-teal-bright">SCPs</span>
   enforcing governance at the org level. Hub-and-spoke networking via
-  <span class="text-cyan-300">Transit Gateway</span>, centralised security baseline with
-  <span class="text-cyan-300">GuardDuty</span> and
-  <span class="text-cyan-300">Security Hub</span>, and
-  <span class="text-cyan-300">Config</span> compliance.
+  <span class="text-ob-teal-bright">Transit Gateway</span>, centralised security baseline with
+  <span class="text-ob-teal-bright">GuardDuty</span> and
+  <span class="text-ob-teal-bright">Security Hub</span>, and
+  <span class="text-ob-teal-bright">Config</span> compliance.
 </p>
       <a
         href="https://github.com/simodalstix/AWS-enterprise-landingzone"
         target="_blank"
-        class="bg-cyan-500 hover:bg-cyan-400 text-white font-medium py-2 px-6 rounded-md shadow-sm shadow-cyan-400/40 hover:shadow-cyan-300/60 transition-all duration-200 text-center whitespace-nowrap"
+        class="bg-ob-teal hover:brightness-110 text-ob-ink font-semibold py-2 px-6 rounded-[2px] transition-all duration-200 text-center whitespace-nowrap"
       >
         View on GitHub
       </a>

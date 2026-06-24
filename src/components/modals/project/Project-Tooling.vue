@@ -15,13 +15,13 @@
 
     <!-- Description + GitHub Link -->
     <div class="px-4 pb-4 flex flex-col md:flex-row gap-4 md:items-center">
-      <p class="text-base text-slate-300 leading-relaxed flex-1">
-        DevOps toolchain with <span class="text-cyan-300">Terraform</span> deploying VPC, EC2, and IAM. <span class="text-cyan-300">SonarQube</span> in Docker for code quality, <span class="text-cyan-300">LaunchDarkly</span> feature flags in .NET 8 API, Playwright tests, and <span class="text-cyan-300">GitHub Actions</span> CI/CD with quality gates. Demonstrates platform team tooling patterns.
+      <p class="text-base text-ob-muted2 leading-relaxed flex-1">
+        DevOps toolchain with <span class="text-ob-teal-bright">Terraform</span> deploying VPC, EC2, and IAM. <span class="text-ob-teal-bright">SonarQube</span> in Docker for code quality, <span class="text-ob-teal-bright">LaunchDarkly</span> feature flags in .NET 8 API, Playwright tests, and <span class="text-ob-teal-bright">GitHub Actions</span> CI/CD with quality gates. Demonstrates platform team tooling patterns.
       </p>
       <a
         href="https://github.com/Simodalstix/terraform-aws-devops-toolchain"
         target="_blank"
-        class="bg-cyan-500 hover:bg-cyan-400 text-white font-medium py-2 px-6 rounded-md shadow-sm shadow-cyan-400/40 hover:shadow-cyan-300/60 transition-all duration-200 text-center whitespace-nowrap"
+        class="bg-ob-teal hover:brightness-110 text-ob-ink font-semibold py-2 px-6 rounded-[2px] transition-all duration-200 text-center whitespace-nowrap"
       >
         View on GitHub
       </a>

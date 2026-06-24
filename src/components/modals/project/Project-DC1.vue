@@ -32,14 +32,14 @@
 
     <!-- Description -->
     <div class="px-4 pb-4">
-      <p class="text-base text-slate-300 leading-relaxed">
-        <span class="text-cyan-300">Windows Server 2022</span> domain controller for
-        <span class="text-cyan-300">beelink.local</span>, with Linux clients (Rocky, Ubuntu)
-        joined via <span class="text-cyan-300">realmd</span> and
-        <span class="text-cyan-300">sssd</span>. Dynamic DNS,
-        <span class="text-cyan-300">Kerberos</span> authentication, and cross-platform identity
+      <p class="text-base text-ob-muted2 leading-relaxed">
+        <span class="text-ob-teal-bright">Windows Server 2022</span> domain controller for
+        <span class="text-ob-teal-bright">beelink.local</span>, with Linux clients (Rocky, Ubuntu)
+        joined via <span class="text-ob-teal-bright">realmd</span> and
+        <span class="text-ob-teal-bright">sssd</span>. Dynamic DNS,
+        <span class="text-ob-teal-bright">Kerberos</span> authentication, and cross-platform identity
         integration verified through the DC1 DNS Manager and
-        <span class="text-cyan-300">Active Directory Users & Computers</span>.
+        <span class="text-ob-teal-bright">Active Directory Users & Computers</span>.
       </p>
     </div>
   </BaseModal>
