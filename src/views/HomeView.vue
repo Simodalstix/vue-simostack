@@ -1,10 +1,10 @@
 <template>
   <div class="max-w-[1440px] mx-auto px-6 sm:px-11">
     <!-- hero -->
-    <section class="grid lg:grid-cols-[1fr_380px] gap-8 lg:gap-12 pt-8 pb-10 sm:pt-10 items-start">
+    <section class="grid lg:grid-cols-[1fr_380px] gap-8 lg:gap-12 pt-8 pb-10 sm:pt-10 items-start lg:items-end">
       <div class="flex flex-col">
         <div class="flex items-center gap-[14px] mb-5">
-          <span class="w-7 h-[1.5px] bg-ob-bronze"></span>
+          <span class="w-7 h-[2px] bg-ob-bronze"></span>
           <span class="font-mono font-bold text-[11px] leading-none tracking-[0.2em] uppercase text-ob-sand">Systems &amp; Linux</span>
         </div>
 
@@ -24,7 +24,7 @@
         <div class="flex flex-wrap gap-[12px] mt-7">
           <router-link
             :to="{ name: 'Projects' }"
-            class="px-[22px] py-[13px] bg-ob-teal text-ob-ink font-semibold text-[14px] rounded-[2px] hover:brightness-110 transition"
+            class="px-[22px] py-[13px] bg-ob-sand text-ob-ink font-semibold text-[14px] rounded-[2px] hover:brightness-110 transition"
           >View Projects</router-link>
           <router-link
             :to="{ name: 'About' }"
@@ -47,7 +47,7 @@
               :href="link.href"
               :target="link.external ? '_blank' : undefined"
               :rel="link.external ? 'noopener noreferrer' : undefined"
-              class="flex items-center gap-[13px] px-[15px] py-[13px] border border-ob-sand/14 rounded-[4px] bg-ob-surface2 hover:border-ob-sand/30 transition-colors"
+              class="flex items-center gap-[13px] px-[15px] py-[13px] border border-ob-sand/14 rounded-[4px] bg-ob-surface2 hover:border-ob-teal/60 transition-colors"
             >
               <span class="text-ob-teal-bright shrink-0" v-html="link.icon"></span>
               <span class="flex flex-col gap-[3px] min-w-0">
@@ -91,10 +91,12 @@
                 >{{ cert.name }}</span>
                 <span
                   v-if="cert.inProgress"
-                  class="font-mono text-[9px] leading-none tracking-[0.1em] uppercase text-ob-sand border border-ob-sand/50 rounded-[2px] px-[6px] py-[3px] whitespace-nowrap"
+                  class="font-mono text-[9px] leading-none tracking-[0.1em] uppercase text-ob-teal-bright border border-ob-teal/50 rounded-[2px] px-[6px] py-[3px] whitespace-nowrap"
                 >In progress</span>
               </div>
-              <div class="font-mono text-[11px] leading-none mt-[6px]" :class="cert.inProgress ? 'text-ob-sand' : 'text-ob-faint'">{{ cert.code }}</div>
+              <div class="font-mono text-[11px] leading-none mt-[6px] text-ob-faint">
+                <span v-if="cert.codeAccent" class="text-ob-sand">{{ cert.codeAccent }}</span>{{ cert.code }}
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +182,7 @@ const certCategories = [
       { name: 'Solutions Architect', code: 'SAA-C03 · Associate', modal: 'architect' },
       { name: 'Developer', code: 'DVA-C02 · Associate', modal: 'aws-developer' },
       { name: 'Cloud Practitioner', code: 'CLF-C02 · Foundational', modal: 'aws-practitioner' },
-      { name: 'SysOps Administrator', code: 'SOA-C02 · Associate', inProgress: true },
+      { name: 'CloudOps Engineer', code: 'SOA-C03 · Associate', inProgress: true },
     ],
   },
   {
@@ -194,7 +196,7 @@ const certCategories = [
   {
     name: 'Linux & Automation',
     items: [
-      { name: 'Red Hat System Admin', code: 'RHCSA · EX200', modal: 'rhcsa' },
+      { name: 'Red Hat System Admin', codeAccent: 'RHCSA', code: ' · EX200', modal: 'rhcsa' },
       { name: 'Python Associate', code: 'PCAP', modal: 'python' },
       { name: 'Terraform Associate', code: 'HashiCorp · 003', modal: 'terraform' },
     ],

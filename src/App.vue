@@ -9,7 +9,7 @@
           <span
             class="w-[34px] h-[34px] border-[1.5px] border-ob-bronze rounded-[3px] flex items-center justify-center font-display font-extrabold text-[13px] leading-none text-ob-sand tracking-[0.02em] select-none"
           >SP</span>
-          <span class="hidden sm:inline font-mono text-[13px] leading-none tracking-[0.04em] text-ob-soft">simonparker.dev</span>
+          <span class="hidden sm:inline font-mono text-[13px] leading-none tracking-[0.04em] text-ob-soft">simostack.com</span>
         </div>
 
         <!-- desktop links -->
@@ -61,9 +61,9 @@
 
     <!-- footer -->
     <footer class="border-t border-ob-sand/14">
-      <div class="max-w-[1440px] mx-auto px-6 sm:px-11 py-4 flex items-center justify-between font-mono text-xs text-ob-faint">
+      <div class="max-w-[1440px] mx-auto px-6 sm:px-11 min-h-[66px] py-4 flex items-center justify-between font-mono text-[13px] leading-none tracking-[0.04em] text-ob-faint">
         <span>&copy; 2026 Simon Parker</span>
-        <span>Melbourne · AEST</span>
+        <span class="text-ob-soft">Building reliable infrastructure, one layer at a time</span>
       </div>
     </footer>
   </div>

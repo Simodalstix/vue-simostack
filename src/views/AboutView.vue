@@ -5,7 +5,7 @@
       <div class="max-w-[760px]">
         <div class="flex items-center gap-[12px] mb-5">
           <span class="font-mono font-semibold text-[13px] leading-none text-ob-sand">02</span>
-          <span class="w-6 h-px bg-ob-sand"></span>
+          <span class="w-6 h-[2px] bg-ob-sand"></span>
           <span class="font-mono font-semibold text-[11px] leading-none tracking-[0.2em] uppercase text-ob-sand">About</span>
         </div>
         <h1 class="font-bold text-[36px] sm:text-[44px] lg:text-[46px] leading-[1.0] tracking-[-0.02em] text-ob-bright mb-4">
@@ -67,7 +67,7 @@
             <span
               v-for="tag in role.tags"
               :key="tag"
-              class="font-mono text-[10.5px] leading-none text-ob-soft border border-ob-sand/18 rounded-[2px] px-2 py-[5px]"
+              class="font-mono text-[11.5px] leading-none tracking-[0.02em] text-ob-soft bg-ob-sand/[0.06] border border-ob-sand/25 rounded-[3px] px-[11px] py-[7px]"
             >{{ tag }}</span>
           </div>
         </div>
@@ -108,20 +108,20 @@
 const meta = [
   { label: 'BASED', value: 'Melbourne, AU' },
   { label: 'FOCUS', value: 'Systems / Linux' },
-  { label: 'STACK', value: 'Linux · Cloud' },
+  { label: 'CERT', value: '13 credentials' },
 ]
 
 const roles = [
   {
     date: '2017 – 2024',
-    label: 'Community & Hospital',
+    label: 'Chemist Warehouse · Pharmacy',
     title: 'Pharmacist',
     body: 'Eight years of high-volume, high-consequence work governed by strict protocol, verify before acting, document everything, stay composed when the stakes are real.',
     tags: ['Regulated', 'Accountability', 'Detail'],
   },
   {
     date: '2025',
-    label: 'Technology · Full time',
+    label: 'Strongroom · Tech · SaaS',
     title: 'Customer & Technical Support',
     body: 'Moved into technology full-time, resolving issues across software and hardware. Translated a clinical mindset into structured troubleshooting and clear written communication.',
     tags: ['Triage', 'Comms', 'Diagnostics'],
@@ -130,7 +130,7 @@ const roles = [
     date: '2026 – Present',
     label: 'Cititec · MSP support',
     title: 'Helpdesk Support Technician',
-    body: 'Frontline support across varied client environments, Microsoft 365, Entra ID, Active Directory, endpoints and networking. Owning incidents end to end and pushing toward root cause, not the quick reset.',
+    body: 'Frontline support across varied client environments, Microsoft 365, Entra ID, Active Directory, endpoints and networking. Owning incidents end to end and pushing toward root cause.',
     tags: ['M365', 'Entra ID', 'Networking'],
     current: true,
   },
