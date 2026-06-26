@@ -61,9 +61,9 @@
 
     <!-- footer -->
     <footer class="border-t border-ob-sand/14">
-      <div class="max-w-[1440px] mx-auto px-6 sm:px-11 min-h-[66px] py-4 flex items-center justify-between font-mono text-[13px] leading-none tracking-[0.04em] text-ob-faint">
+      <div class="max-w-[1440px] mx-auto px-6 sm:px-11 min-h-[66px] py-3 sm:py-4 flex items-center justify-between font-mono text-[13px] leading-none tracking-[0.04em] text-ob-faint">
         <span>&copy; 2026 Simon Parker</span>
-        <span class="text-ob-soft">Building reliable infrastructure, one layer at a time</span>
+        <span class="text-ob-soft">Systems thinking shaped by years of high-stakes human contact.</span>
       </div>
     </footer>
   </div>

@@ -13,23 +13,37 @@
           Cloud infrastructure I design and ship, multi-tier platforms, event-driven pipelines and golden-path automation, mostly on AWS with Python CDK.
         </p>
       </div>
-      <!-- SSM config bus: the pattern that keeps the CDK projects modular -->
-      <aside class="w-full lg:w-[480px]">
-        <div class="font-mono text-[10px] leading-none tracking-[0.16em] uppercase text-ob-sand mb-[13px]">Pattern · SSM Config Bus</div>
-        <div class="flex flex-col sm:flex-row gap-5">
-          <p class="text-[12.5px] leading-[1.5] text-ob-dim flex-1">
-            Each CDK stack publishes its outputs to SSM Parameter Store and reads the others by path. Stacks deploy independently, with no brittle cross-stack references.
-          </p>
-          <div class="shrink-0">
-            <div class="border-l-2 border-ob-teal/60 pl-[12px] flex flex-col gap-[7px]">
-              <div class="font-mono text-[11px] leading-none text-ob-soft">/sb/network/vpc-id</div>
-              <div class="font-mono text-[11px] leading-none text-ob-soft">/sb/data/db-endpoint</div>
-              <div class="font-mono text-[11px] leading-none text-ob-soft">/sb/app/alb-arn</div>
+
+      <!-- IaC panel: the IaC toolchain plus the SSM config-bus pattern that
+           demonstrates why Python CDK is powerful here. Paths are representative
+           of the 3-tier platform stack set; confirm against the real Parameter
+           Store tree before relying on them. -->
+      <div class="flex flex-col lg:flex-row lg:items-stretch gap-6 lg:mr-3">
+        <aside class="w-full lg:w-[480px]">
+          <div class="font-mono text-[10px] leading-none tracking-[0.16em] uppercase text-ob-teal-bright mb-[15px]">Infrastructure as Code</div>
+          <div class="flex flex-col sm:flex-row gap-5">
+            <p class="text-[12.5px] leading-[1.5] text-ob-dim flex-1">
+              Each CDK stack publishes its outputs to SSM Parameter Store and reads the others by path. Stacks deploy independently, with no brittle cross-stack references.
+            </p>
+            <div class="shrink-0">
+              <div class="border-l-2 border-ob-teal pl-[12px] flex flex-col gap-[7px]">
+                <div
+                  v-for="path in configBus"
+                  :key="path"
+                  class="font-mono text-[11px] leading-none text-ob-soft"
+                >{{ path }}</div>
+              </div>
+              <div class="font-mono text-[9.5px] leading-none tracking-[0.12em] uppercase text-ob-faint mt-[11px]">shared parameter bus</div>
             </div>
-            <div class="font-mono text-[9.5px] leading-none tracking-[0.12em] uppercase text-ob-faint mt-[11px]">shared parameter bus</div>
           </div>
+        </aside>
+
+        <!-- IaC toolchain: vertical strip on the side of the unified panel -->
+        <div class="flex flex-row lg:flex-col items-center justify-center gap-[16px] shrink-0">
+          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-[47px] h-auto max-h-[40px] object-contain" />
+          <img src="/images/project-icons/python.svg" alt="Python (CDK)" class="w-[47px] h-auto max-h-[40px] object-contain" />
         </div>
-      </aside>
+      </div>
     </section>
 
     <div class="space-y-8">
@@ -41,14 +55,14 @@
           <BaseCard
             class="flex flex-col lg:col-start-3 lg:row-start-2 lg:row-span-2 p-6 rounded-[3px] border border-ob-sand/16 border-t-2 !border-t-ob-bronze bg-ob-surface"
           >
-            <div class="flex items-center justify-between mb-3">
-              <span class="inline-flex items-center gap-[8px] font-mono text-[10.5px] leading-none text-ob-faint">
-                <span class="w-[6px] h-[6px] rounded-full bg-ob-sand"></span>
-                Systems Infrastructure
-              </span>
-              <span class="font-mono text-[10px] leading-none tracking-[0.08em] uppercase text-ob-sand border border-ob-sand/40 rounded-[2px] px-[8px] py-[4px]">Primary node</span>
+            <div class="flex items-start justify-between gap-3 mb-[10px]">
+              <h3 class="text-[21px] font-semibold leading-[1.18] text-ob-text">Beelink SER8 Proxmox Hypervisor</h3>
+              <img
+                src="/images/project-icons/proxmox-light.svg"
+                alt="Proxmox"
+                class="w-[47px] h-auto max-h-[40px] object-contain shrink-0"
+              />
             </div>
-            <h3 class="text-[21px] font-semibold leading-[1.18] text-ob-text mb-[10px]">Beelink SER8 Proxmox Hypervisor</h3>
             <p class="text-[13.5px] leading-[1.58] text-ob-dim mb-4">A single-node Proxmox host running my homelab, six VMs delivering production-style services.</p>
             <div class="flex flex-wrap gap-[7px] mb-4">
               <span class="font-mono text-[10.5px] leading-none text-ob-soft border border-ob-sand/18 rounded-[2px] px-2 py-[5px]">Hypervisor</span>
@@ -87,7 +101,7 @@
                 v-if="project.icons && project.icons[0]"
                 :src="project.icons[0].src"
                 :alt="project.icons[0].alt"
-                class="w-[46px] h-auto max-h-[39px] object-contain shrink-0"
+                class="w-[47px] h-auto max-h-[40px] object-contain shrink-0"
               />
             </div>
             <p class="text-[13.5px] leading-[1.58] text-ob-dim mb-4 min-h-[64px]">{{ project.description }}</p>
@@ -101,11 +115,8 @@
             </div>
 
             <div class="mt-auto flex items-center justify-between gap-3 pt-[18px] border-t border-ob-sand/14">
-              <span class="inline-flex items-center gap-[10px] min-w-0">
-                <span class="inline-flex items-center gap-[7px] font-mono text-[10px] leading-none tracking-[0.1em] uppercase text-ob-teal-bright shrink-0">
-                  <span class="w-[6px] h-[6px] rounded-full bg-ob-teal-bright"></span>Live
-                </span>
-                <span class="font-mono text-[10px] leading-none tracking-[0.1em] uppercase text-ob-faint truncate">{{ project.category }}</span>
+              <span class="inline-flex items-center gap-[7px] font-mono text-[10px] leading-none tracking-[0.1em] uppercase text-ob-teal-bright shrink-0">
+                <span class="w-[6px] h-[6px] rounded-full bg-ob-teal-bright"></span>Live
               </span>
               <a
                 :href="project.repoUrl"
@@ -433,6 +444,17 @@ import ProjectAWSEventPipeline from '@/components/modals/project/Project-AWSEven
 defineProps({
   releaseVersion: String,
 })
+
+// ─── SSM config bus ───────────────────────────────────────────────────────────
+// Representative parameter tree for the 3-tier platform: each CDK stack writes
+// its outputs under its own prefix and reads the others by path. Confirm the
+// real param names against Parameter Store before treating these as canonical.
+const configBus = [
+  '/sb/network/vpc-id',
+  '/sb/data/rds-endpoint',
+  '/sb/security/db-secret-arn',
+  '/sb/app/alb-dns-name',
+]
 
 // ─── Modal visibility refs ────────────────────────────────────────────────────
 const showProxmoxLab = ref(false)

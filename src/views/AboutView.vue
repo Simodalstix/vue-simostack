@@ -16,11 +16,17 @@
         </p>
       </div>
 
-      <!-- meta -->
-      <div class="flex flex-col gap-[7px] font-mono text-[12px] leading-none lg:text-right shrink-0">
-        <div v-for="m in meta" :key="m.label" class="flex lg:justify-end items-center gap-[8px]">
-          <span class="text-ob-faint">{{ m.label }} ·</span>
-          <span class="text-ob-text font-semibold">{{ m.value }}</span>
+      <!-- education badge -->
+      <div class="flex items-center gap-0 shrink-0 lg:mr-[10%]">
+        <img
+          src="/images/project-icons/monash-icon-teal.png"
+          alt="Monash University"
+          class="h-[92px] w-[92px] object-contain shrink-0"
+        />
+        <div class="flex flex-col items-center gap-[9px]">
+          <div class="font-mono text-[11px] leading-none tracking-[0.16em] uppercase text-ob-teal-bright">Education</div>
+          <div class="font-semibold text-[17px] leading-none text-ob-text">Monash</div>
+          <div class="font-semibold text-[17px] leading-none text-ob-text">University</div>
         </div>
       </div>
     </section>
@@ -105,12 +111,6 @@
 </template>
 
 <script setup>
-const meta = [
-  { label: 'BASED', value: 'Melbourne, AU' },
-  { label: 'FOCUS', value: 'Systems / Linux' },
-  { label: 'CERT', value: '13 credentials' },
-]
-
 const roles = [
   {
     date: '2017 – 2024',

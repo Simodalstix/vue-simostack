@@ -16,7 +16,7 @@ import BaseModal from '../BaseModal.vue'
     <template #header>
       <div class="px-2 pt-2 pb-4">
         <h2 class="text-xl font-bold text-ob-bright">CompTIA A+ ce Certification</h2>
-        <div class="h-[3px] w-16 bg-[#D73502] mt-3 rounded-full"></div>
+        <div class="h-[3px] w-16 bg-[#C8202F] mt-3 rounded-full"></div>
       </div>
     </template>
     <div class="bg-ob-surface border border-ob-sand/14 p-5 rounded-[4px] mb-2">
@@ -34,7 +34,7 @@ import BaseModal from '../BaseModal.vue'
           href="https://www.credly.com/badges/7a7d63f5-07dc-47f5-9d86-1ba95699d84d"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-block bg-[#D73502] hover:bg-[#B52D02] text-ob-bright font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
+          class="inline-block bg-[#C8202F] hover:bg-[#A81B27] text-ob-bright font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
         >
           Verify Certification on Credly
         </a>
