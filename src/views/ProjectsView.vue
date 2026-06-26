@@ -18,31 +18,16 @@
            demonstrates why Python CDK is powerful here. Paths are representative
            of the 3-tier platform stack set; confirm against the real Parameter
            Store tree before relying on them. -->
-      <div class="flex flex-col lg:flex-row lg:items-stretch gap-6 lg:mr-3">
-        <aside class="w-full lg:w-[480px]">
-          <div class="font-mono text-[10px] leading-none tracking-[0.16em] uppercase text-ob-teal-bright mb-[15px]">Infrastructure as Code</div>
-          <div class="flex flex-col sm:flex-row gap-5">
-            <p class="text-[12.5px] leading-[1.5] text-ob-dim flex-1">
-              Each CDK stack publishes its outputs to SSM Parameter Store and reads the others by path. Stacks deploy independently, with no brittle cross-stack references.
-            </p>
-            <div class="shrink-0">
-              <div class="border-l-2 border-ob-teal pl-[12px] flex flex-col gap-[7px]">
-                <div
-                  v-for="path in configBus"
-                  :key="path"
-                  class="font-mono text-[11px] leading-none text-ob-soft"
-                >{{ path }}</div>
-              </div>
-              <div class="font-mono text-[9.5px] leading-none tracking-[0.12em] uppercase text-ob-faint mt-[11px]">shared parameter bus</div>
-            </div>
-          </div>
+      <div class="lg:mr-3">
+        <aside class="w-full lg:w-auto lg:max-w-[380px]">
+          <div class="font-mono text-[10px] leading-none tracking-[0.16em] uppercase text-ob-teal-bright mb-[10px]">Architecture</div>
+          <h2 class="text-[19px] font-semibold leading-[1.15] tracking-[-0.01em] text-ob-text mb-[12px]">Modular by design</h2>
+          <p class="text-[12.5px] leading-[1.6] text-ob-dim max-w-[360px]">
+            Every capability ships as its own CDK stack. They share state through SSM Parameter Store
+            (<span class="font-mono text-[11.5px] text-ob-soft">/sb/{stack}/*</span>)
+            instead of brittle references, so any stack deploys or changes on its own.
+          </p>
         </aside>
-
-        <!-- IaC toolchain: vertical strip on the side of the unified panel -->
-        <div class="flex flex-row lg:flex-col items-center justify-center gap-[16px] shrink-0">
-          <img src="/images/main-tools/terraform.svg" alt="Terraform" class="w-[47px] h-auto max-h-[40px] object-contain" />
-          <img src="/images/project-icons/python.svg" alt="Python (CDK)" class="w-[47px] h-auto max-h-[40px] object-contain" />
-        </div>
       </div>
     </section>
 
@@ -60,7 +45,7 @@
               <img
                 src="/images/project-icons/proxmox-light.svg"
                 alt="Proxmox"
-                class="w-[47px] h-auto max-h-[40px] object-contain shrink-0"
+                class="w-[42px] h-auto max-h-[36px] object-contain shrink-0"
               />
             </div>
             <p class="text-[13.5px] leading-[1.58] text-ob-dim mb-4">A single-node Proxmox host running my homelab, six VMs delivering production-style services.</p>
@@ -101,7 +86,7 @@
                 v-if="project.icons && project.icons[0]"
                 :src="project.icons[0].src"
                 :alt="project.icons[0].alt"
-                class="w-[47px] h-auto max-h-[40px] object-contain shrink-0"
+                class="w-[42px] h-auto max-h-[36px] object-contain shrink-0"
               />
             </div>
             <p class="text-[13.5px] leading-[1.58] text-ob-dim mb-4 min-h-[64px]">{{ project.description }}</p>
@@ -444,17 +429,6 @@ import ProjectAWSEventPipeline from '@/components/modals/project/Project-AWSEven
 defineProps({
   releaseVersion: String,
 })
-
-// ─── SSM config bus ───────────────────────────────────────────────────────────
-// Representative parameter tree for the 3-tier platform: each CDK stack writes
-// its outputs under its own prefix and reads the others by path. Confirm the
-// real param names against Parameter Store before treating these as canonical.
-const configBus = [
-  '/sb/network/vpc-id',
-  '/sb/data/rds-endpoint',
-  '/sb/security/db-secret-arn',
-  '/sb/app/alb-dns-name',
-]
 
 // ─── Modal visibility refs ────────────────────────────────────────────────────
 const showProxmoxLab = ref(false)

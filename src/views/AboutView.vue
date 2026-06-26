@@ -17,16 +17,13 @@
       </div>
 
       <!-- education badge -->
-      <div class="flex items-center gap-0 shrink-0 lg:mr-[10%]">
-        <img
-          src="/images/project-icons/monash-icon-teal.png"
-          alt="Monash University"
-          class="h-[92px] w-[92px] object-contain shrink-0"
-        />
-        <div class="flex flex-col items-center gap-[9px]">
-          <div class="font-mono text-[11px] leading-none tracking-[0.16em] uppercase text-ob-teal-bright">Education</div>
-          <div class="font-semibold text-[17px] leading-none text-ob-text">Monash</div>
-          <div class="font-semibold text-[17px] leading-none text-ob-text">University</div>
+      <div class="flex flex-col items-start lg:items-end shrink-0 lg:mr-[10%]">
+        <div class="rounded-md bg-white px-[6px] py-[3px] border border-black/5 shadow-sm">
+          <img
+            src="/images/project-icons/monash-logo-black.svg"
+            alt="Monash University"
+            class="h-[48px] w-auto object-contain"
+          />
         </div>
       </div>
     </section>
