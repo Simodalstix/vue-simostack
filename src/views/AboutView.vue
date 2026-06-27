@@ -17,12 +17,12 @@
       </div>
 
       <!-- education badge -->
-      <div class="flex flex-col items-start lg:items-end shrink-0 lg:mr-[10%]">
-        <div class="rounded-md bg-white px-[6px] py-[3px] border border-black/5 shadow-sm">
+      <div class="flex flex-col items-start lg:items-end shrink-0 lg:mr-[calc(33.333%_+_8px)]">
+        <div>
           <img
-            src="/images/project-icons/monash-logo-black.svg"
+            src="/images/project-icons/monash-logo-white.png"
             alt="Monash University"
-            class="h-[48px] w-auto object-contain"
+            class="h-[34px] w-auto object-contain"
           />
         </div>
       </div>

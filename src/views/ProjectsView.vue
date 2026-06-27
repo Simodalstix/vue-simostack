@@ -89,7 +89,12 @@
                 class="w-[42px] h-auto max-h-[36px] object-contain shrink-0"
               />
             </div>
-            <p class="text-[13.5px] leading-[1.58] text-ob-dim mb-4 min-h-[64px]">{{ project.description }}</p>
+            <p
+              v-if="project.descriptionHtml"
+              class="text-[13.5px] leading-[1.58] text-ob-dim mb-4 min-h-[64px]"
+              v-html="project.descriptionHtml"
+            ></p>
+            <p v-else class="text-[13.5px] leading-[1.58] text-ob-dim mb-4 min-h-[64px]">{{ project.description }}</p>
 
             <div class="flex flex-wrap gap-[7px] mb-5">
               <span
@@ -983,6 +988,7 @@ const cardMeta = {
     code: 'P-02',
     title: 'AWS Image Pipeline',
     description: 'A golden-AMI factory that bakes hardened, pre-patched images with Packer and SSM, giving repeatable, drift-free fleets that launch fast.',
+    descriptionHtml: 'A golden-AMI factory that bakes hardened, pre-patched images with <span class="text-[#02A8EF]">Packer</span> and SSM, giving repeatable, drift-free fleets that launch fast.',
     tags: ['Golden AMI', 'Automation'],
     category: 'Automation',
     repoUrl: 'https://github.com/Simodalstix/aws-image-pipeline',
