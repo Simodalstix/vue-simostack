@@ -1,36 +1,22 @@
 <template>
-  <div class="flex flex-col h-screen overflow-hidden font-mono bg-slate-900 text-slate-300">
-
-    <!-- STAR top nav -->
-    <nav class="shrink-0 flex items-center gap-1 px-2 py-1.5 bg-slate-800 border-b border-slate-600 overflow-x-auto">
-      <span class="text-[10px] uppercase tracking-widest text-orange-400/80 font-semibold shrink-0 pr-2">STAR</span>
-      <button
-        v-for="tab in starSection.tabs"
-        :key="tab.id"
-        @click="setTab('star', tab.id)"
-        class="shrink-0 px-3 py-1 text-[12px] rounded border transition-colors duration-100"
-        :style="activeKey === 'star-' + tab.id
-          ? { backgroundColor: (LP_HEX[starTabLps[tab.id]?.[0]] || '#7c3aed') + '33', borderColor: LP_HEX[starTabLps[tab.id]?.[0]] || '#7c3aed', color: '#e2e8f0' }
-          : { backgroundColor: 'transparent', borderColor: (LP_HEX[starTabLps[tab.id]?.[0]] || '#475569') + '60', color: '#94a3b8' }"
-      >{{ tab.label }}</button>
-    </nav>
+  <div class="flex flex-col h-screen overflow-hidden font-mono bg-ob-bg text-ob-text">
 
     <div class="flex flex-1 overflow-hidden">
 
     <!-- Sidebar -->
-    <aside class="w-[200px] shrink-0 bg-slate-800 border-r border-slate-700 overflow-y-auto flex flex-col">
-      <div class="px-3 py-2.5 border-b border-slate-700">
-        <span class="text-[10px] uppercase tracking-widest text-slate-400">Interview Prep</span>
+    <aside class="w-[200px] shrink-0 bg-ob-surface2 border-r border-ob-text/18 overflow-y-auto flex flex-col">
+      <div class="px-3 py-2.5 border-b border-ob-text/18">
+        <span class="text-[10px] uppercase tracking-widest text-ob-muted">Interview Prep</span>
       </div>
 
       <nav class="flex-1">
         <div v-for="section in sections" :key="section.id">
           <button
             @click="toggleSection(section.id)"
-            class="w-full text-left px-3 py-2 text-[13px] font-semibold flex justify-between items-center border-b border-slate-700/60 transition-colors duration-100"
+            class="w-full text-left px-3 py-2 text-[13px] font-semibold flex justify-between items-center border-b border-ob-text/18 transition-colors duration-100"
             :class="activeSection === section.id
-              ? 'bg-orange-500/20 text-orange-300 border-l-2 border-l-orange-400'
-              : 'text-slate-300 hover:bg-slate-700/40 hover:text-white border-l-2 border-l-transparent'"
+              ? 'bg-ob-sand/20 text-ob-sand border-l-2 border-l-ob-sand'
+              : 'text-ob-text hover:bg-ob-surface/40 hover:text-ob-bright border-l-2 border-l-transparent'"
           >
             <span>{{ section.label }}</span>
             <span v-if="section.tabs.length" class="text-[10px] opacity-60">{{ activeSection === section.id ? '▾' : '▸' }}</span>
@@ -41,10 +27,10 @@
               v-for="tab in section.tabs"
               :key="tab.id"
               @click="setTab(section.id, tab.id)"
-              class="w-full text-left pl-5 pr-3 py-1.5 text-[12px] border-b border-slate-700/30 transition-colors duration-100"
+              class="w-full text-left pl-5 pr-3 py-1.5 text-[12px] border-b border-ob-text/10 transition-colors duration-100"
               :class="activeKey === section.id + '-' + tab.id
-                ? 'text-white bg-slate-700 border-l-2 border-l-slate-400'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/40 border-l-2 border-l-transparent'"
+                ? 'text-ob-bright bg-ob-surface border-l-2 border-l-ob-soft'
+                : 'text-ob-muted hover:text-ob-text hover:bg-ob-surface/40 border-l-2 border-l-transparent'"
             >
               <div class="flex items-center justify-between gap-1">
                 <span>{{ tab.label }}</span>
@@ -55,18 +41,18 @@
       </nav>
 
       <!-- STAR Stories — pinned -->
-      <div class="border-t border-slate-600 shrink-0 mb-8">
-        <div class="px-3 py-2 border-b border-slate-700/60">
-          <span class="text-[10px] uppercase tracking-widest text-orange-400/80 font-semibold">STAR Stories</span>
+      <div class="border-t border-ob-text/18 shrink-0 mb-8">
+        <div class="px-3 py-2 border-b border-ob-text/18">
+          <span class="text-[10px] uppercase tracking-widest text-ob-sand/80 font-semibold">STAR Stories</span>
         </div>
         <button
           v-for="tab in starSection.tabs"
           :key="tab.id"
           @click="setTab('star', tab.id)"
-          class="w-full text-left pl-3 pr-2 py-1.5 text-[12px] border-b border-slate-700/30 border-l-[5px] transition-colors duration-100"
+          class="w-full text-left pl-3 pr-2 py-1.5 text-[12px] border-b border-ob-text/10 border-l-[5px] transition-colors duration-100"
           :class="activeKey === 'star-' + tab.id
-            ? 'text-slate-100 bg-slate-700/60'
-            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/30'"
+            ? 'text-ob-bright bg-ob-surface/60'
+            : 'text-ob-muted hover:text-ob-text hover:bg-ob-surface/30'"
           :style="{ borderLeftColor: lpBorderColor(tab.id, activeKey === 'star-' + tab.id) }"
         >
           <div class="flex items-center justify-between gap-1 min-w-0">
@@ -87,7 +73,7 @@
 
     <!-- Main content -->
     <main
-      class="flex-1 bg-slate-900 text-slate-300"
+      class="flex-1 bg-ob-bg text-ob-text"
       :class="(['career', 'scenarios', 'linux', 'aws', 'questions', 'projects', 'python', 'proxmox'].includes(activeSection)) ? 'overflow-hidden' : 'overflow-y-auto p-6'"
     >
 

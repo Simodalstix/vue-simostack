@@ -2,12 +2,12 @@
   <div class="grid grid-cols-3 gap-6 h-full p-6">
     <div v-for="(col, ci) in cols" :key="ci" class="overflow-y-auto space-y-6 min-h-0">
       <div v-for="section in col" :key="section.heading">
-        <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">
+        <div class="text-[10px] uppercase tracking-widest text-ob-sand font-semibold mb-2">
           {{ section.heading }}
         </div>
         <div
           v-if="section.prose"
-          class="text-slate-300 text-[12px] space-y-0.5"
+          class="text-ob-text text-[12px] space-y-0.5"
           v-html="renderProse(section.prose)"
         />
         <PrepCodeBlock
@@ -49,7 +49,7 @@ function hl(s) {
 
   // AWS infrastructure abbreviations and named terms
   s = s.replace(/\b(Multi-AZ|RTO|RPO|IGW|NACL|VPC|TTL|TLS|ARN|AMI|DNS|SG|AZ|DR|HA|CoE|gp2|gp3|SSE-KMS|SSE-S3|IOPS|IRAP|PROTECTED|L2|L7)\b/g,
-    '<span class="text-slate-100">$1</span>')
+    '<span class="text-ob-bright">$1</span>')
 
   // CloudWatch metric names
   s = s.replace(/\b(CPUUtilization|MemoryUtilization|DiskUsed|NetworkIn|NetworkOut|StatusCheckFailed|HTTPCode_Target_5XX_Count|TargetResponseTime|DatabaseConnections|UnhealthyHostCount|ApproximateAgeOfOldestMessage|VolumeQueueLength)\b/g,
@@ -57,7 +57,7 @@ function hl(s) {
 
   // IAM evaluation order terms
   s = s.replace(/\b(Explicit Deny|Explicit Allow|Implicit Deny)\b/g,
-    '<span class="text-orange-300">$1</span>')
+    '<span class="text-ob-sand">$1</span>')
 
   // Lifecycle hook action keywords
   s = s.replace(/\b(CONTINUE|ABANDON)\b/g,
@@ -77,12 +77,12 @@ function renderProse(text) {
     if (line === '') return '<div class="h-1.5"></div>'
 
     if (line.startsWith('• ')) {
-      return `<div class="flex gap-1.5 leading-snug"><span class="text-slate-500 shrink-0 select-none mt-px">•</span><span>${hl(line.slice(2))}</span></div>`
+      return `<div class="flex gap-1.5 leading-snug"><span class="text-ob-dim shrink-0 select-none mt-px">•</span><span>${hl(line.slice(2))}</span></div>`
     }
 
     const mt = firstHeading ? '' : ' mt-3'
     firstHeading = false
-    return `<div class="text-slate-200 font-semibold${mt}">${hl(line)}</div>`
+    return `<div class="text-ob-text font-semibold${mt}">${hl(line)}</div>`
   }).join('')
 }
 </script>

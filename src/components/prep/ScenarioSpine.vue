@@ -9,9 +9,9 @@
       </template>
 
       <!-- Multi-layer INSTANCE group: container with inner blocks -->
-      <div v-else class="rounded-lg border border-slate-700/50 overflow-hidden mb-2">
-        <div class="px-3 py-1.5 bg-slate-800/50 border-b border-slate-700/40">
-          <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">
+      <div v-else class="rounded-lg border border-ob-text/16 overflow-hidden mb-2">
+        <div class="px-3 py-1.5 bg-ob-surface2/50 border-b border-ob-text/14">
+          <span class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold">
             {{ group.label || 'Instance' }}
           </span>
         </div>
@@ -28,7 +28,7 @@
     </template>
 
     <!-- Prevention footer -->
-    <div v-if="prevention?.length" class="pt-3 mt-1 border-t border-slate-700/50">
+    <div v-if="prevention?.length" class="pt-3 mt-1 border-t border-ob-text/16">
       <div class="text-[11px] uppercase tracking-widest text-emerald-500/70 font-semibold mb-2">
         Prevention
       </div>
@@ -36,7 +36,7 @@
         <li
           v-for="item in prevention"
           :key="item"
-          class="flex items-start gap-1.5 text-[12px] text-slate-300"
+          class="flex items-start gap-1.5 text-[12px] text-ob-text"
         >
           <span class="text-emerald-500/50 shrink-0 mt-px">›</span>
           <span>{{ item }}</span>

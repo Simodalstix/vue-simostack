@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg border border-slate-700/40 border-l-[4px] overflow-hidden"
+  <div class="rounded-lg border border-ob-text/14 border-l-[4px] overflow-hidden"
        :style="{ borderLeftColor: borderColor }"
        :class="bgClass">
 
@@ -7,16 +7,16 @@
     <div class="flex items-center gap-3 px-3"
          :class="compact ? 'py-2.5' : 'py-3'">
       <div class="w-[120px] shrink-0">
-        <div class="text-[13px] font-semibold text-slate-200 font-mono leading-tight">
+        <div class="text-[13px] font-semibold text-ob-text font-mono leading-tight">
           {{ LAYER_LABELS[layer.layer] || layer.layer }}
         </div>
         <div v-if="LAYER_DESCRIPTORS[layer.layer]"
-             class="text-[10px] text-slate-500 mt-0.5 font-sans leading-tight">
+             class="text-[10px] text-ob-dim mt-0.5 font-sans leading-tight">
           {{ LAYER_DESCRIPTORS[layer.layer] }}
         </div>
       </div>
-      <span class="text-[10px] px-2.5 py-0.5 rounded-full border border-slate-600/60
-                   bg-slate-800 text-slate-400 font-mono shrink-0 whitespace-nowrap">
+      <span class="text-[10px] px-2.5 py-0.5 rounded-full border border-ob-text/18
+                   bg-ob-surface2 text-ob-muted font-mono shrink-0 whitespace-nowrap">
         {{ layer.tool }}
       </span>
       <span class="flex-1 text-[12px] font-mono" :class="signalClass">
@@ -26,29 +26,29 @@
 
     <!-- Branches -->
     <div v-if="layer.branches?.length"
-         class="px-3 pb-2.5 border-t border-slate-700/30 pt-1.5 space-y-1">
+         class="px-3 pb-2.5 border-t border-ob-text/10 pt-1.5 space-y-1">
       <div v-for="(b, i) in layer.branches" :key="i"
            class="flex gap-2 items-baseline text-[11px] font-mono pl-2">
-        <span class="text-slate-600 shrink-0 select-none">
+        <span class="text-ob-faint shrink-0 select-none">
           {{ i === layer.branches.length - 1 ? '└─' : '├─' }}
         </span>
         <span class="shrink-0" :class="signalClass">{{ b.signal }}</span>
-        <span class="text-slate-500 italic font-sans">{{ b.meaning }}</span>
+        <span class="text-ob-dim italic font-sans">{{ b.meaning }}</span>
       </div>
     </div>
 
     <!-- Sub-rows (ASG context) -->
     <div v-if="layer.subRows?.length"
-         class="px-3 pb-2.5 border-t border-slate-700/30 pt-1.5 space-y-1">
+         class="px-3 pb-2.5 border-t border-ob-text/10 pt-1.5 space-y-1">
       <div v-for="sub in layer.subRows" :key="sub.layer"
            class="flex gap-2 items-center text-[11px] font-mono pl-2">
-        <span class="text-slate-600 shrink-0 select-none">└─</span>
-        <span class="text-slate-400 shrink-0">{{ LAYER_LABELS[sub.layer] || sub.layer }}</span>
-        <span class="text-[10px] px-2 py-0.5 rounded-full border border-slate-700/40
-                     bg-slate-800/60 text-slate-500 shrink-0">
+        <span class="text-ob-faint shrink-0 select-none">└─</span>
+        <span class="text-ob-muted shrink-0">{{ LAYER_LABELS[sub.layer] || sub.layer }}</span>
+        <span class="text-[10px] px-2 py-0.5 rounded-full border border-ob-text/14
+                     bg-ob-surface2/60 text-ob-dim shrink-0">
           {{ sub.tool }}
         </span>
-        <span class="text-slate-500 italic font-sans">{{ sub.signal }}</span>
+        <span class="text-ob-dim italic font-sans">{{ sub.signal }}</span>
       </div>
     </div>
 
@@ -92,16 +92,16 @@ const BG_CLASSES = {
   cleared: 'bg-emerald-950/40',
   stuck:   'bg-amber-950/50',
   failing: 'bg-rose-950/50',
-  reached: 'bg-slate-800/40',
-  unknown: 'bg-slate-800/20',
+  reached: 'bg-ob-surface2/40',
+  unknown: 'bg-ob-surface2/20',
 }
 
 const SIGNAL_CLASSES = {
   cleared: 'text-emerald-400',
   stuck:   'text-amber-300',
   failing: 'text-rose-300',
-  reached: 'text-slate-400',
-  unknown: 'text-slate-500',
+  reached: 'text-ob-muted',
+  unknown: 'text-ob-dim',
 }
 
 const status      = computed(() => props.layer.status)

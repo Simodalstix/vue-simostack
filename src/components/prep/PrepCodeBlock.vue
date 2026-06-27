@@ -25,12 +25,12 @@ function highlightLine(raw) {
 
   // Output line (> prefix)
   if (/^\s*>/.test(raw)) {
-    return `<span class="text-slate-400">${esc(raw)}</span>`
+    return `<span class="text-ob-muted">${esc(raw)}</span>`
   }
 
   // Full-line comment (# label)
   if (/^\s*#/.test(raw)) {
-    return `<span class="text-slate-500 font-semibold">${esc(raw)}</span>`
+    return `<span class="text-ob-dim font-semibold">${esc(raw)}</span>`
   }
 
   // Split inline comment: code<2+spaces>#comment
@@ -41,7 +41,7 @@ function highlightLine(raw) {
 
   const highlighted = tokenize(codePart)
   const comment = commentPart
-    ? `${gap}<span class="text-slate-500">${esc(commentPart)}</span>`
+    ? `${gap}<span class="text-ob-dim">${esc(commentPart)}</span>`
     : ''
 
   return highlighted + comment

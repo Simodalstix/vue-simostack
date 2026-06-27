@@ -2,28 +2,28 @@
   <div class="flex flex-col h-full overflow-hidden font-mono">
 
     <!-- Lab overview banner -->
-    <div class="shrink-0 px-6 pt-4 pb-4 border-b border-slate-700/60 bg-slate-800/20">
-      <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-3">Proxmox Lab — Overview</div>
+    <div class="shrink-0 px-6 pt-4 pb-4 border-b border-ob-text/18 bg-ob-surface2/20">
+      <div class="text-[10px] uppercase tracking-widest text-ob-sand font-semibold mb-3">Proxmox Lab — Overview</div>
       <div class="grid grid-cols-3 gap-6">
 
         <!-- Hardware & stack -->
         <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1.5">Hardware & Stack</div>
+          <div class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold mb-1.5">Hardware & Stack</div>
           <div class="text-[11px] space-y-0.5">
-            <div><span class="text-amber-300/80">Beelink SER8</span><span class="text-slate-500"> — 32GB RAM, 6-core AMD Ryzen 9, 1TB NVMe. Bare metal.</span></div>
-            <div><span class="text-amber-300/80">Proxmox VE</span><span class="text-slate-500"> — Type 1 hypervisor, KVM/QEMU, web UI + API management</span></div>
-            <div><span class="text-amber-300/80">OPNsense VM</span><span class="text-slate-500"> — router, firewall, VLAN gateway, WireGuard VPN</span></div>
-            <div><span class="text-amber-300/80">Rocky Linux</span><span class="text-slate-500"> — RHEL-based: Samba file server, service and Linux practice</span></div>
-            <div><span class="text-amber-300/80">Windows Server 2022</span><span class="text-slate-500"> — DC1, Active Directory, DNS, GPO</span></div>
-            <div><span class="text-amber-300/80">Prometheus + Grafana</span><span class="text-slate-500"> — observability across all hosts</span></div>
-            <div><span class="text-amber-300/80">Vault</span><span class="text-slate-500"> — PKI, internal cert issuance</span></div>
+            <div><span class="text-amber-300/80">Beelink SER8</span><span class="text-ob-dim"> — 32GB RAM, 6-core AMD Ryzen 9, 1TB NVMe. Bare metal.</span></div>
+            <div><span class="text-amber-300/80">Proxmox VE</span><span class="text-ob-dim"> — Type 1 hypervisor, KVM/QEMU, web UI + API management</span></div>
+            <div><span class="text-amber-300/80">OPNsense VM</span><span class="text-ob-dim"> — router, firewall, VLAN gateway, WireGuard VPN</span></div>
+            <div><span class="text-amber-300/80">Rocky Linux</span><span class="text-ob-dim"> — RHEL-based: Samba file server, service and Linux practice</span></div>
+            <div><span class="text-amber-300/80">Windows Server 2022</span><span class="text-ob-dim"> — DC1, Active Directory, DNS, GPO</span></div>
+            <div><span class="text-amber-300/80">Prometheus + Grafana</span><span class="text-ob-dim"> — observability across all hosts</span></div>
+            <div><span class="text-amber-300/80">Vault</span><span class="text-ob-dim"> — PKI, internal cert issuance</span></div>
           </div>
         </div>
 
         <!-- What was built -->
         <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1.5">What You Built</div>
-          <div class="text-[11px] space-y-1.5 text-slate-400">
+          <div class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold mb-1.5">What You Built</div>
+          <div class="text-[11px] space-y-1.5 text-ob-muted">
             <div>Network segmented into VLANs — management, dev, services. OPNsense routes between them with firewall rules controlling what can reach what.</div>
             <div>WireGuard was the intended VPN approach — partially configured on OPNsense, understand the model well enough to discuss.</div>
             <div>Rocky Linux file server joined to the AD domain via Samba/winbind — Windows clients authenticate using AD credentials.</div>
@@ -33,11 +33,11 @@
 
         <!-- How to narrate it -->
         <div>
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1.5">"Walk Me Through Your Lab"</div>
+          <div class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold mb-1.5">"Walk Me Through Your Lab"</div>
           <div class="text-[11px] space-y-1.5">
-            <div class="text-slate-400">Lead with hardware, then topology, then what you actually learned from running it.</div>
-            <div class="pl-2.5 border-l-2 border-orange-500/30 text-slate-400 italic leading-snug text-[10px]">"Bare-metal Proxmox on a Beelink mini-PC — 32GB, 6-core. OPNsense VM handles routing and VLAN segmentation. Rocky Linux for Linux practice — Samba file server with autofs for on-demand mounting. Windows Server DC for AD. Prometheus and Grafana watching the whole stack. It's where I can break things, trace why they broke, and fix them."</div>
-            <div class="text-slate-500 text-[10px]">The value isn't the tech stack — it's that you built and operated something real, and you understand why it works.</div>
+            <div class="text-ob-muted">Lead with hardware, then topology, then what you actually learned from running it.</div>
+            <div class="pl-2.5 border-l-2 border-ob-sand/30 text-ob-muted italic leading-snug text-[10px]">"Bare-metal Proxmox on a Beelink mini-PC — 32GB, 6-core. OPNsense VM handles routing and VLAN segmentation. Rocky Linux for Linux practice — Samba file server with autofs for on-demand mounting. Windows Server DC for AD. Prometheus and Grafana watching the whole stack. It's where I can break things, trace why they broke, and fix them."</div>
+            <div class="text-ob-dim text-[10px]">The value isn't the tech stack — it's that you built and operated something real, and you understand why it works.</div>
           </div>
         </div>
 
@@ -51,26 +51,26 @@
       <div class="overflow-y-auto space-y-5 min-h-0">
 
         <div>
-          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">Hypervisor Concepts</div>
+          <div class="text-[10px] uppercase tracking-widest text-ob-sand font-semibold mb-2">Hypervisor Concepts</div>
           <div class="space-y-1.5 text-[11px]">
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Type 1 (bare metal)</span><span class="text-slate-500"> — runs directly on hardware, no host OS. Proxmox, ESXi, Hyper-V. Lower overhead, used in production.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Type 2 (hosted)</span><span class="text-slate-500"> — runs on top of a host OS. VirtualBox, VMware Workstation. More overhead, fine for dev/test.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">KVM</span><span class="text-slate-500"> — Linux kernel module that enables hardware virtualisation. Turns the kernel itself into a Type 1 hypervisor.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">QEMU</span><span class="text-slate-500"> — device emulator. Provides virtual CPUs, NICs, and disks to VMs. Proxmox = KVM + QEMU + management layer.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">vmbr0</span><span class="text-slate-500"> — Linux bridge. VMs attach to bridges, bridges attach to physical NICs. Default bridge for external connectivity.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">VLAN-aware bridge</span><span class="text-slate-500"> — single bridge carries multiple VLANs via 802.1Q tags. Proxmox passes tagged frames to OPNsense unchanged.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Type 1 (bare metal)</span><span class="text-ob-dim"> — runs directly on hardware, no host OS. Proxmox, ESXi, Hyper-V. Lower overhead, used in production.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Type 2 (hosted)</span><span class="text-ob-dim"> — runs on top of a host OS. VirtualBox, VMware Workstation. More overhead, fine for dev/test.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">KVM</span><span class="text-ob-dim"> — Linux kernel module that enables hardware virtualisation. Turns the kernel itself into a Type 1 hypervisor.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">QEMU</span><span class="text-ob-dim"> — device emulator. Provides virtual CPUs, NICs, and disks to VMs. Proxmox = KVM + QEMU + management layer.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">vmbr0</span><span class="text-ob-dim"> — Linux bridge. VMs attach to bridges, bridges attach to physical NICs. Default bridge for external connectivity.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">VLAN-aware bridge</span><span class="text-ob-dim"> — single bridge carries multiple VLANs via 802.1Q tags. Proxmox passes tagged frames to OPNsense unchanged.</span></span></div>
           </div>
         </div>
 
         <div>
-          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">VLANs & Network Segmentation</div>
+          <div class="text-[10px] uppercase tracking-widest text-ob-sand font-semibold mb-2">VLANs & Network Segmentation</div>
           <div class="space-y-1.5 text-[11px]">
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">VLAN</span><span class="text-slate-500"> — logical network segment on shared physical infrastructure. Separates broadcast domains without physical separation.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">802.1Q</span><span class="text-slate-500"> — tagging standard. Inserts a 4-byte tag into the Ethernet frame with a VLAN ID (1–4094). Switches read the tag to forward correctly.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Access port</span><span class="text-slate-500"> — carries one VLAN, strips and adds the tag transparently. End devices (VMs, PCs) never see the 802.1Q tag.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Trunk port</span><span class="text-slate-500"> — carries multiple VLANs with tags intact. Used between switches, and between Proxmox and OPNsense.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Router on a stick</span><span class="text-slate-500"> — one physical interface with sub-interfaces per VLAN. OPNsense does inter-VLAN routing this way — all traffic routes through it.</span></span></div>
-            <div class="mt-2 pl-2.5 border-l-2 border-slate-700/60 text-[10px] text-slate-500 space-y-0.5 leading-snug">
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">VLAN</span><span class="text-ob-dim"> — logical network segment on shared physical infrastructure. Separates broadcast domains without physical separation.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">802.1Q</span><span class="text-ob-dim"> — tagging standard. Inserts a 4-byte tag into the Ethernet frame with a VLAN ID (1–4094). Switches read the tag to forward correctly.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Access port</span><span class="text-ob-dim"> — carries one VLAN, strips and adds the tag transparently. End devices (VMs, PCs) never see the 802.1Q tag.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Trunk port</span><span class="text-ob-dim"> — carries multiple VLANs with tags intact. Used between switches, and between Proxmox and OPNsense.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Router on a stick</span><span class="text-ob-dim"> — one physical interface with sub-interfaces per VLAN. OPNsense does inter-VLAN routing this way — all traffic routes through it.</span></span></div>
+            <div class="mt-2 pl-2.5 border-l-2 border-ob-text/18 text-[10px] text-ob-dim space-y-0.5 leading-snug">
               <div>Blast radius — compromise in one VLAN can't reach others without crossing the firewall.</div>
               <div>Security zones — dev, services, and management can each have different policies.</div>
               <div>Cleaner troubleshooting — traffic is where you expect it. Cross-VLAN surprises are visible.</div>
@@ -79,12 +79,12 @@
         </div>
 
         <div>
-          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">Lab — Linux Anchors</div>
+          <div class="text-[10px] uppercase tracking-widest text-ob-sand font-semibold mb-2">Lab — Linux Anchors</div>
 
-          <div class="text-[10px] text-slate-500 italic mb-1.5">autofs — on-demand mounting</div>
+          <div class="text-[10px] text-ob-dim italic mb-1.5">autofs — on-demand mounting</div>
           <PrepCodeBlock :code="autofsSample" />
 
-          <div class="text-[10px] text-slate-500 italic mt-4 mb-1.5">Samba file server — key ops</div>
+          <div class="text-[10px] text-ob-dim italic mt-4 mb-1.5">Samba file server — key ops</div>
           <PrepCodeBlock :code="sambaSample" />
         </div>
 
@@ -94,27 +94,27 @@
       <div class="overflow-y-auto space-y-5 min-h-0">
 
         <div>
-          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-2">Firewall (OPNsense)</div>
+          <div class="text-[10px] uppercase tracking-widest text-ob-sand font-semibold mb-2">Firewall (OPNsense)</div>
           <div class="space-y-1.5 text-[11px]">
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Stateful</span><span class="text-slate-500"> — tracks connection state table (SYN → ESTABLISHED → FIN). Return traffic automatically permitted. No explicit outbound rules needed for established sessions.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Stateless</span><span class="text-slate-500"> — evaluates each packet independently. Both directions must be explicitly permitted. AWS NACLs work this way — the common gotcha.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Rule evaluation</span><span class="text-slate-500"> — top-down, first match wins. Rules apply on the interface where traffic arrives, not where it is headed.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Implicit deny</span><span class="text-slate-500"> — everything not explicitly permitted is dropped. The default is deny-all. No match = silent drop.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Anti-lockout rule</span><span class="text-slate-500"> — OPNsense automatically preserves LAN → WebGUI access so you can't accidentally lock yourself out.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Aliases</span><span class="text-slate-500"> — named objects (host, network, port range) referenced in rules. Update the alias once — every rule using it updates automatically.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Stateful</span><span class="text-ob-dim"> — tracks connection state table (SYN → ESTABLISHED → FIN). Return traffic automatically permitted. No explicit outbound rules needed for established sessions.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Stateless</span><span class="text-ob-dim"> — evaluates each packet independently. Both directions must be explicitly permitted. AWS NACLs work this way — the common gotcha.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Rule evaluation</span><span class="text-ob-dim"> — top-down, first match wins. Rules apply on the interface where traffic arrives, not where it is headed.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Implicit deny</span><span class="text-ob-dim"> — everything not explicitly permitted is dropped. The default is deny-all. No match = silent drop.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Anti-lockout rule</span><span class="text-ob-dim"> — OPNsense automatically preserves LAN → WebGUI access so you can't accidentally lock yourself out.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-amber-300/80">Aliases</span><span class="text-ob-dim"> — named objects (host, network, port range) referenced in rules. Update the alias once — every rule using it updates automatically.</span></span></div>
           </div>
         </div>
 
         <div>
-          <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-1">WireGuard VPN</div>
+          <div class="text-[10px] uppercase tracking-widest text-ob-sand font-semibold mb-1">WireGuard VPN</div>
           <div class="text-[10px] text-amber-400/60 mb-2">Partially set up — understand the model, didn't fully deploy</div>
           <div class="space-y-1.5 text-[11px]">
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">UDP-based</span><span class="text-slate-500"> — default port 51820. Far simpler handshake than IPSec/IKE or OpenVPN TLS negotiation.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Cryptokey routing</span><span class="text-slate-500"> — each peer has a public key + AllowedIPs list. Packet decrypted, source IP checked against AllowedIPs — not listed = dropped.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">~4,000 lines of code</span><span class="text-slate-500"> vs OpenVPN's ~600,000. Smaller attack surface, easier to audit, runs in the kernel itself.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">No CA needed</span><span class="text-slate-500"> — just key pairs. <code class="text-emerald-400/70">wg genkey | tee private.key | wg pubkey > public.key</code></span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Roaming-friendly</span><span class="text-slate-500"> — if the client IP changes (mobile, switching networks), tunnel reconnects automatically via the key.</span></span></div>
-            <div class="flex gap-1.5"><span class="text-slate-700 shrink-0 mt-0.5">•</span><span><code class="text-emerald-400/80">wg show</code><span class="text-slate-500"> — peer status, last handshake, bytes transferred. Recent handshake = tunnel alive.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">UDP-based</span><span class="text-ob-dim"> — default port 51820. Far simpler handshake than IPSec/IKE or OpenVPN TLS negotiation.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Cryptokey routing</span><span class="text-ob-dim"> — each peer has a public key + AllowedIPs list. Packet decrypted, source IP checked against AllowedIPs — not listed = dropped.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">~4,000 lines of code</span><span class="text-ob-dim"> vs OpenVPN's ~600,000. Smaller attack surface, easier to audit, runs in the kernel itself.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">No CA needed</span><span class="text-ob-dim"> — just key pairs. <code class="text-emerald-400/70">wg genkey | tee private.key | wg pubkey > public.key</code></span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><span class="text-sky-400/80">Roaming-friendly</span><span class="text-ob-dim"> — if the client IP changes (mobile, switching networks), tunnel reconnects automatically via the key.</span></span></div>
+            <div class="flex gap-1.5"><span class="text-ob-faint shrink-0 mt-0.5">•</span><span><code class="text-emerald-400/80">wg show</code><span class="text-ob-dim"> — peer status, last handshake, bytes transferred. Recent handshake = tunnel alive.</span></span></div>
           </div>
         </div>
 
@@ -122,21 +122,21 @@
 
       <!-- Col 3: Probes -->
       <div class="overflow-y-auto space-y-3 min-h-0">
-        <div class="text-[10px] uppercase tracking-widest text-orange-400 font-semibold mb-1">Interview Probes</div>
+        <div class="text-[10px] uppercase tracking-widest text-ob-sand font-semibold mb-1">Interview Probes</div>
 
         <div
           v-for="probe in probes"
           :key="probe.q"
-          class="rounded-lg bg-slate-800/40 border border-slate-700/50 p-3"
+          class="rounded-lg bg-ob-surface2/40 border border-ob-text/16 p-3"
         >
           <div class="text-sky-300/80 text-[12px] leading-relaxed mb-2">{{ probe.q }}</div>
-          <ul class="border-l-2 border-slate-700 pl-2.5 space-y-1">
+          <ul class="border-l-2 border-ob-text/18 pl-2.5 space-y-1">
             <li
               v-for="(point, i) in probe.a"
               :key="i"
-              class="flex gap-1.5 items-start text-slate-400 text-[11px] leading-relaxed"
+              class="flex gap-1.5 items-start text-ob-muted text-[11px] leading-relaxed"
             >
-              <span class="text-slate-600 shrink-0 mt-0.5 select-none">›</span>
+              <span class="text-ob-faint shrink-0 mt-0.5 select-none">›</span>
               <span>{{ point }}</span>
             </li>
           </ul>

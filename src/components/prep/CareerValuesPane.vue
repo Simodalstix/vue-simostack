@@ -2,10 +2,10 @@
   <div class="flex h-full overflow-hidden font-mono">
 
     <!-- ── Left sidebar ── -->
-    <aside class="w-56 shrink-0 bg-slate-800 border-r border-slate-700 flex flex-col h-full">
+    <aside class="w-56 shrink-0 bg-ob-surface2 border-r border-ob-text/18 flex flex-col h-full">
 
-      <div class="px-3 py-2 border-b border-slate-700/60">
-        <span class="text-[10px] uppercase tracking-widest text-slate-400">Questions</span>
+      <div class="px-3 py-2 border-b border-ob-text/18">
+        <span class="text-[10px] uppercase tracking-widest text-ob-muted">Questions</span>
       </div>
 
       <div class="flex-1 overflow-y-auto">
@@ -13,18 +13,18 @@
           v-for="(q, idx) in careerAndValues"
           :key="idx"
           @click="selectQuestion(idx)"
-          class="w-full text-left px-3 py-2 border-b border-slate-700/30 border-l-2 transition-colors duration-100"
+          class="w-full text-left px-3 py-2 border-b border-ob-text/10 border-l-2 transition-colors duration-100"
           :class="selectedIdx === idx
-            ? 'bg-slate-700/60 text-white border-l-orange-400'
-            : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/30 border-l-transparent'"
+            ? 'bg-ob-surface/60 text-ob-bright border-l-ob-sand'
+            : 'text-ob-muted hover:text-ob-text hover:bg-ob-surface/30 border-l-transparent'"
         >
-          <div class="text-[11.5px] leading-snug truncate" :class="selectedIdx === idx ? 'text-slate-100' : 'text-slate-400'">{{ q.question }}</div>
+          <div class="text-[11.5px] leading-snug truncate" :class="selectedIdx === idx ? 'text-ob-bright' : 'text-ob-muted'">{{ q.question }}</div>
           <div v-if="q.blocks?.length" class="flex gap-1.5 mt-1.5">
             <svg
               v-for="bid in q.blocks"
               :key="bid"
               class="w-3 h-3 shrink-0"
-              :class="selectedIdx === idx ? 'text-slate-400' : 'text-slate-600'"
+              :class="selectedIdx === idx ? 'text-ob-muted' : 'text-ob-faint'"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -42,27 +42,27 @@
     </aside>
 
     <!-- ── Main panel ── -->
-    <main class="flex-1 overflow-y-auto p-6 bg-slate-900">
+    <main class="flex-1 overflow-y-auto p-6 bg-ob-bg">
       <div v-if="selected">
 
         <!-- Question title + coreLine -->
         <div class="mb-4">
-          <p class="text-[15px] font-semibold text-slate-100 leading-snug mb-1">{{ selected.question }}</p>
-          <p v-if="selected.coreLine" class="text-[11px] text-slate-500 italic">{{ selected.coreLine }}</p>
+          <p class="text-[15px] font-semibold text-ob-bright leading-snug mb-1">{{ selected.question }}</p>
+          <p v-if="selected.coreLine" class="text-[11px] text-ob-dim italic">{{ selected.coreLine }}</p>
         </div>
 
         <!-- Cues -->
         <div class="max-w-2xl">
           <div class="space-y-1">
             <template v-for="(cue, i) in mainCues" :key="i">
-              <div v-if="cue === '---'" class="border-t border-slate-700/40 my-2.5" />
+              <div v-if="cue === '---'" class="border-t border-ob-text/14 my-2.5" />
               <div v-else class="flex gap-2 items-start leading-snug py-0.5 rounded">
                 <span
                   v-if="cueTag(cue)"
                   class="shrink-0 text-[9px] font-bold px-1.5 py-0.5 rounded mt-0.5 leading-none"
                   :class="tagBadgeClass(cue)"
                 >{{ cueTag(cue) }}</span>
-                <span v-else class="shrink-0 text-slate-600 mt-0.5 select-none text-[13px]">›</span>
+                <span v-else class="shrink-0 text-ob-faint mt-0.5 select-none text-[13px]">›</span>
                 <span class="text-[12.5px]" :class="cueTextClass(cue)">{{ cueText(cue) }}</span>
               </div>
             </template>
@@ -87,29 +87,29 @@
     </main>
 
     <!-- ── Right blocks strip ── -->
-    <aside class="w-44 shrink-0 border-l border-slate-700/60 overflow-y-auto flex flex-col gap-2 p-3">
-      <div class="text-[9px] uppercase tracking-widest text-slate-600 font-semibold mb-1 px-1">
+    <aside class="w-44 shrink-0 border-l border-ob-text/18 overflow-y-auto flex flex-col gap-2 p-3">
+      <div class="text-[9px] uppercase tracking-widest text-ob-faint font-semibold mb-1 px-1">
         Traits
       </div>
       <div
         v-for="block in simonBlocks"
         :key="block.id"
-        class="rounded-lg border border-slate-700/30 border-l-2 p-2.5 transition-opacity duration-150"
+        class="rounded-lg border border-ob-text/10 border-l-2 p-2.5 transition-opacity duration-150"
         :style="{ borderLeftColor: block.color }"
         :class="isActive(block.id)
-          ? 'bg-slate-800/60 border-slate-700/60 opacity-100'
-          : 'bg-slate-800/20 opacity-25'"
+          ? 'bg-ob-surface2/60 border-ob-text/18 opacity-100'
+          : 'bg-ob-surface2/20 opacity-25'"
       >
         <div class="text-[11px] font-semibold mb-0.5" :style="{ color: block.color }">
           {{ block.label }}
         </div>
-        <p class="text-[10px] text-slate-400 leading-snug">{{ block.tagline }}</p>
+        <p class="text-[10px] text-ob-muted leading-snug">{{ block.tagline }}</p>
         <div class="flex flex-wrap gap-1 mt-1.5">
           <span
             v-for="lp in block.lps"
             :key="lp"
             class="text-[9px] px-1.5 py-0.5 rounded border"
-            :class="LP_COLORS[lp] || 'bg-slate-700 text-slate-300 border-slate-600'"
+            :class="LP_COLORS[lp] || 'bg-ob-surface text-ob-text border-ob-text/18'"
           >{{ LP_SHORT_NAMES[lp] || lp }}</span>
         </div>
       </div>
@@ -148,7 +148,7 @@ function cueText(cue) {
 }
 function tagBadgeClass(cue) {
   const tag = cueTag(cue)
-  if (tag === 'ANCHOR') return 'bg-slate-600/60 text-slate-200 border border-slate-500/40'
+  if (tag === 'ANCHOR') return 'bg-ob-surface/60 text-ob-text border border-ob-text/18'
   if (tag === 'DATA')   return 'bg-emerald-900/50 text-emerald-300 border border-emerald-700/40'
   if (tag === 'LP')     return 'bg-purple-900/50 text-purple-300 border border-purple-700/40'
   if (tag === 'TONE')   return 'bg-amber-900/50 text-amber-300 border border-amber-700/40'
@@ -156,11 +156,11 @@ function tagBadgeClass(cue) {
 }
 function cueTextClass(cue) {
   const tag = cueTag(cue)
-  if (tag === 'ANCHOR') return 'text-slate-100 font-medium'
+  if (tag === 'ANCHOR') return 'text-ob-bright font-medium'
   if (tag === 'DATA')   return 'text-emerald-300'
   if (tag === 'LP')     return 'text-purple-300'
   if (tag === 'TONE')   return 'text-amber-300 italic'
-  return 'text-slate-300'
+  return 'text-ob-text'
 }
 
 const mainCues = computed(() =>

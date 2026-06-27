@@ -2,15 +2,15 @@
   <div class="flex flex-col h-full overflow-hidden font-mono">
 
     <!-- Scenario tab bar -->
-    <div class="shrink-0 flex border-b border-slate-700 bg-slate-800/20 flex-wrap">
+    <div class="shrink-0 flex border-b border-ob-text/18 bg-ob-surface2/20 flex-wrap">
       <button
         v-for="(s, i) in scenarios"
         :key="s.id"
         @click="selectedTab = i"
-        class="px-4 py-2 text-[12px] border-r border-slate-700/60 border-b-2 -mb-px transition-colors"
+        class="px-4 py-2 text-[12px] border-r border-ob-text/18 border-b-2 -mb-px transition-colors"
         :class="selectedTab === i
-          ? 'text-orange-300 border-b-orange-400 bg-orange-500/10'
-          : 'text-slate-400 hover:text-slate-200 border-b-transparent'"
+          ? 'text-ob-sand border-b-ob-sand bg-ob-sand/10'
+          : 'text-ob-muted hover:text-ob-text border-b-transparent'"
       >{{ s.label }}</button>
     </div>
 
@@ -18,7 +18,7 @@
     <div v-if="scenario" class="flex flex-1 min-h-0">
 
       <!-- LEFT (35%): spine + prevention -->
-      <div class="flex-[2] overflow-y-auto p-4 border-r border-slate-700/60">
+      <div class="flex-[2] overflow-y-auto p-4 border-r border-ob-text/18">
         <ScenarioSpine
           :groups="scenario.spineGroups"
           :prevention="scenario.prevention"
@@ -29,15 +29,15 @@
       <div class="flex-[3] flex flex-col min-h-0">
 
         <!-- Section tab bar -->
-        <div class="shrink-0 flex gap-1 px-4 pt-3 pb-0 border-b border-slate-700/60">
+        <div class="shrink-0 flex gap-1 px-4 pt-3 pb-0 border-b border-ob-text/18">
           <button
             v-for="tab in ['Diagnose', 'Root Cause', 'Prevent', 'Rollback', 'Probes']"
             :key="tab"
             @click="rightTab = tab"
             class="px-3 py-1.5 text-[11px] font-mono border-b-2 transition-colors -mb-px"
             :class="rightTab === tab
-              ? 'text-orange-300 border-orange-400'
-              : 'text-slate-500 border-transparent hover:text-slate-300'"
+              ? 'text-ob-sand border-ob-sand'
+              : 'text-ob-dim border-transparent hover:text-ob-text'"
           >{{ tab }}</button>
         </div>
 
@@ -62,20 +62,20 @@
                     {{ block.color === 'amber' ? 'investigate →' : block.color === 'rose' ? 'root cause' : 'cleared ✓' }}
                   </span>
                 </div>
-                <div class="px-3 py-2.5 space-y-3 bg-slate-900/40">
+                <div class="px-3 py-2.5 space-y-3 bg-ob-bg/40">
                   <div>
-                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1">Interpretation</div>
-                    <p class="text-slate-300 text-[12px] leading-relaxed">{{ block.interpretation }}</p>
+                    <div class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold mb-1">Interpretation</div>
+                    <p class="text-ob-text text-[12px] leading-relaxed">{{ block.interpretation }}</p>
                   </div>
                   <div class="flex items-start gap-2">
-                    <span class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold shrink-0 mt-0.5">Next</span>
+                    <span class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold shrink-0 mt-0.5">Next</span>
                     <span class="text-[12px] font-mono" :class="decisionTextClass(block.color)">{{ block.nextHop }}</span>
                   </div>
                   <div>
-                    <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-1.5">Validate</div>
+                    <div class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold mb-1.5">Validate</div>
                     <div v-for="(v, vi) in block.validate" :key="vi" class="mb-2">
-                      <div class="text-emerald-400 text-[11px] font-mono bg-slate-800/60 border border-slate-700/50 rounded px-2.5 py-1 mb-0.5 whitespace-pre">{{ v.cmd }}</div>
-                      <div class="text-slate-500 text-[10px] italic pl-1">→ {{ v.lookFor }}</div>
+                      <div class="text-emerald-400 text-[11px] font-mono bg-ob-surface2/60 border border-ob-text/16 rounded px-2.5 py-1 mb-0.5 whitespace-pre">{{ v.cmd }}</div>
+                      <div class="text-ob-dim text-[10px] italic pl-1">→ {{ v.lookFor }}</div>
                     </div>
                   </div>
                 </div>
@@ -84,14 +84,14 @@
               <!-- Prose -->
               <p
                 v-else-if="typeof block === 'string'"
-                class="text-slate-300 text-[12px] leading-relaxed"
+                class="text-ob-text text-[12px] leading-relaxed"
                 v-html="parseText(block)"
               />
 
               <!-- Command -->
               <div
                 v-else-if="block.cmd"
-                class="text-emerald-400 bg-slate-800/60 border border-slate-700/50 rounded px-3 py-1.5 text-[11px] leading-snug font-mono whitespace-pre"
+                class="text-emerald-400 bg-ob-surface2/60 border border-ob-text/16 rounded px-3 py-1.5 text-[11px] leading-snug font-mono whitespace-pre"
               >{{ block.cmd }}</div>
 
               <!-- List -->
@@ -101,8 +101,8 @@
                   :key="j"
                   class="flex gap-2 items-start leading-relaxed"
                 >
-                  <span class="text-orange-400/50 shrink-0 mt-0.5 select-none">›</span>
-                  <span class="text-slate-300 text-[12px]" v-html="parseText(item)" />
+                  <span class="text-ob-sand/50 shrink-0 mt-0.5 select-none">›</span>
+                  <span class="text-ob-text text-[12px]" v-html="parseText(item)" />
                 </li>
               </ul>
 
@@ -114,16 +114,16 @@
             <div
               v-for="rc in scenario.rootCauses"
               :key="rc.cause"
-              class="rounded-lg border border-slate-700/50 overflow-hidden"
+              class="rounded-lg border border-ob-text/16 overflow-hidden"
             >
-              <div class="px-3 py-2 bg-rose-950/30 border-b border-slate-700/40">
+              <div class="px-3 py-2 bg-rose-950/30 border-b border-ob-text/14">
                 <span class="text-rose-300 text-[12px] font-mono">{{ rc.cause }}</span>
               </div>
-              <div class="px-3 py-2 bg-slate-800/20 space-y-1">
-                <div class="text-slate-300 text-[12px]">{{ rc.fix }}</div>
+              <div class="px-3 py-2 bg-ob-surface2/20 space-y-1">
+                <div class="text-ob-text text-[12px]">{{ rc.fix }}</div>
                 <div
                   v-if="rc.cmd"
-                  class="text-emerald-400 text-[11px] font-mono bg-slate-800/60 border border-slate-700/40 rounded px-2.5 py-1 mt-1.5 whitespace-pre"
+                  class="text-emerald-400 text-[11px] font-mono bg-ob-surface2/60 border border-ob-text/14 rounded px-2.5 py-1 mt-1.5 whitespace-pre"
                 >{{ rc.cmd }}</div>
               </div>
             </div>
@@ -134,7 +134,7 @@
             <div
               v-for="p in scenario.prevention"
               :key="p"
-              class="flex gap-2 items-start text-[12px] text-slate-300 leading-relaxed"
+              class="flex gap-2 items-start text-[12px] text-ob-text leading-relaxed"
             >
               <span class="text-emerald-500 shrink-0 mt-0.5">•</span>
               <span>{{ p }}</span>
@@ -146,12 +146,12 @@
             <template v-for="(block, i) in scenario.rollback" :key="i">
               <p
                 v-if="typeof block === 'string'"
-                class="text-slate-300 text-[12px] leading-relaxed"
+                class="text-ob-text text-[12px] leading-relaxed"
                 v-html="parseText(block)"
               />
               <div
                 v-else-if="block.cmd"
-                class="text-emerald-400 bg-slate-800/60 border border-slate-700/50 rounded px-3 py-1.5 text-[11px] leading-snug font-mono whitespace-pre"
+                class="text-emerald-400 bg-ob-surface2/60 border border-ob-text/16 rounded px-3 py-1.5 text-[11px] leading-snug font-mono whitespace-pre"
               >{{ block.cmd }}</div>
             </template>
           </div>
@@ -161,16 +161,16 @@
             <div
               v-for="probe in scenario.probes"
               :key="probe.q"
-              class="rounded-lg bg-slate-800/40 border border-slate-700/50 p-3"
+              class="rounded-lg bg-ob-surface2/40 border border-ob-text/16 p-3"
             >
               <div class="text-sky-300/80 text-[12px] leading-relaxed mb-2">{{ probe.q }}</div>
-              <ul class="border-l-2 border-slate-700 pl-2.5 space-y-1">
+              <ul class="border-l-2 border-ob-text/18 pl-2.5 space-y-1">
                 <li
                   v-for="point in probe.a"
                   :key="point"
-                  class="flex gap-1.5 items-start text-slate-400 text-[11px] leading-relaxed"
+                  class="flex gap-1.5 items-start text-ob-muted text-[11px] leading-relaxed"
                 >
-                  <span class="text-slate-600 shrink-0 mt-0.5 select-none">›</span>
+                  <span class="text-ob-faint shrink-0 mt-0.5 select-none">›</span>
                   <span v-html="parseText(point)" />
                 </li>
               </ul>
@@ -216,6 +216,6 @@ function parseText(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/`([^`]+)`/g, '<code class="text-emerald-400 font-mono">$1</code>')
-    .replace(/\*\*([^*]+)\*\*/g, '<span class="text-slate-100 font-semibold">$1</span>')
+    .replace(/\*\*([^*]+)\*\*/g, '<span class="text-ob-bright font-semibold">$1</span>')
 }
 </script>

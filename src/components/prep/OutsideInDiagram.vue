@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full px-3 pt-2 pb-0 bg-slate-800/30 border-b border-slate-700/50">
+  <div class="w-full px-3 pt-2 pb-0 bg-ob-surface2/30 border-b border-ob-text/16">
     <svg
       viewBox="0 0 870 112"
       width="100%"

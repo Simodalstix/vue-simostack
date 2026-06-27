@@ -1,7 +1,7 @@
 <template>
   <div class="h-full overflow-y-auto p-6 font-mono">
 
-    <div class="text-[10px] uppercase tracking-widest text-slate-500 mb-4">
+    <div class="text-[10px] uppercase tracking-widest text-ob-dim mb-4">
       Research each interviewer before May 20 — tailor 1–2 questions per person
       based on their role and background.
     </div>
@@ -11,27 +11,27 @@
       <div
         v-for="interviewer in interviewers"
         :key="interviewer.id"
-        class="rounded-xl bg-slate-800/50 border border-slate-700 border-l-2 overflow-hidden"
+        class="rounded-xl bg-ob-surface2/50 border border-ob-text/18 border-l-2 overflow-hidden"
         :style="{ borderLeftColor: interviewer.color }"
       >
         <!-- Header -->
-        <div class="px-4 py-3 border-b border-slate-700/50 bg-slate-800/60">
+        <div class="px-4 py-3 border-b border-ob-text/16 bg-ob-surface2/60">
           <div class="text-[11px] font-semibold tracking-widest uppercase mb-0.5"
                :style="{ color: interviewer.color }">
             {{ interviewer.name }}
           </div>
-          <div class="text-[12px] text-slate-400">{{ interviewer.role }}</div>
+          <div class="text-[12px] text-ob-muted">{{ interviewer.role }}</div>
         </div>
 
         <!-- Insights -->
-        <div v-if="interviewer.insights?.length" class="px-4 py-3 border-b border-slate-700/50">
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-2">
+        <div v-if="interviewer.insights?.length" class="px-4 py-3 border-b border-ob-text/16">
+          <div class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold mb-2">
             Key Insights
           </div>
           <ul class="space-y-1">
             <li v-for="(insight, i) in interviewer.insights" :key="i"
-                class="flex gap-1.5 items-start text-[11px] text-slate-400 leading-relaxed">
-              <span class="text-slate-600 shrink-0 mt-0.5 select-none">›</span>
+                class="flex gap-1.5 items-start text-[11px] text-ob-muted leading-relaxed">
+              <span class="text-ob-faint shrink-0 mt-0.5 select-none">›</span>
               <span>{{ insight }}</span>
             </li>
           </ul>
@@ -39,17 +39,17 @@
 
         <!-- Questions -->
         <div v-if="interviewer.questions.length" class="px-4 py-3 space-y-2">
-          <div class="text-[9px] uppercase tracking-widest text-slate-500 font-semibold mb-2">
+          <div class="text-[9px] uppercase tracking-widest text-ob-dim font-semibold mb-2">
             Questions to Ask
           </div>
           <div v-for="(q, i) in interviewer.questions" :key="i"
-               class="text-[12px] text-slate-300 leading-relaxed italic border-l-2 pl-3"
+               class="text-[12px] text-ob-text leading-relaxed italic border-l-2 pl-3"
                :style="{ borderColor: interviewer.color }">
             {{ q }}
           </div>
         </div>
         <div v-else class="px-4 py-3">
-          <div class="text-[11px] text-slate-600 italic">
+          <div class="text-[11px] text-ob-faint italic">
             No questions added yet — research LinkedIn and add before the loop.
           </div>
         </div>
