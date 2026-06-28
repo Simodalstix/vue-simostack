@@ -482,7 +482,7 @@ const projects = [
     title: 'AWS 3-Tier Platform – FastAPI, ALB, ASG, RDS & ElastiCache Redis',
     titleHtml: 'AWS 3-Tier Platform – FastAPI, ALB, ASG, RDS & ElastiCache <span class="text-red-500">Redis</span>',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/ec2-autoscaling.svg', alt: 'Auto Scaling' },
       { src: '/images/aws-icons/rds.svg', alt: 'RDS' },
@@ -503,7 +503,7 @@ const projects = [
     title: 'AWS Image Pipeline – Golden AMI Factory with Packer & SSM',
     titleHtml: 'AWS Image Pipeline – Golden AMI Factory with <span class="text-[#4d8bff]">Packer</span> & SSM',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/ec2.svg', alt: 'EC2' },
       { src: '/images/aws-icons/iam.svg', alt: 'IAM' },
@@ -523,7 +523,7 @@ const projects = [
     id: 'aws-event-driven-pipeline',
     title: 'AWS Event-Driven Pipeline – SQS, Lambda, S3, Glue & Athena',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/sqs.svg', alt: 'SQS' },
       { src: '/images/aws-icons/Glue.svg', alt: 'Glue' },
@@ -543,7 +543,7 @@ const projects = [
     id: 'fargate-golden-path',
     title: 'ECS Fargate Golden Path – Blue/Green, Aurora Serverless, X-Ray & FIS',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/ecs.svg', alt: 'ECS' },
       { src: '/images/aws-icons/fargate.svg', alt: 'Fargate' },
@@ -564,7 +564,7 @@ const projects = [
     title: 'AWS SSM Fleet – Puppet, Config Mangement & Compliance',
     titleHtml: 'AWS SSM Fleet – <span class="text-amber-400">Puppet</span> Config Mangement & Compliance',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/project-icons/puppet.svg', alt: 'Puppet' },
       { src: '/images/aws-icons/ssm.svg', alt: 'SSM' },
@@ -583,7 +583,7 @@ const projects = [
     id: 'pilot-light-dr',
     title: 'E-commerce Platform Pilot Light Disaster Recovery with Step Functions',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/alb.svg', alt: 'ALB' },
       { src: '/images/aws-icons/rds.svg', alt: 'RDS' },
@@ -622,7 +622,7 @@ const projects = [
     id: 'lambda-sqs-dlq',
     title: 'Resilient Serverless Ingestion Pipeline on AWS (SQS + DLQ)',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/lambda.svg', alt: 'Lambda' },
       { src: '/images/aws-icons/sqs.svg', alt: 'SQS' },
@@ -643,7 +643,7 @@ const projects = [
     id: 'enterprise-landing-zone',
     title: 'AWS Multi-Account Landing Zone – Zero Trust Architecture',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/organizations.svg', alt: 'Organizations' },
       { src: '/images/aws-icons/transit-gateway.svg', alt: 'Transit Gateway' },
@@ -662,7 +662,7 @@ const projects = [
     id: 'observability-platform',
     title: 'AWS Monitoring & Observability Platform Architecture',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/cloudwatch.svg', alt: 'CloudWatch' },
       { src: '/images/aws-icons/eventbridge.svg', alt: 'EventBridge' },
@@ -700,7 +700,7 @@ const projects = [
     id: 'aws-db-migration',
     title: 'Executing a Database Migration to AWS with Terraform',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
       { src: '/images/project-icons/postgres.svg', alt: 'PostgreSQL' },
       { src: '/images/aws-icons/rds.svg', alt: 'RDS' },
@@ -719,7 +719,7 @@ const projects = [
     id: 'eks-gitops',
     title: 'EKS Multi-Tier App – GitOps Pipeline & Observability',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
       { src: '/images/aws-icons/eks.svg', alt: 'EKS' },
       { src: '/images/project-icons/argocd.svg', alt: 'ArgoCD' },
@@ -782,7 +782,7 @@ const projects = [
     id: 'multiregion-platform',
     title: 'Serverless Multi-Region Platform - Security + Monitoring',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/project-icons/eventbridge.svg', alt: 'EventBridge' },
       { src: '/images/aws-icons/lambda.svg', alt: 'Lambda' },
@@ -802,7 +802,7 @@ const projects = [
     id: 'bedrock-landing-zone',
     title: 'AWS Bedrock Landing Zone – Multi-Account AI Platform',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
       { src: '/images/aws-icons/bedrock.png', alt: 'Bedrock' },
       { src: '/images/aws-icons/organizations.svg', alt: 'Organizations' },
@@ -840,7 +840,7 @@ const projects = [
     id: 'dr-backup',
     title: 'AWS Disaster Recovery & Backup - Rapid Recovery',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/python.svg', alt: 'Python' },
       { src: '/images/aws-icons/backup.svg', alt: 'AWS Backup' },
       { src: '/images/aws-icons/rds.svg', alt: 'RDS' },
@@ -881,7 +881,7 @@ const projects = [
     id: 'devops-toolchain',
     title: 'DevOps Toolchain with SonarQube & LaunchDarkly',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/main-tools/terraform.svg', alt: 'Terraform' },
       { src: '/images/project-icons/csharp.png', alt: 'C#' },
       { src: '/images/project-icons/github-actions.svg', alt: 'GitHub Actions' },
@@ -938,7 +938,7 @@ const projects = [
     id: 'portfolio-website',
     title: 'This Portfolio – AWS Static Site with CI/CD',
     icons: [
-      { src: '/images/main-tools/aws-icon2.png', alt: 'AWS' },
+      { src: '/images/project-icons/aws-logo-white.svg', alt: 'AWS' },
       { src: '/images/project-icons/vue-icon.svg', alt: 'Vue' },
       { src: '/images/aws-icons/s3.svg', alt: 'S3' },
       { src: '/images/aws-icons/cloudfront.svg', alt: 'CloudFront' },
@@ -988,7 +988,6 @@ const cardMeta = {
     code: 'P-02',
     title: 'AWS Image Pipeline',
     description: 'A golden-AMI factory that bakes hardened, pre-patched images with Packer and SSM, giving repeatable, drift-free fleets that launch fast.',
-    descriptionHtml: 'A golden-AMI factory that bakes hardened, pre-patched images with <span class="text-[#02A8EF]">Packer</span> and SSM, giving repeatable, drift-free fleets that launch fast.',
     tags: ['Golden AMI', 'Automation'],
     category: 'Automation',
     repoUrl: 'https://github.com/Simodalstix/aws-image-pipeline',
