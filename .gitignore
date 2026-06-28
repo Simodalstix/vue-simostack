@@ -45,3 +45,6 @@ design_handoff_portfolio/
 
 # Windows/WSL alternate-data-stream artifacts
 *:Zone.Identifier
+
+# Sensitive PV (Positive Vetting) source documents, never commit
+*.docx

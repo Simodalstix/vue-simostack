@@ -1,403 +1,349 @@
 // src/data/clearance/timeline.js
 //
-// FOUR ROWS on the timeline component:
+// Source of truth for the /clearance life & career timeline.
+// Carried across from Simon_Parker_PV_HistoryGO (authoritative PV history doc).
 //
-//   Born anchor (1986) + discontinuity break + proportional spine 2006–2026
+// Presentation-agnostic facts only: no colours, no styling. The TimelinePage
+// component decides how to draw these. Three lanes are rendered from the three
+// arrays below; a future docx/print view can read the same arrays.
 //
-//   Row 1 — lane: 'travel'  — above spine  — international travel only
-//   ─────────────── YEAR SPINE (2006–2026) ───────────────
-//   Row 2 — lane: 'career'  — below spine  — education, employment, AND life events
-//   Row 3 — address bars    — rendered from addressHistory (yearStart/yearEnd)
-//   Row 4 — nzVisits        — dedicated NZ row, own colour
-//
-// Entries with yearNum < 2006 are pinned just after the break
-// type: 'travel' | 'life' | 'education' | 'career' | 'financial'
+// `start` / `end` are decimal years (month = year + month/12) so blocks can be
+// placed proportionally on the axis. Pre-2002 starts are clamped at render time,
+// not here. `kind: 'gap'` marks a documented period of no formal employment.
 
-// Spine axis — proportional spacing covers this range
-export const SPINE_START = 2006
-export const SPINE_END   = 2026
-export const BORN_YEAR   = 1986
+export const AXIS_START = 2002    // age 16 — PV requires full history from here
+export const RELOCATION = 2014    // start of 2014 — relocated from NZ to Australia
+export const PRESENT    = 2026.5  // mid-2026 — where current blocks end
+export const AXIS_END   = 2027.5  // one year past present: breathing room on the
+                                  // right for future AWS / AGSVA process signalling
+export const BORN_YEAR  = 1986
 
-export const timelineEntries = [
-
-  // ── EARLY WORK (Row 2 — straddles break, pinned to 2006) ─────────────────
+export const education = [
   {
-    id: 'early-work',
-    year: '~2003–07',
-    yearNum: 2006,
-    yearEnd: 2007,         // pinned to just after break for rendering
-    label: 'Early work',
-    sublabel: 'Pharmacy assistant, New World, McDonalds — Christchurch',
-    flags: ['nz'],
-    lane: 'career',
-    type: 'career',
-    note: 'Teenager — dates to confirm with parents. Straddles discontinuity break.',
+    id: 'edu-cashmere',
+    label: 'Cashmere High School',
+    sublabel: 'NCEA Levels 1 to 3 + University Entrance',
+    location: 'Christchurch, NZ',
+    dates: '2000 – 2004',
+    start: 2000, end: 2004.92,
   },
-
-  // ── QUEENSLAND (Row 1 — travel, pre-break, pinned) ───────────────────────
   {
-    id: 'queensland',
-    year: '~2003',
-    yearNum: 2006,         // pre-break, pinned near start of visible spine
-    label: 'Queensland',
-    sublabel: 'Family holiday',
-    flags: ['au'],
-    lane: 'travel',
-    type: 'travel',
-  },
-
-  // ── UNIVERSITY (Row 2 — career) ───────────────────────────────────────────
-  {
-    id: 'biomed-degree',
-    year: '2008–10',
-    yearNum: 2008,
-    yearEnd: 2010,
+    id: 'edu-bsc',
     label: 'BSc Biomedical Science',
     sublabel: 'Victoria University of Wellington',
-    degree: 'Bachelor of Biomedical Science',
-    flags: ['nz'],
-    lane: 'career',
-    type: 'education',
+    location: 'Wellington, NZ',
+    dates: '2006 – 2008',
+    start: 2006, end: 2008.92,
   },
   {
-    id: 'lab-wellington',
-    year: '~2010–11',
-    yearNum: 2010,
-    yearEnd: 2011,
-    label: 'Specimen Reception',
-    sublabel: 'Medical Laboratory — Wellington',
-    flags: ['nz'],
-    lane: 'career',
-    type: 'career',
-  },
-  {
-    id: 'masters',
-    year: '2011–12',
-    yearNum: 2011,
-    yearEnd: 2012,
-    label: 'MSc Biochemistry & Immunology',
+    id: 'edu-msc',
+    label: 'MSc (Biomedical Science)',
     sublabel: 'Victoria University of Wellington',
-    degree: 'Master of Science — Biochemistry & Immunology',
-    flags: ['nz'],
-    lane: 'career',
-    type: 'education',
+    location: 'Wellington, NZ',
+    dates: '2009 – 2011',
+    start: 2009, end: 2011.92,
   },
+  {
+    id: 'edu-bpharm',
+    label: 'BPharm (Hons) + internship',
+    sublabel: 'Monash University — Graduate Entry (2-year degree + internship year)',
+    location: 'Melbourne, VIC',
+    dates: '2014 – 2016',
+    start: 2014, end: 2016.92,
+  },
+]
 
-  // ── MALAYSIA (Row 1 — travel) ─────────────────────────────────────────────
+export const employment = [
   {
-    id: 'malaysia',
-    year: '2011',
-    yearNum: 2011,
-    label: 'Malaysia',
-    sublabel: 'Holiday with partner Melissa',
-    note: 'Age ~25. Not university-related.',
-    flags: ['my'],
-    lane: 'travel',
-    type: 'travel',
-  },
-
-  // ── POST-MASTERS WORK (Row 2 — career) ────────────────────────────────────
-  {
-    id: 'lab-christchurch',
-    year: '~2012',
-    yearNum: 2012,
-    yearEnd: 2012,
-    label: 'Specimen Reception',
-    sublabel: 'Medical Laboratory — Christchurch',
-    flags: ['nz'],
-    lane: 'career',
-    type: 'career',
+    id: 'job-hardings',
+    label: "Harding's Pharmacy",
+    sublabel: 'Pharmacy Delivery / Cleaning',
+    location: 'Christchurch, NZ',
+    dates: 'Feb 2002 – Apr 2004',
+    start: 2002.08, end: 2004.25,
   },
   {
-    id: 'construction',
-    year: '~2012–13',
-    yearNum: 2012,
-    yearEnd: 2013,
-    label: 'Labourer & Painter',
-    sublabel: 'Construction — New Zealand',
-    flags: ['nz'],
-    lane: 'career',
-    type: 'career',
-  },
-
-  // ── MOVE TO AUSTRALIA (Row 2 — life event) ────────────────────────────────
-  {
-    id: 'move-to-aus',
-    year: '2013',
-    yearNum: 2013,
-    label: 'Moved to Australia',
-    sublabel: 'Melbourne, VIC',
-    flags: ['au'],
-    lane: 'career',
-    type: 'life',
-    highlight: true,
-  },
-
-  // ── PHARMACY DEGREE + CAREER (Row 2 — career) ─────────────────────────────
-  {
-    id: 'pharmacy-degree',
-    year: '2014–16',
-    yearNum: 2014,
-    yearEnd: 2016,
-    label: 'BPharm (Hons) — Graduate Entry',
-    sublabel: 'Monash University, Melbourne',
-    degree: 'Bachelor of Pharmacy (Honours)',
-    flags: ['au'],
-    lane: 'career',
-    type: 'education',
+    id: 'job-newworld',
+    label: 'St Martins New World',
+    sublabel: 'Shelf Stacker / Customer Service',
+    location: 'Christchurch, NZ',
+    dates: 'Feb 2005 – Dec 2005',
+    start: 2005.08, end: 2005.92,
   },
   {
-    id: 'pharmacist-start',
-    year: '2017–24',
-    yearNum: 2017,
-    yearEnd: 2024,
-    label: 'Registered Pharmacist',
-    sublabel: 'Chemist Warehouse — Melbourne',
-    flags: ['au'],
-    lane: 'career',
-    type: 'career',
-  },
-
-  // ── EUROPE + HK 2017 (Row 1 — travel) ────────────────────────────────────
-  {
-    id: 'europe-trip',
-    year: '2017',
-    yearNum: 2017,
-    label: 'Europe + Hong Kong',
-    sublabel: 'Spain · France · Greece · Romania · Italy · Austria · Netherlands · HK',
-    flags: ['es', 'fr', 'gr', 'ro', 'it', 'at', 'nl', 'hk'],
-    lane: 'travel',
-    type: 'travel',
-    note: 'France: father at World Cycling Championships. Greece/Romania with family. Some legs with Jeanie only. Return via Hong Kong.',
-  },
-
-  // ── HK + JAPAN 2019 (Row 1 — travel) ─────────────────────────────────────
-  {
-    id: 'hk-japan',
-    year: '2019',
-    yearNum: 2019,
-    label: 'Hong Kong + Japan',
-    sublabel: 'Proposed to Jeanie under cherry blossom',
-    flags: ['hk', 'jp'],
-    lane: 'travel',
-    type: 'travel',
-    highlight: true,
-    note: "Visited Jeanie's family in Hong Kong. Engaged in Japan.",
-  },
-
-  // ── LIFE EVENTS (Row 2 — life) ────────────────────────────────────────────
-  {
-    id: 'marriage',
-    year: '2020',
-    yearNum: 2020,
-    label: 'Married Jeanie',
-    sublabel: 'COVID era — Melbourne',
-    flags: ['au'],
-    lane: 'career',
-    type: 'life',
-    highlight: true,
+    id: 'job-mcdonalds',
+    label: "McDonald's, Sydenham",
+    sublabel: 'Crew Member',
+    location: 'Christchurch, NZ',
+    dates: 'Nov 2007 – Feb 2008',
+    start: 2007.83, end: 2008.08,
   },
   {
-    id: 'lulu',
-    year: '2021',
-    yearNum: 2021,
-    label: 'Lulu Artemis born',
-    sublabel: 'Melbourne, VIC',
-    flags: ['au'],
-    lane: 'career',
-    type: 'life',
-    highlight: true,
+    id: 'job-gavinryan',
+    label: 'Gavin Ryan Property Mgmt',
+    sublabel: 'Horticultural Maintenance / Labourer',
+    location: 'Christchurch, NZ',
+    dates: 'Nov 2008 – Feb 2009',
+    start: 2008.83, end: 2009.08,
   },
   {
-    id: 'apartment',
-    year: '~2022',
-    yearNum: 2022,
-    label: 'Apartment purchased',
-    sublabel: 'Southbank, Melbourne — joint ownership',
-    flags: ['au'],
-    lane: 'career',
-    type: 'financial',
-  },
-
-  // ── HK 2023 (Row 1 — travel) ──────────────────────────────────────────────
-  {
-    id: 'hk-2023',
-    year: '2023',
-    yearNum: 2023,
-    label: 'Hong Kong',
-    sublabel: 'Lulu meets great-grandparents — family visit',
-    flags: ['hk'],
-    lane: 'travel',
-    type: 'travel',
-    note: "First trip for Lulu. Visit to Jeanie's mother.",
-  },
-
-  // ── TECH CAREER (Row 2 — career) ──────────────────────────────────────────
-  {
-    id: 'resigned-pharmacy',
-    year: 'Late 2024',
-    yearNum: 2024,
-    yearEnd: 2024,
-    label: 'Resigned — Chemist Warehouse',
-    sublabel: 'Career change to technology',
-    flags: ['au'],
-    lane: 'career',
-    type: 'career',
+    id: 'job-aotea',
+    label: 'Aotea Pathology',
+    sublabel: 'Medical Laboratory Assistant',
+    location: 'Wellington, NZ',
+    dates: 'Jun 2009 – Nov 2010',
+    start: 2009.42, end: 2010.83,
   },
   {
-    id: 'strongroom',
-    year: 'Jan–Apr 2025',
-    yearNum: 2025,
-    yearEnd: 2025,
-    label: 'Technical Support — Strongroom.ai',
-    sublabel: 'Company entered administration — made redundant',
-    flags: ['au'],
-    lane: 'career',
-    type: 'career',
+    id: 'job-medlab',
+    label: 'Medlab South',
+    sublabel: 'Data Entry Technician',
+    location: 'Christchurch, NZ',
+    dates: '2011',
+    start: 2011, end: 2012,
   },
   {
-    id: 'cititec',
-    year: 'Feb 2026–',
-    yearNum: 2026,
-    yearEnd: 2026,
-    label: 'Helpdesk Support — Cititec',
-    sublabel: 'Current role — MSP, Melbourne',
-    flags: ['au'],
-    lane: 'career',
-    type: 'career',
+    id: 'job-annex',
+    label: 'Annex Developments',
+    sublabel: 'Painter / Labourer — The Tannery',
+    location: 'Christchurch, NZ',
+    dates: '2012 – 2014',
+    start: 2012, end: 2014,
+  },
+  {
+    id: 'job-chemistwarehouse',
+    label: 'Chemist Warehouse',
+    sublabel: 'Pharmacist (student → intern → registered → PIC)',
+    location: 'Melbourne, VIC',
+    dates: '2016 – Dec 2024',
+    start: 2016, end: 2024.92,
+  },
+  {
+    id: 'job-reflect',
+    label: 'Reflect Recruit',
+    sublabel: 'COVID Vaccinator (concurrent role)',
+    location: 'Melbourne, VIC',
+    dates: '2021 – 2022',
+    start: 2021, end: 2022.92,
+  },
+  {
+    id: 'job-strongroom',
+    label: 'Strongroom.ai',
+    sublabel: 'Customer Success & Technical Support',
+    location: 'Melbourne, VIC',
+    dates: 'Jan 2025 – Apr 2025',
+    start: 2025, end: 2025.25,
+  },
+  {
+    id: 'job-transition',
+    label: 'Career transition',
+    sublabel: 'Self-directed cloud/infra study (AWS, Azure, Linux, Terraform)',
+    location: 'Melbourne, VIC',
+    dates: 'Apr 2025 – Feb 2026',
+    start: 2025.25, end: 2026.08,
+    kind: 'gap',
+  },
+  {
+    id: 'job-cititec',
+    label: 'Cititec (MSP)',
+    sublabel: 'Helpdesk Support Technician',
+    location: 'Melbourne, VIC',
+    dates: 'Feb 2026 – Present',
+    start: 2026.08, end: PRESENT,
     current: true,
   },
 ]
 
-// ── NZ VISITS — Row 4 ─────────────────────────────────────────────────────────
-export const nzVisits = [
+export const addresses = [
   {
-    id: 'nz-childhood',
-    yearStart: 1986,
-    yearEnd:   2007,
-    year: '1986–2007',
-    label: 'Christchurch — childhood home',
-    sublabel: 'Born and raised — family home',
-    flags: ['nz'],
-    note: "Primary residence until moving to Wellington for university. Parents' address.",
-    preBreak: true,   // rendered differently — spans the discontinuity
+    id: 'addr-stmartins-1',
+    label: 'St Martins',
+    sublabel: '37 St Martins Road — family home (incl. Canterbury Uni year)',
+    location: 'Christchurch, NZ',
+    dates: '2002 – 2006',
+    start: 2002, end: 2006,
   },
   {
-    id: 'nz-study-visits',
-    yearStart: 2008,
-    yearEnd:   2013,
-    year: '~2008–13',
-    label: 'Christchurch — family visits',
-    sublabel: 'During Wellington & post-study years',
-    flags: ['nz'],
-    note: 'Regular visits to parents during university and early career. Exact trips to confirm with parents / passport stamps.',
+    id: 'addr-willis',
+    label: 'Te Aro (hall of residence)',
+    sublabel: '237 Willis Street — first year, moved to Wellington for VUW',
+    location: 'Wellington, NZ',
+    dates: '2006 – 2007',
+    start: 2006, end: 2007,
   },
   {
-    id: 'nz-wedding',
-    yearStart: 2016,
-    yearEnd:   2016,
-    year: '~2016',
-    label: 'Auckland',
-    sublabel: "Friend's wedding",
-    flags: ['nz'],
-    note: 'Approximate year — to confirm.',
+    id: 'addr-hanson',
+    label: 'Mount Cook',
+    sublabel: '33 Hanson Street',
+    location: 'Wellington, NZ',
+    dates: 'Jan 2007 – Dec 2008',
+    start: 2007, end: 2008.92,
   },
   {
-    id: 'nz-post-aus',
-    yearStart: 2014,
-    yearEnd:   2026,
-    year: '2014–present',
-    label: 'Christchurch — ongoing visits',
-    sublabel: 'Regular family visits — parents & siblings',
-    flags: ['nz'],
-    note: 'Multiple trips. Specific dates to gather from passport stamps and bank records.',
-  },
-]
-
-// ── ADDRESS HISTORY — Row 3 ───────────────────────────────────────────────────
-// yearStart / yearEnd used to render proportional bars on the spine axis
-export const addressHistory = [
-  {
-    id: 'addr-christchurch-parents',
-    yearStart: 1986,
-    yearEnd:   2007,
-    period: '1986 – 2007',
-    address: "Parents' address — Christchurch, NZ",
-    type: 'Family home',
-    flags: ['nz'],
-    status: 'approximate',
-    note: "Confirm exact street address with parents. Statutory declaration acceptable for proof.",
-    preBreak: true,
+    id: 'addr-aurora',
+    label: 'Kelburn',
+    sublabel: '57 Aurora Terrace',
+    location: 'Wellington, NZ',
+    dates: 'Jan 2009 – Jan 2010',
+    start: 2009, end: 2010,
   },
   {
-    id: 'addr-wellington',
-    yearStart: 2008,
-    yearEnd:   2013,
-    period: '2008 – 2013',
-    address: 'Multiple addresses — Wellington, NZ',
-    type: 'Student / flatting',
-    flags: ['nz'],
-    status: 'needed',
-    note: 'At least 4 separate addresses during BSc, MSc, and lab work years. Gather from memory, VUW records, old tenancy agreements. Statutory declaration as fallback.',
+    id: 'addr-holland',
+    label: 'Te Aro',
+    sublabel: '406/11 Holland Street',
+    location: 'Wellington, NZ',
+    dates: 'Jan 2010 – May 2011',
+    start: 2010, end: 2011.42,
   },
   {
-    id: 'addr-christchurch-return',
-    yearStart: 2012,
-    yearEnd:   2013,
-    period: '~2012 – 2013',
-    address: "Parents' address — Christchurch, NZ",
-    type: 'Family home (return)',
-    flags: ['nz'],
-    status: 'approximate',
-    note: 'Returned to parents before Australia move. Overlaps with Wellington — confirm exact transition date.',
+    id: 'addr-leitch',
+    label: 'Beckenham',
+    sublabel: '32 Leitch Street',
+    location: 'Christchurch, NZ',
+    dates: 'Jun 2011 – 2012',
+    start: 2011.42, end: 2012.92,
   },
   {
-    id: 'addr-melbourne-student',
-    yearStart: 2013,
-    yearEnd:   2017,
-    period: '2013 – 2017',
-    address: 'Student / rental — Melbourne, VIC',
-    type: 'Student / rental',
-    flags: ['au'],
-    status: 'needed',
-    note: 'Melbourne addresses during Monash years. Utility bills, lease agreements, or bank statements.',
+    id: 'addr-stmartins-2',
+    label: 'St Martins',
+    sublabel: '37 St Martins Road',
+    location: 'Christchurch, NZ',
+    dates: '2013 – 2014',
+    start: 2013, end: 2014,
   },
   {
-    id: 'addr-melbourne-rental',
-    yearStart: 2017,
-    yearEnd:   2022,
-    period: '2017 – 2022',
-    address: 'Rental address(es) — Melbourne, VIC',
-    type: 'Rental',
-    flags: ['au'],
-    status: 'needed',
-    note: 'Between graduating pharmacy and purchasing apartment. Lease agreements and bank statements likely available.',
+    id: 'addr-percy',
+    label: 'Brunswick',
+    sublabel: '202/40 Percy Street',
+    location: 'Melbourne, VIC',
+    dates: 'Jan 2014 – Aug 2015',
+    start: 2014, end: 2015.58,
+  },
+  {
+    id: 'addr-alma',
+    label: 'St Kilda',
+    sublabel: '13/150 Alma Road',
+    location: 'Melbourne, VIC',
+    dates: 'Aug 2015 – Apr 2016',
+    start: 2015.58, end: 2016.33,
+  },
+  {
+    id: 'addr-bourke-1401',
+    label: 'Melbourne CBD',
+    sublabel: '1401/39 Bourke Street',
+    location: 'Melbourne, VIC',
+    dates: 'May 2016 – Apr 2018',
+    start: 2016.33, end: 2018.25,
+  },
+  {
+    id: 'addr-bourke-206',
+    label: 'Melbourne CBD',
+    sublabel: '206/39 Bourke Street',
+    location: 'Melbourne, VIC',
+    dates: 'Apr 2018 – Apr 2020',
+    start: 2018.25, end: 2020.25,
   },
   {
     id: 'addr-southbank',
-    yearStart: 2022,
-    yearEnd:   2026,
-    period: '2022 – present',
-    address: 'Southbank, Melbourne VIC',
-    type: 'Owner-occupied',
-    flags: ['au'],
-    status: 'confirmed',
-    note: 'Joint ownership with Jeanie. Mortgage documents, rates notices, bank statements — fully documented.',
+    label: 'Southbank',
+    sublabel: '618/39 Coventry Street (owner-occupied)',
+    location: 'Melbourne, VIC',
+    dates: 'Apr 2020 – Present',
+    start: 2020.25, end: PRESENT,
+    current: true,
   },
 ]
 
-// ── TYPE COLOURS ──────────────────────────────────────────────────────────────
-export const typeConfig = {
-  travel:    { colour: '#38bdf8', label: 'International travel' },
-  nz:        { colour: '#34d399', label: 'New Zealand' },
-  life:      { colour: '#a78bfa', label: 'Life event' },
-  education: { colour: '#c084fc', label: 'Education' },
-  career:    { colour: '#f97316', label: 'Career' },
-  financial: { colour: '#fbbf24', label: 'Financial' },
+// International travel — one entry per trip (grouped from individual flight legs
+// in Simon_Parker_Travel_Timeline_updated). Rendered as small markers spanning
+// each trip's date span. `status: 'cancelled'` = booked but not flown (COVID).
+// Overseas trips (`region: 'overseas'`) carry richer fields — `countries`
+// (name + ISO code for flags), `duration`, `companions`, `reason` — consumed by
+// the rich info bubbles in TimelinePage. Trans-Tasman trips stay as plain markers.
+export const travel = [
+  {
+    id: 'tr-kul-2011', label: 'Kuala Lumpur', route: 'CHC ↔ KUL', dates: 'Apr 2011',
+    start: 2011.31, end: 2011.33, region: 'overseas',
+    duration: '4 days', companions: 'with Melissa', reason: 'Holiday',
+    countries: [{ name: 'Malaysia', code: 'my' }],
+  },
+  { id: 'tr-reloc-2014',  label: 'Relocation to Melbourne', route: 'CHC → MEL (one-way)',                dates: '15 Jan 2014',        start: 2014.04, end: 2014.06 },
+  { id: 'tr-chc-2015jul', label: 'Christchurch',            route: 'MEL ↔ CHC',                          dates: 'Jul 2015',           start: 2015.50, end: 2015.52 },
+  { id: 'tr-nz-2015nov',  label: 'Wellington + Christchurch', route: 'MEL ↔ WLG ↔ CHC',                  dates: 'Nov 2015',           start: 2015.88, end: 2015.90 },
+  { id: 'tr-chc-2017mar', label: 'Christchurch',            route: 'MEL ↔ CHC',                          dates: 'Mar 2017',           start: 2017.17, end: 2017.19 },
+  {
+    id: 'tr-europe-2017', label: 'Europe + Hong Kong', route: 'MEL → BCN … CDG → HKG → MEL',
+    dates: 'Aug – Oct 2017', start: 2017.64, end: 2017.76, region: 'overseas',
+    duration: '~7 weeks', companions: 'with Jeanie', reason: 'Holiday',
+    countries: [
+      { name: 'Spain', code: 'es' },
+      { name: 'France', code: 'fr' },
+      { name: 'Greece', code: 'gr' },
+      { name: 'Romania', code: 'ro' },
+      { name: 'Netherlands', code: 'nl' },
+      { name: 'Austria', code: 'at' },
+      { name: 'Italy', code: 'it' },
+      { name: 'Hong Kong', code: 'hk' },
+      { name: 'Macau', code: 'mo' },
+    ],
+  },
+  { id: 'tr-chc-2017dec', label: 'Christchurch (Christmas)', route: 'MEL ↔ CHC',                         dates: 'Dec 2017 – Jan 2018', start: 2017.97, end: 2018.02 },
+  { id: 'tr-chc-2018nov', label: 'Christchurch',            route: 'MEL ↔ CHC',                          dates: 'Nov 2018',           start: 2018.87, end: 2018.89 },
+  {
+    id: 'tr-japan-2019', label: 'Japan + Hong Kong', route: 'MEL ↔ HKG ↔ NRT (Tokyo)', dates: 'Apr 2019',
+    start: 2019.25, end: 2019.30, region: 'overseas',
+    duration: '~2 weeks', companions: 'with Jeanie', reason: 'Holiday · 5-day HK stopover',
+    countries: [{ name: 'Japan', code: 'jp' }, { name: 'Hong Kong', code: 'hk' }],
+  },
+  { id: 'tr-chc-2020',    label: 'Christchurch (cancelled)', route: 'MEL ↔ CHC',                         dates: 'Apr 2020',           start: 2020.27, end: 2020.30, status: 'cancelled' },
+  { id: 'tr-chc-2021',    label: 'Christchurch',            route: 'MEL ↔ CHC',                          dates: 'Jul 2021',           start: 2021.54, end: 2021.57 },
+  { id: 'tr-chc-2023apr', label: 'Christchurch',            route: 'MEL ↔ CHC',                          dates: 'Apr 2023',           start: 2023.25, end: 2023.28 },
+  { id: 'tr-chc-2023dec', label: 'Christchurch (Christmas)', route: 'MEL ↔ CHC',                         dates: 'Dec 2023 – Jan 2024', start: 2023.96, end: 2024.01 },
+  { id: 'tr-chc-2024',    label: 'Christchurch',            route: 'MEL ↔ CHC',                          dates: 'Oct – Nov 2024',     start: 2024.77, end: 2024.84 },
+  { id: 'tr-chc-2025',    label: 'Christchurch',            route: 'MEL ↔ CHC',                          dates: 'Jun – Jul 2025',     start: 2025.48, end: 2025.52 },
+]
+
+// Travel marker hues by region. Trans-Tasman (routine MEL<->NZ family visits)
+// stays cool; overseas trips run warm so the few notable ones stand out. Items
+// without a `region` default to trans-Tasman.
+export const travelRegions = {
+  tasman:   { fill: '#41707F', border: '#5E96A6', label: 'Trans-Tasman' },
+  overseas: { fill: '#C06B52', border: '#D98A72', label: 'Overseas' },
 }
 
-export const addressStatusConfig = {
-  confirmed:   { colour: '#34d399', label: 'Confirmed',   bg: 'bg-emerald-950/40', border: 'border-emerald-800/60', text: 'text-emerald-300' },
-  approximate: { colour: '#fbbf24', label: 'Approximate', bg: 'bg-amber-950/40',   border: 'border-amber-800/60',   text: 'text-amber-300' },
-  needed:      { colour: '#f87171', label: 'Needed',      bg: 'bg-red-950/40',     border: 'border-red-900/60',     text: 'text-red-300' },
-}
+// Lane definitions — order top to bottom. Colours chosen to read on the #111418
+// canvas at small sizes and to avoid the site's reserved amber/teal accents.
+export const lanes = [
+  {
+    id: 'education',
+    label: 'Education',
+    items: education,
+    fill: '#3F5C73',   // steel blue
+    border: '#5B7C96',
+  },
+  {
+    id: 'employment',
+    label: 'Employment',
+    items: employment,
+    fill: '#6B5876',   // muted plum
+    border: '#8C77A0',
+  },
+  {
+    id: 'addresses',
+    label: 'Addresses',
+    items: addresses,
+    fill: '#4C6B5A',   // muted forest
+    border: '#6E957E',
+  },
+  {
+    id: 'travel',
+    label: 'Travel',
+    items: travel,
+    fill: '#41707F',   // muted sky / ocean
+    border: '#5E96A6',
+    markers: true,     // render small trip markers, not full-height blocks
+    rowH: 24,
+  },
+]
+
+export const BLOCK_TEXT = '#F5F2EC'

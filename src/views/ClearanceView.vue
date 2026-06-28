@@ -1,56 +1,37 @@
 <template>
-  <div class="flex h-screen overflow-hidden bg-slate-900 text-slate-300">
+  <div class="h-screen w-screen overflow-hidden flex flex-col bg-[#111418] text-[#F5F2EC] font-display">
 
-    <!-- Left sidebar -->
-    <aside class="w-52 shrink-0 bg-slate-800/80 border-r border-slate-700 flex flex-col">
+    <!-- top nav — matches the main site header treatment -->
+    <header class="shrink-0 border-b border-ob-sand/14">
+      <nav class="px-6 h-[52px] flex items-center justify-between">
+        <!-- brand -->
+        <div class="flex items-center gap-[14px]">
+          <span
+            class="w-[30px] h-[30px] border-[1.5px] border-ob-bronze rounded-[3px] flex items-center justify-center font-display font-extrabold text-[12px] leading-none text-ob-sand tracking-[0.02em]"
+          >SP</span>
+          <span class="font-mono text-[12px] leading-none tracking-[0.04em] text-ob-soft">clearance · PV prep</span>
+        </div>
 
-      <!-- Header -->
-      <div class="px-4 py-4 border-b border-slate-700">
-        <div class="text-[10px] uppercase tracking-widest text-sky-400 font-semibold mb-0.5">AGSVA · ASD</div>
-        <div class="text-[13px] font-semibold text-slate-100">Positive Vetting</div>
-        <div class="text-[10px] text-slate-500 mt-0.5">Personal Reference · 2026</div>
-      </div>
-
-      <!-- Nav -->
-      <nav class="flex-1 py-2">
-        <button
-          v-for="section in sections"
-          :key="section.id"
-          @click="activeSection = section.id"
-          class="w-full text-left px-4 py-3 border-l-2 transition-all duration-100 flex items-center gap-3"
-          :class="activeSection === section.id
-            ? 'bg-sky-500/10 border-l-sky-400 text-sky-300'
-            : 'border-l-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-700/40'"
-        >
-          <span class="text-[18px] leading-none">{{ section.icon }}</span>
-          <div>
-            <div class="text-[13px] font-medium leading-tight">{{ section.label }}</div>
-            <div class="text-[10px] text-slate-600 leading-tight mt-0.5">{{ section.sub }}</div>
-          </div>
-        </button>
+        <!-- nav links -->
+        <div class="flex items-center gap-8 font-display font-semibold text-[13px]">
+          <button
+            v-for="page in pages"
+            :key="page.id"
+            @click="active = page.id"
+            class="transition-colors border-b-2 pb-[3px]"
+            :class="active === page.id
+              ? 'text-ob-text border-ob-teal'
+              : 'text-ob-faint hover:text-ob-text border-transparent'"
+          >{{ page.label }}</button>
+        </div>
       </nav>
+    </header>
 
-      <!-- Footer -->
-      <div class="px-4 py-3 border-t border-slate-700">
-        <div class="text-[9px] uppercase tracking-widest text-slate-600 mb-1">Clearance tier</div>
-        <div class="flex items-center gap-2 mb-2">
-          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-          <span class="text-[11px] text-amber-300 font-semibold">PV — In progress</span>
-        </div>
-        <div class="text-[9px] text-slate-600 leading-snug">
-          OSA → Baseline → PV assessment → grant
-        </div>
-      </div>
-
-    </aside>
-
-    <!-- Main content -->
-    <main class="flex-1 overflow-y-auto">
-      <IdentitySection   v-if="activeSection === 'identity'" />
-      <TimelineSection   v-if="activeSection === 'timeline'" />
-      <TravelSection     v-if="activeSection === 'travel'" />
-      <ProfileSection    v-if="activeSection === 'profile'" />
-      <ClearanceSection  v-if="activeSection === 'clearance'" />
+    <!-- body -->
+    <main class="flex-1 min-h-0">
+      <OverviewPage v-if="active === 'overview'" />
+      <TimelinePage v-else-if="active === 'timeline'" />
+      <ContactsPage v-else-if="active === 'contacts'" />
     </main>
 
   </div>
@@ -58,19 +39,15 @@
 
 <script setup>
 import { ref } from 'vue'
-import IdentitySection  from '@/components/clearance/IdentitySection.vue'
-import TimelineSection  from '@/components/clearance/TimelineSection.vue'
-import TravelSection    from '@/components/clearance/TravelSection.vue'
-import ProfileSection   from '@/components/clearance/ProfileSection.vue'
-import ClearanceSection from '@/components/clearance/ClearanceSection.vue'
+import OverviewPage from '@/components/clearance/OverviewPage.vue'
+import TimelinePage from '@/components/clearance/TimelinePage.vue'
+import ContactsPage from '@/components/clearance/ContactsPage.vue'
 
-const activeSection = ref('identity')
-
-const sections = [
-  { id: 'identity',  label: 'Identity',  icon: '🪪', sub: 'People & background'   },
-  { id: 'timeline',  label: 'Timeline',  icon: '🗺️', sub: 'Life since age 16'      },
-  { id: 'travel',    label: 'Travel',    icon: '✈️', sub: 'Flight history map'     },
-  { id: 'profile',   label: 'Profile',   icon: '🔍', sub: 'Foreign ties & finances' },
-  { id: 'clearance', label: 'Clearance', icon: '📋', sub: 'AGSVA criteria & prep'   },
+const pages = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'timeline', label: 'Timeline' },
+  { id: 'contacts', label: 'Contacts' },
 ]
+
+const active = ref('timeline')
 </script>
