@@ -68,7 +68,7 @@
           <span class="font-mono text-[13px] leading-none text-ob-sand">01</span>
           <h2 class="font-bold text-[28px] leading-none tracking-[-0.02em] text-ob-bright">Certifications</h2>
         </div>
-        <span class="font-mono text-[12px] leading-none text-ob-faint tracking-[0.04em] text-right">13 credentials · 1 in progress</span>
+        <span class="font-mono text-[12px] leading-none text-ob-faint tracking-[0.08em] text-right uppercase">Semper discens</span>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-6">
