@@ -79,7 +79,7 @@
 
     <!-- operating principles -->
     <section class="pt-6 pb-8">
-      <h2 class="font-bold text-[22px] leading-none tracking-[-0.02em] text-ob-text mb-8">Operating principles</h2>
+      <h2 class="font-bold text-[25px] leading-none tracking-[-0.02em] text-ob-bright mb-8">Operating principles</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div v-for="p in principles" :key="p.title" class="border-l-2 border-ob-sand pl-[18px]">
           <div class="font-semibold text-[15px] leading-[1.3] text-ob-text mb-[10px]">{{ p.title }}</div>
