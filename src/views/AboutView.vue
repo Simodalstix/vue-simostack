@@ -77,30 +77,13 @@
       </div>
     </section>
 
-    <!-- background & principles -->
-    <section class="grid lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-16 pt-6 pb-8">
-      <div>
-        <h2 class="font-bold text-[22px] leading-none tracking-[-0.02em] text-ob-bright mb-6">Background &amp; direction</h2>
-        <div class="flex flex-col gap-4">
-          <p class="text-[15px] leading-[1.65] text-ob-muted2">
-            I came to infrastructure from healthcare, where precision and accountability aren't aspirations, they're the baseline. That grounding shapes how I approach systems: deliberately, with an eye on what happens when things go wrong.
-          </p>
-          <p class="text-[15px] leading-[1.65] text-ob-dim">
-            Day to day I keep client environments stable and secure. Beyond that I'm going deeper in systems and cloud, <span class="text-ob-text font-semibold">Linux</span>, Terraform, AWS CDK and a bare-metal homelab, learning the foundations that make infrastructure reliable.
-          </p>
-        </div>
-      </div>
-
-      <div>
-        <h2 class="font-bold text-[22px] leading-none tracking-[-0.02em] text-ob-bright mb-7">Operating principles</h2>
-        <div class="grid sm:grid-cols-2 gap-x-10 gap-y-7">
-          <div v-for="p in principles" :key="p.n" class="flex gap-[12px]">
-            <span class="font-mono text-[13px] leading-none text-ob-sand pt-[2px] shrink-0">{{ p.n }}</span>
-            <div>
-              <div class="font-semibold text-[15px] leading-[1.25] text-ob-text mb-[6px]">{{ p.title }}</div>
-              <p class="text-[12px] leading-[1.5] text-ob-dim">{{ p.body }}</p>
-            </div>
-          </div>
+    <!-- operating principles -->
+    <section class="pt-6 pb-8">
+      <h2 class="font-bold text-[22px] leading-none tracking-[-0.02em] text-ob-text mb-8">Operating principles</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div v-for="p in principles" :key="p.title" class="border-l-2 border-ob-sand pl-[18px]">
+          <div class="font-semibold text-[15px] leading-[1.3] text-ob-text mb-[10px]">{{ p.title }}</div>
+          <p class="text-[13px] leading-[1.6] text-ob-dim">{{ p.body }}</p>
         </div>
       </div>
     </section>
@@ -135,24 +118,20 @@ const roles = [
 
 const principles = [
   {
-    n: '01',
-    title: 'Accurate status over comfortable',
-    body: 'I flag a risk early rather than explain a failure late.',
+    title: 'Cuts to what actually matters',
+    body: 'Comfortable making decisions with incomplete information. Most problems come down to two or three deciding factors, not twenty.',
   },
   {
-    n: '02',
-    title: 'What I commit to gets done',
-    body: 'Ownership I take is followed through, with care, and without needing chasing.',
+    title: 'Explains without assuming context',
+    body: "Years spent explaining things to people from every background. Accuracy means nothing if the person in front of you doesn't understand it.",
   },
   {
-    n: '03',
-    title: 'Composed when systems are down',
-    body: 'Methodical when pressure is high, steady, not reactive.',
+    title: "Goes deep when it's warranted",
+    body: 'Comfortable spending real time on the things that need it, rather than chasing the fastest visible result.',
   },
   {
-    n: '04',
-    title: 'Mistakes that carried real weight',
-    body: 'Years in a field where an error had consequences, I bring that gravity to infrastructure.',
+    title: 'Treats errors as consequential',
+    body: "Some environments tolerate a wrong guess. Mine never did. That standard didn't loosen when the stakes changed shape.",
   },
 ]
 </script>
