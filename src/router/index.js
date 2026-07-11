@@ -30,6 +30,23 @@ const routes = [
     name: 'Clearance',
     component: () => import('../views/ClearanceView.vue'),
   },
+  {
+    path: '/dwelling',
+    component: () => import('../views/dwelling/DwellingShell.vue'),
+    redirect: '/dwelling/overview',
+    children: [
+      {
+        path: 'overview',
+        name: 'DwellingOverview',
+        component: () => import('../components/dwelling/OverviewPage.vue'),
+      },
+      {
+        path: 'decide',
+        name: 'DwellingDecide',
+        component: () => import('../views/dwelling/DwellingDecideView.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
