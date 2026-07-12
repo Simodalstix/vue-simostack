@@ -90,19 +90,18 @@
 
       <!-- criteria weights: compact panel, live-updates strategy ranking -->
       <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4">
-        <h3 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft mb-3">
+        <h3 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft mb-2">
           Criteria weights
         </h3>
-        <div v-show="weightsOpen" class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-2.5">
-          <div v-for="c in criteriaState" :key="c.key" :title="c.hint">
-            <div class="flex items-baseline justify-between mb-0.5 gap-1">
-              <label
-                :for="'dw-' + c.key"
-                :title="c.label"
-                class="text-[11px] text-ob-dim truncate"
-                >{{ c.label }}</label
-              >
-              <span class="font-mono text-[11px] text-ob-sand shrink-0">{{ c.weight }}</span>
+        <p class="text-[11.5px] leading-snug text-ob-dim mb-4">
+          Importance, not direction — everything is already scored so higher is better for you.
+          <span class="font-mono text-ob-faint">0 = ignore · 10 = critical.</span>
+        </p>
+        <div v-show="weightsOpen" class="space-y-4">
+          <div v-for="(c, i) in criteriaState" :key="c.key">
+            <div class="flex items-baseline justify-between gap-2">
+              <label :for="'dw-' + c.key" class="text-[12px] text-ob-text">{{ c.label }}</label>
+              <span class="font-mono text-[12px] text-ob-sand shrink-0">{{ c.weight }}</span>
             </div>
             <input
               :id="'dw-' + c.key"
@@ -111,12 +110,19 @@
               max="10"
               step="1"
               v-model.number="c.weight"
-              class="w-full accent-[#3DB8A0] h-[3px]"
+              class="w-full accent-[#3DB8A0] h-[4px] mt-1.5"
             />
+            <div
+              v-if="i === 0"
+              class="flex justify-between font-mono text-[10px] text-ob-faint mt-0.5"
+            >
+              <span>ignore</span><span>critical</span>
+            </div>
+            <p class="mt-1 font-mono text-[10.5px] text-ob-faint leading-snug">{{ c.hint }}</p>
           </div>
         </div>
         <p v-show="!weightsOpen" class="font-mono text-[11px] text-ob-faint leading-relaxed">
-          Ten weighted criteria. Use "adjust weights" above to tune the strategy ranking.
+          Use "adjust weights" above to tune the strategy ranking.
         </p>
       </div>
     </div>
