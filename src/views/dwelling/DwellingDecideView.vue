@@ -75,34 +75,44 @@
           </button>
         </div>
       </div>
-
-      <!-- weight sliders (collapsible) -->
-      <div
-        v-show="weightsOpen"
-        class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-10 gap-y-5 pt-1"
-      >
-        <div v-for="c in criteriaState" :key="c.key">
-          <div class="flex items-baseline justify-between mb-1">
-            <label :for="'dw-' + c.key" class="text-[12px] font-semibold text-ob-text">{{
-              c.label
-            }}</label>
-            <span class="font-mono text-[12px] text-ob-sand">{{ c.weight }}</span>
-          </div>
-          <input
-            :id="'dw-' + c.key"
-            type="range"
-            min="0"
-            max="10"
-            step="1"
-            v-model.number="c.weight"
-            class="w-full accent-[#3DB8A0] h-[4px]"
-          />
-        </div>
-      </div>
     </div>
 
-    <!-- location lens -->
-    <LocationLens v-model="activeLocationId" :locations="rankedLocations" />
+    <!-- location lens (2/3) + criteria weights (1/3), stacking on <lg -->
+    <div class="grid lg:grid-cols-3 gap-6 items-start">
+      <LocationLens class="lg:col-span-2" v-model="activeLocationId" :locations="rankedLocations" />
+
+      <!-- criteria weights: compact panel, live-updates strategy ranking -->
+      <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4">
+        <h3 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft mb-3">
+          Criteria weights
+        </h3>
+        <div v-show="weightsOpen" class="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-2.5">
+          <div v-for="c in criteriaState" :key="c.key" :title="c.hint">
+            <div class="flex items-baseline justify-between mb-0.5 gap-1">
+              <label
+                :for="'dw-' + c.key"
+                :title="c.label"
+                class="text-[11px] text-ob-dim truncate"
+                >{{ c.label }}</label
+              >
+              <span class="font-mono text-[11px] text-ob-sand shrink-0">{{ c.weight }}</span>
+            </div>
+            <input
+              :id="'dw-' + c.key"
+              type="range"
+              min="0"
+              max="10"
+              step="1"
+              v-model.number="c.weight"
+              class="w-full accent-[#3DB8A0] h-[3px]"
+            />
+          </div>
+        </div>
+        <p v-show="!weightsOpen" class="font-mono text-[11px] text-ob-faint leading-relaxed">
+          Ten weighted criteria. Use "adjust weights" above to tune the strategy ranking.
+        </p>
+      </div>
+    </div>
 
     <!-- live expected cost -->
     <ExpectedCostStrip
@@ -137,7 +147,7 @@ import StrategyRankList from '@/components/dwelling/StrategyRankList.vue'
 
 const criteriaState = reactive(criteria.map((c) => ({ ...c })))
 const payoffYears = ref(15)
-const weightsOpen = ref(false)
+const weightsOpen = ref(true)
 const verdictFilter = ref(null)
 const activeLocationId = ref(null)
 const focusedStrategyId = ref(null)
