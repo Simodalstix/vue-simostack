@@ -17,6 +17,11 @@
 // never ranked, and never read by the ranking engine. Seeded empty pending a
 // real ABS QuickStats (2021 Census) pull. See CommunityProfile.vue.
 
+// Annual owners-corp fee estimate ($/yr) by risk band, used for the all-in
+// monthly figure in the compare table. A record may override with its own
+// `feeEstimate` field. Midpoints, indicative.
+export const FEE_ESTIMATE_BY_RISK = { low: 1000, moderate: 2750, high: 6000 }
+
 const emptyCommunity = (notes = []) => ({
   censusYear: 2021,
   ancestries: [],

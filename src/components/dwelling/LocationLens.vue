@@ -73,7 +73,7 @@
 
     <!-- compare table -->
     <div v-else class="overflow-x-auto">
-      <table class="w-full text-[12px] min-w-[660px]">
+      <table class="w-full text-[12px] min-w-[700px]">
         <thead>
           <tr
             class="font-mono text-[10.5px] uppercase tracking-[0.06em] text-ob-soft border-b border-ob-sand/14"
@@ -131,26 +131,19 @@
             <td class="py-2 pl-3 text-right font-mono text-ob-dim whitespace-nowrap">
               {{ row.priceLabel }}
             </td>
-            <!-- est monthly at selected horizon -->
-            <td class="py-2 pl-3 text-right font-mono text-ob-text whitespace-nowrap">
-              {{ row.estMonthly != null ? '$' + fmt(row.estMonthly) : 'n/a' }}
-            </td>
-            <!-- ongoing-fee risk -->
-            <td class="py-2 pr-3 whitespace-nowrap">
+            <!-- all-in monthly: amortised repayment + monthly owners-corp estimate -->
+            <td class="py-2 pl-3 text-right whitespace-nowrap">
+              <span class="font-mono text-ob-text">{{
+                row.estMonthly != null ? '$' + fmt(row.estMonthly) : 'n/a'
+              }}</span>
               <span
-                class="font-mono"
-                :class="[
-                  feeClass(row.feeRisk),
-                  row.rec.feeNote
-                    ? 'cursor-help underline decoration-dotted underline-offset-2'
-                    : '',
-                ]"
-                :title="row.rec.feeNote || ''"
-                >{{ row.feeRisk }}</span
+                v-if="row.estMonthly != null"
+                class="block font-mono text-[10px] text-ob-faint leading-tight"
+                >incl. ~${{ fmt(row.ocMonthly) }}/mo OC est.</span
               >
             </td>
             <!-- score, with teal bar scaled across the visible set -->
-            <td class="py-2 pr-1">
+            <td class="py-2 pr-3">
               <div class="relative h-[16px] flex items-center min-w-[52px]">
                 <div
                   class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-teal/25"
@@ -159,9 +152,22 @@
                 <span class="relative font-mono text-ob-sand pl-1">{{ row.score }}</span>
               </div>
             </td>
+            <!-- OC fees: qualitative fee exposure, its own separated column -->
+            <td class="py-2 pl-3 border-l border-ob-sand/8 whitespace-nowrap">
+              <span
+                class="inline-block font-mono text-[10.5px] px-2 py-[2px] rounded-full cursor-help"
+                :class="feeChipClass(row.feeRisk)"
+                :title="feeTitle(row.rec)"
+                >{{ row.feeRisk }}</span
+              >
+            </td>
           </tr>
         </tbody>
       </table>
+      <p class="mt-2 font-mono text-[10.5px] text-ob-faint leading-relaxed">
+        Monthly shown is all-in housing cost: amortised repayment at the selected horizon plus the
+        estimated owners-corp fee. Indicative, placeholder location data until verified.
+      </p>
     </div>
 
     <!-- active location summary + detail -->
@@ -205,6 +211,7 @@ import { ref, computed } from 'vue'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
 import { DESTINATION } from '@/composables/useCommuteScoring.js'
 import { monthlyPayment } from '@/composables/useRepayment.js'
+import { FEE_ESTIMATE_BY_RISK } from '@/data/dwelling/areaCorridors.js'
 
 const props = defineProps({
   locations: { type: Array, required: true },
@@ -262,14 +269,21 @@ function feeRisk(rec) {
   return 'low'
 }
 
-// Est. monthly reuses the amortisation logic: price-band midpoint, the current
-// deposit assumption, and the selected payoff horizon.
+// Annual owners-corp fee estimate in $/yr: a per-record override, else the
+// midpoint for the derived risk band.
+function feeEstimate(rec) {
+  return rec.feeEstimate ?? FEE_ESTIMATE_BY_RISK[feeRisk(rec)]
+}
+
+// All-in monthly housing cost: amortised repayment (price-band midpoint, current
+// deposit, selected horizon) plus the monthly share of the owners-corp fee.
 function estMonthly(rec) {
   const p = rec.dwelling?.indicativePrice
   if (!p) return null
   const mid = (p[0] + p[1]) / 2
   const loan = Math.max(0, mid - props.deposit)
-  return Math.round(monthlyPayment(loan, props.rate, props.payoffYears))
+  const repay = monthlyPayment(loan, props.rate, props.payoffYears)
+  return Math.round(repay + feeEstimate(rec) / 12)
 }
 
 const enriched = computed(() =>
@@ -287,6 +301,7 @@ const enriched = computed(() =>
       priceMid: p ? (p[0] + p[1]) / 2 : null,
       priceLabel: priceBand(rec),
       estMonthly: estMonthly(rec),
+      ocMonthly: Math.round(feeEstimate(rec) / 12),
       feeRisk: risk,
       feeRank: FEE_RANK[risk],
       score: l.weighted,
@@ -299,9 +314,9 @@ const columns = computed(() => [
   { key: 'region', label: 'Region', align: 'left' },
   { key: 'commute', label: 'Commute (min)', align: 'left' },
   { key: 'price', label: '2BR band', align: 'right' },
-  { key: 'estMonthly', label: `Monthly @ ${props.payoffYears}yr`, align: 'right' },
-  { key: 'feeRisk', label: 'Fee risk', align: 'left' },
+  { key: 'estMonthly', label: `All-in @ ${props.payoffYears}yr`, align: 'right' },
   { key: 'score', label: 'Score', align: 'left' },
+  { key: 'feeRisk', label: 'OC fees', align: 'left' },
 ])
 
 const sortKey = ref('score')
@@ -384,7 +399,20 @@ function bandClass(band) {
     }[band] || 'text-ob-dim'
   )
 }
-function feeClass(r) {
-  return { low: 'text-ob-teal', moderate: 'text-ob-dim', high: 'text-ob-sand' }[r] || 'text-ob-dim'
+// The palette has one warm accent (sand/bronze are the same amber), so the
+// three fee bands read cool -> warm -> hotter: teal, faint amber, filled amber.
+function feeChipClass(r) {
+  return (
+    {
+      low: 'bg-ob-teal/15 text-ob-teal',
+      moderate: 'bg-ob-sand/15 text-ob-sand',
+      high: 'bg-ob-sand/30 text-ob-bright ring-1 ring-ob-sand/45',
+    }[r] || 'bg-ob-sand/15 text-ob-sand'
+  )
+}
+
+const FEE_TOOLTIP = "Typical owners-corp fee exposure for this suburb's 2BR stock"
+function feeTitle(rec) {
+  return rec.feeNote ? `${FEE_TOOLTIP} · ${rec.feeNote}` : FEE_TOOLTIP
 }
 </script>
