@@ -79,7 +79,14 @@
 
     <!-- location lens (2/3) + criteria weights (1/3), stacking on <lg -->
     <div class="grid lg:grid-cols-3 gap-6 items-start">
-      <LocationLens class="lg:col-span-2" v-model="activeLocationId" :locations="rankedLocations" />
+      <LocationLens
+        class="lg:col-span-2"
+        v-model="activeLocationId"
+        :locations="rankedLocations"
+        :payoff-years="payoffYears"
+        :deposit="deposit"
+        :rate="rate"
+      />
 
       <!-- criteria weights: compact panel, live-updates strategy ranking -->
       <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4">
