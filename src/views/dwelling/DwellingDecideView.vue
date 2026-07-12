@@ -44,7 +44,7 @@
           </p>
           <div class="inline-flex rounded-[6px] border border-ob-sand/14 overflow-hidden">
             <button
-              v-for="y in [10, 12, 15]"
+              v-for="y in [10, 15, 20]"
               :key="y"
               @click="payoffYears = y"
               class="px-3 py-[6px] font-mono text-[12px] transition-colors border-r border-ob-sand/14 last:border-r-0"
@@ -156,7 +156,7 @@ import StrategyRankList from '@/components/dwelling/StrategyRankList.vue'
 
 const criteriaState = reactive(criteria.map((c) => ({ ...c })))
 const preset = ref('central')
-const payoffYears = ref(12)
+const payoffYears = ref(15)
 const weightsOpen = ref(false)
 const verdictFilter = ref(null)
 const activeLocationId = ref(null)

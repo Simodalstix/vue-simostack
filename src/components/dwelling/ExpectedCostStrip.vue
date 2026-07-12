@@ -62,7 +62,7 @@ import { monthlyPayment } from '@/composables/useRepayment.js'
 const props = defineProps({
   strategy: { type: Object, default: null },
   location: { type: Object, default: null },
-  payoffYears: { type: Number, default: 12 },
+  payoffYears: { type: Number, default: 15 },
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
 })
