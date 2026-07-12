@@ -73,7 +73,7 @@
 
     <!-- compare table -->
     <div v-else class="overflow-x-auto">
-      <table class="w-full text-[12px] min-w-[700px]">
+      <table class="w-full text-[12px] min-w-[860px]">
         <thead>
           <tr
             class="font-mono text-[10.5px] uppercase tracking-[0.06em] text-ob-soft border-b border-ob-sand/14"
@@ -93,75 +93,190 @@
                 sortDir === 'asc' ? '▲' : '▼'
               }}</span>
             </th>
+            <!-- school-detail expander column, not sortable -->
+            <th class="py-2 w-6"></th>
           </tr>
         </thead>
         <tbody>
-          <tr
-            v-for="row in sortedRows"
-            :key="row.id"
-            @click="select(row.id)"
-            class="border-b border-ob-sand/8 last:border-0 cursor-pointer transition-colors"
-            :class="active === row.id ? 'bg-ob-teal/10' : 'hover:bg-ob-surface/60'"
-          >
-            <!-- suburb -->
-            <td class="py-2 pr-3 whitespace-nowrap">
-              <span class="text-ob-text font-semibold">{{ row.rec.suburb }}</span>
-              <span
-                v-if="row.status !== 'ok'"
-                class="ml-1 text-[10px]"
-                :class="row.status === 'reject' ? 'text-ob-sand' : 'text-ob-muted'"
-                >{{ row.status === 'reject' ? '✕' : '~' }}</span
-              >
-            </td>
-            <!-- region -->
-            <td class="py-2 pr-3 text-ob-dim whitespace-nowrap">{{ row.regionShort }}</td>
-            <!-- commute, with sand bar scaled across the visible set -->
-            <td class="py-2 pr-3">
-              <div class="relative h-[16px] flex items-center min-w-[64px]">
-                <div
-                  class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-sand/25"
-                  :style="{ width: commuteBar(row.commute) }"
-                ></div>
-                <span class="relative font-mono pl-1" :class="bandClass(row.band)"
-                  >{{ row.commute }}m</span
+          <template v-for="row in sortedRows" :key="row.id">
+            <tr
+              @click="select(row.id)"
+              class="cursor-pointer transition-colors"
+              :class="[
+                active === row.id ? 'bg-ob-teal/10' : 'hover:bg-ob-surface/60',
+                expanded.has(row.id) ? '' : 'border-b border-ob-sand/8 last:border-0',
+              ]"
+            >
+              <!-- suburb -->
+              <td class="py-2 pr-3 whitespace-nowrap">
+                <span class="text-ob-text font-semibold">{{ row.rec.suburb }}</span>
+                <span
+                  v-if="row.status !== 'ok'"
+                  class="ml-1 text-[10px]"
+                  :class="row.status === 'reject' ? 'text-ob-sand' : 'text-ob-muted'"
+                  >{{ row.status === 'reject' ? '✕' : '~' }}</span
                 >
-              </div>
-            </td>
-            <!-- 2BR price band -->
-            <td class="py-2 pl-3 text-right font-mono text-ob-dim whitespace-nowrap">
-              {{ row.priceLabel }}
-            </td>
-            <!-- all-in monthly: amortised repayment + monthly owners-corp estimate -->
-            <td class="py-2 pl-3 text-right whitespace-nowrap">
-              <span class="font-mono text-ob-text">{{
-                row.estMonthly != null ? '$' + fmt(row.estMonthly) : 'n/a'
-              }}</span>
-              <span
-                v-if="row.estMonthly != null"
-                class="block font-mono text-[10px] text-ob-faint leading-tight"
-                >incl. ~${{ fmt(row.ocMonthly) }}/mo OC est.</span
-              >
-            </td>
-            <!-- score, with teal bar scaled across the visible set -->
-            <td class="py-2 pr-3">
-              <div class="relative h-[16px] flex items-center min-w-[52px]">
-                <div
-                  class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-teal/25"
-                  :style="{ width: scoreBar(row.score) }"
-                ></div>
-                <span class="relative font-mono text-ob-sand pl-1">{{ row.score }}</span>
-              </div>
-            </td>
-            <!-- OC fees: qualitative fee exposure, its own separated column -->
-            <td class="py-2 pl-3 border-l border-ob-sand/8 whitespace-nowrap">
-              <span
-                class="inline-block font-mono text-[10.5px] px-2 py-[2px] rounded-full cursor-help"
-                :class="feeChipClass(row.feeRisk)"
-                :title="feeTitle(row.rec)"
-                >{{ row.feeRisk }}</span
-              >
-            </td>
-          </tr>
+              </td>
+              <!-- region -->
+              <td class="py-2 pr-3 text-ob-dim whitespace-nowrap">{{ row.regionShort }}</td>
+              <!-- commute, with sand bar scaled across the visible set -->
+              <td class="py-2 pr-3">
+                <div class="relative h-[16px] flex items-center min-w-[64px]">
+                  <div
+                    class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-sand/25"
+                    :style="{ width: commuteBar(row.commute) }"
+                  ></div>
+                  <span class="relative font-mono pl-1" :class="bandClass(row.band)"
+                    >{{ row.commute }}m</span
+                  >
+                </div>
+              </td>
+              <!-- 2BR price band -->
+              <td class="py-2 pl-3 text-right font-mono text-ob-dim whitespace-nowrap">
+                {{ row.priceLabel }}
+              </td>
+              <!-- all-in monthly: amortised repayment + monthly owners-corp estimate -->
+              <td class="py-2 pl-3 text-right whitespace-nowrap">
+                <span class="font-mono text-ob-text">{{
+                  row.estMonthly != null ? '$' + fmt(row.estMonthly) : 'n/a'
+                }}</span>
+                <span
+                  v-if="row.estMonthly != null"
+                  class="block font-mono text-[10px] text-ob-faint leading-tight"
+                  >incl. ~${{ fmt(row.ocMonthly) }}/mo OC est.</span
+                >
+              </td>
+              <!-- score, with teal bar scaled across the visible set -->
+              <td class="py-2 pr-3">
+                <div class="relative h-[16px] flex items-center min-w-[52px]">
+                  <div
+                    class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-teal/25"
+                    :style="{ width: scoreBar(row.score) }"
+                  ></div>
+                  <span class="relative font-mono text-ob-sand pl-1">{{ row.score }}</span>
+                </div>
+              </td>
+              <!-- schools: childhood strength 1-5 as filled teal dots -->
+              <td class="py-2 pr-3">
+                <span
+                  class="font-mono text-[13px] tracking-[-0.5px] cursor-help"
+                  :title="dotTitle('schoolStrength', row.schools)"
+                >
+                  <span
+                    v-for="i in 5"
+                    :key="i"
+                    :class="
+                      row.schools != null && i <= row.schools ? 'text-ob-teal' : 'text-ob-faint/40'
+                    "
+                    >{{ row.schools != null && i <= row.schools ? '●' : '○' }}</span
+                  >
+                </span>
+              </td>
+              <!-- teen: independence & amenity 1-5 as filled teal dots -->
+              <td class="py-2 pr-3">
+                <span
+                  class="font-mono text-[13px] tracking-[-0.5px] cursor-help"
+                  :title="dotTitle('teenIndependence', row.teen)"
+                >
+                  <span
+                    v-for="i in 5"
+                    :key="i"
+                    :class="row.teen != null && i <= row.teen ? 'text-ob-teal' : 'text-ob-faint/40'"
+                    >{{ row.teen != null && i <= row.teen ? '●' : '○' }}</span
+                  >
+                </span>
+              </td>
+              <!-- OC fees: qualitative fee exposure, its own separated column -->
+              <td class="py-2 pl-3 border-l border-ob-sand/8 whitespace-nowrap">
+                <span
+                  class="inline-block font-mono text-[10.5px] px-2 py-[2px] rounded-full cursor-help"
+                  :class="feeChipClass(row.feeRisk)"
+                  :title="feeTitle(row.rec)"
+                  >{{ row.feeRisk }}</span
+                >
+              </td>
+              <!-- school-detail expander, separate from row-select -->
+              <td class="py-2 pl-2 text-right">
+                <button
+                  @click.stop="toggleExpand(row.id)"
+                  class="font-mono text-[13px] leading-none text-ob-faint hover:text-ob-teal transition-colors"
+                  :title="expanded.has(row.id) ? 'Hide school detail' : 'Show school detail'"
+                  :aria-expanded="expanded.has(row.id)"
+                >
+                  {{ expanded.has(row.id) ? '▾' : 'ⓘ' }}
+                </button>
+              </td>
+            </tr>
+            <!-- expandable school detail: teal chips for zoned public schools,
+                 dim chips for private context, the note, and a fixed caveat -->
+            <tr
+              v-if="expanded.has(row.id) && row.rec.childhood"
+              class="border-b border-ob-sand/8 bg-ob-surface/40"
+            >
+              <td :colspan="columns.length + 1" class="px-4 py-3">
+                <div class="space-y-2.5">
+                  <div class="flex flex-wrap items-center gap-1.5">
+                    <span
+                      class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
+                      >Primary</span
+                    >
+                    <span
+                      v-for="s in row.rec.childhood.publicPrimary"
+                      :key="s"
+                      class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
+                      >{{ s }}</span
+                    >
+                    <span
+                      v-if="!row.rec.childhood.publicPrimary.length"
+                      class="font-mono text-[11px] text-ob-faint"
+                      >not listed</span
+                    >
+                  </div>
+                  <div class="flex flex-wrap items-center gap-1.5">
+                    <span
+                      class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
+                      >Secondary</span
+                    >
+                    <span
+                      v-for="s in row.rec.childhood.publicSecondary"
+                      :key="s"
+                      class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
+                      >{{ s }}</span
+                    >
+                    <span
+                      v-if="!row.rec.childhood.publicSecondary.length"
+                      class="font-mono text-[11px] text-ob-faint"
+                      >not listed</span
+                    >
+                  </div>
+                  <div
+                    v-if="row.rec.childhood.privateContext.length"
+                    class="flex flex-wrap items-center gap-1.5"
+                  >
+                    <span
+                      class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
+                      >Private</span
+                    >
+                    <span
+                      v-for="s in row.rec.childhood.privateContext"
+                      :key="s"
+                      class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-sand/10 text-ob-dim"
+                      >{{ s }}</span
+                    >
+                  </div>
+                  <p
+                    v-if="row.rec.childhood.note"
+                    class="text-[12px] leading-relaxed text-ob-muted2"
+                  >
+                    {{ row.rec.childhood.note }}
+                  </p>
+                  <p class="font-mono text-[10.5px] leading-relaxed text-ob-faint">
+                    {{ SCHOOL_CAVEAT }}
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </template>
         </tbody>
       </table>
       <p class="mt-2 font-mono text-[10.5px] text-ob-faint leading-relaxed">
@@ -222,6 +337,16 @@ const props = defineProps({
 
 const active = defineModel({ default: null })
 const showDetail = ref(false)
+
+// Per-row school-detail expander in the compare table. Deliberately separate
+// from row-select (which sets the active location that tunes the ranking).
+const expanded = ref(new Set())
+function toggleExpand(id) {
+  const next = new Set(expanded.value)
+  if (next.has(id)) next.delete(id)
+  else next.add(id)
+  expanded.value = next
+}
 
 // table is the default on xl, chips on smaller screens
 const view = ref(
@@ -305,6 +430,8 @@ const enriched = computed(() =>
       feeRisk: risk,
       feeRank: FEE_RANK[risk],
       score: l.weighted,
+      schools: rec.childhood?.schoolStrength ?? null,
+      teen: rec.childhood?.teenIndependence ?? null,
     }
   }),
 )
@@ -316,6 +443,8 @@ const columns = computed(() => [
   { key: 'price', label: '2BR band', align: 'right' },
   { key: 'estMonthly', label: `All-in @ ${props.payoffYears}yr`, align: 'right' },
   { key: 'score', label: 'Score', align: 'left' },
+  { key: 'schools', label: 'Schools', align: 'left' },
+  { key: 'teen', label: 'Teen', align: 'left' },
   { key: 'feeRisk', label: 'OC fees', align: 'left' },
 ])
 
@@ -330,6 +459,8 @@ const SORT_VALUE = {
   estMonthly: (r) => r.estMonthly ?? Infinity,
   feeRisk: (r) => r.feeRank,
   score: (r) => r.score ?? -1,
+  schools: (r) => r.schools ?? -1,
+  teen: (r) => r.teen ?? -1,
 }
 
 const sortedRows = computed(() => {
@@ -415,4 +546,18 @@ const FEE_TOOLTIP = "Typical owners-corp fee exposure for this suburb's 2BR stoc
 function feeTitle(rec) {
   return rec.feeNote ? `${FEE_TOOLTIP} · ${rec.feeNote}` : FEE_TOOLTIP
 }
+
+// Childhood dot columns: label the 1-5 score in the tooltip so the dots stay
+// scannable. Keys mirror the framework lens criteria.
+const CHILDHOOD_LABEL = {
+  schoolStrength: 'Public school strength',
+  teenIndependence: 'Kid independence & amenity',
+}
+function dotTitle(key, val) {
+  return `${CHILDHOOD_LABEL[key]}: ${val == null ? 'n/a' : val + '/5'}`
+}
+
+// Permanent caveat shown under every expanded school-detail row.
+const SCHOOL_CAVEAT =
+  'School zones are street-level — verify any address at findmyschool.vic.gov.au. Scores are provisional judgements pending My School / VCE data checks.'
 </script>
