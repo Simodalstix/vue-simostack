@@ -16,6 +16,13 @@
 // communityProfile holds ABS demographic context ONLY. It is never scored,
 // never ranked, and never read by the ranking engine. Seeded empty pending a
 // real ABS QuickStats (2021 Census) pull. See CommunityProfile.vue.
+//
+// childhood holds provisional school/independence research: schoolStrength and
+// teenIndependence (each 1-5) feed the suburb lens score via the framework
+// lens criteria (see useAreaRanking), while publicPrimary/publicSecondary/
+// privateContext/note are surfaced in the compare table detail. Scores are
+// judgements pending My School / VCE checks; zones are street-level, so any
+// address must be verified at findmyschool.vic.gov.au.
 
 // Annual owners-corp fee estimate ($/yr) by risk band, used for the all-in
 // monthly figure in the compare table. A record may override with its own
@@ -77,6 +84,14 @@ export const areaCorridors = [
       privacyWfh: 3,
       resale: 5,
       community: 4,
+    },
+    childhood: {
+      schoolStrength: 5,
+      teenIndependence: 5,
+      publicPrimary: ['South Yarra PS'],
+      publicSecondary: ['Prahran High (new 2019 vertical campus)'],
+      privateContext: ['Melbourne High (selective-entry public — NOT zoned, exam entry)'],
+      note: 'the reference suburb for teen independence',
     },
     feeNote: 'Low in Art Deco and 60s walk-ups; high in Forrest Hill and Chapel St towers.',
     caseFor: [
@@ -148,6 +163,17 @@ export const areaCorridors = [
       privacyWfh: 3,
       resale: 5,
       community: 5,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 5,
+      publicPrimary: ['Richmond PS'],
+      publicSecondary: [
+        'Richmond High (2018)',
+        "Melbourne Girls' College (public single-sex, high-performing)",
+      ],
+      privateContext: [],
+      note: '',
     },
     caseFor: [
       'The best transport redundancy of any suburb in the lens: almost every eastern and SE line stops here.',
@@ -221,6 +247,14 @@ export const areaCorridors = [
       resale: 5,
       community: 5,
     },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 5,
+      publicPrimary: ['Collingwood College (P-12, Steiner stream)'],
+      publicSecondary: ['Collingwood College (P-12, Steiner stream)'],
+      privateContext: [],
+      note: '',
+    },
     caseFor: [
       'Elite walkability: Smith St puts food, groceries and services on foot.',
       'Quick, resilient commute by tram or a short rail hop.',
@@ -291,6 +325,14 @@ export const areaCorridors = [
       resale: 5,
       community: 5,
     },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 5,
+      publicPrimary: [],
+      publicSecondary: ['Prahran High'],
+      privateContext: [],
+      note: 'primary zones pocket-dependent',
+    },
     caseFor: [
       'The best 2BR value in the inner south, with real walk-up stock under $680k.',
       'Chapel St, Pran Central and the markets put everyday needs on foot.',
@@ -358,6 +400,14 @@ export const areaCorridors = [
       privacyWfh: 4,
       resale: 4,
       community: 4,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 5,
+      publicPrimary: ['Abbotsford PS (Mandarin bilingual)'],
+      publicSecondary: ['Richmond High / Collingwood College (zone-dependent)'],
+      privateContext: [],
+      note: '',
     },
     caseFor: [
       'River and parkland access (the Yarra trail, Collingwood Children’s Farm, Studley Park) is rare this close to the CBD.',
@@ -427,6 +477,14 @@ export const areaCorridors = [
       privacyWfh: 3,
       resale: 3,
       community: 4,
+    },
+    childhood: {
+      schoolStrength: 2,
+      teenIndependence: 3,
+      publicPrimary: ['Sunshine PS', 'Sunshine Heights PS'],
+      publicSecondary: ['Sunshine College (rebuild underway)'],
+      privateContext: [],
+      note: '',
     },
     caseFor: [
       'A super-hub: the Metro Tunnel turned a one-seat ride to Town Hall into a genuine central-Collins commute.',
@@ -501,6 +559,14 @@ export const areaCorridors = [
       resale: 4,
       community: 5,
     },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 4,
+      publicPrimary: ['Footscray PS (Vietnamese bilingual program)', 'Footscray City PS'],
+      publicSecondary: ['Footscray High'],
+      privateContext: [],
+      note: '',
+    },
     caseFor: [
       'One of the strongest price-to-CBD-access intersections in Melbourne.',
       'Walkable centre with excellent cultural food and retail; flat, practical cycling.',
@@ -571,6 +637,14 @@ export const areaCorridors = [
       privacyWfh: 4,
       resale: 4,
       community: 4,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 4,
+      publicPrimary: ['Kingsville PS', 'Footscray West PS'],
+      publicSecondary: ['Footscray High (multi-campus, rebuilt 2019+)'],
+      privateContext: [],
+      note: 'improving zone not yet fully priced',
     },
     caseFor: [
       'Slightly dearer than Sunshine but calmer streets and better walkability.',
@@ -643,6 +717,14 @@ export const areaCorridors = [
       resale: 3,
       community: 4,
     },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 3,
+      publicPrimary: ['St Albans PS', 'St Albans Heights PS'],
+      publicSecondary: ['St Albans Secondary College (strong improvement story)'],
+      privateContext: [],
+      note: '',
+    },
     caseFor: [
       'The most realistic 2BR pricing on the western Metro Tunnel corridor.',
       'Major transport centre with an upgraded, level-crossing-free station.',
@@ -711,6 +793,14 @@ export const areaCorridors = [
       resale: 4,
       community: 3,
     },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 3,
+      publicPrimary: ['Pascoe Vale PS'],
+      publicSecondary: ['Pascoe Vale Girls SC', 'Glenroy College'],
+      privateContext: [],
+      note: 'Strathmore Secondary zone clips western edges — street-level check essential',
+    },
     caseFor: [
       'Older villa units suit co-parenting: a real second bedroom, low fees, a courtyard.',
       'Established local shopping strips and services.',
@@ -778,6 +868,18 @@ export const areaCorridors = [
       privacyWfh: 3,
       resale: 5,
       community: 5,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['Brunswick North West PS', 'Coburg North PS'],
+      publicSecondary: [
+        'Brunswick Secondary',
+        'Coburg High (reopened 2015)',
+        'Pascoe Vale Girls SC (public single-sex)',
+      ],
+      privateContext: [],
+      note: '',
     },
     caseFor: [
       'Excellent walkability and cycling; the Upfield path is a car-free run to the CBD.',
@@ -849,6 +951,14 @@ export const areaCorridors = [
       resale: 3,
       community: 3,
     },
+    childhood: {
+      schoolStrength: 2,
+      teenIndependence: 3,
+      publicPrimary: ['Reservoir PS', 'Reservoir Views PS'],
+      publicSecondary: ['Reservoir High', 'William Ruthven SC'],
+      privateContext: [],
+      note: '',
+    },
     caseFor: [
       'More space and a real second bedroom for the money than the inner north.',
       'Upgraded Reservoir station and loop running help central and eastern Collins St.',
@@ -915,6 +1025,14 @@ export const areaCorridors = [
       privacyWfh: 3,
       resale: 4,
       community: 4,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['Carnegie PS (strong)'],
+      publicSecondary: ['Glen Eira College'],
+      privateContext: [],
+      note: 'famous McKinnon SC zone sits just SW — fully priced-in; Glen Eira College is the value zone',
     },
     caseFor: [
       'Metro Tunnel made this a strong one-seat run to central Collins St.',
@@ -987,6 +1105,14 @@ export const areaCorridors = [
       resale: 3,
       community: 5,
     },
+    childhood: {
+      schoolStrength: 2,
+      teenIndependence: 3,
+      publicPrimary: ['Springvale Rise PS'],
+      publicSecondary: ['Keysborough College', 'Noble Park SC'],
+      privateContext: [],
+      note: '',
+    },
     caseFor: [
       'Lower-cost stock with genuinely deep cultural amenity and food.',
       'Metro Tunnel still gives a one-seat central-Collins run from a long way out.',
@@ -1057,6 +1183,14 @@ export const areaCorridors = [
       resale: 4,
       community: 3,
     },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 3,
+      publicPrimary: ['Cheltenham PS'],
+      publicSecondary: ['Cheltenham Secondary (solid, un-famous)'],
+      privateContext: [],
+      note: '',
+    },
     caseFor: [
       'Direct Frankston-line rail through the City Loop all day.',
       'Established amenities and bayside recreation.',
@@ -1126,6 +1260,14 @@ export const areaCorridors = [
       resale: 5,
       community: 4,
     },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 4,
+      publicPrimary: ['Kensington PS'],
+      publicSecondary: ['Mount Alexander College (progressive, improving)'],
+      privateContext: [],
+      note: '',
+    },
     caseFor: [
       'Benchmark commute and the lowest car requirement anywhere in the set.',
       'Walkable everyday needs and flat cycling to the CBD.',
@@ -1192,6 +1334,14 @@ export const areaCorridors = [
       privacyWfh: 4,
       resale: 2,
       community: 2,
+    },
+    childhood: {
+      schoolStrength: 2,
+      teenIndependence: 2,
+      publicPrimary: ['Tarneit P-9 College'],
+      publicSecondary: ['Tarneit Senior College'],
+      privateContext: [],
+      note: 'new mega-schools, portable-classroom growing pains',
     },
     caseFor: [
       'The lowest headline price for an actual house with a yard.',
