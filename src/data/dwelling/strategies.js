@@ -13,6 +13,12 @@ export const strategies = [
   {
     id: 'lowest-cost',
     num: 1,
+    lensSuburbs: [
+      'sunshine-station-2br',
+      'established-western-value',
+      'seddon-westfootscray-villa',
+      'footscray-station-2br',
+    ],
     name: 'Lowest-cost credible ownership',
     tagline: 'Older 1–2BR walk-up in the west, on the Metro Tunnel corridor',
     whatItIs:
@@ -79,6 +85,17 @@ export const strategies = [
   {
     id: 'apartment-transport',
     num: 2,
+    lensSuburbs: [
+      'footscray-station-2br',
+      'seddon-westfootscray-villa',
+      'upfield-corridor',
+      'inner-lowcar-benchmark',
+      'inner-richmond-2br',
+      'inner-collingwood-2br',
+      'inner-abbotsford-2br',
+      'inner-windsor-prahran-2br',
+      'inner-south-yarra-2br',
+    ],
     name: 'Apartment on direct transport',
     tagline: 'Older 2BR brick apartment, inner north or west, one-seat commute',
     whatItIs:
@@ -149,6 +166,12 @@ export const strategies = [
   {
     id: 'fast-payoff',
     num: 3,
+    lensSuburbs: [
+      'sunshine-station-2br',
+      'established-western-value',
+      'northern-rail-value',
+      'se-value-corridor',
+    ],
     name: 'Fastest payoff',
     tagline: 'Cheapest acceptable 2BR + maximum repayment violence',
     whatItIs:
@@ -214,6 +237,13 @@ export const strategies = [
   {
     id: 'co-parenting',
     num: 4,
+    lensSuburbs: [
+      'northern-rail-value',
+      'northwest-villa-corridor',
+      'se-value-corridor',
+      'inner-se-apartment-corridor',
+      'frankston-middle-ring',
+    ],
     name: 'Best for co-parenting',
     tagline: '2BR villa unit near a station, school and park — Lulu gets a real room',
     whatItIs:
@@ -277,6 +307,15 @@ export const strategies = [
   {
     id: 'solo-guests',
     num: 5,
+    lensSuburbs: [
+      'inner-lowcar-benchmark',
+      'inner-richmond-2br',
+      'inner-collingwood-2br',
+      'inner-windsor-prahran-2br',
+      'inner-south-yarra-2br',
+      'footscray-station-2br',
+      'upfield-corridor',
+    ],
     name: 'One person + occasional guests',
     tagline: '1BR + genuine study, inner corridor',
     whatItIs:
@@ -337,6 +376,16 @@ export const strategies = [
   {
     id: 'villa-unit',
     num: 6,
+    lensSuburbs: [
+      'northern-rail-value',
+      'northwest-villa-corridor',
+      'sunshine-station-2br',
+      'established-western-value',
+      'inner-se-apartment-corridor',
+      'frankston-middle-ring',
+      'se-value-corridor',
+      'seddon-westfootscray-villa',
+    ],
     name: 'Middle-ring villa unit',
     tagline: 'The unfashionable dwelling type that quietly wins this brief',
     whatItIs:
@@ -408,6 +457,7 @@ export const strategies = [
   {
     id: 'outer-rail',
     num: 7,
+    lensSuburbs: ['growth-corridor-stress-test', 'established-western-value', 'se-value-corridor'],
     name: 'Outer suburb, direct rail',
     tagline: 'More dwelling per dollar, single-seat line, honest about the trade',
     whatItIs:
@@ -477,6 +527,7 @@ export const strategies = [
   {
     id: 'otp-new',
     num: 8,
+    lensSuburbs: ['footscray-station-2br', 'sunshine-station-2br', 'upfield-corridor'],
     name: 'New development / off-the-plan',
     tagline: 'The duty-concession window, eyes fully open',
     whatItIs:
@@ -541,6 +592,7 @@ export const strategies = [
   {
     id: 'small-lot',
     num: 9,
+    lensSuburbs: ['sunshine-station-2br', 'growth-corridor-stress-test'],
     name: 'Small lot / compact build',
     tagline: 'Narrow-lot new build — works at stations, fails in the paddocks',
     whatItIs:
@@ -609,6 +661,7 @@ export const strategies = [
   {
     id: 'unconventional-build',
     num: 10,
+    lensSuburbs: [],
     name: 'Unconventional construction',
     tagline: 'Prefab/modular honestly assessed: the land is the problem, not the box',
     whatItIs:
@@ -667,6 +720,7 @@ export const strategies = [
   {
     id: 'garden',
     num: 11,
+    lensSuburbs: ['northern-rail-value', 'sunshine-station-2br', 'established-western-value'],
     name: 'Outdoor space / garden priority',
     tagline: 'Small old house or courtyard villa where land is still sane',
     whatItIs:
@@ -726,6 +780,16 @@ export const strategies = [
   {
     id: 'car-free',
     num: 12,
+    lensSuburbs: [
+      'inner-lowcar-benchmark',
+      'upfield-corridor',
+      'footscray-station-2br',
+      'inner-richmond-2br',
+      'inner-collingwood-2br',
+      'inner-abbotsford-2br',
+      'inner-windsor-prahran-2br',
+      'inner-south-yarra-2br',
+    ],
     name: 'Car-free / car-light',
     tagline: 'Inner corridor, no parking premium, car-share for Lulu logistics',
     whatItIs:
@@ -780,6 +844,25 @@ export const strategies = [
   {
     id: 'low-fees',
     num: 13,
+    // All lens suburbs except South Yarra and Tarneit/Wyndham Vale
+    // (small-block / villa stock filter).
+    lensSuburbs: [
+      'inner-richmond-2br',
+      'inner-collingwood-2br',
+      'inner-windsor-prahran-2br',
+      'inner-abbotsford-2br',
+      'sunshine-station-2br',
+      'footscray-station-2br',
+      'seddon-westfootscray-villa',
+      'established-western-value',
+      'northwest-villa-corridor',
+      'upfield-corridor',
+      'northern-rail-value',
+      'inner-se-apartment-corridor',
+      'se-value-corridor',
+      'frankston-middle-ring',
+      'inner-lowcar-benchmark',
+    ],
     name: 'Lowest ongoing fees',
     tagline: 'Nothing with a lift, pool, gym, concierge or stacker — ever',
     whatItIs:
@@ -834,6 +917,12 @@ export const strategies = [
   {
     id: 'expandable',
     num: 14,
+    lensSuburbs: [
+      'established-western-value',
+      'sunshine-station-2br',
+      'se-value-corridor',
+      'northern-rail-value',
+    ],
     name: 'Buy modest, expand later',
     tagline: 'Small house now; <60 m² garden studio later, no planning permit',
     whatItIs:
@@ -893,6 +982,13 @@ export const strategies = [
   {
     id: 'compromise',
     num: 15,
+    lensSuburbs: [
+      'sunshine-station-2br',
+      'seddon-westfootscray-villa',
+      'northern-rail-value',
+      'northwest-villa-corridor',
+      'se-value-corridor',
+    ],
     name: 'Best compromise (the synthesis)',
     tagline: '2BR villa or older apartment, ≤$600k, <800m from a one-seat station, tiny fees',
     whatItIs:
@@ -957,6 +1053,7 @@ export const strategies = [
   {
     id: 'minimal-build',
     num: 16,
+    lensSuburbs: ['sunshine-station-2br', 'northern-rail-value'],
     name: 'Disciplined minimal build',
     tagline:
       'Small, well-detailed panelised/SIP house on an infill lot — less house, not a cheaper method',
@@ -1030,6 +1127,10 @@ export const strategies = [
   {
     id: 'far-frugal',
     num: 17,
+    // Its suburbs (Melton / Diggers Rest / Bacchus Marsh) are not lens
+    // entries, so this stays empty and the card dims when any lens suburb
+    // is selected, like other non-matches.
+    lensSuburbs: [],
     name: 'Far-out, already-built, frugal',
     tagline:
       'Established small house in a V/Line commuter town — the cheapest whole-house money, scored honestly',
