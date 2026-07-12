@@ -9,7 +9,9 @@
 //      record reject | conditional | ok. A cheap area must NOT out-rank a
 //      workable one on price alone, so gates precede scoring.
 //   2. WEIGHTED SCORE from areaWeights, on `scores` only, with the commute
-//      score injected. The demographic communityProfile is NEVER read here.
+//      score injected, PLUS the childhood lens criteria (school strength and
+//      teen independence) folded in at their live Decide-panel weights. The
+//      demographic communityProfile is NEVER read here.
 //
 // Returns a computed list sorted ok > conditional > reject > unscored, then by
 // weighted score descending.
@@ -66,7 +68,12 @@ function gate(rec, filters, commute) {
   return { status, reasons }
 }
 
-function weightedScore(rec, commuteScore) {
+// `childhoodWeights` is the live [{ key, weight }] pair for the lens criteria
+// (school strength, teen independence) taken from the Decide panel sliders. Each
+// is scored 1-5 from the record's `childhood` block, folded in with the same
+// weight/score mechanism as the fixed areaWeights and added to the denominator,
+// so a weight of 0 leaves the base score untouched.
+function weightedScore(rec, commuteScore, childhoodWeights) {
   const scoreMap = { ...rec.scores, commute: commuteScore }
   let sum = 0
   for (const w of areaWeights) {
@@ -74,13 +81,22 @@ function weightedScore(rec, commuteScore) {
     if (s == null) continue
     sum += w.weight * (s / 5)
   }
-  // areaWeights sum to 100, so this reads as a percentage of the ideal.
-  return Math.round((sum / areaWeightTotal) * 100)
+  let total = areaWeightTotal
+  for (const { key, weight } of childhoodWeights) {
+    total += weight
+    const s = rec.childhood?.[key]
+    if (s == null) continue
+    sum += weight * (s / 5)
+  }
+  // areaWeights sum to 100; with the childhood weights added to the denominator
+  // this still reads as a percentage of the ideal.
+  return Math.round((sum / total) * 100)
 }
 
-export function useAreaRanking(records, filtersRef) {
+export function useAreaRanking(records, filtersRef, childhoodWeightsRef) {
   return computed(() => {
     const filters = unref(filtersRef) || {}
+    const childhoodWeights = unref(childhoodWeightsRef) || []
 
     const source = (unref(records) || []).filter((rec) => !rec.stretch || filters.includeStretch)
 
@@ -99,7 +115,7 @@ export function useAreaRanking(records, filtersRef) {
       const commute = commuteFor(rec)
       const commuteScore = commute ? scoreCommute(commute.typical, commute.transfers) : null
       const { status, reasons } = gate(rec, filters, commute)
-      const weighted = weightedScore(rec, commuteScore)
+      const weighted = weightedScore(rec, commuteScore, childhoodWeights)
       return {
         rec,
         status,

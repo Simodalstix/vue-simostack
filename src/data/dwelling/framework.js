@@ -67,7 +67,29 @@ export const criteria = [
     weight: 4,
     hint: 'higher = easier-to-sell options rank higher',
   },
+  // These two are LOCATION criteria: strategies carry no such score, so the
+  // ?? 3 fallback in useStrategyRanking keeps strategy ranking neutral on them.
+  // They act on the suburb lens score instead, reading each corridor's
+  // `childhood` block (see useAreaRanking + areaCorridors.js). Defaults high,
+  // per the owner's values.
+  {
+    key: 'schoolStrength',
+    label: 'Public school strength',
+    weight: 7,
+    hint: 'higher = strong zoned public schools rank higher',
+  },
+  {
+    key: 'teenIndependence',
+    label: 'Kid independence & amenity',
+    weight: 7,
+    hint: 'higher = suburbs where a 12–15yo can get around alone rank higher',
+  },
 ]
+
+// The subset of criteria that score PLACES (via the corridor `childhood` block)
+// rather than strategies. useAreaRanking folds these into the suburb lens score
+// using their live weights from the Decide panel. Keys map to childhood fields.
+export const lensChildhoodKeys = ['schoolStrength', 'teenIndependence']
 
 export const infoNeeded = [
   {

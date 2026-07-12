@@ -147,7 +147,7 @@
 
 <script setup>
 import { ref, reactive, computed, watch } from 'vue'
-import { criteria } from '@/data/dwelling/framework.js'
+import { criteria, lensChildhoodKeys } from '@/data/dwelling/framework.js'
 import { strategies, verdictMeta } from '@/data/dwelling/strategies.js'
 import { areaCorridors } from '@/data/dwelling/areaCorridors.js'
 import { personalPosition } from '@/data/dwelling/facts.js'
@@ -179,7 +179,14 @@ const areaFilters = ref({
   dwellingTypes: [],
   includeStretch: true,
 })
-const rankedLocations = useAreaRanking(areaCorridors, areaFilters)
+// The lens criteria (school strength, teen independence) score PLACES, so their
+// live weights flow into the suburb ranking, not the strategy ranking.
+const childhoodWeights = computed(() =>
+  criteriaState
+    .filter((c) => lensChildhoodKeys.includes(c.key))
+    .map((c) => ({ key: c.key, weight: c.weight })),
+)
+const rankedLocations = useAreaRanking(areaCorridors, areaFilters, childhoodWeights)
 
 const activeLocation = computed(() =>
   activeLocationId.value == null
