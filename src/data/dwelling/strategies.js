@@ -457,7 +457,12 @@ export const strategies = [
   {
     id: 'outer-rail',
     num: 7,
-    lensSuburbs: ['growth-corridor-stress-test', 'established-western-value', 'se-value-corridor'],
+    lensSuburbs: [
+      'growth-corridor-stress-test',
+      'craigieburn-townhouse',
+      'established-western-value',
+      'se-value-corridor',
+    ],
     name: 'Outer suburb, direct rail',
     tagline: 'More dwelling per dollar, single-seat line, honest about the trade',
     whatItIs:
@@ -592,7 +597,12 @@ export const strategies = [
   {
     id: 'small-lot',
     num: 9,
-    lensSuburbs: ['sunshine-station-2br', 'growth-corridor-stress-test'],
+    lensSuburbs: [
+      'sunshine-station-2br',
+      'growth-corridor-stress-test',
+      'craigieburn-townhouse',
+      'donnybrook-house-land',
+    ],
     name: 'Small lot / compact build',
     tagline: 'Narrow-lot new build — works at stations, fails in the paddocks',
     whatItIs:
