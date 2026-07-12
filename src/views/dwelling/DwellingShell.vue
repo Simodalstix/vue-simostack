@@ -4,7 +4,7 @@
     <header
       class="shrink-0 border-b border-ob-sand/14 sticky top-0 bg-[#111418]/95 backdrop-blur z-10"
     >
-      <nav class="px-6 h-[52px] flex items-center justify-between">
+      <nav class="px-6 h-[52px] grid grid-cols-3 items-center">
         <div class="flex items-center gap-[14px]">
           <span
             class="w-[30px] h-[30px] border-[1.5px] border-ob-bronze rounded-[3px] flex items-center justify-center font-display font-extrabold text-[12px] leading-none text-ob-sand tracking-[0.02em]"
@@ -16,7 +16,7 @@
         </div>
 
         <div
-          class="flex items-center gap-6 md:gap-8 font-display font-semibold text-[13px] overflow-x-auto"
+          class="justify-self-center flex items-center gap-6 md:gap-8 font-display font-semibold text-[13px] overflow-x-auto"
         >
           <router-link
             v-for="page in pages"
@@ -32,6 +32,9 @@
             {{ page.label }}
           </router-link>
         </div>
+
+        <!-- empty third column balances the grid so the tab group centres -->
+        <div aria-hidden="true"></div>
       </nav>
     </header>
 
