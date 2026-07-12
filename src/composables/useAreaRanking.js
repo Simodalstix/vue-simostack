@@ -71,8 +71,11 @@ function gate(rec, filters, commute) {
 // `childhoodWeights` is the live [{ key, weight }] pair for the lens criteria
 // (school strength, teen independence) taken from the Decide panel sliders. Each
 // is scored 1-5 from the record's `childhood` block, folded in with the same
-// weight/score mechanism as the fixed areaWeights and added to the denominator,
-// so a weight of 0 leaves the base score untouched.
+// weight/score mechanism as the fixed areaWeights. A missing field is treated as
+// "not assessed": its weight is left out of the denominator entirely, so a
+// record with no childhood block scores on its base areaWeights alone rather
+// than being penalised as if its schools were zero. A weight of 0 is likewise
+// a no-op, leaving the base score untouched.
 function weightedScore(rec, commuteScore, childhoodWeights) {
   const scoreMap = { ...rec.scores, commute: commuteScore }
   let sum = 0
@@ -83,9 +86,9 @@ function weightedScore(rec, commuteScore, childhoodWeights) {
   }
   let total = areaWeightTotal
   for (const { key, weight } of childhoodWeights) {
-    total += weight
     const s = rec.childhood?.[key]
     if (s == null) continue
+    total += weight
     sum += weight * (s / 5)
   }
   // areaWeights sum to 100; with the childhood weights added to the denominator

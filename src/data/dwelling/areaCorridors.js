@@ -1300,6 +1300,79 @@ export const areaCorridors = [
     sources: ['ptv', 'domain', 'csa', 'vicplan'],
   },
   {
+    // Inner Craigieburn-line value: fills the gap between mid-north Pascoe Vale
+    // and the outer Craigieburn control case. No childhood block yet, pending
+    // school research; the lens score falls back to the base areaWeights.
+    id: 'ascot-vale-2br',
+    suburb: 'Ascot Vale',
+    municipality: 'Moonee Valley',
+    region: 'North',
+    corridor: 'Craigieburn line + tram 57',
+    station: 'Ascot Vale',
+    catchmentMetres: 800,
+    altRoute:
+      'Craigieburn line is a one-seat ride through the City Loop; tram 57 runs down Union Rd and Mount Alexander Rd to the CBD; flat cycling on the creek trails.',
+    headline: 'older 2BR apartment or villa unit, inner north-west value',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit'],
+      bedrooms: 2,
+      indicativePrice: [520000, 680000],
+      annualOc: [0, 3500],
+      parkingTypes: ['titled', 'street'],
+      suitableStock:
+        'Older brick walk-ups and villa units, with a genuine value pocket around the Union Rd estate.',
+      expectedTransportCost: '~$1,900-2,500/yr; car-light with rail and tram at hand.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 16, stressed: 24, transfers: 0 },
+    scores: {
+      housingValue: 4,
+      coparenting: 3,
+      lowCar: 4,
+      recurringCosts: 3,
+      walkability: 4,
+      safety: 3,
+      envRisk: 3,
+      privacyWfh: 3,
+      resale: 4,
+      community: 4,
+    },
+    caseFor: [
+      'Inner north-west value on the Craigieburn line: a one-seat ride through the City Loop plus tram 57 down Union Rd.',
+      'A genuine 2BR value pocket persists around the Union Rd estate, unusual this close to the CBD.',
+      'Flat cycling and walkable Union Rd shops make a car optional.',
+    ],
+    caseAgainst: [
+      'Pockets vary sharply; the estate edges and arterials need a street-level walk.',
+      'Older walk-up stock carries the usual wiring, plumbing and levy tail.',
+      'Some Maribyrnong and Moonee Ponds Creek flood exposure in low sections.',
+    ],
+    bestType:
+      'A solid older 2BR or villa unit back from the arterials, low fees, walkable to Ascot Vale station or a tram 57 stop.',
+    avoidType: 'A tiny 1BR-plus-study at a 2BR price, or a low-lying block with flood exposure.',
+    oneCar:
+      'Comfortable car-free or with one small car; rail, tram and flat cycling cover daily needs.',
+    coparentingGeometry:
+      'Close-in position and good public transport help shared logistics; verify schools and the other parent corridor before committing.',
+    communityProfile: emptyCommunity(),
+    risks: [
+      'Maribyrnong and Moonee Ponds Creek flood overlays in low pockets; check VicPlan per property.',
+      'Arterial and rail noise on the wrong street.',
+    ],
+    inspectionChecklist: [
+      'Walk the exact street at night and on a weekend; note the estate edges and arterials.',
+      'Read owners-corporation minutes and the sinking fund for any block.',
+      'Pull the VicPlan report for flood overlays.',
+    ],
+    primaryWarning:
+      'The value is pocket-specific: a good street here is close-in and calm, a bad one is arterial or flood-affected.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
     id: 'growth-corridor-stress-test',
     suburb: 'Tarneit / Wyndham Vale',
     municipality: 'Wyndham',
