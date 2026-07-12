@@ -76,13 +76,7 @@
       <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft mb-3">
         Commute anatomy
       </p>
-      <CommuteBreakdown
-        :record="rec"
-        :commute="row.commute"
-        :band="row.band"
-        :preset-label="presetLabel"
-        :dest="dest"
-      />
+      <CommuteBreakdown :record="rec" :commute="row.commute" :band="row.band" />
     </div>
 
     <!-- one-car + co-parenting geometry -->
@@ -174,8 +168,6 @@ import CommunityProfile from './CommunityProfile.vue'
 
 const props = defineProps({
   row: { type: Object, required: true },
-  presetLabel: { type: String, default: 'Collins St' },
-  dest: { type: String, default: '' },
 })
 
 const rec = computed(() => props.row.rec)

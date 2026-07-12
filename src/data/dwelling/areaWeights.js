@@ -16,7 +16,7 @@ export const areaWeights = [
     key: 'commute',
     label: 'Collins St commute',
     weight: 18,
-    hint: 'Door-to-door to the active Collins destination preset, with transfer and reliability penalties.',
+    hint: 'Door-to-door to 555 Collins St (Southern Cross end), with transfer and reliability penalties.',
   },
   {
     key: 'housingValue',

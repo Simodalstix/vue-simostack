@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3">
-      <span class="text-[13px] font-semibold text-ob-text">{{ presetLabel }}</span>
-      <span class="font-mono text-[11.5px] text-ob-dim">{{ dest }}</span>
+      <span class="text-[13px] font-semibold text-ob-text">{{ DESTINATION.label }}</span>
+      <span class="font-mono text-[11.5px] text-ob-dim">{{ DESTINATION.dest }}</span>
       <span class="font-mono text-[12px]" :class="bandClass"
         >{{ commute.typical }} min typical · {{ commute.stressed }} min at the 80th percentile</span
       >
@@ -40,13 +40,12 @@
 
 <script setup>
 import { computed } from 'vue'
+import { DESTINATION } from '@/composables/useCommuteScoring.js'
 
 const props = defineProps({
   record: { type: Object, required: true },
   commute: { type: Object, required: true },
   band: { type: String, default: null },
-  presetLabel: { type: String, default: 'Collins St' },
-  dest: { type: String, default: '' },
 })
 
 const walk = computed(() => props.record.stationWalkMin ?? 0)

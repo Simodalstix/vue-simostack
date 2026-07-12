@@ -15,26 +15,12 @@
     <!-- controls -->
     <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-5 space-y-5">
       <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
-        <!-- Collins preset -->
+        <!-- fixed commute anchor -->
         <div>
           <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft mb-1.5">
-            Collins destination
+            Destination
           </p>
-          <div class="inline-flex rounded-[6px] border border-ob-sand/14 overflow-hidden">
-            <button
-              v-for="p in COLLINS_PRESETS"
-              :key="p.key"
-              @click="preset = p.key"
-              class="px-3 py-[6px] font-mono text-[12px] transition-colors border-r border-ob-sand/14 last:border-r-0"
-              :class="
-                preset === p.key
-                  ? 'bg-ob-teal/15 text-ob-teal'
-                  : 'text-ob-faint hover:text-ob-muted'
-              "
-            >
-              {{ p.label }}
-            </button>
-          </div>
+          <p class="font-mono text-[12px] text-ob-dim">555 Collins St · Southern Cross end</p>
         </div>
 
         <!-- payoff horizon -->
@@ -116,12 +102,7 @@
     </div>
 
     <!-- location lens -->
-    <LocationLens
-      v-model="activeLocationId"
-      :locations="rankedLocations"
-      :preset-label="presetMeta.label"
-      :dest="presetMeta.dest"
-    />
+    <LocationLens v-model="activeLocationId" :locations="rankedLocations" />
 
     <!-- live expected cost -->
     <ExpectedCostStrip
@@ -149,13 +130,12 @@ import { areaCorridors } from '@/data/dwelling/areaCorridors.js'
 import { personalPosition } from '@/data/dwelling/facts.js'
 import { useAreaRanking } from '@/composables/useAreaRanking.js'
 import { useStrategyRanking } from '@/composables/useStrategyRanking.js'
-import { COLLINS_PRESETS, commuteForPreset, scoreCommute } from '@/composables/useCommuteScoring.js'
+import { commuteFor, scoreCommute } from '@/composables/useCommuteScoring.js'
 import LocationLens from '@/components/dwelling/LocationLens.vue'
 import ExpectedCostStrip from '@/components/dwelling/ExpectedCostStrip.vue'
 import StrategyRankList from '@/components/dwelling/StrategyRankList.vue'
 
 const criteriaState = reactive(criteria.map((c) => ({ ...c })))
-const preset = ref('central')
 const payoffYears = ref(15)
 const weightsOpen = ref(false)
 const verdictFilter = ref(null)
@@ -176,11 +156,7 @@ const areaFilters = ref({
   dwellingTypes: [],
   includeStretch: true,
 })
-const rankedLocations = useAreaRanking(areaCorridors, preset, areaFilters)
-
-const presetMeta = computed(
-  () => COLLINS_PRESETS.find((p) => p.key === preset.value) || COLLINS_PRESETS[1],
-)
+const rankedLocations = useAreaRanking(areaCorridors, areaFilters)
 
 const activeLocation = computed(() =>
   activeLocationId.value == null
@@ -188,11 +164,11 @@ const activeLocation = computed(() =>
     : areaCorridors.find((r) => r.id === activeLocationId.value) || null,
 )
 
-// commute score for the active corridor under the active preset; drives the
-// location override in the strategy ranking.
+// commute score for the active corridor to the 555 Collins St anchor; drives
+// the location override in the strategy ranking.
 const commuteOverride = computed(() => {
   if (!activeLocation.value) return null
-  const c = commuteForPreset(activeLocation.value, preset.value)
+  const c = commuteFor(activeLocation.value)
   return c ? scoreCommute(c.typical, c.transfers) : null
 })
 

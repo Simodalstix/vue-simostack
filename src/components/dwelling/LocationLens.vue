@@ -4,7 +4,9 @@
       <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
         Location lens · tunes the ranking below
       </h2>
-      <span class="font-mono text-[11px] text-ob-faint">{{ presetLabel }} · {{ dest }}</span>
+      <span class="font-mono text-[11px] text-ob-faint"
+        >{{ DESTINATION.label }} · {{ DESTINATION.dest }}</span
+      >
     </div>
 
     <!-- corridor chips, grouped by region -->
@@ -85,12 +87,7 @@
           {{ showDetail ? 'hide details' : 'details' }}
         </button>
       </div>
-      <AreaDetailDrawer
-        v-if="showDetail"
-        :row="activeRow"
-        :preset-label="presetLabel"
-        :dest="dest"
-      />
+      <AreaDetailDrawer v-if="showDetail" :row="activeRow" />
     </div>
   </section>
 </template>
@@ -98,11 +95,10 @@
 <script setup>
 import { ref, computed } from 'vue'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
+import { DESTINATION } from '@/composables/useCommuteScoring.js'
 
 const props = defineProps({
   locations: { type: Array, required: true },
-  presetLabel: { type: String, default: 'Collins St' },
-  dest: { type: String, default: '' },
 })
 
 const active = defineModel({ default: null })

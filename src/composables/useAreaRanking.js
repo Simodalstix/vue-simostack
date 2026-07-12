@@ -1,7 +1,7 @@
 // src/composables/useAreaRanking.js
 //
-// Ranks station-catchment records for the active Collins preset and the
-// control-strip filters. Two-stage, by design:
+// Ranks station-catchment records against the 555 Collins St commute anchor and
+// the control-strip filters. Two-stage, by design:
 //
 //   1. HARD GATES run first. The nine non-negotiables (over ~65 min, >1
 //      transfer, compulsory daily driving, no second bedroom, over the price
@@ -9,15 +9,14 @@
 //      record reject | conditional | ok. A cheap area must NOT out-rank a
 //      workable one on price alone, so gates precede scoring.
 //   2. WEIGHTED SCORE from areaWeights, on `scores` only, with the commute
-//      score injected per preset. The demographic communityProfile is NEVER
-//      read here.
+//      score injected. The demographic communityProfile is NEVER read here.
 //
 // Returns a computed list sorted ok > conditional > reject > unscored, then by
 // weighted score descending.
 
 import { computed, unref } from 'vue'
 import { areaWeights, areaWeightTotal } from '@/data/dwelling/areaWeights.js'
-import { commuteForPreset, scoreCommute, commuteBandLabel } from './useCommuteScoring.js'
+import { commuteFor, scoreCommute, commuteBandLabel } from './useCommuteScoring.js'
 
 const STATUS_ORDER = { ok: 0, conditional: 1, reject: 2, unscored: 3 }
 
@@ -79,9 +78,8 @@ function weightedScore(rec, commuteScore) {
   return Math.round((sum / areaWeightTotal) * 100)
 }
 
-export function useAreaRanking(records, presetRef, filtersRef) {
+export function useAreaRanking(records, filtersRef) {
   return computed(() => {
-    const preset = unref(presetRef)
     const filters = unref(filtersRef) || {}
 
     const source = (unref(records) || []).filter((rec) => !rec.stretch || filters.includeStretch)
@@ -98,7 +96,7 @@ export function useAreaRanking(records, presetRef, filtersRef) {
           band: null,
         }
       }
-      const commute = commuteForPreset(rec, preset)
+      const commute = commuteFor(rec)
       const commuteScore = commute ? scoreCommute(commute.typical, commute.transfers) : null
       const { status, reasons } = gate(rec, filters, commute)
       const weighted = weightedScore(rec, commuteScore)

@@ -8,9 +8,10 @@
 // are PLACEHOLDERS (placeholder: true) until verified against the sources in
 // areaSources.js. The UI badges them as unverified.
 //
-// scores are 1-5, higher = better FOR THE BRIEF. `commute` is NOT stored here:
-// it is computed per active Collins preset by useCommuteScoring and injected at
-// ranking time. Keys otherwise map 1:1 to areaWeights.
+// scores are 1-5, higher = better FOR THE BRIEF. `commute` holds one
+// {typical, stressed, transfers} object measured door-to-door to the fixed
+// 555 Collins St anchor (western end, ~400m from Southern Cross). Score keys
+// otherwise map 1:1 to areaWeights.
 //
 // communityProfile holds ABS demographic context ONLY. It is never scored,
 // never ranked, and never read by the ranking engine. Seeded empty pending a
@@ -56,11 +57,7 @@ export const areaCorridors = [
     stationWalkMin: 8,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 40, stressed: 52, transfers: 1 },
-      collinsCentral: { typical: 38, stressed: 50, transfers: 0 },
-      collinsEast: { typical: 46, stressed: 58, transfers: 1 },
-    },
+    commute: { typical: 40, stressed: 52, transfers: 1 },
     scores: {
       housingValue: 5,
       coparenting: 3,
@@ -133,11 +130,7 @@ export const areaCorridors = [
     stationWalkMin: 6,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 14, stressed: 22, transfers: 0 },
-      collinsCentral: { typical: 20, stressed: 30, transfers: 0 },
-      collinsEast: { typical: 28, stressed: 38, transfers: 1 },
-    },
+    commute: { typical: 14, stressed: 22, transfers: 0 },
     scores: {
       housingValue: 4,
       coparenting: 3,
@@ -208,11 +201,7 @@ export const areaCorridors = [
     stationWalkMin: 7,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 18, stressed: 26, transfers: 0 },
-      collinsCentral: { typical: 24, stressed: 34, transfers: 0 },
-      collinsEast: { typical: 32, stressed: 42, transfers: 1 },
-    },
+    commute: { typical: 18, stressed: 26, transfers: 0 },
     scores: {
       housingValue: 4,
       coparenting: 4,
@@ -283,11 +272,7 @@ export const areaCorridors = [
     stationWalkMin: 9,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 44, stressed: 57, transfers: 1 },
-      collinsCentral: { typical: 42, stressed: 55, transfers: 0 },
-      collinsEast: { typical: 50, stressed: 63, transfers: 1 },
-    },
+    commute: { typical: 44, stressed: 57, transfers: 1 },
     scores: {
       housingValue: 5,
       coparenting: 3,
@@ -355,11 +340,7 @@ export const areaCorridors = [
     stationWalkMin: 10,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 42, stressed: 54, transfers: 1 },
-      collinsCentral: { typical: 36, stressed: 48, transfers: 0 },
-      collinsEast: { typical: 34, stressed: 46, transfers: 0 },
-    },
+    commute: { typical: 42, stressed: 54, transfers: 1 },
     scores: {
       housingValue: 4,
       coparenting: 4,
@@ -427,11 +408,7 @@ export const areaCorridors = [
     stationWalkMin: 6,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 32, stressed: 42, transfers: 1 },
-      collinsCentral: { typical: 26, stressed: 36, transfers: 0 },
-      collinsEast: { typical: 24, stressed: 34, transfers: 0 },
-    },
+    commute: { typical: 32, stressed: 42, transfers: 1 },
     scores: {
       housingValue: 2,
       coparenting: 3,
@@ -501,11 +478,7 @@ export const areaCorridors = [
     stationWalkMin: 11,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 44, stressed: 56, transfers: 1 },
-      collinsCentral: { typical: 38, stressed: 50, transfers: 0 },
-      collinsEast: { typical: 35, stressed: 47, transfers: 0 },
-    },
+    commute: { typical: 44, stressed: 56, transfers: 1 },
     scores: {
       housingValue: 4,
       coparenting: 4,
@@ -572,11 +545,7 @@ export const areaCorridors = [
     stationWalkMin: 7,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 34, stressed: 45, transfers: 1 },
-      collinsCentral: { typical: 30, stressed: 40, transfers: 0 },
-      collinsEast: { typical: 36, stressed: 47, transfers: 1 },
-    },
+    commute: { typical: 34, stressed: 45, transfers: 1 },
     scores: {
       housingValue: 3,
       coparenting: 3,
@@ -647,11 +616,7 @@ export const areaCorridors = [
     stationWalkMin: 9,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 46, stressed: 58, transfers: 1 },
-      collinsCentral: { typical: 42, stressed: 55, transfers: 0 },
-      collinsEast: { typical: 48, stressed: 60, transfers: 1 },
-    },
+    commute: { typical: 46, stressed: 58, transfers: 1 },
     scores: {
       housingValue: 4,
       coparenting: 3,
@@ -721,11 +686,7 @@ export const areaCorridors = [
     stationWalkMin: 8,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 44, stressed: 56, transfers: 1 },
-      collinsCentral: { typical: 40, stressed: 52, transfers: 0 },
-      collinsEast: { typical: 38, stressed: 50, transfers: 0 },
-    },
+    commute: { typical: 44, stressed: 56, transfers: 1 },
     scores: {
       housingValue: 3,
       coparenting: 4,
@@ -794,11 +755,7 @@ export const areaCorridors = [
     stationWalkMin: 6,
     carDaily: 'optional',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 14, stressed: 22, transfers: 0 },
-      collinsCentral: { typical: 18, stressed: 26, transfers: 0 },
-      collinsEast: { typical: 24, stressed: 32, transfers: 1 },
-    },
+    commute: { typical: 14, stressed: 22, transfers: 0 },
     scores: {
       housingValue: 2,
       coparenting: 3,
@@ -865,11 +822,7 @@ export const areaCorridors = [
     stationWalkMin: 20,
     carDaily: 'compulsory',
     secondBedroom: true,
-    commute: {
-      collinsWest: { typical: 58, stressed: 75, transfers: 1 },
-      collinsCentral: { typical: 62, stressed: 80, transfers: 1 },
-      collinsEast: { typical: 70, stressed: 88, transfers: 2 },
-    },
+    commute: { typical: 58, stressed: 75, transfers: 1 },
     scores: {
       housingValue: 4,
       coparenting: 3,
