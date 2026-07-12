@@ -15,6 +15,8 @@ export const strategies = [
     num: 1,
     name: 'Lowest-cost credible ownership',
     tagline: 'Older 1–2BR walk-up in the west, on the Metro Tunnel corridor',
+    whatItIs:
+      'The cheapest honest way in: an older two-bedroom brick walk-up (a low block of flats with no lift) in the western suburbs, priced so low the loan is tiny and dies fast. It differs from the other cheap options by optimising for purchase price alone, accepting dated stock and thinner local amenity to get there.',
     dwelling: 'Older brick walk-up unit, small block (4–12), 50–75 m²',
     cost: { low: 300, high: 430, label: '$300–430k all-in' },
     corridors: [
@@ -79,6 +81,8 @@ export const strategies = [
     num: 2,
     name: 'Apartment on direct transport',
     tagline: 'Older 2BR brick apartment, inner north or west, one-seat commute',
+    whatItIs:
+      'An older two-bedroom brick apartment sitting right on a train or tram line, chosen so daily life needs no car and the trip to Collins St is short and reliable. Unlike the villa and house strategies it trades a courtyard and low fees for the best possible transport and walkability.',
     dwelling: '2BR 1960s–90s apartment, 60–80 m², small block, no lift/pool',
     cost: { low: 460, high: 640, label: '$460–640k all-in' },
     corridors: [
@@ -147,6 +151,8 @@ export const strategies = [
     num: 3,
     name: 'Fastest payoff',
     tagline: 'Cheapest acceptable 2BR + maximum repayment violence',
+    whatItIs:
+      'Buy the cheapest acceptable two-bedroom home and throw every spare dollar at the mortgage to be debt-free in well under a decade. It differs from the lowest-cost strategy by being about repayment behaviour rather than the rock-bottom price: the home can be a little dearer as long as the loan still dies fast.',
     dwelling: '2BR unit ~$420–480k, 20% deposit, offset account, repay like rent + savings',
     cost: { low: 420, high: 490, label: '$420–490k all-in' },
     corridors: [
@@ -210,6 +216,8 @@ export const strategies = [
     num: 4,
     name: 'Best for co-parenting',
     tagline: '2BR villa unit near a station, school and park — Lulu gets a real room',
+    whatItIs:
+      'A two-bedroom villa unit (a single-storey brick unit, usually one of a few sharing a driveway) near a station, school and park, so Lulu gets a real bedroom and a courtyard. It differs from the general villa-unit strategy by choosing the location around schools and the other parent rather than around price.',
     dwelling: 'Brick villa unit in a block of 2–6, own courtyard, no neighbours above',
     cost: { low: 540, high: 700, label: '$540–700k all-in' },
     corridors: [
@@ -271,6 +279,8 @@ export const strategies = [
     num: 5,
     name: 'One person + occasional guests',
     tagline: '1BR + genuine study, inner corridor',
+    whatItIs:
+      'A one-bedroom apartment with a genuine separate study in an inner suburb, sized for one adult who occasionally has guests. It is the odd one out: with no second bedroom it fails the co-parenting test, and it stays on the list only as the honest "if it were just me" option.',
     dwelling: '1BR + study apartment, 55–70 m², Carlton / Kensington / Footscray / Brunswick',
     cost: { low: 380, high: 520, label: '$380–520k all-in' },
     corridors: [
@@ -329,7 +339,9 @@ export const strategies = [
     num: 6,
     name: 'Middle-ring villa unit',
     tagline: 'The unfashionable dwelling type that quietly wins this brief',
-    dwelling: '2BR brick villa, block of 4–6, courtyard, carport, ~$0–1.5k/yr OC',
+    whatItIs:
+      'A villa unit is a single-storey brick unit, usually one of 4–6 in a row sharing a driveway — your own walls, small courtyard, no one above you, and almost no body-corporate fees. This strategy targets them in the "middle ring": the band of suburbs roughly 10–20 km out, built mostly in the 1950s–80s.',
+    dwelling: '2BR brick villa, block of 4–6, courtyard, carport, ~$0–1.5k/yr owners-corp',
     cost: { low: 500, high: 680, label: '$500–680k all-in' },
     corridors: [
       {
@@ -398,6 +410,8 @@ export const strategies = [
     num: 7,
     name: 'Outer suburb, direct rail',
     tagline: 'More dwelling per dollar, single-seat line, honest about the trade',
+    whatItIs:
+      'A two or three-bedroom townhouse or small house further out but right beside a fast, direct train line — more space and yard per dollar in exchange for a longer daily trip. It differs from the middle-ring strategies by openly trading commute time for dwelling size, and only holds up if you are not in the office five days a week.',
     dwelling: '2–3BR townhouse or small house near a station',
     cost: { low: 520, high: 680, label: '$520–680k all-in' },
     corridors: [
@@ -465,6 +479,8 @@ export const strategies = [
     num: 8,
     name: 'New development / off-the-plan',
     tagline: 'The duty-concession window, eyes fully open',
+    whatItIs:
+      'A brand-new two-bedroom apartment or townhouse bought off-the-plan (OTP, meaning before it is built) to use the temporary stamp-duty concession while it lasts. It differs from the older-apartment strategies by chasing tax savings and low running costs, at the price of the build-quality and defect risk that older brick blocks have already worked through.',
     dwelling: 'New 2BR apartment or strata townhouse, boutique low-rise strongly preferred',
     cost: { low: 550, high: 720, label: '$550–720k, duty near $0 via OTP concession' },
     corridors: [
@@ -527,6 +543,8 @@ export const strategies = [
     num: 9,
     name: 'Small lot / compact build',
     tagline: 'Narrow-lot new build — works at stations, fails in the paddocks',
+    whatItIs:
+      'Build a compact two-bedroom house on a small or narrow block, ideally an infill lot inside an established suburb near a station. It differs from buying existing stock by giving you a new, efficient home you shape yourself, but the total cost usually lands above a finished villa unit closer in, and it fails badly on greenfield-fringe lots.',
     dwelling: 'Compact 2BR house on a small/narrow lot, or townhouse-on-own-title',
     cost: { low: 650, high: 800, label: '$650–800k completed (land $300–400k + build $350–450k)' },
     corridors: [
@@ -593,6 +611,8 @@ export const strategies = [
     num: 10,
     name: 'Unconventional construction',
     tagline: 'Prefab/modular honestly assessed: the land is the problem, not the box',
+    whatItIs:
+      'Use prefabricated or modular construction (a house built in a factory and craned onto a slab) instead of a conventional builder. The honest finding is that the box is rarely the problem — affordable land near good transport barely exists — so this only works if you already own a serviced block.',
     dwelling: 'Prefab/panelised compact home; tiny homes and containers mostly fail here',
     cost: { low: 700, high: 900, label: 'Land-dominated: $400k+ lot before any structure' },
     corridors: [
@@ -649,6 +669,8 @@ export const strategies = [
     num: 11,
     name: 'Outdoor space / garden priority',
     tagline: 'Small old house or courtyard villa where land is still sane',
+    whatItIs:
+      'A modest old two-bedroom house on a real block of land, or a ground-floor villa with a proper courtyard, chosen when outdoor space is the priority. It differs from the apartment and villa-unit strategies by spending the budget on land and garden, accepting an older house’s upkeep and a longer commute to get it.',
     dwelling: 'Modest 2BR house on 300–500 m², or ground-floor villa with real courtyard',
     cost: { low: 600, high: 750, label: '$600–750k all-in' },
     corridors: [
@@ -706,6 +728,8 @@ export const strategies = [
     num: 12,
     name: 'Car-free / car-light',
     tagline: 'Inner corridor, no parking premium, car-share for Lulu logistics',
+    whatItIs:
+      'A two-bedroom older apartment with no car space, in an inner suburb where trains, trams and car-share overlap, so you can live without owning a car. It differs from the apartment-on-transport strategy by going a step further, deliberately skipping parking to save $30–70k and leaning on car-share for the occasional Lulu run.',
     dwelling: '2BR older apartment without a car space, tram + train overlap zone',
     cost: { low: 450, high: 580, label: '$450–580k all-in (parking-free discount ~$30–70k)' },
     corridors: [
@@ -758,7 +782,10 @@ export const strategies = [
     num: 13,
     name: 'Lowest ongoing fees',
     tagline: 'Nothing with a lift, pool, gym, concierge or stacker — ever',
-    dwelling: 'Walk-up ≤12 units or villa unit; OC $500–2,500/yr vs $5–12k in towers',
+    whatItIs:
+      'Not a place but a filter: only buy small blocks — a walk-up (a two or three-storey apartment block with no lift) or a villa unit — and never anything with a lift, pool, gym or car stacker, because those push owners-corporation (body-corporate) fees sky-high. Layered on top of any other strategy, it protects the fast-payoff goal, since about $6k a year of avoided fees is worth roughly $80k of loan.',
+    dwelling:
+      'Walk-up (no-lift block) ≤12 units or villa unit; owners-corp $500–2,500/yr vs $5–12k in towers',
     cost: { low: 420, high: 620, label: '$420–620k all-in' },
     corridors: [
       {
@@ -809,6 +836,8 @@ export const strategies = [
     num: 14,
     name: 'Buy modest, expand later',
     tagline: 'Small house now; <60 m² garden studio later, no planning permit',
+    whatItIs:
+      'Buy a modest two-bedroom house on its own block now, then add a small garden studio under 60 m² later, which Victorian rules since 2023 allow with no planning permit. It differs from buying a finished larger home by staging the cost and keeping a built-in room for a future office, teenager or partner.',
     dwelling: '2BR house on its own title, rear access or side setback for a future studio',
     cost: { low: 620, high: 760, label: '$620–760k now, +$120–200k studio later' },
     corridors: [
@@ -866,6 +895,8 @@ export const strategies = [
     num: 15,
     name: 'Best compromise (the synthesis)',
     tagline: '2BR villa or older apartment, ≤$600k, <800m from a one-seat station, tiny fees',
+    whatItIs:
+      'This is the blend: take the villa-unit dwelling type from strategy 6, the train corridors from strategy 2, and the low-fees filter from strategy 13, and cap the price at $600k so stamp duty is zero. It differs from the pure versions by giving up the best score on any single dimension to avoid a bad score on all of them.',
     dwelling:
       'Strategy 6’s dwelling + strategy 2’s corridors + strategy 13’s filter, under the duty-free line',
     cost: { low: 520, high: 600, label: '≤$600k hard cap → $0 stamp duty' },
@@ -929,6 +960,8 @@ export const strategies = [
     name: 'Disciplined minimal build',
     tagline:
       'Small, well-detailed panelised/SIP house on an infill lot — less house, not a cheaper method',
+    whatItIs:
+      'Build a small, carefully designed one-and-a-half to two-bedroom house using panelised or SIP (structural insulated panel) construction — the saving comes from building less house, not a cheaper method. It differs from the small-lot build by being a deliberate design choice rather than a budget one: strategy 6’s villa unit beats it on pure cost every time.',
     dwelling:
       '1.5–2BR single-storey, 55–70 m², panelised or SIP frame, passive-solar oriented, zero wasted circulation space',
     cost: {
@@ -1000,7 +1033,9 @@ export const strategies = [
     name: 'Far-out, already-built, frugal',
     tagline:
       'Established small house in a V/Line commuter town — the cheapest whole-house money, scored honestly',
-    dwelling: 'Existing 2–3BR house, 1970s–2000s stock, full block, no OC ever',
+    whatItIs:
+      'An existing two or three-bedroom house in a far-out commuter town on a V/Line regional train — the cheapest whole-house-and-yard money on the list. It differs from every other strategy by openly failing the car-light philosophy, since daily life out here means driving, so it only fits if raw frugality outranks the commute or you stop going to the office five days a week.',
+    dwelling: 'Existing 2–3BR house, 1970s–2000s stock, full block, no owners-corp ever',
     cost: { low: 460, high: 600, label: '$460–600k houses; Melton units from ~$400–430k' },
     corridors: [
       {

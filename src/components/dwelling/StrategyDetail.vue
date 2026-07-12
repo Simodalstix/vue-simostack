@@ -1,5 +1,9 @@
 <template>
   <div class="space-y-5">
+    <p v-if="strategy.whatItIs" class="text-[13px] leading-relaxed text-ob-muted2">
+      {{ strategy.whatItIs }}
+    </p>
+
     <p class="text-[13px] text-ob-muted2">
       <span class="text-ob-soft font-mono text-[11px] uppercase tracking-[0.08em] mr-2"
         >Dwelling</span
