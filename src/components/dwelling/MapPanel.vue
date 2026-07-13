@@ -59,15 +59,18 @@
             :is="DwellingMap"
             :catchments="features.catchments"
             :points="features.points"
+            :localities="features.localities"
             :bounds="features.bounds"
             :area-state="areaState"
             :selected-area-id="modelValue"
             :shortlist-ids="shortlistIds"
             :get-popup-html="popupHtml"
             :basemap="coastlineUrl"
+            :water="bayUrl"
+            :river="yarraUrl"
             :theme="theme"
             @select="onSelect"
-            @hover="hoveredId = $event"
+            @hover="onHover"
           />
         </div>
 
@@ -100,11 +103,17 @@
         <div class="h-[200px] overflow-y-auto border-b border-ob-sand/8">
           <div v-if="previewRow" class="px-4 py-3">
             <div class="flex items-baseline justify-between gap-2">
-              <span class="text-[14px] font-bold text-ob-text">{{ previewRow.rec.suburb }}</span>
+              <span class="text-[14px] font-bold text-ob-text">{{ previewHeading }}</span>
               <span class="font-mono text-[11px] text-ob-faint"
                 >#{{ rankById[previewRow.rec.id] }} · {{ previewRow.rec.region }}</span
               >
             </div>
+            <p
+              v-if="previewCoverageNote"
+              class="mt-1 font-mono text-[10px] leading-snug text-ob-faint"
+            >
+              {{ previewCoverageNote }}
+            </p>
             <div class="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
               <span
                 class="font-mono text-[11px] px-2 py-[2px] rounded-full"
@@ -166,9 +175,9 @@
           <li v-for="row in scoredRows" :key="row.rec.id" :ref="(el) => setRowRef(row.rec.id, el)">
             <button
               @click="onSelect(row.rec.id)"
-              @mouseenter="hoveredId = row.rec.id"
-              @mouseleave="hoveredId = null"
-              @focus="hoveredId = row.rec.id"
+              @mouseenter="hoveredContext = { areaId: row.rec.id, source: 'list' }"
+              @mouseleave="hoveredContext = null"
+              @focus="hoveredContext = { areaId: row.rec.id, source: 'list' }"
               role="option"
               :aria-selected="modelValue === row.rec.id"
               class="w-full text-left px-4 py-2 flex items-center gap-2.5 border-b border-ob-sand/6 transition-colors"
@@ -226,8 +235,11 @@ import {
   legendFor,
   bandFor,
 } from '@/data/dwelling/mapConfig.js'
+import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { carDependenceFor, CAR_DEPENDENCE_LABEL } from '@/data/dwelling/areaEnrichment.js'
 import coastlineUrl from '@/assets/geo/melbourne-coastline.geojson?url'
+import bayUrl from '@/assets/geo/port-phillip-bay.geojson?url'
+import yarraUrl from '@/assets/geo/yarra-river.geojson?url'
 
 // maplibre-gl is heavy; keep it in its own async chunk so the rest of the Decide
 // view (and every other route) never pays for it up front.
@@ -235,7 +247,7 @@ const DwellingMap = defineAsyncComponent(() => import('./DwellingMap.vue'))
 
 const props = defineProps({
   rows: { type: Array, required: true },
-  features: { type: Object, required: true }, // { catchments, points, bounds }
+  features: { type: Object, required: true }, // { catchments, points, localities, bounds }
   indexById: { type: Object, required: true },
   shortlistIds: { type: Array, default: () => [] },
 })
@@ -253,7 +265,7 @@ watch(lenses, (ls) => {
 const activeLens = computed(() => lensByKey(lensKey.value))
 const legend = computed(() => legendFor(lensKey.value))
 
-const hoveredId = ref(null)
+const hoveredContext = ref(null)
 const mobileView = ref('map')
 const reducedMotion =
   typeof window !== 'undefined' && window.matchMedia
@@ -277,18 +289,37 @@ const rowById = computed(() => {
   for (const r of props.rows) m[r.rec.id] = r
   return m
 })
+const hoveredAreaId = computed(() => hoveredContext.value?.areaId || null)
 const previewRow = computed(
-  () => rowById.value[hoveredId.value] || rowById.value[modelValue.value] || null,
+  () => rowById.value[hoveredAreaId.value] || rowById.value[modelValue.value] || null,
 )
+const previewHeading = computed(() => {
+  if (!previewRow.value) return ''
+  return hoveredContext.value?.source === 'locality' && hoveredContext.value.localityName
+    ? hoveredContext.value.localityName
+    : previewRow.value.rec.suburb
+})
+const previewCoverageNote = computed(() => {
+  const row = previewRow.value
+  if (!row || !isGroupedArea(row.rec.id)) return null
+  const coverage = coverageLabelForArea(row.rec.id)
+  if (hoveredContext.value?.source === 'locality' && hoveredContext.value.localityName) {
+    return `Part of the grouped record covering ${coverage}.`
+  }
+  return `This ranked record covers ${coverage}.`
+})
 
-function onSelect(areaId) {
-  modelValue.value = areaId
+function onSelect(payload) {
+  modelValue.value = typeof payload === 'string' ? payload : payload?.areaId || null
+}
+function onHover(payload) {
+  hoveredContext.value = payload
 }
 function toggleShortlist(areaId) {
   emit('toggle-shortlist', areaId)
 }
 function onEscape() {
-  hoveredId.value = null
+  hoveredContext.value = null
 }
 
 function bandColor(row) {
@@ -309,13 +340,23 @@ function carLabel(rec) {
   return cd ? CAR_DEPENDENCE_LABEL[cd] : 'n/a'
 }
 
-// Small on-map hover popup: name, score band, rank, commute. Sanitised text.
-function popupHtml(areaId) {
+// Small on-map hover popup: locality-first where available, with grouped-record
+// context shown as the secondary line rather than merged into the title.
+function popupHtml(payload) {
+  const areaId = typeof payload === 'string' ? payload : payload?.areaId
+  const localityName = typeof payload === 'object' ? payload?.localityName : null
   const row = rowById.value[areaId]
   if (!row) return null
   const b = bandFor(row.weighted)
   const commute = row.commute ? `${row.commute.typical}–${row.commute.stressed} min` : ''
-  return `<strong>${esc(row.rec.suburb)}</strong><br>
+  const heading = localityName || row.rec.suburb
+  const grouped = isGroupedArea(areaId)
+    ? `<span style="color:#94A4B2">${esc(
+        localityName ? `Part of ${row.rec.suburb}` : `Covers ${coverageLabelForArea(areaId)}`,
+      )}</span><br>`
+    : ''
+  return `<strong>${esc(heading)}</strong><br>
+    ${grouped}
     <span style="color:${b.color}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}<br>
     <span style="color:#94A4B2">${commute}</span>`
 }

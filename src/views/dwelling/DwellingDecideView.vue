@@ -182,6 +182,7 @@ import {
   areaBounds,
   areaIndexById,
 } from '@/data/dwelling/areaGeoFeatures.js'
+import { localityFeatures } from '@/data/dwelling/localityFeatures.js'
 import { personalPosition } from '@/data/dwelling/facts.js'
 import { useAreaRanking } from '@/composables/useAreaRanking.js'
 import { useStrategyRanking } from '@/composables/useStrategyRanking.js'
@@ -225,6 +226,7 @@ const rankedLocations = useAreaRanking(areaCorridors, areaFilters, childhoodWeig
 const mapFeatures = {
   catchments: catchmentFeatures,
   points: stationPointFeatures,
+  localities: localityFeatures,
   bounds: areaBounds,
 }
 

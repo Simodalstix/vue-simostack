@@ -23,6 +23,14 @@
       </ul>
     </div>
 
+    <div
+      v-if="coverageNote"
+      class="rounded-[6px] px-4 py-3 bg-ob-surface2 border border-ob-sand/14"
+    >
+      <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft mb-1">Map scope</p>
+      <p class="text-[12.5px] leading-relaxed text-ob-muted2">{{ coverageNote }}</p>
+    </div>
+
     <!-- case for / against -->
     <div class="grid md:grid-cols-2 gap-x-10 gap-y-5 pt-4">
       <div>
@@ -350,6 +358,7 @@ import {
   carDependenceFor,
   CAR_DEPENDENCE_LABEL,
 } from '@/data/dwelling/areaEnrichment.js'
+import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import CommuteBreakdown from './CommuteBreakdown.vue'
 import CommunityProfile from './CommunityProfile.vue'
 
@@ -394,6 +403,11 @@ function crimeClass(band) {
 
 const SCHOOL_CAVEAT =
   'School zones are street-level — verify any address at findmyschool.vic.gov.au. Scores are provisional judgements pending My School / VCE data checks.'
+const coverageNote = computed(() =>
+  isGroupedArea(rec.value.id)
+    ? `This ranked record covers ${coverageLabelForArea(rec.value.id)}.`
+    : null,
+)
 const resolvedSources = computed(() =>
   (rec.value.sources || []).map((id) => areaSources[id]).filter(Boolean),
 )

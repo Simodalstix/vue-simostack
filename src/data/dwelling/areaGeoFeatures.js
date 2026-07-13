@@ -20,6 +20,7 @@
 
 import { areaCorridors } from './areaCorridors.js'
 import { areaGeo } from './areaGeo.js'
+import { localityFeatures } from './localityFeatures.js'
 
 // Stable record ordering -> integer feature-state id. Only records that have BOTH
 // a ranking entry and a geo entry get a slot.
@@ -86,19 +87,33 @@ const built = buildFeatures()
 export const catchmentFeatures = built.catchmentFeatures
 export const stationPointFeatures = built.stationPointFeatures
 
-// Bounding box [west, south, east, north] over every station point, so the map
-// can fit Melbourne's spread without a hard-coded extent.
+function extendBoundsPoint(bounds, lng, lat) {
+  if (lng < bounds[0]) bounds[0] = lng
+  if (lat < bounds[1]) bounds[1] = lat
+  if (lng > bounds[2]) bounds[2] = lng
+  if (lat > bounds[3]) bounds[3] = lat
+}
+
+function extendBoundsGeometry(bounds, geometry) {
+  const ring = (coords) => {
+    for (const [lng, lat] of coords) extendBoundsPoint(bounds, lng, lat)
+  }
+
+  if (geometry.type === 'Polygon') geometry.coordinates.forEach(ring)
+  else if (geometry.type === 'MultiPolygon')
+    geometry.coordinates.forEach((poly) => poly.forEach(ring))
+}
+
+// Bounding box [west, south, east, north] over the rendered suburb context plus
+// station points, so the map fits the actual geographic frame rather than only
+// the marker centroids.
 export const areaBounds = (() => {
-  let w = Infinity
-  let s = Infinity
-  let e = -Infinity
-  let n = -Infinity
+  const bounds = [Infinity, Infinity, -Infinity, -Infinity]
+
+  for (const f of localityFeatures.features) extendBoundsGeometry(bounds, f.geometry)
   for (const f of stationPointFeatures.features) {
     const [lng, lat] = f.geometry.coordinates
-    if (lng < w) w = lng
-    if (lng > e) e = lng
-    if (lat < s) s = lat
-    if (lat > n) n = lat
+    extendBoundsPoint(bounds, lng, lat)
   }
-  return [w, s, e, n]
+  return bounds
 })()

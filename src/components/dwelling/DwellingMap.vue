@@ -23,7 +23,9 @@
 //
 // Every catchment circle and station marker belonging to one ranking record
 // shares a single integer feature id, so one setFeatureState call recolours the
-// whole record at once. The stable record id lives in properties.areaId.
+// whole record at once. The stable record id lives in properties.areaId. Local
+// hover is handled separately on locality polygons, so grouped records can stay
+// grouped in the ranking while map exploration remains suburb-specific.
 
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import maplibregl from 'maplibre-gl'
@@ -32,6 +34,7 @@ import 'maplibre-gl/dist/maplibre-gl.css'
 const props = defineProps({
   catchments: { type: Object, required: true },
   points: { type: Object, required: true },
+  localities: { type: Object, default: null },
   bounds: { type: Array, required: true },
   // { [areaId]: { fid, color, fillOpacity, status } }
   areaState: { type: Object, default: () => ({}) },
@@ -44,9 +47,10 @@ const props = defineProps({
   // (areaId) => small sanitised HTML string for the on-map hover popup, or null.
   getPopupHtml: { type: Function, default: null },
   theme: { type: Object, default: () => ({}) },
-  // URL of a local coastline GeoJSON drawn faintly for orientation (Port Phillip
-  // Bay / Yarra). Same-origin bundled asset, not a third-party tile source.
+  // Same-origin bundled orientation assets, not third-party tiles.
   basemap: { type: String, default: null },
+  water: { type: String, default: null },
+  river: { type: String, default: null },
   // Fixed commute-destination anchor shown as a labelled marker.
   anchor: {
     type: Object,
@@ -74,10 +78,23 @@ let map = null
 let popup = null
 let anchorMarker = null
 let loaded = false
-let hoveredId = null
+let hoverContext = null
+let containerLeaveHandler = null
 
 const CATCH_SRC = 'catchments'
 const POINT_SRC = 'points'
+const LOCALITY_SRC = 'localities'
+const WATER_SRC = 'water'
+const RIVER_SRC = 'river'
+const GLYPHS_URL = `${import.meta.env.BASE_URL}glyphs/{fontstack}/{range}.pbf`
+const POINTER_QUERY_LAYERS = [
+  'locality-label',
+  'locality-focus-outline',
+  'locality-boundary',
+  'locality-fill',
+  'station-core',
+  'catchment-fill',
+]
 
 const prefersReducedMotion =
   typeof window !== 'undefined' && window.matchMedia
@@ -94,6 +111,8 @@ function outlineColor() {
     T.shortlist,
     ['boolean', ['feature-state', 'hovered'], false],
     T.hover,
+    ['boolean', ['feature-state', 'relatedHover'], false],
+    '#69A897',
     T.outline,
   ]
 }
@@ -106,6 +125,8 @@ function outlineWidth() {
     2.4,
     ['boolean', ['feature-state', 'hovered'], false],
     2,
+    ['boolean', ['feature-state', 'relatedHover'], false],
+    1.35,
     1,
   ]
 }
@@ -113,22 +134,195 @@ function outlineWidth() {
 function buildStyle() {
   return {
     version: 8,
-    // No glyphs or sprite: we render no map text/icons, keeping the route
-    // network-silent. Suburb names surface in the popup and the side list.
+    // Same-origin glyphs only; no third-party tiles, sprite or remote font
+    // fetches leave the site.
+    glyphs: GLYPHS_URL,
     sources: {},
     layers: [{ id: 'bg', type: 'background', paint: { 'background-color': T.bg } }],
   }
 }
 
 function addLayers() {
-  // Faint coastline first, so it sits UNDER everything as orientation context.
+  if (props.water) {
+    map.addSource(WATER_SRC, { type: 'geojson', data: props.water })
+    map.addLayer({
+      id: 'bay-fill',
+      type: 'fill',
+      source: WATER_SRC,
+      paint: {
+        'fill-color': '#163645',
+        'fill-opacity': 0.9,
+      },
+    })
+  }
+
+  if (props.river) {
+    map.addSource(RIVER_SRC, { type: 'geojson', data: props.river })
+    map.addLayer({
+      id: 'yarra-line',
+      type: 'line',
+      source: RIVER_SRC,
+      paint: {
+        'line-color': '#2F5A73',
+        'line-width': 1.2,
+        'line-opacity': 0.88,
+      },
+    })
+  }
+
+  // Faint coastline sits under the analytical layers as orientation context.
   if (props.basemap) {
     map.addSource('basemap', { type: 'geojson', data: props.basemap })
     map.addLayer({
       id: 'coastline',
       type: 'line',
       source: 'basemap',
-      paint: { 'line-color': '#33506A', 'line-width': 1.1, 'line-opacity': 0.7 },
+      paint: { 'line-color': '#4A708C', 'line-width': 1.1, 'line-opacity': 0.72 },
+    })
+  }
+
+  if (props.localities) {
+    map.addSource(LOCALITY_SRC, { type: 'geojson', data: props.localities })
+    map.addLayer({
+      id: 'locality-fill',
+      type: 'fill',
+      source: LOCALITY_SRC,
+      paint: {
+        'fill-color': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          '#233038',
+          ['boolean', ['feature-state', 'selected'], false],
+          '#202B33',
+          ['boolean', ['feature-state', 'shortlisted'], false],
+          '#1D262D',
+          ['boolean', ['get', 'assessed'], false],
+          '#1A2229',
+          '#171D23',
+        ],
+        'fill-opacity': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          0.32,
+          ['boolean', ['feature-state', 'selected'], false],
+          0.34,
+          ['boolean', ['feature-state', 'shortlisted'], false],
+          0.28,
+          ['boolean', ['get', 'assessed'], false],
+          0.18,
+          0.1,
+        ],
+      },
+    })
+    map.addLayer({
+      id: 'locality-boundary',
+      type: 'line',
+      source: LOCALITY_SRC,
+      paint: {
+        'line-color': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          '#7F919D',
+          ['boolean', ['feature-state', 'selected'], false],
+          T.selected,
+          ['boolean', ['feature-state', 'shortlisted'], false],
+          T.shortlist,
+          ['boolean', ['get', 'assessed'], false],
+          '#5F6F7B',
+          '#3E4851',
+        ],
+        'line-width': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          1.05,
+          ['boolean', ['feature-state', 'selected'], false],
+          1.9,
+          ['boolean', ['feature-state', 'shortlisted'], false],
+          1.6,
+          ['boolean', ['get', 'assessed'], false],
+          0.9,
+          0.7,
+        ],
+        'line-opacity': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          0.62,
+          ['boolean', ['feature-state', 'selected'], false],
+          0.8,
+          ['boolean', ['feature-state', 'shortlisted'], false],
+          0.72,
+          ['boolean', ['get', 'assessed'], false],
+          0.48,
+          0.3,
+        ],
+      },
+    })
+    map.addLayer({
+      id: 'locality-focus-outline',
+      type: 'line',
+      source: LOCALITY_SRC,
+      paint: {
+        'line-color': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          T.hover,
+          ['boolean', ['feature-state', 'selected'], false],
+          T.selected,
+          ['boolean', ['feature-state', 'shortlisted'], false],
+          T.shortlist,
+          'rgba(0,0,0,0)',
+        ],
+        'line-width': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          2.2,
+          ['boolean', ['feature-state', 'selected'], false],
+          1.9,
+          ['boolean', ['feature-state', 'shortlisted'], false],
+          1.6,
+          0.5,
+        ],
+        'line-opacity': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          0.96,
+          ['boolean', ['feature-state', 'selected'], false],
+          0.8,
+          ['boolean', ['feature-state', 'shortlisted'], false],
+          0.72,
+          0,
+        ],
+      },
+    })
+    map.addLayer({
+      id: 'locality-label',
+      type: 'symbol',
+      source: LOCALITY_SRC,
+      minzoom: 9.6,
+      layout: {
+        'text-field': ['get', 'name'],
+        'text-font': ['Noto Sans Regular'],
+        'text-size': ['interpolate', ['linear'], ['zoom'], 9.6, 9, 12, 11, 14, 12.5],
+        'text-max-width': 8,
+        'text-letter-spacing': 0.02,
+        'text-padding': 3,
+      },
+      paint: {
+        'text-color': [
+          'case',
+          ['boolean', ['feature-state', 'hovered'], false],
+          '#C6D2D9',
+          ['boolean', ['feature-state', 'selected'], false],
+          '#E6EBEF',
+          ['boolean', ['get', 'assessed'], false],
+          '#8A98A4',
+          '#66737E',
+        ],
+        'text-opacity': ['interpolate', ['linear'], ['zoom'], 9.6, 0.58, 12, 0.8, 14, 0.9],
+        'text-halo-color': 'rgba(17, 20, 24, 0.92)',
+        'text-halo-width': 1,
+        'text-halo-blur': 0.35,
+      },
     })
   }
 
@@ -146,6 +340,8 @@ function addLayers() {
         'case',
         ['boolean', ['feature-state', 'hovered'], false],
         ['+', ['coalesce', ['feature-state', 'fillOpacity'], 0.16], 0.12],
+        ['boolean', ['feature-state', 'relatedHover'], false],
+        ['+', ['coalesce', ['feature-state', 'fillOpacity'], 0.16], 0.04],
         ['coalesce', ['feature-state', 'fillOpacity'], 0.16],
       ],
     },
@@ -185,6 +381,8 @@ function addLayers() {
         6,
         ['boolean', ['feature-state', 'hovered'], false],
         5.5,
+        ['boolean', ['feature-state', 'relatedHover'], false],
+        5.1,
         4.5,
       ],
       'circle-color': ['coalesce', ['feature-state', 'color'], T.markerDim],
@@ -199,9 +397,11 @@ function addLayers() {
 
 // Push data styling + selection/shortlist into feature-state on both sources.
 function applyAllState() {
-  if (!loaded) return
+  if (!loaded || !map) return
   const selected = props.selectedAreaId
   const shortSet = new Set(props.shortlistIds)
+  const hoveredAreaId = hoverContext?.areaId || null
+  const localityHover = hoverContext?.source === 'locality'
   for (const [areaId, st] of Object.entries(props.areaState)) {
     const state = {
       color: st.color,
@@ -209,63 +409,130 @@ function applyAllState() {
       status: st.status,
       selected: areaId === selected,
       shortlisted: shortSet.has(areaId),
+      hovered: !localityHover && areaId === hoveredAreaId,
+      relatedHover: localityHover && areaId === hoveredAreaId,
     }
     for (const src of [CATCH_SRC, POINT_SRC])
       map.setFeatureState({ source: src, id: st.fid }, state)
   }
+  applyLocalityState(selected, shortSet)
 }
 
-function setHover(fid, on) {
-  if (fid == null) return
-  for (const src of [CATCH_SRC, POINT_SRC])
-    map.setFeatureState({ source: src, id: fid }, { hovered: on })
-}
-
-function fidFor(areaId) {
-  return props.areaState[areaId]?.fid
-}
-
-function onEnterFeature(e) {
-  if (!e.features?.length) return
-  map.getCanvas().style.cursor = 'pointer'
-  const f = e.features[0]
-  const areaId = f.properties.areaId
-  if (hoveredId !== areaId) {
-    if (hoveredId != null) setHover(fidFor(hoveredId), false)
-    hoveredId = areaId
-    setHover(f.id, true)
-    emit('hover', areaId)
-  }
-  if (props.getPopupHtml) {
-    const html = props.getPopupHtml(areaId)
-    if (html) {
-      if (!popup)
-        popup = new maplibregl.Popup({
-          closeButton: false,
-          closeOnClick: false,
-          className: 'dwelling-map-popup',
-          offset: 10,
-        })
-      popup.setLngLat(e.lngLat).setHTML(html).addTo(map)
-    }
+function applyLocalityState(
+  selected = props.selectedAreaId,
+  shortSet = new Set(props.shortlistIds),
+) {
+  if (!loaded || !map || !props.localities?.features?.length) return
+  const hoveredLocalityId =
+    hoverContext?.source === 'locality' ? hoverContext.localityFeatureId : null
+  for (const feature of props.localities.features) {
+    const areaIds = Array.isArray(feature.properties?.areaIds) ? feature.properties.areaIds : []
+    map.setFeatureState(
+      { source: LOCALITY_SRC, id: feature.id },
+      {
+        selected: selected != null && areaIds.includes(selected),
+        shortlisted: areaIds.some((areaId) => shortSet.has(areaId)),
+        hovered: feature.id === hoveredLocalityId,
+      },
+    )
   }
 }
 
-function clearHover() {
-  map.getCanvas().style.cursor = ''
-  if (hoveredId != null) {
-    setHover(fidFor(hoveredId), false)
-    hoveredId = null
-    emit('hover', null)
+function sameHoverContext(a, b) {
+  return (
+    a?.areaId === b?.areaId &&
+    a?.source === b?.source &&
+    a?.localityName === b?.localityName &&
+    a?.localityFeatureId === b?.localityFeatureId
+  )
+}
+
+function popupHtml(payload, lngLat) {
+  if (!props.getPopupHtml) return
+  const html = props.getPopupHtml(payload)
+  if (!html) {
+    if (popup) popup.remove()
+    return
   }
-  if (popup) {
+  if (!popup) {
+    popup = new maplibregl.Popup({
+      closeButton: false,
+      closeOnClick: false,
+      className: 'dwelling-map-popup',
+      offset: 10,
+    })
+  }
+  popup.setLngLat(lngLat).setHTML(html).addTo(map)
+}
+
+function setHoverContext(next, lngLat = null) {
+  if (sameHoverContext(hoverContext, next)) {
+    if (next && lngLat) popupHtml(next, lngLat)
+    return
+  }
+  hoverContext = next
+  applyAllState()
+  emit('hover', next)
+  if (next && lngLat) popupHtml(next, lngLat)
+  else if (popup) {
     popup.remove()
   }
 }
 
-function onClickFeature(e) {
-  if (!e.features?.length) return
-  emit('select', e.features[0].properties.areaId)
+function clearHover() {
+  if (!map) return
+  map.getCanvas().style.cursor = ''
+  setHoverContext(null)
+}
+
+function hoverPayloadFromFeature(feature, source) {
+  if (source === 'locality') {
+    const areaId = feature.properties?.primaryAreaId || feature.properties?.areaIds?.[0]
+    if (!areaId) return null
+    return {
+      areaId,
+      source,
+      localityName: feature.properties?.name || null,
+      localityFeatureId: feature.id ?? null,
+    }
+  }
+
+  const areaId = feature.properties?.areaId
+  if (!areaId) return null
+  return { areaId, source, localityName: null, localityFeatureId: null }
+}
+
+function interactiveTargetAt(point) {
+  const features = map.queryRenderedFeatures(point, { layers: POINTER_QUERY_LAYERS })
+  const locality = features.find(
+    (f) =>
+      f.layer.id.startsWith('locality-') &&
+      (f.properties?.primaryAreaId || f.properties?.areaIds?.length),
+  )
+  if (locality) return hoverPayloadFromFeature(locality, 'locality')
+
+  const station = features.find((f) => f.layer.id === 'station-core')
+  if (station) return hoverPayloadFromFeature(station, 'station')
+
+  const catchment = features.find((f) => f.layer.id === 'catchment-fill')
+  return catchment ? hoverPayloadFromFeature(catchment, 'catchment') : null
+}
+
+function onMapPointerMove(e) {
+  if (!loaded) return
+  const target = interactiveTargetAt(e.point)
+  map.getCanvas().style.cursor = target ? 'pointer' : ''
+  if (!target) {
+    clearHover()
+    return
+  }
+  setHoverContext(target, e.lngLat)
+}
+
+function onMapClick(e) {
+  if (!loaded) return
+  const target = interactiveTargetAt(e.point)
+  if (target) emit('select', target)
 }
 
 // Escape closes the hover popup without touching the pinned selection.
@@ -291,11 +558,10 @@ onMounted(() => {
   map.on('load', () => {
     addLayers()
     addAnchor()
-    for (const layer of ['catchment-fill', 'station-core']) {
-      map.on('mousemove', layer, onEnterFeature)
-      map.on('mouseleave', layer, clearHover)
-      map.on('click', layer, onClickFeature)
-    }
+    map.on('mousemove', onMapPointerMove)
+    map.on('click', onMapClick)
+    containerLeaveHandler = () => clearHover()
+    container.value?.addEventListener('mouseleave', containerLeaveHandler)
   })
 })
 
@@ -313,6 +579,8 @@ function addAnchor() {
 onBeforeUnmount(() => {
   if (popup) popup.remove()
   if (anchorMarker) anchorMarker.remove()
+  if (containerLeaveHandler)
+    container.value?.removeEventListener('mouseleave', containerLeaveHandler)
   if (map) map.remove()
   map = null
 })
