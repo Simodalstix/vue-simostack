@@ -222,7 +222,16 @@
       v-if="activeRow"
       class="mt-3 bg-ob-surface border border-ob-sand/8 rounded-[6px] overflow-hidden"
     >
-      <div class="px-4 py-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+      <!-- whole header toggles the detail, not just the small label -->
+      <div
+        @click="showDetail = !showDetail"
+        role="button"
+        tabindex="0"
+        @keydown.enter="showDetail = !showDetail"
+        @keydown.space.prevent="showDetail = !showDetail"
+        :aria-expanded="showDetail"
+        class="px-4 py-3 flex flex-wrap items-center gap-x-5 gap-y-2 cursor-pointer select-none hover:bg-ob-surface2/60 transition-colors"
+      >
         <span class="text-[13.5px] font-bold text-ob-text"
           >{{ activeRow.rec.suburb }} catchment</span
         >
@@ -241,12 +250,9 @@
           "
           >{{ activeRow.status }}</span
         >
-        <button
-          @click="showDetail = !showDetail"
-          class="ml-auto font-mono text-[11px] text-ob-faint hover:text-ob-teal transition-colors"
-        >
-          {{ showDetail ? 'hide details' : 'details' }}
-        </button>
+        <span class="ml-auto font-mono text-[11px] text-ob-faint">
+          {{ showDetail ? 'hide details ▾' : 'details ▸' }}
+        </span>
       </div>
       <AreaDetailDrawer v-if="showDetail" :row="activeRow" />
     </div>
@@ -270,10 +276,11 @@ const props = defineProps({
 const active = defineModel({ default: null })
 const showDetail = ref(false)
 
-// Selecting a suburb anywhere (map, list, chips, table row) auto-opens its full
-// detail in the active-location summary below, so a click "opens the suburb".
+// Selecting a suburb anywhere (map, list, table row) expands its full detail
+// INLINE at that row in the compare table, so the page never jumps to a summary
+// elsewhere. A repeat click on the already-active row toggles it closed.
 watch(active, (id) => {
-  showDetail.value = id != null
+  if (id != null) expanded.value = new Set(expanded.value).add(id)
 })
 
 // The full ranking row for a compare-table id, for the inline detail drawer.
@@ -456,8 +463,14 @@ function fmt(n) {
 // --- shared helpers ------------------------------------------------------
 
 function select(id) {
-  active.value = id
-  if (id == null) showDetail.value = false
+  if (id == null) {
+    active.value = null
+    showDetail.value = false
+    return
+  }
+  // Repeat click on the already-active row: toggle its inline card closed/open.
+  if (active.value === id) toggleExpand(id)
+  else active.value = id
 }
 function priceBand(rec) {
   const p = rec.dwelling?.indicativePrice
