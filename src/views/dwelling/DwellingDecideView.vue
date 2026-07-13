@@ -77,7 +77,19 @@
       </div>
     </div>
 
-    <!-- location lens (2/3) + criteria weights (1/3), stacking on <lg -->
+    <!-- THE STAR: Melbourne lens map. Recolours live as the weights below change;
+         clicking a suburb selects it everywhere (list, compare table, detail,
+         cost strip and strategy ranking all read the same activeLocationId). -->
+    <MapPanel
+      v-model="activeLocationId"
+      :rows="rankedLocations"
+      :features="mapFeatures"
+      :index-by-id="areaIndexById"
+      :shortlist-ids="shortlist"
+      @toggle-shortlist="toggleShortlist"
+    />
+
+    <!-- compare table + detail (2/3) + criteria weights (1/3), stacking on <lg -->
     <div class="grid lg:grid-cols-3 gap-6 items-start">
       <LocationLens
         class="lg:col-span-2"
@@ -146,14 +158,22 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, watch } from 'vue'
+import { ref, reactive, computed, watch, onMounted } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { criteria, lensChildhoodKeys } from '@/data/dwelling/framework.js'
 import { strategies, verdictMeta } from '@/data/dwelling/strategies.js'
 import { areaCorridors } from '@/data/dwelling/areaCorridors.js'
+import {
+  catchmentFeatures,
+  stationPointFeatures,
+  areaBounds,
+  areaIndexById,
+} from '@/data/dwelling/areaGeoFeatures.js'
 import { personalPosition } from '@/data/dwelling/facts.js'
 import { useAreaRanking } from '@/composables/useAreaRanking.js'
 import { useStrategyRanking } from '@/composables/useStrategyRanking.js'
 import { commuteFor, scoreCommute } from '@/composables/useCommuteScoring.js'
+import MapPanel from '@/components/dwelling/MapPanel.vue'
 import LocationLens from '@/components/dwelling/LocationLens.vue'
 import ExpectedCostStrip from '@/components/dwelling/ExpectedCostStrip.vue'
 import StrategyRankList from '@/components/dwelling/StrategyRankList.vue'
@@ -187,6 +207,37 @@ const childhoodWeights = computed(() =>
     .map((c) => ({ key: c.key, weight: c.weight })),
 )
 const rankedLocations = useAreaRanking(areaCorridors, areaFilters, childhoodWeights)
+
+// Local GeoJSON for the map. Static geometry; colours are applied live.
+const mapFeatures = {
+  catchments: catchmentFeatures,
+  points: stationPointFeatures,
+  bounds: areaBounds,
+}
+
+// Shortlist for map + compare (capped at three, per the brief).
+const shortlist = ref([])
+function toggleShortlist(id) {
+  const i = shortlist.value.indexOf(id)
+  if (i >= 0) shortlist.value = shortlist.value.filter((x) => x !== id)
+  else if (shortlist.value.length < 3) shortlist.value = [...shortlist.value, id]
+}
+
+// Deep-link the active suburb via ?area=. Read once on mount, then mirror
+// changes into the query. A rejected suburb stays selected (it is still in the
+// set, just gated) — we only clear an id that matches no record at all.
+const route = useRoute()
+const router = useRouter()
+onMounted(() => {
+  const q = route.query.area
+  if (typeof q === 'string' && areaCorridors.some((r) => r.id === q)) activeLocationId.value = q
+})
+watch(activeLocationId, (id) => {
+  const next = { ...route.query }
+  if (id == null) delete next.area
+  else next.area = id
+  router.replace({ query: next })
+})
 
 const activeLocation = computed(() =>
   activeLocationId.value == null
