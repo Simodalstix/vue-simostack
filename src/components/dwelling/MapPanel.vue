@@ -95,9 +95,9 @@
         class="border-t lg:border-t-0 lg:border-l border-ob-sand/8 flex-col max-h-[560px]"
         :class="mobileView === 'list' ? 'flex' : 'hidden lg:flex'"
       >
-        <!-- preview card. Height is reserved so hovering a list row never
-             reflows the list underneath the cursor. -->
-        <div class="min-h-[190px] border-b border-ob-sand/8">
+        <!-- preview card. FIXED height (content scrolls within) so switching
+             suburbs never resizes it or reflows the list underneath. -->
+        <div class="h-[200px] overflow-y-auto border-b border-ob-sand/8">
           <div v-if="previewRow" class="px-4 py-3">
             <div class="flex items-baseline justify-between gap-2">
               <span class="text-[14px] font-bold text-ob-text">{{ previewRow.rec.suburb }}</span>

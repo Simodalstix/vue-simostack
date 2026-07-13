@@ -195,80 +195,17 @@
                 <button
                   @click.stop="toggleExpand(row.id)"
                   class="font-mono text-[13px] leading-none text-ob-faint hover:text-ob-teal transition-colors"
-                  :title="expanded.has(row.id) ? 'Hide school detail' : 'Show school detail'"
+                  :title="expanded.has(row.id) ? 'Hide suburb detail' : 'Show full suburb detail'"
                   :aria-expanded="expanded.has(row.id)"
                 >
                   {{ expanded.has(row.id) ? '▾' : 'ⓘ' }}
                 </button>
               </td>
             </tr>
-            <!-- expandable school detail: teal chips for zoned public schools,
-                 dim chips for private context, the note, and a fixed caveat -->
-            <tr
-              v-if="expanded.has(row.id) && row.rec.childhood"
-              class="border-b border-ob-sand/8 bg-ob-surface/40"
-            >
-              <td :colspan="columns.length + 1" class="px-4 py-3">
-                <div class="space-y-2.5">
-                  <div class="flex flex-wrap items-center gap-1.5">
-                    <span
-                      class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
-                      >Primary</span
-                    >
-                    <span
-                      v-for="s in row.rec.childhood.publicPrimary"
-                      :key="s"
-                      class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
-                      >{{ s }}</span
-                    >
-                    <span
-                      v-if="!row.rec.childhood.publicPrimary.length"
-                      class="font-mono text-[11px] text-ob-faint"
-                      >not listed</span
-                    >
-                  </div>
-                  <div class="flex flex-wrap items-center gap-1.5">
-                    <span
-                      class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
-                      >Secondary</span
-                    >
-                    <span
-                      v-for="s in row.rec.childhood.publicSecondary"
-                      :key="s"
-                      class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
-                      >{{ s }}</span
-                    >
-                    <span
-                      v-if="!row.rec.childhood.publicSecondary.length"
-                      class="font-mono text-[11px] text-ob-faint"
-                      >not listed</span
-                    >
-                  </div>
-                  <div
-                    v-if="row.rec.childhood.privateContext.length"
-                    class="flex flex-wrap items-center gap-1.5"
-                  >
-                    <span
-                      class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
-                      >Private</span
-                    >
-                    <span
-                      v-for="s in row.rec.childhood.privateContext"
-                      :key="s"
-                      class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-sand/10 text-ob-dim"
-                      >{{ s }}</span
-                    >
-                  </div>
-                  <p
-                    v-if="row.rec.childhood.note"
-                    class="text-[12px] leading-relaxed text-ob-muted2"
-                  >
-                    {{ row.rec.childhood.note }}
-                  </p>
-                  <p class="font-mono text-[10.5px] leading-relaxed text-ob-faint">
-                    {{ SCHOOL_CAVEAT }}
-                  </p>
-                </div>
+            <!-- expandable FULL suburb detail (same drawer as the active summary) -->
+            <tr v-if="expanded.has(row.id)" class="border-b border-ob-sand/8 bg-ob-surface/40">
+              <td :colspan="columns.length + 1" class="p-0">
+                <AreaDetailDrawer v-if="fullRowFor(row.id)" :row="fullRowFor(row.id)" />
               </td>
             </tr>
           </template>
@@ -317,7 +254,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
 import { DESTINATION } from '@/composables/useCommuteScoring.js'
 import { monthlyPayment } from '@/composables/useRepayment.js'
@@ -333,8 +270,19 @@ const props = defineProps({
 const active = defineModel({ default: null })
 const showDetail = ref(false)
 
-// Per-row school-detail expander in the compare table. Deliberately separate
-// from row-select (which sets the active location that tunes the ranking).
+// Selecting a suburb anywhere (map, list, chips, table row) auto-opens its full
+// detail in the active-location summary below, so a click "opens the suburb".
+watch(active, (id) => {
+  showDetail.value = id != null
+})
+
+// The full ranking row for a compare-table id, for the inline detail drawer.
+function fullRowFor(id) {
+  return props.locations.find((l) => l.rec.id === id) || null
+}
+
+// Per-row full-detail expander in the compare table. Deliberately separate from
+// row-select (which sets the active location that tunes the ranking).
 const expanded = ref(new Set())
 function toggleExpand(id) {
   const next = new Set(expanded.value)
@@ -551,8 +499,4 @@ const CHILDHOOD_LABEL = {
 function dotTitle(key, val) {
   return `${CHILDHOOD_LABEL[key]}: ${val == null ? 'n/a' : val + '/5'}`
 }
-
-// Permanent caveat shown under every expanded school-detail row.
-const SCHOOL_CAVEAT =
-  'School zones are street-level — verify any address at findmyschool.vic.gov.au. Scores are provisional judgements pending My School / VCE data checks.'
 </script>

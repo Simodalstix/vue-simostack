@@ -95,6 +95,60 @@
       </div>
     </div>
 
+    <!-- schools & childhood -->
+    <div v-if="rec.childhood" class="space-y-2.5">
+      <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft">
+        Schools &amp; childhood
+      </p>
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
+          >Primary</span
+        >
+        <span
+          v-for="s in rec.childhood.publicPrimary"
+          :key="s"
+          class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
+          >{{ s }}</span
+        >
+        <span
+          v-if="!rec.childhood.publicPrimary?.length"
+          class="font-mono text-[11px] text-ob-faint"
+          >not listed</span
+        >
+      </div>
+      <div class="flex flex-wrap items-center gap-1.5">
+        <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
+          >Secondary</span
+        >
+        <span
+          v-for="s in rec.childhood.publicSecondary"
+          :key="s"
+          class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
+          >{{ s }}</span
+        >
+        <span
+          v-if="!rec.childhood.publicSecondary?.length"
+          class="font-mono text-[11px] text-ob-faint"
+          >not listed</span
+        >
+      </div>
+      <div v-if="rec.childhood.privateContext?.length" class="flex flex-wrap items-center gap-1.5">
+        <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
+          >Private</span
+        >
+        <span
+          v-for="s in rec.childhood.privateContext"
+          :key="s"
+          class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-sand/10 text-ob-dim"
+          >{{ s }}</span
+        >
+      </div>
+      <p v-if="rec.childhood.note" class="text-[12px] leading-relaxed text-ob-muted2">
+        {{ rec.childhood.note }}
+      </p>
+      <p class="font-mono text-[10.5px] leading-relaxed text-ob-faint">{{ SCHOOL_CAVEAT }}</p>
+    </div>
+
     <!-- decision profile: dimensions the brief wants comparable but NOT turned
          into weighting sliders. Every field renders an honest "not assessed"
          state until the owner fills areaEnrichment.js. -->
@@ -337,6 +391,9 @@ function crimeClass(band) {
     }[band] || 'text-ob-dim'
   )
 }
+
+const SCHOOL_CAVEAT =
+  'School zones are street-level — verify any address at findmyschool.vic.gov.au. Scores are provisional judgements pending My School / VCE data checks.'
 const resolvedSources = computed(() =>
   (rec.value.sources || []).map((id) => areaSources[id]).filter(Boolean),
 )
