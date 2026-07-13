@@ -44,6 +44,14 @@ const props = defineProps({
   // (areaId) => small sanitised HTML string for the on-map hover popup, or null.
   getPopupHtml: { type: Function, default: null },
   theme: { type: Object, default: () => ({}) },
+  // URL of a local coastline GeoJSON drawn faintly for orientation (Port Phillip
+  // Bay / Yarra). Same-origin bundled asset, not a third-party tile source.
+  basemap: { type: String, default: null },
+  // Fixed commute-destination anchor shown as a labelled marker.
+  anchor: {
+    type: Object,
+    default: () => ({ coordinates: [144.9575, -37.8183], label: '555 Collins St' }),
+  },
 })
 
 const emit = defineEmits(['select', 'hover'])
@@ -64,6 +72,7 @@ const T = {
 const container = ref(null)
 let map = null
 let popup = null
+let anchorMarker = null
 let loaded = false
 let hoveredId = null
 
@@ -112,6 +121,17 @@ function buildStyle() {
 }
 
 function addLayers() {
+  // Faint coastline first, so it sits UNDER everything as orientation context.
+  if (props.basemap) {
+    map.addSource('basemap', { type: 'geojson', data: props.basemap })
+    map.addLayer({
+      id: 'coastline',
+      type: 'line',
+      source: 'basemap',
+      paint: { 'line-color': '#33506A', 'line-width': 1.1, 'line-opacity': 0.7 },
+    })
+  }
+
   map.addSource(CATCH_SRC, { type: 'geojson', data: props.catchments })
   map.addSource(POINT_SRC, { type: 'geojson', data: props.points })
 
@@ -270,6 +290,7 @@ onMounted(() => {
 
   map.on('load', () => {
     addLayers()
+    addAnchor()
     for (const layer of ['catchment-fill', 'station-core']) {
       map.on('mousemove', layer, onEnterFeature)
       map.on('mouseleave', layer, clearHover)
@@ -278,8 +299,20 @@ onMounted(() => {
   })
 })
 
+// The commute destination, as a labelled HTML marker (no map glyphs needed).
+function addAnchor() {
+  if (!props.anchor) return
+  const el = document.createElement('div')
+  el.className = 'dwelling-map-anchor'
+  el.innerHTML = `<span class="dot"></span><span class="lbl">${props.anchor.label}</span>`
+  anchorMarker = new maplibregl.Marker({ element: el, anchor: 'left' })
+    .setLngLat(props.anchor.coordinates)
+    .addTo(map)
+}
+
 onBeforeUnmount(() => {
   if (popup) popup.remove()
+  if (anchorMarker) anchorMarker.remove()
   if (map) map.remove()
   map = null
 })
@@ -340,5 +373,29 @@ defineExpose({
 }
 .maplibregl-ctrl-group button .maplibregl-ctrl-icon {
   filter: invert(0.85);
+}
+.dwelling-map-anchor {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  pointer-events: none;
+}
+.dwelling-map-anchor .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: #f5f2ec;
+  border: 1.5px solid #111418;
+  transform: rotate(45deg);
+}
+.dwelling-map-anchor .lbl {
+  font-family: 'Space Grotesk', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: #f5f2ec;
+  background: rgba(17, 20, 24, 0.7);
+  padding: 1px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 </style>

@@ -28,13 +28,14 @@ export const MAP_THEME = {
 
 // Stable overall-fit bands on the 0-100 "% of ideal" weighted score. Fixed
 // thresholds (not quantiles) so a suburb keeps its colour meaning as weights
-// move. teal = stronger fit, amber = trade-offs, grey = weak/poor.
+// move. The MAP deliberately steps OUTSIDE the site palette to a green->red
+// good/bad ramp (ColorBrewer RdYlGn) so fit reads at a glance.
 export const SCORE_BANDS = [
-  { min: 80, label: 'Excellent fit', color: '#4FCBB3' },
-  { min: 70, label: 'Strong fit', color: '#3DB8A0' },
-  { min: 60, label: 'Meaningful trade-offs', color: '#C98A3E' },
-  { min: 50, label: 'Weak fit', color: '#8A6A3A' },
-  { min: -Infinity, label: 'Poor fit', color: '#5B6670' },
+  { min: 80, label: 'Excellent fit', color: '#1A9850' },
+  { min: 70, label: 'Strong fit', color: '#91CF60' },
+  { min: 60, label: 'Meaningful trade-offs', color: '#FEE08B' },
+  { min: 50, label: 'Weak fit', color: '#FC8D59' },
+  { min: -Infinity, label: 'Poor fit', color: '#D73027' },
 ]
 
 export function bandFor(score) {
@@ -42,9 +43,9 @@ export function bandFor(score) {
   return SCORE_BANDS.find((b) => score >= b.min)
 }
 
-// The 1-5 metric lenses reuse the same five steps so the map reads as one
-// system whichever lens is active.
-const RAMP_5 = ['#5B6670', '#8A6A3A', '#C98A3E', '#3DB8A0', '#4FCBB3']
+// The 1-5 metric lenses reuse the same green->red ramp (bad -> good) so the map
+// reads as one system whichever lens is active.
+const RAMP_5 = ['#D73027', '#FC8D59', '#FEE08B', '#91CF60', '#1A9850']
 export function rampColor(v) {
   if (v == null) return MAP_THEME.markerDim
   const i = Math.max(1, Math.min(5, Math.round(v))) - 1

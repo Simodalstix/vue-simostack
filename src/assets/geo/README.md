@@ -22,6 +22,13 @@ never drifts from the data:
 - [`src/data/dwelling/areaGeoFeatures.js`](../../data/dwelling/areaGeoFeatures.js)
   assembles the GeoJSON `FeatureCollection`s from those two inputs.
 
+A faint orientation basemap is vendored as `melbourne-coastline.geojson`: the
+Port Phillip Bay / Yarra coastline, pulled from the OpenStreetMap Overpass API
+(`natural=coastline` ways in the Melbourne bbox), converted to LineStrings and
+Douglas-Peucker simplified (~40 KB, tolerance ~0.0012deg). It is drawn as a
+faint line under the catchments and loaded as a same-origin bundled asset (no
+third-party request). Re-fetch/re-simplify if the shoreline needs more detail.
+
 If a future phase wants real suburb-boundary polygons underneath the circles,
 vendor them here (e.g. ABS ASGS suburb/SAL boundaries, simplified) and layer
 them faintly below the scored catchments.

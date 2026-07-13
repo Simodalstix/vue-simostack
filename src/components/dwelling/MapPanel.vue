@@ -64,6 +64,7 @@
             :selected-area-id="modelValue"
             :shortlist-ids="shortlistIds"
             :get-popup-html="popupHtml"
+            :basemap="coastlineUrl"
             :theme="theme"
             @select="onSelect"
             @hover="hoveredId = $event"
@@ -226,6 +227,7 @@ import {
   bandFor,
 } from '@/data/dwelling/mapConfig.js'
 import { carDependenceFor, CAR_DEPENDENCE_LABEL } from '@/data/dwelling/areaEnrichment.js'
+import coastlineUrl from '@/assets/geo/melbourne-coastline.geojson?url'
 
 // maplibre-gl is heavy; keep it in its own async chunk so the rest of the Decide
 // view (and every other route) never pays for it up front.

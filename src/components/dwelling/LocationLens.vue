@@ -123,7 +123,7 @@
               <td class="py-2 pr-3">
                 <div class="relative h-[16px] flex items-center min-w-[64px]">
                   <div
-                    class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-sand/25"
+                    class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-faint/15"
                     :style="{ width: commuteBar(row.commute) }"
                   ></div>
                   <span class="relative font-mono pl-1" :class="bandClass(row.band)"
@@ -140,17 +140,12 @@
                 <span class="font-mono text-ob-text">{{
                   row.estMonthly != null ? '$' + fmt(row.estMonthly) : 'n/a'
                 }}</span>
-                <span
-                  v-if="row.estMonthly != null"
-                  class="block font-mono text-[10px] text-ob-faint leading-tight"
-                  >incl. ~${{ fmt(row.ocMonthly) }}/mo OC est.</span
-                >
               </td>
               <!-- score, with teal bar scaled across the visible set -->
               <td class="py-2 pr-3">
                 <div class="relative h-[16px] flex items-center min-w-[52px]">
                   <div
-                    class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-teal/25"
+                    class="absolute inset-y-[3px] left-0 rounded-sm bg-ob-faint/15"
                     :style="{ width: scoreBar(row.score) }"
                   ></div>
                   <span class="relative font-mono text-ob-sand pl-1">{{ row.score }}</span>
@@ -530,15 +525,15 @@ function bandClass(band) {
     }[band] || 'text-ob-dim'
   )
 }
-// The palette has one warm accent (sand/bronze are the same amber), so the
-// three fee bands read cool -> warm -> hotter: teal, faint amber, filled amber.
+// OC fee bands step outside the site palette to a green/amber/red good->bad
+// scale so exposure reads instantly, matching the map's ramp.
 function feeChipClass(r) {
   return (
     {
-      low: 'bg-ob-teal/15 text-ob-teal',
-      moderate: 'bg-ob-sand/15 text-ob-sand',
-      high: 'bg-ob-sand/30 text-ob-bright ring-1 ring-ob-sand/45',
-    }[r] || 'bg-ob-sand/15 text-ob-sand'
+      low: 'bg-[#1A9850]/15 text-[#5FCB86]',
+      moderate: 'bg-[#E0A030]/15 text-[#F0B84D]',
+      high: 'bg-[#D73027]/18 text-[#F06A5F]',
+    }[r] || 'bg-[#E0A030]/15 text-[#F0B84D]'
   )
 }
 
