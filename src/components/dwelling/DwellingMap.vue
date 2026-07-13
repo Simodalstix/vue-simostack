@@ -5,6 +5,7 @@
       class="w-full h-full rounded-[8px] overflow-hidden"
       role="application"
       :aria-label="ariaLabel"
+      @keydown.esc="onEscapeKey"
     ></div>
     <slot name="overlay" />
   </div>
@@ -245,6 +246,11 @@ function clearHover() {
 function onClickFeature(e) {
   if (!e.features?.length) return
   emit('select', e.features[0].properties.areaId)
+}
+
+// Escape closes the hover popup without touching the pinned selection.
+function onEscapeKey() {
+  if (map) clearHover()
 }
 
 onMounted(() => {

@@ -27,9 +27,33 @@
       </div>
     </div>
 
+    <!-- Mobile-only Map / List switch. On lg+ both panes always show side by
+         side; on small screens one shows at a time (list stays reachable
+         without hover as the accessible fallback). -->
+    <div class="lg:hidden px-4 py-2 border-b border-ob-sand/8 flex justify-center">
+      <div
+        class="inline-flex rounded-[6px] border border-ob-sand/14 overflow-hidden"
+        role="tablist"
+      >
+        <button
+          v-for="v in ['map', 'list']"
+          :key="v"
+          @click="mobileView = v"
+          role="tab"
+          :aria-selected="mobileView === v"
+          class="px-4 py-[5px] font-mono text-[11px] uppercase tracking-[0.06em] transition-colors border-r border-ob-sand/14 last:border-r-0"
+          :class="
+            mobileView === v ? 'bg-ob-teal/15 text-ob-teal' : 'text-ob-faint hover:text-ob-muted'
+          "
+        >
+          {{ v }}
+        </button>
+      </div>
+    </div>
+
     <div class="grid lg:grid-cols-[1.9fr_1fr]">
       <!-- MAP: the star. ~65% on desktop, tall. -->
-      <div class="relative">
+      <div class="relative" :class="{ 'hidden lg:block': mobileView !== 'map' }">
         <div class="h-[340px] sm:h-[440px] lg:h-[560px]">
           <component
             :is="DwellingMap"
@@ -66,7 +90,10 @@
       </div>
 
       <!-- RIGHT RAIL: ranked list + hovered/selected summary -->
-      <div class="border-t lg:border-t-0 lg:border-l border-ob-sand/8 flex flex-col max-h-[560px]">
+      <div
+        class="border-t lg:border-t-0 lg:border-l border-ob-sand/8 flex-col max-h-[560px]"
+        :class="mobileView === 'list' ? 'flex' : 'hidden lg:flex'"
+      >
         <!-- preview card. Height is reserved so hovering a list row never
              reflows the list underneath the cursor. -->
         <div class="min-h-[190px] border-b border-ob-sand/8">
@@ -225,6 +252,11 @@ const activeLens = computed(() => lensByKey(lensKey.value))
 const legend = computed(() => legendFor(lensKey.value))
 
 const hoveredId = ref(null)
+const mobileView = ref('map')
+const reducedMotion =
+  typeof window !== 'undefined' && window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    : false
 
 const scoredRows = computed(() => props.rows.filter((r) => r.status !== 'unscored'))
 
@@ -300,6 +332,6 @@ function setRowRef(id, el) {
 watch(modelValue, async (id) => {
   if (id == null) return
   await nextTick()
-  rowRefs[id]?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  rowRefs[id]?.scrollIntoView({ block: 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' })
 })
 </script>
