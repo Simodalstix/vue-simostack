@@ -109,10 +109,23 @@
           Importance, not direction — everything is already scored so higher is better for you.
           <span class="font-mono text-ob-faint">0 = ignore · 10 = critical.</span>
         </p>
+        <p class="text-[11px] leading-snug text-ob-faint mb-4">
+          These weights drive the strategy ranking below. The two marked
+          <span class="text-ob-teal">◆ map</span> also recolour the Melbourne lens; the map's other
+          location factors are held fixed.
+        </p>
         <div v-show="weightsOpen" class="space-y-4">
           <div v-for="(c, i) in criteriaState" :key="c.key">
             <div class="flex items-baseline justify-between gap-2">
-              <label :for="'dw-' + c.key" class="text-[12px] text-ob-text">{{ c.label }}</label>
+              <label :for="'dw-' + c.key" class="text-[12px] text-ob-text"
+                >{{ c.label
+                }}<span
+                  v-if="lensChildhoodKeys.includes(c.key)"
+                  class="ml-1.5 font-mono text-[10px] text-ob-teal"
+                  title="Also recolours the Melbourne lens map"
+                  >◆ map</span
+                ></label
+              >
               <span class="font-mono text-[12px] text-ob-sand shrink-0">{{ c.weight }}</span>
             </div>
             <input

@@ -11,6 +11,8 @@
 //   dashed ring   = hard-gate rejection (drawn by the map component)
 //   solid ring    = selected / shortlisted / hovered (feature-state in the map)
 
+import { enrichmentFor, carDependenceFor, CAR_DEPENDENCE_ORDER } from './areaEnrichment.js'
+
 // On-palette site colours reused by the map canvas + legend + component theme.
 export const MAP_THEME = {
   bg: '#111418',
@@ -80,10 +82,34 @@ export const MAP_LENSES = [
   },
   { key: 'lowCar', label: 'Low-car daily life', value: (row) => row.rec.scores?.lowCar },
   { key: 'safety', label: 'Safety', value: (row) => row.rec.scores?.safety },
+  // Enrichment lenses. Car dependence is inverted to a fit goodness (very-low
+  // dependence = strong fit = 5). PT reach reads the public-transport-only
+  // score. Both are hidden by availableLenses() until data exists.
+  {
+    key: 'carDependence',
+    label: 'Car dependence',
+    value: (row) => {
+      const cd = carDependenceFor(row.rec)
+      const i = CAR_DEPENDENCE_ORDER.indexOf(cd)
+      return i < 0 ? null : 5 - i
+    },
+  },
+  {
+    key: 'ptReach',
+    label: 'Melbourne PT reach',
+    value: (row) => enrichmentFor(row.rec.id).ptNetworkReach.score,
+  },
 ]
 
 export function lensByKey(key) {
   return MAP_LENSES.find((l) => l.key === key) || MAP_LENSES[0]
+}
+
+// Lenses worth showing for the current data: overall always, plus any lens with
+// at least one scored value. Prevents empty or fabricated lenses appearing.
+export function availableLenses(rows) {
+  const scored = rows.filter((r) => r.status !== 'unscored')
+  return MAP_LENSES.filter((l) => l.pct || scored.some((r) => l.value(r) != null))
 }
 
 // Colour for a row under a given lens.

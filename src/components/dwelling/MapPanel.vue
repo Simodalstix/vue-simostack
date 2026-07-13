@@ -192,12 +192,13 @@
 import { ref, computed, defineAsyncComponent, nextTick, watch } from 'vue'
 import {
   MAP_THEME,
-  MAP_LENSES,
   lensByKey,
+  availableLenses,
   computeAreaState,
   legendFor,
   bandFor,
 } from '@/data/dwelling/mapConfig.js'
+import { carDependenceFor, CAR_DEPENDENCE_LABEL } from '@/data/dwelling/areaEnrichment.js'
 
 // maplibre-gl is heavy; keep it in its own async chunk so the rest of the Decide
 // view (and every other route) never pays for it up front.
@@ -213,8 +214,13 @@ const modelValue = defineModel({ default: null })
 const emit = defineEmits(['toggle-shortlist'])
 
 const theme = MAP_THEME
-const lenses = MAP_LENSES
 const lensKey = ref('overall')
+// Only lenses with real data appear; if the active one stops being available
+// (data removed), fall back to overall.
+const lenses = computed(() => availableLenses(props.rows))
+watch(lenses, (ls) => {
+  if (!ls.some((l) => l.key === lensKey.value)) lensKey.value = 'overall'
+})
 const activeLens = computed(() => lensByKey(lensKey.value))
 const legend = computed(() => legendFor(lensKey.value))
 
@@ -264,9 +270,9 @@ function priceBand(rec) {
 function dot(v) {
   return v == null ? 'n/a' : v + '/5'
 }
-const CAR_LABEL = { optional: 'low', constrained: 'moderate', compulsory: 'high' }
 function carLabel(rec) {
-  return CAR_LABEL[rec.carDaily] || rec.carDaily || 'n/a'
+  const cd = carDependenceFor(rec)
+  return cd ? CAR_DEPENDENCE_LABEL[cd] : 'n/a'
 }
 
 // Small on-map hover popup: name, score band, rank, commute. Sanitised text.
