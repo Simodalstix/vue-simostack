@@ -43,6 +43,14 @@ export default {
           teal: '#3DB8A0',
           'teal-bright': '#4FCBB3',
           ink: '#0C0F12',
+          // Semantic accents for the dwelling Decide workspace. Purple carries
+          // school / household / community context; gold carries personal
+          // network and friend connections (always with a star or pin glyph so
+          // it never reads as the amber cost/warning sand).
+          purple: '#9B82E5',
+          gold: '#E5C35A',
+          'gold-muted': '#A88E3C',
+          'gold-dark': '#3A3218',
         },
       },
     },

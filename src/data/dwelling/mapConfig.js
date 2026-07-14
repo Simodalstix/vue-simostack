@@ -6,14 +6,16 @@
 //
 // Channels are kept separate on purpose (the brief forbids one colour channel
 // carrying every meaning):
-//   fill hue      = the score for the current lens
+//   fill hue      = the score for the current lens, unless the active purchase
+//                   mode gates a suburb (then warm caution colours take over)
 //   fill opacity  = data confidence (provisional placeholder vs verified)
-//   dashed ring   = hard-gate rejection (drawn by the map component)
 //   solid ring    = selected / shortlisted / hovered (feature-state in the map)
 
-import { enrichmentFor, carDependenceFor, CAR_DEPENDENCE_ORDER } from './areaEnrichment.js'
+import { enrichmentFor } from './areaEnrichment.js'
 
 // On-palette site colours reused by the map canvas + legend + component theme.
+// purple = school / community context; gold = personal network. Both are
+// accents with fixed semantic roles, never score hues.
 export const MAP_THEME = {
   bg: '#111418',
   faintFill: '#2A3138',
@@ -24,6 +26,10 @@ export const MAP_THEME = {
   hover: '#4FCBB3',
   outline: '#3A434B',
   reject: '#D4903A',
+  purple: '#9B82E5',
+  gold: '#E5C35A',
+  goldMuted: '#A88E3C',
+  goldDark: '#3A3218',
 }
 
 // Stable overall-fit bands on the 0-100 "% of ideal" weighted score. Fixed
@@ -53,11 +59,13 @@ export function rampColor(v) {
 }
 
 // Confidence -> fill opacity. Provisional placeholder records read fainter than
-// verified ones; rejected records are dimmed further so the amber dashed ring,
-// not a bold fill, carries the rejection.
+// verified ones. Gated suburbs stay visible enough for their warm caution
+// colour to read clearly under the active purchase mode.
 export function fillOpacityFor(rec, status) {
   const base = rec.placeholder ? 0.16 : 0.3
-  return status === 'reject' ? base * 0.55 : base
+  if (status === 'reject') return base * 0.78
+  if (status === 'conditional') return base * 0.88
+  return base
 }
 
 // Lenses. `overall` uses the weighted 0-100 score; the rest colour by a single
@@ -81,20 +89,11 @@ export const MAP_LENSES = [
     label: 'Kid independence & amenity',
     value: (row) => row.rec.childhood?.teenIndependence,
   },
-  { key: 'lowCar', label: 'Low-car daily life', value: (row) => row.rec.scores?.lowCar },
   { key: 'safety', label: 'Safety', value: (row) => row.rec.scores?.safety },
-  // Enrichment lenses. Car dependence is inverted to a fit goodness (very-low
-  // dependence = strong fit = 5). PT reach reads the public-transport-only
-  // score. Both are hidden by availableLenses() until data exists.
-  {
-    key: 'carDependence',
-    label: 'Car dependence',
-    value: (row) => {
-      const cd = carDependenceFor(row.rec)
-      const i = CAR_DEPENDENCE_ORDER.indexOf(cd)
-      return i < 0 ? null : 5 - i
-    },
-  },
+  // Enrichment lens: PT reach reads the public-transport-only score, hidden by
+  // availableLenses() until data exists. (The low-car and car-dependence
+  // lenses were removed from Decide July 2026; the underlying data remains in
+  // areaCorridors / areaEnrichment for a future property-comparison tool.)
   {
     key: 'ptReach',
     label: 'Melbourne PT reach',
@@ -114,7 +113,30 @@ export function availableLenses(rows) {
 }
 
 // Colour for a row under a given lens.
+const MODE_STATUS_BANDS = {
+  conditional: [
+    { min: 75, color: '#FEE08B' },
+    { min: 62, color: '#FDAE61' },
+    { min: -Infinity, color: '#F46D43' },
+  ],
+  reject: [
+    { min: 70, color: '#FDAE61' },
+    { min: 58, color: '#F46D43' },
+    { min: -Infinity, color: '#D73027' },
+  ],
+}
+
+function modePenaltyColor(status, weightedScore) {
+  const bands = MODE_STATUS_BANDS[status]
+  if (!bands) return null
+  const score = weightedScore ?? 0
+  return bands.find((b) => score >= b.min)?.color || bands[bands.length - 1].color
+}
+
 export function colorForRow(row, lens) {
+  if (row.status === 'conditional' || row.status === 'reject') {
+    return modePenaltyColor(row.status, row.weighted)
+  }
   const v = lens.value(row)
   return lens.pct ? bandFor(v).color : rampColor(v)
 }

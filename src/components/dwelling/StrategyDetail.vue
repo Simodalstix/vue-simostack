@@ -108,13 +108,14 @@ defineProps({
   strategy: { type: Object, required: true },
 })
 
+// Car-related rows (car independence, keeping one small car) were removed
+// from the visible Decide surface July 2026; the strategy data keeps them for
+// the future property-comparison tool.
 const transportKeys = [
   { key: 'pt', label: 'PT to Collins St' },
   { key: 'walk', label: 'Walkability' },
   { key: 'cycle', label: 'Cycling / e-bike' },
-  { key: 'carDependence', label: 'Car independence' },
   { key: 'lulu', label: 'Lulu logistics' },
-  { key: 'carKeeping', label: 'Keeping one small car' },
   { key: 'transportCost', label: 'Annual transport cost' },
 ]
 

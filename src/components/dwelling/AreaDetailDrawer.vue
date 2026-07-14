@@ -87,20 +87,13 @@
       <CommuteBreakdown :record="rec" :commute="row.commute" :band="row.band" />
     </div>
 
-    <!-- one-car + co-parenting geometry -->
-    <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
-      <div>
-        <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft mb-2">
-          One-car practicality
-        </p>
-        <p class="text-[12.5px] leading-relaxed text-ob-dim">{{ rec.oneCar }}</p>
-      </div>
-      <div>
-        <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft mb-2">
-          Co-parenting geometry
-        </p>
-        <p class="text-[12.5px] leading-relaxed text-ob-dim">{{ rec.coparentingGeometry }}</p>
-      </div>
+    <!-- co-parenting geometry (the one-car panel was retired with the car
+         concept; rec.oneCar stays in the data for the future property tool) -->
+    <div>
+      <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft mb-2">
+        Co-parenting geometry
+      </p>
+      <p class="text-[12.5px] leading-relaxed text-ob-dim">{{ rec.coparentingGeometry }}</p>
     </div>
 
     <!-- schools & childhood -->
@@ -163,28 +156,17 @@
     <div class="space-y-4">
       <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft">Decision profile</p>
 
-      <div class="grid sm:grid-cols-2 gap-x-10 gap-y-4">
-        <div>
-          <p class="font-mono text-[10.5px] uppercase tracking-[0.06em] text-ob-faint mb-1">
-            Car dependence
-          </p>
-          <p v-if="carDep" class="text-[12.5px] text-ob-muted2">
-            {{ CAR_DEPENDENCE_LABEL[carDep] }}
-          </p>
-          <p v-else class="text-[12px] text-ob-faint italic">not assessed</p>
-        </div>
-        <div>
-          <p class="font-mono text-[10.5px] uppercase tracking-[0.06em] text-ob-faint mb-1">
-            Melbourne PT network reach
-            <span class="text-ob-dim normal-case">· public transport only</span>
-          </p>
-          <p v-if="enrich.ptNetworkReach.score != null" class="text-[12.5px] text-ob-muted2">
-            {{ enrich.ptNetworkReach.score }}/5
-            <span v-if="enrich.ptNetworkReach.provisional" class="text-ob-sand">· provisional</span>
-            <span v-if="enrich.ptNetworkReach.note"> — {{ enrich.ptNetworkReach.note }}</span>
-          </p>
-          <p v-else class="text-[12px] text-ob-faint italic">not assessed</p>
-        </div>
+      <div>
+        <p class="font-mono text-[10.5px] uppercase tracking-[0.06em] text-ob-faint mb-1">
+          Melbourne PT network reach
+          <span class="text-ob-dim normal-case">· public transport only</span>
+        </p>
+        <p v-if="enrich.ptNetworkReach.score != null" class="text-[12.5px] text-ob-muted2">
+          {{ enrich.ptNetworkReach.score }}/5
+          <span v-if="enrich.ptNetworkReach.provisional" class="text-ob-sand">· provisional</span>
+          <span v-if="enrich.ptNetworkReach.note"> — {{ enrich.ptNetworkReach.note }}</span>
+        </p>
+        <p v-else class="text-[12px] text-ob-faint italic">not assessed</p>
       </div>
 
       <!-- unique character -->
@@ -285,8 +267,8 @@
       </div>
     </div>
 
-    <!-- community profile -->
-    <CommunityProfile :profile="rec.communityProfile" :abs-source="absSource" />
+    <!-- Community demographic context renders from the ABS Census 2021
+         dataset in the suburb pane (CommunityContextSection), not here. -->
 
     <!-- risks + inspection -->
     <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
@@ -353,14 +335,9 @@
 <script setup>
 import { computed } from 'vue'
 import { areaSources } from '@/data/dwelling/areaSources.js'
-import {
-  enrichmentFor,
-  carDependenceFor,
-  CAR_DEPENDENCE_LABEL,
-} from '@/data/dwelling/areaEnrichment.js'
+import { enrichmentFor } from '@/data/dwelling/areaEnrichment.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import CommuteBreakdown from './CommuteBreakdown.vue'
-import CommunityProfile from './CommunityProfile.vue'
 
 const props = defineProps({
   row: { type: Object, required: true },
@@ -368,10 +345,9 @@ const props = defineProps({
 
 const rec = computed(() => props.row.rec)
 
-// Decision-profile enrichment (car dependence, PT reach, crime, activity,
-// character). Seeded empty; renders honest "not assessed" states.
+// Decision-profile enrichment (PT reach, crime, activity, character).
+// Seeded empty; renders honest "not assessed" states.
 const enrich = computed(() => enrichmentFor(rec.value.id))
-const carDep = computed(() => carDependenceFor(rec.value, enrich.value))
 
 const activityGroups = [
   { key: 'walkable', label: 'Walk' },
@@ -411,7 +387,6 @@ const coverageNote = computed(() =>
 const resolvedSources = computed(() =>
   (rec.value.sources || []).map((id) => areaSources[id]).filter(Boolean),
 )
-const absSource = computed(() => areaSources.abs)
 const vicplanSource = computed(() =>
   (rec.value.sources || []).includes('vicplan') ? areaSources.vicplan : null,
 )

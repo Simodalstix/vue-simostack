@@ -13,9 +13,11 @@
 // 555 Collins St anchor (western end, ~400m from Southern Cross). Score keys
 // otherwise map 1:1 to areaWeights.
 //
-// communityProfile holds ABS demographic context ONLY. It is never scored,
-// never ranked, and never read by the ranking engine. Seeded empty pending a
-// real ABS QuickStats (2021 Census) pull. See CommunityProfile.vue.
+// Community demographic context lives in the standalone ABS Census 2021
+// dataset (dwelling-community-context-2021.ts, adapted by communityContext.js
+// keyed on these record ids). It is never scored, never ranked, and never
+// read by the ranking engine. The former per-record communityProfile blocks
+// were superseded by that dataset July 2026.
 //
 // childhood holds provisional school/independence research: schoolStrength and
 // teenIndependence (each 1-5) feed the suburb lens score via the framework
@@ -29,20 +31,6 @@
 // `feeEstimate` field. Midpoints, indicative.
 export const FEE_ESTIMATE_BY_RISK = { low: 1000, moderate: 2750, high: 6000 }
 
-const emptyCommunity = (notes = []) => ({
-  censusYear: 2021,
-  ancestries: [],
-  birthplaces: [],
-  languages: [],
-  overseasBornPct: null,
-  ageProfile: null,
-  householdsWithChildren: null,
-  lonePerson: null,
-  ownerVsRenter: null,
-  populationChange: null,
-  amenities: [],
-  notes,
-})
 
 export const areaCorridors = [
   // ---- Inner "value close to the CBD" pockets. Placeholder until verified,
@@ -111,7 +99,6 @@ export const areaCorridors = [
     oneCar: 'Car-free is the natural mode; a car is optional and often a parking liability.',
     coparentingGeometry:
       'Commute and amenity are excellent; a genuine second bedroom under the duty line is the constraint.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Owners-corporation fees and defect risk in newer towers are the dominant hazard.',
       'Some Yarra-adjacent flood pockets; check overlays per property on VicPlan.',
@@ -192,9 +179,6 @@ export const areaCorridors = [
     oneCar: 'Comfortable car-free; a car is optional given the rail and tram density.',
     coparentingGeometry:
       'Central position and rail redundancy make shared logistics easy; the right quiet pocket matters most.',
-    communityProfile: emptyCommunity([
-      'Long-standing Vietnamese community around Victoria St anecdotally; confirm against ABS before stating figures.',
-    ]),
     risks: [
       'Arterial and rail noise on the wrong street.',
       'Legacy industrial and flood pockets near the river; check overlays per property.',
@@ -271,7 +255,6 @@ export const areaCorridors = [
     oneCar: 'Car-free is the natural mode; keeping a car is a want, not a need.',
     coparentingGeometry:
       'Amenity and commute are excellent; affording a genuine second bedroom is the whole test.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Smith St noise and late activity on the wrong street.',
       'Former-industrial and flood pockets; check overlays per property on VicPlan.',
@@ -348,7 +331,6 @@ export const areaCorridors = [
     oneCar: 'Car-free works well; one small car is comfortable if wanted.',
     coparentingGeometry:
       'Value and amenity are strong; verify schools and the other parent corridor before committing.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Nightlife noise on and near Chapel St.',
       'Spot-check flood overlays in low sections near the Gardiners Creek corridor.',
@@ -425,7 +407,6 @@ export const areaCorridors = [
     oneCar: 'Comfortable car-free; the Yarra trail makes cycling a real daily option.',
     coparentingGeometry:
       'Parkland and quiet streets suit a child; verify schools and the other parent corridor.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Yarra flood overlays and legacy industrial sites in riverside pockets; check VicPlan per property.',
       'Victoria St noise on the western edge.',
@@ -504,9 +485,6 @@ export const areaCorridors = [
       'Workable car-free with car-share for the weekly shop; one small street-parked car is comfortable.',
     coparentingGeometry:
       'Depends heavily on where the other parent lands. Triangulate home, school and their address before committing.',
-    communityProfile: emptyCommunity([
-      'Established Vietnamese, Indian and Maltese communities anecdotally; confirm against ABS QuickStats before stating figures.',
-    ]),
     risks: [
       'Freight rail and road noise in pockets near the corridor.',
       'Flood and historic industrial contamination in low-lying sections; check VicPlan overlays per property.',
@@ -584,9 +562,6 @@ export const areaCorridors = [
     oneCar: 'Among the easiest catchments to live car-free; car-share coverage is good.',
     coparentingGeometry:
       'Central-west position keeps most inner and western schools and the CBD within a manageable radius.',
-    communityProfile: emptyCommunity([
-      'Long-standing Vietnamese and East African communities anecdotally; do not publish figures without ABS confirmation.',
-    ]),
     risks: [
       'Rail and freight noise near the corridor.',
       'Flood and legacy industrial contamination in riverside and low pockets; check overlays.',
@@ -662,7 +637,6 @@ export const areaCorridors = [
     oneCar: 'Comfortable with one small car or none; daily needs are walkable.',
     coparentingGeometry:
       'Strong middle option: quiet enough for a child, connected enough for shared logistics.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Rail noise on streets adjacent to the corridor.',
       'Spot-check flood overlays in low sections.',
@@ -741,7 +715,6 @@ export const areaCorridors = [
     oneCar: 'Workable with one small car; car-free is possible but tighter than Footscray.',
     coparentingGeometry:
       'Space and price help; verify schools and where the other parent will live.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Freight and road noise near the corridor.',
       'Check flood and legacy-industrial overlays per property on VicPlan.',
@@ -817,7 +790,6 @@ export const areaCorridors = [
     oneCar: 'One small car is comfortable; car-free works only in the tighter station pockets.',
     coparentingGeometry:
       'Good family practicality; triangulate against schools and the other parent.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Station distance varies enormously across these long suburbs.',
       'Check overlays and narrow-lot access per property.',
@@ -897,9 +869,6 @@ export const areaCorridors = [
     oneCar: 'Car-free is the natural mode; keeping one small car is a want, not a need.',
     coparentingGeometry:
       'Superb amenity and commute; the constraint is affording a real second bedroom.',
-    communityProfile: emptyCommunity([
-      'Young, diverse, tertiary-linked profile is widely known; confirm against ABS before stating figures.',
-    ]),
     risks: [
       'Upfield-line and Sydney Rd noise on the wrong street.',
       'Defect and cladding tail on newer apartment stock; review per building.',
@@ -974,7 +943,6 @@ export const areaCorridors = [
       'A cheap unit that is actually a 15-minute-plus walk or a bus ride from the station.',
     oneCar: 'One small car is the realistic default; car-free needs a tight station pocket.',
     coparentingGeometry: 'Space is the draw; check schools and the other parent before committing.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Station distance is the dominant risk; measure it honestly.',
       'Spot-check flood overlays in low sections.',
@@ -1050,9 +1018,6 @@ export const areaCorridors = [
     oneCar: 'Comfortable car-free; car-share coverage is reasonable.',
     coparentingGeometry:
       'Good rail and amenity; the risk is buying into a bad building, not a bad suburb.',
-    communityProfile: emptyCommunity([
-      'Large international-student and East and South Asian communities are widely known; confirm against ABS before stating figures.',
-    ]),
     risks: [
       'Building-level defect, cladding and owners-corporation risk is the main hazard.',
       'Major road and rail noise pockets.',
@@ -1128,9 +1093,6 @@ export const areaCorridors = [
     oneCar: 'One small car is the realistic default; car-free works only right on a centre.',
     coparentingGeometry:
       'Amenity and price are strong; the commute length is the trade-off to weigh.',
-    communityProfile: emptyCommunity([
-      'Major Vietnamese and Cambodian communities around Springvale are widely known; confirm against ABS before stating figures.',
-    ]),
     risks: [
       'Arterial-road noise and streetscape variability.',
       'Check flood overlays and any contamination history per property.',
@@ -1207,7 +1169,6 @@ export const areaCorridors = [
     oneCar: 'One small car suits the format; car-free works right on a station centre.',
     coparentingGeometry:
       'Family-friendly amenity and space; verify schools and the other parent corridor.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Coastal salt, flood and insurance exposure in low pockets.',
       'Check overlays per property before assuming a clear site.',
@@ -1283,7 +1244,6 @@ export const areaCorridors = [
     oneCar: 'Car-free is the natural mode; a car is optional and often a liability here.',
     coparentingGeometry:
       'Commute and amenity are ideal; affording a real second bedroom is the whole test.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Flemington racecourse and rail noise on the wrong street.',
       'Some flood exposure near the flats; check overlays.',
@@ -1356,7 +1316,6 @@ export const areaCorridors = [
       'Comfortable car-free or with one small car; rail, tram and flat cycling cover daily needs.',
     coparentingGeometry:
       'Close-in position and good public transport help shared logistics; verify schools and the other parent corridor before committing.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Maribyrnong and Moonee Ponds Creek flood overlays in low pockets; check VicPlan per property.',
       'Arterial and rail noise on the wrong street.',
@@ -1429,7 +1388,6 @@ export const areaCorridors = [
     avoidType: 'This is the control group: cheap to buy, expensive to live in against your goals.',
     oneCar: 'A second car is effectively mandatory; this breaks the low-car non-negotiable.',
     coparentingGeometry: 'Space helps, but the travel load makes shared logistics genuinely hard.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Compulsory car dependence and toll exposure.',
       'New-estate service lag and build-quality variability.',
@@ -1507,7 +1465,6 @@ export const areaCorridors = [
     oneCar: 'One car is effectively needed for daily life; the train covers the commute only.',
     coparentingGeometry:
       'Space is cheap, but the drive-everything fabric makes shared logistics and a child’s independence harder.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Car dependence for everything except the CBD commute.',
       'New-estate service lag and build-quality variability; check overlays per property.',
@@ -1581,7 +1538,6 @@ export const areaCorridors = [
     oneCar: 'A second car is effectively mandatory; this breaks the low-car non-negotiable.',
     coparentingGeometry:
       'Space helps, but the isolation and travel load make shared logistics genuinely hard for years.',
-    communityProfile: emptyCommunity(),
     risks: [
       'Compulsory car dependence, toll exposure and an over-band commute.',
       'New-estate service lag, few established schools and weak resale.',
@@ -1596,5 +1552,1286 @@ export const areaCorridors = [
     verifiedAt: null,
     placeholder: true,
     sources: ['ptv', 'domain', 'vicplan'],
+  },
+
+  // ---- July 2026 Decide expansion. Twelve individual suburb records added so
+  //      the workspace can compare corridor, family, lifestyle and calibration
+  //      candidates side by side. EVERYTHING below is a provisional research
+  //      hypothesis (placeholder: true): price bands, commute minutes and all
+  //      1-5 scores are unverified assumptions pending the same source checks
+  //      as the rest of the file. School names are name-level only; zones must
+  //      be checked at findmyschool.vic.gov.au. --------------------------------
+  {
+    id: 'northcote-2br',
+    suburb: 'Northcote',
+    municipality: 'Darebin',
+    region: 'North',
+    corridor: 'Mernda line + tram 86',
+    station: 'Northcote / Merri',
+    catchmentMetres: 800,
+    altRoute:
+      'Mernda line one seat to Flinders St via Clifton Hill; tram 86 the length of High St as the all-hours fallback.',
+    headline: 'older 2BR unit or apartment on the Mernda corridor, High St amenity',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit', 'new-apartment'],
+      bedrooms: 2,
+      indicativePrice: [600000, 730000],
+      annualOc: [1000, 4000],
+      parkingTypes: ['titled', 'street'],
+      suitableStock:
+        'Older brick apartments and villa units off High St and St Georges Rd; newer walk-ups near the stations.',
+      expectedTransportCost: '~$1,800-2,600/yr; train plus a genuinely useful tram.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 28, stressed: 38, transfers: 0 },
+    scores: {
+      housingValue: 3,
+      coparenting: 4,
+      lowCar: 5,
+      recurringCosts: 4,
+      walkability: 5,
+      safety: 4,
+      envRisk: 4,
+      privacyWfh: 3,
+      resale: 4,
+      community: 5,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['Westgarth PS', 'Northcote PS'],
+      publicSecondary: ['Northcote High (zoned, strong demand)'],
+      privateContext: [],
+      note: 'a teen can run their own life on High St, the 86 and the train',
+    },
+    feeNote: 'Mostly small older blocks with modest fees; check newer builds individually.',
+    caseFor: [
+      'One-seat Mernda-line ride with the 86 tram as a true second route.',
+      'High St amenity and parkland along Merri Creek suit both a child and an independent adult life.',
+      'Strong zoned public secondary in Northcote High.',
+    ],
+    caseAgainst: [
+      'Entry prices sit at the top of the budget for renovated 2BR stock.',
+      'Popular pockets move fast; buying well takes patience.',
+      'Weekend High St noise near the strip; pick the quiet side streets.',
+    ],
+    bestType: 'An older brick 2BR unit in a small block between High St and the Merri Creek trail.',
+    avoidType: 'A main-road apartment over the tram corridor with night noise.',
+    oneCar: 'Car-optional; train, 86 and flat cycling cover daily life.',
+    coparentingGeometry:
+      'Strong schools, parkland and a direct line make shared logistics straightforward.',
+    risks: [
+      'Price pressure: the band is provisional and may already understate renovated stock.',
+      'Merri Creek flood overlays on the western edge; check VicPlan per property.',
+    ],
+    inspectionChecklist: [
+      'Time the real walk to Northcote or Merri station at 8am.',
+      'Check the block for owner-occupier balance and fee history.',
+      'Confirm the Northcote High zone boundary for the exact address.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: verify price band and commute before weighting this suburb heavily.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'thornbury-2br',
+    suburb: 'Thornbury',
+    municipality: 'Darebin',
+    region: 'North',
+    corridor: 'Mernda line + tram 86',
+    station: 'Thornbury / Croxton',
+    catchmentMetres: 800,
+    altRoute:
+      'Mernda line one seat via Clifton Hill; tram 86 along High St; flat cycling to the CBD on the St Georges Rd path.',
+    headline: 'Northcote value one stop further out, same corridor',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit'],
+      bedrooms: 2,
+      indicativePrice: [560000, 690000],
+      annualOc: [1000, 3500],
+      parkingTypes: ['titled', 'street'],
+      suitableStock:
+        'Villa units and older brick walk-ups either side of High St; noticeably cheaper than Northcote for near-identical fabric.',
+      expectedTransportCost: '~$1,800-2,600/yr; train plus tram, car-optional.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 31, stressed: 41, transfers: 0 },
+    scores: {
+      housingValue: 4,
+      coparenting: 4,
+      lowCar: 5,
+      recurringCosts: 4,
+      walkability: 4,
+      safety: 4,
+      envRisk: 4,
+      privacyWfh: 3,
+      resale: 4,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 4,
+      publicPrimary: ['Thornbury PS', 'Wales Street PS'],
+      publicSecondary: ['Thornbury High', 'Northcote High (zone edges, check address)'],
+      privateContext: [],
+      note: 'same corridor independence as Northcote at a friendlier entry price',
+    },
+    feeNote: 'Villa units and small blocks keep fees low across most stock.',
+    caseFor: [
+      'The best value point on the Mernda corridor: Northcote fabric at a discount.',
+      'Villa-unit stock gives a small courtyard within the budget.',
+      'Two routes to the city (train and 86) plus the St Georges Rd bike path.',
+    ],
+    caseAgainst: [
+      'Slightly thinner strip amenity than Northcote proper.',
+      'School zoning between Thornbury High and Northcote High is street-by-street.',
+    ],
+    bestType: 'A 2BR villa unit with a courtyard on a quiet street within the station walk.',
+    avoidType: 'A main-road walk-up facing High St tram noise.',
+    oneCar: 'Car-optional; the corridor covers work, school and weekend trips.',
+    coparentingGeometry:
+      'A courtyard villa unit near the station is a realistic co-parenting base at this price.',
+    risks: [
+      'Zone boundaries decide the secondary school; verify before anchoring on schools.',
+      'Some pockets back onto industrial remnants; walk the street at night.',
+    ],
+    inspectionChecklist: [
+      'Confirm the exact school zone at findmyschool.vic.gov.au.',
+      'Time the door-to-door run via Thornbury station at peak.',
+      'Check villa-unit shared-driveway arrangements and any OC rules.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: shares corridor logic with Northcote but is ranked separately because price and schools genuinely differ.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'preston-villa',
+    suburb: 'Preston',
+    municipality: 'Darebin',
+    region: 'North',
+    corridor: 'Mernda line + tram 86/11',
+    station: 'Preston / Bell',
+    catchmentMetres: 900,
+    altRoute:
+      'Mernda line one seat via Clifton Hill; trams 86 and 11 both reach Preston; Preston Market anchors the centre.',
+    headline: '2BR villa unit near Preston Market, the value end of the corridor',
+    dwelling: {
+      types: ['villa-unit', 'older-apartment', 'townhouse'],
+      bedrooms: 2,
+      indicativePrice: [520000, 650000],
+      annualOc: [800, 3000],
+      parkingTypes: ['titled', 'street'],
+      suitableStock:
+        'A deep pool of 60s-80s villa units and walk-ups; level-crossing removals have modernised the station precincts.',
+      expectedTransportCost: '~$1,800-2,800/yr; train plus tram, car-optional near the stations.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 35, stressed: 46, transfers: 0 },
+    scores: {
+      housingValue: 4,
+      coparenting: 4,
+      lowCar: 4,
+      recurringCosts: 4,
+      walkability: 4,
+      safety: 3,
+      envRisk: 4,
+      privacyWfh: 4,
+      resale: 4,
+      community: 5,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 4,
+      publicPrimary: ['Preston PS', 'Bell PS'],
+      publicSecondary: ['Preston High (re-established 2019, growing)'],
+      privateContext: [],
+      note: 'market, tram grid and new station precincts; a teen gets around fine',
+    },
+    feeNote: 'Villa units dominate; fees are low and blocks are small.',
+    caseFor: [
+      'The most realistic villa-unit-with-courtyard entry on the Mernda corridor.',
+      'Preston Market is a genuine weekly anchor for food and community.',
+      'Level-crossing removals rebuilt the station precincts and the walk to them.',
+    ],
+    caseAgainst: [
+      'Commute nudges the 35-minute band edge on a bad day.',
+      'Preston High is still rebuilding its senior years depth.',
+      'Pocket quality varies block by block; inspect widely.',
+    ],
+    bestType: 'A 2BR villa unit with a courtyard within the Preston or Bell station walk.',
+    avoidType: 'Stock backing the freight corridor or major roads.',
+    oneCar: 'Car-optional near the stations; a car helps for weekend range.',
+    coparentingGeometry:
+      'Courtyard space plus a one-seat line makes the co-parenting logistics workable.',
+    risks: [
+      'School depth is improving but unproven at VCE level; check My School data.',
+      'Some flood overlay near Darebin Creek; check VicPlan per property.',
+    ],
+    inspectionChecklist: [
+      'Walk Preston Market on a Saturday and the station route at 8am.',
+      'Confirm the school zone for the exact address.',
+      'Check villa-unit title type (strata vs company share).',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: price band assumes unrenovated villa units, verify against current sales.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'box-hill-2br',
+    suburb: 'Box Hill',
+    municipality: 'Whitehorse',
+    region: 'East and south-east',
+    corridor: 'Belgrave / Lilydale lines + tram 109',
+    station: 'Box Hill',
+    catchmentMetres: 900,
+    altRoute:
+      'Belgrave and Lilydale lines both stop at Box Hill; tram 109 terminates at the centre; the bus interchange is the largest in the east.',
+    headline: '2BR apartment at a major eastern hub: hospital, TAFE, market, interchange',
+    dwelling: {
+      types: ['new-apartment', 'older-apartment', 'villa-unit'],
+      bedrooms: 2,
+      indicativePrice: [500000, 660000],
+      annualOc: [1500, 6000],
+      parkingTypes: ['titled', 'none'],
+      suitableStock:
+        'Deep new-apartment supply around the core keeps prices honest; older walk-ups and villa units sit in the quieter streets.',
+      expectedTransportCost:
+        '~$1,800-2,600/yr; rail plus tram plus the biggest bus web in the east.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 40, stressed: 52, transfers: 0 },
+    scores: {
+      housingValue: 4,
+      coparenting: 4,
+      lowCar: 4,
+      recurringCosts: 4,
+      walkability: 4,
+      safety: 3,
+      envRisk: 4,
+      privacyWfh: 3,
+      resale: 4,
+      community: 5,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['zoned primaries vary street to street, check the exact address'],
+      publicSecondary: ['Box Hill High (zoned, strong)', 'Box Hill Senior Secondary College'],
+      privateContext: [],
+      note: 'hub amenity, hospital employment anchor and strong zoned secondary',
+    },
+    feeNote: 'Tower stock carries high fees; older walk-ups and villa units stay low.',
+    caseFor: [
+      'A complete daily life without the CBD: hospital, market, TAFE and every bus line.',
+      'Apartment oversupply keeps 2BR entry realistic for the east.',
+      'Box Hill High is a strong zoned public secondary.',
+    ],
+    caseAgainst: [
+      'The 40-minute commute is the price of the eastern hub.',
+      'Tower fees and defect risk mirror the CBD problem; stick to small blocks.',
+      'The core is dense and busy; family calm lives a few streets out.',
+    ],
+    bestType: 'An older 2BR walk-up or villa unit a few quiet streets from the interchange.',
+    avoidType: 'A high-fee tower apartment above the core.',
+    oneCar: 'Car-optional at the hub; the bus web covers what rail misses.',
+    coparentingGeometry:
+      'Everything a child needs concentrates within a kilometre; the trade is the longer Collins St run.',
+    risks: [
+      'Commute sits at the edge of the acceptable band under disruption.',
+      'New-build defect and fee exposure in the tower core.',
+    ],
+    inspectionChecklist: [
+      'Time the express vs stopping pattern to Flinders St at peak.',
+      'For any newer block: fee history, defects, owner-occupier share.',
+      'Confirm the Box Hill High zone for the exact address.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: strong family-hub logic, but verify the door-to-door commute before ranking it against inner corridors.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'malvern-2br',
+    suburb: 'Malvern',
+    municipality: 'Stonnington',
+    region: 'East and south-east',
+    corridor: 'Frankston line + trams 5/6/16',
+    station: 'Malvern',
+    catchmentMetres: 800,
+    altRoute:
+      'Frankston line stoppers from Malvern; Glenferrie Rd and Wattletree Rd trams; Caulfield interchange one stop away.',
+    headline: 'established inner-east 2BR in a calm, school-rich pocket',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit'],
+      bedrooms: 2,
+      indicativePrice: [640000, 800000],
+      annualOc: [1200, 4500],
+      parkingTypes: ['titled', 'street'],
+      suitableStock:
+        'Art Deco and post-war blocks around Glenferrie Rd; villa units in the quieter grid; genuinely liveable stock, priced accordingly.',
+      expectedTransportCost: '~$1,800-2,400/yr; train plus tram grid, car-optional.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 25, stressed: 34, transfers: 0 },
+    scores: {
+      housingValue: 2,
+      coparenting: 4,
+      lowCar: 5,
+      recurringCosts: 3,
+      walkability: 4,
+      safety: 5,
+      envRisk: 4,
+      privacyWfh: 4,
+      resale: 5,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['Malvern PS', 'Malvern Central School'],
+      publicSecondary: [
+        'zoning splits toward Glen Eira College and Prahran High, check the address',
+      ],
+      privateContext: ['heavy nearby private sector (De La Salle, Sacré Cœur and others)'],
+      note: 'calm streets, strong primaries, tram-and-train independence for a teen',
+    },
+    feeNote: 'Small older blocks keep fees moderate; lifts and pools are rare.',
+    caseFor: [
+      'A 25-minute one-seat commute from a genuinely calm family pocket.',
+      'Strong primaries and safe streets suit the co-parenting brief.',
+      'Blue-chip resale keeps the exit safe.',
+    ],
+    caseAgainst: [
+      'Entry cost eats the budget: the band starts where cheaper corridors end.',
+      'Secondary zoning is fragmented; the strong public options are not guaranteed.',
+      'Less lively for an independent adult than Northcote or St Kilda.',
+    ],
+    bestType: 'An Art Deco 2BR in a small block within the Malvern station walk.',
+    avoidType: 'Overcapitalised renovated stock priced against houses.',
+    oneCar: 'Car-optional; train and three tram routes cover daily life.',
+    coparentingGeometry:
+      'One of the strongest child-environment offers in the lens, if the budget stretches to it.',
+    risks: [
+      'Budget risk: the provisional band may understate current Stonnington pricing.',
+      'Secondary-zone assumptions must be checked street by street.',
+    ],
+    inspectionChecklist: [
+      'Confirm the exact secondary zone at findmyschool.vic.gov.au.',
+      'Check fee history in any block with common gardens.',
+      'Time the stopper vs Caulfield-change patterns at peak.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: an established inner-east benchmark; verify the price band before treating it as attainable.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'toorak-2br',
+    suburb: 'Toorak',
+    municipality: 'Stonnington',
+    region: 'Inner',
+    corridor: 'Frankston line + tram 58',
+    station: 'Toorak / Hawksburn',
+    catchmentMetres: 800,
+    altRoute:
+      'Frankston line stoppers; tram 58 along Toorak Rd; South Yarra interchange one stop away.',
+    headline: 'premium calibration point: older 2BR in the priciest postcode',
+    dwelling: {
+      types: ['older-apartment'],
+      bedrooms: 2,
+      indicativePrice: [680000, 880000],
+      annualOc: [1500, 6000],
+      parkingTypes: ['titled', 'street', 'none'],
+      suitableStock:
+        'Older walk-ups off Toorak Rd are the only realistic entry; everything else is another market entirely.',
+      expectedTransportCost: '~$1,800-2,400/yr; train and tram at the door.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 23, stressed: 31, transfers: 0 },
+    scores: {
+      housingValue: 1,
+      coparenting: 3,
+      lowCar: 5,
+      recurringCosts: 3,
+      walkability: 4,
+      safety: 5,
+      envRisk: 4,
+      privacyWfh: 3,
+      resale: 5,
+      community: 3,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['Toorak PS'],
+      publicSecondary: ['zoning toward Prahran High, check the address'],
+      privateContext: ['the highest private-school density in the city'],
+      note: 'excellent transport independence; the social fabric skews older and wealthier',
+    },
+    feeNote: 'Older blocks vary widely; some carry garden and lift overheads.',
+    caseFor: [
+      'A 23-minute one-seat ride and blue-chip everything.',
+      'The strongest resale floor in the lens.',
+    ],
+    caseAgainst: [
+      'The weakest housing value in the lens: the band buys less here than anywhere.',
+      'Little community traction for a single-parent household; amenity skews to a different life stage.',
+    ],
+    bestType: 'Only a genuinely underpriced older 2BR walk-up would justify the postcode premium.',
+    avoidType: 'Anything renovated or marketed on the postcode.',
+    oneCar: 'Car-optional; transport is not the constraint here, price is.',
+    coparentingGeometry:
+      'Transport and safety are ideal; the budget and social fit are the problems.',
+    risks: ['Calibration record: it exists to test the premium end, not as a realistic target.'],
+    inspectionChecklist: [
+      'If a walk-up ever prices against South Yarra, compare fees and land share carefully.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: a deliberate premium calibration point, expected to rank poorly on value.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'vicplan'],
+  },
+  {
+    id: 'kew-2br',
+    suburb: 'Kew',
+    municipality: 'Boroondara',
+    region: 'East and south-east',
+    corridor: 'Trams 48 / 109 (no train station)',
+    station: 'No station; trams 48 and 109 to Collins St',
+    catchmentMetres: 800,
+    altRoute:
+      'Trams 48 and 109 run direct to Collins St; buses to Hawthorn and Glenferrie stations; cycling via the Main Yarra Trail.',
+    headline: 'premium calibration point: tram-based Boroondara, school-rich, no train',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit'],
+      bedrooms: 2,
+      indicativePrice: [700000, 900000],
+      annualOc: [1200, 4500],
+      parkingTypes: ['titled', 'street'],
+      suitableStock:
+        'Older blocks around Kew Junction and villa units in the quiet grid; a small market at a big price.',
+      expectedTransportCost: '~$1,800-2,600/yr on trams; a car creeps back in for range.',
+    },
+    stationWalkMin: 6,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 40, stressed: 55, transfers: 0 },
+    scores: {
+      housingValue: 1,
+      coparenting: 4,
+      lowCar: 3,
+      recurringCosts: 3,
+      walkability: 4,
+      safety: 5,
+      envRisk: 4,
+      privacyWfh: 4,
+      resale: 5,
+      community: 3,
+    },
+    childhood: {
+      schoolStrength: 5,
+      teenIndependence: 3,
+      publicPrimary: ['Kew PS'],
+      publicSecondary: ['Kew High (zoned)'],
+      privateContext: ['dense private sector (Xavier, Trinity, Ruyton, MLC nearby)'],
+      note: 'school-rich but tram-bound; a teen depends on the 48/109 spines',
+    },
+    feeNote: 'Small blocks, moderate fees; garden upkeep appears in older complexes.',
+    caseFor: [
+      'Among the strongest school environments in Melbourne, public and private.',
+      'Direct trams to Collins St without touching a station.',
+    ],
+    caseAgainst: [
+      'A 40-minute-plus tram commute is the real number; there is no train to fall back on.',
+      'The entry band overlaps house money in the corridors this tool favours.',
+    ],
+    bestType: 'A villa unit near Kew Junction on both tram spines.',
+    avoidType: 'Anything sold on the school catchment at a house-adjacent price.',
+    oneCar: 'Trams cover the commute; weekend range without a car is limited.',
+    coparentingGeometry: 'Schools are the draw; the tram-only commute and the price are the trade.',
+    risks: [
+      'Tram-dependence: disruption on the 48/109 has no rail fallback.',
+      'Calibration record: tests the school-premium end of the market.',
+    ],
+    inspectionChecklist: [
+      'Ride the 109 door-to-door at 8am before believing any commute estimate.',
+      'Confirm the Kew High zone for the exact address.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: an aspirational calibration point; the earlier note naming this suburb "Key" meant Kew.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'balwyn-2br',
+    suburb: 'Balwyn',
+    municipality: 'Boroondara',
+    region: 'East and south-east',
+    corridor: 'Tram 109 (no train station)',
+    station: 'No station; tram 109 to Collins St',
+    catchmentMetres: 800,
+    altRoute:
+      'Tram 109 runs the length of Whitehorse Rd direct to Collins St; buses south to Box Hill and Canterbury stations.',
+    headline: 'premium calibration point: the school-zone premium, measured',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit'],
+      bedrooms: 2,
+      indicativePrice: [700000, 880000],
+      annualOc: [1000, 4000],
+      parkingTypes: ['titled', 'street'],
+      suitableStock:
+        'A thin market of older units and villa units; most stock is family houses far beyond the brief.',
+      expectedTransportCost: '~$1,800-2,600/yr on the 109; a car is hard to avoid for range.',
+    },
+    stationWalkMin: 6,
+    carDaily: 'constrained',
+    secondBedroom: true,
+    commute: { typical: 45, stressed: 60, transfers: 0 },
+    scores: {
+      housingValue: 1,
+      coparenting: 3,
+      lowCar: 2,
+      recurringCosts: 3,
+      walkability: 3,
+      safety: 5,
+      envRisk: 4,
+      privacyWfh: 4,
+      resale: 5,
+      community: 3,
+    },
+    childhood: {
+      schoolStrength: 5,
+      teenIndependence: 3,
+      publicPrimary: ['Balwyn PS'],
+      publicSecondary: ['Balwyn High (zoned; the benchmark school-zone premium)'],
+      privateContext: [],
+      note: 'the Balwyn High zone is the textbook school premium; the trade is a long tram-only commute',
+    },
+    feeNote: 'Small blocks and villa units; fees are rarely the problem here.',
+    caseFor: [
+      'Balwyn High is the reference case for zoned public secondary strength.',
+      'Quiet, safe streets with strong resale.',
+    ],
+    caseAgainst: [
+      'A 45-minute tram-only commute fails the reliability test the brief runs on.',
+      'The unit market is thin; the school premium is priced into everything.',
+      'Daily life beyond the 109 spine leans on a car.',
+    ],
+    bestType: 'A villa unit directly on the 109 within the Balwyn High zone.',
+    avoidType: 'Paying the zone premium for an address that then misses the zone.',
+    oneCar: 'One car is realistic; two is likely for weekend range.',
+    coparentingGeometry:
+      'The school offer is elite; the commute and price work against everything else in the brief.',
+    risks: [
+      'Zone boundaries move; the premium does not refund itself.',
+      'Calibration record: tests whether the school premium can beat corridor logic. It should not.',
+    ],
+    inspectionChecklist: [
+      'Verify the Balwyn High zone for the exact address before valuing it.',
+      'Ride the 109 end-to-end at peak once.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: a school-premium calibration point, expected to rank poorly on commute and value.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'albert-park-2br',
+    suburb: 'Albert Park',
+    municipality: 'Port Phillip',
+    region: 'Inner',
+    corridor: 'Route 96 light rail + tram 1/12',
+    station: 'No train; route 96 light rail and tram 12',
+    catchmentMetres: 800,
+    altRoute:
+      'Route 96 light rail on its own reservation to Southern Cross Collins St end; tram 1 up Sturt St as backup; flat cycling.',
+    headline: 'inner lifestyle candidate: village, beach and the park at a premium',
+    dwelling: {
+      types: ['older-apartment'],
+      bedrooms: 2,
+      indicativePrice: [750000, 950000],
+      annualOc: [1200, 5000],
+      parkingTypes: ['street', 'none'],
+      suitableStock:
+        'Older blocks between the village and the park; small, tightly held and expensive.',
+      expectedTransportCost: '~$1,600-2,200/yr; genuinely car-light.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 25, stressed: 35, transfers: 0 },
+    scores: {
+      housingValue: 1,
+      coparenting: 4,
+      lowCar: 5,
+      recurringCosts: 3,
+      walkability: 5,
+      safety: 5,
+      envRisk: 3,
+      privacyWfh: 3,
+      resale: 5,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 5,
+      teenIndependence: 5,
+      publicPrimary: ['Albert Park PS', 'Middle Park PS'],
+      publicSecondary: ['Albert Park College (zoned, high demand)'],
+      privateContext: [],
+      note: 'park, beach, pool and a strong zoned college inside a walkable kilometre',
+    },
+    feeNote: 'Small heritage blocks; fees moderate, parking scarce.',
+    caseFor: [
+      'Albert Park College plus the park and MSAC make an exceptional child environment.',
+      'The 96 gives a reliable reserved-track run to the Collins St end of Southern Cross.',
+      'Close to the current Southbank home, keeping the co-parenting geometry tight.',
+    ],
+    caseAgainst: [
+      'The entry band clears the budget ceiling for most stock.',
+      'Parking and grand-prix disruption are recurring frictions.',
+    ],
+    bestType: 'An older 2BR in a small block between Bridport St and the park.',
+    avoidType: 'Ground-floor stock on the grand-prix circuit fringe.',
+    oneCar: 'Car-light works; street parking is the constraint, not transport.',
+    coparentingGeometry:
+      'Walking distance to the current family base in Southbank; the strongest proximity play in the lens.',
+    risks: [
+      'Budget risk: this band likely exceeds the realistic ceiling.',
+      'Bay-adjacent overlays; check VicPlan per property.',
+    ],
+    inspectionChecklist: [
+      'Confirm the Albert Park College zone for the exact address.',
+      'Check parking permit eligibility before assuming a car can stay.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: exceptional child fit, but verify whether any stock actually lands inside the budget.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'st-kilda-2br',
+    suburb: 'St Kilda',
+    municipality: 'Port Phillip',
+    region: 'Inner',
+    corridor: 'Route 96 light rail + trams 16/3a',
+    station: 'No train; route 96 light rail, trams 16 and 67',
+    catchmentMetres: 800,
+    altRoute:
+      'Route 96 on reserved track to Southern Cross; trams 16 and 67 via St Kilda Rd; Balaclava station a longer walk east.',
+    headline: 'inner lifestyle candidate: Art Deco 2BR stock at a genuine discount',
+    dwelling: {
+      types: ['older-apartment'],
+      bedrooms: 2,
+      indicativePrice: [500000, 650000],
+      annualOc: [1000, 4500],
+      parkingTypes: ['street', 'none', 'titled'],
+      suitableStock:
+        'One of the deepest Art Deco and 60s walk-up pools in Melbourne; the discount to South Yarra is real.',
+      expectedTransportCost: '~$1,600-2,200/yr; car-light by default.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 30, stressed: 42, transfers: 0 },
+    scores: {
+      housingValue: 4,
+      coparenting: 3,
+      lowCar: 5,
+      recurringCosts: 4,
+      walkability: 5,
+      safety: 3,
+      envRisk: 3,
+      privacyWfh: 3,
+      resale: 4,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 4,
+      publicPrimary: ['St Kilda PS', 'St Kilda Park PS'],
+      publicSecondary: ['Albert Park College (parts of the zone)', 'Elwood College'],
+      privateContext: [],
+      note: 'beach, pool and tram independence; the nightlife strip needs street-level judgement',
+    },
+    feeNote: 'Art Deco blocks keep fees low; a few larger complexes run higher.',
+    caseFor: [
+      'Real 2BR stock inside the budget in a bayside walkable suburb.',
+      'The 96 reserved track is a genuinely reliable commute.',
+      'Beach, gardens and the sea baths give weekend life without a car.',
+    ],
+    caseAgainst: [
+      'Street quality swings block by block; the nightlife edges need care with a child.',
+      'School zoning into Albert Park College is partial; verify per address.',
+    ],
+    bestType: 'An Art Deco 2BR on the quiet eastern streets within the 96 walk.',
+    avoidType: 'Stock over the entertainment strips or on backpacker corners.',
+    oneCar: 'Car-optional; parking pressure argues for not owning one at all.',
+    coparentingGeometry:
+      'Short hop to Southbank keeps handovers easy; choose the street carefully.',
+    risks: [
+      'Pocket variance: the same price buys very different streets.',
+      'Bay and lower-lying overlays; check VicPlan per property.',
+    ],
+    inspectionChecklist: [
+      'Walk the specific street on Friday and Saturday night before offering.',
+      'Confirm the exact school zone at findmyschool.vic.gov.au.',
+      'Check block owner-occupier share and short-stay presence.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: strong value hypothesis; the street-level variance is the real risk to verify.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'balaclava-2br',
+    suburb: 'Balaclava',
+    municipality: 'Port Phillip',
+    region: 'Inner',
+    corridor: 'Sandringham line + Carlisle St / St Kilda Rd trams',
+    station: 'Balaclava',
+    catchmentMetres: 750,
+    altRoute:
+      'Balaclava station is a direct Sandringham-line stop; trams 3, 16 and 67 back it up along the ridge and St Kilda Rd spine.',
+    headline: 'inner-south benchmark: calmer than St Kilda, still tightly rail-served',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit'],
+      bedrooms: 2,
+      indicativePrice: [520000, 710000],
+      annualOc: [1000, 4200],
+      parkingTypes: ['street', 'none', 'titled'],
+      suitableStock:
+        'A deep run of Art Deco and 60s walk-ups around Carlisle St, with some boutique newer stock at higher fees.',
+      expectedTransportCost: '~$1,700-2,300/yr; genuinely car-light.',
+    },
+    stationWalkMin: 6,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 27, stressed: 37, transfers: 0 },
+    scores: {
+      housingValue: 4,
+      coparenting: 3,
+      lowCar: 5,
+      recurringCosts: 4,
+      walkability: 5,
+      safety: 4,
+      envRisk: 3,
+      privacyWfh: 3,
+      resale: 4,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['Balaclava PS'],
+      publicSecondary: ['Elwood College'],
+      privateContext: [],
+      note: 'station plus trams gives a teenager genuine independence; exact school zone needs address-level checking',
+    },
+    feeNote: 'Mostly modest in the older blocks; boutique stock carries the premium.',
+    caseFor: [
+      'Direct rail plus tram redundancy gives a strong, low-friction commute.',
+      'Older 2BR stock is materially more attainable than South Yarra or Prahran.',
+      'Carlisle St delivers daily amenity on foot without the full St Kilda nightlife load.',
+    ],
+    caseAgainst: [
+      'The best streets are tightly held, so the nice stock can move fast.',
+      'Pocket variance is real near the busier nightlife edges and the tram spine.',
+    ],
+    bestType: 'An older 2BR walk-up on the quieter side streets west or south of Carlisle St.',
+    avoidType: 'A noisy strip-front apartment or boutique block with premium fees and no real size.',
+    oneCar: 'Car-optional; keeping one is mostly about convenience, not necessity.',
+    coparentingGeometry:
+      'The commute is tight enough to keep handovers workable while still buying a real second bedroom.',
+    risks: [
+      'Street-level noise and parking pressure on the wrong block.',
+      'Verify permit parking and school zoning before assuming either.',
+    ],
+    inspectionChecklist: [
+      'Walk the street at night and note tram, hospitality and traffic noise.',
+      'Check the exact school zone and any parking-permit exclusion.',
+      'Read owners-corporation minutes on any block with recent cosmetic upgrades.',
+    ],
+    primaryWarning:
+      'The broad thesis is strong; the block you choose decides whether Balaclava feels polished or chaotic.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'elwood-2br',
+    suburb: 'Elwood',
+    municipality: 'Port Phillip',
+    region: 'Inner',
+    corridor: 'Sandringham line access via Balaclava / Elsternwick + trams',
+    station: 'Balaclava / Elsternwick',
+    catchmentMetres: 900,
+    altRoute:
+      'Walk or bike to Balaclava or Elsternwick station, plus Brighton Rd and St Kilda Rd tram spines as fallback.',
+    headline: 'bayside apartment reference: village calm, beach amenity and a workable rail link',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit'],
+      bedrooms: 2,
+      indicativePrice: [560000, 780000],
+      annualOc: [1000, 5000],
+      parkingTypes: ['street', 'none', 'titled'],
+      suitableStock:
+        'Art Deco apartments and older blocks dominate; genuine 2BR stock exists, but the best floorplans are competed for.',
+      expectedTransportCost: '~$1,900-2,600/yr; one of the easier bayside car-light set-ups.',
+    },
+    stationWalkMin: 14,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 33, stressed: 45, transfers: 1 },
+    scores: {
+      housingValue: 3,
+      coparenting: 4,
+      lowCar: 4,
+      recurringCosts: 4,
+      walkability: 4,
+      safety: 5,
+      envRisk: 3,
+      privacyWfh: 3,
+      resale: 4,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['Elwood PS'],
+      publicSecondary: ['Elwood College'],
+      privateContext: [],
+      note: 'excellent local child amenity; the longer rail walk is the main trade-off versus Balaclava',
+    },
+    feeNote: 'Older blocks keep fees manageable; tightly held boutique stock carries a premium.',
+    caseFor: [
+      'Strong bayside day-to-day life without needing to live right in St Kilda.',
+      'A real pool of older 2BR stock, not just towers.',
+      'Beach, village and school fabric make it one of the more family-legible inner-bayside options.',
+    ],
+    caseAgainst: [
+      'You pay for the calm village reputation, especially in the best pockets.',
+      'The station walk is long enough that the rail edge matters more than the suburb label.',
+    ],
+    bestType: 'A larger older 2BR west of Brighton Rd or near Tennyson St, with modest fees.',
+    avoidType: 'An apartment sold as “Elwood lifestyle” that is really just a long walk from rail and village.',
+    oneCar: 'One small car is optional rather than necessary; car-share and bikes can cover a lot here.',
+    coparentingGeometry:
+      'Good local child amenity and strong day-to-day calm; the station distance is the cost of that atmosphere.',
+    risks: [
+      'Bay-adjacent flood and insurance questions in lower pockets.',
+      'Walkability to rail varies more than the suburb branding suggests.',
+    ],
+    inspectionChecklist: [
+      'Time the real walk to Balaclava or Elsternwick station at commute pace.',
+      'Check flood overlays, insurance signals and any basement moisture history.',
+      'Judge the exact pocket for grocery walkability, not just beach proximity.',
+    ],
+    primaryWarning:
+      'Elwood’s lifestyle story is real, but if the rail walk is weak the suburb starts working against the five-day commute brief.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'cremorne-2br',
+    suburb: 'Cremorne',
+    municipality: 'Yarra',
+    region: 'Inner',
+    corridor: 'Richmond interchange + Swan St / Church St tram spine',
+    station: 'Richmond / East Richmond',
+    catchmentMetres: 650,
+    altRoute:
+      'Richmond station convergence puts nearly every eastern and south-eastern line at the door; Church St and Swan St trams add redundancy.',
+    headline: 'hyper-central inner benchmark: elite access, compact stock and a premium for it',
+    dwelling: {
+      types: ['older-apartment', 'new-apartment'],
+      bedrooms: 2,
+      indicativePrice: [620000, 790000],
+      annualOc: [1500, 6500],
+      parkingTypes: ['street', 'none', 'titled'],
+      suitableStock:
+        'Warehouse conversions, older flats and compact new apartments in a very small, tightly held suburb.',
+      expectedTransportCost: '~$1,400-2,000/yr; effectively car-free by default.',
+    },
+    stationWalkMin: 6,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 14, stressed: 20, transfers: 0 },
+    scores: {
+      housingValue: 2,
+      coparenting: 3,
+      lowCar: 5,
+      recurringCosts: 3,
+      walkability: 5,
+      safety: 3,
+      envRisk: 4,
+      privacyWfh: 2,
+      resale: 5,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 5,
+      publicPrimary: ['Richmond PS'],
+      publicSecondary: ['Richmond High'],
+      privateContext: [],
+      note: 'tiny suburb, huge transport independence; school zoning is street-level and must be verified exactly',
+    },
+    feeNote: 'Warehouse and new stock can climb fast on fees; older flats are the cleaner fit.',
+    caseFor: [
+      'One of the shortest and most redundant commutes in the whole lens.',
+      'Richmond interchange gives maximum network optionality if work patterns change.',
+      'Strong resale and genuine inner-city liquidity.',
+    ],
+    caseAgainst: [
+      'True 2BR stock is compact and usually expensive for the amount of space.',
+      'Traffic, hospitality noise and former-industrial pocket variance are real.',
+    ],
+    bestType: 'An older 2BR or modest warehouse conversion in a quieter pocket off Swan St.',
+    avoidType: 'A glossy compact 2BR in a high-fee building where the second bedroom barely works.',
+    oneCar: 'Owning a car is optional at most; parking pressure can make it a nuisance.',
+    coparentingGeometry:
+      'Close-in location keeps the city and Southbank loop easy, but the child-fit depends on buying enough actual space.',
+    risks: [
+      'Noise and traffic intensity on the wrong street.',
+      'Yarra-edge flood overlays and former-industrial quirks need address-level checking.',
+    ],
+    inspectionChecklist: [
+      'Walk the exact block on a weekday evening and late Saturday afternoon.',
+      'Check true bedroom dimensions and acoustic separation before buying the “Cremorne premium”.',
+      'Read owners-corporation minutes for any warehouse or newer block carefully.',
+    ],
+    primaryWarning:
+      'Cremorne’s access story is elite, but it is easy to overpay for an apartment that is too small for the brief.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'chelsea-2br',
+    suburb: 'Chelsea',
+    municipality: 'Kingston',
+    region: 'South',
+    corridor: 'Frankston line',
+    station: 'Chelsea',
+    catchmentMetres: 850,
+    altRoute:
+      'Direct Frankston-line rail plus a walkable beachside centre; buses help locally, but the centre-to-city trip is the whole trade-off.',
+    headline: 'outer bayside reference: beach plus station, with the commute right on the edge',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit', 'townhouse'],
+      bedrooms: 2,
+      indicativePrice: [560000, 700000],
+      annualOc: [0, 3200],
+      parkingTypes: ['street', 'titled'],
+      suitableStock:
+        'Older 2BR units and villa units around the centre, with some newer apartment stock near the station.',
+      expectedTransportCost:
+        '~$2,800-3,600/yr; rail works, but a car becomes more useful away from the centre.',
+    },
+    stationWalkMin: 9,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 58, stressed: 70, transfers: 1 },
+    scores: {
+      housingValue: 3,
+      coparenting: 4,
+      lowCar: 2,
+      recurringCosts: 4,
+      walkability: 3,
+      safety: 4,
+      envRisk: 2,
+      privacyWfh: 4,
+      resale: 3,
+      community: 3,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 3,
+      publicPrimary: ['Chelsea PS'],
+      publicSecondary: ['Chelsea Secondary College'],
+      privateContext: [],
+      note: 'beachside child amenity is strong, but the CBD ride is long enough to test a five-day office rhythm',
+    },
+    feeNote: 'Villa-unit style stock is the cleaner fit; newer apartment stock needs the usual fee checks.',
+    caseFor: [
+      'Beach, village and station line up in a way that is attractive for family life.',
+      'A real second bedroom is easier to buy here than in the inner south.',
+      'Direct rail means the commute is long but legible, not transfer-chaos.',
+    ],
+    caseAgainst: [
+      'The commute is already pressing the acceptable edge.',
+      'Flood, salt and insurance exposure need more respect this close to the bay.',
+    ],
+    bestType: 'A solid older 2BR unit or villa unit walkable to Chelsea station and centre, not right on the coast.',
+    avoidType: 'A cheap low-lying apartment or anything sold on beach prestige alone while the rail walk is weak.',
+    oneCar: 'One small car is the realistic default; car-free only holds right on the centre.',
+    coparentingGeometry:
+      'Family amenity is appealing, but the long ride into Collins St is the thing that can break the brief.',
+    risks: [
+      'Coastal exposure, insurance cost and flood overlays.',
+      'The good version is station-and-centre Chelsea, not generic bayside branding.',
+    ],
+    inspectionChecklist: [
+      'Time a real peak commute all the way to the office door, not just the train leg.',
+      'Check flood overlays, insurance signals and any corrosion/body-corporate issues.',
+      'Walk the centre after dark and the station route in winter conditions.',
+    ],
+    primaryWarning:
+      'Chelsea is the nice-looking edge case: it can feel lifestyle-perfect while quietly failing the commute discipline.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'bonbeach-2br',
+    suburb: 'Bonbeach',
+    municipality: 'Kingston',
+    region: 'South',
+    corridor: 'Frankston line',
+    station: 'Bonbeach',
+    catchmentMetres: 850,
+    altRoute:
+      'Direct Frankston-line rail from a smaller beachside centre; simple on paper, but a very long CBD run in practice.',
+    headline: 'outer bayside stress test: attractive local life, commute beyond the brief',
+    dwelling: {
+      types: ['older-apartment', 'villa-unit', 'townhouse'],
+      bedrooms: 2,
+      indicativePrice: [540000, 680000],
+      annualOc: [0, 2800],
+      parkingTypes: ['street', 'titled'],
+      suitableStock:
+        'Older units and compact townhouse-style stock, generally cheaper than the inner-bayside references.',
+      expectedTransportCost:
+        '~$3,000-4,000/yr; local life leans on one car more often than the suburb branding suggests.',
+    },
+    stationWalkMin: 10,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 66, stressed: 82, transfers: 1 },
+    scores: {
+      housingValue: 3,
+      coparenting: 4,
+      lowCar: 2,
+      recurringCosts: 4,
+      walkability: 2,
+      safety: 4,
+      envRisk: 2,
+      privacyWfh: 4,
+      resale: 3,
+      community: 3,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 3,
+      publicPrimary: ['Bonbeach PS'],
+      publicSecondary: ['Chelsea Secondary College'],
+      privateContext: [],
+      note: 'good local child amenity, but the city commute is long enough to become the whole story',
+    },
+    feeNote: 'Mostly clean on recurring costs; the issue is commute time, not owners-corporation drag.',
+    caseFor: [
+      'A calmer, beach-adjacent lifestyle with real 2BR stock for the money.',
+      'Direct rail keeps the transport pattern simple even when it is long.',
+    ],
+    caseAgainst: [
+      'The commute breaks the brief on a typical five-day CBD week.',
+      'Centre intensity and walkability are thinner than the inner and middle-ring references.',
+    ],
+    bestType: 'Only if the brief shifts decisively toward local beach life and away from a hard commute cap.',
+    avoidType: 'Any purchase justified by “it is on the line” while ignoring the actual door-to-door time.',
+    oneCar: 'One small car is the realistic default; the car-light thesis is weak here.',
+    coparentingGeometry:
+      'There is genuine lifestyle appeal, but the daily time loss to Collins St can outweigh it quickly.',
+    risks: [
+      'Coastal overlays, insurance and corrosion exposure.',
+      'Long-commute fatigue rather than suburb quality is the main failure mode.',
+    ],
+    inspectionChecklist: [
+      'Do the full peak commute in both directions before taking the suburb seriously.',
+      'Check flood and coastal overlays plus insurance pricing signals.',
+      'Judge whether the local centre actually covers enough daily life without defaulting to the car.',
+    ],
+    primaryWarning:
+      'Bonbeach is the south-side equivalent of a seductive edge case: pleasant local life, but it misses the commute brief on contact.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'north-melbourne-2br',
+    suburb: 'North Melbourne',
+    municipality: 'Melbourne',
+    region: 'Inner',
+    corridor: 'All northern lines + Metro Tunnel (Arden) + trams 57/58',
+    station: 'North Melbourne / Arden',
+    catchmentMetres: 800,
+    altRoute:
+      'North Melbourne station carries every northern and western line; Arden adds the Metro Tunnel; trams 57 and 58 cross the suburb.',
+    headline: 'central candidate: hospital-precinct access and the shortest commute in the lens',
+    dwelling: {
+      types: ['older-apartment', 'new-apartment'],
+      bedrooms: 2,
+      indicativePrice: [560000, 720000],
+      annualOc: [1200, 5500],
+      parkingTypes: ['street', 'none', 'titled'],
+      suitableStock:
+        'Older walk-ups and warehouse conversions in the Errol St grid; new Arden-precinct stock arriving in volume.',
+      expectedTransportCost: '~$1,400-2,000/yr; walking distance to most of the city.',
+    },
+    stationWalkMin: 7,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 12, stressed: 18, transfers: 0 },
+    scores: {
+      housingValue: 3,
+      coparenting: 3,
+      lowCar: 5,
+      recurringCosts: 5,
+      walkability: 5,
+      safety: 3,
+      envRisk: 3,
+      privacyWfh: 3,
+      resale: 4,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 4,
+      publicPrimary: ['North Melbourne PS'],
+      publicSecondary: ['University High (Parkville, zoned)'],
+      privateContext: [],
+      note: 'hospital and university precinct at the door; smaller-suburb social fabric',
+    },
+    feeNote: 'Older blocks low; Arden-precinct towers will carry high fees.',
+    caseFor: [
+      'The shortest, most redundant commute in the lens: every northern line plus Arden.',
+      'Hospital-precinct employment within walking distance hedges any future job change.',
+      'University High is a strong zoned secondary.',
+    ],
+    caseAgainst: [
+      'Arden construction will run for years around the precinct edges.',
+      'Family amenity is thinner than the established northern suburbs.',
+    ],
+    bestType: 'An older 2BR walk-up in the Errol St grid, not the construction fringe.',
+    avoidType: 'Off-the-plan Arden stock with unproven fees and defects.',
+    oneCar: 'Car-free is natural; a permit and a shared car cover the rest.',
+    coparentingGeometry: 'Ten minutes from Southbank by tram keeps the co-parenting loop tight.',
+    risks: [
+      'A decade of precinct construction on the Arden side.',
+      'Public-housing-tower proximity affects some streets; judge street by street.',
+    ],
+    inspectionChecklist: [
+      'Walk the block at night and on market day.',
+      'Check any building for short-stay churn.',
+      'Confirm the University High zone for the exact address.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: the access story is elite; verify street-level liveability and the Arden construction horizon.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'sunbury-house',
+    suburb: 'Sunbury',
+    municipality: 'Hume',
+    region: 'Outer growth areas',
+    corridor: 'Sunbury line (Metro Tunnel through-running)',
+    station: 'Sunbury',
+    catchmentMetres: 1200,
+    altRoute:
+      'Sunbury line trains run through the Metro Tunnel one seat to town; V/Line Bendigo services also stop; the town centre wraps the station.',
+    headline: 'space-first outer house: an established town, not a paddock estate',
+    dwelling: {
+      types: ['house', 'townhouse'],
+      bedrooms: 3,
+      indicativePrice: [520000, 650000],
+      annualOc: [0, 500],
+      parkingTypes: ['titled'],
+      suitableStock:
+        'Established 3BR houses on real blocks near the town centre and station; newer estates ring the edges.',
+      expectedTransportCost:
+        '~$3,500-6,500/yr; the train covers the commute, a car covers the rest.',
+    },
+    stationWalkMin: 12,
+    carDaily: 'constrained',
+    secondBedroom: true,
+    commute: { typical: 55, stressed: 70, transfers: 0 },
+    scores: {
+      housingValue: 4,
+      coparenting: 3,
+      lowCar: 2,
+      recurringCosts: 2,
+      walkability: 3,
+      safety: 3,
+      envRisk: 3,
+      privacyWfh: 5,
+      resale: 3,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 3,
+      teenIndependence: 2,
+      publicPrimary: ['Sunbury PS', 'Sunbury Heights PS'],
+      publicSecondary: ['Sunbury College', 'Sunbury Downs College'],
+      privateContext: ['Salesian College Rupertswood'],
+      note: 'a real town with its own schools and pool; a teen still leans on lifts and the train',
+    },
+    feeNote: 'Freestanding houses; owners-corp fees mostly do not apply.',
+    caseFor: [
+      'A whole house with a yard at 2BR-apartment money; the strongest space-per-dollar in the lens.',
+      'An established town centre, aquatic centre and schools, unlike the greenfield estates.',
+      'One-seat Metro Tunnel through-running, and Tama lives locally: real social fabric from day one.',
+    ],
+    caseAgainst: [
+      'The 55-minute door-to-door commute is the whole trade.',
+      'Daily life beyond the town centre leans on a car.',
+      'Teen independence drops when the answer to most plans is a lift or a train.',
+    ],
+    bestType: 'An established 3BR house within the station walk, not a fringe estate.',
+    avoidType: 'New estates on the edges: paddock logistics at established-town prices.',
+    oneCar: 'One car is realistic if the house sits near the station and town centre.',
+    coparentingGeometry:
+      'Space for Lulu is easy; the distance from Southbank makes midweek handovers the hard part.',
+    risks: [
+      'Commute stress under disruption pushes past the acceptable band.',
+      'Distance from the co-parenting base is a structural, not fixable, friction.',
+    ],
+    inspectionChecklist: [
+      'Do the real 8am door-to-door run once before shortlisting.',
+      'Prefer the established grid near the station over the estates.',
+      'Model the true weekly driving load honestly.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: the space-first hypothesis with a real personal connection; the commute is the number to verify first.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
   },
 ]

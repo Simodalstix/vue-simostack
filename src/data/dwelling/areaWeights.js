@@ -9,7 +9,7 @@
 // IMPORTANT: the `community` weight funds measurable AMENITY (grocers, markets,
 // language services, everyday cultural infrastructure), never demographic
 // desirability. Ancestry, birthplace and language composition are contextual
-// only and are never fed into any score. See CommunityProfile.vue.
+// only and are never fed into any score. See communityContext.js.
 
 export const areaWeights = [
   {
@@ -30,12 +30,10 @@ export const areaWeights = [
     weight: 12,
     hint: 'Room for Lulu, school access, and manageable travel to the other parent.',
   },
-  {
-    key: 'lowCar',
-    label: 'Low-car daily life',
-    weight: 12,
-    hint: 'Can daily needs be met without a compulsory car.',
-  },
+  // NOTE: the former 'lowCar' weight (low-car daily life, 12) was removed from
+  // the Decide interface July 2026. The per-record scores.lowCar data is kept
+  // for a future actual-property comparison tool but no longer influences the
+  // suburb ranking; weights self-normalise via areaWeightTotal.
   {
     key: 'recurringCosts',
     label: 'Total annual transport cost',

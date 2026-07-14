@@ -409,6 +409,235 @@ export const areaGeo = {
       },
     ],
   },
+
+  // ---- July 2026 Decide expansion: individual suburb records. -----------
+  // Coordinates are OSM-derived to roughly station precision and provisional
+  // (verifiedAt: null) like the rest of the registry. Records with
+  // tramOnly: true have no heavy-rail station; their commute runs on trams or
+  // light rail and they carry no station points by design.
+  'northcote-2br': {
+    localityNames: ['Northcote'],
+    stationPoints: [
+      {
+        id: 'northcote',
+        name: 'Northcote',
+        coordinates: [144.9958, -37.7699],
+        source: OSM,
+        verifiedAt: null,
+      },
+      {
+        id: 'merri',
+        name: 'Merri',
+        coordinates: [144.9906, -37.7757],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'thornbury-2br': {
+    localityNames: ['Thornbury'],
+    stationPoints: [
+      {
+        id: 'thornbury',
+        name: 'Thornbury',
+        coordinates: [144.9971, -37.7614],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'preston-villa': {
+    localityNames: ['Preston'],
+    stationPoints: [
+      {
+        id: 'preston',
+        name: 'Preston',
+        coordinates: [145.0005, -37.7385],
+        source: OSM,
+        verifiedAt: null,
+      },
+      {
+        id: 'bell',
+        name: 'Bell',
+        coordinates: [144.9987, -37.7472],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'box-hill-2br': {
+    localityNames: ['Box Hill'],
+    stationPoints: [
+      {
+        id: 'box-hill',
+        name: 'Box Hill',
+        coordinates: [145.1195, -37.8193],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'malvern-2br': {
+    localityNames: ['Malvern'],
+    stationPoints: [
+      {
+        id: 'malvern',
+        name: 'Malvern',
+        coordinates: [145.0284, -37.8663],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'toorak-2br': {
+    localityNames: ['Toorak'],
+    stationPoints: [
+      {
+        id: 'toorak',
+        name: 'Toorak',
+        coordinates: [145.0141, -37.8506],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'kew-2br': {
+    localityNames: ['Kew'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'balwyn-2br': {
+    localityNames: ['Balwyn'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'albert-park-2br': {
+    localityNames: ['Albert Park'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'st-kilda-2br': {
+    localityNames: ['St Kilda'],
+    tramOnly: true,
+    // The route 96 light-rail terminus at the old St Kilda station site acts
+    // as the commute anchor point even though it is not heavy rail.
+    stationPoints: [
+      {
+        id: 'st-kilda-96',
+        name: 'St Kilda (route 96 light rail)',
+        coordinates: [144.9718, -37.8593],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'balaclava-2br': {
+    localityNames: ['Balaclava'],
+    stationPoints: [
+      {
+        id: 'balaclava',
+        name: 'Balaclava',
+        coordinates: [144.993, -37.8693],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'elwood-2br': {
+    localityNames: ['Elwood'],
+    stationPoints: [
+      {
+        id: 'balaclava-elwood',
+        name: 'Balaclava',
+        coordinates: [144.993, -37.8693],
+        source: OSM,
+        verifiedAt: null,
+      },
+      {
+        id: 'elsternwick-elwood',
+        name: 'Elsternwick',
+        coordinates: [145.0037, -37.8853],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'cremorne-2br': {
+    localityNames: ['Cremorne'],
+    stationPoints: [
+      {
+        id: 'richmond-cremorne',
+        name: 'Richmond',
+        coordinates: [144.9895, -37.8231],
+        source: OSM,
+        verifiedAt: null,
+      },
+      {
+        id: 'east-richmond-cremorne',
+        name: 'East Richmond',
+        coordinates: [144.9931, -37.8266],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'chelsea-2br': {
+    localityNames: ['Chelsea'],
+    allowMissingLocality: true,
+    stationPoints: [
+      {
+        id: 'chelsea',
+        name: 'Chelsea',
+        coordinates: [145.1168, -38.0512],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'bonbeach-2br': {
+    localityNames: ['Bonbeach'],
+    allowMissingLocality: true,
+    stationPoints: [
+      {
+        id: 'bonbeach',
+        name: 'Bonbeach',
+        coordinates: [145.1207, -38.0624],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'north-melbourne-2br': {
+    localityNames: ['North Melbourne'],
+    stationPoints: [
+      {
+        id: 'north-melbourne',
+        name: 'North Melbourne',
+        coordinates: [144.9426, -37.8071],
+        source: OSM,
+        verifiedAt: null,
+      },
+      {
+        id: 'arden',
+        name: 'Arden (Metro Tunnel)',
+        coordinates: [144.9421, -37.7998],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'sunbury-house': {
+    localityNames: ['Sunbury'],
+    stationPoints: [
+      {
+        id: 'sunbury',
+        name: 'Sunbury',
+        coordinates: [144.7274, -37.5793],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
 }
 
 export function localitiesForArea(areaId) {
@@ -453,7 +682,8 @@ export function validateAreaGeo() {
     const geo = areaGeo[rec.id]
     if (!geo)
       warnings.push(`ranking record "${rec.id}" has no map configuration (won't appear on the map)`)
-    else if (!geo.stationPoints?.length) warnings.push(`"${rec.id}" has no station points`)
+    else if (!geo.stationPoints?.length && !geo.tramOnly)
+      warnings.push(`"${rec.id}" has no station points`)
   }
   for (const key of Object.keys(areaGeo)) {
     if (!recIds.has(key))

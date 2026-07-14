@@ -38,10 +38,10 @@ function gate(rec, filters, commute) {
     if (status === 'ok') status = 'conditional'
   }
 
-  // Intrinsic non-negotiables.
+  // Intrinsic non-negotiables. (The former car-dependence gate was removed
+  // from Decide July 2026; rec.carDaily is retained as data only.)
   if (commute && commute.typical > 65) reject('Over ~65 min door-to-door at peak')
   if (commute && commute.transfers > 1) reject('More than one routine transfer')
-  if (rec.carDaily === 'compulsory') reject('Daily driving is effectively compulsory')
   if (rec.secondBedroom === false) reject('No viable second bedroom or path to one')
 
   // User-set control-strip limits.
@@ -53,7 +53,6 @@ function gate(rec, filters, commute) {
     reject('Commute above your set maximum')
   if (filters.maxStationWalk && rec.stationWalkMin > filters.maxStationWalk)
     reject('Station walk above your set maximum')
-  if (filters.carPref === 'carFree' && rec.carDaily !== 'optional') reject('Not viable car-free')
   if (
     filters.dwellingTypes?.length &&
     rec.dwelling?.types &&

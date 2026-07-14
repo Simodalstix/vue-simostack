@@ -195,7 +195,8 @@ export const transportCosts = [
 ]
 
 // Owner's live position. This is the personal reality the whole tool serves:
-// a new AWS role, a marriage ending into co-parenting, and a modest budget.
+// a new systems/infrastructure role, a marriage ending into co-parenting, and
+// a modest budget.
 // Indicative and dated. Update as the settlement, sign-on and role start land.
 // Not financial, legal or credit advice. Feeds the Overview "Your position"
 // panel and seeds the Money tab calculator (calc), so it stays single-source.
@@ -204,7 +205,7 @@ export const personalPosition = {
   figures: [
     {
       label: 'New role',
-      value: 'Systems Engineer · AWS',
+      value: 'New infrastructure role',
       detail:
         'Starts in about 2.5 months, around October 2026. Positive Vetting clearance is in progress and required before you can commence. This housing plan and the /clearance PV prep are two halves of the same transition.',
     },

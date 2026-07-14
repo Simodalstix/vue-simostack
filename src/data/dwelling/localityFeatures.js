@@ -91,7 +91,7 @@ export const localityBoundsByArea = (() => {
 // Dev-time integrity: every scored record should have at least one polygon.
 if (import.meta.env && import.meta.env.DEV) {
   for (const areaId of Object.keys(areaGeo)) {
-    if (!localityIdsByArea[areaId])
+    if (!localityIdsByArea[areaId] && !areaGeo[areaId]?.allowMissingLocality)
       console.warn(`[localityFeatures] no locality polygon matched record "${areaId}"`)
   }
 }

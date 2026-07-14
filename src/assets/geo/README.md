@@ -40,10 +40,12 @@ third-party request). Re-fetch/re-simplify if the shoreline needs more detail.
   Vicmap). Attribution: "(c) State of Victoria (Vicmap)".
 - **CRS**: requested as `EPSG:4326`; source data is GDA2020 (EPSG:7844), which
   differs from WGS84 by centimetres — irrelevant at this scale.
-- **Filtering**: `locality_name IN (...) AND state='VIC'` for the 32 scored
+- **Filtering**: `locality_name IN (...) AND state='VIC'` for the scored
   lens localities (taken from `areaGeo.js` localityNames — the single source of
   truth) plus ~40 hand-picked context neighbours (CBD, Southbank, bayside and
-  adjoining suburbs). 72 polygons total.
+  adjoining suburbs). 72 polygons in the original pull; Kew, Balwyn, Box Hill
+  and Sunbury were added 2026-07-14 with the same recipe and tolerance
+  (76 polygons total).
 - **Simplification**: Douglas-Peucker, tolerance 0.0004 deg (~40 m). ~37 KB.
 - Properties carry `name` only (Title Case). The assessed/areaId linkage is
   derived at build time in `localityFeatures.js`, never baked into the asset.

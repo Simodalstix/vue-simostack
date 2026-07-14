@@ -48,3 +48,6 @@ design_handoff_portfolio/
 
 # Sensitive PV (Positive Vetting) source documents, never commit
 *.docx
+
+# Exact personal-anchor coordinates stay local-only (see src/data/dwelling/personalAnchors.js)
+src/data/dwelling/personalAnchors.local.js

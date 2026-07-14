@@ -392,9 +392,9 @@ function shortCost(s) {
 
 // Collapsed-header one-liners, derived from the data files so they never rot.
 const summaries = computed(() => ({
-  position: `${figVal('New role').split('·').pop().trim()} role · deposit ${figVal(
-    'Deposit outlook',
-  )} · borrow ${figVal('Indicative borrowing').split(',')[0]}`,
+  position: `transition plan · deposit ${figVal('Deposit outlook')} · borrow ${figVal(
+    'Indicative borrowing',
+  ).split(',')[0]}`,
   market: `Median ${marketVal('median-dwelling')} · ${marketVal(
     'buyers-window',
   )} · Metro Tunnel ${marketVal('metro-tunnel').split(' ')[0].toLowerCase()}`,

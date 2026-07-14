@@ -1,0 +1,349 @@
+// src/data/dwelling/trainLines.js
+//
+// Simplified Melbourne train-line geometry for the Decide map, plus the
+// palette that keeps line colours semantically separate from suburb score
+// colours: LINE COLOUR = route identity, POLYGON FILL = decision fit.
+//
+// Colours follow the current (post-Metro-Tunnel) network map line groups as
+// used on official Melbourne train information displays:
+//   #279FD5 light blue  Metro Tunnel spine (Sunbury - Pakenham/Cranbourne)
+//   #FFBE00 yellow      Northern group (Craigieburn, Upfield)
+//   #BE1014 red         Clifton Hill group (Mernda, Hurstbridge)
+//   #152C6B navy        Burnley group (Belgrave, Lilydale, Alamein, Glen Waverley)
+//   #028430 green       Frankston
+//   #F178AF pink        Sandringham + cross-city (Werribee, Williamstown)
+//   #8F1A95 purple      V/Line regional
+//
+// GEOMETRY IS SCHEMATIC. Each line is a polyline through station coordinates
+// (OSM-derived, roughly platform precision) with no track-level detail. It
+// exists to show how candidate suburbs relate through the network, not to be
+// a track map. Lines run to their real terminus where it fits the map frame
+// (Mernda, Sandringham, Werribee, Upfield); Belgrave/Lilydale, Frankston and
+// the Dandenong end truncate at the frame edge. Only lines relevant to
+// candidate suburbs are included; the Hurstbridge branch is omitted because
+// the shared Clifton Hill trunk already covers every candidate it would serve.
+
+// Station coordinate lookup, [lng, lat]. Shared shaping stations only; the
+// per-record commute anchors stay in areaGeo.js.
+const P = {
+  flindersSt: [144.9671, -37.8183],
+  southernCross: [144.9526, -37.8184],
+  northMelbourne: [144.9426, -37.8071],
+  arden: [144.9421, -37.7998],
+  parkville: [144.9585, -37.7993],
+  stateLibrary: [144.9628, -37.8098],
+  townHall: [144.9668, -37.8156],
+  anzac: [144.9758, -37.8407],
+  jolimont: [144.9791, -37.8163],
+  richmond: [144.9895, -37.8231],
+  burnley: [145.0079, -37.8276],
+  glenferrie: [145.0353, -37.8219],
+  camberwell: [145.0587, -37.8266],
+  boxHill: [145.1195, -37.8193],
+  southYarra: [144.9924, -37.8389],
+  hawksburn: [145.0044, -37.846],
+  toorak: [145.0141, -37.8506],
+  armadale: [145.0206, -37.8557],
+  malvern: [145.0284, -37.8663],
+  caulfield: [145.0426, -37.877],
+  carnegie: [145.0558, -37.8877],
+  murrumbeena: [145.0672, -37.8887],
+  oakleigh: [145.0888, -37.9003],
+  clayton: [145.1207, -37.9243],
+  springvale: [145.152, -37.9483],
+  noblePark: [145.1743, -37.9662],
+  prahran: [144.9931, -37.8517],
+  windsor: [144.9906, -37.8558],
+  balaclava: [144.993, -37.8693],
+  moorabbin: [145.0397, -37.9394],
+  highett: [145.043, -37.949],
+  cheltenham: [145.0533, -37.9636],
+  chelsea: [145.1168, -38.0512],
+  bonbeach: [145.1207, -38.0624],
+  cliftonHill: [144.9953, -37.7887],
+  victoriaPark: [144.9906, -37.7986],
+  collingwood: [144.9878, -37.8017],
+  merri: [144.9906, -37.7757],
+  northcote: [144.9958, -37.7699],
+  thornbury: [144.9971, -37.7614],
+  bell: [144.9987, -37.7472],
+  preston: [145.0005, -37.7385],
+  reservoir: [145.006, -37.7163],
+  ruthven: [145.0096, -37.702],
+  thomastown: [145.0128, -37.6811],
+  lalor: [145.017, -37.666],
+  epping: [145.03, -37.6485],
+  southMorang: [145.094, -37.65],
+  mernda: [145.098, -37.606],
+  elsternwick: [145.0037, -37.8853],
+  brightonBeach: [145.01, -37.9199],
+  sandringham: [145.0043, -37.9501],
+  laverton: [144.7695, -37.863],
+  hoppersCrossing: [144.7, -37.883],
+  werribee: [144.66, -37.9],
+  gowrie: [144.956, -37.705],
+  upfield: [144.9455, -37.6597],
+  jewell: [144.9614, -37.7746],
+  brunswick: [144.9601, -37.7686],
+  coburg: [144.9639, -37.7439],
+  kensington: [144.9302, -37.7943],
+  newmarket: [144.927, -37.7876],
+  ascotVale: [144.9213, -37.777],
+  essendon: [144.9095, -37.7561],
+  pascoeVale: [144.937, -37.7297],
+  glenroy: [144.9163, -37.7057],
+  broadmeadows: [144.9196, -37.683],
+  craigieburn: [144.9431, -37.6023],
+  donnybrook: [144.9701, -37.542],
+  footscray: [144.9006, -37.8006],
+  westFootscray: [144.876, -37.7997],
+  sunshine: [144.8307, -37.788],
+  albion: [144.8195, -37.7757],
+  stAlbans: [144.7997, -37.7445],
+  watergardens: [144.7749, -37.7015],
+  sunbury: [144.7274, -37.5793],
+  seddon: [144.8906, -37.8079],
+  yarraville: [144.8891, -37.8161],
+  newport: [144.8838, -37.8428],
+  deerPark: [144.7716, -37.777],
+  tarneit: [144.6946, -37.8322],
+  wyndhamVale: [144.6227, -37.8877],
+}
+
+// Line definitions. `stations` is the ordered schematic path; `group` keys the
+// legend; colour is the route-identity hue described above.
+export const trainLines = [
+  {
+    id: 'metro-tunnel',
+    name: 'Sunbury - Pakenham/Cranbourne',
+    group: 'Metro Tunnel',
+    color: '#279FD5',
+    stations: [
+      P.sunbury,
+      P.watergardens,
+      P.stAlbans,
+      P.albion,
+      P.sunshine,
+      P.westFootscray,
+      P.footscray,
+      P.arden,
+      P.parkville,
+      P.stateLibrary,
+      P.townHall,
+      P.anzac,
+      P.caulfield,
+      P.carnegie,
+      P.murrumbeena,
+      P.oakleigh,
+      P.clayton,
+      P.springvale,
+      P.noblePark,
+    ],
+  },
+  {
+    id: 'craigieburn',
+    name: 'Craigieburn',
+    group: 'Northern',
+    color: '#FFBE00',
+    stations: [
+      P.craigieburn,
+      P.broadmeadows,
+      P.glenroy,
+      P.pascoeVale,
+      P.essendon,
+      P.ascotVale,
+      P.newmarket,
+      P.kensington,
+      P.northMelbourne,
+      P.southernCross,
+      P.flindersSt,
+    ],
+  },
+  {
+    id: 'upfield',
+    name: 'Upfield',
+    group: 'Northern',
+    color: '#FFBE00',
+    stations: [
+      P.upfield,
+      P.gowrie,
+      P.coburg,
+      P.brunswick,
+      P.jewell,
+      P.northMelbourne,
+      P.southernCross,
+      P.flindersSt,
+    ],
+  },
+  {
+    id: 'mernda',
+    name: 'Mernda',
+    group: 'Clifton Hill',
+    color: '#BE1014',
+    stations: [
+      P.mernda,
+      P.southMorang,
+      P.epping,
+      P.lalor,
+      P.thomastown,
+      P.ruthven,
+      P.reservoir,
+      P.preston,
+      P.bell,
+      P.thornbury,
+      P.northcote,
+      P.merri,
+      P.cliftonHill,
+      P.victoriaPark,
+      P.collingwood,
+      P.jolimont,
+      P.flindersSt,
+    ],
+  },
+  {
+    id: 'burnley',
+    name: 'Belgrave / Lilydale',
+    group: 'Burnley',
+    color: '#152C6B',
+    stations: [P.flindersSt, P.richmond, P.burnley, P.glenferrie, P.camberwell, P.boxHill],
+  },
+  {
+    id: 'frankston',
+    name: 'Frankston',
+    group: 'Frankston',
+    color: '#028430',
+    stations: [
+      P.flindersSt,
+      P.richmond,
+      P.southYarra,
+      P.hawksburn,
+      P.toorak,
+      P.armadale,
+      P.malvern,
+      P.caulfield,
+      P.moorabbin,
+      P.highett,
+      P.cheltenham,
+      P.chelsea,
+      P.bonbeach,
+    ],
+  },
+  {
+    id: 'sandringham',
+    name: 'Sandringham',
+    group: 'Cross-city',
+    color: '#F178AF',
+    stations: [
+      P.flindersSt,
+      P.richmond,
+      P.southYarra,
+      P.prahran,
+      P.windsor,
+      P.balaclava,
+      P.elsternwick,
+      P.brightonBeach,
+      P.sandringham,
+    ],
+  },
+  {
+    id: 'werribee-williamstown',
+    name: 'Werribee / Williamstown',
+    group: 'Cross-city',
+    color: '#F178AF',
+    stations: [
+      P.flindersSt,
+      P.southernCross,
+      P.footscray,
+      P.seddon,
+      P.yarraville,
+      P.newport,
+      P.laverton,
+      P.hoppersCrossing,
+      P.werribee,
+    ],
+  },
+  {
+    id: 'vline-geelong',
+    name: 'Geelong V/Line',
+    group: 'V/Line',
+    color: '#8F1A95',
+    stations: [P.southernCross, P.footscray, P.sunshine, P.deerPark, P.tarneit, P.wyndhamVale],
+  },
+  {
+    id: 'vline-seymour',
+    name: 'Seymour V/Line',
+    group: 'V/Line',
+    color: '#8F1A95',
+    stations: [P.southernCross, P.northMelbourne, P.broadmeadows, P.craigieburn, P.donnybrook],
+  },
+]
+
+// Which lines matter for each ranking record. Tram-based candidates carry an
+// empty list on purpose; their corridor note explains the tram spine instead.
+export const linesByArea = {
+  'inner-south-yarra-2br': ['sandringham', 'frankston', 'metro-tunnel'],
+  'inner-richmond-2br': ['burnley', 'frankston', 'sandringham'],
+  'inner-collingwood-2br': ['mernda'],
+  'inner-windsor-prahran-2br': ['sandringham'],
+  'inner-abbotsford-2br': ['mernda'],
+  'inner-lowcar-benchmark': ['craigieburn'],
+  'sunshine-station-2br': ['metro-tunnel', 'vline-geelong'],
+  'footscray-station-2br': ['metro-tunnel', 'werribee-williamstown', 'vline-geelong'],
+  'seddon-westfootscray-villa': ['werribee-williamstown', 'metro-tunnel'],
+  'established-western-value': ['metro-tunnel'],
+  'northwest-villa-corridor': ['craigieburn'],
+  'upfield-corridor': ['upfield'],
+  'northern-rail-value': ['mernda'],
+  'ascot-vale-2br': ['craigieburn'],
+  'inner-se-apartment-corridor': ['metro-tunnel'],
+  'se-value-corridor': ['metro-tunnel'],
+  'frankston-middle-ring': ['frankston'],
+  'growth-corridor-stress-test': ['vline-geelong'],
+  'craigieburn-townhouse': ['craigieburn', 'vline-seymour'],
+  'donnybrook-house-land': ['vline-seymour'],
+  'northcote-2br': ['mernda'],
+  'thornbury-2br': ['mernda'],
+  'preston-villa': ['mernda'],
+  'box-hill-2br': ['burnley'],
+  'malvern-2br': ['frankston'],
+  'toorak-2br': ['frankston'],
+  'kew-2br': [],
+  'balwyn-2br': [],
+  'albert-park-2br': [],
+  'st-kilda-2br': [],
+  'balaclava-2br': ['sandringham'],
+  'elwood-2br': ['sandringham'],
+  'cremorne-2br': ['burnley', 'frankston', 'sandringham'],
+  'chelsea-2br': ['frankston'],
+  'bonbeach-2br': ['frankston'],
+  'north-melbourne-2br': ['craigieburn', 'upfield', 'metro-tunnel'],
+  'sunbury-house': ['metro-tunnel'],
+}
+
+export function linesForArea(areaId) {
+  return linesByArea[areaId] || []
+}
+
+// GeoJSON FeatureCollection for the map layer. One LineString per line;
+// feature id is the array index for feature-state highlighting.
+export const trainLineFeatures = {
+  type: 'FeatureCollection',
+  features: trainLines.map((line, i) => ({
+    type: 'Feature',
+    id: i,
+    properties: { lineId: line.id, name: line.name, group: line.group, color: line.color },
+    geometry: { type: 'LineString', coordinates: line.stations },
+  })),
+}
+
+export const lineIndexById = Object.fromEntries(trainLines.map((l, i) => [l.id, i]))
+
+// Legend rows: one entry per colour group, in network-map order.
+export const trainLineLegend = (() => {
+  const seen = new Map()
+  for (const l of trainLines) {
+    if (!seen.has(l.group)) seen.set(l.group, { group: l.group, color: l.color, names: [] })
+    seen.get(l.group).names.push(l.name)
+  }
+  return [...seen.values()]
+})()

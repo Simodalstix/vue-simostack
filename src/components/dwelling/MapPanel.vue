@@ -1,10 +1,8 @@
 <template>
-  <section
-    class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] overflow-hidden"
-    @keydown.esc="onEscape"
-  >
-    <!-- lens picker + heading -->
+  <section class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] overflow-hidden">
+    <!-- lens picker + layer toggles -->
     <div
+      v-if="!selectedRow"
       class="px-4 pt-3.5 pb-3 flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-ob-sand/8"
     >
       <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
@@ -26,35 +24,31 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile-only Map / List switch. On lg+ both panes always show side by
-         side; on small screens one shows at a time (list stays reachable
-         without hover as the accessible fallback). -->
-    <div class="lg:hidden px-4 py-2 border-b border-ob-sand/8 flex justify-center">
-      <div
-        class="inline-flex rounded-[6px] border border-ob-sand/14 overflow-hidden"
-        role="tablist"
+    <div
+      v-else
+      class="px-4 py-2.5 border-b border-ob-sand/8 flex items-center gap-3 shrink-0"
+    >
+      <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
+        Suburb profile
+      </h2>
+      <span v-if="mode" class="font-mono text-[10.5px] text-ob-dim truncate">
+        testing: {{ mode.label }}
+      </span>
+      <button
+        @click="closeProfile"
+        class="ml-auto font-mono text-[11px] text-ob-faint hover:text-ob-teal transition-colors shrink-0"
       >
-        <button
-          v-for="v in ['map', 'list']"
-          :key="v"
-          @click="mobileView = v"
-          role="tab"
-          :aria-selected="mobileView === v"
-          class="px-4 py-[5px] font-mono text-[11px] uppercase tracking-[0.06em] transition-colors border-r border-ob-sand/14 last:border-r-0"
-          :class="
-            mobileView === v ? 'bg-ob-teal/15 text-ob-teal' : 'text-ob-faint hover:text-ob-muted'
-          "
-        >
-          {{ v }}
-        </button>
-      </div>
+        map view
+      </button>
     </div>
 
-    <div class="grid lg:grid-cols-[1.9fr_1fr]">
-      <!-- MAP: the star. ~65% on desktop, tall. -->
-      <div class="relative" :class="{ 'hidden lg:block': mobileView !== 'map' }">
-        <div class="h-[340px] sm:h-[440px] lg:h-[560px]">
+    <!-- map -->
+    <div class="relative">
+      <div class="h-[380px] sm:h-[460px] lg:h-[600px]">
+        <div
+          class="h-full transition-opacity"
+          :class="selectedRow ? 'opacity-0 pointer-events-none' : 'opacity-100'"
+        >
           <component
             :is="DwellingMap"
             :catchments="features.catchments"
@@ -69,164 +63,104 @@
             :water="bayUrl"
             :river="yarraUrl"
             :theme="theme"
+            :train-lines="trainLineFeatures"
+            :hover-line-ids="hoverLineIds"
+            :selected-line-ids="selectedLineIds"
+            :schools="schoolFeatures"
+            :facilities="facilityFeatures"
+            :show-all-schools="layers.schools"
+            :show-all-facilities="layers.facilities"
+            :anchors="personalAnchors"
+            :show-anchors="layers.anchors"
+            :show-diagnostics="layers.diagnostics"
+            :suspend-interaction="!!selectedRow"
             @select="onSelect"
             @hover="onHover"
           />
         </div>
-
-        <!-- legend -->
-        <div
-          class="absolute left-3 bottom-3 bg-ob-bg/85 backdrop-blur-sm border border-ob-sand/12 rounded-[6px] px-3 py-2"
-        >
-          <p class="font-mono text-[9.5px] uppercase tracking-[0.08em] text-ob-faint mb-1.5">
-            {{ activeLens.pct ? 'Fit score' : activeLens.label }}
-          </p>
-          <div class="space-y-1">
-            <div v-for="row in legend" :key="row.label" class="flex items-center gap-1.5">
-              <span
-                class="w-3 h-3 rounded-[3px] shrink-0"
-                :style="{ backgroundColor: row.color }"
-              ></span>
-              <span class="font-mono text-[10px] text-ob-dim">{{ row.label }}</span>
-            </div>
-          </div>
-        </div>
+        <SuburbProfileCard
+          v-if="selectedRow"
+          class="absolute inset-0 z-10 bg-ob-surface2"
+          :row="selectedRow"
+          :rank-by-id="rankById"
+          :shortlist-ids="shortlistIds"
+          :payoff-years="payoffYears"
+          :deposit="deposit"
+          :rate="rate"
+          :mode="mode"
+          @toggle-shortlist="$emit('toggle-shortlist', $event)"
+          @close="closeProfile"
+        />
       </div>
 
-      <!-- RIGHT RAIL: ranked list + hovered/selected summary -->
+      <!-- score legend -->
       <div
-        class="border-t lg:border-t-0 lg:border-l border-ob-sand/8 flex-col max-h-[560px]"
-        :class="mobileView === 'list' ? 'flex' : 'hidden lg:flex'"
+        v-if="!selectedRow"
+        class="absolute left-3 bottom-3 z-10 pointer-events-none space-y-1.5"
       >
-        <!-- preview card. FIXED height (content scrolls within) so switching
-             suburbs never resizes it or reflows the list underneath. -->
-        <div class="h-[200px] overflow-y-auto border-b border-ob-sand/8">
-          <div v-if="previewRow" class="px-4 py-3">
-            <div class="flex items-baseline justify-between gap-2">
-              <span class="text-[14px] font-bold text-ob-text">{{ previewHeading }}</span>
-              <span class="font-mono text-[11px] text-ob-faint"
-                >#{{ rankById[previewRow.rec.id] }} · {{ previewRow.rec.region }}</span
-              >
-            </div>
-            <p
-              v-if="previewCoverageNote"
-              class="mt-1 font-mono text-[10px] leading-snug text-ob-faint"
-            >
-              {{ previewCoverageNote }}
-            </p>
-            <div class="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span
-                class="font-mono text-[11px] px-2 py-[2px] rounded-full"
-                :style="{
-                  backgroundColor: bandColor(previewRow) + '22',
-                  color: bandColor(previewRow),
-                }"
-                >{{ previewRow.weighted }} · {{ bandLabel(previewRow) }}</span
-              >
-              <span v-if="previewRow.commute" class="font-mono text-[11px] text-ob-dim"
-                >{{ previewRow.commute.typical }}–{{ previewRow.commute.stressed }} min</span
-              >
-              <span class="font-mono text-[11px] text-ob-dim">{{ priceBand(previewRow.rec) }}</span>
-            </div>
-            <div class="mt-2 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[10.5px] text-ob-faint">
-              <span>Schools {{ dot(previewRow.rec.childhood?.schoolStrength) }}</span>
-              <span>Teen {{ dot(previewRow.rec.childhood?.teenIndependence) }}</span>
-              <span>Car: {{ carLabel(previewRow.rec) }}</span>
-            </div>
-            <p
-              v-if="previewRow.rec.caseFor?.[0]"
-              class="mt-2 text-[12px] leading-snug text-ob-muted2 line-clamp-2"
-            >
-              <span class="text-ob-teal">+</span> {{ previewRow.rec.caseFor[0] }}
-            </p>
-            <p
-              v-if="previewRow.rec.caseAgainst?.[0]"
-              class="mt-1 text-[12px] leading-snug text-ob-muted2 line-clamp-2"
-            >
-              <span class="text-ob-sand">−</span> {{ previewRow.rec.caseAgainst[0] }}
-            </p>
-            <div class="mt-2.5 flex items-center gap-3">
-              <button
-                @click="toggleShortlist(previewRow.rec.id)"
-                class="font-mono text-[10.5px] px-2 py-[3px] rounded-full border transition-colors"
-                :class="
-                  shortlistIds.includes(previewRow.rec.id)
-                    ? 'border-ob-sand/45 text-ob-sand'
-                    : 'border-ob-sand/14 text-ob-faint hover:text-ob-muted'
-                "
-              >
-                {{ shortlistIds.includes(previewRow.rec.id) ? '★ shortlisted' : '☆ shortlist' }}
-              </button>
-              <span
-                v-if="previewRow.rec.placeholder"
-                class="font-mono text-[10px] text-ob-sand"
-                title="Placeholder data pending verification"
-                >provisional data</span
-              >
-            </div>
+        <p
+          class="inline-flex items-center rounded-[5px] bg-ob-bg/55 px-2 py-[3px] font-mono text-[9.5px] uppercase tracking-[0.08em] text-ob-faint shadow-[0_4px_18px_rgba(0,0,0,0.28)] backdrop-blur-[2px]"
+        >
+          {{ activeLens.pct ? 'Fit score' : activeLens.label }}
+        </p>
+        <div class="space-y-1">
+          <div
+            v-for="row in legend"
+            :key="row.label"
+            class="inline-flex items-center gap-1.5 rounded-[5px] bg-ob-bg/45 px-2 py-[3px] shadow-[0_4px_18px_rgba(0,0,0,0.24)] backdrop-blur-[2px]"
+          >
+            <span
+              class="w-3 h-3 rounded-[3px] shrink-0"
+              :style="{ backgroundColor: row.color }"
+            ></span>
+            <span class="font-mono text-[10px] text-ob-dim">{{ row.label }}</span>
           </div>
-          <p v-else class="px-4 py-3 font-mono text-[11px] leading-relaxed text-ob-faint">
-            Hover the map or a suburb to preview it here; click to pin the selection.
-          </p>
         </div>
-
-        <!-- ranked list (keyboard + a11y fallback for the map) -->
-        <ul class="overflow-y-auto flex-1" role="listbox" :aria-label="'Ranked suburbs'">
-          <li v-for="row in scoredRows" :key="row.rec.id" :ref="(el) => setRowRef(row.rec.id, el)">
-            <button
-              @click="onSelect(row.rec.id)"
-              @mouseenter="hoveredContext = { areaId: row.rec.id, source: 'list' }"
-              @mouseleave="hoveredContext = null"
-              @focus="hoveredContext = { areaId: row.rec.id, source: 'list' }"
-              role="option"
-              :aria-selected="modelValue === row.rec.id"
-              class="w-full text-left px-4 py-2 flex items-center gap-2.5 border-b border-ob-sand/6 transition-colors"
-              :class="
-                modelValue === row.rec.id
-                  ? 'bg-ob-teal/10'
-                  : 'hover:bg-ob-surface/60 focus:bg-ob-surface/60'
-              "
-            >
-              <span class="font-mono text-[10px] text-ob-faint w-5 shrink-0">{{
-                rankById[row.rec.id]
-              }}</span>
-              <span
-                class="w-2.5 h-2.5 rounded-full shrink-0"
-                :style="{ backgroundColor: bandColor(row) }"
-                :title="bandLabel(row)"
-              ></span>
-              <span class="text-[12.5px] text-ob-text flex-1 truncate">{{ row.rec.suburb }}</span>
-              <span
-                v-if="row.status !== 'ok'"
-                class="font-mono text-[10px]"
-                :class="row.status === 'reject' ? 'text-ob-sand' : 'text-ob-muted'"
-                >{{ row.status === 'reject' ? '✕' : '~' }}</span
-              >
-              <span v-if="shortlistIds.includes(row.rec.id)" class="text-ob-sand text-[11px]"
-                >★</span
-              >
-              <span class="font-mono text-[12px] text-ob-sand w-6 text-right shrink-0">{{
-                row.weighted
-              }}</span>
-            </button>
-          </li>
-        </ul>
+        <p
+          class="inline-flex items-center rounded-[5px] bg-ob-bg/42 px-2 py-[3px] font-mono text-[8.5px] leading-snug text-ob-faint shadow-[0_4px_18px_rgba(0,0,0,0.22)] backdrop-blur-[2px]"
+        >
+          warm fills = less favoured under the active purchase mode
+        </p>
       </div>
+
+      <!-- No train-line legend: hovering a line identifies it in the popup.
+           Line colour stays route identity, never fit. -->
     </div>
 
-    <!-- caption: geographic honesty -->
-    <p
-      class="px-4 py-2 font-mono text-[10px] leading-relaxed text-ob-faint border-t border-ob-sand/8"
+    <!-- layer toggles + caption -->
+    <div
+      v-if="!selectedRow"
+      class="px-4 py-2 border-t border-ob-sand/8 flex flex-wrap items-center gap-x-3 gap-y-1.5"
     >
-      Scores apply to the defined station-catchment hypothesis, not every property in the suburb.
-      Catchment guides are straight-line radii, not walking-network isochrones. Location data is
-      provisional until verified.
-    </p>
+      <span class="font-mono text-[9.5px] uppercase tracking-[0.08em] text-ob-faint">Layers</span>
+      <button
+        v-for="t in layerToggles"
+        :key="t.key"
+        @click="layers[t.key] = !layers[t.key]"
+        class="font-mono text-[10.5px] px-2 py-[3px] rounded-full border transition-colors"
+        :class="
+          layers[t.key]
+            ? t.key === 'schools' || t.key === 'facilities'
+              ? 'border-ob-purple/45 text-ob-purple'
+              : t.key === 'anchors'
+                ? 'border-ob-gold-muted/60 text-ob-gold'
+                : 'border-ob-teal/45 text-ob-teal'
+            : 'border-ob-sand/14 text-ob-faint hover:text-ob-muted'
+        "
+        :title="t.hint"
+      >
+        {{ t.label }}
+      </button>
+      <p class="w-full sm:w-auto sm:ml-auto font-mono text-[10px] leading-relaxed text-ob-faint">
+        Suburb fill = fit for the active lens · warm fills = filtered or conditional under the
+        active purchase mode · provisional until verified
+      </p>
+    </div>
   </section>
 </template>
 
 <script setup>
-import { ref, computed, defineAsyncComponent, nextTick, watch } from 'vue'
+import { ref, reactive, computed, defineAsyncComponent, watch } from 'vue'
 import {
   MAP_THEME,
   lensByKey,
@@ -236,10 +170,14 @@ import {
   bandFor,
 } from '@/data/dwelling/mapConfig.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
-import { carDependenceFor, CAR_DEPENDENCE_LABEL } from '@/data/dwelling/areaEnrichment.js'
+import { trainLineFeatures, linesForArea } from '@/data/dwelling/trainLines.js'
+import { schoolFeatures } from '@/data/dwelling/schools.js'
+import { facilityFeatures } from '@/data/dwelling/facilities.js'
+import { personalAnchors } from '@/data/dwelling/personalAnchors.js'
 import coastlineUrl from '@/assets/geo/melbourne-coastline.geojson?url'
 import bayUrl from '@/assets/geo/port-phillip-bay.geojson?url'
 import yarraUrl from '@/assets/geo/yarra-river.geojson?url'
+import SuburbProfileCard from './SuburbProfileCard.vue'
 
 // maplibre-gl is heavy; keep it in its own async chunk so the rest of the Decide
 // view (and every other route) never pays for it up front.
@@ -250,9 +188,13 @@ const props = defineProps({
   features: { type: Object, required: true }, // { catchments, points, localities, bounds }
   indexById: { type: Object, required: true },
   shortlistIds: { type: Array, default: () => [] },
+  payoffYears: { type: Number, default: 15 },
+  deposit: { type: Number, required: true },
+  rate: { type: Number, default: 5.9 },
+  mode: { type: Object, default: null },
 })
 const modelValue = defineModel({ default: null })
-const emit = defineEmits(['toggle-shortlist'])
+const emit = defineEmits(['hover', 'toggle-shortlist'])
 
 const theme = MAP_THEME
 const lensKey = ref('overall')
@@ -265,20 +207,32 @@ watch(lenses, (ls) => {
 const activeLens = computed(() => lensByKey(lensKey.value))
 const legend = computed(() => legendFor(lensKey.value))
 
-const hoveredContext = ref(null)
-const mobileView = ref('map')
-const reducedMotion =
-  typeof window !== 'undefined' && window.matchMedia
-    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    : false
+// Map overlay layers. Schools and facilities also appear contextually for the
+// selected suburb with the toggle off; anchors default on (they are the point
+// of the layer); diagnostics expose the old catchment circles only on demand.
+const layers = reactive({ anchors: true, schools: false, facilities: false, diagnostics: false })
+const layerToggles = [
+  { key: 'anchors', label: '★ personal', hint: 'Personal network anchors (gold)' },
+  {
+    key: 'schools',
+    label: 'schools',
+    hint: 'Show every curated school, not just the selected suburb',
+  },
+  { key: 'facilities', label: 'facilities', hint: 'Show every curated aquatic/sports facility' },
+  {
+    key: 'diagnostics',
+    label: 'diagnostics',
+    hint: 'Station-catchment radius circles (analysis aid)',
+  },
+]
 
 const scoredRows = computed(() => props.rows.filter((r) => r.status !== 'unscored'))
 
-// Rank by weighted score across scored rows (stable, matches the colour meaning).
+// Rank follows the displayed order (viable first, then score), matching the
+// decision pane's ranked list.
 const rankById = computed(() => {
-  const ranked = [...scoredRows.value].sort((a, b) => (b.weighted ?? -1) - (a.weighted ?? -1))
   const map = {}
-  ranked.forEach((r, i) => (map[r.rec.id] = i + 1))
+  scoredRows.value.forEach((r, i) => (map[r.rec.id] = i + 1))
   return map
 })
 
@@ -289,76 +243,59 @@ const rowById = computed(() => {
   for (const r of props.rows) m[r.rec.id] = r
   return m
 })
-const hoveredAreaId = computed(() => hoveredContext.value?.areaId || null)
-const previewRow = computed(
-  () => rowById.value[hoveredAreaId.value] || rowById.value[modelValue.value] || null,
+const selectedRow = computed(() =>
+  modelValue.value ? rowById.value[modelValue.value] || null : null,
 )
-const previewHeading = computed(() => {
-  if (!previewRow.value) return ''
-  return hoveredContext.value?.source === 'locality' && hoveredContext.value.localityName
-    ? hoveredContext.value.localityName
-    : previewRow.value.rec.suburb
-})
-const previewCoverageNote = computed(() => {
-  const row = previewRow.value
-  if (!row || !isGroupedArea(row.rec.id)) return null
-  const coverage = coverageLabelForArea(row.rec.id)
-  if (hoveredContext.value?.source === 'locality' && hoveredContext.value.localityName) {
-    return `Part of the grouped record covering ${coverage}.`
-  }
-  return `This ranked record covers ${coverage}.`
-})
 
+const hoveredAreaId = ref(null)
+const hoverLineIds = computed(() => (hoveredAreaId.value ? linesForArea(hoveredAreaId.value) : []))
+const selectedLineIds = computed(() => (modelValue.value ? linesForArea(modelValue.value) : []))
+
+watch(
+  () => modelValue.value,
+  (id) => {
+    if (id != null) {
+      hoveredAreaId.value = null
+      emit('hover', null)
+    }
+  },
+)
+
+// Clicking the already-selected suburb again closes its full profile.
 function onSelect(payload) {
-  modelValue.value = typeof payload === 'string' ? payload : payload?.areaId || null
+  const id = typeof payload === 'string' ? payload : payload?.areaId || null
+  modelValue.value = modelValue.value === id ? null : id
 }
 function onHover(payload) {
-  hoveredContext.value = payload
+  hoveredAreaId.value = payload?.areaId || null
+  emit('hover', payload)
 }
-function toggleShortlist(areaId) {
-  emit('toggle-shortlist', areaId)
-}
-function onEscape() {
-  hoveredContext.value = null
+function closeProfile() {
+  modelValue.value = null
 }
 
-function bandColor(row) {
-  return bandFor(row.weighted).color
-}
-function bandLabel(row) {
-  return bandFor(row.weighted).label
-}
-function priceBand(rec) {
-  const p = rec.dwelling?.indicativePrice
-  return p ? '$' + Math.round(p[0] / 1000) + 'k–$' + Math.round(p[1] / 1000) + 'k' : 'n/a'
-}
-function dot(v) {
-  return v == null ? 'n/a' : v + '/5'
-}
-function carLabel(rec) {
-  const cd = carDependenceFor(rec)
-  return cd ? CAR_DEPENDENCE_LABEL[cd] : 'n/a'
-}
-
-// Small on-map hover popup: locality-first where available, with grouped-record
-// context shown as the secondary line rather than merged into the title.
+// Compact on-map popup: polygon name first, score chip, rank, plus the name
+// of any train line under the pointer (there is no on-map line legend).
 function popupHtml(payload) {
   const areaId = typeof payload === 'string' ? payload : payload?.areaId
   const localityName = typeof payload === 'object' ? payload?.localityName : null
+  const lineHits = (typeof payload === 'object' && payload?.lineHits) || []
+  const linesHtml = lineHits
+    .map(
+      (l) =>
+        `<span style="display:inline-block;width:10px;height:3px;border-radius:2px;background:${l.color};margin-right:4px;vertical-align:middle"></span><span style="color:#A6B4C0">${esc(l.name)} line</span>`,
+    )
+    .join('<br>')
   const row = rowById.value[areaId]
-  if (!row) return null
+  if (!row) return linesHtml || null
   const b = bandFor(row.weighted)
-  const commute = row.commute ? `${row.commute.typical}–${row.commute.stressed} min` : ''
   const heading = localityName || row.rec.suburb
-  const grouped = isGroupedArea(areaId)
-    ? `<span style="color:#94A4B2">${esc(
-        localityName ? `Part of ${row.rec.suburb}` : `Covers ${coverageLabelForArea(areaId)}`,
-      )}</span><br>`
-    : ''
-  return `<strong>${esc(heading)}</strong><br>
-    ${grouped}
-    <span style="color:${b.color}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}<br>
-    <span style="color:#94A4B2">${commute}</span>`
+  const shared =
+    isGroupedArea(areaId) && localityName
+      ? `<span style="color:#94A4B2; font-size:11px">Shared assumptions: ${esc(coverageLabelForArea(areaId))}</span><br>`
+      : ''
+  const base = `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${b.color}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
+  return linesHtml ? `${base}<br>${linesHtml}` : base
 }
 function esc(s) {
   return String(s).replace(
@@ -366,15 +303,4 @@ function esc(s) {
     (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c],
   )
 }
-
-// Scroll the list to the selected suburb when it changes from the map.
-const rowRefs = {}
-function setRowRef(id, el) {
-  if (el) rowRefs[id] = el
-}
-watch(modelValue, async (id) => {
-  if (id == null) return
-  await nextTick()
-  rowRefs[id]?.scrollIntoView({ block: 'nearest', behavior: reducedMotion ? 'auto' : 'smooth' })
-})
 </script>
