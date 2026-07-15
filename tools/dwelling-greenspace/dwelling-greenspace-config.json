@@ -1,0 +1,44 @@
+{
+  "componentWeights": {
+    "localOpenSpaceAccess": 0.5,
+    "majorParkAccess": 0.3,
+    "natureCorridorAccess": 0.2
+  },
+  "localAccessDistanceM": 400,
+  "localCoverageTargetPct": 95,
+  "minimumLocalFeatureAreaHa": 0.05,
+  "majorParkMinimumAreaHa": 5,
+  "distanceScoreKnots": [
+    {
+      "distanceM": 0,
+      "score": 10
+    },
+    {
+      "distanceM": 400,
+      "score": 10
+    },
+    {
+      "distanceM": 800,
+      "score": 8
+    },
+    {
+      "distanceM": 1200,
+      "score": 6
+    },
+    {
+      "distanceM": 1600,
+      "score": 4
+    },
+    {
+      "distanceM": 2400,
+      "score": 0
+    }
+  ],
+  "review": {
+    "minimumResidentialSamples": 10,
+    "minimumResidentialPopulationCoveragePct": 80,
+    "highComponentSpread": 5,
+    "topNearbyFeatureCount": 5,
+    "nearbyFeatureSearchDistanceM": 1200
+  }
+}

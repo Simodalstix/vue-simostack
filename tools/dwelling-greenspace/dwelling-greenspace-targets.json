@@ -1,0 +1,488 @@
+{
+  "dataset": "dwelling-greenspace-targets",
+  "version": "v1",
+  "retrievedAt": "2026-07-15",
+  "recordCount": 35,
+  "records": [
+    {
+      "id": "footscray",
+      "displayName": "Footscray",
+      "salComponents": [
+        {
+          "suburb": "Footscray",
+          "salCode": "SAL20935",
+          "censusPopulation2021": 17131
+        }
+      ],
+      "censusPopulation2021": 17131
+    },
+    {
+      "id": "seddon-west-footscray",
+      "displayName": "Seddon/West Footscray",
+      "salComponents": [
+        {
+          "suburb": "Seddon",
+          "salCode": "SAL22256",
+          "censusPopulation2021": 5143
+        },
+        {
+          "suburb": "West Footscray",
+          "salCode": "SAL22756",
+          "censusPopulation2021": 11729
+        }
+      ],
+      "censusPopulation2021": 16872
+    },
+    {
+      "id": "sunshine",
+      "displayName": "Sunshine",
+      "salComponents": [
+        {
+          "suburb": "Sunshine",
+          "salCode": "SAL22395",
+          "censusPopulation2021": 9445
+        }
+      ],
+      "censusPopulation2021": 9445
+    },
+    {
+      "id": "st-albans",
+      "displayName": "St Albans",
+      "salComponents": [
+        {
+          "suburb": "St Albans",
+          "salCode": "SAL22330",
+          "censusPopulation2021": 38042
+        }
+      ],
+      "censusPopulation2021": 38042
+    },
+    {
+      "id": "kensington-flemington",
+      "displayName": "Kensington/Flemington",
+      "salComponents": [
+        {
+          "suburb": "Kensington",
+          "salCode": "SAL21327",
+          "censusPopulation2021": 10745
+        },
+        {
+          "suburb": "Flemington",
+          "salCode": "SAL20929",
+          "censusPopulation2021": 7025
+        }
+      ],
+      "censusPopulation2021": 17770
+    },
+    {
+      "id": "brunswick-coburg",
+      "displayName": "Brunswick/Coburg",
+      "salComponents": [
+        {
+          "suburb": "Brunswick",
+          "salCode": "SAL20361",
+          "censusPopulation2021": 24896
+        },
+        {
+          "suburb": "Coburg",
+          "salCode": "SAL20596",
+          "censusPopulation2021": 26574
+        }
+      ],
+      "censusPopulation2021": 51470
+    },
+    {
+      "id": "pascoe-vale-glenroy",
+      "displayName": "Pascoe Vale/Glenroy",
+      "salComponents": [
+        {
+          "suburb": "Pascoe Vale",
+          "salCode": "SAL22041",
+          "censusPopulation2021": 18171
+        },
+        {
+          "suburb": "Glenroy",
+          "salCode": "SAL21047",
+          "censusPopulation2021": 23792
+        }
+      ],
+      "censusPopulation2021": 41963
+    },
+    {
+      "id": "reservoir",
+      "displayName": "Reservoir",
+      "salComponents": [
+        {
+          "suburb": "Reservoir",
+          "salCode": "SAL22161",
+          "censusPopulation2021": 51096
+        }
+      ],
+      "censusPopulation2021": 51096
+    },
+    {
+      "id": "richmond",
+      "displayName": "Richmond",
+      "salComponents": [
+        {
+          "suburb": "Richmond",
+          "salCode": "SAL22170",
+          "censusPopulation2021": 28587
+        }
+      ],
+      "censusPopulation2021": 28587
+    },
+    {
+      "id": "cremorne",
+      "displayName": "Cremorne",
+      "salComponents": [
+        {
+          "suburb": "Cremorne",
+          "salCode": "SAL20670",
+          "censusPopulation2021": 2158
+        }
+      ],
+      "censusPopulation2021": 2158
+    },
+    {
+      "id": "collingwood-abbotsford",
+      "displayName": "Collingwood/Abbotsford",
+      "salComponents": [
+        {
+          "suburb": "Collingwood",
+          "salCode": "SAL20616",
+          "censusPopulation2021": 9179
+        },
+        {
+          "suburb": "Abbotsford",
+          "salCode": "SAL20002",
+          "censusPopulation2021": 9088
+        }
+      ],
+      "censusPopulation2021": 18267
+    },
+    {
+      "id": "south-yarra",
+      "displayName": "South Yarra",
+      "salComponents": [
+        {
+          "suburb": "South Yarra",
+          "salCode": "SAL22314",
+          "censusPopulation2021": 25028
+        }
+      ],
+      "censusPopulation2021": 25028
+    },
+    {
+      "id": "windsor-prahran",
+      "displayName": "Windsor/Prahran",
+      "salComponents": [
+        {
+          "suburb": "Windsor",
+          "salCode": "SAL22805",
+          "censusPopulation2021": 7273
+        },
+        {
+          "suburb": "Prahran",
+          "salCode": "SAL22118",
+          "censusPopulation2021": 12203
+        }
+      ],
+      "censusPopulation2021": 19476
+    },
+    {
+      "id": "st-kilda",
+      "displayName": "St Kilda",
+      "salComponents": [
+        {
+          "suburb": "St Kilda",
+          "salCode": "SAL22343",
+          "censusPopulation2021": 19490
+        }
+      ],
+      "censusPopulation2021": 19490
+    },
+    {
+      "id": "balaclava-st-kilda-east",
+      "displayName": "Balaclava/St Kilda East",
+      "salComponents": [
+        {
+          "suburb": "Balaclava",
+          "salCode": "SAL20105",
+          "censusPopulation2021": 5392
+        },
+        {
+          "suburb": "St Kilda East",
+          "salCode": "SAL22344",
+          "censusPopulation2021": 12571
+        }
+      ],
+      "censusPopulation2021": 17963
+    },
+    {
+      "id": "elwood",
+      "displayName": "Elwood",
+      "salComponents": [
+        {
+          "suburb": "Elwood",
+          "salCode": "SAL20867",
+          "censusPopulation2021": 15153
+        }
+      ],
+      "censusPopulation2021": 15153
+    },
+    {
+      "id": "middle-park",
+      "displayName": "Middle Park",
+      "salComponents": [
+        {
+          "suburb": "Middle Park",
+          "salCode": "SAL21677",
+          "censusPopulation2021": 4000
+        }
+      ],
+      "censusPopulation2021": 4000
+    },
+    {
+      "id": "mentone",
+      "displayName": "Mentone",
+      "salComponents": [
+        {
+          "suburb": "Mentone",
+          "salCode": "SAL21648",
+          "censusPopulation2021": 13197
+        }
+      ],
+      "censusPopulation2021": 13197
+    },
+    {
+      "id": "chelsea-bonbeach",
+      "displayName": "Chelsea/Bonbeach",
+      "salComponents": [
+        {
+          "suburb": "Chelsea",
+          "salCode": "SAL20537",
+          "censusPopulation2021": 8347
+        },
+        {
+          "suburb": "Bonbeach",
+          "salCode": "SAL20278",
+          "censusPopulation2021": 6855
+        }
+      ],
+      "censusPopulation2021": 15202
+    },
+    {
+      "id": "carnegie-oakleigh",
+      "displayName": "Carnegie/Oakleigh",
+      "salComponents": [
+        {
+          "suburb": "Carnegie",
+          "salCode": "SAL20498",
+          "censusPopulation2021": 17909
+        },
+        {
+          "suburb": "Oakleigh",
+          "salCode": "SAL22000",
+          "censusPopulation2021": 8442
+        }
+      ],
+      "censusPopulation2021": 26351
+    },
+    {
+      "id": "springvale-noble-park",
+      "displayName": "Springvale/Noble Park",
+      "salComponents": [
+        {
+          "suburb": "Springvale",
+          "salCode": "SAL22328",
+          "censusPopulation2021": 22174
+        },
+        {
+          "suburb": "Noble Park",
+          "salCode": "SAL21952",
+          "censusPopulation2021": 32257
+        }
+      ],
+      "censusPopulation2021": 54431
+    },
+    {
+      "id": "moorabbin-cheltenham",
+      "displayName": "Moorabbin/Cheltenham",
+      "salComponents": [
+        {
+          "suburb": "Moorabbin",
+          "salCode": "SAL21746",
+          "censusPopulation2021": 6287
+        },
+        {
+          "suburb": "Cheltenham",
+          "salCode": "SAL20539",
+          "censusPopulation2021": 23992
+        }
+      ],
+      "censusPopulation2021": 30279
+    },
+    {
+      "id": "tarneit-wyndham-vale",
+      "displayName": "Tarneit/Wyndham Vale",
+      "salComponents": [
+        {
+          "suburb": "Tarneit",
+          "salCode": "SAL22451",
+          "censusPopulation2021": 56370
+        },
+        {
+          "suburb": "Wyndham Vale",
+          "salCode": "SAL22883",
+          "censusPopulation2021": 20518
+        }
+      ],
+      "censusPopulation2021": 76888
+    },
+    {
+      "id": "craigieburn",
+      "displayName": "Craigieburn",
+      "salComponents": [
+        {
+          "suburb": "Craigieburn",
+          "salCode": "SAL20661",
+          "censusPopulation2021": 65178
+        }
+      ],
+      "censusPopulation2021": 65178
+    },
+    {
+      "id": "donnybrook",
+      "displayName": "Donnybrook",
+      "salComponents": [
+        {
+          "suburb": "Donnybrook",
+          "salCode": "SAL20773",
+          "censusPopulation2021": 2100
+        }
+      ],
+      "censusPopulation2021": 2100
+    },
+    {
+      "id": "yarraville",
+      "displayName": "Yarraville",
+      "salComponents": [
+        {
+          "suburb": "Yarraville",
+          "salCode": "SAL22917",
+          "censusPopulation2021": 15636
+        }
+      ],
+      "censusPopulation2021": 15636
+    },
+    {
+      "id": "spotswood",
+      "displayName": "Spotswood",
+      "salComponents": [
+        {
+          "suburb": "Spotswood",
+          "salCode": "SAL22319",
+          "censusPopulation2021": 2820
+        }
+      ],
+      "censusPopulation2021": 2820
+    },
+    {
+      "id": "south-melbourne",
+      "displayName": "South Melbourne",
+      "salComponents": [
+        {
+          "suburb": "South Melbourne",
+          "salCode": "SAL22310",
+          "censusPopulation2021": 11548
+        }
+      ],
+      "censusPopulation2021": 11548
+    },
+    {
+      "id": "armadale",
+      "displayName": "Armadale",
+      "salComponents": [
+        {
+          "suburb": "Armadale",
+          "salCode": "SAL20066",
+          "censusPopulation2021": 9368
+        }
+      ],
+      "censusPopulation2021": 9368
+    },
+    {
+      "id": "burnley",
+      "displayName": "Burnley",
+      "salComponents": [
+        {
+          "suburb": "Burnley",
+          "salCode": "SAL20418",
+          "censusPopulation2021": 794
+        }
+      ],
+      "censusPopulation2021": 794
+    },
+    {
+      "id": "hawthorn",
+      "displayName": "Hawthorn",
+      "salComponents": [
+        {
+          "suburb": "Hawthorn",
+          "salCode": "SAL21152",
+          "censusPopulation2021": 22322
+        }
+      ],
+      "censusPopulation2021": 22322
+    },
+    {
+      "id": "mckinnon",
+      "displayName": "McKinnon",
+      "salComponents": [
+        {
+          "suburb": "McKinnon",
+          "salCode": "SAL21629",
+          "censusPopulation2021": 6878
+        }
+      ],
+      "censusPopulation2021": 6878
+    },
+    {
+      "id": "box-hill",
+      "displayName": "Box Hill",
+      "salComponents": [
+        {
+          "suburb": "Box Hill",
+          "salCode": "SAL20314",
+          "censusPopulation2021": 14353
+        }
+      ],
+      "censusPopulation2021": 14353
+    },
+    {
+      "id": "glen-waverley",
+      "displayName": "Glen Waverley",
+      "salComponents": [
+        {
+          "suburb": "Glen Waverley",
+          "salCode": "SAL21013",
+          "censusPopulation2021": 42642
+        }
+      ],
+      "censusPopulation2021": 42642
+    },
+    {
+      "id": "balwyn-north",
+      "displayName": "Balwyn North",
+      "salComponents": [
+        {
+          "suburb": "Balwyn North",
+          "salCode": "SAL20124",
+          "censusPopulation2021": 21302
+        }
+      ],
+      "censusPopulation2021": 21302
+    }
+  ]
+}

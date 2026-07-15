@@ -1,28 +1,15 @@
 <template>
   <section class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] overflow-hidden">
-    <!-- lens picker + layer toggles -->
     <div
       v-if="!selectedRow"
       class="px-4 pt-3.5 pb-3 flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-ob-sand/8"
     >
       <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
-        Melbourne lens · {{ activeLens.label }}
+        Melbourne map · fit score
       </h2>
-      <div class="flex flex-wrap gap-1.5 ml-auto">
-        <button
-          v-for="l in lenses"
-          :key="l.key"
-          @click="lensKey = l.key"
-          class="font-mono text-[10.5px] px-2 py-[3px] rounded-full border transition-colors"
-          :class="
-            lensKey === l.key
-              ? 'border-ob-teal/45 text-ob-teal'
-              : 'border-ob-sand/14 text-ob-faint hover:text-ob-muted'
-          "
-        >
-          {{ l.label }}
-        </button>
-      </div>
+      <span v-if="strategy" class="ml-auto font-mono text-[10.5px] text-ob-dim truncate">
+        testing: {{ strategy.label }}
+      </span>
     </div>
     <div
       v-else
@@ -31,8 +18,8 @@
       <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
         Suburb profile
       </h2>
-      <span v-if="mode" class="font-mono text-[10.5px] text-ob-dim truncate">
-        testing: {{ mode.label }}
+      <span v-if="strategy" class="font-mono text-[10.5px] text-ob-dim truncate">
+        testing: {{ strategy.label }}
       </span>
       <button
         @click="closeProfile"
@@ -87,7 +74,7 @@
           :payoff-years="payoffYears"
           :deposit="deposit"
           :rate="rate"
-          :mode="mode"
+          :strategy="strategy"
           @toggle-shortlist="$emit('toggle-shortlist', $event)"
           @close="closeProfile"
         />
@@ -101,7 +88,7 @@
         <p
           class="inline-flex items-center rounded-[5px] bg-ob-bg/55 px-2 py-[3px] font-mono text-[9.5px] uppercase tracking-[0.08em] text-ob-faint shadow-[0_4px_18px_rgba(0,0,0,0.28)] backdrop-blur-[2px]"
         >
-          {{ activeLens.pct ? 'Fit score' : activeLens.label }}
+          Fit score
         </p>
         <div class="space-y-1">
           <div
@@ -116,11 +103,6 @@
             <span class="font-mono text-[10px] text-ob-dim">{{ row.label }}</span>
           </div>
         </div>
-        <p
-          class="inline-flex items-center rounded-[5px] bg-ob-bg/42 px-2 py-[3px] font-mono text-[8.5px] leading-snug text-ob-faint shadow-[0_4px_18px_rgba(0,0,0,0.22)] backdrop-blur-[2px]"
-        >
-          warm fills = less favoured under the active purchase mode
-        </p>
       </div>
 
       <!-- No train-line legend: hovering a line identifies it in the popup.
@@ -152,8 +134,7 @@
         {{ t.label }}
       </button>
       <p class="w-full sm:w-auto sm:ml-auto font-mono text-[10px] leading-relaxed text-ob-faint">
-        Suburb fill = fit for the active lens · warm fills = filtered or conditional under the
-        active purchase mode · provisional until verified
+        Suburb fill = weighted fit score · provisional until verified
       </p>
     </div>
   </section>
@@ -161,14 +142,8 @@
 
 <script setup>
 import { ref, reactive, computed, defineAsyncComponent, watch } from 'vue'
-import {
-  MAP_THEME,
-  lensByKey,
-  availableLenses,
-  computeAreaState,
-  legendFor,
-  bandFor,
-} from '@/data/dwelling/mapConfig.js'
+import { MAP_THEME, computeAreaState } from '@/data/dwelling/mapConfig.js'
+import { fitBandColor, fitBandLegend, getFitBand } from '@/data/dwelling/fitBands.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLineFeatures, linesForArea } from '@/data/dwelling/trainLines.js'
 import { schoolFeatures } from '@/data/dwelling/schools.js'
@@ -191,21 +166,14 @@ const props = defineProps({
   payoffYears: { type: Number, default: 15 },
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
-  mode: { type: Object, default: null },
+  // Active Decide strategy (decideStrategies.js).
+  strategy: { type: Object, default: null },
 })
 const modelValue = defineModel({ default: null })
 const emit = defineEmits(['hover', 'toggle-shortlist'])
 
 const theme = MAP_THEME
-const lensKey = ref('overall')
-// Only lenses with real data appear; if the active one stops being available
-// (data removed), fall back to overall.
-const lenses = computed(() => availableLenses(props.rows))
-watch(lenses, (ls) => {
-  if (!ls.some((l) => l.key === lensKey.value)) lensKey.value = 'overall'
-})
-const activeLens = computed(() => lensByKey(lensKey.value))
-const legend = computed(() => legendFor(lensKey.value))
+const legend = fitBandLegend()
 
 // Map overlay layers. Schools and facilities also appear contextually for the
 // selected suburb with the toggle off; anchors default on (they are the point
@@ -236,7 +204,7 @@ const rankById = computed(() => {
   return map
 })
 
-const areaState = computed(() => computeAreaState(scoredRows.value, props.indexById, lensKey.value))
+const areaState = computed(() => computeAreaState(scoredRows.value, props.indexById))
 
 const rowById = computed(() => {
   const m = {}
@@ -288,13 +256,13 @@ function popupHtml(payload) {
     .join('<br>')
   const row = rowById.value[areaId]
   if (!row) return linesHtml || null
-  const b = bandFor(row.weighted)
+  const b = getFitBand(row.weighted)
   const heading = localityName || row.rec.suburb
   const shared =
     isGroupedArea(areaId) && localityName
       ? `<span style="color:#94A4B2; font-size:11px">Shared assumptions: ${esc(coverageLabelForArea(areaId))}</span><br>`
       : ''
-  const base = `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${b.color}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
+  const base = `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${fitBandColor(b)}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
   return linesHtml ? `${base}<br>${linesHtml}` : base
 }
 function esc(s) {

@@ -1,0 +1,73 @@
+{
+  "dataset": "dwelling-greenspace-source-manifest",
+  "methodologyVersion": "greenspace-access-v1",
+  "retrievedAt": "2026-07-15",
+  "sources": [
+    {
+      "name": "Victorian Planning Authority Open Space",
+      "role": "Comprehensive metropolitan open-space base polygons",
+      "sourceDate": "2019-07-08",
+      "metadataLastUpdated": "2026-05-12",
+      "metadataUrl": "https://discover.data.vic.gov.au/dataset/open-space",
+      "downloadUrl": "https://opendata.arcgis.com/datasets/da1c06e3ab6948fcb56de4bb3c722449_0.geojson",
+      "filename": "VPA_Open_Space.geojson",
+      "sha256": "170b73e4d7319c064ae1efdd4808b81b7eb326280ac677cb5846a58ed3946231",
+      "limitation": "Official metadata states the layer is not currently maintained; local-park coverage may undercount post-2019 growth-area additions."
+    },
+    {
+      "name": "ABS ASGS Edition 3 Suburbs and Localities",
+      "role": "2021 SAL boundaries",
+      "sourceDate": "2021",
+      "metadataUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files",
+      "downloadUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/SAL_2021_AUST_GDA2020_SHP.zip",
+      "filename": "SAL_2021_AUST_GDA2020_SHP.zip",
+      "sha256": "1284f6aa4a5eedbe6d0b8c71099494f634d59f1500532c1944b8227b4d1474ca"
+    },
+    {
+      "name": "ABS ASGS Edition 3 Mesh Blocks",
+      "role": "Residential sampling geometry",
+      "sourceDate": "2021",
+      "metadataUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files",
+      "downloadUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/MB_2021_AUST_SHP_GDA2020.zip",
+      "filename": "MB_2021_AUST_SHP_GDA2020.zip",
+      "sha256": "d855af24e898d355610cba930df7291f29d2d29eab83245e962c49dcf15a1895"
+    },
+    {
+      "name": "ABS Census Mesh Block Counts",
+      "role": "Usual-resident population weights and residential category",
+      "sourceDate": "2021",
+      "metadataUrl": "https://www.abs.gov.au/census/guide-census-data/mesh-block-counts/latest-release",
+      "downloadUrl": "https://www.abs.gov.au/census/guide-census-data/mesh-block-counts/2021/Mesh%20Block%20Counts%2C%202021.xlsx",
+      "filename": "Mesh_Block_Counts_2021.xlsx",
+      "sha256": "1ab520c2ff0e07ca88729258c30ee9f7a7133df113a81bac94812582f3b540a3"
+    },
+    {
+      "name": "Victorian Parks and Conservation Reserves (PARKRES)",
+      "role": "Current supplement for major-park and nature-corridor context",
+      "sourceDate": "2026-06-29",
+      "metadataUrl": "https://discover.data.vic.gov.au/dataset/parks-and-conservation-reserves-parkres",
+      "downloadUrl": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform:parkres&srsName=EPSG:4326&bbox=144.4,-38.15,145.25,-37.45,EPSG:4326&outputFormat=application/json",
+      "filename": "PARKRES_metro_bbox.geojson",
+      "sha256": "73cdb7319e30d66b3a094c3283e648e9f6a5ef5f3497f4bc8c43558bda526c21",
+      "note": "Supplement used only for major-park and nature-corridor layers, never for local-access scoring, because public pedestrian access is not encoded consistently enough for local-park eligibility."
+    }
+  ],
+  "classificationReview": {
+    "includedAsLocalOpenSpace": [
+      "VPA categories Parks and gardens, Sportsfields and organised recreation, Recreation corridor, Natural and semi-natural open space, and Conservation reserves when OS_STATUS is Existing/blank, OS_ACCESS is Open, OS_TYPE is Public open space, feature area is at least 0.05 ha, and the subcategory is not Golf course, Race course, Median park, Green buffer, or Outdoor shopping centre forecourts.",
+      "Water-body polygons without a coastal flag are excluded from the local-access layer rather than counted as usable parkland."
+    ],
+    "includedOnlyAsMajorOrNature": [
+      "Filtered PARKRES reserve types matching Metropolitan park, Regional park, State park, National park, Coastal reserve, Reservoir park, Historic reserve, Other park, Nature conservation reserve, or Natural features reserve.",
+      "PARKRES supplement is merged only into major-park and nature-corridor proximity, not local-open-space coverage."
+    ],
+    "excluded": [
+      "Private or restricted VPA land, including private golf courses, school grounds, cemeteries, tertiary campuses, services/utilities reserves, public-housing reserves, and transport reservations.",
+      "Median strips, green buffers, racecourses, golf courses, marine sanctuaries, port and coastal facilities, proposed reserves, and education areas in PARKRES."
+    ],
+    "ambiguousManualReview": [
+      "VPA Services and utilities reserves or Transport reservations that also carry parks/natural/link subcategories were kept out and treated as QA review items rather than assumed to be usable greenspace.",
+      "Open public Conservation reserves or Natural and semi-natural polygons that are primarily water surfaces remain conservative: water-only polygons without a coastal flag are excluded from local access and only influence nature access where the surrounding reserve geometry remains eligible."
+    ]
+  }
+}

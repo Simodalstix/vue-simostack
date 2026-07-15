@@ -1,0 +1,71 @@
+{
+  "featureCountInTargetEnvelope": 21337,
+  "fields": [
+    "COASTAL",
+    "DATA_SOURC",
+    "FID",
+    "HA",
+    "Image_URL",
+    "LGA",
+    "MANAGER_NA",
+    "MANAGER_TY",
+    "OS_ACCESS",
+    "OS_CATEGOR",
+    "OS_CATEG_2",
+    "OS_STATUS",
+    "OS_TYPE",
+    "OWNER_NAME",
+    "OWNER_TYPE",
+    "PARK_NAME",
+    "SUBREGION",
+    "VEAC_ID",
+    "VM_PARCEL_",
+    "VM_PARCE_1",
+    "VPA_ID",
+    "WATER_BODY",
+    "geometry"
+  ],
+  "categoryCounts": {
+    "Parks and gardens": 5746,
+    "Natural and semi-natural open space": 4855,
+    "Transport reservations": 2922,
+    "Recreation corridor": 2255,
+    "Sportsfields and organised recreation": 2076,
+    "Government schools": 1108,
+    "Services and utilities reserves": 785,
+    "Non-government schools": 700,
+    "Tertiary institutions": 622,
+    "Conservation reserves": 118,
+    "Civic squares and promenades": 73,
+    "Cemeteries": 71,
+    "Public housing reserves": 6
+  },
+  "subcategoryCounts": {
+    "Not applicable": 13621,
+    "Local link": 2646,
+    "Green buffer": 2380,
+    "Neighbourhood link": 714,
+    "Regional link": 537,
+    "Golf course": 464,
+    "Metropolitan link": 370,
+    "Median park": 280,
+    "Parks and gardens": 135,
+    "Natural and semi-natural open space": 93,
+    "Race course": 40,
+    "Conservation reserves": 30,
+    "Sportsfields and organised recreation": 16,
+    "Civic squares and promenades": 8,
+    "Recreation corridor": 3
+  },
+  "accessCounts": {
+    "Open": 17574,
+    "Closed": 2205,
+    "Highly Limited": 809,
+    "Limited": 749
+  },
+  "typeCounts": {
+    "Public open space": 14378,
+    "Restricted public land": 5786,
+    "Private open space": 1173
+  }
+}

@@ -3,9 +3,10 @@
 // Weighted decision framework + the process artifacts (info gaps, questions
 // for professionals, research plan). Presentation-agnostic.
 
-// Criteria keys map 1:1 to strategies[].scores. Default weights reflect the
-// brief's stated values (security/payoff/commute over growth); the Rank tab
-// lets Simon override them live. Weights are 0–10.
+// Criteria keys map 1:1 to strategies[].scores. Weights are 0–10.
+// HISTORICAL: this weighted-criteria set drove the old Decide sliders and
+// strategy ranking, both removed July 2026 in favour of the six-criterion
+// strategy presets in decideStrategies.js. Kept as reference data.
 export const criteria = [
   {
     key: 'cost',
@@ -67,11 +68,8 @@ export const criteria = [
     weight: 4,
     hint: 'higher = easier-to-sell options rank higher',
   },
-  // These two are LOCATION criteria: strategies carry no such score, so the
-  // ?? 3 fallback in useStrategyRanking keeps strategy ranking neutral on them.
-  // They act on the suburb lens score instead, reading each corridor's
-  // `childhood` block (see useAreaRanking + areaCorridors.js). Defaults high,
-  // per the owner's values.
+  // These two are LOCATION criteria, reading each corridor's `childhood`
+  // block (see areaCorridors.js). Defaults high, per the owner's values.
   {
     key: 'schoolStrength',
     label: 'Public school strength',

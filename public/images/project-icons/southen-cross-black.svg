@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    id="svg1"
+    inkscape:version="0.48.3.1 r9886"
+    viewBox="0 0 308.23 403.72"
+    sodipodi:version="0.32"
+    version="1"
+    y="0"
+    x="0"
+    sodipodi:docname="_svgclean2.svg"
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      inkscape:window-y="0"
+      pagecolor="#ffffff"
+      inkscape:window-height="645"
+      inkscape:window-maximized="0"
+      inkscape:zoom="0.43415836"
+      inkscape:window-x="0"
+      showgrid="false"
+      borderopacity="1.0"
+      inkscape:current-layer="svg1"
+      inkscape:cx="205.77855"
+      inkscape:cy="228.48154"
+      inkscape:window-width="674"
+      inkscape:pageopacity="0.0"
+  />
+  <g
+      id="g596"
+      style="stroke:#000000;stroke-width:0.3;fill:#000000"
+      transform="matrix(8.3333 0 0 8.3333 -588.93 -46.369)"
+    >
+    <polygon
+        id="polygon590"
+        style="fill-rule:evenodd;fill:#000000"
+        points="91.857 49.576 94.178 50.954 91.489 51.188 91.86 53.861 90 51.905 88.14 53.861 88.511 51.188 85.822 50.954 88.143 49.576 86.649 47.328 89.174 48.284 90 45.714 90.826 48.284 93.351 47.328"
+    />
+    <polygon
+        id="polygon592"
+        style="fill-rule:evenodd;fill:#000000"
+        points="91.857 9.5762 94.178 10.954 91.489 11.188 91.86 13.861 90 11.905 88.14 13.861 88.511 11.188 85.822 10.954 88.143 9.5762 86.649 7.3279 89.174 8.2839 90 5.7143 90.826 8.2839 93.351 7.3279"
+    />
+    <polygon
+        id="polygon593"
+        style="fill-rule:evenodd;fill:#000000"
+        points="76.857 25.826 79.178 27.204 76.489 27.438 76.86 30.111 75 28.155 73.14 30.111 73.511 27.438 70.822 27.204 73.143 25.826 71.649 23.578 74.174 24.534 75 21.964 75.826 24.534 78.351 23.578"
+    />
+    <polygon
+        id="polygon594"
+        style="fill-rule:evenodd;fill:#000000"
+        points="105.19 21.826 107.51 23.204 104.82 23.438 105.19 26.111 103.33 24.155 101.47 26.111 101.84 23.438 99.155 23.204 101.48 21.826 99.983 19.578 102.51 20.534 103.33 17.964 104.16 20.534 106.68 19.578"
+    />
+    <polygon
+        id="polygon595"
+        style="fill-rule:evenodd;fill:#000000"
+        points="97.057 32.843 97.47 34.522 96 33.611 94.53 34.522 94.943 32.843 93.622 31.728 95.347 31.601 96 30 96.653 31.601 98.378 31.728"
+    />
+  </g
+  >
+  <metadata
+      id="metadata10"
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>

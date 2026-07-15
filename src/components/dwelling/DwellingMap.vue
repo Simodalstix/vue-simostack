@@ -70,7 +70,7 @@ const props = defineProps({
   // flags force the whole layer on.
   showAllSchools: { type: Boolean, default: false },
   showAllFacilities: { type: Boolean, default: false },
-  // Personal network anchors [{ id, label, kind, coordinates }], gold layer.
+  // Personal network anchors [{ id, label, longitude, latitude, type }], gold layer.
   anchors: { type: Array, default: () => [] },
   showAnchors: { type: Boolean, default: true },
   // Diagnostic overlay: straight-line station-catchment circles.
@@ -764,12 +764,15 @@ function syncAnchorMarkers() {
   for (const a of props.anchors) {
     const el = document.createElement('div')
     el.className = 'dwelling-map-personal'
+    el.setAttribute('aria-hidden', 'true')
     el.title = a.detail || a.label
-    const glyph = a.kind === 'friend' ? '★' : '●'
+    el.style.setProperty('--label-x', `${a.labelOffset?.[0] ?? 8}px`)
+    el.style.setProperty('--label-y', `${a.labelOffset?.[1] ?? -12}px`)
+    const glyph = a.type === 'other' ? '★' : '●'
     el.innerHTML = `<span class="glyph">${glyph}</span><span class="lbl">${a.label}</span>`
     anchorMarkers.push(
-      new maplibregl.Marker({ element: el, anchor: 'left', offset: a.labelOffset || [4, 0] })
-        .setLngLat(a.coordinates)
+      new maplibregl.Marker({ element: el, anchor: 'center' })
+        .setLngLat([a.longitude, a.latitude])
         .addTo(map),
     )
   }
@@ -824,6 +827,11 @@ watch(
 watch(
   () => props.showAnchors,
   () => syncAnchorMarkers(),
+)
+watch(
+  () => props.anchors,
+  () => syncAnchorMarkers(),
+  { deep: true },
 )
 watch(
   () => props.suspendInteraction,
@@ -903,12 +911,16 @@ defineExpose({
 }
 /* Personal network markers: gold, star for friends, pin-dot otherwise. */
 .dwelling-map-personal {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  pointer-events: auto;
+  position: relative;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 .dwelling-map-personal .glyph {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
   color: #e5c35a;
   font-size: 11px;
   line-height: 1;
@@ -916,6 +928,9 @@ defineExpose({
 }
 .dwelling-map-personal .lbl {
   font-family: 'Space Grotesk', ui-monospace, monospace;
+  position: absolute;
+  left: 0;
+  top: 0;
   display: none;
   font-size: 9px;
   letter-spacing: 0.03em;
@@ -925,6 +940,7 @@ defineExpose({
   padding: 0 4px;
   border-radius: 3px;
   white-space: nowrap;
+  transform: translate(var(--label-x, 8px), var(--label-y, -12px));
 }
 .dwelling-map-personal.labels-visible .lbl {
   display: inline-block;

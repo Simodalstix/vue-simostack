@@ -1,23 +1,26 @@
 // src/composables/useAreaRanking.js
 //
 // Ranks station-catchment records against the 555 Collins St commute anchor and
-// the control-strip filters. Two-stage, by design:
+// the active strategy. Two-stage, by design:
 //
-//   1. HARD GATES run first. The nine non-negotiables (over ~65 min, >1
-//      transfer, compulsory daily driving, no second bedroom, over the price
-//      cap, fees that break payoff, and the user's own filter limits) tag a
-//      record reject | conditional | ok. A cheap area must NOT out-rank a
-//      workable one on price alone, so gates precede scoring.
-//   2. WEIGHTED SCORE from areaWeights, on `scores` only, with the commute
-//      score injected, PLUS the childhood lens criteria (school strength and
-//      teen independence) folded in at their live Decide-panel weights. The
-//      demographic communityProfile is NEVER read here.
+//   1. HARD GATES run first. The intrinsic non-negotiables (over ~65 min, >1
+//      transfer, no second bedroom) plus the strategy's own filter gates
+//      (dwelling types, minimum bedrooms, price cap) tag a record
+//      reject | conditional | ok. A cheap area must NOT out-rank a workable
+//      one on price alone, so gates precede scoring.
+//   2. WEIGHTED SCORE over the six Decide criteria (decideStrategies.js):
+//      score = sum(w * s) / sum(w) over ENABLED criteria only, normalised to
+//      0-100. Criteria the record has no data for are left out of both sides
+//      of the mean (never scored as zero), and if every enabled criterion has
+//      weight 0 the score falls back to an equal-weight mean, so no subset of
+//      toggles can produce NaN. The demographic communityProfile is NEVER
+//      read here.
 //
 // Returns a computed list sorted ok > conditional > reject > unscored, then by
 // weighted score descending.
 
 import { computed, unref } from 'vue'
-import { areaWeights, areaWeightTotal } from '@/data/dwelling/areaWeights.js'
+import { decideCriteria } from '@/data/dwelling/decideStrategies.js'
 import { commuteFor, scoreCommute, commuteBandLabel } from './useCommuteScoring.js'
 
 const STATUS_ORDER = { ok: 0, conditional: 1, reject: 2, unscored: 3 }
@@ -44,11 +47,11 @@ function gate(rec, filters, commute) {
   if (commute && commute.transfers > 1) reject('More than one routine transfer')
   if (rec.secondBedroom === false) reject('No viable second bedroom or path to one')
 
-  // User-set control-strip limits.
+  // Strategy filter gates.
   if (filters.maxPrice && rec.dwelling?.indicativePrice?.[0] > filters.maxPrice)
-    reject(`Entry price above your ${fmtPrice(filters.maxPrice)} cap`)
+    reject(`Entry price above the ${fmtPrice(filters.maxPrice)} cap`)
   if (filters.minBedrooms && rec.dwelling?.bedrooms < filters.minBedrooms)
-    reject('Fewer bedrooms than you require')
+    reject('Fewer bedrooms than the strategy requires')
   if (filters.maxCommute && commute && commute.typical > filters.maxCommute)
     reject('Commute above your set maximum')
   if (filters.maxStationWalk && rec.stationWalkMin > filters.maxStationWalk)
@@ -58,7 +61,7 @@ function gate(rec, filters, commute) {
     rec.dwelling?.types &&
     !rec.dwelling.types.some((t) => filters.dwellingTypes.includes(t))
   )
-    reject('No stock of your selected dwelling types')
+    reject('No stock of the strategy dwelling types')
 
   // Softer flags.
   if (filters.maxOc && rec.dwelling?.annualOc?.[1] > filters.maxOc)
@@ -67,38 +70,36 @@ function gate(rec, filters, commute) {
   return { status, reasons }
 }
 
-// `childhoodWeights` is the live [{ key, weight }] pair for the lens criteria
-// (school strength, teen independence) taken from the Decide panel sliders. Each
-// is scored 1-5 from the record's `childhood` block, folded in with the same
-// weight/score mechanism as the fixed areaWeights. A missing field is treated as
-// "not assessed": its weight is left out of the denominator entirely, so a
-// record with no childhood block scores on its base areaWeights alone rather
-// than being penalised as if its schools were zero. A weight of 0 is likewise
-// a no-op, leaving the base score untouched.
-function weightedScore(rec, commuteScore, childhoodWeights) {
-  const scoreMap = { ...rec.scores, commute: commuteScore }
+// `weights` is the effective weight per criterion key from the Decide panel:
+// the strategy preset value when the toggle is on, 0 when it is off. Each
+// criterion resolves its own 0-10 value from the record (decideStrategies.js);
+// a null value means "not assessed" and drops out of both numerator and
+// denominator, so a record missing a field is never punished as if it scored
+// zero. If the enabled weights sum to 0, fall back to an equal-weight mean of
+// whatever data exists rather than dividing by zero.
+export function weightedScore(rec, commuteScore, weights) {
+  const entries = decideCriteria
+    .map((c) => ({ w: weights[c.key] ?? 0, s: c.value(rec, commuteScore) }))
+    .filter((e) => e.s != null)
+  if (!entries.length) return null
   let sum = 0
-  for (const w of areaWeights) {
-    const s = scoreMap[w.key]
-    if (s == null) continue
-    sum += w.weight * (s / 5)
+  let totalWeight = 0
+  for (const e of entries) {
+    sum += e.w * e.s
+    totalWeight += e.w
   }
-  let total = areaWeightTotal
-  for (const { key, weight } of childhoodWeights) {
-    const s = rec.childhood?.[key]
-    if (s == null) continue
-    total += weight
-    sum += weight * (s / 5)
+  if (totalWeight === 0) {
+    sum = entries.reduce((a, e) => a + e.s, 0)
+    totalWeight = entries.length
   }
-  // areaWeights sum to 100; with the childhood weights added to the denominator
-  // this still reads as a percentage of the ideal.
-  return Math.round((sum / total) * 100)
+  // s is 0-10, so the weighted mean x10 reads as a percentage of the ideal.
+  return Math.round((sum / totalWeight) * 10)
 }
 
-export function useAreaRanking(records, filtersRef, childhoodWeightsRef) {
+export function useAreaRanking(records, filtersRef, weightsRef) {
   return computed(() => {
     const filters = unref(filtersRef) || {}
-    const childhoodWeights = unref(childhoodWeightsRef) || []
+    const weights = unref(weightsRef) || {}
 
     const source = (unref(records) || []).filter((rec) => !rec.stretch || filters.includeStretch)
 
@@ -117,7 +118,7 @@ export function useAreaRanking(records, filtersRef, childhoodWeightsRef) {
       const commute = commuteFor(rec)
       const commuteScore = commute ? scoreCommute(commute.typical, commute.transfers) : null
       const { status, reasons } = gate(rec, filters, commute)
-      const weighted = weightedScore(rec, commuteScore, childhoodWeights)
+      const weighted = weightedScore(rec, commuteScore, weights)
       return {
         rec,
         status,

@@ -192,6 +192,30 @@ export const areaGeo = {
       },
     ],
   },
+  'yarraville-2br': {
+    localityNames: ['Yarraville'],
+    stationPoints: [
+      {
+        id: 'yarraville',
+        name: 'Yarraville',
+        coordinates: [144.8899, -37.8158],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'spotswood-2br': {
+    localityNames: ['Spotswood'],
+    stationPoints: [
+      {
+        id: 'spotswood',
+        name: 'Spotswood',
+        coordinates: [144.8859, -37.8307],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
   'established-western-value': {
     localityNames: ['St Albans'],
     stationPoints: [
@@ -633,6 +657,100 @@ export const areaGeo = {
         id: 'sunbury',
         name: 'Sunbury',
         coordinates: [144.7274, -37.5793],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'south-melbourne-2br': {
+    localityNames: ['South Melbourne'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'armadale-2br': {
+    localityNames: ['Armadale'],
+    stationPoints: [
+      {
+        id: 'armadale',
+        name: 'Armadale',
+        coordinates: [145.0206, -37.8557],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'burnley-2br': {
+    localityNames: ['Burnley'],
+    stationPoints: [
+      {
+        id: 'burnley',
+        name: 'Burnley',
+        coordinates: [145.0079, -37.8276],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'hawthorn-2br': {
+    localityNames: ['Hawthorn'],
+    stationPoints: [
+      {
+        id: 'hawthorn',
+        name: 'Hawthorn',
+        coordinates: [145.0233, -37.8217],
+        source: OSM,
+        verifiedAt: null,
+      },
+      {
+        id: 'glenferrie-hawthorn',
+        name: 'Glenferrie',
+        coordinates: [145.0353, -37.8219],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'mckinnon-villa': {
+    localityNames: ['McKinnon'],
+    stationPoints: [
+      {
+        id: 'mckinnon',
+        name: 'McKinnon',
+        coordinates: [145.0381, -37.9115],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'glen-waverley-2br': {
+    localityNames: ['Glen Waverley'],
+    stationPoints: [
+      {
+        id: 'glen-waverley',
+        name: 'Glen Waverley',
+        coordinates: [145.1629, -37.8797],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'balwyn-north-2br': {
+    localityNames: ['Balwyn North'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'middle-park-2br': {
+    localityNames: ['Middle Park'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'mentone-2br': {
+    localityNames: ['Mentone'],
+    stationPoints: [
+      {
+        id: 'mentone',
+        name: 'Mentone',
+        coordinates: [145.0663, -37.9836],
         source: OSM,
         verifiedAt: null,
       },

@@ -112,7 +112,7 @@
                 :href="project.repoUrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="font-mono text-[11px] leading-none text-ob-sand hover:text-ob-bright transition-colors"
+                class="font-mono text-[11px] leading-none text-ob-dim hover:text-ob-bright transition-colors"
                 @click.stop
               >View Repo →</a>
             </div>

@@ -4,6 +4,10 @@
 // criteria (which rank dwelling STRATEGIES); these rank PLACES. Weights sum to
 // 100 so a weighted score reads as a percentage of the ideal.
 //
+// HISTORICAL: the live Decide ranking moved to the six-criterion strategy
+// presets in decideStrategies.js (July 2026). This table is kept as reference
+// data for the per-record `scores` fields it documents.
+//
 // key maps 1:1 to areaCorridors[].scores. Each raw score is 1-5.
 //
 // IMPORTANT: the `community` weight funds measurable AMENITY (grocers, markets,

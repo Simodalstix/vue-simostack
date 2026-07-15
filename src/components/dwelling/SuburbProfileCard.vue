@@ -29,7 +29,7 @@
               <p class="text-[21px] font-bold leading-tight text-ob-text">{{ row.rec.suburb }}</p>
               <span
                 class="font-mono text-[11px] px-2 py-[2px] rounded-full"
-                :style="{ backgroundColor: bandColor(row) + '22', color: bandColor(row) }"
+                :style="{ backgroundColor: bandBadgeFill(row), color: bandColor(row) }"
                 >{{ row.weighted }} · {{ bandLabel(row) }}</span
               >
               <button
@@ -206,20 +206,20 @@
                 </div>
 
                 <div
-                  v-if="mode"
+                  v-if="strategy"
                   class="rounded-[6px] border border-ob-teal/18 bg-ob-surface px-3 py-2.5"
                 >
                   <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-soft">
-                    Fit under {{ mode.label }}
+                    Fit under {{ strategy.label }}
                   </p>
                   <p class="mt-0.5 font-mono text-[10.5px] leading-snug" :class="fitClass(row)">
                     {{ fitLine(row) }}
                   </p>
                   <p
-                    v-if="mode.priceNote"
+                    v-if="strategy.priceNote"
                     class="mt-1 text-[10px] leading-snug text-ob-faint card-clamp-3"
                   >
-                    {{ mode.priceNote }}
+                    {{ strategy.priceNote }}
                   </p>
                 </div>
               </div>
@@ -264,7 +264,7 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
-import { bandFor } from '@/data/dwelling/mapConfig.js'
+import { fitBandBadgeFill, fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
 import { FEE_ESTIMATE_BY_RISK } from '@/data/dwelling/areaCorridors.js'
 import { localitiesForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLines, linesForArea } from '@/data/dwelling/trainLines.js'
@@ -281,7 +281,8 @@ const props = defineProps({
   payoffYears: { type: Number, default: 15 },
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
-  mode: { type: Object, default: null },
+  // Active Decide strategy (decideStrategies.js).
+  strategy: { type: Object, default: null },
 })
 
 const emit = defineEmits(['toggle-shortlist', 'close'])
@@ -308,7 +309,7 @@ const gateNote = computed(() => {
 const headerNote = computed(() => [sharedNote.value, gateNote.value].filter(Boolean).join(' · '))
 const headerMetrics = computed(() => [
   { label: 'Purchase band', value: priceBand(props.row.rec) },
-  { label: `All-in @ ${props.payoffYears}yr`, value: monthlyLabel(props.row.rec), tone: 'text-ob-teal' },
+  { label: 'Expected cost', value: monthlyLabel(props.row.rec), tone: 'text-ob-teal' },
   { label: 'Collins St commute', value: commuteLabel(props.row), tone: bandClass(props.row.band) },
   { label: 'Owners-corp', value: ocLabel(props.row.rec), tone: 'text-ob-muted2' },
 ])
@@ -319,10 +320,13 @@ const practicalCardClass = computed(() =>
 )
 
 function bandColor(row) {
-  return bandFor(row.weighted).color
+  return fitBandColor(row.weighted)
+}
+function bandBadgeFill(row) {
+  return fitBandBadgeFill(row.weighted)
 }
 function bandLabel(row) {
-  return bandFor(row.weighted).label
+  return getFitBand(row.weighted).label
 }
 function bandClass(band) {
   return (
@@ -404,7 +408,7 @@ function fitClass(row) {
   return { ok: 'text-ob-teal', conditional: 'text-ob-muted', reject: 'text-ob-sand' }[row.status]
 }
 function fitLine(row) {
-  const label = props.mode ? `under ${props.mode.label}` : 'under current settings'
+  const label = props.strategy ? `under ${props.strategy.label}` : 'under current settings'
   if (row.status === 'ok') return `✓ viable ${label}`
   if (row.status === 'conditional') return `~ conditional ${label}: ${row.reasons[0] || ''}`
   return `✕ fails ${label}: ${row.reasons[0] || ''}`

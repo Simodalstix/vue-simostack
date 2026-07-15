@@ -150,6 +150,43 @@
       <p class="font-mono text-[10.5px] leading-relaxed text-ob-faint">{{ SCHOOL_CAVEAT }}</p>
     </div>
 
+    <div v-if="rec.greenspaceComponents" class="space-y-2.5">
+      <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft">
+        Greenspace evidence
+      </p>
+      <div class="grid gap-3 sm:grid-cols-3">
+        <div class="rounded-[6px] border border-ob-sand/10 px-3 py-2.5">
+          <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-faint">
+            Local open space
+          </p>
+          <p class="mt-0.5 font-mono text-[12px] text-ob-text">
+            {{ formatScore(rec.greenspaceComponents.localOpenSpaceAccess) }}/10
+          </p>
+        </div>
+        <div class="rounded-[6px] border border-ob-sand/10 px-3 py-2.5">
+          <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-faint">
+            Major parks
+          </p>
+          <p class="mt-0.5 font-mono text-[12px] text-ob-text">
+            {{ formatScore(rec.greenspaceComponents.majorParkAccess) }}/10
+          </p>
+        </div>
+        <div class="rounded-[6px] border border-ob-sand/10 px-3 py-2.5">
+          <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-faint">
+            Nature corridors
+          </p>
+          <p class="mt-0.5 font-mono text-[12px] text-ob-text">
+            {{ formatScore(rec.greenspaceComponents.natureCorridorAccess) }}/10
+          </p>
+        </div>
+      </div>
+      <p v-if="rec.greenspaceEvidence" class="font-mono text-[10.5px] leading-relaxed text-ob-faint">
+        {{ formatPct(rec.greenspaceEvidence.localOpenSpaceCoveragePct) }} of represented residents are within 400m straight-line of eligible local open space
+        · {{ formatInt(rec.greenspaceEvidence.representedPopulation) }} residents across
+        {{ rec.greenspaceEvidence.sampledMeshBlocks }} residential mesh blocks.
+      </p>
+    </div>
+
     <!-- decision profile: dimensions the brief wants comparable but NOT turned
          into weighting sliders. Every field renders an honest "not assessed"
          state until the owner fills areaEnrichment.js. -->
@@ -390,4 +427,16 @@ const resolvedSources = computed(() =>
 const vicplanSource = computed(() =>
   (rec.value.sources || []).includes('vicplan') ? areaSources.vicplan : null,
 )
+
+function formatScore(value) {
+  return Number.isFinite(value) ? value.toFixed(1) : 'n/a'
+}
+
+function formatPct(value) {
+  return Number.isFinite(value) ? `${value.toFixed(1)}%` : 'n/a'
+}
+
+function formatInt(value) {
+  return Number.isFinite(value) ? value.toLocaleString() : 'n/a'
+}
 </script>

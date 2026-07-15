@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import RaspBlog from '../views/RaspBlog.vue'
 
-const routes = [
+export const appRoutes = [
   {
     path: '/',
     name: 'Home',
@@ -34,6 +34,9 @@ const routes = [
     path: '/dwelling',
     component: () => import('../views/dwelling/DwellingShell.vue'),
     redirect: '/dwelling/overview',
+    meta: {
+      section: 'dwelling',
+    },
     children: [
       {
         path: 'overview',
@@ -51,7 +54,7 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
+  routes: appRoutes,
 })
 
 export default router

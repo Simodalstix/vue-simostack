@@ -15,8 +15,8 @@
 //
 //     // src/data/dwelling/personalAnchors.local.js  (gitignored)
 //     export const localAnchorOverrides = {
-//       home: { coordinates: [144.9xxx, -37.8xxx] },
-//       nathan: { coordinates: [144.9xxx, -37.8xxx], note: 'exact' },
+//       home: { longitude: 144.9xxx, latitude: -37.8xxx },
+//       nathan: { longitude: 144.9xxx, latitude: -37.8xxx, note: 'exact' },
 //     }
 //
 // - WARNING: the local file is compiled into any bundle built while it is
@@ -30,13 +30,15 @@
 
 export const publicAnchors = [
   // labelOffset is a [x, y] pixel nudge so the tightly clustered inner
-  // anchors (Southbank / South Melbourne) stay readable at city zoom.
+  // anchors (Southbank / South Melbourne) stay readable at city zoom. The
+  // offset moves only the label, never the geographic point.
   {
     id: 'home',
     label: 'Home',
     detail: 'Current Southbank home',
-    kind: 'home',
-    coordinates: [144.9623, -37.8265], // Southbank, suburb-level
+    type: 'home',
+    longitude: 144.9623,
+    latitude: -37.8265, // Southbank, suburb-level
     labelOffset: [6, -14],
     approximate: true,
   },
@@ -44,16 +46,18 @@ export const publicAnchors = [
     id: 'simon-work',
     label: 'Simon work',
     detail: 'Thomastown',
-    kind: 'work',
-    coordinates: [145.0128, -37.6811], // Thomastown, suburb-level
+    type: 'work',
+    longitude: 145.0128,
+    latitude: -37.6811, // Thomastown, suburb-level
     approximate: true,
   },
   {
     id: 'jeanie-work',
     label: 'Jeanie work',
     detail: 'South Melbourne pharmacy',
-    kind: 'work',
-    coordinates: [144.9587, -37.8316], // South Melbourne, suburb-level
+    type: 'work',
+    longitude: 144.9587,
+    latitude: -37.8316, // South Melbourne, suburb-level
     labelOffset: [-70, 4],
     approximate: true,
   },
@@ -61,8 +65,9 @@ export const publicAnchors = [
     id: 'lulu-childcare',
     label: 'Lulu childcare',
     detail: 'South Melbourne',
-    kind: 'family',
-    coordinates: [144.9556, -37.8347], // South Melbourne, suburb-level
+    type: 'family',
+    longitude: 144.9556,
+    latitude: -37.8347, // South Melbourne, suburb-level
     labelOffset: [-80, 18],
     approximate: true,
   },
@@ -70,8 +75,9 @@ export const publicAnchors = [
     id: 'nathan',
     label: 'Nathan',
     detail: 'Inner south-east',
-    kind: 'friend',
-    coordinates: [144.9968, -37.8437], // South Yarra area, suburb-level
+    type: 'other',
+    longitude: 144.9968,
+    latitude: -37.8437, // South Yarra area, suburb-level
     labelOffset: [6, 12],
     approximate: true,
   },
@@ -79,8 +85,9 @@ export const publicAnchors = [
     id: 'tama',
     label: 'Tama',
     detail: 'Sunbury',
-    kind: 'friend',
-    coordinates: [144.7286, -37.5773], // Sunbury, town-level
+    type: 'other',
+    longitude: 144.7286,
+    latitude: -37.5773, // Sunbury, town-level
     approximate: true,
   },
 ]
@@ -98,8 +105,22 @@ try {
 }
 
 export const personalAnchors = publicAnchors.map((a) =>
-  localOverrides[a.id] ? { ...a, ...localOverrides[a.id], approximate: false } : a,
+  normaliseAnchor(localOverrides[a.id] ? { ...a, ...localOverrides[a.id], approximate: false } : a),
 )
+
+function normaliseAnchor(anchor) {
+  const longitude = anchor.longitude ?? anchor.coordinates?.[0]
+  const latitude = anchor.latitude ?? anchor.coordinates?.[1]
+  const type = anchor.type || anchor.kind || 'other'
+  return {
+    ...anchor,
+    type,
+    kind: type === 'other' ? 'friend' : type,
+    longitude,
+    latitude,
+    coordinates: [longitude, latitude],
+  }
+}
 
 // GeoJSON for the map layer.
 export const anchorFeatures = {
@@ -107,8 +128,8 @@ export const anchorFeatures = {
   features: personalAnchors.map((a, i) => ({
     type: 'Feature',
     id: i,
-    properties: { anchorId: a.id, label: a.label, kind: a.kind },
-    geometry: { type: 'Point', coordinates: a.coordinates },
+    properties: { anchorId: a.id, label: a.label, type: a.type },
+    geometry: { type: 'Point', coordinates: [a.longitude, a.latitude] },
   })),
 }
 

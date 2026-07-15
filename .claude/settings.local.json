@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "mcp__claude_ai_Google_Drive__read_file_content",
-      "mcp__claude_ai_Google_Drive__search_files"
+      "mcp__claude_ai_Google_Drive__search_files",
+      "Skill(run)",
+      "WebSearch",
+      "WebFetch(domain:en.wikipedia.org)",
+      "Bash(curl -s -o /dev/null -m 2 http://localhost:5199)",
+      "Bash(mkdir -p /home/simoda/projects/vue-simostack/.claude/skills/verify)"
     ]
   }
 }

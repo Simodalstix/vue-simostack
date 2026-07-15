@@ -1,21 +1,22 @@
 // src/data/dwelling/mapConfig.js
 //
-// The single source of map colour and lens definitions. No hex literals live in
+// The single source of map colour definitions. No hex literals live in
 // components; they all resolve here. The map recolours off the SAME ranking the
-// list uses (useAreaRanking) — it never computes a competing score.
+// list uses (useAreaRanking) — it never computes a competing score. The former
+// per-metric lens system was removed July 2026: the choropleth now always
+// colours by the one weighted fit score the active strategy produces.
 //
 // Channels are kept separate on purpose (the brief forbids one colour channel
 // carrying every meaning):
-//   fill hue      = the score for the current lens, unless the active purchase
-//                   mode gates a suburb (then warm caution colours take over)
+//   fill hue      = the weighted fit score band
 //   fill opacity  = data confidence (provisional placeholder vs verified)
 //   solid ring    = selected / shortlisted / hovered (feature-state in the map)
-
-import { enrichmentFor } from './areaEnrichment.js'
 
 // On-palette site colours reused by the map canvas + legend + component theme.
 // purple = school / community context; gold = personal network. Both are
 // accents with fixed semantic roles, never score hues.
+import { fitBandColor, fitBandLegend, getFitBand } from './fitBands.js'
+
 export const MAP_THEME = {
   bg: '#111418',
   faintFill: '#2A3138',
@@ -32,35 +33,11 @@ export const MAP_THEME = {
   goldDark: '#3A3218',
 }
 
-// Stable overall-fit bands on the 0-100 "% of ideal" weighted score. Fixed
-// thresholds (not quantiles) so a suburb keeps its colour meaning as weights
-// move. The MAP deliberately steps OUTSIDE the site palette to a green->red
-// good/bad ramp (ColorBrewer RdYlGn) so fit reads at a glance.
-export const SCORE_BANDS = [
-  { min: 80, label: 'Excellent fit', color: '#1A9850' },
-  { min: 70, label: 'Strong fit', color: '#91CF60' },
-  { min: 60, label: 'Meaningful trade-offs', color: '#FEE08B' },
-  { min: 50, label: 'Weak fit', color: '#FC8D59' },
-  { min: -Infinity, label: 'Poor fit', color: '#D73027' },
-]
-
-export function bandFor(score) {
-  if (score == null) return { label: 'Not scored', color: MAP_THEME.markerDim }
-  return SCORE_BANDS.find((b) => score >= b.min)
-}
-
-// The 1-5 metric lenses reuse the same green->red ramp (bad -> good) so the map
-// reads as one system whichever lens is active.
-const RAMP_5 = ['#D73027', '#FC8D59', '#FEE08B', '#91CF60', '#1A9850']
-export function rampColor(v) {
-  if (v == null) return MAP_THEME.markerDim
-  const i = Math.max(1, Math.min(5, Math.round(v))) - 1
-  return RAMP_5[i]
-}
+export { getFitBand }
 
 // Confidence -> fill opacity. Provisional placeholder records read fainter than
-// verified ones. Gated suburbs stay visible enough for their warm caution
-// colour to read clearly under the active purchase mode.
+// verified ones; strategy-gated suburbs stay slightly lighter so the map still
+// reads while the hue remains aligned with the shared fit band.
 export function fillOpacityFor(rec, status) {
   const base = rec.placeholder ? 0.16 : 0.3
   if (status === 'reject') return base * 0.78
@@ -68,84 +45,14 @@ export function fillOpacityFor(rec, status) {
   return base
 }
 
-// Lenses. `overall` uses the weighted 0-100 score; the rest colour by a single
-// 1-5 metric that already has real data. Each `value(row)` returns the number to
-// colour by; `pct` marks the 0-100 scale. Only add a lens once its data exists.
-export const MAP_LENSES = [
-  { key: 'overall', label: 'Overall fit', pct: true, value: (row) => row.weighted },
-  { key: 'commute', label: 'Collins St commute', value: (row) => row.commuteScore },
-  {
-    key: 'affordability',
-    label: 'Housing cost & availability',
-    value: (row) => row.rec.scores?.housingValue,
-  },
-  {
-    key: 'schools',
-    label: 'Public school strength',
-    value: (row) => row.rec.childhood?.schoolStrength,
-  },
-  {
-    key: 'teen',
-    label: 'Kid independence & amenity',
-    value: (row) => row.rec.childhood?.teenIndependence,
-  },
-  { key: 'safety', label: 'Safety', value: (row) => row.rec.scores?.safety },
-  // Enrichment lens: PT reach reads the public-transport-only score, hidden by
-  // availableLenses() until data exists. (The low-car and car-dependence
-  // lenses were removed from Decide July 2026; the underlying data remains in
-  // areaCorridors / areaEnrichment for a future property-comparison tool.)
-  {
-    key: 'ptReach',
-    label: 'Melbourne PT reach',
-    value: (row) => enrichmentFor(row.rec.id).ptNetworkReach.score,
-  },
-]
-
-export function lensByKey(key) {
-  return MAP_LENSES.find((l) => l.key === key) || MAP_LENSES[0]
-}
-
-// Lenses worth showing for the current data: overall always, plus any lens with
-// at least one scored value. Prevents empty or fabricated lenses appearing.
-export function availableLenses(rows) {
-  const scored = rows.filter((r) => r.status !== 'unscored')
-  return MAP_LENSES.filter((l) => l.pct || scored.some((r) => l.value(r) != null))
-}
-
-// Colour for a row under a given lens.
-const MODE_STATUS_BANDS = {
-  conditional: [
-    { min: 75, color: '#FEE08B' },
-    { min: 62, color: '#FDAE61' },
-    { min: -Infinity, color: '#F46D43' },
-  ],
-  reject: [
-    { min: 70, color: '#FDAE61' },
-    { min: 58, color: '#F46D43' },
-    { min: -Infinity, color: '#D73027' },
-  ],
-}
-
-function modePenaltyColor(status, weightedScore) {
-  const bands = MODE_STATUS_BANDS[status]
-  if (!bands) return null
-  const score = weightedScore ?? 0
-  return bands.find((b) => score >= b.min)?.color || bands[bands.length - 1].color
-}
-
-export function colorForRow(row, lens) {
-  if (row.status === 'conditional' || row.status === 'reject') {
-    return modePenaltyColor(row.status, row.weighted)
-  }
-  const v = lens.value(row)
-  return lens.pct ? bandFor(v).color : rampColor(v)
+export function colorForRow(row) {
+  return fitBandColor(row.weighted)
 }
 
 // Build the feature-state payload the map consumes, keyed by areaId. `rows` are
 // the ranked rows from useAreaRanking; `indexById` maps areaId -> integer fid.
 // Rows without a map slot (no geo config) are skipped.
-export function computeAreaState(rows, indexById, lensKey = 'overall') {
-  const lens = lensByKey(lensKey)
+export function computeAreaState(rows, indexById) {
   const state = {}
   for (const row of rows) {
     const areaId = row.rec.id
@@ -153,7 +60,7 @@ export function computeAreaState(rows, indexById, lensKey = 'overall') {
     if (fid == null || row.status === 'unscored') continue
     state[areaId] = {
       fid,
-      color: colorForRow(row, lens),
+      color: colorForRow(row),
       fillOpacity: fillOpacityFor(row.rec, row.status),
       status: row.status,
     }
@@ -161,19 +68,7 @@ export function computeAreaState(rows, indexById, lensKey = 'overall') {
   return state
 }
 
-// Legend rows for the active lens: the five bands for `overall`, or a compact
-// low->high strip for a 1-5 metric lens.
-export function legendFor(lensKey) {
-  const lens = lensByKey(lensKey)
-  if (lens.pct) {
-    return SCORE_BANDS.map((b) => ({
-      color: b.color,
-      label: b.min === -Infinity ? `< 50 · ${b.label}` : `${b.min}+ · ${b.label}`,
-    }))
-  }
-  return [
-    { color: RAMP_5[0], label: 'weak (1)' },
-    { color: RAMP_5[2], label: 'mid (3)' },
-    { color: RAMP_5[4], label: 'strong (5)' },
-  ]
+// Legend rows: the fixed fit bands.
+export function scoreLegend() {
+  return fitBandLegend()
 }

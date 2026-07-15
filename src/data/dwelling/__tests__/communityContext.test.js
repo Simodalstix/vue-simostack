@@ -28,6 +28,7 @@ import {
 } from '../communityContext.js'
 import { areaCorridors } from '../areaCorridors.js'
 import { areaWeights } from '../areaWeights.js'
+import { decideCriteria } from '../decideStrategies.js'
 
 const src = (rel) => readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 'utf8')
 
@@ -115,7 +116,7 @@ describe('exclusion from scoring', () => {
 
   it('no ranking weight keys reference demographic measures', () => {
     const banned = /language|birthplace|religion|ethnic|overseas|ancestr/i
-    for (const w of areaWeights) {
+    for (const w of [...areaWeights, ...decideCriteria]) {
       expect(w.key).not.toMatch(banned)
       expect(w.label).not.toMatch(banned)
     }
@@ -124,8 +125,8 @@ describe('exclusion from scoring', () => {
   it('the ranking composables never import the community dataset', () => {
     for (const rel of [
       '../../../composables/useAreaRanking.js',
-      '../../../composables/useStrategyRanking.js',
       '../../../composables/useCommuteScoring.js',
+      '../decideStrategies.js',
     ]) {
       const code = src(rel)
       expect(code).not.toMatch(/communityContext|community-context|COMMUNITY_CONTEXT/)
