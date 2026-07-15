@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-[1600px] mx-auto px-6 lg:px-10 py-10 space-y-8">
     <!-- THE WORKSPACE: map and suburb decision pane as equal stars.
-         Left ~60%: intro, Melbourne map, strategy selector, weighting toggles.
+         Left ~60%: intro, strategy selector, Melbourne map, weighting toggles.
          Right ~40%: the single authoritative suburb pane (ranked list /
          hover preview / pinned inspector). Below lg the grid children stack
          map first, pane second, controls after (the pane spans both left rows
@@ -9,18 +9,46 @@
     <div class="grid lg:grid-cols-[1.5fr_1fr] gap-6 items-start">
       <!-- LEFT column, upper: intro + map -->
       <div class="space-y-5 min-w-0 lg:col-start-1 lg:row-start-1">
-        <div class="max-w-3xl">
-          <p class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-sand mb-2">Decide</p>
-          <h1 class="text-[24px] md:text-[30px] font-extrabold leading-tight">
-            One place to weigh it all:
-            <span class="text-ob-teal">strategy, location and cost.</span>
-          </h1>
-          <p class="mt-3 text-[13.5px] leading-relaxed text-ob-muted">
-            Pick the strategy you are testing; it sets both the purchase being priced and the
-            weighting of the six criteria below. Toggle a criterion off to redistribute its weight.
-            Hover a suburb to preview it; click a suburb to open its full card over the map.
-            Location data is placeholder until verified.
-          </p>
+        <div class="space-y-4">
+          <div class="max-w-3xl">
+            <p class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-sand mb-2">Decide</p>
+            <h1 class="text-[24px] md:text-[30px] font-extrabold leading-tight">
+              One place to weigh it all:
+              <span class="text-ob-teal">strategy, location and cost.</span>
+            </h1>
+          </div>
+          <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4">
+            <div class="flex items-baseline justify-between flex-wrap gap-2 mb-2.5">
+              <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
+                Strategy · preset weights + the purchase being tested
+              </h2>
+              <span class="font-mono text-[10.5px] text-ob-faint">
+                selecting one recolours the map and re-ranks live
+              </span>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-2">
+              <button
+                v-for="s in decideStrategies"
+                :key="s.id"
+                @click="activeStrategyId = s.id"
+                class="text-left rounded-[6px] border px-3 py-2 transition-colors"
+                :class="
+                  activeStrategyId === s.id
+                    ? 'border-ob-teal/45 bg-ob-teal/8'
+                    : 'border-ob-sand/14 hover:border-ob-sand/25'
+                "
+              >
+                <span
+                  class="block text-[12px] font-semibold leading-snug"
+                  :class="activeStrategyId === s.id ? 'text-ob-teal' : 'text-ob-text'"
+                  >{{ s.label }}</span
+                >
+                <span class="block mt-0.5 font-mono text-[10px] text-ob-faint leading-snug">
+                  {{ s.dwelling }} · {{ s.intent }}
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <MapPanel
@@ -38,44 +66,8 @@
         />
       </div>
 
-      <!-- LEFT column, lower: strategy selector + weighting toggles -->
+      <!-- LEFT column, lower: weighting toggles -->
       <div class="space-y-5 min-w-0 order-3 lg:order-none lg:col-start-1 lg:row-start-2">
-        <!-- strategy: the ONE mode. Each strategy is a weighting preset plus
-             the purchase proposition (dwelling, bedrooms, price cap) that runs
-             through the ranking gates. -->
-        <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4">
-          <div class="flex items-baseline justify-between flex-wrap gap-2 mb-2.5">
-            <h3 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
-              Strategy · preset weights + the purchase being tested
-            </h3>
-            <span class="font-mono text-[10.5px] text-ob-faint">
-              selecting one recolours the map and re-ranks live
-            </span>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-2">
-            <button
-              v-for="s in decideStrategies"
-              :key="s.id"
-              @click="activeStrategyId = s.id"
-              class="text-left rounded-[6px] border px-3 py-2 transition-colors"
-              :class="
-                activeStrategyId === s.id
-                  ? 'border-ob-teal/45 bg-ob-teal/8'
-                  : 'border-ob-sand/14 hover:border-ob-sand/25'
-              "
-            >
-              <span
-                class="block text-[12px] font-semibold leading-snug"
-                :class="activeStrategyId === s.id ? 'text-ob-teal' : 'text-ob-text'"
-                >{{ s.label }}</span
-              >
-              <span class="block mt-0.5 font-mono text-[10px] text-ob-faint leading-snug">
-                {{ s.dwelling }} · {{ s.intent }}
-              </span>
-            </button>
-          </div>
-        </div>
-
         <!-- weighting toggles: the active preset, criterion by criterion.
              Binary on/off only; off means weight 0 and the score renormalises
              over what remains, so switching one off never punishes a suburb. -->
