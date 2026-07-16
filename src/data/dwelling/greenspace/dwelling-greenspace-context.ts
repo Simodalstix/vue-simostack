@@ -6,7 +6,7 @@
 export const DWELLING_GREENSPACE_CONTEXT = {
   "dataset": "dwelling-greenspace-context",
   "methodologyVersion": "greenspace-access-v1",
-  "retrievedAt": "2026-07-15",
+  "retrievedAt": "2026-07-16",
   "usage": {
     "criterion": "greenspace",
     "scoreScale": "0-10",
@@ -1151,6 +1151,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "clifton-hill-2br",
+      "displayName": "Clifton Hill",
+      "salSuburbs": [
+        "Clifton Hill"
+      ],
+      "salCodes": [
+        "20574"
+      ],
+      "greenspace": 9.9123,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10,
+        "majorParkAccess": 10,
+        "natureCorridorAccess": 9.5614
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100,
+        "representedPopulation": 6532,
+        "sampledMeshBlocks": 74
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-16",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 154,
+          "majorPark": 183,
+          "natureCorridor": 312
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Yarra Bend Park - Boroondara",
+            "areaHa": 86.53
+          },
+          {
+            "name": "Yarra Bend Park - Yarra",
+            "areaHa": 82.02
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 80.32
+          },
+          {
+            "name": "Edinburgh Gardens",
+            "areaHa": 10.66
+          },
+          {
+            "name": "Hall Reserve Park",
+            "areaHa": 9.98
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Yarra Bend Park",
+            "areaHa": 249.91
+          },
+          {
+            "name": "Yarra Bend Park - Boroondara",
+            "areaHa": 86.53
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 80.32
+          },
+          {
+            "name": "Yarra Bend Park - Yarra",
+            "areaHa": 45.78
+          },
+          {
+            "name": "Coulson and Knotts Parkland",
+            "areaHa": 3.75
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.9,
+        "componentSpread": 0.4,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "inner-collingwood-2br",
       "displayName": "Collingwood",
       "salSuburbs": [
@@ -1414,6 +1502,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         "reviewFlags": [
           "lowResidentialPopulationCoverage"
         ]
+      }
+    },
+    {
+      "id": "doncaster-villa",
+      "displayName": "Doncaster",
+      "salSuburbs": [
+        "Doncaster"
+      ],
+      "salCodes": [
+        "20771"
+      ],
+      "greenspace": 9.6298,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10,
+        "majorParkAccess": 9.3989,
+        "natureCorridorAccess": 9.0508
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100,
+        "representedPopulation": 24567,
+        "sampledMeshBlocks": 228
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-16",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 132,
+          "majorPark": 368,
+          "natureCorridor": 499
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "RUFFEY LAKE PARK",
+            "areaHa": 65.47
+          },
+          {
+            "name": "Koonung Creek Reserve",
+            "areaHa": 40.98
+          },
+          {
+            "name": "KOONUNG CREEK LINEAR PARK",
+            "areaHa": 21.72
+          },
+          {
+            "name": "RIESCHIECKS RESERVE",
+            "areaHa": 12.64
+          },
+          {
+            "name": "Elgar Park",
+            "areaHa": 10.32
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "RUFFEY LAKE PARK",
+            "areaHa": 65.47
+          },
+          {
+            "name": "Koonung Creek Reserve",
+            "areaHa": 40.98
+          },
+          {
+            "name": "KOONUNG CREEK LINEAR PARK",
+            "areaHa": 21.72
+          },
+          {
+            "name": "Retarding Basins, Wetherby Road (Doncaster)",
+            "areaHa": 8.97
+          },
+          {
+            "name": "Eram Park",
+            "areaHa": 7.85
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.2,
+        "componentSpread": 0.9,
+        "reviewFlags": []
       }
     },
     {

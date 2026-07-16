@@ -1,7 +1,7 @@
 # Dwelling Greenspace Outliers
 
 Methodology version: `greenspace-access-v1`  
-Build retrieved at: `2026-07-15`
+Build retrieved at: `2026-07-16`
 
 ## Automated QA flags
 
@@ -18,6 +18,12 @@ Build retrieved at: `2026-07-15`
   Reason: `highComponentSpread` is structural. Armadale has strong nearby parks but weak nature-corridor proximity, which is consistent with the geography after excluding golf courses and other non-eligible land.
 
 ## Manual review set
+
+- `clifton-hill-2br`: accepted. Result: `9.9123` overall; represented population coverage `98.9%`.
+  Notes: Darling Gardens, Yarra Bend and the Merri/Yarra corridor support the near-ceiling result. The generated record has no automated review flag.
+
+- `doncaster-villa`: accepted. Result: `9.6298` overall; represented population coverage `98.2%`.
+  Notes: Ruffey Lake Park, Koonung Creek and the suburb's distributed local reserves support the result. The generated record has no automated review flag.
 
 - `donnybrook-house-land`  
   Status: retained with a caveat  
@@ -99,7 +105,7 @@ Build retrieved at: `2026-07-15`
 - `middle-park-2br` at `9.9742`  
   Status: accepted
 
-- `elwood-2br` at `9.8636`  
+- `clifton-hill-2br` at `9.9123`
   Status: accepted
 
 ## Lowest five

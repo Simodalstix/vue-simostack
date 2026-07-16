@@ -1,16 +1,26 @@
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 
+import { useAreaRanking } from '../../../composables/useAreaRanking.js'
 import { areaCorridors } from '../areaCorridors.js'
-import { decideCriterionByKey } from '../decideStrategies.js'
+import { decideCriterionByKey, decideStrategies } from '../decideStrategies.js'
 import { DWELLING_GREENSPACE_CONTEXT } from '../greenspace/dwelling-greenspace-context.ts'
 
 const activeRecords = areaCorridors.filter((rec) => rec.scored !== false)
 const greenspaceIds = new Set(DWELLING_GREENSPACE_CONTEXT.records.map((rec) => rec.id))
 const corridorIds = new Set(areaCorridors.map((rec) => rec.id))
+const strategy = decideStrategies[0]
+const rankedRows = useAreaRanking(
+  areaCorridors,
+  { ...strategy.filters, includeStretch: true },
+  strategy.weights,
+)
 const generatedTargets = JSON.parse(
   readFileSync(
-    new URL('../../../../tools/dwelling-greenspace/dwelling-greenspace-targets-app.json', import.meta.url),
+    new URL(
+      '../../../../tools/dwelling-greenspace/dwelling-greenspace-targets-app.json',
+      import.meta.url,
+    ),
     'utf-8',
   ),
 )
@@ -63,5 +73,22 @@ describe('dwelling greenspace context', () => {
 
   it('keeps the generated context in lockstep with the active ranked records', () => {
     expect(DWELLING_GREENSPACE_CONTEXT.records.length).toBe(activeRecords.length)
+  })
+
+  it.each([
+    ['clifton-hill-2br', 9.9123],
+    ['doncaster-villa', 9.6298],
+  ])('includes reviewed generated evidence for %s', (id, expectedScore) => {
+    const record = DWELLING_GREENSPACE_CONTEXT.records.find((item) => item.id === id)
+    const corridor = areaCorridors.find((item) => item.id === id)
+    const rankedRow = rankedRows.value.find((item) => item.rec.id === id)
+
+    expect(record?.greenspace).toBe(expectedScore)
+    expect(record?.audit.reviewFlags).toEqual([])
+    expect(record?.audit.residentialPopulationCoveragePct).toBeGreaterThan(98)
+    expect(corridor?.scored).not.toBe(false)
+    expect(corridor?.greenspace).toBe(expectedScore)
+    expect(rankedRow?.status).not.toBe('unscored')
+    expect(Number.isFinite(rankedRow?.weighted)).toBe(true)
   })
 })

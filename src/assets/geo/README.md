@@ -46,7 +46,8 @@ third-party request). Re-fetch/re-simplify if the shoreline needs more detail.
   adjoining suburbs). 72 polygons in the original pull; Kew, Balwyn, Box Hill
   and Sunbury were added 2026-07-14, and Spotswood, Armadale, Burnley,
   Hawthorn, McKinnon, Glen Waverley, Balwyn North and Mentone 2026-07-15, all
-  with the same recipe and tolerance (84 polygons total).
+  with the same recipe and tolerance. Doncaster was added from the same WFS
+  source on 2026-07-16 (85 polygons total).
 - **Simplification**: Douglas-Peucker, tolerance 0.0004 deg (~40 m). ~37 KB.
 - Properties carry `name` only (Title Case). The assessed/areaId linkage is
   derived at build time in `localityFeatures.js`, never baked into the asset.

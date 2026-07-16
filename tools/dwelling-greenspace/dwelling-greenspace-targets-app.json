@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-greenspace-targets-app",
-  "version": "v2-repo-active-48-mixed-official-and-derived",
-  "retrievedAt": "2026-07-15",
-  "recordCount": 48,
+  "version": "v3-repo-active-50-mixed-official-and-derived",
+  "retrievedAt": "2026-07-16",
+  "recordCount": 50,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -639,6 +639,30 @@
         }
       ],
       "censusPopulation2021": 13197
+    },
+    {
+      "id": "clifton-hill-2br",
+      "displayName": "Clifton Hill",
+      "salComponents": [
+        {
+          "suburb": "Clifton Hill",
+          "salCode": "20574",
+          "censusPopulation2021": 6606
+        }
+      ],
+      "censusPopulation2021": 6606
+    },
+    {
+      "id": "doncaster-villa",
+      "displayName": "Doncaster",
+      "salComponents": [
+        {
+          "suburb": "Doncaster",
+          "salCode": "20771",
+          "censusPopulation2021": 25020
+        }
+      ],
+      "censusPopulation2021": 25020
     }
   ]
 }

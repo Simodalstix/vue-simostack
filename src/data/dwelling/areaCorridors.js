@@ -3679,10 +3679,6 @@ const AREA_CORRIDOR_BASE = [
   // ---- July 2026 additions #49-50: Clifton Hill and Doncaster ------------
   {
     id: 'clifton-hill-2br',
-    // TODO: flip to scored once the greenspace pipeline has been re-run
-    // locally with this record added to dwelling-greenspace-targets.json
-    // (SAL code + census population to be resolved from the ABS workbook).
-    scored: false,
     suburb: 'Clifton Hill',
     municipality: 'Yarra',
     region: 'Inner',
@@ -3758,10 +3754,6 @@ const AREA_CORRIDOR_BASE = [
   },
   {
     id: 'doncaster-villa',
-    // TODO: flip to scored once the greenspace pipeline has been re-run
-    // locally with this record added to dwelling-greenspace-targets.json
-    // (SAL code + census population to be resolved from the ABS workbook).
-    scored: false,
     suburb: 'Doncaster',
     municipality: 'Manningham',
     region: 'East and south-east',
