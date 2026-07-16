@@ -3056,6 +3056,7 @@ const AREA_CORRIDOR_BASE = [
     caseAgainst: [
       'No heavy rail: the commute leans entirely on trams, short as it is.',
       'Building-quality lottery in the apartment stock; owners-corp health varies widely.',
+      'Kings Way carves the suburb in two; the tower edge along the freeway is the soulless part of the catchment.',
     ],
     bestType: 'A quality low-rise 2BR in the APC zone with sane owners-corp fees.',
     avoidType: 'A high-fee tower or a block with defect history, whatever the price looks like.',

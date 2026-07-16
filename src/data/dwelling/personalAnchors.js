@@ -1,8 +1,8 @@
 // src/data/dwelling/personalAnchors.js
 //
 // Personal network layer: the handful of places that anchor the decision to a
-// real life. GOLD accent territory (star or pin glyph), never amber and never
-// a score input.
+// real life. GOLD accent territory (star or pin glyph), never amber. Map
+// coordinates are never score inputs.
 //
 // PRIVACY MODEL (this repository is public)
 // - The coordinates below are deliberately APPROXIMATE: suburb-centre or
@@ -24,9 +24,11 @@
 //   local overrides. Vite env variables are NOT used for this on purpose:
 //   client env values end up in the bundle and are not a privacy control.
 //
-// friendContext: contextual only, by design. There is no friend weighting
-// slider and friendship never feeds the suburb score; nearby friends surface
-// as a small gold badge or line in the pane.
+// SCORING DECISION (2026-07-16): access to the South Yarra network anchor is a
+// scored Decide criterion via banded suburb-level estimates in
+// personalNetwork.js. Exact coordinates remain excluded from scoring, and the
+// local-override privacy mechanism above is unchanged. friendContext remains
+// narrative copy for the small gold badge or line in the pane.
 
 export const publicAnchors = [
   // labelOffset is a [x, y] pixel nudge so the tightly clustered inner

@@ -7,7 +7,8 @@ import { describe, it, expect } from 'vitest'
 
 import { decideStrategies, decideCriteria } from '../decideStrategies.js'
 import { areaCorridors } from '../areaCorridors.js'
-import { weightedScore } from '../../../composables/useAreaRanking.js'
+import { personalNetworkByAreaId, pnScore } from '../personalNetwork.js'
+import { useAreaRanking, weightedScore } from '../../../composables/useAreaRanking.js'
 import { commuteFor, scoreCommute } from '../../../composables/useCommuteScoring.js'
 
 const scoredRecords = areaCorridors.filter((r) => r.scored !== false)
@@ -23,7 +24,7 @@ function weightsFor(strategy, enabledKeys) {
   )
 }
 
-// Every non-empty subset of the six criteria, plus the empty set (all off).
+// Every non-empty subset of the seven criteria, plus the empty set (all off).
 function allSubsets(keys) {
   const out = []
   for (let mask = 0; mask < 1 << keys.length; mask++) {
@@ -33,7 +34,7 @@ function allSubsets(keys) {
 }
 
 describe('preset weight vectors', () => {
-  it('ships the five strategies with 0-3 weights over exactly the six criteria', () => {
+  it('ships the five strategies with 0-3 weights over exactly the seven criteria', () => {
     expect(decideStrategies.map((s) => s.id)).toEqual([
       'balanced2br',
       'bachelor1br',
@@ -42,6 +43,7 @@ describe('preset weight vectors', () => {
       'villaTownhouse',
     ])
     const keys = decideCriteria.map((c) => c.key).sort()
+    expect(keys).toHaveLength(7)
     for (const s of decideStrategies) {
       expect(Object.keys(s.weights).sort()).toEqual(keys)
       for (const w of Object.values(s.weights)) {
@@ -95,6 +97,66 @@ describe('score robustness', () => {
     }
 
     expect(schools.value(rec)).toBe(6)
+  })
+
+  it('keeps a finite score when network data is absent and the criterion is enabled', () => {
+    const rec = { ...scoredRecords[0], id: 'missing-network-record' }
+    const network = decideCriteria.find((criterion) => criterion.key === 'personalNetwork')
+    const score = weightedScore(rec, commuteScoreFor(rec), weightsFor(decideStrategies[0], keys))
+
+    expect(network.value(rec)).toBeNull()
+    expect(Number.isFinite(score)).toBe(true)
+  })
+
+  it('ranks Windsor and Prahran above South Melbourne with only network enabled', () => {
+    const windsor = areaCorridors.find((rec) => rec.id === 'inner-windsor-prahran-2br')
+    const southMelbourne = areaCorridors.find((rec) => rec.id === 'south-melbourne-2br')
+    const weights = weightsFor(decideStrategies[0], ['personalNetwork'])
+
+    expect(weightedScore(windsor, commuteScoreFor(windsor), weights)).toBeGreaterThan(
+      weightedScore(southMelbourne, commuteScoreFor(southMelbourne), weights),
+    )
+  })
+})
+
+describe('personal network data', () => {
+  it('uses the documented band edges', () => {
+    expect(pnScore(10)).toBe(10)
+    expect(pnScore(11)).toBe(8)
+    expect(pnScore(40)).toBe(2)
+    expect(pnScore(41)).toBe(0)
+    expect(pnScore(null)).toBeNull()
+  })
+
+  it('covers all 50 dwelling records', () => {
+    expect(Object.keys(personalNetworkByAreaId).sort()).toEqual(
+      areaCorridors.map((rec) => rec.id).sort(),
+    )
+  })
+
+  it('moves Windsor and Prahran to first in Balanced and demotes South Melbourne', () => {
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const filters = {
+      ...balanced.filters,
+      maxCommute: 90,
+      maxStationWalk: 20,
+      includeStretch: true,
+    }
+    const rankedWithNetwork = useAreaRanking(areaCorridors, filters, balanced.weights).value.filter(
+      (row) => row.status !== 'unscored',
+    )
+    const networkOffWeights = { ...balanced.weights, personalNetwork: 0 }
+    const rankedWithoutNetwork = useAreaRanking(
+      areaCorridors,
+      filters,
+      networkOffWeights,
+    ).value.filter((row) => row.status !== 'unscored')
+
+    expect(rankedWithNetwork[0].rec.id).toBe('inner-windsor-prahran-2br')
+    expect(
+      rankedWithNetwork.findIndex((row) => row.rec.id === 'south-melbourne-2br'),
+    ).toBeGreaterThanOrEqual(3)
+    expect(rankedWithoutNetwork[0].rec.id).toBe('south-melbourne-2br')
   })
 })
 

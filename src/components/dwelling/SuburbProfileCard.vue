@@ -226,6 +226,12 @@
                   >
                     {{ friendFor(row.rec.id).text }}
                   </p>
+                  <p
+                    v-if="personalNetworkLine"
+                    class="mt-0.5 text-[10px] leading-snug text-ob-gold"
+                  >
+                    {{ personalNetworkLine }}
+                  </p>
                   <p class="mt-1 text-[10.5px] leading-snug text-ob-muted2 card-clamp-4">
                     {{ row.rec.coparentingGeometry }}
                   </p>
@@ -296,6 +302,7 @@ import { localitiesForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLines, linesForArea } from '@/data/dwelling/trainLines.js'
 import { facilitiesForArea } from '@/data/dwelling/facilities.js'
 import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
+import { personalNetworkByAreaId } from '@/data/dwelling/personalNetwork.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
@@ -355,6 +362,17 @@ const zonedSchoolRows = computed(() => {
       strength: zonedSchools.value.secondary.evidence?.strength,
     },
   ]
+})
+const personalNetworkLine = computed(() => {
+  const network = personalNetworkByAreaId[props.row.rec.id]
+  if (!network || network.estMin == null) return null
+  const suffix =
+    network.confidence === 'medium'
+      ? ' (estimate)'
+      : network.confidence === 'low'
+        ? ' (rough estimate — verify)'
+        : ''
+  return `Network: ~${network.estMin} min by ${network.mode}${suffix}`
 })
 const practicalCardClass = computed(() =>
   friendFor(props.row.rec.id) ? 'border-ob-gold-muted/20' : 'border-ob-sand/10 bg-ob-surface/60',

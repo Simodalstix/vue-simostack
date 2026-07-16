@@ -11,7 +11,9 @@
       <div class="space-y-5 min-w-0 lg:col-start-1 lg:row-start-1">
         <div class="space-y-4">
           <div class="max-w-3xl">
-            <p class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-sand mb-2">Decide</p>
+            <p class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-sand mb-2">
+              Decide
+            </p>
             <h1 class="text-[24px] md:text-[30px] font-extrabold leading-tight">
               One place to weigh it all:
               <span class="text-ob-teal">strategy, location and cost.</span>
@@ -102,8 +104,8 @@
             </div>
           </div>
           <p class="text-[11.5px] leading-snug text-ob-dim mb-3">
-            Each criterion carries its preset weight or nothing. Toggling one off redistributes
-            its weight across the rest, so a suburb is never marked down for a criterion you are
+            Each criterion carries its preset weight or nothing. Toggling one off redistributes its
+            weight across the rest, so a suburb is never marked down for a criterion you are
             ignoring. Switching strategy resets the toggles.
           </p>
           <div class="flex flex-wrap gap-2">
@@ -172,7 +174,7 @@ const hoveredContext = ref(null)
 const deposit = personalPosition.calc.deposit
 const rate = personalPosition.calc.rate
 
-// The strategy is the single mode: a weight preset over the six criteria plus
+// The strategy is the single mode: a weight preset over the seven criteria plus
 // the purchase proposition (dwelling types, bedrooms, price cap) expressed
 // through the same named filter gates as before.
 const activeStrategyId = ref(defaultStrategyId)

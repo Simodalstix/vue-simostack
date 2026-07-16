@@ -2,7 +2,7 @@
 //
 // The Decide page's single control model: a STRATEGY is a weighting preset
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
-// tests. Selecting a strategy loads its weight vector over the six suburb
+// tests. Selecting a strategy loads its weight vector over the seven suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
 // off (weight 0). The score renormalises over the enabled weights, so
 // toggling a criterion off redistributes its weight rather than penalising
@@ -20,6 +20,7 @@
 // returns 0-10 or null when the record carries no data for it; a null is
 // left out of both sides of the weighted mean rather than scored as zero.
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
+import { personalNetworkByAreaId, pnScore } from './personalNetwork.js'
 
 const tenScale = (v) => (v == null ? null : v * 2) // existing 1-5 scores -> 2-10
 
@@ -75,6 +76,12 @@ export const decideCriteria = [
     hint: 'Measured offence rates and street conditions, not perception.',
     value: (rec) => tenScale(rec.scores?.safety),
   },
+  {
+    key: 'personalNetwork',
+    label: 'Network',
+    hint: 'Practical non-car access to the inner-circle anchor in South Yarra; banded estimate at suburb level.',
+    value: (rec) => pnScore(personalNetworkByAreaId[rec.id]?.estMin ?? null),
+  },
 ]
 
 export const decideCriterionByKey = Object.fromEntries(decideCriteria.map((c) => [c.key, c]))
@@ -92,7 +99,15 @@ export const decideStrategies = [
     dwelling: 'Older 2BR apartment or villa unit',
     bedrooms: 2,
     intent: 'commute, cost and Lulu in balance',
-    weights: { cost: 2, commute: 3, schools: 2, kidAmenity: 2, greenspace: 1, safetyQuality: 1 },
+    weights: {
+      cost: 2,
+      commute: 3,
+      schools: 2,
+      kidAmenity: 2,
+      greenspace: 1,
+      safetyQuality: 1,
+      personalNetwork: 2,
+    },
     filters: { minBedrooms: 2, dwellingTypes: [], maxPrice: 900000 },
     priceNote: null,
   },
@@ -102,7 +117,15 @@ export const decideStrategies = [
     dwelling: 'Older 1BR walk-up',
     bedrooms: 1,
     intent: 'cheapest honest ownership, commute first',
-    weights: { cost: 2, commute: 3, schools: 1, kidAmenity: 1, greenspace: 1, safetyQuality: 1 },
+    weights: {
+      cost: 2,
+      commute: 3,
+      schools: 1,
+      kidAmenity: 1,
+      greenspace: 1,
+      safetyQuality: 1,
+      personalNetwork: 2,
+    },
     filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'], maxPrice: 550000 },
     priceNote:
       '1BR stock is not separately priced per suburb yet; viability is tested against the recorded 2BR entry band as a conservative ceiling.',
@@ -113,7 +136,15 @@ export const decideStrategies = [
     dwelling: '3BR house, townhouse or large villa unit',
     bedrooms: 3,
     intent: 'three real bedrooms with schools leading',
-    weights: { cost: 3, commute: 2, schools: 3, kidAmenity: 3, greenspace: 2, safetyQuality: 2 },
+    weights: {
+      cost: 3,
+      commute: 2,
+      schools: 3,
+      kidAmenity: 3,
+      greenspace: 2,
+      safetyQuality: 2,
+      personalNetwork: 3,
+    },
     filters: {
       minBedrooms: 3,
       dwellingTypes: ['house', 'townhouse', 'villa-unit'],
@@ -127,7 +158,15 @@ export const decideStrategies = [
     dwelling: 'Land with a modest new build',
     bedrooms: 3,
     intent: 'cheap land and a modest build on the fringe',
-    weights: { cost: 3, commute: 1, schools: 2, kidAmenity: 1, greenspace: 2, safetyQuality: 1 },
+    weights: {
+      cost: 3,
+      commute: 1,
+      schools: 2,
+      kidAmenity: 1,
+      greenspace: 2,
+      safetyQuality: 1,
+      personalNetwork: 1,
+    },
     filters: { minBedrooms: 3, dwellingTypes: ['house'], maxPrice: 700000 },
     priceNote:
       'Recorded bands price established stock, not land-plus-build packages; treat viability here as a corridor hint only.',
@@ -138,7 +177,15 @@ export const decideStrategies = [
     dwelling: '2-3BR villa unit or townhouse',
     bedrooms: 2,
     intent: 'courtyard living with strong schools',
-    weights: { cost: 2, commute: 2, schools: 3, kidAmenity: 2, greenspace: 2, safetyQuality: 2 },
+    weights: {
+      cost: 2,
+      commute: 2,
+      schools: 3,
+      kidAmenity: 2,
+      greenspace: 2,
+      safetyQuality: 2,
+      personalNetwork: 3,
+    },
     filters: { minBedrooms: 2, dwellingTypes: ['villa-unit', 'townhouse'], maxPrice: 800000 },
     priceNote: null,
   },
