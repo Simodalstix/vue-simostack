@@ -11,13 +11,8 @@
         testing: {{ strategy.label }}
       </span>
     </div>
-    <div
-      v-else
-      class="px-4 py-2.5 border-b border-ob-sand/8 flex items-center gap-3 shrink-0"
-    >
-      <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
-        Suburb profile
-      </h2>
+    <div v-else class="px-4 py-2.5 border-b border-ob-sand/8 flex items-center gap-3 shrink-0">
+      <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">Suburb profile</h2>
       <span v-if="strategy" class="font-mono text-[10.5px] text-ob-dim truncate">
         testing: {{ strategy.label }}
       </span>
@@ -54,7 +49,10 @@
             :hover-line-ids="hoverLineIds"
             :selected-line-ids="selectedLineIds"
             :schools="schoolFeatures"
+            :school-zones="schoolZones"
+            :active-zone-category="activeZoneCategory"
             :facilities="facilityFeatures"
+            :hovered-area-id="hoveredAreaId"
             :show-all-schools="layers.schools"
             :show-all-facilities="layers.facilities"
             :anchors="personalAnchors"
@@ -133,20 +131,46 @@
       >
         {{ t.label }}
       </button>
-      <p class="w-full sm:w-auto sm:ml-auto font-mono text-[10px] leading-relaxed text-ob-faint">
-        Suburb fill = weighted fit score · provisional until verified
-      </p>
+      <div v-if="schoolZones" class="inline-flex items-center gap-1.5">
+        <span class="font-mono text-[9.5px] uppercase tracking-[0.08em] text-ob-faint">
+          Zones
+        </span>
+        <div class="inline-flex rounded-[6px] border border-ob-sand/14 overflow-hidden">
+          <button
+            v-for="category in ['primary', 'secondary']"
+            :key="category"
+            type="button"
+            class="px-2 py-[3px] font-mono text-[10px] transition-colors border-r border-ob-sand/14 last:border-r-0"
+            :class="
+              activeZoneCategory === category
+                ? 'bg-ob-purple/15 text-ob-purple'
+                : 'text-ob-faint hover:text-ob-muted'
+            "
+            :aria-pressed="activeZoneCategory === category"
+            @click="activeZoneCategory = category"
+          >
+            {{ category }}
+          </button>
+        </div>
+      </div>
+      <div class="w-full sm:w-auto sm:ml-auto font-mono text-[10px] leading-relaxed text-ob-faint">
+        <p>Suburb fill = weighted fit score · provisional until verified</p>
+        <p v-if="schoolZones">
+          School zones: official {{ schoolZones.zoneYear }} enrolment zones · verify any address at
+          findmyschool.vic.gov.au · not for property purchase reliance
+        </p>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, reactive, computed, defineAsyncComponent, watch } from 'vue'
+import { ref, reactive, computed, defineAsyncComponent, watch, onMounted } from 'vue'
 import { MAP_THEME, computeAreaState } from '@/data/dwelling/mapConfig.js'
 import { fitBandColor, fitBandLegend, getFitBand } from '@/data/dwelling/fitBands.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLineFeatures, linesForArea } from '@/data/dwelling/trainLines.js'
-import { schoolFeatures } from '@/data/dwelling/schools.js'
+import { schoolPoints } from '@/data/dwelling/schools/dwelling-school-points.js'
 import { facilityFeatures } from '@/data/dwelling/facilities.js'
 import { personalAnchors } from '@/data/dwelling/personalAnchors.js'
 import coastlineUrl from '@/assets/geo/melbourne-coastline.geojson?url'
@@ -174,17 +198,41 @@ const emit = defineEmits(['hover', 'toggle-shortlist'])
 
 const theme = MAP_THEME
 const legend = fitBandLegend()
+const schoolFeatures = {
+  type: 'FeatureCollection',
+  features: schoolPoints.map((school, index) => ({
+    type: 'Feature',
+    id: index,
+    properties: {
+      schoolId: school.id,
+      name: school.name,
+      category: school.category,
+      sector: school.sector,
+      areaIds: school.areaIds,
+      zonedFor: school.zonedFor,
+    },
+    geometry: { type: 'Point', coordinates: school.coordinates },
+  })),
+}
+const schoolZones = ref(null)
+const activeZoneCategory = ref('secondary')
+
+onMounted(async () => {
+  const module = await import('@/data/dwelling/schools/dwelling-school-zones.json')
+  schoolZones.value = module.default
+})
 
 // Map overlay layers. Schools and facilities also appear contextually for the
-// selected suburb with the toggle off; anchors default on (they are the point
-// of the layer); diagnostics expose the old catchment circles only on demand.
+// hovered or selected suburb with the toggle off; anchors default on (they are
+// the point of the layer); diagnostics expose the old catchment circles only
+// on demand.
 const layers = reactive({ anchors: true, schools: false, facilities: false, diagnostics: false })
 const layerToggles = [
   { key: 'anchors', label: '★ personal', hint: 'Personal network anchors (gold)' },
   {
     key: 'schools',
     label: 'schools',
-    hint: 'Show every curated school, not just the selected suburb',
+    hint: 'Show every curated school, not just the hovered or selected suburb',
   },
   { key: 'facilities', label: 'facilities', hint: 'Show every curated aquatic/sports facility' },
   {

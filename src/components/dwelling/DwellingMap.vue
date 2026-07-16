@@ -46,6 +46,7 @@ const props = defineProps({
   // { [areaId]: { fid, color, fillOpacity, status } }
   areaState: { type: Object, default: () => ({}) },
   selectedAreaId: { type: String, default: null },
+  hoveredAreaId: { type: String, default: null },
   shortlistIds: { type: Array, default: () => [] },
   ariaLabel: {
     type: String,
@@ -65,9 +66,11 @@ const props = defineProps({
   selectedLineIds: { type: Array, default: () => [] },
   // School / facility point FeatureCollections (properties.areaIds arrays).
   schools: { type: Object, default: null },
+  schoolZones: { type: Object, default: null },
+  activeZoneCategory: { type: String, default: 'secondary' },
   facilities: { type: Object, default: null },
-  // Contextual visibility: points for the selected suburb always show; these
-  // flags force the whole layer on.
+  // Contextual visibility: points for the hovered or selected suburb show;
+  // these flags force the whole layer on.
   showAllSchools: { type: Boolean, default: false },
   showAllFacilities: { type: Boolean, default: false },
   // Personal network anchors [{ id, label, longitude, latitude, type }], gold layer.
@@ -123,6 +126,7 @@ const WATER_SRC = 'water'
 const RIVER_SRC = 'river'
 const LINE_SRC = 'train-lines'
 const SCHOOL_SRC = 'schools'
+const SCHOOL_ZONE_SRC = 'school-zones'
 const FACILITY_SRC = 'facilities'
 const STATION_HIT_LAYER = 'station-hit'
 const GLYPHS_URL = `${import.meta.env.BASE_URL}glyphs/{fontstack}/{range}.pbf`
@@ -169,12 +173,77 @@ function buildStyle() {
 }
 
 // Points show when the whole layer is on (null filter = everything), or when
-// they belong to the selected suburb's record. NEVER_MATCH keeps types clean.
+// they belong to the active hover/selection context. NEVER_MATCH keeps types
+// clean.
 const NEVER_MATCH = ['in', '__none__', ['get', 'areaIds']]
 function schoolFacilityFilter(showAll) {
   if (showAll) return null
-  if (!props.selectedAreaId) return NEVER_MATCH
-  return ['in', props.selectedAreaId, ['get', 'areaIds']]
+  const contextAreaId = props.hoveredAreaId || props.selectedAreaId
+  if (!contextAreaId) return NEVER_MATCH
+  return ['in', contextAreaId, ['get', 'areaIds']]
+}
+
+function schoolZoneFilter() {
+  const contextAreaId = props.hoveredAreaId || props.selectedAreaId
+  if (!contextAreaId) return NEVER_MATCH
+  return [
+    'all',
+    ['in', contextAreaId, ['get', 'areaIds']],
+    ['==', ['get', 'category'], props.activeZoneCategory],
+  ]
+}
+
+function schoolZoneFeatures() {
+  return {
+    type: 'FeatureCollection',
+    features: (props.schoolZones?.features || []).map((zone, index) => ({
+      type: 'Feature',
+      id: index,
+      properties: {
+        schoolId: zone.schoolId,
+        schoolNo: zone.schoolNo,
+        name: zone.name,
+        category: zone.category,
+        areaIds: zone.areaIds,
+      },
+      geometry: zone.geometry,
+    })),
+  }
+}
+
+function syncSchoolZoneLayers() {
+  if (!loaded || !map || !props.schoolZones?.features?.length) return
+  const data = schoolZoneFeatures()
+  const source = map.getSource(SCHOOL_ZONE_SRC)
+  if (source) {
+    source.setData(data)
+    applyContextFilters()
+    return
+  }
+
+  map.addSource(SCHOOL_ZONE_SRC, { type: 'geojson', data })
+  const beforeId = map.getLayer('locality-boundary') ? 'locality-boundary' : undefined
+  map.addLayer(
+    {
+      id: 'zone-fill',
+      type: 'fill',
+      source: SCHOOL_ZONE_SRC,
+      filter: NEVER_MATCH,
+      paint: { 'fill-color': T.purple, 'fill-opacity': 0.12 },
+    },
+    beforeId,
+  )
+  map.addLayer(
+    {
+      id: 'zone-outline',
+      type: 'line',
+      source: SCHOOL_ZONE_SRC,
+      filter: NEVER_MATCH,
+      paint: { 'line-color': T.purple, 'line-width': 1.4, 'line-opacity': 0.75 },
+    },
+    beforeId,
+  )
+  applyContextFilters()
 }
 
 function addLayers() {
@@ -434,7 +503,7 @@ function addLayers() {
       source: SCHOOL_SRC,
       filter: NEVER_MATCH,
       paint: {
-        'circle-radius': 4,
+        'circle-radius': 3.5,
         'circle-color': T.purple,
         'circle-opacity': 0.9,
         'circle-stroke-color': T.ink,
@@ -445,6 +514,7 @@ function addLayers() {
       id: 'school-label',
       type: 'symbol',
       source: SCHOOL_SRC,
+      minzoom: 12,
       filter: NEVER_MATCH,
       layout: {
         'text-field': ['get', 'name'],
@@ -483,6 +553,7 @@ function addLayers() {
   }
 
   loaded = true
+  syncSchoolZoneLayers()
   applyAllState()
   applyLineState()
   applyContextFilters()
@@ -551,7 +622,8 @@ function applyLineState() {
   }
 }
 
-// Contextual school/facility visibility follows the selection and the toggles.
+// Contextual school/facility/zone visibility follows hover, selection and the
+// explicit point-layer toggles.
 function applyContextFilters() {
   if (!loaded || !map) return
   if (props.schools) {
@@ -560,6 +632,10 @@ function applyContextFilters() {
   }
   if (props.facilities) {
     map.setFilter('facility-ring', schoolFacilityFilter(props.showAllFacilities))
+  }
+  if (map.getLayer('zone-fill')) {
+    const filter = schoolZoneFilter()
+    for (const id of ['zone-fill', 'zone-outline']) map.setFilter(id, filter)
   }
 }
 
@@ -804,7 +880,7 @@ watch(
   { deep: true },
 )
 watch(
-  () => [props.selectedAreaId, props.shortlistIds],
+  () => [props.selectedAreaId, props.hoveredAreaId, props.shortlistIds, props.activeZoneCategory],
   () => {
     applyAllState()
     applyContextFilters()
@@ -819,6 +895,10 @@ watch(
 watch(
   () => [props.showAllSchools, props.showAllFacilities],
   () => applyContextFilters(),
+)
+watch(
+  () => props.schoolZones,
+  () => syncSchoolZoneLayers(),
 )
 watch(
   () => props.showDiagnostics,
