@@ -358,8 +358,7 @@
       </div>
     </div>
 
-    <!-- Community demographic context renders from the ABS Census 2021
-         dataset in the suburb pane (CommunityContextSection), not here. -->
+    <CommunityContextSection :area-id="rec.id" :list-limit="5" show-evidence-details />
 
     <!-- risks + inspection -->
     <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
@@ -430,6 +429,7 @@ import { enrichmentFor } from '@/data/dwelling/areaEnrichment.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import CommuteBreakdown from './CommuteBreakdown.vue'
+import CommunityContextSection from './CommunityContextSection.vue'
 
 const props = defineProps({
   row: { type: Object, required: true },

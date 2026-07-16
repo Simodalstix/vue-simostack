@@ -17,17 +17,19 @@
       </div>
     </div>
 
-    <div v-else class="h-full px-4 py-3.5">
-      <div class="h-full grid grid-rows-[auto_auto_minmax(0,1fr)_auto] gap-2.5">
+    <div v-else class="h-full overflow-y-auto px-4 py-3.5">
+      <div class="grid min-h-full grid-rows-[auto_auto_auto_1fr_auto] gap-2.5">
         <div class="flex items-start justify-between gap-3">
           <div class="min-w-0 space-y-1">
             <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
               <p class="text-[21px] font-bold leading-tight text-ob-text">{{ row.rec.suburb }}</p>
               <span
-                class="font-mono text-[11px] px-2 py-[2px] rounded-full"
+                class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
                 :style="{ backgroundColor: bandBadgeFill(row), color: bandColor(row) }"
-                >{{ row.weighted }} · {{ bandLabel(row) }}</span
               >
+                <span class="text-[15px] font-extrabold leading-none">{{ row.weighted }}</span>
+                <span class="text-[9px] uppercase tracking-[0.08em]">{{ bandLabel(row) }}</span>
+              </span>
               <button
                 @click.stop="$emit('toggle-shortlist', row.rec.id)"
                 class="font-mono text-[10px] px-2 py-[3px] rounded-full border transition-colors"
@@ -54,9 +56,14 @@
             </p>
           </div>
           <div class="shrink-0 text-right">
-            <p class="font-mono text-[10.5px] text-ob-faint">
-              <template v-if="rankById[row.rec.id]">#{{ rankById[row.rec.id] }} · </template
-              >{{ row.rec.region }}
+            <p class="flex items-baseline justify-end gap-1 font-mono">
+              <template v-if="rankById[row.rec.id]">
+                <span class="text-[15px] font-extrabold leading-none text-ob-gold"
+                  >#{{ rankById[row.rec.id] }}</span
+                >
+                <span class="text-[10px] text-ob-faint">·</span>
+              </template>
+              <span class="text-[10.5px] text-ob-faint">{{ row.rec.region }}</span>
             </p>
             <p class="font-mono text-[9px] text-ob-faint">click card to return to map</p>
           </div>
@@ -104,175 +111,184 @@
               </p>
             </div>
           </div>
+          <div
+            v-if="strategy"
+            class="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-l-2 border-ob-teal/30 pl-2.5"
+          >
+            <p class="font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint">
+              Fit under {{ strategy.label }}
+            </p>
+            <p class="font-mono text-[10.5px] leading-snug" :class="fitClass(row)">
+              {{ fitLine(row) }}
+            </p>
+            <p v-if="strategy.priceNote" class="text-[10px] leading-snug text-ob-faint">
+              {{ strategy.priceNote }}
+            </p>
+          </div>
         </div>
 
-        <div class="grid min-h-0 gap-3 overflow-hidden">
-          <div class="grid gap-3 xl:grid-cols-[1.04fr_0.96fr]">
-            <div class="grid content-start gap-3 min-h-0">
-              <div class="rounded-[6px] border border-ob-purple/20 bg-ob-purple/4 px-3 py-2.5">
-                <div class="grid gap-2 md:grid-cols-[auto_1fr] md:items-start">
-                  <div class="space-y-1 md:min-w-[112px]">
-                    <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-purple">
-                      Schools
-                    </p>
-                    <p class="font-mono text-[9.5px] text-ob-purple">
-                      teen independence {{ row.rec.childhood?.teenIndependence ?? 'n/a' }}/5
-                    </p>
-                  </div>
-                  <div class="min-w-0">
-                    <div v-if="zonedSchools" class="space-y-0.5">
-                      <p
-                        v-for="school in zonedSchoolRows"
-                        :key="school.label"
-                        class="text-[10.5px] leading-snug text-ob-muted2"
-                      >
-                        <span class="font-mono text-[9.5px] text-ob-faint"
-                          >{{ school.label }}:</span
-                        >
-                        {{ school.name }}
-                        <span
-                          v-if="school.strength != null"
-                          class="ml-1 whitespace-nowrap rounded-full bg-ob-purple/12 px-1.5 py-[1px] font-mono text-[9px] text-ob-purple"
-                        >
-                          {{ school.strength }}/5
-                        </span>
-                      </p>
-                      <p
-                        v-if="zonedSchools.boundaryFlag"
-                        class="text-[9.5px] leading-snug text-ob-sand"
-                      >
-                        Anchor sits near a zone boundary: the zone can flip within this catchment.
-                      </p>
-                      <p class="font-mono text-[9px] leading-snug text-ob-faint">
-                        Zones: {{ zonedSchools.zoneYear }} · verify the exact address at
-                        findmyschool.vic.gov.au
-                      </p>
-                    </div>
-                    <div v-else class="flex flex-wrap gap-1">
-                      <span
-                        v-for="school in schoolChips(row.rec)"
-                        :key="school"
-                        class="font-mono text-[9.5px] px-1.5 py-[2px] rounded-full bg-ob-purple/12 text-ob-purple"
-                        >{{ school }}</span
-                      >
-                    </div>
-                    <p
-                      v-if="row.rec.childhood?.note"
-                      class="mt-1 text-[10.5px] leading-snug text-ob-muted2 card-clamp-3"
-                    >
-                      {{ row.rec.childhood.note }}
-                    </p>
-                  </div>
-                </div>
+        <div class="grid min-h-0 content-start gap-3">
+          <div class="grid gap-3 lg:grid-cols-2">
+            <section
+              class="grid content-start gap-3 rounded-[6px] border border-ob-sand/10 px-3 py-2.5"
+            >
+              <div>
+                <p class="font-mono text-[9px] uppercase tracking-[0.08em] text-ob-teal">
+                  The suburb
+                </p>
+                <p class="mt-1 text-[11px] leading-snug text-ob-muted2">
+                  {{ suburbProfile?.lives || row.rec.headline || row.rec.caseFor?.[0] }}
+                </p>
               </div>
 
-              <div class="grid gap-3 md:grid-cols-2">
+              <div class="grid gap-3 sm:grid-cols-2">
                 <div>
-                  <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-teal mb-1">
+                  <p class="mb-1 font-mono text-[8.5px] uppercase tracking-[0.07em] text-ob-teal">
                     Strengths
                   </p>
                   <ul class="space-y-0.5">
                     <li
                       v-for="(point, i) in row.rec.caseFor"
                       :key="i"
-                      class="text-[10.5px] leading-snug text-ob-muted2 flex gap-1.5"
+                      class="flex gap-1.5 text-[10.5px] leading-snug text-ob-muted2"
                     >
-                      <span class="text-ob-teal shrink-0">+</span>{{ point }}
+                      <span class="shrink-0 text-ob-teal">+</span>{{ point }}
                     </li>
                   </ul>
                 </div>
                 <div>
-                  <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-sand mb-1">
+                  <p class="mb-1 font-mono text-[8.5px] uppercase tracking-[0.07em] text-ob-sand">
                     Compromises
                   </p>
                   <ul class="space-y-0.5">
                     <li
                       v-for="(point, i) in row.rec.caseAgainst"
                       :key="i"
-                      class="text-[10.5px] leading-snug text-ob-muted2 flex gap-1.5"
+                      class="flex gap-1.5 text-[10.5px] leading-snug text-ob-muted2"
                     >
-                      <span class="text-ob-sand shrink-0">−</span>{{ point }}
+                      <span class="shrink-0 text-ob-sand">−</span>{{ point }}
                     </li>
                   </ul>
                 </div>
               </div>
-            </div>
 
-            <div class="grid content-start gap-3 min-h-0">
-              <div class="rounded-[6px] border border-ob-sand/10 px-3 py-2.5">
-                <p class="font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint">
-                  Dwelling stock
-                </p>
-                <p class="mt-0.5 font-mono text-[10px] text-ob-soft">
-                  {{ dwellingLabel(row.rec) }}
-                </p>
-                <p class="mt-0.5 text-[11px] leading-snug text-ob-muted2 card-clamp-4">
-                  {{ row.rec.dwelling?.suitableStock }}
-                </p>
-              </div>
-
-              <div class="grid gap-3 md:grid-cols-2">
-                <div class="rounded-[6px] border px-3 py-2.5" :class="practicalCardClass">
+              <div class="grid gap-3 border-t border-ob-sand/8 pt-2 sm:grid-cols-2">
+                <div>
+                  <p class="font-mono text-[8px] uppercase tracking-[0.05em] text-ob-faint">
+                    Dwelling stock
+                  </p>
+                  <p class="mt-0.5 font-mono text-[9.5px] text-ob-soft">
+                    {{ dwellingLabel(row.rec) }}
+                  </p>
+                  <p class="mt-0.5 text-[10px] leading-snug text-ob-dim card-clamp-3">
+                    {{ suburbProfile?.housing || row.rec.dwelling?.suitableStock }}
+                  </p>
+                </div>
+                <div>
                   <p
-                    class="font-mono text-[9px] uppercase tracking-[0.07em]"
-                    :class="friendFor(row.rec.id) ? 'text-ob-gold' : 'text-ob-soft'"
+                    class="font-mono text-[8px] uppercase tracking-[0.05em]"
+                    :class="friendFor(row.rec.id) ? 'text-ob-gold' : 'text-ob-faint'"
                   >
                     {{ friendFor(row.rec.id) ? '★ Personal network' : 'Practical notes' }}
                   </p>
                   <p
                     v-if="friendFor(row.rec.id)"
-                    class="mt-0.5 text-[10.5px] leading-snug card-clamp-2"
-                    :class="friendFor(row.rec.id) ? 'text-ob-gold' : 'text-ob-muted2'"
+                    class="mt-0.5 text-[10px] leading-snug text-ob-gold"
                   >
                     {{ friendFor(row.rec.id).text }}
                   </p>
                   <p
                     v-if="personalNetworkLine"
-                    class="mt-0.5 text-[10px] leading-snug text-ob-gold"
+                    class="mt-0.5 text-[9.5px] leading-snug text-ob-gold"
                   >
                     {{ personalNetworkLine }}
                   </p>
-                  <p class="mt-1 text-[10.5px] leading-snug text-ob-muted2 card-clamp-4">
+                  <p class="mt-0.5 text-[10px] leading-snug text-ob-dim card-clamp-3">
                     {{ row.rec.coparentingGeometry }}
                   </p>
                 </div>
+              </div>
+            </section>
 
-                <div
-                  v-if="strategy"
-                  class="rounded-[6px] border border-ob-teal/18 bg-ob-surface px-3 py-2.5"
-                >
-                  <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-soft">
-                    Fit under {{ strategy.label }}
-                  </p>
-                  <p class="mt-0.5 font-mono text-[10.5px] leading-snug" :class="fitClass(row)">
-                    {{ fitLine(row) }}
+            <section
+              class="grid content-start gap-3 rounded-[6px] border border-ob-purple/20 bg-ob-purple/4 px-3 py-2.5"
+            >
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <p class="font-mono text-[9px] uppercase tracking-[0.08em] text-ob-purple">
+                  Childhood
+                </p>
+                <p class="font-mono text-[9.5px] text-ob-purple">
+                  teen independence {{ teenIndependenceDots }}
+                  {{ row.rec.childhood?.teenIndependence ?? 'n/a' }}/5
+                </p>
+              </div>
+
+              <div>
+                <p class="mb-1 font-mono text-[8.5px] uppercase tracking-[0.06em] text-ob-faint">
+                  Schools
+                </p>
+                <div v-if="zonedSchools" class="space-y-0.5">
+                  <p
+                    v-for="school in zonedSchoolRows"
+                    :key="school.label"
+                    class="text-[10.5px] leading-snug text-ob-muted2"
+                  >
+                    <span class="font-mono text-[9.5px] text-ob-faint">{{ school.label }}:</span>
+                    {{ school.name }}
+                    <span
+                      v-if="school.strength != null"
+                      class="ml-1 whitespace-nowrap rounded-full bg-ob-purple/12 px-1.5 py-[1px] font-mono text-[9px] text-ob-purple"
+                    >
+                      {{ school.strength }}/5
+                    </span>
                   </p>
                   <p
-                    v-if="strategy.priceNote"
-                    class="mt-1 text-[10px] leading-snug text-ob-faint card-clamp-3"
+                    v-if="zonedSchools.boundaryFlag"
+                    class="text-[9.5px] leading-snug text-ob-sand"
                   >
-                    {{ strategy.priceNote }}
+                    Anchor sits near a zone boundary: the zone can flip within this catchment.
+                  </p>
+                  <p class="font-mono text-[9px] leading-snug text-ob-faint">
+                    Zones: {{ zonedSchools.zoneYear }} · verify the exact address at
+                    findmyschool.vic.gov.au
                   </p>
                 </div>
+                <div v-else class="flex flex-wrap gap-1">
+                  <span
+                    v-for="school in schoolChips(row.rec)"
+                    :key="school"
+                    class="rounded-full bg-ob-purple/12 px-1.5 py-[2px] font-mono text-[9.5px] text-ob-purple"
+                    >{{ school }}</span
+                  >
+                </div>
+                <p
+                  v-if="row.rec.childhood?.note"
+                  class="mt-1 text-[10.5px] leading-snug text-ob-muted2 card-clamp-3"
+                >
+                  {{ row.rec.childhood.note }}
+                </p>
               </div>
 
               <div
-                v-if="facilitiesFor(row.rec.id).length"
-                class="rounded-[6px] border border-ob-sand/10 px-3 py-2"
+                v-if="girlsSport || childhoodFacilities.length"
+                class="border-t border-ob-purple/15 pt-2"
               >
-                <p class="font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint">
-                  Nearby facilities
+                <p class="font-mono text-[8.5px] uppercase tracking-[0.06em] text-ob-faint">
+                  Girls' sport and facilities
                 </p>
-                <div class="mt-1 flex flex-wrap gap-1">
+                <p v-if="girlsSport?.line" class="mt-1 text-[10.5px] leading-snug text-ob-muted2">
+                  {{ girlsSport.line }}
+                </p>
+                <div v-if="childhoodFacilities.length" class="mt-1.5 flex flex-wrap gap-1">
                   <span
-                    v-for="facility in facilitiesFor(row.rec.id)"
-                    :key="facility.id"
-                    class="font-mono text-[9px] px-1.5 py-[2px] rounded-full border border-ob-purple/30 text-ob-muted2"
-                    >{{ facility.name }}</span
+                    v-for="facility in childhoodFacilities"
+                    :key="facility"
+                    class="rounded-full border border-ob-purple/30 px-1.5 py-[2px] font-mono text-[9px] text-ob-muted2"
+                    >{{ facility }}</span
                   >
                 </div>
               </div>
-            </div>
+            </section>
           </div>
 
           <CommunityContextSection :area-id="row.rec.id" :list-limit="4" compact />
@@ -301,8 +317,10 @@ import { FEE_ESTIMATE_BY_RISK } from '@/data/dwelling/areaCorridors.js'
 import { localitiesForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLines, linesForArea } from '@/data/dwelling/trainLines.js'
 import { facilitiesForArea } from '@/data/dwelling/facilities.js'
+import { girlsSportFor } from '@/data/dwelling/girlsSport.js'
 import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
 import { personalNetworkByAreaId } from '@/data/dwelling/personalNetwork.js'
+import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
@@ -347,6 +365,20 @@ const headerMetrics = computed(() => [
   { label: 'Collins St commute', value: commuteLabel(props.row), tone: bandClass(props.row.band) },
   { label: 'Owners-corp', value: ocLabel(props.row.rec), tone: 'text-ob-muted2' },
 ])
+const suburbProfile = computed(() => suburbProfileFor(props.row.rec.id))
+const girlsSport = computed(() => girlsSportFor(props.row.rec.id))
+const childhoodFacilities = computed(() => [
+  ...new Set([
+    ...(girlsSport.value?.facilities || []),
+    ...facilitiesForArea(props.row.rec.id).map((facility) => facility.name),
+  ]),
+])
+const teenIndependenceDots = computed(() => {
+  const value = props.row.rec.childhood?.teenIndependence
+  if (!Number.isFinite(value)) return ''
+  const rounded = Math.max(0, Math.min(5, Math.round(value)))
+  return `${'●'.repeat(rounded)}${'○'.repeat(5 - rounded)}`
+})
 const zonedSchools = computed(() => zonedSchoolEvidenceForArea(props.row.rec.id))
 const zonedSchoolRows = computed(() => {
   if (!zonedSchools.value) return []
@@ -374,10 +406,6 @@ const personalNetworkLine = computed(() => {
         : ''
   return `Network: ~${network.estMin} min by ${network.mode}${suffix}`
 })
-const practicalCardClass = computed(() =>
-  friendFor(props.row.rec.id) ? 'border-ob-gold-muted/20' : 'border-ob-sand/10 bg-ob-surface/60',
-)
-
 function bandColor(row) {
   return fitBandColor(row.weighted)
 }
@@ -419,7 +447,7 @@ function monthlyFor(rec) {
 }
 function monthlyLabel(rec) {
   const monthly = monthlyFor(rec)
-  return monthly != null ? '$' + monthly.toLocaleString('en-AU') : 'n/a'
+  return monthly != null ? '$' + monthly.toLocaleString('en-AU') + '/mo' : 'n/a'
 }
 function ocLabel(rec) {
   const oc = rec.dwelling?.annualOc
@@ -459,9 +487,6 @@ function schoolChips(rec) {
 }
 function friendFor(areaId) {
   return friendContextFor(areaId)
-}
-function facilitiesFor(areaId) {
-  return facilitiesForArea(areaId)
 }
 function fitClass(row) {
   return { ok: 'text-ob-teal', conditional: 'text-ob-muted', reject: 'text-ob-sand' }[row.status]

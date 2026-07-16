@@ -34,11 +34,19 @@
             </p>
           </div>
           <span
-            class="shrink-0 font-mono text-[10.5px] px-2 py-[3px] rounded-full"
+            class="shrink-0 inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
             :style="scoreBadgeStyle(previewRow)"
             :title="bandLabel(previewRow)"
           >
-            #{{ rankById[previewRow.rec.id] }} · {{ previewRow.weighted }}
+            <span class="text-[15px] font-bold leading-none text-ob-gold"
+              >#{{ rankById[previewRow.rec.id] }}</span
+            >
+            <span class="text-[10px] text-ob-faint">·</span>
+            <span
+              class="text-[14px] font-extrabold leading-none"
+              :style="{ color: bandColor(previewRow) }"
+              >{{ previewRow.weighted }}</span
+            >
           </span>
         </div>
 
@@ -73,8 +81,7 @@
           >
             <div class="flex items-start gap-3">
               <span
-                class="font-mono text-[11px] w-9 shrink-0 pt-[1px]"
-                :style="{ color: bandColor(row) }"
+                class="w-10 shrink-0 pt-[1px] font-mono text-[15px] font-bold leading-none text-ob-gold"
               >
                 #{{ rankById[row.rec.id] }}
               </span>
@@ -92,7 +99,7 @@
                     ★
                   </span>
                   <span
-                    class="font-mono text-[11px] shrink-0"
+                    class="shrink-0 font-mono text-[14px] font-extrabold leading-none"
                     :style="{ color: bandColor(row) }"
                     :title="bandLabel(row)"
                   >
@@ -109,10 +116,7 @@
                 >
                   <span>{{ priceBand(row.rec) }}</span>
                   <span>Commute {{ commuteShort(row) }}</span>
-                  <span
-                    v-if="friendBadge(row)"
-                    class="text-ob-gold/95"
-                  >
+                  <span v-if="friendBadge(row)" class="text-ob-gold/95">
                     {{ friendBadge(row) }}
                   </span>
                   <span :class="fitBadgeTone(row)">
@@ -200,7 +204,6 @@ function unpin() {
 function scoreBadgeStyle(row) {
   return {
     backgroundColor: fitBandBadgeFill(row.weighted),
-    color: bandColor(row),
   }
 }
 

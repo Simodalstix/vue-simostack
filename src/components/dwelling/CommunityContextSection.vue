@@ -6,30 +6,59 @@
        percentages are never averaged and medians never blended. -->
   <div v-if="ctx" :class="rootClass">
     <div :class="compact ? 'flex flex-wrap items-baseline gap-x-2 gap-y-0.5' : ''">
-      <p :class="compact ? 'font-mono text-[10px] uppercase tracking-[0.08em] text-ob-purple' : 'font-mono text-[10.5px] uppercase tracking-[0.08em] text-ob-purple'">
-        {{ COMMUNITY_DATASET.title }}
+      <p
+        :class="
+          compact
+            ? 'font-mono text-[10px] uppercase tracking-[0.08em] text-ob-purple'
+            : 'font-mono text-[10.5px] uppercase tracking-[0.08em] text-ob-purple'
+        "
+      >
+        ABS Census 2021 · descriptive only
       </p>
-      <p :class="compact ? 'font-mono text-[9.5px] text-ob-faint leading-snug' : 'font-mono text-[10px] text-ob-faint leading-snug mt-0.5'">
-        descriptive only · not used in scores, ranking or filtering
-        <span v-if="ctx.components.length > 1">
-          · component suburbs shown separately, never averaged</span
-        >
+      <p
+        v-if="ctx.components.length > 1"
+        :class="
+          compact
+            ? 'font-mono text-[9.5px] text-ob-faint leading-snug'
+            : 'font-mono text-[10px] text-ob-faint leading-snug mt-0.5'
+        "
+      >
+        component suburbs shown separately, never averaged
       </p>
     </div>
 
     <div :class="componentsClass">
       <div v-for="c in ctx.components" :key="c.name" :class="compact ? 'space-y-1.5' : 'space-y-2'">
-        <p v-if="ctx.components.length > 1" :class="compact ? 'text-[11.5px] font-semibold text-ob-text' : 'text-[12.5px] font-semibold text-ob-text'">
+        <p
+          v-if="ctx.components.length > 1"
+          :class="
+            compact
+              ? 'text-[11.5px] font-semibold text-ob-text'
+              : 'text-[12.5px] font-semibold text-ob-text'
+          "
+        >
           {{ c.record.suburb }}
         </p>
 
         <!-- scalar + percentage measures, each on its published ABS denominator -->
-        <div :class="compact ? 'grid grid-cols-3 gap-x-4 gap-y-1' : 'grid grid-cols-2 gap-x-5 gap-y-1.5'">
+        <div :class="coreMeasuresClass">
           <div v-for="m in coreMeasures(c.record)" :key="m.label">
-            <p :class="compact ? 'font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint' : 'font-mono text-[9.5px] uppercase tracking-[0.06em] text-ob-faint'">
+            <p
+              :class="
+                compact
+                  ? 'font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint'
+                  : 'font-mono text-[9.5px] uppercase tracking-[0.06em] text-ob-faint'
+              "
+            >
               {{ m.label }}
             </p>
-            <p :class="compact ? 'text-[10.5px] text-ob-muted2 leading-snug' : 'text-[12px] text-ob-muted2 leading-snug'">
+            <p
+              :class="
+                compact
+                  ? 'text-[10.5px] text-ob-muted2 leading-snug'
+                  : 'text-[12px] text-ob-muted2 leading-snug'
+              "
+            >
               {{ m.value }}
             </p>
           </div>
@@ -47,16 +76,17 @@
               >{{ l.name }} {{ fmtPct(l.percentage) }}</span
             >
           </div>
-          <p class="font-mono text-[10px] text-ob-faint mt-1">
-            English only at home: {{ englishOnly(c.record) }}
+          <p class="mt-1 font-mono text-[10px] text-ob-faint">
+            English only at home:
+            <span class="text-ob-teal">{{ englishOnly(c.record) }}</span>
           </p>
         </div>
         <p v-else-if="languages(c.record).length" class="text-[10px] leading-snug text-ob-muted2">
           <span class="font-mono uppercase tracking-[0.05em] text-[8.5px] text-ob-faint">
             Languages
           </span>
-          · {{ inlineList(languages(c.record)) }}
-          <span class="text-ob-faint"> · English only {{ englishOnly(c.record) }}</span>
+          · {{ inlineList(languages(c.record)) }} <span class="text-ob-faint"> · English only </span
+          ><span class="text-ob-teal">{{ englishOnly(c.record) }}</span>
         </p>
 
         <div v-if="birthplaces(c.record).length && !compact">
@@ -82,9 +112,19 @@
         <!-- religious affiliation (optional summary) -->
         <p
           v-if="religionLine(c.record)"
-          :class="compact ? 'font-mono text-[9.5px] text-ob-dim leading-snug' : 'font-mono text-[10.5px] text-ob-dim leading-snug'"
+          :class="
+            compact
+              ? 'font-mono text-[9.5px] text-ob-dim leading-snug'
+              : 'font-mono text-[10.5px] text-ob-dim leading-snug'
+          "
         >
-          <span :class="compact ? 'uppercase tracking-[0.05em] text-ob-faint text-[8.5px]' : 'uppercase tracking-[0.06em] text-ob-faint text-[9.5px]'">Religion · </span
+          <span
+            :class="
+              compact
+                ? 'uppercase tracking-[0.05em] text-ob-faint text-[8.5px]'
+                : 'uppercase tracking-[0.06em] text-ob-faint text-[9.5px]'
+            "
+            >Religion · </span
           >{{ religionLine(c.record) }}
         </p>
 
@@ -92,28 +132,55 @@
              as the other community measures -->
         <div
           v-if="householdContext(c.record).length"
-          :class="compact ? 'grid grid-cols-2 xl:grid-cols-4 gap-x-4 gap-y-0.5' : 'grid grid-cols-2 gap-x-5 gap-y-1'"
+          :class="
+            compact
+              ? 'grid grid-cols-2 xl:grid-cols-4 gap-x-4 gap-y-0.5'
+              : 'grid grid-cols-2 gap-x-5 gap-y-1'
+          "
         >
           <p
             v-for="h in householdContext(c.record)"
             :key="h.label"
-            :class="compact ? 'font-mono text-[9.5px] text-ob-dim' : 'font-mono text-[10.5px] text-ob-dim'"
+            :class="
+              compact ? 'font-mono text-[9.5px] text-ob-dim' : 'font-mono text-[10.5px] text-ob-dim'
+            "
           >
             {{ h.label }}: <span class="text-ob-muted2">{{ h.value }}</span>
           </p>
         </div>
 
-        <!-- source disclosure -->
-        <p :class="compact ? 'font-mono text-[8.5px] text-ob-faint leading-snug' : 'font-mono text-[9.5px] text-ob-faint leading-snug'">
+        <!-- source disclosure belongs to the full evidence drawer -->
+        <p
+          v-if="showEvidenceDetails"
+          :class="
+            compact
+              ? 'font-mono text-[8.5px] text-ob-faint leading-snug'
+              : 'font-mono text-[9.5px] text-ob-faint leading-snug'
+          "
+        >
           {{ sourceText(c.record) }}
         </p>
       </div>
     </div>
 
-    <p v-if="ctx.missing.length" :class="compact ? 'font-mono text-[9px] text-ob-faint leading-snug' : 'font-mono text-[10px] text-ob-faint leading-snug'">
+    <p
+      v-if="ctx.missing.length"
+      :class="
+        compact
+          ? 'font-mono text-[9px] text-ob-faint leading-snug'
+          : 'font-mono text-[10px] text-ob-faint leading-snug'
+      "
+    >
       No individual SAL record in this dataset yet for {{ ctx.missing.join(', ') }}.
     </p>
-    <p :class="compact ? 'font-mono text-[8.5px] text-ob-faint leading-snug' : 'font-mono text-[9.5px] text-ob-faint leading-snug'">
+    <p
+      v-if="showEvidenceDetails"
+      :class="
+        compact
+          ? 'font-mono text-[8.5px] text-ob-faint leading-snug'
+          : 'font-mono text-[9.5px] text-ob-faint leading-snug'
+      "
+    >
       ABS applies small random adjustments for privacy, so component sums can differ slightly from
       published totals.
     </p>
@@ -123,7 +190,6 @@
 <script setup>
 import { computed } from 'vue'
 import {
-  COMMUNITY_DATASET,
   communityContextFor,
   fmtPct,
   fmtCount,
@@ -137,18 +203,27 @@ const props = defineProps({
   // how many list items (languages/birthplaces) to show per component
   listLimit: { type: Number, default: 5 },
   compact: { type: Boolean, default: false },
+  showEvidenceDetails: { type: Boolean, default: false },
 })
 
 const ctx = computed(() => communityContextFor(props.areaId))
 const compact = computed(() => props.compact)
 const rootClass = computed(() =>
-  compact.value ? 'border-l-2 border-ob-purple/45 pl-3 space-y-2' : 'border-l-2 border-ob-purple/45 pl-3 space-y-3',
+  compact.value
+    ? 'border-l-2 border-ob-purple/45 pl-3 space-y-2'
+    : 'border-l-2 border-ob-purple/45 pl-3 space-y-3',
 )
 const componentsClass = computed(() =>
   compact.value && ctx.value?.components?.length > 1
     ? 'grid gap-x-5 gap-y-2 xl:grid-cols-2'
     : 'grid gap-y-2',
 )
+const coreMeasuresClass = computed(() => {
+  if (!compact.value) return 'grid grid-cols-2 gap-x-5 gap-y-1.5 lg:grid-cols-3'
+  return ctx.value?.components?.length > 1
+    ? 'grid grid-cols-3 gap-x-4 gap-y-1'
+    : 'grid grid-cols-2 gap-x-6 gap-y-1 sm:grid-cols-3'
+})
 
 // Percentages are used exactly as published; each measure keeps its own ABS
 // denominator (persons, dwellings, households) — nothing recalculated here.
