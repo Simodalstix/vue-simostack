@@ -530,6 +530,33 @@ export const areaGeo = {
     tramOnly: true,
     stationPoints: [],
   },
+  'clifton-hill-2br': {
+    localityNames: ['Clifton Hill'],
+    stationPoints: [
+      {
+        id: 'clifton-hill',
+        name: 'Clifton Hill',
+        coordinates: [144.9953, -37.7885],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  // Bus-only record: the DART Park & Ride acts as the commute anchor point the
+  // same way St Kilda uses its light-rail terminus. No heavy rail exists.
+  'doncaster-villa': {
+    localityNames: ['Doncaster'],
+    busOnly: true,
+    stationPoints: [
+      {
+        id: 'doncaster-park-ride',
+        name: 'Doncaster Park & Ride (DART)',
+        coordinates: [145.1039, -37.7916],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
   'balwyn-2br': {
     localityNames: ['Balwyn'],
     tramOnly: true,

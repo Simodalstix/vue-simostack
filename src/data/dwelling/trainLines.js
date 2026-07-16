@@ -365,6 +365,8 @@ export const linesByArea = {
   'bonbeach-2br': ['frankston'],
   'north-melbourne-2br': ['craigieburn', 'upfield', 'metro-tunnel'],
   'sunbury-house': ['metro-tunnel'],
+  'clifton-hill-2br': ['mernda'],
+  'doncaster-villa': [],
 }
 
 export function linesForArea(areaId) {

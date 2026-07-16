@@ -33,7 +33,6 @@ import { DWELLING_GREENSPACE_BY_ID } from './greenspace/dwelling-greenspace-cont
 
 export const FEE_ESTIMATE_BY_RISK = { low: 1000, moderate: 2750, high: 6000 }
 
-
 const AREA_CORRIDOR_BASE = [
   // ---- Inner "value close to the CBD" pockets. Placeholder until verified,
   //      scored on the same 1-5 areaWeights scale as every other entry. ----
@@ -2429,7 +2428,7 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: 4,
       teenIndependence: 4,
-      publicPrimary: ['Balaclava PS'],
+      publicPrimary: ['St Kilda PS (zoned for Balaclava; no Balaclava PS exists)'],
       publicSecondary: ['Elwood College'],
       privateContext: [],
       note: 'station plus trams gives a teenager genuine independence; exact school zone needs address-level checking',
@@ -2445,7 +2444,8 @@ const AREA_CORRIDOR_BASE = [
       'Pocket variance is real near the busier nightlife edges and the tram spine.',
     ],
     bestType: 'An older 2BR walk-up on the quieter side streets west or south of Carlisle St.',
-    avoidType: 'A noisy strip-front apartment or boutique block with premium fees and no real size.',
+    avoidType:
+      'A noisy strip-front apartment or boutique block with premium fees and no real size.',
     oneCar: 'Car-optional; keeping one is mostly about convenience, not necessity.',
     coparentingGeometry:
       'The commute is tight enough to keep handovers workable while still buying a real second bedroom.',
@@ -2520,8 +2520,10 @@ const AREA_CORRIDOR_BASE = [
       'The station walk is long enough that the rail edge matters more than the suburb label.',
     ],
     bestType: 'A larger older 2BR west of Brighton Rd or near Tennyson St, with modest fees.',
-    avoidType: 'An apartment sold as “Elwood lifestyle” that is really just a long walk from rail and village.',
-    oneCar: 'One small car is optional rather than necessary; car-share and bikes can cover a lot here.',
+    avoidType:
+      'An apartment sold as “Elwood lifestyle” that is really just a long walk from rail and village.',
+    oneCar:
+      'One small car is optional rather than necessary; car-share and bikes can cover a lot here.',
     coparentingGeometry:
       'Good local child amenity and strong day-to-day calm; the station distance is the cost of that atmosphere.',
     risks: [
@@ -2656,11 +2658,12 @@ const AREA_CORRIDOR_BASE = [
       schoolStrength: 3,
       teenIndependence: 3,
       publicPrimary: ['Chelsea PS'],
-      publicSecondary: ['Chelsea Secondary College'],
+      publicSecondary: ['Patterson River Secondary College'],
       privateContext: [],
       note: 'beachside child amenity is strong, but the CBD ride is long enough to test a five-day office rhythm',
     },
-    feeNote: 'Villa-unit style stock is the cleaner fit; newer apartment stock needs the usual fee checks.',
+    feeNote:
+      'Villa-unit style stock is the cleaner fit; newer apartment stock needs the usual fee checks.',
     caseFor: [
       'Beach, village and station line up in a way that is attractive for family life.',
       'A real second bedroom is easier to buy here than in the inner south.',
@@ -2670,8 +2673,10 @@ const AREA_CORRIDOR_BASE = [
       'The commute is already pressing the acceptable edge.',
       'Flood, salt and insurance exposure need more respect this close to the bay.',
     ],
-    bestType: 'A solid older 2BR unit or villa unit walkable to Chelsea station and centre, not right on the coast.',
-    avoidType: 'A cheap low-lying apartment or anything sold on beach prestige alone while the rail walk is weak.',
+    bestType:
+      'A solid older 2BR unit or villa unit walkable to Chelsea station and centre, not right on the coast.',
+    avoidType:
+      'A cheap low-lying apartment or anything sold on beach prestige alone while the rail walk is weak.',
     oneCar: 'One small car is the realistic default; car-free only holds right on the centre.',
     coparentingGeometry:
       'Family amenity is appealing, but the long ride into Collins St is the thing that can break the brief.',
@@ -2732,11 +2737,12 @@ const AREA_CORRIDOR_BASE = [
       schoolStrength: 3,
       teenIndependence: 3,
       publicPrimary: ['Bonbeach PS'],
-      publicSecondary: ['Chelsea Secondary College'],
+      publicSecondary: ['Patterson River Secondary College'],
       privateContext: [],
       note: 'good local child amenity, but the city commute is long enough to become the whole story',
     },
-    feeNote: 'Mostly clean on recurring costs; the issue is commute time, not owners-corporation drag.',
+    feeNote:
+      'Mostly clean on recurring costs; the issue is commute time, not owners-corporation drag.',
     caseFor: [
       'A calmer, beach-adjacent lifestyle with real 2BR stock for the money.',
       'Direct rail keeps the transport pattern simple even when it is long.',
@@ -2745,8 +2751,10 @@ const AREA_CORRIDOR_BASE = [
       'The commute breaks the brief on a typical five-day CBD week.',
       'Centre intensity and walkability are thinner than the inner and middle-ring references.',
     ],
-    bestType: 'Only if the brief shifts decisively toward local beach life and away from a hard commute cap.',
-    avoidType: 'Any purchase justified by “it is on the line” while ignoring the actual door-to-door time.',
+    bestType:
+      'Only if the brief shifts decisively toward local beach life and away from a hard commute cap.',
+    avoidType:
+      'Any purchase justified by “it is on the line” while ignoring the actual door-to-door time.',
     oneCar: 'One small car is the realistic default; the car-light thesis is weak here.',
     coparentingGeometry:
       'There is genuine lifestyle appeal, but the daily time loss to Collins St can outweigh it quickly.',
@@ -2882,7 +2890,7 @@ const AREA_CORRIDOR_BASE = [
       teenIndependence: 2,
       publicPrimary: ['Sunbury PS', 'Sunbury Heights PS'],
       publicSecondary: ['Sunbury College', 'Sunbury Downs College'],
-      privateContext: ['Salesian College Rupertswood'],
+      privateContext: ['Salesian College Sunbury (Rupertswood campus)'],
       note: 'a real town with its own schools and pool; a teen still leans on lifts and the train',
     },
     feeNote: 'Freestanding houses; owners-corp fees mostly do not apply.',
@@ -3632,7 +3640,9 @@ const AREA_CORRIDOR_BASE = [
       teenIndependence: 3,
       publicPrimary: ['Mentone Park PS'],
       publicSecondary: ["Mentone Girls' Secondary (zoned)"],
-      privateContext: ['Dense private-school cluster (St Bede’s, Mentone Grammar) shapes the suburb'],
+      privateContext: [
+        'Dense private-school cluster (St Bede’s, Mentone Grammar) shapes the suburb',
+      ],
       note: 'a station village organised around its school cluster and the beach',
     },
     caseFor: [
@@ -3660,6 +3670,167 @@ const AREA_CORRIDOR_BASE = [
     ],
     primaryWarning:
       'Provisional July 2026 addition: a 3BR-family calibration point at 2BR pricing; the commute is the number to verify first.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+
+  // ---- July 2026 additions #49-50: Clifton Hill and Doncaster ------------
+  {
+    id: 'clifton-hill-2br',
+    // TODO: flip to scored once the greenspace pipeline has been re-run
+    // locally with this record added to dwelling-greenspace-targets.json
+    // (SAL code + census population to be resolved from the ABS workbook).
+    scored: false,
+    suburb: 'Clifton Hill',
+    municipality: 'Yarra',
+    region: 'Inner',
+    corridor: 'Mernda / Hurstbridge junction + tram 86',
+    station: 'Clifton Hill',
+    catchmentMetres: 800,
+    altRoute:
+      'Every Mernda and Hurstbridge service stops at the junction; tram 86 runs Queens Parade to Bourke St; the Wellington St bike corridor is a direct CBD ride.',
+    headline: 'older 2BR apartment at the northside rail junction',
+    dwelling: {
+      types: ['older-apartment'],
+      bedrooms: 2,
+      indicativePrice: [560000, 720000],
+      annualOc: [1200, 4500],
+      parkingTypes: ['titled', 'street', 'none'],
+      suitableStock:
+        'Walk-ups off Queens Parade and around Darling Gardens; period cottages sit well over $1.2m and out of scope. Apartment stock is thinner than Northcote one stop up.',
+      expectedTransportCost: '~$1,800-2,400/yr; genuinely car-light at the junction.',
+    },
+    stationWalkMin: 8,
+    carDaily: 'optional',
+    secondBedroom: true,
+    commute: { typical: 30, stressed: 38, transfers: 0 },
+    scores: {
+      housingValue: 2,
+      coparenting: 4,
+      lowCar: 5,
+      recurringCosts: 3,
+      walkability: 4,
+      safety: 4,
+      envRisk: 3,
+      privacyWfh: 3,
+      resale: 5,
+      community: 4,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 5,
+      publicPrimary: ['Clifton Hill PS', 'Spensley Street PS'],
+      publicSecondary: ['Fitzroy High (verify zone)', 'Collingwood College (P-12)'],
+      privateContext: [],
+      note: 'junction suburb: two lines plus the 86 give real teen range',
+    },
+    caseFor: [
+      'Two-line junction: rail redundancy no single-line suburb can match.',
+      'Darling Gardens and the Merri Creek trail on the doorstep.',
+      "St Vincent's precinct one stop away for Jeanie.",
+    ],
+    caseAgainst: [
+      'Thin 2BR stock; the good walk-ups are known quantities at auction.',
+      'Hoddle St severance and noise define the western edge.',
+      'Yarra postcode premium prices in the village feel.',
+    ],
+    bestType: 'A quiet walk-up east of Hoddle St within the station and Queens Parade walk.',
+    avoidType: 'Anything fronting Hoddle St or Heidelberg Rd because the price looked right.',
+    oneCar: 'One small car is genuinely optional; the junction plus the 86 covers daily life.',
+    coparentingGeometry:
+      'Inner-north geometry mirrors Northcote: strong for Lulu weeks and solo weeks alike.',
+    risks: [
+      'Paying Northcote-plus prices for a thinner strip and less stock.',
+      'Merri Creek fringe positions carry flood-overlay checks.',
+    ],
+    inspectionChecklist: [
+      'Verify the secondary zone for the exact address at findmyschool.vic.gov.au.',
+      'Check the flood overlay on VicPlan for creek-adjacent positions.',
+      'Walk Queens Parade to the station at 8am once.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: expected to rank with the inner-north leaders; the question is stock supply, not fit.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['ptv', 'domain', 'csa', 'vicplan'],
+  },
+  {
+    id: 'doncaster-villa',
+    // TODO: flip to scored once the greenspace pipeline has been re-run
+    // locally with this record added to dwelling-greenspace-targets.json
+    // (SAL code + census population to be resolved from the ABS workbook).
+    scored: false,
+    suburb: 'Doncaster',
+    municipality: 'Manningham',
+    region: 'East and south-east',
+    corridor: 'DART SmartBus, Eastern Fwy busway (no train)',
+    station: 'No station; Doncaster Park & Ride (905/906/907/908)',
+    catchmentMetres: 1000,
+    altRoute:
+      'DART routes run the Eastern Fwy bus lanes to Lonsdale St; the 907 is the frequent spine; Box Hill station is a connecting bus ride south.',
+    headline: 'villa unit in the bus-only school belt; the DART counterexample',
+    dwelling: {
+      types: ['villa-unit', 'townhouse'],
+      bedrooms: 2,
+      indicativePrice: [720000, 880000],
+      annualOc: [800, 2500],
+      parkingTypes: ['titled'],
+      suitableStock:
+        'Villa units and 70s-80s townhouses off Doncaster and Manningham Rds; houses start well past $1.4m. Westfield anchors the amenity.',
+      expectedTransportCost:
+        '~$2,400-4,000/yr; DART is quick to the CBD but local life assumes a car.',
+    },
+    stationWalkMin: 12,
+    carDaily: 'constrained',
+    secondBedroom: true,
+    commute: { typical: 50, stressed: 65, transfers: 0 },
+    scores: {
+      housingValue: 2,
+      coparenting: 3,
+      lowCar: 1,
+      recurringCosts: 4,
+      walkability: 2,
+      safety: 5,
+      envRisk: 4,
+      privacyWfh: 4,
+      resale: 4,
+      community: 3,
+    },
+    childhood: {
+      schoolStrength: 4,
+      teenIndependence: 2,
+      publicPrimary: ['Doncaster PS', 'Birralee PS'],
+      publicSecondary: ['Doncaster Secondary College', 'East Doncaster SC (verify zone)'],
+      privateContext: [],
+      note: 'strong school belt; teen range depends on buses and lifts',
+    },
+    caseFor: [
+      'School-belt strength across primary and secondary for Lulu.',
+      'Quiet, prosperous streets with villa stock at 2BR-apartment money.',
+      'DART frequency is genuinely high by bus standards.',
+    ],
+    caseAgainst: [
+      'No rail, and a century of Doncaster-line promises says none is coming.',
+      'Teen independence is bus-timetable dependent.',
+      'Everything local assumes a car; walkability is mall-shaped.',
+    ],
+    bestType: 'A villa unit within a flat walk of a DART stop and a zoned school.',
+    avoidType: 'A townhouse deep in the cul-de-sac network where every trip starts in a car.',
+    oneCar: 'One car is near-unavoidable; the test is whether it stays at one.',
+    coparentingGeometry:
+      'Strong for Lulu weeks on schools and space; solo weeks lean on the car and the freeway.',
+    risks: [
+      'Bus-rapid-transit quality is policy-dependent in a way rail is not.',
+      'Calibration record: tests whether DART frequency can substitute for rail. It gates near the commute ceiling.',
+    ],
+    inspectionChecklist: [
+      'Ride the 907 door-to-door at 8am once before valuing the freeway lanes.',
+      'Verify the secondary zone for the exact address.',
+      'Time the walk to the nearest DART stop, not the Park & Ride.',
+    ],
+    primaryWarning:
+      'Provisional July 2026 addition: the bus-only calibration point beside Balwyn North; expected to sit near the 65-minute gate.',
     verifiedAt: null,
     placeholder: true,
     sources: ['ptv', 'domain', 'csa', 'vicplan'],

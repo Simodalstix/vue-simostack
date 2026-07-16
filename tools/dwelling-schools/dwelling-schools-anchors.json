@@ -1,0 +1,1354 @@
+{
+ "generatedAt": "2026-07-16",
+ "recipe": "Derived from areaGeo.js stationPoints + areaCorridors.js childhood name hints. Regenerate after adding records; never hand-edit.",
+ "records": [
+  {
+   "id": "inner-south-yarra-2br",
+   "suburb": "South Yarra",
+   "localityNames": [
+    "South Yarra"
+   ],
+   "anchors": [
+    {
+     "id": "south-yarra",
+     "name": "South Yarra",
+     "lng": 144.9924,
+     "lat": -37.8389
+    },
+    {
+     "id": "anzac",
+     "name": "Anzac (Metro Tunnel)",
+     "lng": 144.9758,
+     "lat": -37.8407
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "South Yarra PS"
+    ],
+    "publicSecondary": [
+     "Prahran High"
+    ],
+    "privateContext": [
+     "Melbourne High"
+    ]
+   }
+  },
+  {
+   "id": "inner-richmond-2br",
+   "suburb": "Richmond",
+   "localityNames": [
+    "Richmond"
+   ],
+   "anchors": [
+    {
+     "id": "richmond",
+     "name": "Richmond",
+     "lng": 144.9895,
+     "lat": -37.8231
+    },
+    {
+     "id": "east-richmond",
+     "name": "East Richmond",
+     "lng": 144.9931,
+     "lat": -37.8266
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Richmond PS"
+    ],
+    "publicSecondary": [
+     "Richmond High",
+     "Melbourne Girls' College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "inner-collingwood-2br",
+   "suburb": "Collingwood",
+   "localityNames": [
+    "Collingwood"
+   ],
+   "anchors": [
+    {
+     "id": "victoria-park",
+     "name": "Victoria Park",
+     "lng": 144.9906,
+     "lat": -37.7986
+    },
+    {
+     "id": "collingwood",
+     "name": "Collingwood",
+     "lng": 144.9878,
+     "lat": -37.8017
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Collingwood College"
+    ],
+    "publicSecondary": [
+     "Collingwood College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "inner-windsor-prahran-2br",
+   "suburb": "Windsor / Prahran",
+   "localityNames": [
+    "Windsor",
+    "Prahran"
+   ],
+   "anchors": [
+    {
+     "id": "windsor",
+     "name": "Windsor",
+     "lng": 144.9906,
+     "lat": -37.8558
+    },
+    {
+     "id": "prahran",
+     "name": "Prahran",
+     "lng": 144.9931,
+     "lat": -37.8517
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [
+     "Prahran High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "inner-abbotsford-2br",
+   "suburb": "Abbotsford",
+   "localityNames": [
+    "Abbotsford"
+   ],
+   "anchors": [
+    {
+     "id": "victoria-park-abb",
+     "name": "Victoria Park",
+     "lng": 144.9906,
+     "lat": -37.7986
+    },
+    {
+     "id": "collingwood-abb",
+     "name": "Collingwood",
+     "lng": 144.9878,
+     "lat": -37.8017
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Abbotsford PS"
+    ],
+    "publicSecondary": [
+     "Richmond High / Collingwood College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "sunshine-station-2br",
+   "suburb": "Sunshine",
+   "localityNames": [
+    "Sunshine"
+   ],
+   "anchors": [
+    {
+     "id": "sunshine",
+     "name": "Sunshine",
+     "lng": 144.8307,
+     "lat": -37.788
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Sunshine PS",
+     "Sunshine Heights PS"
+    ],
+    "publicSecondary": [
+     "Sunshine College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "footscray-station-2br",
+   "suburb": "Footscray",
+   "localityNames": [
+    "Footscray"
+   ],
+   "anchors": [
+    {
+     "id": "footscray",
+     "name": "Footscray",
+     "lng": 144.9006,
+     "lat": -37.8006
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Footscray PS",
+     "Footscray City PS"
+    ],
+    "publicSecondary": [
+     "Footscray High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "seddon-westfootscray-villa",
+   "suburb": "Seddon / West Footscray",
+   "localityNames": [
+    "Seddon",
+    "West Footscray"
+   ],
+   "anchors": [
+    {
+     "id": "seddon",
+     "name": "Seddon",
+     "lng": 144.8906,
+     "lat": -37.8079
+    },
+    {
+     "id": "west-footscray",
+     "name": "West Footscray",
+     "lng": 144.876,
+     "lat": -37.7997
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Kingsville PS",
+     "Footscray West PS"
+    ],
+    "publicSecondary": [
+     "Footscray High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "yarraville-2br",
+   "suburb": "Yarraville",
+   "localityNames": [
+    "Yarraville"
+   ],
+   "anchors": [
+    {
+     "id": "yarraville",
+     "name": "Yarraville",
+     "lng": 144.8899,
+     "lat": -37.8158
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Yarraville West PS"
+    ],
+    "publicSecondary": [
+     "Footscray High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "established-western-value",
+   "suburb": "St Albans",
+   "localityNames": [
+    "St Albans"
+   ],
+   "anchors": [
+    {
+     "id": "st-albans",
+     "name": "St Albans",
+     "lng": 144.7997,
+     "lat": -37.7445
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "St Albans PS",
+     "St Albans Heights PS"
+    ],
+    "publicSecondary": [
+     "St Albans Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "northwest-villa-corridor",
+   "suburb": "Pascoe Vale / Glenroy",
+   "localityNames": [
+    "Pascoe Vale",
+    "Glenroy"
+   ],
+   "anchors": [
+    {
+     "id": "pascoe-vale",
+     "name": "Pascoe Vale",
+     "lng": 144.937,
+     "lat": -37.7297
+    },
+    {
+     "id": "glenroy",
+     "name": "Glenroy",
+     "lng": 144.9163,
+     "lat": -37.7057
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Pascoe Vale PS"
+    ],
+    "publicSecondary": [
+     "Pascoe Vale Girls SC",
+     "Glenroy College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "upfield-corridor",
+   "suburb": "Brunswick / Coburg",
+   "localityNames": [
+    "Brunswick",
+    "Coburg"
+   ],
+   "anchors": [
+    {
+     "id": "brunswick",
+     "name": "Brunswick",
+     "lng": 144.9601,
+     "lat": -37.7686
+    },
+    {
+     "id": "jewell",
+     "name": "Jewell",
+     "lng": 144.9614,
+     "lat": -37.7746
+    },
+    {
+     "id": "coburg",
+     "name": "Coburg",
+     "lng": 144.9639,
+     "lat": -37.7439
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Brunswick North West PS",
+     "Coburg North PS"
+    ],
+    "publicSecondary": [
+     "Brunswick Secondary",
+     "Coburg High",
+     "Pascoe Vale Girls SC"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "northern-rail-value",
+   "suburb": "Reservoir",
+   "localityNames": [
+    "Reservoir"
+   ],
+   "anchors": [
+    {
+     "id": "reservoir",
+     "name": "Reservoir",
+     "lng": 145.006,
+     "lat": -37.7163
+    },
+    {
+     "id": "ruthven",
+     "name": "Ruthven",
+     "lng": 145.0096,
+     "lat": -37.702
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Reservoir PS",
+     "Reservoir Views PS"
+    ],
+    "publicSecondary": [
+     "Reservoir High",
+     "William Ruthven SC"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "inner-se-apartment-corridor",
+   "suburb": "Carnegie / Oakleigh",
+   "localityNames": [
+    "Carnegie",
+    "Murrumbeena",
+    "Oakleigh"
+   ],
+   "anchors": [
+    {
+     "id": "carnegie",
+     "name": "Carnegie",
+     "lng": 145.0558,
+     "lat": -37.8877
+    },
+    {
+     "id": "murrumbeena",
+     "name": "Murrumbeena",
+     "lng": 145.0672,
+     "lat": -37.8887
+    },
+    {
+     "id": "oakleigh",
+     "name": "Oakleigh",
+     "lng": 145.0888,
+     "lat": -37.9003
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Carnegie PS"
+    ],
+    "publicSecondary": [
+     "Glen Eira College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "se-value-corridor",
+   "suburb": "Springvale / Noble Park",
+   "localityNames": [
+    "Springvale",
+    "Noble Park",
+    "Clayton"
+   ],
+   "anchors": [
+    {
+     "id": "springvale",
+     "name": "Springvale",
+     "lng": 145.152,
+     "lat": -37.9483
+    },
+    {
+     "id": "noble-park",
+     "name": "Noble Park",
+     "lng": 145.1743,
+     "lat": -37.9662
+    },
+    {
+     "id": "clayton",
+     "name": "Clayton",
+     "lng": 145.1207,
+     "lat": -37.9243
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Springvale Rise PS"
+    ],
+    "publicSecondary": [
+     "Keysborough College",
+     "Noble Park SC"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "frankston-middle-ring",
+   "suburb": "Moorabbin / Cheltenham",
+   "localityNames": [
+    "Moorabbin",
+    "Highett",
+    "Cheltenham"
+   ],
+   "anchors": [
+    {
+     "id": "moorabbin",
+     "name": "Moorabbin",
+     "lng": 145.0397,
+     "lat": -37.9394
+    },
+    {
+     "id": "highett",
+     "name": "Highett",
+     "lng": 145.043,
+     "lat": -37.949
+    },
+    {
+     "id": "cheltenham",
+     "name": "Cheltenham",
+     "lng": 145.0533,
+     "lat": -37.9636
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Cheltenham PS"
+    ],
+    "publicSecondary": [
+     "Cheltenham Secondary"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "inner-lowcar-benchmark",
+   "suburb": "Kensington / Flemington",
+   "localityNames": [
+    "Kensington",
+    "Flemington"
+   ],
+   "anchors": [
+    {
+     "id": "kensington",
+     "name": "Kensington",
+     "lng": 144.9302,
+     "lat": -37.7943
+    },
+    {
+     "id": "newmarket",
+     "name": "Newmarket",
+     "lng": 144.927,
+     "lat": -37.7876
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Kensington PS"
+    ],
+    "publicSecondary": [
+     "Mount Alexander College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "ascot-vale-2br",
+   "suburb": "Ascot Vale",
+   "localityNames": [
+    "Ascot Vale"
+   ],
+   "anchors": [
+    {
+     "id": "ascot-vale",
+     "name": "Ascot Vale",
+     "lng": 144.9213,
+     "lat": -37.777
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "growth-corridor-stress-test",
+   "suburb": "Tarneit / Wyndham Vale",
+   "localityNames": [
+    "Tarneit",
+    "Wyndham Vale"
+   ],
+   "anchors": [
+    {
+     "id": "tarneit",
+     "name": "Tarneit",
+     "lng": 144.6946,
+     "lat": -37.8322
+    },
+    {
+     "id": "wyndham-vale",
+     "name": "Wyndham Vale",
+     "lng": 144.6227,
+     "lat": -37.8877
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Tarneit P-9 College"
+    ],
+    "publicSecondary": [
+     "Tarneit Senior College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "craigieburn-townhouse",
+   "suburb": "Craigieburn",
+   "localityNames": [
+    "Craigieburn"
+   ],
+   "anchors": [
+    {
+     "id": "craigieburn",
+     "name": "Craigieburn",
+     "lng": 144.9431,
+     "lat": -37.6023
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Craigieburn PS",
+     "Aitken Creek PS"
+    ],
+    "publicSecondary": [
+     "Craigieburn SC",
+     "Mount Ridley P-12"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "donnybrook-house-land",
+   "suburb": "Donnybrook",
+   "localityNames": [
+    "Donnybrook"
+   ],
+   "anchors": [
+    {
+     "id": "donnybrook",
+     "name": "Donnybrook",
+     "lng": 144.9701,
+     "lat": -37.542
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "new estate primaries opening in stages"
+    ],
+    "publicSecondary": [
+     "none established — buses toward Craigieburn/Mount Ridley"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "northcote-2br",
+   "suburb": "Northcote",
+   "localityNames": [
+    "Northcote"
+   ],
+   "anchors": [
+    {
+     "id": "northcote",
+     "name": "Northcote",
+     "lng": 144.9958,
+     "lat": -37.7699
+    },
+    {
+     "id": "merri",
+     "name": "Merri",
+     "lng": 144.9906,
+     "lat": -37.7757
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Westgarth PS",
+     "Northcote PS"
+    ],
+    "publicSecondary": [
+     "Northcote High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "thornbury-2br",
+   "suburb": "Thornbury",
+   "localityNames": [
+    "Thornbury"
+   ],
+   "anchors": [
+    {
+     "id": "thornbury",
+     "name": "Thornbury",
+     "lng": 144.9971,
+     "lat": -37.7614
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Thornbury PS",
+     "Wales Street PS"
+    ],
+    "publicSecondary": [
+     "Thornbury High",
+     "Northcote High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "preston-villa",
+   "suburb": "Preston",
+   "localityNames": [
+    "Preston"
+   ],
+   "anchors": [
+    {
+     "id": "preston",
+     "name": "Preston",
+     "lng": 145.0005,
+     "lat": -37.7385
+    },
+    {
+     "id": "bell",
+     "name": "Bell",
+     "lng": 144.9987,
+     "lat": -37.7472
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Preston PS",
+     "Bell PS"
+    ],
+    "publicSecondary": [
+     "Preston High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "box-hill-2br",
+   "suburb": "Box Hill",
+   "localityNames": [
+    "Box Hill"
+   ],
+   "anchors": [
+    {
+     "id": "box-hill",
+     "name": "Box Hill",
+     "lng": 145.1195,
+     "lat": -37.8193
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "zoned primaries vary street to street, check the exact address"
+    ],
+    "publicSecondary": [
+     "Box Hill High",
+     "Box Hill Senior Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "malvern-2br",
+   "suburb": "Malvern",
+   "localityNames": [
+    "Malvern"
+   ],
+   "anchors": [
+    {
+     "id": "malvern",
+     "name": "Malvern",
+     "lng": 145.0284,
+     "lat": -37.8663
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Malvern PS",
+     "Malvern Central School"
+    ],
+    "publicSecondary": [
+     "zoning splits toward Glen Eira College and Prahran High, check the address"
+    ],
+    "privateContext": [
+     "heavy nearby private sector"
+    ]
+   }
+  },
+  {
+   "id": "toorak-2br",
+   "suburb": "Toorak",
+   "localityNames": [
+    "Toorak"
+   ],
+   "anchors": [
+    {
+     "id": "toorak",
+     "name": "Toorak",
+     "lng": 145.0141,
+     "lat": -37.8506
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Toorak PS"
+    ],
+    "publicSecondary": [
+     "zoning toward Prahran High, check the address"
+    ],
+    "privateContext": [
+     "the highest private-school density in the city"
+    ]
+   }
+  },
+  {
+   "id": "kew-2br",
+   "suburb": "Kew",
+   "localityNames": [
+    "Kew"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [
+     "Kew PS"
+    ],
+    "publicSecondary": [
+     "Kew High"
+    ],
+    "privateContext": [
+     "dense private sector"
+    ]
+   }
+  },
+  {
+   "id": "balwyn-2br",
+   "suburb": "Balwyn",
+   "localityNames": [
+    "Balwyn"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [
+     "Balwyn PS"
+    ],
+    "publicSecondary": [
+     "Balwyn High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "albert-park-2br",
+   "suburb": "Albert Park",
+   "localityNames": [
+    "Albert Park"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [
+     "Albert Park PS",
+     "Middle Park PS"
+    ],
+    "publicSecondary": [
+     "Albert Park College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "st-kilda-2br",
+   "suburb": "St Kilda",
+   "localityNames": [
+    "St Kilda"
+   ],
+   "anchors": [
+    {
+     "id": "st-kilda-96",
+     "name": "St Kilda (route 96 light rail)",
+     "lng": 144.9718,
+     "lat": -37.8593
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "St Kilda PS",
+     "St Kilda Park PS"
+    ],
+    "publicSecondary": [
+     "Albert Park College",
+     "Elwood College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "balaclava-2br",
+   "suburb": "Balaclava",
+   "localityNames": [
+    "Balaclava"
+   ],
+   "anchors": [
+    {
+     "id": "balaclava",
+     "name": "Balaclava",
+     "lng": 144.993,
+     "lat": -37.8693
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "St Kilda PS"
+    ],
+    "publicSecondary": [
+     "Elwood College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "elwood-2br",
+   "suburb": "Elwood",
+   "localityNames": [
+    "Elwood"
+   ],
+   "anchors": [
+    {
+     "id": "balaclava-elwood",
+     "name": "Balaclava",
+     "lng": 144.993,
+     "lat": -37.8693
+    },
+    {
+     "id": "elsternwick-elwood",
+     "name": "Elsternwick",
+     "lng": 145.0037,
+     "lat": -37.8853
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Elwood PS"
+    ],
+    "publicSecondary": [
+     "Elwood College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "cremorne-2br",
+   "suburb": "Cremorne",
+   "localityNames": [
+    "Cremorne"
+   ],
+   "anchors": [
+    {
+     "id": "richmond-cremorne",
+     "name": "Richmond",
+     "lng": 144.9895,
+     "lat": -37.8231
+    },
+    {
+     "id": "east-richmond-cremorne",
+     "name": "East Richmond",
+     "lng": 144.9931,
+     "lat": -37.8266
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Richmond PS"
+    ],
+    "publicSecondary": [
+     "Richmond High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "chelsea-2br",
+   "suburb": "Chelsea",
+   "localityNames": [
+    "Chelsea"
+   ],
+   "anchors": [
+    {
+     "id": "chelsea",
+     "name": "Chelsea",
+     "lng": 145.1168,
+     "lat": -38.0512
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Chelsea PS"
+    ],
+    "publicSecondary": [
+     "Patterson River Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "bonbeach-2br",
+   "suburb": "Bonbeach",
+   "localityNames": [
+    "Bonbeach"
+   ],
+   "anchors": [
+    {
+     "id": "bonbeach",
+     "name": "Bonbeach",
+     "lng": 145.1207,
+     "lat": -38.0624
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Bonbeach PS"
+    ],
+    "publicSecondary": [
+     "Patterson River Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "north-melbourne-2br",
+   "suburb": "North Melbourne",
+   "localityNames": [
+    "North Melbourne"
+   ],
+   "anchors": [
+    {
+     "id": "north-melbourne",
+     "name": "North Melbourne",
+     "lng": 144.9426,
+     "lat": -37.8071
+    },
+    {
+     "id": "arden",
+     "name": "Arden (Metro Tunnel)",
+     "lng": 144.9421,
+     "lat": -37.7998
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "North Melbourne PS"
+    ],
+    "publicSecondary": [
+     "University High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "sunbury-house",
+   "suburb": "Sunbury",
+   "localityNames": [
+    "Sunbury"
+   ],
+   "anchors": [
+    {
+     "id": "sunbury",
+     "name": "Sunbury",
+     "lng": 144.7274,
+     "lat": -37.5793
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Sunbury PS",
+     "Sunbury Heights PS"
+    ],
+    "publicSecondary": [
+     "Sunbury College",
+     "Sunbury Downs College"
+    ],
+    "privateContext": [
+     "Salesian College Sunbury"
+    ]
+   }
+  },
+  {
+   "id": "spotswood-2br",
+   "suburb": "Spotswood",
+   "localityNames": [
+    "Spotswood"
+   ],
+   "anchors": [
+    {
+     "id": "spotswood",
+     "name": "Spotswood",
+     "lng": 144.8859,
+     "lat": -37.8307
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Spotswood PS"
+    ],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "south-melbourne-2br",
+   "suburb": "South Melbourne",
+   "localityNames": [
+    "South Melbourne"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [
+     "South Melbourne Park PS"
+    ],
+    "publicSecondary": [
+     "Albert Park College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "armadale-2br",
+   "suburb": "Armadale",
+   "localityNames": [
+    "Armadale"
+   ],
+   "anchors": [
+    {
+     "id": "armadale",
+     "name": "Armadale",
+     "lng": 145.0206,
+     "lat": -37.8557
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Armadale PS"
+    ],
+    "publicSecondary": [
+     "Prahran High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "burnley-2br",
+   "suburb": "Burnley",
+   "localityNames": [
+    "Burnley"
+   ],
+   "anchors": [
+    {
+     "id": "burnley",
+     "name": "Burnley",
+     "lng": 145.0079,
+     "lat": -37.8276
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [
+     "Melbourne Girls' College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "hawthorn-2br",
+   "suburb": "Hawthorn",
+   "localityNames": [
+    "Hawthorn"
+   ],
+   "anchors": [
+    {
+     "id": "hawthorn",
+     "name": "Hawthorn",
+     "lng": 145.0233,
+     "lat": -37.8217
+    },
+    {
+     "id": "glenferrie-hawthorn",
+     "name": "Glenferrie",
+     "lng": 145.0353,
+     "lat": -37.8219
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Glenferrie PS",
+     "Hawthorn West PS"
+    ],
+    "publicSecondary": [
+     "Auburn High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "mckinnon-villa",
+   "suburb": "McKinnon",
+   "localityNames": [
+    "McKinnon"
+   ],
+   "anchors": [
+    {
+     "id": "mckinnon",
+     "name": "McKinnon",
+     "lng": 145.0381,
+     "lat": -37.9115
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "McKinnon PS"
+    ],
+    "publicSecondary": [
+     "McKinnon SC"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "glen-waverley-2br",
+   "suburb": "Glen Waverley",
+   "localityNames": [
+    "Glen Waverley"
+   ],
+   "anchors": [
+    {
+     "id": "glen-waverley",
+     "name": "Glen Waverley",
+     "lng": 145.1629,
+     "lat": -37.8797
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Glendal PS",
+     "Glen Waverley PS"
+    ],
+    "publicSecondary": [
+     "Glen Waverley SC"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "balwyn-north-2br",
+   "suburb": "Balwyn North",
+   "localityNames": [
+    "Balwyn North"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [
+     "Balwyn North PS",
+     "Greythorn PS"
+    ],
+    "publicSecondary": [
+     "Balwyn High"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "middle-park-2br",
+   "suburb": "Middle Park",
+   "localityNames": [
+    "Middle Park"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [
+     "Middle Park PS"
+    ],
+    "publicSecondary": [
+     "Albert Park College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "mentone-2br",
+   "suburb": "Mentone",
+   "localityNames": [
+    "Mentone"
+   ],
+   "anchors": [
+    {
+     "id": "mentone",
+     "name": "Mentone",
+     "lng": 145.0663,
+     "lat": -37.9836
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Mentone Park PS"
+    ],
+    "publicSecondary": [
+     "Mentone Girls' Secondary"
+    ],
+    "privateContext": [
+     "Dense private-school cluster shapes the suburb"
+    ]
+   }
+  },
+  {
+   "id": "clifton-hill-2br",
+   "suburb": "Clifton Hill",
+   "localityNames": [
+    "Clifton Hill"
+   ],
+   "anchors": [
+    {
+     "id": "clifton-hill",
+     "name": "Clifton Hill",
+     "lng": 144.9953,
+     "lat": -37.7885
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Clifton Hill PS",
+     "Spensley Street PS"
+    ],
+    "publicSecondary": [
+     "Fitzroy High",
+     "Collingwood College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "doncaster-villa",
+   "suburb": "Doncaster",
+   "localityNames": [
+    "Doncaster"
+   ],
+   "anchors": [
+    {
+     "id": "doncaster-park-ride",
+     "name": "Doncaster Park & Ride (DART)",
+     "lng": 145.1039,
+     "lat": -37.7916
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Doncaster PS",
+     "Birralee PS"
+    ],
+    "publicSecondary": [
+     "Doncaster Secondary College",
+     "East Doncaster SC"
+    ],
+    "privateContext": []
+   }
+  }
+ ]
+}
