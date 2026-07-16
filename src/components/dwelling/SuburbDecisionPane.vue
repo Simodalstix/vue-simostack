@@ -20,7 +20,7 @@
       </button>
     </div>
 
-    <div class="flex flex-col min-h-0">
+    <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
       <button
         v-if="previewRow"
         @click="togglePin(previewRow.rec.id)"
@@ -73,7 +73,7 @@
         </div>
       </button>
 
-      <ul class="overflow-y-auto min-h-0" role="listbox" aria-label="Ranked suburbs">
+      <ul class="min-h-0 flex-1 overflow-y-auto" role="listbox" aria-label="Ranked suburbs">
         <li v-for="row in scoredRows" :key="row.rec.id">
           <button
             @click="togglePin(row.rec.id)"
