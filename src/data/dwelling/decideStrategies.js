@@ -15,7 +15,7 @@
 
 // ---- criteria -------------------------------------------------------------
 //
-// Six criteria, each scored 0-10 per suburb, derived from the existing
+// Seven criteria, each scored 0-10 per suburb, derived from the existing
 // record data (nothing new is fabricated here). `value(rec, commuteScore)`
 // returns 0-10 or null when the record carries no data for it; a null is
 // left out of both sides of the weighted mean rather than scored as zero.

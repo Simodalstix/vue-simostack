@@ -24,9 +24,7 @@ import { localityFeatures } from './localityFeatures.js'
 
 // Stable record ordering -> integer feature-state id. Only records that have BOTH
 // a ranking entry and a geo entry get a slot.
-export const AREA_INDEX = areaCorridors
-  .filter((rec) => rec.scored !== false && areaGeo[rec.id])
-  .map((rec) => rec.id)
+export const AREA_INDEX = areaCorridors.filter((rec) => areaGeo[rec.id]).map((rec) => rec.id)
 
 export const areaIndexById = Object.fromEntries(AREA_INDEX.map((id, i) => [id, i]))
 
@@ -59,6 +57,7 @@ function buildFeatures() {
       areaId,
       suburb: rec.suburb,
       region: rec.region,
+      unscored: rec.scored === false,
     }
 
     for (const sp of geo.stationPoints) {

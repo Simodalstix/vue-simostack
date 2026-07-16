@@ -24,6 +24,7 @@
             <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
               <p class="text-[21px] font-bold leading-tight text-ob-text">{{ row.rec.suburb }}</p>
               <span
+                v-if="!unscored"
                 class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
                 :style="{ backgroundColor: bandBadgeFill(row), color: bandColor(row) }"
               >
@@ -31,6 +32,7 @@
                 <span class="text-[9px] uppercase tracking-[0.08em]">{{ bandLabel(row) }}</span>
               </span>
               <button
+                v-if="!unscored"
                 @click.stop="$emit('toggle-shortlist', row.rec.id)"
                 class="font-mono text-[10px] px-2 py-[3px] rounded-full border transition-colors"
                 :class="
@@ -111,8 +113,13 @@
               </p>
             </div>
           </div>
+          <div v-if="unscored" class="border-l-2 border-ob-sand/55 bg-ob-sand/5 px-2.5 py-1.5">
+            <p class="font-mono text-[10.5px] leading-snug text-ob-sand">
+              {{ UNSCORED_BANNER }}
+            </p>
+          </div>
           <div
-            v-if="strategy"
+            v-else-if="strategy"
             class="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-l-2 border-ob-teal/30 pl-2.5"
           >
             <p class="font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint">
@@ -341,6 +348,7 @@ import { personalNetworkByAreaId } from '@/data/dwelling/personalNetwork.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
 import { schoolContextByAreaId } from '@/data/dwelling/schools/dwelling-school-context.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
+import { UNSCORED_BANNER, fitLineForRow, isUnscoredRow } from '@/data/dwelling/unscoredUx.js'
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
 import CommunityContextSection from './CommunityContextSection.vue'
@@ -384,6 +392,7 @@ const headerMetrics = computed(() => [
   { label: 'Collins St commute', value: commuteLabel(props.row), tone: bandClass(props.row.band) },
   { label: 'Owners-corp', value: ocLabel(props.row.rec), tone: 'text-ob-muted2' },
 ])
+const unscored = computed(() => isUnscoredRow(props.row))
 const suburbProfile = computed(() => suburbProfileFor(props.row.rec.id))
 const girlsSport = computed(() => girlsSportFor(props.row.rec.id))
 const girlsSportPathways = computed(() =>
@@ -481,8 +490,9 @@ function ocLabel(rec) {
     : 'n/a'
 }
 function commuteLabel(row) {
-  if (!row.commute) return 'n/a'
-  return `${row.commute.typical}m typical · ${row.commute.stressed}m stressed`
+  const commute = row.commute || row.rec.commute
+  if (!commute) return 'n/a'
+  return `${commute.typical}m typical · ${commute.stressed}m stressed`
 }
 const DWELLING_LABEL = {
   'older-apartment': 'older apartment',
@@ -517,10 +527,7 @@ function fitClass(row) {
   return { ok: 'text-ob-teal', conditional: 'text-ob-muted', reject: 'text-ob-sand' }[row.status]
 }
 function fitLine(row) {
-  const label = props.strategy ? `under ${props.strategy.label}` : 'under current settings'
-  if (row.status === 'ok') return `✓ viable ${label}`
-  if (row.status === 'conditional') return `~ conditional ${label}: ${row.reasons[0] || ''}`
-  return `✕ fails ${label}: ${row.reasons[0] || ''}`
+  return fitLineForRow(row, props.strategy?.label)
 }
 </script>
 

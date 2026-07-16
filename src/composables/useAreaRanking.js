@@ -8,7 +8,7 @@
 //      (dwelling types, minimum bedrooms, price cap) tag a record
 //      reject | conditional | ok. A cheap area must NOT out-rank a workable
 //      one on price alone, so gates precede scoring.
-//   2. WEIGHTED SCORE over the six Decide criteria (decideStrategies.js):
+//   2. WEIGHTED SCORE over the seven Decide criteria (decideStrategies.js):
 //      score = sum(w * s) / sum(w) over ENABLED criteria only, normalised to
 //      0-100. Criteria the record has no data for are left out of both sides
 //      of the mean (never scored as zero), and if every enabled criterion has

@@ -26,6 +26,8 @@ export const MAP_THEME = {
   shortlist: '#D4903A',
   hover: '#4FCBB3',
   outline: '#3A434B',
+  unscoredFill: '#2A3138',
+  unscoredOutline: '#D4903A',
   reject: '#D4903A',
   purple: '#9B82E5',
   gold: '#E5C35A',
@@ -39,6 +41,7 @@ export { getFitBand }
 // verified ones; strategy-gated suburbs stay slightly lighter so the map still
 // reads while the hue remains aligned with the shared fit band.
 export function fillOpacityFor(rec, status) {
+  if (status === 'unscored') return 0.08
   const base = rec.placeholder ? 0.16 : 0.3
   if (status === 'reject') return base * 0.78
   if (status === 'conditional') return base * 0.88
@@ -57,12 +60,14 @@ export function computeAreaState(rows, indexById) {
   for (const row of rows) {
     const areaId = row.rec.id
     const fid = indexById[areaId]
-    if (fid == null || row.status === 'unscored') continue
+    if (fid == null) continue
+    const unscored = row.status === 'unscored'
     state[areaId] = {
       fid,
-      color: colorForRow(row),
+      color: unscored ? MAP_THEME.unscoredFill : colorForRow(row),
       fillOpacity: fillOpacityFor(row.rec, row.status),
       status: row.status,
+      unscored,
     }
   }
   return state

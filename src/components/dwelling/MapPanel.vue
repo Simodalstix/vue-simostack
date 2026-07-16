@@ -253,7 +253,7 @@ const rankById = computed(() => {
   return map
 })
 
-const areaState = computed(() => computeAreaState(scoredRows.value, props.indexById))
+const areaState = computed(() => computeAreaState(props.rows, props.indexById))
 
 const rowById = computed(() => {
   const m = {}
@@ -305,13 +305,18 @@ function popupHtml(payload) {
     .join('<br>')
   const row = rowById.value[areaId]
   if (!row) return linesHtml || null
-  const b = getFitBand(row.weighted)
   const heading = localityName || row.rec.suburb
   const shared =
     isGroupedArea(areaId) && localityName
       ? `<span style="color:#94A4B2; font-size:11px">Shared assumptions: ${esc(coverageLabelForArea(areaId))}</span><br>`
       : ''
-  const base = `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${fitBandColor(b)}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
+  const base =
+    row.status === 'unscored'
+      ? `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${theme.unscoredOutline}">unscored</span>`
+      : (() => {
+          const b = getFitBand(row.weighted)
+          return `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${fitBandColor(b)}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
+        })()
   return linesHtml ? `${base}<br>${linesHtml}` : base
 }
 function esc(s) {

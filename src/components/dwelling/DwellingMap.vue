@@ -157,6 +157,8 @@ function outlineColor() {
     T.shortlist,
     ['boolean', ['feature-state', 'hovered'], false],
     T.hover,
+    ['boolean', ['feature-state', 'unscored'], false],
+    T.unscoredOutline,
     T.outline,
   ]
 }
@@ -310,6 +312,8 @@ function addLayers() {
         'fill-color': ['coalesce', ['feature-state', 'color'], '#1A2229'],
         'fill-opacity': [
           'case',
+          ['boolean', ['feature-state', 'unscored'], false],
+          0.08,
           ['boolean', ['feature-state', 'hovered'], false],
           ['+', ['coalesce', ['feature-state', 'fillOpacity'], 0.05], 0.16],
           ['boolean', ['feature-state', 'selected'], false],
@@ -327,7 +331,14 @@ function addLayers() {
       type: 'line',
       source: LOCALITY_SRC,
       paint: {
-        'line-color': ['case', ['boolean', ['get', 'assessed'], false], '#5F6F7B', '#3E4851'],
+        'line-color': [
+          'case',
+          ['boolean', ['feature-state', 'unscored'], false],
+          T.unscoredOutline,
+          ['boolean', ['get', 'assessed'], false],
+          '#5F6F7B',
+          '#3E4851',
+        ],
         'line-width': ['case', ['boolean', ['get', 'assessed'], false], 0.9, 0.7],
         'line-opacity': ['case', ['boolean', ['get', 'assessed'], false], 0.48, 0.3],
       },
@@ -445,6 +456,8 @@ function addLayers() {
         'case',
         ['boolean', ['feature-state', 'selected'], false],
         T.selected,
+        ['boolean', ['feature-state', 'unscored'], false],
+        T.unscoredOutline,
         T.markerDim,
       ],
       'circle-opacity': ['case', ['boolean', ['feature-state', 'selected'], false], 1, 0.8],
@@ -499,6 +512,8 @@ function addLayers() {
           '#C6D2D9',
           ['boolean', ['feature-state', 'selected'], false],
           '#E6EBEF',
+          ['boolean', ['feature-state', 'unscored'], false],
+          T.unscoredOutline,
           ['boolean', ['get', 'assessed'], false],
           '#8A98A4',
           '#66737E',
@@ -588,8 +603,9 @@ function applyAllState() {
       color: st.color,
       fillOpacity: st.fillOpacity,
       status: st.status,
+      unscored: st.unscored,
       selected: areaId === selected,
-      shortlisted: shortSet.has(areaId),
+      shortlisted: !st.unscored && shortSet.has(areaId),
     }
     for (const src of [CATCH_SRC, POINT_SRC])
       map.setFeatureState({ source: src, id: st.fid }, state)
@@ -616,8 +632,11 @@ function applyLocalityState(
         color: st?.color ?? null,
         fillOpacity: st?.fillOpacity ?? null,
         status: st?.status ?? null,
+        unscored: st?.unscored ?? false,
         selected: selected != null && areaIds.includes(selected),
-        shortlisted: areaIds.some((areaId) => shortSet.has(areaId)),
+        shortlisted: areaIds.some(
+          (areaId) => !props.areaState[areaId]?.unscored && shortSet.has(areaId),
+        ),
         hovered: feature.id === hoveredLocalityId,
       },
     )

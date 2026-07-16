@@ -34,6 +34,7 @@
             </p>
           </div>
           <span
+            v-if="!isUnscoredRow(previewRow)"
             class="shrink-0 inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
             :style="scoreBadgeStyle(previewRow)"
             :title="bandLabel(previewRow)"
@@ -47,6 +48,12 @@
               :style="{ color: bandColor(previewRow) }"
               >{{ previewRow.weighted }}</span
             >
+          </span>
+          <span
+            v-else
+            class="shrink-0 rounded-full border border-ob-sand/30 bg-ob-sand/8 px-2 py-[3px] font-mono text-[11px] uppercase tracking-[0.06em] text-ob-sand"
+          >
+            unscored
           </span>
         </div>
 
@@ -129,6 +136,28 @@
         </li>
       </ul>
 
+      <details v-if="unscoredRows.length" class="shrink-0 border-t border-ob-sand/10">
+        <summary
+          class="cursor-pointer select-none px-4 py-2 font-mono text-[10.5px] uppercase tracking-[0.06em] text-ob-sand"
+        >
+          Unscored · pending evidence ({{ unscoredRows.length }})
+        </summary>
+        <div class="max-h-32 overflow-y-auto border-t border-ob-sand/6">
+          <div
+            v-for="row in unscoredRows"
+            :key="row.rec.id"
+            class="flex items-baseline gap-2 border-b border-ob-sand/6 px-4 py-2 last:border-b-0"
+          >
+            <span class="min-w-0 flex-1 truncate text-[12px] font-semibold text-ob-muted2">
+              {{ row.rec.suburb }}
+            </span>
+            <span class="shrink-0 font-mono text-[9.5px] text-ob-faint">
+              {{ row.rec.region }}
+            </span>
+          </div>
+        </div>
+      </details>
+
       <p
         class="px-4 py-2 font-mono text-[10px] leading-relaxed text-ob-faint border-t border-ob-sand/8 shrink-0"
       >
@@ -144,6 +173,7 @@ import { computed } from 'vue'
 import { fitBandBadgeFill, fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
 import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
+import { isUnscoredRow, partitionDecisionRows } from '@/data/dwelling/unscoredUx.js'
 
 const props = defineProps({
   rows: { type: Array, required: true },
@@ -158,7 +188,9 @@ defineEmits(['toggle-shortlist'])
 
 const modelValue = defineModel({ default: null })
 
-const scoredRows = computed(() => props.rows.filter((row) => row.status !== 'unscored'))
+const rowGroups = computed(() => partitionDecisionRows(props.rows))
+const scoredRows = computed(() => rowGroups.value.ranked)
+const unscoredRows = computed(() => rowGroups.value.unscored)
 
 const rankById = computed(() => {
   const map = {}
@@ -221,7 +253,8 @@ function priceBand(rec) {
 }
 
 function commuteShort(row) {
-  return row.commute ? `${row.commute.typical}-${row.commute.stressed}m` : 'n/a'
+  const commute = row.commute || row.rec.commute
+  return commute ? `${commute.typical}-${commute.stressed}m` : 'n/a'
 }
 
 function previewTagline(row) {
@@ -270,16 +303,18 @@ function previewBadges(row) {
       className: 'border-ob-gold-muted/35 text-ob-gold bg-ob-gold-dark/40',
     })
   }
-  badges.push({
-    key: 'fit',
-    text: fitBadgeText(row),
-    className:
-      row.status === 'ok'
-        ? 'border-ob-teal/35 text-ob-teal bg-ob-teal/10'
-        : row.status === 'conditional'
-          ? 'border-ob-sand/25 text-ob-sand bg-ob-sand/8'
-          : 'border-ob-sand/18 text-ob-muted bg-ob-surface/75',
-  })
+  if (!isUnscoredRow(row)) {
+    badges.push({
+      key: 'fit',
+      text: fitBadgeText(row),
+      className:
+        row.status === 'ok'
+          ? 'border-ob-teal/35 text-ob-teal bg-ob-teal/10'
+          : row.status === 'conditional'
+            ? 'border-ob-sand/25 text-ob-sand bg-ob-sand/8'
+            : 'border-ob-sand/18 text-ob-muted bg-ob-surface/75',
+    })
+  }
   return badges.slice(0, 2)
 }
 </script>
