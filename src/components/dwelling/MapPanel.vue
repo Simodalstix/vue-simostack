@@ -157,7 +157,8 @@
         <p>Suburb fill = weighted fit score · provisional until verified</p>
         <p v-if="schoolZones">
           School zones: official {{ schoolZones.zoneYear }} enrolment zones · verify any address at
-          findmyschool.vic.gov.au · not for property purchase reliance
+          findmyschool.vic.gov.au · solid = zoned at station · dashed = zone overlaps catchment ·
+          not for property purchase reliance
         </p>
       </div>
     </div>

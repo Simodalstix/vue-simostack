@@ -228,20 +228,24 @@
                   Schools
                 </p>
                 <div v-if="zonedSchools" class="space-y-0.5">
-                  <p
-                    v-for="school in zonedSchoolRows"
-                    :key="school.label"
-                    class="text-[10.5px] leading-snug text-ob-muted2"
-                  >
-                    <span class="font-mono text-[9.5px] text-ob-faint">{{ school.label }}:</span>
-                    {{ school.name }}
-                    <span
-                      v-if="school.strength != null"
-                      class="ml-1 whitespace-nowrap rounded-full bg-ob-purple/12 px-1.5 py-[1px] font-mono text-[9px] text-ob-purple"
+                  <div v-for="school in zonedSchoolRows" :key="school.label">
+                    <p class="text-[10.5px] leading-snug text-ob-muted2">
+                      <span class="font-mono text-[9.5px] text-ob-faint">{{ school.label }}:</span>
+                      {{ school.name }}
+                      <span
+                        v-if="school.strength != null"
+                        class="ml-1 whitespace-nowrap rounded-full bg-ob-purple/12 px-1.5 py-[1px] font-mono text-[9px] text-ob-purple"
+                      >
+                        {{ school.strength }}/5
+                      </span>
+                    </p>
+                    <p
+                      v-if="school.alsoInCatchment.length"
+                      class="font-mono text-[9px] leading-snug text-ob-faint"
                     >
-                      {{ school.strength }}/5
-                    </span>
-                  </p>
+                      Also in catchment: {{ school.alsoInCatchment.join(', ') }}
+                    </p>
+                  </div>
                   <p
                     v-if="zonedSchools.boundaryFlag"
                     class="text-[9.5px] leading-snug text-ob-sand"
@@ -335,6 +339,7 @@ import { GIRLS_SPORT_CLUBS, girlsSportFor } from '@/data/dwelling/girlsSport.js'
 import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
 import { personalNetworkByAreaId } from '@/data/dwelling/personalNetwork.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
+import { schoolContextByAreaId } from '@/data/dwelling/schools/dwelling-school-context.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
@@ -397,6 +402,7 @@ const teenIndependenceDots = computed(() => {
   return `${'●'.repeat(rounded)}${'○'.repeat(5 - rounded)}`
 })
 const zonedSchools = computed(() => zonedSchoolEvidenceForArea(props.row.rec.id))
+const schoolCatchmentContext = computed(() => schoolContextByAreaId[props.row.rec.id] || {})
 const zonedSchoolRows = computed(() => {
   if (!zonedSchools.value) return []
   return [
@@ -404,11 +410,13 @@ const zonedSchoolRows = computed(() => {
       label: 'Zoned primary',
       name: zonedSchools.value.primary.name,
       strength: zonedSchools.value.primary.evidence?.strength,
+      alsoInCatchment: schoolCatchmentContext.value.alsoInCatchmentPrimary || [],
     },
     {
       label: 'Zoned secondary',
       name: zonedSchools.value.secondary.name,
       strength: zonedSchools.value.secondary.evidence?.strength,
+      alsoInCatchment: schoolCatchmentContext.value.alsoInCatchmentSecondary || [],
     },
   ]
 })

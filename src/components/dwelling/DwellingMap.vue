@@ -183,14 +183,16 @@ function schoolFacilityFilter(showAll) {
   return ['in', contextAreaId, ['get', 'areaIds']]
 }
 
-function schoolZoneFilter() {
+function schoolZoneFilter(role) {
   const contextAreaId = props.hoveredAreaId || props.selectedAreaId
   if (!contextAreaId) return NEVER_MATCH
-  return [
+  const base = [
     'all',
     ['in', contextAreaId, ['get', 'areaIds']],
     ['==', ['get', 'category'], props.activeZoneCategory],
   ]
+  const anchorMatch = ['in', contextAreaId, ['get', 'anchorZonedFor']]
+  return role === 'anchor' ? [...base, anchorMatch] : [...base, ['!', anchorMatch]]
 }
 
 function schoolZoneFeatures() {
@@ -205,6 +207,7 @@ function schoolZoneFeatures() {
         name: zone.name,
         category: zone.category,
         areaIds: zone.areaIds,
+        anchorZonedFor: zone.anchorZonedFor,
       },
       geometry: zone.geometry,
     })),
@@ -223,6 +226,21 @@ function syncSchoolZoneLayers() {
 
   map.addSource(SCHOOL_ZONE_SRC, { type: 'geojson', data })
   const beforeId = map.getLayer('locality-boundary') ? 'locality-boundary' : undefined
+  map.addLayer(
+    {
+      id: 'zone-catchment-outline',
+      type: 'line',
+      source: SCHOOL_ZONE_SRC,
+      filter: NEVER_MATCH,
+      paint: {
+        'line-color': T.purple,
+        'line-width': 1.4,
+        'line-opacity': 0.5,
+        'line-dasharray': [2, 2],
+      },
+    },
+    beforeId,
+  )
   map.addLayer(
     {
       id: 'zone-fill',
@@ -634,8 +652,9 @@ function applyContextFilters() {
     map.setFilter('facility-ring', schoolFacilityFilter(props.showAllFacilities))
   }
   if (map.getLayer('zone-fill')) {
-    const filter = schoolZoneFilter()
-    for (const id of ['zone-fill', 'zone-outline']) map.setFilter(id, filter)
+    const anchorFilter = schoolZoneFilter('anchor')
+    for (const id of ['zone-fill', 'zone-outline']) map.setFilter(id, anchorFilter)
+    map.setFilter('zone-catchment-outline', schoolZoneFilter('catchment'))
   }
 }
 

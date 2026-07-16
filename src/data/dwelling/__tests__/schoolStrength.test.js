@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 
 import { schoolPoints } from '../schools/dwelling-school-points.js'
+import { schoolContextByAreaId } from '../schools/dwelling-school-context.js'
 import { schoolStrengthByName, schoolStrengthBySchoolNo } from '../schools/schoolStrength.js'
 
 const pointSchoolNos = new Set(
@@ -30,5 +31,21 @@ describe('school strength research table', () => {
           (Number.isInteger(entry.strength) && entry.strength >= 1 && entry.strength <= 5),
       ).toBe(true)
     }
+  })
+})
+
+describe('catchment zone roles', () => {
+  it('keeps anchor-zoned schools separate from zones that only overlap the catchment', () => {
+    const southYarra = schoolContextByAreaId['inner-south-yarra-2br']
+    expect(southYarra.zonedPrimary).toBe('Toorak Primary School')
+    expect(southYarra.alsoInCatchmentPrimary).toEqual([
+      'Richmond Primary School',
+      'South Yarra Primary School',
+      'Windsor Primary School',
+    ])
+
+    const balwynNorth = schoolContextByAreaId['balwyn-north-2br']
+    expect(balwynNorth.zonedSecondary).toBe('Balwyn High School')
+    expect(balwynNorth.alsoInCatchmentSecondary).toEqual([])
   })
 })
