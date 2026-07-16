@@ -1,0 +1,2010 @@
+{
+  "secondary": [
+    {
+      "name": "Albert Park College",
+      "schoolNo": "8889",
+      "vceMedianStudyScore": 30,
+      "vcePct40Plus": 7,
+      "yearRange": "7-12, multi-campus",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "Separate Year 9, senior liberal-arts, visual-arts and Gatehouse sites; offers VCE, VCE VM, VET and the International Baccalaureate; designated neighbourhood enrolment boundary.",
+      "strength": 4,
+      "evidenceNote": "The 2025 VCAA-derived result was a median study score of 30 with 7.0% of scores at 40+; the school report also recorded 25% of students with an ATAR above 90 and an IB median of 38/45, supporting a strong rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8889&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/albert-park/albert-park-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Auburn High School",
+      "schoolNo": "7526",
+      "vceMedianStudyScore": 31,
+      "vcePct40Plus": 10.6,
+      "yearRange": "7-12",
+      "enrolmentTrend": "stable",
+      "structuralNotes": "Offers the International Baccalaureate, French Binational and French Partial Immersion programs.",
+      "strength": 4,
+      "evidenceNote": "The median study score was 31 in every year from 2022 to 2025 and 10.6% of 2025 scores were 40+, supporting a strong and stable rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7526&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/hawthorn-east/auburn-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Baden Powell P-9 College",
+      "schoolNo": "5315",
+      "vceMedianStudyScore": null,
+      "vcePct40Plus": null,
+      "yearRange": "P-9",
+      "enrolmentTrend": null,
+      "structuralNotes": "P-9 school with no VCE cohort; no secondary-completion outcome rating is assigned.",
+      "strength": null,
+      "evidenceNote": "The school ends at Year 9 and has no VCE cohort, so there is insufficient senior-secondary evidence for a strength rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5315&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Balwyn High School",
+      "schoolNo": "7550",
+      "vceMedianStudyScore": 33,
+      "vcePct40Plus": 19.2,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": "Offers Select Entry Accelerated Learning and early-entry VCE pathways; major campus redevelopment planning continued in 2025.",
+      "strength": 5,
+      "evidenceNote": "The 2025 median was 33 with 19.2% of study scores at 40+, following medians of 32 in 2022-2024, supporting a top-tier rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7550&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/balwyn-north/balwyn-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Box Hill High School",
+      "schoolNo": "7635",
+      "vceMedianStudyScore": 32,
+      "vcePct40Plus": 11.7,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": "Accredited to deliver a Select Entry Accelerated Learning program.",
+      "strength": 4,
+      "evidenceNote": "The 2025 median was 32 with 11.7% of scores at 40+, and medians were 30-32 across 2022-2025, supporting a strong rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7635&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/box-hill/box-hill-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Brunswick Secondary College",
+      "schoolNo": "8807",
+      "vceMedianStudyScore": 30,
+      "vcePct40Plus": 8.5,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 30 with 8.5% of scores at 40+, broadly consistent with 2022-2024 and supporting a solid middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8807&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/brunswick/brunswick-secondary-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Collingwood College",
+      "schoolNo": "6212",
+      "vceMedianStudyScore": 28,
+      "vcePct40Plus": 2.6,
+      "yearRange": "P-12, with a separate alternative-school campus",
+      "enrolmentTrend": null,
+      "structuralNotes": "P-12 college with mainstream, IB Middle Years and P-9 Steiner streams; senior provision is linked to the shared Wurun Senior Campus with Fitzroy High; the VRQA endpoint served a 2023 report.",
+      "strength": 2,
+      "evidenceNote": "The 2025 median was 28 with 2.6% of scores at 40+, following medians of 26-28 since 2023, supporting a below-average rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=6212&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/fitzroy-north/collingwood-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Craigieburn Secondary College",
+      "schoolNo": "8705",
+      "vceMedianStudyScore": 22,
+      "vcePct40Plus": 0.8,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 1,
+      "evidenceNote": "Medians remained 21-22 from 2022 to 2025 and only 0.8% of 2025 study scores were 40+, supporting the lowest rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8705&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/craigieburn/craigieburn-secondary-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Elwood College",
+      "schoolNo": "7810",
+      "vceMedianStudyScore": 29,
+      "vcePct40Plus": 3.5,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 29 with 3.5% of scores at 40+, below the school’s 2022-2024 medians of 30-31 but still within a solid-middle band.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7810&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/elwood/elwood-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Fitzroy High School",
+      "schoolNo": "8742",
+      "vceMedianStudyScore": 29,
+      "vcePct40Plus": 5.4,
+      "yearRange": "7-10 at Falconer Street; Years 11-12 at the shared Wurun Senior Campus",
+      "enrolmentTrend": null,
+      "structuralNotes": "Years 11-12 are delivered at Wurun Senior Campus in partnership with Collingwood College.",
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 29 with 5.4% of scores at 40+, and the school report recorded its best mean result since the shared senior campus opened, supporting a solid-middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8742&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/fitzroy-north/fitzroy-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Footscray High School",
+      "schoolNo": "7842",
+      "vceMedianStudyScore": 29,
+      "vcePct40Plus": 7.1,
+      "yearRange": "Years 7-9 across two junior campuses; Years 10-12 at the senior campus",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "Established in 2020 as a three-campus school with two junior campuses and one senior campus.",
+      "strength": 3,
+      "evidenceNote": "The median remained 29 from 2022 to 2025 while the 40+ share rose to 7.1% in 2025, supporting a solid-middle rating with improvement.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7842&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/footscray/footscray-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Glen Eira College",
+      "schoolNo": "8704",
+      "vceMedianStudyScore": 30,
+      "vcePct40Plus": 4.8,
+      "yearRange": "7-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": null,
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 30 with 4.8% of scores at 40+, below its stronger 2022-2024 results but still supporting a solid-middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8704&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/caulfield-east/glen-eira-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Glen Waverley Secondary College",
+      "schoolNo": "8808",
+      "vceMedianStudyScore": 33,
+      "vcePct40Plus": 15.13,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": "Restricted zone and enrolment-management plan due to demand.",
+      "strength": 5,
+      "evidenceNote": "The official 2025 report recorded a median of 33 and 15.13% of study scores at 40+, supporting a top-tier rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8808&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Kew High School",
+      "schoolNo": "7950",
+      "vceMedianStudyScore": 31,
+      "vcePct40Plus": 10.3,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": "The school states that it is non-selective; no selective-entry stream was used in this rating.",
+      "strength": 4,
+      "evidenceNote": "The 2025 median was 31 with 10.3% of scores at 40+, improving on 2024 and supporting a strong rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7950&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/kew-east/kew-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Koonung Secondary College",
+      "schoolNo": "7954",
+      "vceMedianStudyScore": 32,
+      "vcePct40Plus": 8.8,
+      "yearRange": "7-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": null,
+      "strength": 4,
+      "evidenceNote": "The median was 32 in 2023-2025 and 8.8% of 2025 scores were 40+, supporting a strong and stable rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7954&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/mont-albert-north/koonung-secondary-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "McKinnon Secondary College",
+      "schoolNo": "8125",
+      "vceMedianStudyScore": 33,
+      "vcePct40Plus": 12.5,
+      "yearRange": "Years 7 and 10-12 at McKinnon Road; Years 8-9 at East Campus",
+      "enrolmentTrend": null,
+      "structuralNotes": "Two-campus structure; the school report describes it as a non-selective government school.",
+      "strength": 5,
+      "evidenceNote": "The official 2025 report recorded a median of 33, 12.5% of scores above 40 and top-three non-selective government-school performance, supporting a top-tier rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8125&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Mount Alexander 7-12 College",
+      "schoolNo": "7763",
+      "vceMedianStudyScore": 31,
+      "vcePct40Plus": 8.4,
+      "yearRange": "7-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "The 2025 school report states a median of 32, while VCAA-derived reporting lists 31; the VCAA-derived figure is used here.",
+      "strength": 4,
+      "evidenceNote": "VCAA-derived reporting shows a 2025 median of 31 and 8.4% of scores at 40+, improving from medians of 29 in 2022-2023 and supporting a strong rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7763&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/flemington/mount-alexander-7-12-coll?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Northcote High School",
+      "schoolNo": "8180",
+      "vceMedianStudyScore": 31,
+      "vcePct40Plus": 9,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 4,
+      "evidenceNote": "The 2025 median was 31 with 9.0% of scores at 40+, consistent with 2022-2024 and supporting a strong rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8180&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/northcote/northcote-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Parkdale Secondary College",
+      "schoolNo": "8225",
+      "vceMedianStudyScore": 29,
+      "vcePct40Plus": 3.7,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 29 with 3.7% of scores at 40+, close to its 2022-2024 results and supporting a solid-middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8225&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/mordialloc/parkdale-secondary-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Patterson River Secondary College",
+      "schoolNo": "8725",
+      "vceMedianStudyScore": 27,
+      "vcePct40Plus": 2.3,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 2,
+      "evidenceNote": "The median was 27 in both 2024 and 2025 and 2.3% of 2025 scores were 40+, supporting a below-average rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8725&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/seaford/patterson-river-sec-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Prahran High School",
+      "schoolNo": "8231",
+      "vceMedianStudyScore": 29,
+      "vcePct40Plus": 5.4,
+      "yearRange": "7-12",
+      "enrolmentTrend": "declining",
+      "structuralNotes": "Purpose-built vertical school opened in 2019; 2025 was an early mature VCE cohort.",
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 29 with 5.4% of scores at 40+ in a recently established school, supporting a solid-middle rating rather than a mature strong-school rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8231&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/windsor/prahran-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Preston High School",
+      "schoolNo": "8241",
+      "vceMedianStudyScore": 29,
+      "vcePct40Plus": 7,
+      "yearRange": "7-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "Opened in 2019; 2025 was the second graduating Year 12 cohort and enrolment was still expanding.",
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 29 with 7.0% of scores at 40+ in only the school’s second graduating cohort, supporting a solid-middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8241&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/preston/preston-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Reservoir High School",
+      "schoolNo": "8708",
+      "vceMedianStudyScore": 27,
+      "vcePct40Plus": 3.5,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 2,
+      "evidenceNote": "The 2025 median was 27 with 3.5% of scores at 40+, consistent with medians of 26-28 since 2022 and supporting a below-average rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8708&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/reservoir/reservoir-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Richmond High School",
+      "schoolNo": "8271",
+      "vceMedianStudyScore": 30,
+      "vcePct40Plus": 4.9,
+      "yearRange": "7-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "Opened in 2018 and became a full 7-12 school in 2023.",
+      "strength": 3,
+      "evidenceNote": "The 2025 median improved to 30 with 4.9% of scores at 40+ after medians of 28 in 2023-2024, supporting a solid-middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8271&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/richmond/richmond-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Sandringham College",
+      "schoolNo": "8739",
+      "vceMedianStudyScore": 31,
+      "vcePct40Plus": null,
+      "yearRange": "Years 7-8 at Bluff Road; Years 9-12 at Holloway Road",
+      "enrolmentTrend": null,
+      "structuralNotes": "Two-campus structure; offers a Select Entry Accelerated Learning program and specialist art, dance and sport academies.",
+      "strength": 4,
+      "evidenceNote": "The official 2025 report recorded a median study score of 31 and Year 9 reading and numeracy above both the state and similar schools, supporting a strong rating despite no published overall 40+ percentage.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8739&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "St Albans Secondary College",
+      "schoolNo": "8330",
+      "vceMedianStudyScore": 30,
+      "vcePct40Plus": 5.5,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 30 with 5.5% of scores at 40+ and a 98.4% VCE completion rate, supporting a solid-middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8330&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/st-albans/st-albans-secondary-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Strathmore Secondary College",
+      "schoolNo": "8345",
+      "vceMedianStudyScore": 30,
+      "vcePct40Plus": 6.5,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 3,
+      "evidenceNote": "The 2025 median was 30 with 6.5% of scores at 40+, matching the 2023-2024 median and supporting a solid-middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8345&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/strathmore/strathmore-secondary-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Sunbury College",
+      "schoolNo": "8350",
+      "vceMedianStudyScore": 26,
+      "vcePct40Plus": 1.8,
+      "yearRange": "7-12",
+      "enrolmentTrend": "stable",
+      "structuralNotes": null,
+      "strength": 2,
+      "evidenceNote": "The 2025 median was 26 with 1.8% of scores at 40+, continuing a decline from a median of 28 in 2022 and supporting a below-average rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8350&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/sunbury/sunbury-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Sunshine College",
+      "schoolNo": "8790",
+      "vceMedianStudyScore": 25,
+      "vcePct40Plus": 1.5,
+      "yearRange": "7-12 across two campuses; Harvester Technical College supports Years 10-12",
+      "enrolmentTrend": null,
+      "structuralNotes": "Two 7-12 campuses plus Harvester Technical College, which focuses on VCE Vocational Major and trade pathways for Years 10-12.",
+      "strength": 2,
+      "evidenceNote": "The 2025 median was 25 with 1.5% of scores at 40+, broadly consistent with 2022-2024 and supporting a below-average rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8790&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/sunshine-west/sunshine-college?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "University High School",
+      "schoolNo": "8405",
+      "vceMedianStudyScore": 31,
+      "vcePct40Plus": 7.8,
+      "yearRange": "7-12, with a separate Year 9 city campus",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "Separate Year 9 city campus; the Elizabeth Blackburn Sciences program is a selective senior-science pathway.",
+      "strength": 4,
+      "evidenceNote": "The 2025 median was 31 with 7.8% of scores at 40+ and 31% of students achieved an ATAR of 90+, supporting a strong rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8405&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/parkville/university-high-school?year=2025"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "name": "Westall Secondary College",
+      "schoolNo": "8470",
+      "vceMedianStudyScore": 24,
+      "vcePct40Plus": 3.1,
+      "yearRange": "7-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": null,
+      "strength": 2,
+      "evidenceNote": "The median was 24 in both 2024 and 2025 and 3.1% of 2025 scores were 40+, supporting a below-average rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8470&Type=AnnualReport&requestFileType=Pdf",
+        "https://www.schoolexplorer.com.au/schools/clayton-south/westall-secondary-college?year=2025"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "primary": [
+    {
+      "name": "Albert Park Primary School",
+      "schoolNo": "1181",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 78.4,
+            "similarSchools": 84.9,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 90.2,
+            "similarSchools": 90.1,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 81.6,
+            "similarSchools": 83.7,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 87.3,
+            "similarSchools": 84.1,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 84.4% for the school, -1.3 percentage points versus similar schools and +14.8 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1181&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Armadale Primary School",
+      "schoolNo": "2634",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 82.8,
+            "similarSchools": 84.2,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 86.1,
+            "similarSchools": 88.7,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 81.7,
+            "similarSchools": 81.6,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 84.6,
+            "similarSchools": 83.7,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 83.8% for the school, -0.8 percentage points versus similar schools and +14.2 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2634&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Ascot Vale Primary School",
+      "schoolNo": "2608",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 77.1,
+            "similarSchools": 81,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 88.3,
+            "similarSchools": 87,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 74.3,
+            "similarSchools": 78.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 80.9,
+            "similarSchools": 80.3,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 80.2% for the school, -1.6 percentage points versus similar schools and +10.6 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2608&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Balwyn Primary School",
+      "schoolNo": "1026",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 88.5,
+            "similarSchools": 87.1,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 92.8,
+            "similarSchools": 90.5,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 88.9,
+            "similarSchools": 86.7,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 93.9,
+            "similarSchools": 90.5,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 5,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 91.0% for the school, +2.3 percentage points versus similar schools and +21.4 points versus the state, supporting a strength rating of 5.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1026&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Birralee Primary School",
+      "schoolNo": "4991",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 91.5,
+            "similarSchools": 87.3,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 93.3,
+            "similarSchools": 90.9,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 89.4,
+            "similarSchools": 87,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 93.7,
+            "similarSchools": 91,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 5,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 92.0% for the school, +2.9 percentage points versus similar schools and +22.4 points versus the state, supporting a strength rating of 5.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=4991&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Bonbeach Primary School",
+      "schoolNo": "4798",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 85.9,
+            "similarSchools": 77,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 91.5,
+            "similarSchools": 82.1,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 82.2,
+            "similarSchools": 75.2,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 88.7,
+            "similarSchools": 75.3,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 87.1% for the school, +9.7 percentage points versus similar schools and +17.5 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=4798&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Boroondara Park Primary School",
+      "schoolNo": "5288",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 81.6,
+            "similarSchools": 84.7,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 89.6,
+            "similarSchools": 88.3,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 79.3,
+            "similarSchools": 84.6,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 91.7,
+            "similarSchools": 86.6,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 85.5% for the school, -0.5 percentage points versus similar schools and +15.9 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5288&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Brunswick North Primary School",
+      "schoolNo": "3585",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 76.5,
+            "similarSchools": 84,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 87.5,
+            "similarSchools": 89.5,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 75,
+            "similarSchools": 82.2,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 77,
+            "similarSchools": 83.3,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 79.0% for the school, -5.8 percentage points versus similar schools and +9.4 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3585&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Carnegie Primary School",
+      "schoolNo": "2897",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 85.3,
+            "similarSchools": 85.8,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 89,
+            "similarSchools": 89.6,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 85.1,
+            "similarSchools": 85.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 87.5,
+            "similarSchools": 88.5,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 86.7% for the school, -0.6 percentage points versus similar schools and +17.1 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2897&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Caulfield Junior College",
+      "schoolNo": "3820",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 81,
+            "similarSchools": 87,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 90.3,
+            "similarSchools": 90.8,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 79.2,
+            "similarSchools": 86.9,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 86.4,
+            "similarSchools": 90.2,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 84.2% for the school, -4.5 percentage points versus similar schools and +14.6 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3820&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Chelsea Primary School",
+      "schoolNo": "3729",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 76.8,
+            "similarSchools": 76.9,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 86.6,
+            "similarSchools": 81.4,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 75.9,
+            "similarSchools": 73.8,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 78.9,
+            "similarSchools": 75.2,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 79.5% for the school, +2.7 percentage points versus similar schools and +10.0 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3729&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Clifton Hill Primary School",
+      "schoolNo": "1360",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 84.7,
+            "similarSchools": 84.5,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 94.7,
+            "similarSchools": 89.9,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 83.2,
+            "similarSchools": 83.2,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 89.3,
+            "similarSchools": 83.8,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 88.0% for the school, +2.6 percentage points versus similar schools and +18.4 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1360&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Craigieburn South Primary School",
+      "schoolNo": "5243",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 62.1,
+            "similarSchools": 56.8,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 62.2,
+            "similarSchools": 62.4,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 55.5,
+            "similarSchools": 50,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 46.7,
+            "similarSchools": 52.5,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 1,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 56.6% for the school, +1.2 percentage points versus similar schools and -13.0 points versus the state, supporting a strength rating of 1.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5243&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Footscray City Primary School",
+      "schoolNo": "1912",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 82.7,
+            "similarSchools": 82.5,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 87.8,
+            "similarSchools": 86.9,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 78.9,
+            "similarSchools": 80.4,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 78.4,
+            "similarSchools": 81.1,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 82.0% for the school, -0.8 percentage points versus similar schools and +12.4 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1912&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Gilgai Plains Primary School",
+      "schoolNo": "5584",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 67.3,
+            "similarSchools": 62.6,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 66.9,
+            "similarSchools": 70.5,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 64.6,
+            "similarSchools": 56.7,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 64.9,
+            "similarSchools": 62.2,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "Opened in 2022 and grew from 410 to 953 students by 2025; the four published three-year NAPLAN proficiency averages averaged 65.9% for the school, +2.9 percentage points versus similar schools and -3.7 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5584&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Glen Waverley Primary School",
+      "schoolNo": "5425",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 82.8,
+            "similarSchools": 84.5,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 86.4,
+            "similarSchools": 88.6,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 79.7,
+            "similarSchools": 83.2,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 90.5,
+            "similarSchools": 87.7,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 84.8% for the school, -1.1 percentage points versus similar schools and +15.3 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5425&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Hawthorn West Primary School",
+      "schoolNo": "293",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 85.6,
+            "similarSchools": 84.9,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 92.1,
+            "similarSchools": 90.1,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 88.7,
+            "similarSchools": 83.8,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 94.4,
+            "similarSchools": 84.2,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 5,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 90.2% for the school, +4.4 percentage points versus similar schools and +20.6 points versus the state, supporting a strength rating of 5.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=293&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Kensington Primary School",
+      "schoolNo": "2374",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 87.8,
+            "similarSchools": 83.1,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 88.6,
+            "similarSchools": 88.1,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 78.3,
+            "similarSchools": 81.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 78.9,
+            "similarSchools": 83.2,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 83.4% for the school, -0.6 percentage points versus similar schools and +13.8 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2374&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Kew Primary School",
+      "schoolNo": "1075",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 87.6,
+            "similarSchools": 84.3,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 87.2,
+            "similarSchools": 88.9,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 83.1,
+            "similarSchools": 82.8,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 84.8,
+            "similarSchools": 84.3,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 85.7% for the school, +0.6 percentage points versus similar schools and +16.1 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1075&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Mentone Primary School",
+      "schoolNo": "2950",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 80.8,
+            "similarSchools": 81.3,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 94.5,
+            "similarSchools": 86.6,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 84.8,
+            "similarSchools": 79.3,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 88.4,
+            "similarSchools": 79.9,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 87.1% for the school, +5.4 percentage points versus similar schools and +17.5 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2950&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Middle Park Primary School",
+      "schoolNo": "2815",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 84.9,
+            "similarSchools": 84.6,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 91.5,
+            "similarSchools": 89.9,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 87.3,
+            "similarSchools": 82.9,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 85.7,
+            "similarSchools": 84.5,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 87.3% for the school, +1.9 percentage points versus similar schools and +17.8 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2815&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Mont Albert Primary School",
+      "schoolNo": "3943",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 84.3,
+            "similarSchools": 85.7,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 87.4,
+            "similarSchools": 89.6,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 85.5,
+            "similarSchools": 85.4,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 90.2,
+            "similarSchools": 88.3,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 86.8% for the school, -0.4 percentage points versus similar schools and +17.3 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3943&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Moorabbin Primary School",
+      "schoolNo": "1111",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 74.8,
+            "similarSchools": 82.1,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 88.6,
+            "similarSchools": 86.7,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 81.4,
+            "similarSchools": 80.3,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 88.2,
+            "similarSchools": 81.8,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 83.2% for the school, +0.5 percentage points versus similar schools and +13.7 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1111&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "North Melbourne Primary School",
+      "schoolNo": "1402",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 83.3,
+            "similarSchools": 86.7,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 85,
+            "similarSchools": 90.3,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 78.5,
+            "similarSchools": 85.8,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 83.4,
+            "similarSchools": 89.5,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The school operates a Prep-2 campus opened in 2023 and a Year 3-6 campus; the four published three-year NAPLAN proficiency averages averaged 82.5% for the school, -5.5 percentage points versus similar schools and +13.0 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1402&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Northcote Primary School",
+      "schoolNo": "1401",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 82.4,
+            "similarSchools": 85,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 89.9,
+            "similarSchools": 89.9,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 77.5,
+            "similarSchools": 82.8,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 85.7,
+            "similarSchools": 84,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 83.9% for the school, -1.5 percentage points versus similar schools and +14.3 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1401&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Ormond Primary School",
+      "schoolNo": "3074",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 85.3,
+            "similarSchools": 84.5,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 89.3,
+            "similarSchools": 88.4,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 82.2,
+            "similarSchools": 84.1,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 85,
+            "similarSchools": 86.6,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 85.5% for the school, -0.4 percentage points versus similar schools and +15.9 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3074&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Pascoe Vale Primary School",
+      "schoolNo": "3081",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 80.6,
+            "similarSchools": 78.8,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 91.4,
+            "similarSchools": 83.8,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 75.6,
+            "similarSchools": 76.1,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 83.8,
+            "similarSchools": 77.7,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 82.8% for the school, +3.8 percentage points versus similar schools and +13.2 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3081&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Preston West Primary School",
+      "schoolNo": "3885",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 90.7,
+            "similarSchools": 85.5,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 93.5,
+            "similarSchools": 89.4,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 90.9,
+            "similarSchools": 84.9,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 90.6,
+            "similarSchools": 87.7,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 5,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 91.4% for the school, +4.5 percentage points versus similar schools and +21.8 points versus the state, supporting a strength rating of 5.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3885&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Reservoir Primary School",
+      "schoolNo": "3960",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 78.3,
+            "similarSchools": 73.8,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 71.7,
+            "similarSchools": 78.3,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 68.2,
+            "similarSchools": 69.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 72.2,
+            "similarSchools": 70.2,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 72.6% for the school, -0.3 percentage points versus similar schools and +3.0 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3960&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Richmond Primary School",
+      "schoolNo": "5269",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 85.9,
+            "similarSchools": 84.4,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 91.3,
+            "similarSchools": 90,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 77.2,
+            "similarSchools": 82.7,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 78.3,
+            "similarSchools": 83.7,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 83.2% for the school, -2.0 percentage points versus similar schools and +13.6 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5269&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "South Melbourne Park Primary School",
+      "schoolNo": "5562",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 79.6,
+            "similarSchools": 80.2,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 86.4,
+            "similarSchools": 85.7,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 79.1,
+            "similarSchools": 78.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 76.1,
+            "similarSchools": 80,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 80.3% for the school, -0.8 percentage points versus similar schools and +10.7 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5562&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Spotswood Primary School",
+      "schoolNo": "3659",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 84.2,
+            "similarSchools": 81.2,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 86.7,
+            "similarSchools": 86.9,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 80,
+            "similarSchools": 78.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 77.1,
+            "similarSchools": 79.4,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 82.0% for the school, +0.5 percentage points versus similar schools and +12.4 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3659&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Springvale Rise Primary School",
+      "schoolNo": "5537",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 47.2,
+            "similarSchools": 54.3,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 61.3,
+            "similarSchools": 59.4,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 44.7,
+            "similarSchools": 48.2,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 55.7,
+            "similarSchools": 51.7,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 1,
+      "evidenceNote": "The school operates two campuses under one school; the four published three-year NAPLAN proficiency averages averaged 52.2% for the school, -1.2 percentage points versus similar schools and -17.4 points versus the state, supporting a strength rating of 1.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5537&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "St Albans Primary School",
+      "schoolNo": "2969",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 59.7,
+            "similarSchools": 54.6,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 61.8,
+            "similarSchools": 60.4,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 66.1,
+            "similarSchools": 47.7,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 52,
+            "similarSchools": 52.2,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 2,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 59.9% for the school, +6.2 percentage points versus similar schools and -9.7 points versus the state, supporting a strength rating of 2.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2969&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "St Kilda Park Primary School",
+      "schoolNo": "2460",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 85.6,
+            "similarSchools": 84,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 85.7,
+            "similarSchools": 88.6,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 72.7,
+            "similarSchools": 81.9,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 74.2,
+            "similarSchools": 83.6,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 79.5% for the school, -5.0 percentage points versus similar schools and +10.0 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2460&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "St Kilda Primary School",
+      "schoolNo": "1479",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 79.6,
+            "similarSchools": 82.8,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 84.7,
+            "similarSchools": 87.9,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 74.6,
+            "similarSchools": 80.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 77.6,
+            "similarSchools": 81.3,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 79.1% for the school, -4.0 percentage points versus similar schools and +9.5 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1479&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Sunbury West Primary School",
+      "schoolNo": "5006",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 58,
+            "similarSchools": 67.7,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 67.9,
+            "similarSchools": 71.8,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 44.8,
+            "similarSchools": 64.8,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 66.2,
+            "similarSchools": 64.5,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 1,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 59.2% for the school, -8.0 percentage points versus similar schools and -10.4 points versus the state, supporting a strength rating of 1.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5006&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Sunshine Primary School",
+      "schoolNo": "3113",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 66.7,
+            "similarSchools": 65.3,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 66.3,
+            "similarSchools": 71,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 56.5,
+            "similarSchools": 59.1,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 51.7,
+            "similarSchools": 62.2,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 2,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 60.3% for the school, -4.1 percentage points versus similar schools and -9.3 points versus the state, supporting a strength rating of 2.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3113&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Thornbury Primary School",
+      "schoolNo": "3889",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 74.6,
+            "similarSchools": 78.2,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 81.3,
+            "similarSchools": 84,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 64.7,
+            "similarSchools": 76.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 63.3,
+            "similarSchools": 77,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 71.0% for the school, -8.0 percentage points versus similar schools and +1.4 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3889&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Toorak Primary School",
+      "schoolNo": "3016",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 80.9,
+            "similarSchools": 84.2,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 85.3,
+            "similarSchools": 88.4,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 85.4,
+            "similarSchools": 83.1,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 83.6,
+            "similarSchools": 84.9,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 83.8% for the school, -1.4 percentage points versus similar schools and +14.2 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3016&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Windsor Primary School",
+      "schoolNo": "1896",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 55.2,
+            "similarSchools": 65.2,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 65.5,
+            "similarSchools": 71.6,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 57.6,
+            "similarSchools": 60.2,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 54.5,
+            "similarSchools": 63.6,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 1,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 58.2% for the school, -6.9 percentage points versus similar schools and -11.4 points versus the state, supporting a strength rating of 1.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=1896&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Yarraville West Primary School",
+      "schoolNo": "2832",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 84.3,
+            "similarSchools": 83.7,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 92.3,
+            "similarSchools": 88.5,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 80.5,
+            "similarSchools": 82.5,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 81.9,
+            "similarSchools": 82.6,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 84.8% for the school, +0.4 percentage points versus similar schools and +15.2 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2832&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
