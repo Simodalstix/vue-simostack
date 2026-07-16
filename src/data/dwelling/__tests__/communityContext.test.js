@@ -33,10 +33,10 @@ import { decideCriteria } from '../decideStrategies.js'
 const src = (rel) => readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 'utf8')
 
 describe('dataset coverage and lookup', () => {
-  it('exposes the revised 48-record SAL dataset', () => {
-    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(48)
+  it('exposes the complete 60-record SAL dataset', () => {
+    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(60)
     expect(COMMUNITY_DATASET.title).toBe('Community Context · ABS Census 2021')
-    expect(COMMUNITY_DATASET.recordCount).toBe(48)
+    expect(COMMUNITY_DATASET.recordCount).toBe(60)
     expect(DWELLING_CENSUS_CONTEXT).toBe(DWELLING_COMMUNITY_CONTEXT)
   })
 
@@ -95,12 +95,13 @@ describe('combined-label handling', () => {
     expect(ctx.missing).toEqual([])
   })
 
-  it('covers every /dwelling ranking record with components or an explicit gap', () => {
+  it('covers every /dwelling ranking record without a missing SAL component', () => {
     for (const rec of areaCorridors) {
       const names = componentSuburbNamesFor(rec.id)
       expect(names.length).toBeGreaterThan(0)
       const ctx = communityContextFor(rec.id)
-      expect(ctx.components.length + ctx.missing.length).toBe(names.length)
+      expect(ctx.components).toHaveLength(names.length)
+      expect(ctx.missing).toEqual([])
     }
   })
 })
@@ -158,7 +159,7 @@ describe('measure rendering', () => {
   })
 })
 
-describe('missing-value handling', () => {
+describe('coverage completion and missing-value handling', () => {
   it('formatters degrade to n/a', () => {
     expect(fmtPct(null)).toBe('n/a')
     expect(fmtPct(undefined)).toBe('n/a')
@@ -168,11 +169,25 @@ describe('missing-value handling', () => {
     expect(fmtMedianAge(undefined)).toBe('n/a')
   })
 
-  it('a suburb without a SAL record resolves to an explicit gap, not a crash', () => {
-    const ctx = communityContextFor('ascot-vale-2br')
-    expect(ctx.components).toEqual([])
-    expect(ctx.missing).toEqual(['Ascot Vale'])
-    expect(communitySnapshotFor('ascot-vale-2br')).toBeNull()
+  it.each([
+    ['yarraville-2br', 'Yarraville'],
+    ['spotswood-2br', 'Spotswood'],
+    ['ascot-vale-2br', 'Ascot Vale'],
+    ['clifton-hill-2br', 'Clifton Hill'],
+    ['doncaster-villa', 'Doncaster'],
+    ['south-melbourne-2br', 'South Melbourne'],
+    ['armadale-2br', 'Armadale'],
+    ['burnley-2br', 'Burnley'],
+    ['hawthorn-2br', 'Hawthorn'],
+    ['mckinnon-villa', 'McKinnon'],
+    ['glen-waverley-2br', 'Glen Waverley'],
+    ['balwyn-north-2br', 'Balwyn North'],
+  ])('resolves the completed SAL evidence for %s', (areaId, suburb) => {
+    const ctx = communityContextFor(areaId)
+    expect(ctx.components.map((component) => component.record.suburb)).toEqual([suburb])
+    expect(ctx.missing).toEqual([])
+    expect(communitySnapshotFor(areaId)).not.toBeNull()
+    expect(ctx.components[0].record.retrievedAt).toBe('2026-07-16')
   })
 
   it('an unknown area id returns an empty resolution', () => {
@@ -188,7 +203,7 @@ describe('source metadata', () => {
       expect(s.geographyCode).toMatch(/^SAL\d+$/)
       expect(s.censusYear).toBe(2021)
       expect(s.source).toBe('Australian Bureau of Statistics')
-      expect(s.retrievedAt).toBe('2026-07-14')
+      expect(s.retrievedAt).toMatch(/^2026-07-(14|16)$/)
       expect(s.privacyNote).toBeTruthy()
     }
   })

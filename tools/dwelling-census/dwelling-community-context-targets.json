@@ -1,0 +1,56 @@
+{
+  "dataset": "dwelling-community-context-targets",
+  "version": "2021-gcp-sal-extension-12",
+  "retrievedAt": "2026-07-16",
+  "recordCount": 12,
+  "records": [
+    {
+      "id": "yarraville-2br",
+      "salComponents": [{ "suburb": "Yarraville", "salCode": "22917" }]
+    },
+    {
+      "id": "spotswood-2br",
+      "salComponents": [{ "suburb": "Spotswood", "salCode": "22319" }]
+    },
+    {
+      "id": "ascot-vale-2br",
+      "salComponents": [{ "suburb": "Ascot Vale", "salCode": "20075" }]
+    },
+    {
+      "id": "clifton-hill-2br",
+      "salComponents": [{ "suburb": "Clifton Hill", "salCode": "20574" }]
+    },
+    {
+      "id": "doncaster-villa",
+      "salComponents": [{ "suburb": "Doncaster", "salCode": "20771" }]
+    },
+    {
+      "id": "south-melbourne-2br",
+      "salComponents": [{ "suburb": "South Melbourne", "salCode": "22310" }]
+    },
+    {
+      "id": "armadale-2br",
+      "salComponents": [{ "suburb": "Armadale", "salCode": "20066" }]
+    },
+    {
+      "id": "burnley-2br",
+      "salComponents": [{ "suburb": "Burnley", "salCode": "20418" }]
+    },
+    {
+      "id": "hawthorn-2br",
+      "salComponents": [{ "suburb": "Hawthorn", "salCode": "21152" }]
+    },
+    {
+      "id": "mckinnon-villa",
+      "salComponents": [{ "suburb": "McKinnon", "salCode": "21629" }]
+    },
+    {
+      "id": "glen-waverley-2br",
+      "salComponents": [{ "suburb": "Glen Waverley", "salCode": "21013" }]
+    },
+    {
+      "id": "balwyn-north-2br",
+      "salComponents": [{ "suburb": "Balwyn North", "salCode": "20124" }]
+    }
+  ]
+}
