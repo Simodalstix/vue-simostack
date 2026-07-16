@@ -1,10 +1,6 @@
 <template>
   <div class="h-full cursor-pointer overflow-hidden" @click="emit('close')">
-    <div
-      v-if="showEvidence"
-      class="h-full overflow-y-auto"
-      @click.stop
-    >
+    <div v-if="showEvidence" class="h-full overflow-y-auto" @click.stop>
       <div class="px-4 py-3.5 space-y-3">
         <div class="flex items-center justify-between gap-3">
           <p class="font-mono text-[11px] tracking-[0.12em] uppercase text-ob-soft">
@@ -67,12 +63,17 @@
         </div>
 
         <div class="space-y-2">
-          <div class="grid gap-x-5 gap-y-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[0.95fr_1fr_1.2fr_0.95fr_1.7fr]">
+          <div
+            class="grid gap-x-5 gap-y-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[0.95fr_1fr_1.2fr_0.95fr_1.7fr]"
+          >
             <div v-for="m in headerMetrics" :key="m.label" class="min-w-0">
               <p class="font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint">
                 {{ m.label }}
               </p>
-              <p class="mt-0.5 font-mono text-[12px] leading-snug" :class="m.tone || 'text-ob-text'">
+              <p
+                class="mt-0.5 font-mono text-[12px] leading-snug"
+                :class="m.tone || 'text-ob-text'"
+              >
                 {{ m.value }}
               </p>
             </div>
@@ -114,15 +115,40 @@
                     <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-purple">
                       Schools
                     </p>
-                    <p class="font-mono text-[10px] text-ob-purple">
-                      {{ dots(row.rec.childhood?.schoolStrength) }}
-                    </p>
                     <p class="font-mono text-[9.5px] text-ob-purple">
                       teen independence {{ row.rec.childhood?.teenIndependence ?? 'n/a' }}/5
                     </p>
                   </div>
                   <div class="min-w-0">
-                    <div class="flex flex-wrap gap-1">
+                    <div v-if="zonedSchools" class="space-y-0.5">
+                      <p
+                        v-for="school in zonedSchoolRows"
+                        :key="school.label"
+                        class="text-[10.5px] leading-snug text-ob-muted2"
+                      >
+                        <span class="font-mono text-[9.5px] text-ob-faint"
+                          >{{ school.label }}:</span
+                        >
+                        {{ school.name }}
+                        <span
+                          v-if="school.strength != null"
+                          class="ml-1 whitespace-nowrap rounded-full bg-ob-purple/12 px-1.5 py-[1px] font-mono text-[9px] text-ob-purple"
+                        >
+                          {{ school.strength }}/5
+                        </span>
+                      </p>
+                      <p
+                        v-if="zonedSchools.boundaryFlag"
+                        class="text-[9.5px] leading-snug text-ob-sand"
+                      >
+                        Anchor sits near a zone boundary: the zone can flip within this catchment.
+                      </p>
+                      <p class="font-mono text-[9px] leading-snug text-ob-faint">
+                        Zones: {{ zonedSchools.zoneYear }} · verify the exact address at
+                        findmyschool.vic.gov.au
+                      </p>
+                    </div>
+                    <div v-else class="flex flex-wrap gap-1">
                       <span
                         v-for="school in schoolChips(row.rec)"
                         :key="school"
@@ -270,6 +296,7 @@ import { localitiesForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLines, linesForArea } from '@/data/dwelling/trainLines.js'
 import { facilitiesForArea } from '@/data/dwelling/facilities.js'
 import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
+import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
 import CommunityContextSection from './CommunityContextSection.vue'
@@ -313,10 +340,24 @@ const headerMetrics = computed(() => [
   { label: 'Collins St commute', value: commuteLabel(props.row), tone: bandClass(props.row.band) },
   { label: 'Owners-corp', value: ocLabel(props.row.rec), tone: 'text-ob-muted2' },
 ])
+const zonedSchools = computed(() => zonedSchoolEvidenceForArea(props.row.rec.id))
+const zonedSchoolRows = computed(() => {
+  if (!zonedSchools.value) return []
+  return [
+    {
+      label: 'Zoned primary',
+      name: zonedSchools.value.primary.name,
+      strength: zonedSchools.value.primary.evidence?.strength,
+    },
+    {
+      label: 'Zoned secondary',
+      name: zonedSchools.value.secondary.name,
+      strength: zonedSchools.value.secondary.evidence?.strength,
+    },
+  ]
+})
 const practicalCardClass = computed(() =>
-  friendFor(props.row.rec.id)
-    ? 'border-ob-gold-muted/20'
-    : 'border-ob-sand/10 bg-ob-surface/60',
+  friendFor(props.row.rec.id) ? 'border-ob-gold-muted/20' : 'border-ob-sand/10 bg-ob-surface/60',
 )
 
 function bandColor(row) {
@@ -340,7 +381,9 @@ function bandClass(band) {
 }
 function priceBand(rec) {
   const price = rec.dwelling?.indicativePrice
-  return price ? '$' + Math.round(price[0] / 1000) + 'k–$' + Math.round(price[1] / 1000) + 'k' : 'n/a'
+  return price
+    ? '$' + Math.round(price[0] / 1000) + 'k–$' + Math.round(price[1] / 1000) + 'k'
+    : 'n/a'
 }
 function feeEstimate(rec) {
   if (rec.feeEstimate != null) return rec.feeEstimate
@@ -362,7 +405,9 @@ function monthlyLabel(rec) {
 }
 function ocLabel(rec) {
   const oc = rec.dwelling?.annualOc
-  return oc ? '$' + oc[0].toLocaleString('en-AU') + '–$' + oc[1].toLocaleString('en-AU') + '/yr' : 'n/a'
+  return oc
+    ? '$' + oc[0].toLocaleString('en-AU') + '–$' + oc[1].toLocaleString('en-AU') + '/yr'
+    : 'n/a'
 }
 function commuteLabel(row) {
   if (!row.commute) return 'n/a'
@@ -388,10 +433,6 @@ function areaLines(areaId) {
 }
 function formatLineName(name) {
   return name.replaceAll(' / ', '/')
-}
-function dots(v) {
-  if (v == null) return 'n/a'
-  return '●'.repeat(v) + '○'.repeat(5 - v)
 }
 function schoolChips(rec) {
   const childhood = rec.childhood

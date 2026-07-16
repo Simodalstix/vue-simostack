@@ -19,7 +19,24 @@
 // record data (nothing new is fabricated here). `value(rec, commuteScore)`
 // returns 0-10 or null when the record carries no data for it; a null is
 // left out of both sides of the weighted mean rather than scored as zero.
+import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
+
 const tenScale = (v) => (v == null ? null : v * 2) // existing 1-5 scores -> 2-10
+
+function zonedSchoolStrength(rec) {
+  const context = zonedSchoolEvidenceForArea(rec.id)
+  if (!context) return null
+  const components = [
+    { strength: context.secondary.evidence?.strength, weight: 0.6 },
+    { strength: context.primary.evidence?.strength, weight: 0.4 },
+  ].filter(({ strength }) => Number.isFinite(strength))
+  if (!components.length) return null
+  const totalWeight = components.reduce((sum, component) => sum + component.weight, 0)
+  return (
+    components.reduce((sum, component) => sum + component.strength * component.weight, 0) /
+    totalWeight
+  )
+}
 
 export const decideCriteria = [
   {
@@ -38,7 +55,7 @@ export const decideCriteria = [
     key: 'schools',
     label: 'Schools',
     hint: 'Zoned public school strength.',
-    value: (rec) => tenScale(rec.childhood?.schoolStrength),
+    value: (rec) => tenScale(zonedSchoolStrength(rec) ?? rec.childhood?.schoolStrength),
   },
   {
     key: 'kidAmenity',

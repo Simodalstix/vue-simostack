@@ -75,6 +75,27 @@ describe('score robustness', () => {
     const score = weightedScore(rec, commuteScoreFor(rec), weightsFor(decideStrategies[0], []))
     expect(Number.isFinite(score)).toBe(true)
   })
+
+  it('ranks a strength-5 zoned secondary above strength 3 with only schools enabled', () => {
+    const base = { childhood: { schoolStrength: 1 } }
+    const topTier = { ...base, id: 'balwyn-2br' }
+    const midTier = { ...base, id: 'preston-villa' }
+    const weights = weightsFor(decideStrategies[0], ['schools'])
+
+    expect(weightedScore(topTier, null, weights)).toBeGreaterThan(
+      weightedScore(midTier, null, weights),
+    )
+  })
+
+  it('falls back to childhood school strength when both zoned strengths are null', () => {
+    const schools = decideCriteria.find((criterion) => criterion.key === 'schools')
+    const rec = {
+      id: 'growth-corridor-stress-test',
+      childhood: { schoolStrength: 3 },
+    }
+
+    expect(schools.value(rec)).toBe(6)
+  })
 })
 
 describe('renormalisation semantics', () => {

@@ -97,43 +97,93 @@
     </div>
 
     <!-- schools & childhood -->
-    <div v-if="rec.childhood" class="space-y-2.5">
+    <div v-if="rec.childhood || zonedSchools" class="space-y-2.5">
       <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft">
         Schools &amp; childhood
       </p>
-      <div class="flex flex-wrap items-center gap-1.5">
-        <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
-          >Primary</span
+      <template v-if="zonedSchools">
+        <div
+          v-for="school in zonedSchoolRows"
+          :key="school.label"
+          class="rounded-[6px] border border-ob-purple/15 bg-ob-purple/4 px-3 py-2.5"
         >
-        <span
-          v-for="s in rec.childhood.publicPrimary"
-          :key="s"
-          class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
-          >{{ s }}</span
-        >
-        <span
-          v-if="!rec.childhood.publicPrimary?.length"
-          class="font-mono text-[11px] text-ob-faint"
-          >not listed</span
-        >
-      </div>
-      <div class="flex flex-wrap items-center gap-1.5">
-        <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
-          >Secondary</span
-        >
-        <span
-          v-for="s in rec.childhood.publicSecondary"
-          :key="s"
-          class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
-          >{{ s }}</span
-        >
-        <span
-          v-if="!rec.childhood.publicSecondary?.length"
-          class="font-mono text-[11px] text-ob-faint"
-          >not listed</span
-        >
-      </div>
-      <div v-if="rec.childhood.privateContext?.length" class="flex flex-wrap items-center gap-1.5">
+          <div class="flex flex-wrap items-center gap-1.5">
+            <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft">
+              {{ school.label }}:
+            </span>
+            <span class="text-[12.5px] text-ob-muted2">{{ school.name }}</span>
+            <span
+              v-if="school.evidence?.strength != null"
+              class="rounded-full bg-ob-purple/12 px-2 py-[2px] font-mono text-[10px] text-ob-purple"
+            >
+              {{ school.evidence.strength }}/5
+            </span>
+          </div>
+          <p
+            v-if="school.evidence?.evidenceNote"
+            class="mt-1.5 text-[11.5px] leading-relaxed text-ob-muted2"
+          >
+            {{ school.evidence.evidenceNote }}
+          </p>
+          <div
+            v-if="school.evidence"
+            class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 font-mono text-[9.5px] text-ob-faint"
+          >
+            <span>Confidence: {{ school.evidence.confidence }}</span>
+            <a
+              v-for="(source, index) in school.evidence.sources"
+              :key="source"
+              :href="source"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-ob-dim hover:text-ob-teal transition-colors"
+            >
+              source {{ index + 1 }} ↗
+            </a>
+          </div>
+        </div>
+        <p v-if="zonedSchools.boundaryFlag" class="text-[11.5px] leading-relaxed text-ob-sand">
+          Anchor sits near a zone boundary: the zone can flip within this catchment.
+        </p>
+        <p class="font-mono text-[10.5px] leading-relaxed text-ob-faint">
+          Zones: {{ zonedSchools.zoneYear }} · verify the exact address at findmyschool.vic.gov.au
+        </p>
+      </template>
+      <template v-else>
+        <div class="flex flex-wrap items-center gap-1.5">
+          <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
+            >Primary</span
+          >
+          <span
+            v-for="s in rec.childhood.publicPrimary"
+            :key="s"
+            class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
+            >{{ s }}</span
+          >
+          <span
+            v-if="!rec.childhood.publicPrimary?.length"
+            class="font-mono text-[11px] text-ob-faint"
+            >not listed</span
+          >
+        </div>
+        <div class="flex flex-wrap items-center gap-1.5">
+          <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
+            >Secondary</span
+          >
+          <span
+            v-for="s in rec.childhood.publicSecondary"
+            :key="s"
+            class="font-mono text-[11px] px-2 py-[2px] rounded-full bg-ob-teal/15 text-ob-teal"
+            >{{ s }}</span
+          >
+          <span
+            v-if="!rec.childhood.publicSecondary?.length"
+            class="font-mono text-[11px] text-ob-faint"
+            >not listed</span
+          >
+        </div>
+      </template>
+      <div v-if="rec.childhood?.privateContext?.length" class="flex flex-wrap items-center gap-1.5">
         <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-soft w-16 shrink-0"
           >Private</span
         >
@@ -144,10 +194,12 @@
           >{{ s }}</span
         >
       </div>
-      <p v-if="rec.childhood.note" class="text-[12px] leading-relaxed text-ob-muted2">
+      <p v-if="rec.childhood?.note" class="text-[12px] leading-relaxed text-ob-muted2">
         {{ rec.childhood.note }}
       </p>
-      <p class="font-mono text-[10.5px] leading-relaxed text-ob-faint">{{ SCHOOL_CAVEAT }}</p>
+      <p v-if="!zonedSchools" class="font-mono text-[10.5px] leading-relaxed text-ob-faint">
+        {{ SCHOOL_FALLBACK_CAVEAT }}
+      </p>
     </div>
 
     <div v-if="rec.greenspaceComponents" class="space-y-2.5">
@@ -164,9 +216,7 @@
           </p>
         </div>
         <div class="rounded-[6px] border border-ob-sand/10 px-3 py-2.5">
-          <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-faint">
-            Major parks
-          </p>
+          <p class="font-mono text-[9px] uppercase tracking-[0.07em] text-ob-faint">Major parks</p>
           <p class="mt-0.5 font-mono text-[12px] text-ob-text">
             {{ formatScore(rec.greenspaceComponents.majorParkAccess) }}/10
           </p>
@@ -180,9 +230,13 @@
           </p>
         </div>
       </div>
-      <p v-if="rec.greenspaceEvidence" class="font-mono text-[10.5px] leading-relaxed text-ob-faint">
-        {{ formatPct(rec.greenspaceEvidence.localOpenSpaceCoveragePct) }} of represented residents are within 400m straight-line of eligible local open space
-        · {{ formatInt(rec.greenspaceEvidence.representedPopulation) }} residents across
+      <p
+        v-if="rec.greenspaceEvidence"
+        class="font-mono text-[10.5px] leading-relaxed text-ob-faint"
+      >
+        {{ formatPct(rec.greenspaceEvidence.localOpenSpaceCoveragePct) }} of represented residents
+        are within 400m straight-line of eligible local open space ·
+        {{ formatInt(rec.greenspaceEvidence.representedPopulation) }} residents across
         {{ rec.greenspaceEvidence.sampledMeshBlocks }} residential mesh blocks.
       </p>
     </div>
@@ -201,7 +255,7 @@
         <p v-if="enrich.ptNetworkReach.score != null" class="text-[12.5px] text-ob-muted2">
           {{ enrich.ptNetworkReach.score }}/5
           <span v-if="enrich.ptNetworkReach.provisional" class="text-ob-sand">· provisional</span>
-          <span v-if="enrich.ptNetworkReach.note"> — {{ enrich.ptNetworkReach.note }}</span>
+          <span v-if="enrich.ptNetworkReach.note">: {{ enrich.ptNetworkReach.note }}</span>
         </p>
         <p v-else class="text-[12px] text-ob-faint italic">not assessed</p>
       </div>
@@ -374,6 +428,7 @@ import { computed } from 'vue'
 import { areaSources } from '@/data/dwelling/areaSources.js'
 import { enrichmentFor } from '@/data/dwelling/areaEnrichment.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
+import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import CommuteBreakdown from './CommuteBreakdown.vue'
 
 const props = defineProps({
@@ -385,6 +440,14 @@ const rec = computed(() => props.row.rec)
 // Decision-profile enrichment (PT reach, crime, activity, character).
 // Seeded empty; renders honest "not assessed" states.
 const enrich = computed(() => enrichmentFor(rec.value.id))
+const zonedSchools = computed(() => zonedSchoolEvidenceForArea(rec.value.id))
+const zonedSchoolRows = computed(() => {
+  if (!zonedSchools.value) return []
+  return [
+    { label: 'Zoned primary', ...zonedSchools.value.primary },
+    { label: 'Zoned secondary', ...zonedSchools.value.secondary },
+  ]
+})
 
 const activityGroups = [
   { key: 'walkable', label: 'Walk' },
@@ -414,8 +477,8 @@ function crimeClass(band) {
   )
 }
 
-const SCHOOL_CAVEAT =
-  'School zones are street-level — verify any address at findmyschool.vic.gov.au. Scores are provisional judgements pending My School / VCE data checks.'
+const SCHOOL_FALLBACK_CAVEAT =
+  'School zones are street-level. Verify any address at findmyschool.vic.gov.au. The listed schools are legacy research pending generated zone context.'
 const coverageNote = computed(() =>
   isGroupedArea(rec.value.id)
     ? `This ranked record covers ${coverageLabelForArea(rec.value.id)}.`
