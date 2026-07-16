@@ -58,7 +58,7 @@
           <div class="shrink-0 text-right">
             <p class="flex items-baseline justify-end gap-1 font-mono">
               <template v-if="rankById[row.rec.id]">
-                <span class="text-[15px] font-extrabold leading-none text-ob-gold"
+                <span class="text-[15px] font-extrabold leading-none text-ob-sand"
                   >#{{ rankById[row.rec.id] }}</span
                 >
                 <span class="text-[10px] text-ob-faint">·</span>
@@ -128,7 +128,7 @@
         </div>
 
         <div class="grid min-h-0 content-start gap-3">
-          <div class="grid gap-3 lg:grid-cols-2">
+          <div class="grid gap-3 lg:grid-cols-[1.1fr_0.9fr]">
             <section
               class="grid content-start gap-3 rounded-[6px] border border-ob-sand/10 px-3 py-2.5"
             >
@@ -275,10 +275,24 @@
               >
                 <p class="font-mono text-[8.5px] uppercase tracking-[0.06em] text-ob-faint">
                   Girls' sport and facilities
+                  <span
+                    v-if="girlsSport?.confidence"
+                    class="normal-case tracking-normal text-ob-dim"
+                  >
+                    · {{ girlsSport.confidence }} confidence
+                  </span>
                 </p>
                 <p v-if="girlsSport?.line" class="mt-1 text-[10.5px] leading-snug text-ob-muted2">
                   {{ girlsSport.line }}
                 </p>
+                <div v-if="girlsSportPathways.length" class="mt-1.5 flex flex-wrap gap-1">
+                  <span
+                    v-for="sport in girlsSportPathways"
+                    :key="sport.key"
+                    class="rounded-full bg-ob-teal/8 px-1.5 py-[2px] font-mono text-[9px] text-ob-teal"
+                    >✓ {{ sport.label }}</span
+                  >
+                </div>
                 <div v-if="childhoodFacilities.length" class="mt-1.5 flex flex-wrap gap-1">
                   <span
                     v-for="facility in childhoodFacilities"
@@ -317,7 +331,7 @@ import { FEE_ESTIMATE_BY_RISK } from '@/data/dwelling/areaCorridors.js'
 import { localitiesForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLines, linesForArea } from '@/data/dwelling/trainLines.js'
 import { facilitiesForArea } from '@/data/dwelling/facilities.js'
-import { girlsSportFor } from '@/data/dwelling/girlsSport.js'
+import { GIRLS_SPORT_CLUBS, girlsSportFor } from '@/data/dwelling/girlsSport.js'
 import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
 import { personalNetworkByAreaId } from '@/data/dwelling/personalNetwork.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
@@ -367,6 +381,9 @@ const headerMetrics = computed(() => [
 ])
 const suburbProfile = computed(() => suburbProfileFor(props.row.rec.id))
 const girlsSport = computed(() => girlsSportFor(props.row.rec.id))
+const girlsSportPathways = computed(() =>
+  GIRLS_SPORT_CLUBS.filter((sport) => girlsSport.value?.clubPresence?.[sport.key] === true),
+)
 const childhoodFacilities = computed(() => [
   ...new Set([
     ...(girlsSport.value?.facilities || []),

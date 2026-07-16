@@ -38,7 +38,7 @@
             :style="scoreBadgeStyle(previewRow)"
             :title="bandLabel(previewRow)"
           >
-            <span class="text-[15px] font-bold leading-none text-ob-gold"
+            <span class="text-[15px] font-bold leading-none text-ob-sand"
               >#{{ rankById[previewRow.rec.id] }}</span
             >
             <span class="text-[10px] text-ob-faint">·</span>
@@ -81,7 +81,7 @@
           >
             <div class="flex items-start gap-3">
               <span
-                class="w-10 shrink-0 pt-[1px] font-mono text-[15px] font-bold leading-none text-ob-gold"
+                class="w-10 shrink-0 pt-[1px] font-mono text-[15px] font-bold leading-none text-ob-sand"
               >
                 #{{ rankById[row.rec.id] }}
               </span>
