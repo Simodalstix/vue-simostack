@@ -205,6 +205,7 @@ class Anchor:
     lat: float
     source: str  # 'station' | 'locality-representative-point'
     name_hints: dict = field(default_factory=dict)
+    catchment_m: float = 800.0
 
 
 def load_anchors(anchors_path: Path, localities_path: Path) -> list[Anchor]:
@@ -217,7 +218,7 @@ def load_anchors(anchors_path: Path, localities_path: Path) -> list[Anchor]:
         hints = rec.get("nameHints", {})
         if rec["anchors"]:
             a = rec["anchors"][0]  # first station point is the record's primary anchor
-            anchors.append(Anchor(rec["id"], rec["suburb"], a["lng"], a["lat"], "station", hints))
+            anchors.append(Anchor(rec["id"], rec["suburb"], a["lng"], a["lat"], "station", hints, rec.get("catchmentMetres", 800)))
         else:
             # tram/bus-only records: fall back to the locality polygon
             geoms = [loc_by_name[n.casefold()] for n in rec["localityNames"] if n.casefold() in loc_by_name]
@@ -226,7 +227,8 @@ def load_anchors(anchors_path: Path, localities_path: Path) -> list[Anchor]:
                 continue
             pt = geoms[0].representative_point()
             anchors.append(
-                Anchor(rec["id"], rec["suburb"], pt.x, pt.y, "locality-representative-point", hints)
+                Anchor(rec["id"], rec["suburb"], pt.x, pt.y, "locality-representative-point", hints,
+                       rec.get("catchmentMetres", 800))
             )
     return anchors
 
@@ -273,6 +275,30 @@ GENERIC_TOKENS = {"primary", "secondary", "school", "college", "high", "the", "a
 
 def distinctive_tokens(norm: str) -> frozenset[str]:
     return frozenset(t for t in norm.split() if t not in GENERIC_TOKENS and not re.fullmatch(r"[0-9-]+", t))
+
+
+def catchment_zones(anchors: list[Anchor], zones: gpd.GeoDataFrame, category: str) -> list[dict]:
+    """Zones that INTERSECT each record's catchment circle without containing
+    the anchor itself. An 800 m catchment routinely straddles primary zone
+    boundaries (South Yarra station sits 23 m from one); these are emitted as
+    role 'inCatchment' so the display can show them fainter and the card can
+    say 'parts of this catchment fall in X's zone'."""
+    name_col, no_col = zone_attr_columns(zones)
+    zones_m = zones.to_crs(VICGRID_M)
+    out = []
+    pts_m = gpd.GeoSeries([Point(a.lng, a.lat) for a in anchors], crs=WGS84).to_crs(VICGRID_M)
+    for a, pt_m in zip(anchors, pts_m):
+        circle = pt_m.buffer(a.catchment_m)
+        hit = zones_m[zones_m.geometry.intersects(circle) & ~zones_m.geometry.contains(pt_m)]
+        for idx, row in hit.iterrows():
+            out.append({
+                "areaId": a.area_id, "category": category,
+                "schoolName": str(row[name_col]).strip(),
+                "schoolNo": (str(row[no_col]).strip() if no_col else None),
+                "boundaryDistanceM": None, "anchorSource": a.source,
+                "_zoneIndex": int(idx), "role": "inCatchment",
+            })
+    return out
 
 
 def match_hint_schools(anchors: list[Anchor], locations: pd.DataFrame) -> list[dict]:
@@ -367,20 +393,27 @@ def run(args: argparse.Namespace) -> None:
     locations = load_locations_csv(Path(args.locations_csv))
     print(f"  {len(anchors)} anchors, {len(locations)} schools in locations CSV")
 
+    catchment = []
     with tempfile.TemporaryDirectory() as td:
         layers = extract_zone_layers(Path(args.zones_zip), Path(td))
         assignments = assign_zones(anchors, layers["primary"], "primary") + assign_zones(
             anchors, layers["secondary"], "secondary"
         )
+        for r in assignments:
+            r.setdefault("role", "anchorZoned")
+        catchment = catchment_zones(anchors, layers["primary"], "primary") + catchment_zones(
+            anchors, layers["secondary"], "secondary"
+        )
 
         # ---- zones output: one geometry per distinct school+category -------
-        zone_features, zone_key_to_areas = {}, {}
+        zone_features, zone_key_to_areas, zone_key_roles = {}, {}, {}
         for cat in ("primary", "secondary"):
             gdf = layers[cat]
             name_col, no_col = zone_attr_columns(gdf)
-            for rec in [r for r in assignments if r["category"] == cat and r["schoolName"]]:
+            for rec in [r for r in assignments + catchment if r["category"] == cat and r["schoolName"]]:
                 key = f"{cat}:{rec['schoolNo'] or slugify(rec['schoolName'])}"
                 zone_key_to_areas.setdefault(key, []).append(rec["areaId"])
+                zone_key_roles.setdefault(key, {})[rec["areaId"]] = rec["role"]
                 if key not in zone_features:
                     geom = gdf.loc[rec["_zoneIndex"]].geometry.simplify(
                         args.tolerance, preserve_topology=True
@@ -399,7 +432,10 @@ def run(args: argparse.Namespace) -> None:
             "source": "Victorian Government School Zones (data.vic.gov.au), CC BY 4.0, (c) State of Victoria (Department of Education)",
             "caveat": "Enrolment zones for one year; verify any address at findmyschool.vic.gov.au. Not for property purchase reliance per the publisher.",
             "features": [
-                {**f, "areaIds": sorted(set(zone_key_to_areas[k]))} for k, f in zone_features.items()
+                {**f,
+                 "areaIds": sorted(set(zone_key_to_areas[k])),
+                 "anchorZonedFor": sorted(a for a, role in zone_key_roles[k].items() if role == "anchorZoned"),
+                } for k, f in zone_features.items()
             ],
         }
         zones_path = out_data_dir / "dwelling-school-zones.json"
@@ -460,9 +496,13 @@ def run(args: argparse.Namespace) -> None:
     context = {}
     for a in anchors:
         recs = {r["category"]: r for r in assignments if r["areaId"] == a.area_id and r["schoolName"]}
+        alsoP = sorted({c["schoolName"] for c in catchment if c["areaId"] == a.area_id and c["category"] == "primary"})
+        alsoS = sorted({c["schoolName"] for c in catchment if c["areaId"] == a.area_id and c["category"] == "secondary"})
         context[a.area_id] = {
             "zonedPrimary": recs.get("primary", {}).get("schoolName"),
             "zonedSecondary": recs.get("secondary", {}).get("schoolName"),
+            "alsoInCatchmentPrimary": alsoP,
+            "alsoInCatchmentSecondary": alsoS,
             "anchorSource": a.source,
             "boundaryFlag": any(
                 (r.get("boundaryDistanceM") or 1e9) < BOUNDARY_FLAG_M for r in recs.values()

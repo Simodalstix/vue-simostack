@@ -15,300 +15,651 @@ export const schoolContextByAreaId = {
   "inner-south-yarra-2br": {
     "zonedPrimary": "Toorak Primary School",
     "zonedSecondary": "Prahran High School",
+    "alsoInCatchmentPrimary": [
+      "Richmond Primary School",
+      "South Yarra Primary School",
+      "Windsor Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Richmond High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "inner-richmond-2br": {
     "zonedPrimary": "Richmond Primary School",
     "zonedSecondary": "Richmond High School",
+    "alsoInCatchmentPrimary": [
+      "Richmond West Primary School",
+      "South Melbourne Park Primary School",
+      "South Yarra Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Prahran High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "inner-collingwood-2br": {
     "zonedPrimary": "Collingwood College",
     "zonedSecondary": "Collingwood College",
+    "alsoInCatchmentPrimary": [
+      "Clifton Hill Primary School",
+      "Fitzroy Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Fitzroy High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "inner-windsor-prahran-2br": {
     "zonedPrimary": "Windsor Primary School",
     "zonedSecondary": "Prahran High School",
+    "alsoInCatchmentPrimary": [
+      "South Yarra Primary School",
+      "St Kilda Park Primary School",
+      "St Kilda Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Elwood College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "inner-abbotsford-2br": {
     "zonedPrimary": "Collingwood College",
     "zonedSecondary": "Collingwood College",
+    "alsoInCatchmentPrimary": [
+      "Clifton Hill Primary School",
+      "Fitzroy Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Fitzroy High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "sunshine-station-2br": {
     "zonedPrimary": "Sunshine Primary School",
     "zonedSecondary": "Sunshine College",
+    "alsoInCatchmentPrimary": [
+      "Albion Primary School",
+      "Sunshine Harvester Primary School",
+      "Sunshine Heights Primary School",
+      "Sunshine North Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Braybrook College",
+      "Sunshine College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "footscray-station-2br": {
     "zonedPrimary": "Footscray City Primary School",
     "zonedSecondary": "Footscray High School",
+    "alsoInCatchmentPrimary": [
+      "Footscray Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Footscray High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "seddon-westfootscray-villa": {
     "zonedPrimary": "Footscray City Primary School",
     "zonedSecondary": "Footscray High School",
+    "alsoInCatchmentPrimary": [
+      "Footscray Primary School",
+      "Kingsville Primary School",
+      "Yarraville West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Footscray High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "yarraville-2br": {
     "zonedPrimary": "Yarraville West Primary School",
     "zonedSecondary": "Footscray High School",
+    "alsoInCatchmentPrimary": [
+      "Footscray City Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "established-western-value": {
     "zonedPrimary": "St Albans Primary School",
     "zonedSecondary": "St Albans Secondary College",
+    "alsoInCatchmentPrimary": [
+      "St Albans East Primary School",
+      "St Albans Heights Primary School",
+      "University Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "northwest-villa-corridor": {
     "zonedPrimary": "Pascoe Vale Primary School",
     "zonedSecondary": "Strathmore Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Coburg North Primary School",
+      "Pascoe Vale North Primary School",
+      "Strathmore North Primary School",
+      "Westbreen Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "upfield-corridor": {
     "zonedPrimary": "Brunswick North Primary School",
     "zonedSecondary": "Brunswick Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Brunswick East Primary School",
+      "Brunswick South Primary School",
+      "Brunswick South West Primary School",
+      "Merri-bek Primary School",
+      "Princes Hill Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "northern-rail-value": {
     "zonedPrimary": "Reservoir Primary School",
     "zonedSecondary": "Reservoir High School",
+    "alsoInCatchmentPrimary": [
+      "Preston Primary School",
+      "Reservoir East Primary School",
+      "Reservoir West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Preston High School",
+      "Reservoir High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "inner-se-apartment-corridor": {
     "zonedPrimary": "Carnegie Primary School",
     "zonedSecondary": "Glen Eira College",
+    "alsoInCatchmentPrimary": [
+      "Glen Huntly Primary School",
+      "Lloyd Street Primary School",
+      "Murrumbeena Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "se-value-corridor": {
     "zonedPrimary": "Springvale Rise Primary School",
     "zonedSecondary": "Westall Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Springvale Rise Primary School",
+      "Westall Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Keysborough Secondary College",
+      "Wellington Secondary College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "frankston-middle-ring": {
     "zonedPrimary": "Moorabbin Primary School",
     "zonedSecondary": "Sandringham College",
+    "alsoInCatchmentPrimary": [
+      "Bentleigh West Primary School",
+      "Southmoor Primary School",
+      "Tucker Road Bentleigh Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Bentleigh Secondary College",
+      "Brighton Secondary College",
+      "Cheltenham Secondary College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "inner-lowcar-benchmark": {
     "zonedPrimary": "Kensington Primary School",
     "zonedSecondary": "Mount Alexander 7-12 College",
+    "alsoInCatchmentPrimary": [
+      "Debney Meadows Primary School",
+      "North Melbourne Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "University High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "ascot-vale-2br": {
     "zonedPrimary": "Ascot Vale Primary School",
     "zonedSecondary": "Mount Alexander 7-12 College",
+    "alsoInCatchmentPrimary": [
+      "Ascot Vale West Primary School",
+      "Flemington Primary School",
+      "Kensington Primary School",
+      "Moonee Ponds West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "growth-corridor-stress-test": {
     "zonedPrimary": "Baden Powell P-9 College",
     "zonedSecondary": "Baden Powell P-9 College",
+    "alsoInCatchmentPrimary": [
+      "Nearnung Primary School",
+      "Tarneit P-9 College"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Bemin Secondary College",
+      "Tarneit P-9 College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "craigieburn-townhouse": {
     "zonedPrimary": "Craigieburn South Primary School",
     "zonedSecondary": "Craigieburn Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Craigieburn Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "donnybrook-house-land": {
     "zonedPrimary": "Gilgai Plains Primary School",
     "zonedSecondary": "Ngayuk College",
+    "alsoInCatchmentPrimary": [
+      "Donnybrook Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "northcote-2br": {
     "zonedPrimary": "Northcote Primary School",
     "zonedSecondary": "Northcote High School",
+    "alsoInCatchmentPrimary": [
+      "Brunswick East Primary School",
+      "Merri Creek Primary School",
+      "Thornbury Primary School",
+      "Wales Street Primary School",
+      "Westgarth Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "thornbury-2br": {
     "zonedPrimary": "Thornbury Primary School",
     "zonedSecondary": "Northcote High School",
+    "alsoInCatchmentPrimary": [
+      "Brunswick East Primary School",
+      "Northcote Primary School",
+      "Wales Street Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Preston High School",
+      "Thornbury High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "preston-villa": {
     "zonedPrimary": "Preston West Primary School",
     "zonedSecondary": "Preston High School",
+    "alsoInCatchmentPrimary": [
+      "Bell Primary School",
+      "Preston Primary School",
+      "Preston South Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "box-hill-2br": {
     "zonedPrimary": "Mont Albert Primary School",
     "zonedSecondary": "Box Hill High School",
+    "alsoInCatchmentPrimary": [
+      "Box Hill North Primary School",
+      "Kerrimuir Primary School",
+      "Laburnum Primary School",
+      "Roberts McCubbin Primary School",
+      "Surrey Hills Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Koonung Secondary College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "malvern-2br": {
     "zonedPrimary": "Caulfield Junior College",
     "zonedSecondary": "Glen Eira College",
+    "alsoInCatchmentPrimary": [
+      "Armadale Primary School",
+      "Malvern Central School",
+      "Malvern Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Auburn High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "toorak-2br": {
     "zonedPrimary": "Armadale Primary School",
     "zonedSecondary": "Auburn High School",
+    "alsoInCatchmentPrimary": [
+      "Toorak Primary School",
+      "Windsor Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Prahran High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "kew-2br": {
     "zonedPrimary": "Kew Primary School",
     "zonedSecondary": "Kew High School",
+    "alsoInCatchmentPrimary": [
+      "Kew East Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "locality-representative-point",
     "boundaryFlag": true
   },
   "balwyn-2br": {
     "zonedPrimary": "Balwyn Primary School",
     "zonedSecondary": "Balwyn High School",
+    "alsoInCatchmentPrimary": [
+      "Balwyn North Primary School",
+      "Chatham Primary School",
+      "Greythorn Primary School",
+      "Mont Albert Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Camberwell High School",
+      "Koonung Secondary College"
+    ],
     "anchorSource": "locality-representative-point",
     "boundaryFlag": false
   },
   "albert-park-2br": {
     "zonedPrimary": "Albert Park Primary School",
     "zonedSecondary": "Albert Park College",
+    "alsoInCatchmentPrimary": [
+      "Middle Park Primary School",
+      "Port Melbourne Primary School",
+      "South Melbourne Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "locality-representative-point",
     "boundaryFlag": false
   },
   "st-kilda-2br": {
     "zonedPrimary": "St Kilda Park Primary School",
     "zonedSecondary": "Albert Park College",
+    "alsoInCatchmentPrimary": [
+      "Middle Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Elwood College",
+      "Prahran High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "balaclava-2br": {
     "zonedPrimary": "St Kilda Primary School",
     "zonedSecondary": "Elwood College",
+    "alsoInCatchmentPrimary": [
+      "Elwood Primary School",
+      "Ripponlea Primary School",
+      "Windsor Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "elwood-2br": {
     "zonedPrimary": "St Kilda Primary School",
     "zonedSecondary": "Elwood College",
+    "alsoInCatchmentPrimary": [
+      "Elwood Primary School",
+      "Ripponlea Primary School",
+      "Windsor Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "cremorne-2br": {
     "zonedPrimary": "Richmond Primary School",
     "zonedSecondary": "Richmond High School",
+    "alsoInCatchmentPrimary": [
+      "Richmond West Primary School",
+      "South Melbourne Park Primary School",
+      "South Yarra Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Prahran High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "chelsea-2br": {
     "zonedPrimary": "Chelsea Primary School",
     "zonedSecondary": "Patterson River Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Edithvale Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Mordialloc College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "bonbeach-2br": {
     "zonedPrimary": "Bonbeach Primary School",
     "zonedSecondary": "Patterson River Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Chelsea Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "north-melbourne-2br": {
     "zonedPrimary": "North Melbourne Primary School",
     "zonedSecondary": "University High School",
+    "alsoInCatchmentPrimary": [
+      "Docklands Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "sunbury-house": {
     "zonedPrimary": "Sunbury West Primary School",
     "zonedSecondary": "Sunbury College",
+    "alsoInCatchmentPrimary": [
+      "Goonawarra Primary School",
+      "Kismet Park Primary School",
+      "Sunbury Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "spotswood-2br": {
     "zonedPrimary": "Spotswood Primary School",
     "zonedSecondary": "Footscray High School",
+    "alsoInCatchmentPrimary": [
+      "Newport Lakes Primary School",
+      "Wembley Primary School",
+      "Yarraville West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Bayside P-12 College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "south-melbourne-2br": {
     "zonedPrimary": "South Melbourne Park Primary School",
     "zonedSecondary": "Albert Park College",
+    "alsoInCatchmentPrimary": [
+      "Albert Park Primary School",
+      "South Melbourne Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Port Melbourne Secondary College",
+      "Prahran High School"
+    ],
     "anchorSource": "locality-representative-point",
     "boundaryFlag": true
   },
   "armadale-2br": {
     "zonedPrimary": "Armadale Primary School",
     "zonedSecondary": "Auburn High School",
+    "alsoInCatchmentPrimary": [
+      "Caulfield Junior College",
+      "Malvern Central School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Elwood College",
+      "Glen Eira College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "burnley-2br": {
     "zonedPrimary": "Richmond Primary School",
     "zonedSecondary": "Richmond High School",
+    "alsoInCatchmentPrimary": [
+      "Hawthorn West Primary School",
+      "Toorak Primary School",
+      "Yarra Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Prahran High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "hawthorn-2br": {
     "zonedPrimary": "Hawthorn West Primary School",
     "zonedSecondary": "Richmond High School",
+    "alsoInCatchmentPrimary": [
+      "Glenferrie Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Auburn High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "mckinnon-villa": {
     "zonedPrimary": "Ormond Primary School",
     "zonedSecondary": "McKinnon Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Bentleigh West Primary School",
+      "McKinnon Primary School",
+      "Valkstone Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Brighton Secondary College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "glen-waverley-2br": {
     "zonedPrimary": "Glen Waverley Primary School",
     "zonedSecondary": "Glen Waverley Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Glen Waverley South Primary School",
+      "Glendal Primary School",
+      "Mount View Primary School",
+      "Pinewood Primary School",
+      "Syndal South Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
   },
   "balwyn-north-2br": {
     "zonedPrimary": "Boroondara Park Primary School",
     "zonedSecondary": "Balwyn High School",
+    "alsoInCatchmentPrimary": [
+      "Balwyn North Primary School",
+      "Belle Vue Primary School",
+      "Greythorn Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "locality-representative-point",
     "boundaryFlag": false
   },
   "middle-park-2br": {
     "zonedPrimary": "Middle Park Primary School",
     "zonedSecondary": "Albert Park College",
+    "alsoInCatchmentPrimary": [
+      "Albert Park Primary School",
+      "South Melbourne Park Primary School",
+      "St Kilda Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
     "anchorSource": "locality-representative-point",
     "boundaryFlag": false
   },
   "mentone-2br": {
     "zonedPrimary": "Mentone Primary School",
     "zonedSecondary": "Parkdale Secondary College",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [
+      "Beaumaris Secondary College",
+      "Cheltenham Secondary College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "clifton-hill-2br": {
     "zonedPrimary": "Clifton Hill Primary School",
     "zonedSecondary": "Fitzroy High School",
+    "alsoInCatchmentPrimary": [
+      "Fitzroy North Primary School",
+      "Merri Creek Primary School",
+      "Spensley Street Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Collingwood College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": true
   },
   "doncaster-villa": {
     "zonedPrimary": "Birralee Primary School",
     "zonedSecondary": "Koonung Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Boroondara Park Primary School",
+      "Greythorn Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Balwyn High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   }

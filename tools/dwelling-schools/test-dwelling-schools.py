@@ -195,3 +195,17 @@ def test_token_subset_never_invents(insertion_locations):
     matched, unmatched = mod.match_hint_schools(anchors, insertion_locations)
     assert matched == []
     assert len(unmatched) == 1
+
+
+# ---- catchment-intersecting zones --------------------------------------------
+def test_catchment_zones_straddle(square_zones):
+    # anchor inside A but 55 m from B's boundary; 800 m catchment overlaps B
+    edge = mod.Anchor("rec-edge", "Edge", 145.0194, -37.79, "station", {}, 800)
+    deep = mod.Anchor("rec-deep", "Deep", 145.005, -37.79, "station", {}, 300)
+    res = mod.catchment_zones([edge, deep], square_zones, "primary")
+    edge_hits = {r["schoolName"] for r in res if r["areaId"] == "rec-edge"}
+    deep_hits = {r["schoolName"] for r in res if r["areaId"] == "rec-deep"}
+    assert "Zone B Primary School" in edge_hits          # straddles the line
+    assert "Zone A Primary School" not in edge_hits      # containing zone excluded
+    assert deep_hits == set()                            # 300 m circle stays inside A
+    assert all(r["role"] == "inCatchment" for r in res)
