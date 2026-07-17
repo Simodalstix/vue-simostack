@@ -21,6 +21,10 @@
 // left out of both sides of the weighted mean rather than scored as zero.
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
 import { personalNetworkByAreaId, pnScore } from './personalNetwork.js'
+import { beachAccessByAreaId, beachScore } from './beachAccess.js'
+import { girlsSportFor, sportAccessScore } from './girlsSport.js'
+import { DWELLING_COST_BY_ID } from './cost/dwelling-cost-context.ts'
+import { costScoreFor } from './cost/costScoring.js'
 
 const tenScale = (v) => (v == null ? null : v * 2) // existing 1-5 scores -> 2-10
 
@@ -44,7 +48,15 @@ export const decideCriteria = [
     key: 'cost',
     label: 'Cost',
     hint: 'Suitable stock at a price the brief can carry, not just a low median.',
-    value: (rec) => tenScale(rec.scores?.housingValue),
+    value: (rec, _commuteScore, context = {}) => {
+      const generated = DWELLING_COST_BY_ID[rec.id]
+      if (!generated?.medianPrice2br) return tenScale(rec.scores?.housingValue)
+      return costScoreFor(
+        generated.medianPrice2br,
+        generated.salesPerYear,
+        context.maxPrice ?? 900000,
+      )
+    },
   },
   {
     key: 'commute',
@@ -61,14 +73,21 @@ export const decideCriteria = [
   {
     key: 'kidAmenity',
     label: 'Kid amenity',
-    hint: 'How independently a 12-15yo can get around.',
-    value: (rec) => tenScale(rec.childhood?.teenIndependence),
+    hint: 'How independently a 12-15yo can get around, blended equally with girls’ sport access where researched.',
+    value: (rec) => {
+      const teen = tenScale(rec.childhood?.teenIndependence)
+      const sport = sportAccessScore(girlsSportFor(rec.id))
+      if (teen == null && sport == null) return null
+      if (sport == null) return teen
+      if (teen == null) return sport
+      return 0.5 * teen + 0.5 * sport
+    },
   },
   {
-    key: 'greenspace',
-    label: 'Greenspace',
-    hint: 'Population-weighted access to eligible public open space, major parks and nature corridors.',
-    value: (rec) => (Number.isFinite(rec.greenspace) ? rec.greenspace : null),
+    key: 'beach',
+    label: 'Beach',
+    hint: 'Walkable access to a swimmable foreshore; bonus-only, banded. Non-coastal suburbs are not assessed rather than penalised.',
+    value: (rec) => beachScore(beachAccessByAreaId[rec.id]?.estMin ?? null),
   },
   {
     key: 'safetyQuality',
@@ -104,7 +123,7 @@ export const decideStrategies = [
       commute: 3,
       schools: 2,
       kidAmenity: 2,
-      greenspace: 1,
+      beach: 1,
       safetyQuality: 1,
       personalNetwork: 2,
     },
@@ -122,7 +141,7 @@ export const decideStrategies = [
       commute: 3,
       schools: 1,
       kidAmenity: 1,
-      greenspace: 1,
+      beach: 1,
       safetyQuality: 1,
       personalNetwork: 2,
     },
@@ -141,7 +160,7 @@ export const decideStrategies = [
       commute: 2,
       schools: 3,
       kidAmenity: 3,
-      greenspace: 2,
+      beach: 2,
       safetyQuality: 2,
       personalNetwork: 3,
     },
@@ -163,7 +182,7 @@ export const decideStrategies = [
       commute: 1,
       schools: 2,
       kidAmenity: 1,
-      greenspace: 2,
+      beach: 2,
       safetyQuality: 1,
       personalNetwork: 1,
     },
@@ -182,7 +201,7 @@ export const decideStrategies = [
       commute: 2,
       schools: 3,
       kidAmenity: 2,
-      greenspace: 2,
+      beach: 2,
       safetyQuality: 2,
       personalNetwork: 3,
     },

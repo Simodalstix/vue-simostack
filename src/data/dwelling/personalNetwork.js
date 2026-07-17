@@ -4,12 +4,13 @@
 // insensitive to sub-suburb precision. Estimates use the best realistic
 // non-car journey in typical conditions as at July 2026, after the Metro
 // Tunnel opening. They are owner judgment pending PTV verification of the
-// low-confidence rows.
+// low-confidence rows. The score is bonus-only: proximity contributes, while
+// a distant anchor is not assessed because commute already captures distance.
 
 export const PERSONAL_NETWORK_DATASET = {
   anchor: 'South Yarra (suburb-level approximate, see personalAnchors.js)',
   method: 'Best realistic non-car journey, typical conditions, banded score',
-  bands: '<=10min:10, <=20:8, <=30:5, <=40:2, >40:0',
+  bands: '<=10min:10, <=20:8, <=30:6, >30:not assessed',
   asAt: 'July 2026 (post Metro Tunnel opening)',
 }
 
@@ -17,9 +18,8 @@ export function pnScore(estMin) {
   if (estMin == null) return null
   if (estMin <= 10) return 10
   if (estMin <= 20) return 8
-  if (estMin <= 30) return 5
-  if (estMin <= 40) return 2
-  return 0
+  if (estMin <= 30) return 6
+  return null
 }
 
 export const personalNetworkByAreaId = {

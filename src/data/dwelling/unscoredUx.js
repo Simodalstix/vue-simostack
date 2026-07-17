@@ -1,5 +1,5 @@
 export const UNSCORED_BANNER =
-  'Unscored — greenspace evidence pending; this suburb does not rank yet.'
+  'Unscored — required evidence is pending; this suburb does not rank yet.'
 
 export function isUnscoredRow(row) {
   return row?.status === 'unscored'

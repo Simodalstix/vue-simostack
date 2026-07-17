@@ -7,7 +7,12 @@ import { describe, it, expect } from 'vitest'
 import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
-import { girlsSportByArea, girlsSportFor, GIRLS_SPORT_CLUBS } from '../girlsSport.js'
+import {
+  girlsSportByArea,
+  girlsSportFor,
+  GIRLS_SPORT_CLUBS,
+  sportAccessScore,
+} from '../girlsSport.js'
 import { areaCorridors } from '../areaCorridors.js'
 
 const recordIds = new Set(areaCorridors.map((r) => r.id))
@@ -57,15 +62,21 @@ describe('girls sport context data', () => {
     expect(girlsSportFor('toorak-2br')).toBeNull()
   })
 
-  it('is never imported by the ranking engine or map colouring', () => {
+  it('scores confirmed pathways and facility presence in equal broad increments', () => {
+    expect(sportAccessScore(null)).toBeNull()
+    expect(sportAccessScore(girlsSportFor('cremorne-2br'))).toBe(2.5)
+    expect(sportAccessScore(girlsSportFor('middle-park-2br'))).toBe(10)
+  })
+
+  it('is only imported by the criterion definition, never map colouring', () => {
     const src = (rel) => readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 'utf8')
     for (const rel of [
       '../../../composables/useAreaRanking.js',
       '../../../composables/useCommuteScoring.js',
       '../mapConfig.js',
-      '../decideStrategies.js',
     ]) {
       expect(src(rel)).not.toMatch(/girlsSport/i)
     }
+    expect(src('../decideStrategies.js')).toMatch(/sportAccessScore/)
   })
 })

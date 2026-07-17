@@ -33,7 +33,6 @@
         >
           <component
             :is="DwellingMap"
-            :catchments="features.catchments"
             :points="features.points"
             :localities="features.localities"
             :bounds="features.bounds"
@@ -52,12 +51,13 @@
             :school-zones="schoolZones"
             :active-zone-category="activeZoneCategory"
             :facilities="facilityFeatures"
+            :open-space="openSpaceUrl"
             :hovered-area-id="hoveredAreaId"
             :show-all-schools="layers.schools"
             :show-all-facilities="layers.facilities"
+            :show-open-space="layers.openSpace"
             :anchors="personalAnchors"
             :show-anchors="layers.anchors"
-            :show-diagnostics="layers.diagnostics"
             :suspend-interaction="!!selectedRow"
             @select="onSelect"
             @hover="onHover"
@@ -177,6 +177,7 @@ import { personalAnchors } from '@/data/dwelling/personalAnchors.js'
 import coastlineUrl from '@/assets/geo/melbourne-coastline.geojson?url'
 import bayUrl from '@/assets/geo/port-phillip-bay.geojson?url'
 import yarraUrl from '@/assets/geo/yarra-river.geojson?url'
+import openSpaceUrl from '@/assets/geo/melbourne-open-space.geojson?url'
 import SuburbProfileCard from './SuburbProfileCard.vue'
 
 // maplibre-gl is heavy; keep it in its own async chunk so the rest of the Decide
@@ -185,7 +186,7 @@ const DwellingMap = defineAsyncComponent(() => import('./DwellingMap.vue'))
 
 const props = defineProps({
   rows: { type: Array, required: true },
-  features: { type: Object, required: true }, // { catchments, points, localities, bounds }
+  features: { type: Object, required: true }, // { points, localities, bounds }
   indexById: { type: Object, required: true },
   shortlistIds: { type: Array, default: () => [] },
   payoffYears: { type: Number, default: 15 },
@@ -216,7 +217,7 @@ const schoolFeatures = {
   })),
 }
 const schoolZones = ref(null)
-const activeZoneCategory = ref('secondary')
+const activeZoneCategory = ref('primary')
 
 onMounted(async () => {
   const module = await import('@/data/dwelling/schools/dwelling-school-zones.json')
@@ -224,10 +225,9 @@ onMounted(async () => {
 })
 
 // Map overlay layers. Schools and facilities also appear contextually for the
-// hovered or selected suburb with the toggle off; anchors default on (they are
-// the point of the layer); diagnostics expose the old catchment circles only
-// on demand.
-const layers = reactive({ anchors: true, schools: false, facilities: false, diagnostics: false })
+// hovered or selected suburb with the toggle off; anchors and the contextual
+// eligible-open-space layer default on.
+const layers = reactive({ anchors: true, schools: false, facilities: false, openSpace: true })
 const layerToggles = [
   { key: 'anchors', label: '★ personal', hint: 'Personal network anchors (gold)' },
   {
@@ -237,9 +237,9 @@ const layerToggles = [
   },
   { key: 'facilities', label: 'facilities', hint: 'Show every curated aquatic/sports facility' },
   {
-    key: 'diagnostics',
-    label: 'diagnostics',
-    hint: 'Station-catchment radius circles (analysis aid)',
+    key: 'openSpace',
+    label: 'open space',
+    hint: 'Eligible public open-space polygons (context only; no scoring impact)',
   },
 ]
 

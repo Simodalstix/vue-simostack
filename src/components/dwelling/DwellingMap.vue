@@ -27,9 +27,6 @@
 // The locality polygon is the primary hover target. Where the vendored suburb
 // polygon set does not cover a record yet, an enlarged invisible station hit
 // target acts as a fallback so the area is still explorable.
-// The old station-catchment circles survive only behind the `showDiagnostics`
-// prop as a diagnostic overlay.
-//
 // Colour, fill opacity and status per record arrive via `areaState` (the
 // parent derives them from the live ranking); everything rides on MapLibre
 // feature-state so weight changes never rebuild the map instance.
@@ -39,7 +36,6 @@ import maplibregl from 'maplibre-gl'
 import 'maplibre-gl/dist/maplibre-gl.css'
 
 const props = defineProps({
-  catchments: { type: Object, required: true },
   points: { type: Object, required: true },
   localities: { type: Object, default: null },
   bounds: { type: Array, required: true },
@@ -67,17 +63,17 @@ const props = defineProps({
   // School / facility point FeatureCollections (properties.areaIds arrays).
   schools: { type: Object, default: null },
   schoolZones: { type: Object, default: null },
-  activeZoneCategory: { type: String, default: 'secondary' },
+  activeZoneCategory: { type: String, default: 'primary' },
   facilities: { type: Object, default: null },
+  openSpace: { type: String, default: null },
   // Contextual visibility: points for the hovered or selected suburb show;
   // these flags force the whole layer on.
   showAllSchools: { type: Boolean, default: false },
   showAllFacilities: { type: Boolean, default: false },
+  showOpenSpace: { type: Boolean, default: true },
   // Personal network anchors [{ id, label, longitude, latitude, type }], gold layer.
   anchors: { type: Array, default: () => [] },
   showAnchors: { type: Boolean, default: true },
-  // Diagnostic overlay: straight-line station-catchment circles.
-  showDiagnostics: { type: Boolean, default: false },
   // When a full suburb card is covering the map, clear hover state and ignore
   // map interactivity until the card closes.
   suspendInteraction: { type: Boolean, default: false },
@@ -97,7 +93,6 @@ const emit = defineEmits(['select', 'hover'])
 
 const T = {
   bg: '#111418',
-  faintFill: '#2A3138',
   markerDim: '#7A8A99',
   ink: '#0C0F12',
   selected: '#FAF8F3',
@@ -119,7 +114,6 @@ let loaded = false
 let hoverContext = null
 let containerLeaveHandler = null
 
-const CATCH_SRC = 'catchments'
 const POINT_SRC = 'points'
 const LOCALITY_SRC = 'localities'
 const WATER_SRC = 'water'
@@ -128,6 +122,7 @@ const LINE_SRC = 'train-lines'
 const SCHOOL_SRC = 'schools'
 const SCHOOL_ZONE_SRC = 'school-zones'
 const FACILITY_SRC = 'facilities'
+const OPEN_SPACE_SRC = 'open-space'
 const STATION_HIT_LAYER = 'station-hit'
 const GLYPHS_URL = `${import.meta.env.BASE_URL}glyphs/{fontstack}/{range}.pbf`
 // The exact locality polygon is the primary hover/click target; the wide
@@ -146,22 +141,6 @@ const prefersReducedMotion =
     ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
     : false
 const PERSONAL_LABEL_ZOOM = 11.7
-
-// Outline colour/width priority: selected > shortlisted > hovered > base.
-function outlineColor() {
-  return [
-    'case',
-    ['boolean', ['feature-state', 'selected'], false],
-    T.selected,
-    ['boolean', ['feature-state', 'shortlisted'], false],
-    T.shortlist,
-    ['boolean', ['feature-state', 'hovered'], false],
-    T.hover,
-    ['boolean', ['feature-state', 'unscored'], false],
-    T.unscoredOutline,
-    T.outline,
-  ]
-}
 
 function buildStyle() {
   return {
@@ -382,6 +361,20 @@ function addLayers() {
     })
   }
 
+  // Eligible public open space is orientation context only. It deliberately
+  // sits below transport, stations, schools and facilities and is never read
+  // by the ranking engine.
+  if (props.openSpace) {
+    map.addSource(OPEN_SPACE_SRC, { type: 'geojson', data: props.openSpace })
+    map.addLayer({
+      id: 'open-space-fill',
+      type: 'fill',
+      source: OPEN_SPACE_SRC,
+      layout: { visibility: props.showOpenSpace ? 'visible' : 'none' },
+      paint: { 'fill-color': '#4F8062', 'fill-opacity': 0.18 },
+    })
+  }
+
   // Train lines: colour = route identity, thin and faint by default, lifted
   // for the hovered / selected suburb's useful lines.
   if (props.trainLines) {
@@ -421,28 +414,7 @@ function addLayers() {
     })
   }
 
-  map.addSource(CATCH_SRC, { type: 'geojson', data: props.catchments })
   map.addSource(POINT_SRC, { type: 'geojson', data: props.points })
-
-  // DIAGNOSTIC overlay only: the straight-line catchment circles. Hidden in
-  // the normal map experience.
-  map.addLayer({
-    id: 'catchment-fill',
-    type: 'fill',
-    source: CATCH_SRC,
-    layout: { visibility: props.showDiagnostics ? 'visible' : 'none' },
-    paint: {
-      'fill-color': ['coalesce', ['feature-state', 'color'], T.faintFill],
-      'fill-opacity': ['*', ['coalesce', ['feature-state', 'fillOpacity'], 0.16], 0.6],
-    },
-  })
-  map.addLayer({
-    id: 'catchment-outline',
-    type: 'line',
-    source: CATCH_SRC,
-    layout: { visibility: props.showDiagnostics ? 'visible' : 'none' },
-    paint: { 'line-color': outlineColor(), 'line-width': 1 },
-  })
 
   // Stations: small passive points. No hover behaviour; the selected suburb's
   // stations brighten and take a label.
@@ -593,7 +565,7 @@ function addLayers() {
 }
 
 // Push data styling + selection/shortlist into feature-state on the record
-// sources (catchments + stations) and the locality polygons.
+// station source and the locality polygons.
 function applyAllState() {
   if (!loaded || !map) return
   const selected = props.selectedAreaId
@@ -607,8 +579,7 @@ function applyAllState() {
       selected: areaId === selected,
       shortlisted: !st.unscored && shortSet.has(areaId),
     }
-    for (const src of [CATCH_SRC, POINT_SRC])
-      map.setFeatureState({ source: src, id: st.fid }, state)
+    map.setFeatureState({ source: POINT_SRC, id: st.fid }, state)
   }
   applyLocalityState(selected, shortSet)
 }
@@ -677,11 +648,9 @@ function applyContextFilters() {
   }
 }
 
-function applyDiagnostics() {
-  if (!loaded || !map) return
-  const vis = props.showDiagnostics ? 'visible' : 'none'
-  for (const id of ['catchment-fill', 'catchment-outline'])
-    map.setLayoutProperty(id, 'visibility', vis)
+function applyOpenSpaceVisibility() {
+  if (!loaded || !map?.getLayer('open-space-fill')) return
+  map.setLayoutProperty('open-space-fill', 'visibility', props.showOpenSpace ? 'visible' : 'none')
 }
 
 function sameHoverContext(a, b) {
@@ -938,10 +907,7 @@ watch(
   () => props.schoolZones,
   () => syncSchoolZoneLayers(),
 )
-watch(
-  () => props.showDiagnostics,
-  () => applyDiagnostics(),
-)
+watch(() => props.showOpenSpace, applyOpenSpaceVisibility)
 watch(
   () => props.showAnchors,
   () => syncAnchorMarkers(),

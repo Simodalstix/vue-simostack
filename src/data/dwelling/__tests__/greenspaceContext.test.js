@@ -58,17 +58,9 @@ describe('dwelling greenspace context', () => {
     }
   })
 
-  it('feeds the strategy engine one greenspace criterion value per record', () => {
-    const rec = activeRecords.find((record) => record.greenspaceComponents)
-    const altered = {
-      ...rec,
-      greenspaceComponents: {
-        localOpenSpaceAccess: 0,
-        majorParkAccess: 0,
-        natureCorridorAccess: 0,
-      },
-    }
-    expect(decideCriterionByKey.greenspace.value(altered)).toBe(rec.greenspace)
+  it('keeps greenspace as context rather than a strategy criterion', () => {
+    expect(decideCriterionByKey.greenspace).toBeUndefined()
+    expect(decideCriterionByKey.beach).toBeTruthy()
   })
 
   it('keeps the generated context in lockstep with the active ranked records', () => {

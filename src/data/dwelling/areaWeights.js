@@ -4,7 +4,7 @@
 // criteria (which rank dwelling STRATEGIES); these rank PLACES. Weights sum to
 // 100 so a weighted score reads as a percentage of the ideal.
 //
-// HISTORICAL: the live Decide ranking moved to the six-criterion strategy
+// HISTORICAL: the live Decide ranking moved to the seven-criterion strategy
 // presets in decideStrategies.js (July 2026). This table is kept as reference
 // data for the per-record `scores` fields it documents.
 //
@@ -55,12 +55,6 @@ export const areaWeights = [
     label: 'Safety',
     weight: 6,
     hint: 'Measured offence rates and street conditions, not perception. Pending Vic CSA data.',
-  },
-  {
-    key: 'envRisk',
-    label: 'Environmental & planning risk',
-    weight: 6,
-    hint: 'Flood, bushfire, contamination, freight and reservation exposure. Pending VicPlan review.',
   },
   {
     key: 'privacyWfh',

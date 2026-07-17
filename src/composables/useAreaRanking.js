@@ -77,9 +77,12 @@ function gate(rec, filters, commute) {
 // denominator, so a record missing a field is never punished as if it scored
 // zero. If the enabled weights sum to 0, fall back to an equal-weight mean of
 // whatever data exists rather than dividing by zero.
-export function weightedScore(rec, commuteScore, weights) {
+export function weightedScore(rec, commuteScore, weights, scoringContext = {}) {
   const entries = decideCriteria
-    .map((c) => ({ w: weights[c.key] ?? 0, s: c.value(rec, commuteScore) }))
+    .map((c) => ({
+      w: weights[c.key] ?? 0,
+      s: c.value(rec, commuteScore, scoringContext),
+    }))
     .filter((e) => e.s != null)
   if (!entries.length) return null
   let sum = 0
@@ -118,7 +121,9 @@ export function useAreaRanking(records, filtersRef, weightsRef) {
       const commute = commuteFor(rec)
       const commuteScore = commute ? scoreCommute(commute.typical, commute.transfers) : null
       const { status, reasons } = gate(rec, filters, commute)
-      const weighted = weightedScore(rec, commuteScore, weights)
+      const weighted = weightedScore(rec, commuteScore, weights, {
+        maxPrice: filters.maxPrice,
+      })
       return {
         rec,
         status,

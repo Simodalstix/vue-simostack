@@ -9,18 +9,16 @@ site auth gate and must stay network-silent for third parties.
 There is **no basemap**. MapLibre draws on a blank dark canvas. The only
 geometry shown is our own:
 
-1. **Catchment circles** — a straight-line radius per station point, sized from
-   each ranking record's `catchmentMetres` (700–1500 m).
-2. **Station markers** — one point per station.
+1. **Locality polygons** — suburb decision-fit fills and boundaries.
+2. **Eligible open space** — subdued context-only VPA polygons.
+3. **Station markers and schematic train lines**.
 
-Both are **derived at build time**, not vendored as static files, so geometry
-never drifts from the data:
+Station geometry is **derived at build time**, so it never drifts from the data:
 
 - Coordinates live in [`src/data/dwelling/areaGeo.js`](../../data/dwelling/areaGeo.js)
   (one registry entry per ranking record, keyed by the record `id`).
-- Radius comes from `catchmentMetres` on each record in `areaCorridors.js`.
 - [`src/data/dwelling/areaGeoFeatures.js`](../../data/dwelling/areaGeoFeatures.js)
-  assembles the GeoJSON `FeatureCollection`s from those two inputs.
+  assembles the station GeoJSON `FeatureCollection` from that registry.
 
 A faint orientation basemap is vendored as `melbourne-coastline.geojson`: the
 Port Phillip Bay / Yarra coastline, pulled from the OpenStreetMap Overpass API
@@ -28,6 +26,16 @@ Port Phillip Bay / Yarra coastline, pulled from the OpenStreetMap Overpass API
 Douglas-Peucker simplified (~40 KB, tolerance ~0.0012deg). It is drawn as a
 faint line under the catchments and loaded as a same-origin bundled asset (no
 third-party request). Re-fetch/re-simplify if the shoreline needs more detail.
+
+`melbourne-open-space.geojson` is the context-only eligible public-open-space
+layer sourced from the Victorian Planning Authority Open Space dataset named in
+`tools/dwelling-greenspace/dwelling-greenspace-source-manifest.json`. The
+reproducible `build-open-space-map.py` tool reuses the scoring pipeline's
+eligibility filter (public/open/existing, permitted categories; no golf, race
+course, median park, green buffer, transport/restricted land or water-only
+polygons), clips to the map frame, drops sub-0.75 ha shapes that are
+imperceptible at metropolitan scale, dissolves, simplifies and quantises the
+result. It is about 870 KB uncompressed and has zero scoring impact.
 
 ## Locality polygons, bay fill, Yarra (retrieved 2026-07-13)
 
@@ -85,14 +93,13 @@ names; add further ranges only if a name ever needs them.
   carry `verifiedAt: '2026-07-13'`; the rest carry `verifiedAt: null` and should
   be treated as re-verifiable, consistent with the placeholder status of the
   whole dwelling dataset.
-- The circles are **straight-line radii, not walking-network isochrones**. The
-  map surfaces this caveat in its caption. A score applies to the defined
-  station-catchment hypothesis, not to every street in the suburb.
+- Candidate records remain suburb/station-catchment hypotheses; the map's
+  contextual open-space polygons do not claim address-level access.
 
 ## Combined records
 
 Records that span more than one locality (e.g. `seddon-westfootscray-villa`,
 `inner-se-apartment-corridor` = Carnegie / Murrumbeena / Oakleigh) list every
-station point they cover. The map draws one circle per point, all sharing the
-record's single score and colour. Canonical ids are always the record `id` —
+station point they cover. The points share the record's single score and
+colour. Canonical ids are always the record `id` —
 never derived from the display label at runtime.

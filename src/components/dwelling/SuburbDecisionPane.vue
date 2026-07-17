@@ -123,11 +123,22 @@
                 >
                   <span>{{ priceBand(row.rec) }}</span>
                   <span>Commute {{ commuteShort(row) }}</span>
-                  <span v-if="friendBadge(row)" class="text-ob-gold/95">
-                    {{ friendBadge(row) }}
+                </div>
+                <div v-if="gateChip(row) || rowChips(row).length" class="mt-1 flex flex-wrap gap-1">
+                  <span
+                    v-if="gateChip(row)"
+                    class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                    :class="chipClass(gateChip(row))"
+                  >
+                    {{ gateChip(row).text }}
                   </span>
-                  <span :class="fitBadgeTone(row)">
-                    {{ fitBadgeText(row) }}
+                  <span
+                    v-for="chip in rowChips(row)"
+                    :key="chip.key"
+                    class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                    :class="chipClass(chip)"
+                  >
+                    {{ chip.text }}
                   </span>
                 </div>
               </div>
@@ -171,9 +182,9 @@
 <script setup>
 import { computed } from 'vue'
 import { fitBandBadgeFill, fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
-import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
 import { isUnscoredRow, partitionDecisionRows } from '@/data/dwelling/unscoredUx.js'
+import { differentiatingChipsFor, gateExceptionChipFor } from '@/data/dwelling/decisionChips.js'
 
 const props = defineProps({
   rows: { type: Array, required: true },
@@ -268,54 +279,35 @@ function previewTagline(row) {
   )
 }
 
-function friendFor(areaId) {
-  return friendContextFor(areaId)
+function rowChips(row) {
+  return differentiatingChipsFor(row)
 }
 
-function friendBadge(row) {
-  const friend = friendFor(row.rec.id)
-  return friend ? `★ ${friend.text}` : null
+function gateChip(row) {
+  return gateExceptionChipFor(row)
 }
 
-function fitBadgeText(row) {
-  const strategyLabel = props.strategy?.label
-  if (row.status === 'ok') return strategyLabel ? `✓ Viable under ${strategyLabel}` : '✓ Viable'
-  if (row.status === 'conditional')
-    return strategyLabel ? `~ Conditional under ${strategyLabel}` : '~ Conditional'
-  return strategyLabel ? `✕ Filtered under ${strategyLabel}` : '✕ Filtered'
-}
-
-function fitBadgeTone(row) {
+function chipClass(chip) {
   return {
-    ok: 'text-ob-teal',
-    conditional: 'text-ob-sand',
-    reject: 'text-ob-muted',
-  }[row.status]
+    friend: 'border-ob-gold-muted/35 text-ob-gold bg-ob-gold-dark/40',
+    beach: 'border-ob-teal/30 text-ob-teal bg-ob-teal/8',
+    train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
+    commute: 'border-ob-teal/25 text-ob-teal-bright bg-ob-teal/6',
+    schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
+    conditional: 'border-ob-sand/30 text-ob-sand bg-ob-sand/8',
+    reject: 'border-red-400/35 text-red-300 bg-red-400/8',
+  }[chip.tone]
 }
 
 function previewBadges(row) {
   const badges = []
-  const friend = friendFor(row.rec.id)
-  if (friend) {
-    badges.push({
-      key: 'friend',
-      text: `★ ${friend.text}`,
-      className: 'border-ob-gold-muted/35 text-ob-gold bg-ob-gold-dark/40',
-    })
-  }
-  if (!isUnscoredRow(row)) {
-    badges.push({
-      key: 'fit',
-      text: fitBadgeText(row),
-      className:
-        row.status === 'ok'
-          ? 'border-ob-teal/35 text-ob-teal bg-ob-teal/10'
-          : row.status === 'conditional'
-            ? 'border-ob-sand/25 text-ob-sand bg-ob-sand/8'
-            : 'border-ob-sand/18 text-ob-muted bg-ob-surface/75',
-    })
-  }
-  return badges.slice(0, 2)
+  const exception = gateExceptionChipFor(row)
+  if (exception) badges.push(exception)
+  badges.push(...differentiatingChipsFor(row))
+  return badges.slice(0, 3).map((badge) => ({
+    ...badge,
+    className: chipClass(badge),
+  }))
 }
 </script>
 

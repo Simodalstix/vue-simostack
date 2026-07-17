@@ -56,6 +56,23 @@
             >
               {{ headerNote }}
             </p>
+            <div v-if="headerChips.length || gateChip" class="flex flex-wrap gap-1.5">
+              <span
+                v-if="gateChip"
+                class="rounded-full border px-2 py-[3px] font-mono text-[9.5px] leading-none"
+                :class="chipClass(gateChip)"
+              >
+                {{ gateChip.text }}
+              </span>
+              <span
+                v-for="chip in headerChips"
+                :key="chip.key"
+                class="rounded-full border px-2 py-[3px] font-mono text-[9.5px] leading-none"
+                :class="chipClass(chip)"
+              >
+                {{ chip.text }}
+              </span>
+            </div>
           </div>
           <div class="shrink-0 text-right">
             <p class="flex items-baseline justify-end gap-1 font-mono">
@@ -210,6 +227,16 @@
                   >
                     {{ personalNetworkLine }}
                   </p>
+                  <p class="mt-0.5 text-[9.5px] leading-snug text-ob-dim">
+                    Beach:
+                    <span :class="beachAccess ? 'text-ob-teal' : 'italic text-ob-faint'">
+                      {{
+                        beachAccess
+                          ? `~${beachAccess.estMin} min by ${beachAccess.mode}`
+                          : 'not assessed'
+                      }}
+                    </span>
+                  </p>
                   <p class="mt-0.5 text-[10px] leading-snug text-ob-dim card-clamp-3">
                     {{ row.rec.coparentingGeometry }}
                   </p>
@@ -280,10 +307,7 @@
                 </p>
               </div>
 
-              <div
-                v-if="girlsSport || childhoodFacilities.length"
-                class="border-t border-ob-purple/15 pt-2"
-              >
+              <div class="border-t border-ob-purple/15 pt-2">
                 <p class="font-mono text-[8.5px] uppercase tracking-[0.06em] text-ob-faint">
                   Girls' sport and facilities
                   <span
@@ -295,6 +319,9 @@
                 </p>
                 <p v-if="girlsSport?.line" class="mt-1 text-[10.5px] leading-snug text-ob-muted2">
                   {{ girlsSport.line }}
+                </p>
+                <p v-else class="mt-1 text-[10.5px] italic leading-snug text-ob-faint">
+                  girls' sport not researched yet
                 </p>
                 <div v-if="girlsSportPathways.length" class="mt-1.5 flex flex-wrap gap-1">
                   <span
@@ -343,6 +370,8 @@ import { localitiesForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLines, linesForArea } from '@/data/dwelling/trainLines.js'
 import { facilitiesForArea } from '@/data/dwelling/facilities.js'
 import { GIRLS_SPORT_CLUBS, girlsSportFor } from '@/data/dwelling/girlsSport.js'
+import { beachAccessByAreaId } from '@/data/dwelling/beachAccess.js'
+import { differentiatingChipsFor, gateExceptionChipFor } from '@/data/dwelling/decisionChips.js'
 import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
 import { personalNetworkByAreaId } from '@/data/dwelling/personalNetwork.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
@@ -395,6 +424,9 @@ const headerMetrics = computed(() => [
 const unscored = computed(() => isUnscoredRow(props.row))
 const suburbProfile = computed(() => suburbProfileFor(props.row.rec.id))
 const girlsSport = computed(() => girlsSportFor(props.row.rec.id))
+const beachAccess = computed(() => beachAccessByAreaId[props.row.rec.id] || null)
+const headerChips = computed(() => differentiatingChipsFor(props.row))
+const gateChip = computed(() => gateExceptionChipFor(props.row))
 const girlsSportPathways = computed(() =>
   GIRLS_SPORT_CLUBS.filter((sport) => girlsSport.value?.clubPresence?.[sport.key] === true),
 )
@@ -440,6 +472,17 @@ const personalNetworkLine = computed(() => {
         : ''
   return `Network: ~${network.estMin} min by ${network.mode}${suffix}`
 })
+function chipClass(chip) {
+  return {
+    friend: 'border-ob-gold-muted/35 text-ob-gold bg-ob-gold-dark/40',
+    beach: 'border-ob-teal/30 text-ob-teal bg-ob-teal/8',
+    train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
+    commute: 'border-ob-teal/25 text-ob-teal-bright bg-ob-teal/6',
+    schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
+    conditional: 'border-ob-sand/30 text-ob-sand bg-ob-sand/8',
+    reject: 'border-red-400/35 text-red-300 bg-red-400/8',
+  }[chip.tone]
+}
 function bandColor(row) {
   return fitBandColor(row.weighted)
 }

@@ -29,13 +29,13 @@ export function commuteBandLabel(mins) {
   return 'Difficult'
 }
 
-// Continuous 1-5, higher is better. Continuous (not banded) so the score moves
-// with the door-to-door time even within a band: 25 min anchors at 5, each
-// further minute costs ~0.067, floor at 1. Each routine transfer costs 0.4 for
-// the friction it adds.
+// Continuous 0-5, higher is better. 25 min anchors at 5; each further minute
+// costs 0.1; no artificial floor (the >65 min gate already rejects extremes,
+// and a floor of 1 made commute perversely one of the better criteria for far
+// suburbs, so toggling commute off made them drop). Each routine transfer
+// costs 0.4.
 export function scoreCommute(mins, transfers = 0) {
   if (mins == null) return null
-  const base = 5 - Math.max(0, mins - 25) * (4 / 60)
-  const penalised = base - 0.4 * transfers
-  return Math.min(5, Math.max(1, penalised))
+  const base = 5 - Math.max(0, mins - 25) * 0.1
+  return Math.min(5, Math.max(0, base - 0.4 * transfers))
 }

@@ -6,21 +6,18 @@
 //
 // This file is PURELY geographic: verified station points, the localities a
 // record covers, and nothing else. It carries NO colours, NO presentation
-// classes and NO scores. Scores, prices and catchment radius come from
-// areaCorridors.js at render time (single source of truth). The GeoJSON builder
-// in ./areaGeoFeatures.js reads catchmentMetres off each ranking record.
+// classes and NO scores. Scores and prices stay in areaCorridors.js.
 //
 // COORDINATES are longitude-first ([lng, lat], GeoJSON order) and are
 // OpenStreetMap-derived to roughly station-platform precision. They are
 // provisional like the rest of the dwelling dataset: `verifiedAt` is set only
 // where a coordinate was cross-checked against a public source during this
 // pass, and null otherwise. A wrong dot is a map bug, so treat these as
-// re-verifiable, not authoritative. Straight-line catchment radii are drawn
-// from these points; they are NOT walking-network isochrones.
+// re-verifiable, not authoritative.
 //
 // MANY-TO-MANY by design: a combined record (Seddon / West Footscray,
 // Carnegie / Oakleigh, Brunswick / Coburg) lists every station point it spans,
-// and the map draws one catchment per point sharing that record's single score.
+// and the map draws each point sharing that record's single score.
 // Do NOT derive canonical ids from the human-readable `suburb`/`station` labels
 // at runtime — always key off the record id.
 

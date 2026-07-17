@@ -155,12 +155,7 @@ import {
   strategyById,
 } from '@/data/dwelling/decideStrategies.js'
 import { areaCorridors } from '@/data/dwelling/areaCorridors.js'
-import {
-  catchmentFeatures,
-  stationPointFeatures,
-  areaBounds,
-  areaIndexById,
-} from '@/data/dwelling/areaGeoFeatures.js'
+import { stationPointFeatures, areaBounds, areaIndexById } from '@/data/dwelling/areaGeoFeatures.js'
 import { localityFeatures } from '@/data/dwelling/localityFeatures.js'
 import { personalPosition } from '@/data/dwelling/facts.js'
 import { useAreaRanking } from '@/composables/useAreaRanking.js'
@@ -218,7 +213,6 @@ const rankedLocations = useAreaRanking(areaCorridors, areaFilters, effectiveWeig
 
 // Local GeoJSON for the map. Static geometry; colours are applied live.
 const mapFeatures = {
-  catchments: catchmentFeatures,
   points: stationPointFeatures,
   localities: localityFeatures,
   bounds: areaBounds,

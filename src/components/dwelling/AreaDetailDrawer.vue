@@ -204,7 +204,7 @@
 
     <div v-if="rec.greenspaceComponents" class="space-y-2.5">
       <p class="font-mono text-[11px] uppercase tracking-[0.08em] text-ob-soft">
-        Greenspace evidence
+        Greenspace evidence · context only
       </p>
       <div class="grid gap-3 sm:grid-cols-3">
         <div class="rounded-[6px] border border-ob-sand/10 px-3 py-2.5">

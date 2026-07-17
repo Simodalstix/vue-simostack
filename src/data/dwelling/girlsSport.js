@@ -1,9 +1,9 @@
 // src/data/dwelling/girlsSport.js
 //
-// Girls' sport access context for the expanded suburb profile card, keyed by
-// the areaCorridors record id. CONTEXT ONLY: never scored, never ranked,
-// never read by the ranking engine or the map colouring — same contract as
-// the community Census context.
+// Girls' sport access evidence for the expanded suburb profile card and the
+// kid-amenity criterion, keyed by areaCorridors record id. The score uses only
+// broad club/facility presence; confidence and source detail stay visible so
+// the claim never outruns the owner research.
 //
 // Source mix:
 // - original owner-supplied research JSON (melbourne_girls_sport_facilities_35_
@@ -718,6 +718,19 @@ export const girlsSportByArea = {
 
 export function girlsSportFor(areaId) {
   return girlsSportByArea[areaId] || null
+}
+
+// Broad, auditable access score: each confirmed pathway and any researched
+// facility presence contribute equally. Unknown/false pathways do not add a
+// bonus, and a missing entry remains null so unresearched suburbs are never
+// punished by the ranking engine.
+export function sportAccessScore(entry) {
+  if (!entry) return null
+  const pathwayCount = ['netball', 'girlsFooty', 'soccer'].filter(
+    (key) => entry.clubPresence?.[key] === true,
+  ).length
+  const facilityPresence = entry.facilities?.length > 0 ? 1 : 0
+  return Math.min(10, (pathwayCount + facilityPresence) * 2.5)
 }
 
 // The three sports in display order, with their card labels.

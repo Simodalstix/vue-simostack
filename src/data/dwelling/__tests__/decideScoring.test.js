@@ -78,6 +78,22 @@ describe('score robustness', () => {
     expect(Number.isFinite(score)).toBe(true)
   })
 
+  it('keeps every gate status unchanged when any one criterion is toggled off', () => {
+    const strategy = decideStrategies.find((item) => item.id === 'balanced2br')
+    const filters = { ...strategy.filters, includeStretch: true }
+    const allOn = useAreaRanking(areaCorridors, filters, strategy.weights).value
+    const statusById = Object.fromEntries(allOn.map((row) => [row.rec.id, row.status]))
+    expect(allOn.every((row) => Number.isFinite(row.weighted))).toBe(true)
+
+    for (const key of keys) {
+      const toggled = useAreaRanking(areaCorridors, filters, {
+        ...strategy.weights,
+        [key]: 0,
+      }).value
+      expect(toggled.every((row) => statusById[row.rec.id] === row.status)).toBe(true)
+    }
+  })
+
   it('ranks a strength-5 zoned secondary above strength 3 with only schools enabled', () => {
     const base = { childhood: { schoolStrength: 1 } }
     const topTier = { ...base, id: 'balwyn-2br' }
@@ -123,8 +139,9 @@ describe('personal network data', () => {
   it('uses the documented band edges', () => {
     expect(pnScore(10)).toBe(10)
     expect(pnScore(11)).toBe(8)
-    expect(pnScore(40)).toBe(2)
-    expect(pnScore(41)).toBe(0)
+    expect(pnScore(30)).toBe(6)
+    expect(pnScore(31)).toBeNull()
+    expect(pnScore(41)).toBeNull()
     expect(pnScore(null)).toBeNull()
   })
 
@@ -134,7 +151,7 @@ describe('personal network data', () => {
     )
   })
 
-  it('moves Windsor and Prahran to first in Balanced and demotes South Melbourne', () => {
+  it('changes scores without changing any gate status', () => {
     const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
     const filters = {
       ...balanced.filters,
@@ -152,11 +169,26 @@ describe('personal network data', () => {
       networkOffWeights,
     ).value.filter((row) => row.status !== 'unscored')
 
-    expect(rankedWithNetwork[0].rec.id).toBe('inner-windsor-prahran-2br')
+    const statusWithout = Object.fromEntries(
+      rankedWithoutNetwork.map((row) => [row.rec.id, row.status]),
+    )
+    expect(rankedWithNetwork.every((row) => statusWithout[row.rec.id] === row.status)).toBe(true)
     expect(
-      rankedWithNetwork.findIndex((row) => row.rec.id === 'south-melbourne-2br'),
-    ).toBeGreaterThanOrEqual(3)
-    expect(rankedWithoutNetwork[0].rec.id).toBe('south-melbourne-2br')
+      rankedWithNetwork.some(
+        (row) =>
+          row.weighted !==
+          rankedWithoutNetwork.find((other) => other.rec.id === row.rec.id)?.weighted,
+      ),
+    ).toBe(true)
+  })
+})
+
+describe('commute distortion fix', () => {
+  it('has no artificial floor and preserves the documented anchors', () => {
+    expect(scoreCommute(25)).toBe(5)
+    expect(scoreCommute(55)).toBe(2)
+    expect(scoreCommute(65)).toBe(1)
+    expect(scoreCommute(80)).toBe(0)
   })
 })
 
