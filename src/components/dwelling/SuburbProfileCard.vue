@@ -475,7 +475,8 @@ const personalNetworkLine = computed(() => {
 function chipClass(chip) {
   return {
     friend: 'border-ob-gold-muted/35 text-ob-gold bg-ob-gold-dark/40',
-    beach: 'border-ob-teal/30 text-ob-teal bg-ob-teal/8',
+    beach: 'border-amber-500/35 text-amber-300 bg-amber-500/10',
+    chinese: 'border-red-500/35 text-red-300 bg-red-500/10',
     train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
     commute: 'border-ob-teal/25 text-ob-teal-bright bg-ob-teal/6',
     schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',

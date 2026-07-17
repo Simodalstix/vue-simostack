@@ -1,7 +1,7 @@
 <template>
-  <!-- Community Context · ABS Census 2021. Descriptive context ONLY: nothing
-       here feeds scores, rankings, weights or filters (records carry
-       contextOnly / excludeFromSuburbScore / scoreContribution: 0).
+  <!-- Community Context · ABS Census 2021. Descriptive by default: records
+       carry contextOnly / excludeFromSuburbScore / scoreContribution: 0. The
+       separate Chinese-community personal toggle may derive an opt-in bonus.
        Combined lens labels render each component SAL suburb separately;
        percentages are never averaged and medians never blended. -->
   <div v-if="ctx" :class="rootClass">

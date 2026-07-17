@@ -8,6 +8,11 @@ import { describe, it, expect } from 'vitest'
 import { decideStrategies, decideCriteria } from '../decideStrategies.js'
 import { areaCorridors } from '../areaCorridors.js'
 import { personalNetworkByAreaId, pnScore } from '../personalNetwork.js'
+import {
+  CHINESE_COMMUNITY_FULL_BONUS_SHARE,
+  chineseCommunityScore,
+  chineseLanguageCommunityFor,
+} from '../chineseCommunity.js'
 import { useAreaRanking, weightedScore } from '../../../composables/useAreaRanking.js'
 import { commuteFor, scoreCommute } from '../../../composables/useCommuteScoring.js'
 
@@ -24,7 +29,7 @@ function weightsFor(strategy, enabledKeys) {
   )
 }
 
-// Every non-empty subset of the seven criteria, plus the empty set (all off).
+// Every non-empty subset of the eight criteria, plus the empty set (all off).
 function allSubsets(keys) {
   const out = []
   for (let mask = 0; mask < 1 << keys.length; mask++) {
@@ -34,7 +39,7 @@ function allSubsets(keys) {
 }
 
 describe('preset weight vectors', () => {
-  it('ships the five strategies with 0-3 weights over exactly the seven criteria', () => {
+  it('ships the five strategies with 0-3 weights over exactly the eight criteria', () => {
     expect(decideStrategies.map((s) => s.id)).toEqual([
       'balanced2br',
       'bachelor1br',
@@ -43,7 +48,7 @@ describe('preset weight vectors', () => {
       'villaTownhouse',
     ])
     const keys = decideCriteria.map((c) => c.key).sort()
-    expect(keys).toHaveLength(7)
+    expect(keys).toHaveLength(8)
     for (const s of decideStrategies) {
       expect(Object.keys(s.weights).sort()).toEqual(keys)
       for (const w of Object.values(s.weights)) {
@@ -51,6 +56,12 @@ describe('preset weight vectors', () => {
         expect(w).toBeLessThanOrEqual(3)
       }
     }
+  })
+
+  it('keeps the Chinese-community personal lens off by default', () => {
+    const criterion = decideCriteria.find((item) => item.key === 'chineseCommunity')
+    expect(criterion.defaultEnabled).toBe(false)
+    expect(decideCriteria.filter((item) => item.defaultEnabled === false)).toEqual([criterion])
   })
 })
 
@@ -180,6 +191,40 @@ describe('personal network data', () => {
           rankedWithoutNetwork.find((other) => other.rec.id === row.rec.id)?.weighted,
       ),
     ).toBe(true)
+  })
+})
+
+describe('Chinese-language community personal lens', () => {
+  it('adds Cantonese and Mandarin counts over one language denominator', () => {
+    const seddon = chineseLanguageCommunityFor('seddon-westfootscray-villa')
+    expect(seddon.count).toBeGreaterThan(0)
+    expect(seddon.denominator).toBeGreaterThan(seddon.count)
+    expect(seddon.percentage).toBeCloseTo((seddon.count / seddon.denominator) * 100)
+  })
+
+  it('aggregates combined suburb records by counts and denominators', () => {
+    const combined = chineseLanguageCommunityFor('upfield-corridor')
+    expect(combined.count).toBeGreaterThan(0)
+    expect(combined.denominator).toBeGreaterThan(0)
+    expect(combined.percentage).toBeCloseTo(2.35, 1)
+  })
+
+  it('caps the scoring scale at ten when the combined share exceeds the full-bonus mark', () => {
+    expect(CHINESE_COMMUNITY_FULL_BONUS_SHARE).toBe(20)
+    expect(chineseCommunityScore('box-hill-2br')).toBe(10)
+    expect(chineseCommunityScore('chelsea-2br')).toBeLessThan(chineseCommunityScore('box-hill-2br'))
+  })
+
+  it('can only add points when enabled', () => {
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const boxHill = areaCorridors.find((rec) => rec.id === 'box-hill-2br')
+    const baseWeights = { ...balanced.weights, chineseCommunity: 0 }
+    const enabledWeights = { ...baseWeights, chineseCommunity: 1 }
+    const base = weightedScore(boxHill, commuteScoreFor(boxHill), baseWeights)
+    const enabled = weightedScore(boxHill, commuteScoreFor(boxHill), enabledWeights)
+
+    expect(enabled).toBeGreaterThanOrEqual(base)
+    expect(enabled - base).toBeLessThanOrEqual(2)
   })
 })
 

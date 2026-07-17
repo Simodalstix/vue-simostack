@@ -60,6 +60,22 @@ describe('decision chips', () => {
     }
   })
 
+  it('uses concise badges and removes train-line badges from ranking rows', () => {
+    const chips = areaCorridors.flatMap((rec) =>
+      differentiatingChipsFor({ rec, commute: rec.commute, status: 'ok', reasons: [] }),
+    )
+    const texts = chips.map((chip) => chip.text)
+
+    expect(chips.some((chip) => chip.tone === 'chinese' && /^Chinese \d+%$/.test(chip.text))).toBe(
+      true,
+    )
+    expect(texts).toContain('Fast commute')
+    expect(texts).toContain('Strong Schools')
+    expect(chips.some((chip) => chip.key === 'train-line')).toBe(false)
+    expect(texts).not.toContain('One-seat commute')
+    expect(texts).not.toContain('Strong zoned schools')
+  })
+
   it('uses the first gate reason for reject and conditional exceptions', () => {
     const rec = areaCorridors[0]
     expect(
@@ -84,7 +100,7 @@ describe('cost scoring', () => {
   })
 
   it('keeps generated-data fallback available for every current record', () => {
-    expect(decideCriteria).toHaveLength(7)
+    expect(decideCriteria).toHaveLength(8)
     for (const strategy of decideStrategies) {
       expect(strategy.weights).toHaveProperty('beach')
       expect(strategy.weights).not.toHaveProperty('greenspace')

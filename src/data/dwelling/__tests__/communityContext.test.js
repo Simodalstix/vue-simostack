@@ -106,8 +106,8 @@ describe('combined-label handling', () => {
   })
 })
 
-describe('exclusion from scoring', () => {
-  it('every record is flagged context-only', () => {
+describe('default exclusion from scoring', () => {
+  it('every source record is flagged context-only by default', () => {
     for (const r of DWELLING_COMMUNITY_CONTEXT.records) {
       expect(r.contextOnly).toBe(true)
       expect(r.excludeFromSuburbScore).toBe(true)
@@ -115,23 +115,24 @@ describe('exclusion from scoring', () => {
     }
   })
 
-  it('no ranking weight keys reference demographic measures', () => {
-    const banned = /language|birthplace|religion|ethnic|overseas|ancestr/i
+  it('has no birthplace, religion, ethnicity or ancestry ranking criteria', () => {
+    const banned = /birthplace|religion|ethnic|overseas|ancestr/i
     for (const w of [...areaWeights, ...decideCriteria]) {
       expect(w.key).not.toMatch(banned)
       expect(w.label).not.toMatch(banned)
     }
   })
 
-  it('the ranking composables never import the community dataset', () => {
+  it('keeps census access behind the named opt-in adapter', () => {
     for (const rel of [
       '../../../composables/useAreaRanking.js',
       '../../../composables/useCommuteScoring.js',
-      '../decideStrategies.js',
     ]) {
       const code = src(rel)
       expect(code).not.toMatch(/communityContext|community-context|COMMUNITY_CONTEXT/)
     }
+    expect(src('../decideStrategies.js')).toMatch(/chineseCommunity/)
+    expect(src('../chineseCommunity.js')).toMatch(/communityContextFor/)
   })
 })
 

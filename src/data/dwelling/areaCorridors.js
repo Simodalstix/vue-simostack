@@ -15,9 +15,10 @@
 //
 // Community demographic context lives in the standalone ABS Census 2021
 // dataset (dwelling-community-context-2021.ts, adapted by communityContext.js
-// keyed on these record ids). It is never scored, never ranked, and never
-// read by the ranking engine. The former per-record communityProfile blocks
-// were superseded by that dataset July 2026.
+// keyed on these record ids). It is descriptive by default; the one deliberate
+// scoring exception is the off-by-default personal Chinese-language community
+// lens. The former per-record communityProfile blocks were superseded by that
+// dataset July 2026.
 //
 // childhood holds provisional school/independence research: schoolStrength and
 // teenIndependence (each 1-5) feed the suburb lens score via the framework

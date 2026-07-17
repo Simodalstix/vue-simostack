@@ -1,10 +1,8 @@
 <template>
   <div class="max-w-[1680px] mx-auto px-6 lg:px-10 py-10 space-y-8">
-    <!-- THE WORKSPACE: map and suburb decision tools as equal stars.
-         Left: intro, strategy selector and Melbourne map. Right: a slightly
-         narrower ranked pane with its weighting controls kept alongside it.
-         The weighting rail stacks below the pane when the available width is
-         too tight for both to remain readable. -->
+    <!-- THE WORKSPACE: map and suburb decision pane as equal stars. Weighting
+         toggles lead the compact control card above the map; the five purchase
+         strategies sit beneath them as a quieter one-line selector. -->
     <div
       class="grid lg:grid-cols-[1.5fr_1fr] xl:grid-cols-[minmax(0,1.35fr)_minmax(570px,1fr)] gap-6 items-start"
     >
@@ -20,36 +18,86 @@
               <span class="text-ob-teal">strategy, location and cost.</span>
             </h1>
           </div>
-          <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4">
-            <div class="flex items-baseline justify-between flex-wrap gap-2 mb-2.5">
-              <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
-                Strategy · preset weights + the purchase being tested
-              </h2>
-              <span class="font-mono text-[10.5px] text-ob-faint">
-                selecting one recolours the map and re-ranks live
-              </span>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-2">
-              <button
-                v-for="s in decideStrategies"
-                :key="s.id"
-                @click="activeStrategyId = s.id"
-                class="text-left rounded-[6px] border px-3 py-2 transition-colors"
-                :class="
-                  activeStrategyId === s.id
-                    ? 'border-ob-teal/45 bg-ob-teal/8'
-                    : 'border-ob-sand/14 hover:border-ob-sand/25'
-                "
-              >
-                <span
-                  class="block text-[12px] font-semibold leading-snug"
-                  :class="activeStrategyId === s.id ? 'text-ob-teal' : 'text-ob-text'"
-                  >{{ s.label }}</span
-                >
-                <span class="block mt-0.5 font-mono text-[10px] text-ob-faint leading-snug">
-                  {{ s.dwelling }} · {{ s.intent }}
+          <div
+            class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4"
+            aria-label="Ranking controls"
+          >
+            <div class="flex items-center flex-wrap gap-x-4 gap-y-2">
+              <div class="min-w-0">
+                <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
+                  Weightings · {{ activeStrategy.label }} preset
+                </h2>
+                <p class="mt-0.5 font-mono text-[10px] text-ob-faint">Toggle to re-rank</p>
+              </div>
+
+              <div class="flex items-center gap-2 ml-auto">
+                <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-faint">
+                  payoff
                 </span>
+                <div
+                  class="grid grid-cols-3 rounded-[6px] border border-ob-sand/14 overflow-hidden"
+                >
+                  <button
+                    v-for="y in [15, 20, 30]"
+                    :key="y"
+                    @click="payoffYears = y"
+                    class="px-2 py-[4px] font-mono text-[10.5px] transition-colors border-r border-ob-sand/14 last:border-r-0"
+                    :class="
+                      payoffYears === y
+                        ? 'bg-ob-teal/15 text-ob-teal'
+                        : 'text-ob-faint hover:text-ob-muted'
+                    "
+                  >
+                    {{ y }}yr
+                  </button>
+                </div>
+                <button
+                  @click="resetToggles"
+                  class="font-mono text-[10.5px] text-ob-faint hover:text-ob-teal transition-colors"
+                >
+                  reset
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-3 flex flex-wrap gap-2">
+              <button
+                v-for="c in decideCriteria"
+                :key="c.key"
+                @click="toggleCriterion(c.key)"
+                :disabled="enabled[c.key] && enabledCount === 1"
+                :aria-pressed="enabled[c.key]"
+                :title="c.hint"
+                class="inline-flex items-center justify-between gap-2 font-mono text-[11px] px-2.5 py-[6px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
+                :class="criterionButtonClass(c)"
+              >
+                <span>{{ c.label }}</span>
+                <span>×{{ enabled[c.key] ? activeStrategy.weights[c.key] : 0 }}</span>
               </button>
+            </div>
+
+            <div class="mt-3 pt-3 border-t border-ob-sand/8 flex items-center gap-3 min-w-0">
+              <span
+                class="shrink-0 font-mono text-[9.5px] uppercase tracking-[0.1em] text-ob-faint"
+              >
+                Strategy
+              </span>
+              <div class="min-w-0 flex-1 grid grid-cols-2 sm:grid-cols-5 gap-1.5">
+                <button
+                  v-for="s in decideStrategies"
+                  :key="s.id"
+                  @click="activeStrategyId = s.id"
+                  :title="`${s.dwelling} · ${s.intent}`"
+                  class="min-w-0 truncate rounded-[5px] border px-2 py-[5px] font-mono text-[10px] transition-colors"
+                  :class="
+                    activeStrategyId === s.id
+                      ? 'border-ob-teal/35 bg-ob-teal/8 text-ob-teal'
+                      : 'border-ob-sand/12 text-ob-faint hover:border-ob-sand/25 hover:text-ob-muted'
+                  "
+                >
+                  {{ s.shortLabel }}
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -69,93 +117,19 @@
         />
       </div>
 
-      <!-- RIGHT column: ranked suburbs with a live weighting rail. -->
-      <div
-        class="order-2 min-w-0 lg:col-start-2 lg:row-start-1 grid gap-4 xl:grid-cols-[minmax(0,1fr)_184px] xl:items-start"
-      >
-        <SuburbDecisionPane
-          v-model="activeLocationId"
-          :rows="rankedLocations"
-          :hovered-context="hoveredContext"
-          :shortlist-ids="shortlist"
-          :payoff-years="payoffYears"
-          :deposit="deposit"
-          :rate="rate"
-          :strategy="activeStrategy"
-          class="min-w-0"
-          @toggle-shortlist="toggleShortlist"
-        />
-
-        <!-- Standard criteria renormalise over what remains; Beach is an
-             additive premium whose toggle simply adds or removes it. -->
-        <aside
-          class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-3 min-w-0 xl:sticky xl:top-6"
-          aria-label="Ranking weightings"
-        >
-          <div class="flex items-start justify-between gap-2 xl:block">
-            <div class="min-w-0">
-              <h3 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
-                Weightings
-              </h3>
-              <p class="mt-1 text-[11px] font-semibold leading-snug text-ob-text">
-                {{ activeStrategy.label }} preset
-              </p>
-              <p class="mt-0.5 font-mono text-[10px] text-ob-faint">Toggle to re-rank</p>
-            </div>
-            <button
-              @click="resetToggles"
-              class="font-mono text-[10.5px] text-ob-faint hover:text-ob-teal transition-colors shrink-0 xl:mt-2"
-            >
-              reset
-            </button>
-          </div>
-
-          <div class="mt-3 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-1 gap-2">
-            <button
-              v-for="c in decideCriteria"
-              :key="c.key"
-              @click="toggleCriterion(c.key)"
-              :disabled="enabled[c.key] && enabledCount === 1"
-              :aria-pressed="enabled[c.key]"
-              :title="c.hint"
-              class="w-full flex items-center justify-between gap-2 font-mono text-[11px] px-2.5 py-[6px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
-              :class="
-                enabled[c.key]
-                  ? 'border-ob-teal/45 text-ob-teal bg-ob-teal/8'
-                  : 'border-ob-sand/14 text-ob-faint hover:text-ob-muted line-through'
-              "
-            >
-              <span class="truncate">{{ c.label }}</span>
-              <span class="shrink-0"
-                >×{{ enabled[c.key] ? activeStrategy.weights[c.key] : 0 }}</span
-              >
-            </button>
-          </div>
-
-          <div class="mt-3 pt-3 border-t border-ob-sand/8">
-            <span
-              class="block mb-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-ob-faint"
-            >
-              payoff
-            </span>
-            <div class="grid grid-cols-3 rounded-[6px] border border-ob-sand/14 overflow-hidden">
-              <button
-                v-for="y in [15, 20, 30]"
-                :key="y"
-                @click="payoffYears = y"
-                class="px-1.5 py-[5px] font-mono text-[10.5px] transition-colors border-r border-ob-sand/14 last:border-r-0"
-                :class="
-                  payoffYears === y
-                    ? 'bg-ob-teal/15 text-ob-teal'
-                    : 'text-ob-faint hover:text-ob-muted'
-                "
-              >
-                {{ y }}yr
-              </button>
-            </div>
-          </div>
-        </aside>
-      </div>
+      <!-- RIGHT column: the authoritative ranked suburb pane. -->
+      <SuburbDecisionPane
+        v-model="activeLocationId"
+        :rows="rankedLocations"
+        :hovered-context="hoveredContext"
+        :shortlist-ids="shortlist"
+        :payoff-years="payoffYears"
+        :deposit="deposit"
+        :rate="rate"
+        :strategy="activeStrategy"
+        class="order-2 min-w-0 lg:col-start-2 lg:row-start-1"
+        @toggle-shortlist="toggleShortlist"
+      />
     </div>
   </div>
 </template>
@@ -184,23 +158,32 @@ const hoveredContext = ref(null)
 const deposit = personalPosition.calc.deposit
 const rate = personalPosition.calc.rate
 
-// The strategy is the single mode: a weight preset over the seven criteria plus
+// The strategy is the single mode: a weight preset over the eight criteria plus
 // the purchase proposition (dwelling types, bedrooms, price cap) expressed
 // through the same named filter gates as before.
 const activeStrategyId = ref(defaultStrategyId)
 const activeStrategy = computed(() => strategyById(activeStrategyId.value))
 
-// Binary criterion toggles over the active preset. Switching strategy resets
-// them all on; the last enabled criterion cannot be switched off (the button
-// disables), so the weight set can never go empty from the UI.
-const enabled = reactive(Object.fromEntries(decideCriteria.map((c) => [c.key, true])))
+// Binary criterion toggles over the active preset. Switching strategy restores
+// each criterion's default (Chinese stays off); the last enabled criterion
+// cannot be switched off, so the weight set can never go empty from the UI.
+const enabled = reactive(
+  Object.fromEntries(decideCriteria.map((c) => [c.key, c.defaultEnabled !== false])),
+)
 const enabledCount = computed(() => decideCriteria.filter((c) => enabled[c.key]).length)
 function toggleCriterion(key) {
   if (enabled[key] && enabledCount.value === 1) return
   enabled[key] = !enabled[key]
 }
+function criterionButtonClass(criterion) {
+  if (!enabled[criterion.key])
+    return 'border-ob-sand/14 text-ob-faint hover:text-ob-muted line-through'
+  if (criterion.accent === 'amber') return 'border-amber-500/45 text-amber-300 bg-amber-500/10'
+  if (criterion.accent === 'red') return 'border-red-500/45 text-red-300 bg-red-500/10'
+  return 'border-ob-teal/45 text-ob-teal bg-ob-teal/8'
+}
 function resetToggles() {
-  decideCriteria.forEach((c) => (enabled[c.key] = true))
+  decideCriteria.forEach((c) => (enabled[c.key] = c.defaultEnabled !== false))
 }
 watch(activeStrategyId, resetToggles)
 

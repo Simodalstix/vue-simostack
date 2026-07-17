@@ -4,16 +4,16 @@
 // criteria (which rank dwelling STRATEGIES); these rank PLACES. Weights sum to
 // 100 so a weighted score reads as a percentage of the ideal.
 //
-// HISTORICAL: the live Decide ranking moved to the seven-criterion strategy
+// HISTORICAL: the live Decide ranking moved to the eight-criterion strategy
 // presets in decideStrategies.js (July 2026). This table is kept as reference
 // data for the per-record `scores` fields it documents.
 //
 // key maps 1:1 to areaCorridors[].scores. Each raw score is 1-5.
 //
-// IMPORTANT: the `community` weight funds measurable AMENITY (grocers, markets,
-// language services, everyday cultural infrastructure), never demographic
-// desirability. Ancestry, birthplace and language composition are contextual
-// only and are never fed into any score. See communityContext.js.
+// IMPORTANT: the historical `community` weight funds measurable AMENITY
+// (grocers, markets, restaurants and language services), not demographic
+// desirability. The live Decide page has one separate, explicitly personal,
+// off-by-default Chinese-language community bonus; see chineseCommunity.js.
 
 export const areaWeights = [
   {

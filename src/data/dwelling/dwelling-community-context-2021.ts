@@ -2,8 +2,8 @@
  * Community Context · ABS Census 2021
  *
  * Static, source-attributed community context for every suburb used by /dwelling.
- * Descriptive only. Do not use any field in suburb scoring, ranking or demographic
- * preference filtering.
+ * Descriptive by default. The only scoring exception is the explicitly named,
+ * off-by-default Chinese-language community personal lens.
  */
 
 export const DWELLING_COMMUNITY_CONTEXT = {
@@ -28,7 +28,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
       "Better ethnicity score.",
       "Preferred demographic."
     ],
-    "implementationRule": "Do not connect any field in this dataset to ranking, scoring, filtering or weighting based on ethnicity, birthplace, language or religion."
+    "implementationRule": "Do not connect this dataset to default ranking or filtering. The sole exception is the named, off-by-default Chinese-language community personal lens, using Cantonese and Mandarin language-at-home counts only."
   },
   "coverage": {
     "recordCount": 60,

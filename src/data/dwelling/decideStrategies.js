@@ -2,7 +2,7 @@
 //
 // The Decide page's single control model: a STRATEGY is a weighting preset
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
-// tests. Selecting a strategy loads its weight vector over the seven suburb
+// tests. Selecting a strategy loads its weight vector over the eight suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
 // off (weight 0). Standard criteria renormalise over the enabled weights;
 // explicitly additive criteria such as Beach apply a small bounded premium
@@ -24,6 +24,7 @@ import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
 import { personalNetworkByAreaId, pnScore } from './personalNetwork.js'
 import { beachAccessByAreaId, beachScore } from './beachAccess.js'
 import { girlsSportFor, sportAccessScore } from './girlsSport.js'
+import { chineseCommunityScore } from './chineseCommunity.js'
 import { DWELLING_COST_BY_ID } from './cost/dwelling-cost-context.ts'
 import { costScoreFor } from './cost/costScoring.js'
 
@@ -90,6 +91,7 @@ export const decideCriteria = [
     hint: 'Additive premium for walkable access to a swimmable foreshore. Non-coastal suburbs receive no bonus and are never penalised.',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
+    accent: 'amber',
     value: (rec) => beachScore(beachAccessByAreaId[rec.id]?.estMin ?? null),
   },
   {
@@ -100,9 +102,19 @@ export const decideCriteria = [
   },
   {
     key: 'personalNetwork',
-    label: 'Network',
+    label: 'Friends',
     hint: 'Practical non-car access to the inner-circle anchor in South Yarra; banded estimate at suburb level.',
     value: (rec) => pnScore(personalNetworkByAreaId[rec.id]?.estMin ?? null),
+  },
+  {
+    key: 'chineseCommunity',
+    label: 'Chinese',
+    hint: 'Optional personal bonus from the combined ABS Census 2021 share using Cantonese or Mandarin at home. Off by default.',
+    scoringMode: 'additiveBonus',
+    bonusPointsPerWeight: 2,
+    defaultEnabled: false,
+    accent: 'red',
+    value: (rec) => chineseCommunityScore(rec.id),
   },
 ]
 
@@ -118,6 +130,7 @@ export const decideStrategies = [
   {
     id: 'balanced2br',
     label: '2BR Balanced',
+    shortLabel: '2 Bedroom',
     dwelling: 'Older 2BR apartment or villa unit',
     bedrooms: 2,
     intent: 'commute, cost and Lulu in balance',
@@ -129,6 +142,7 @@ export const decideStrategies = [
       beach: 2,
       safetyQuality: 1,
       personalNetwork: 2,
+      chineseCommunity: 1,
     },
     filters: { minBedrooms: 2, dwellingTypes: [], maxPrice: 900000 },
     priceNote: null,
@@ -136,6 +150,7 @@ export const decideStrategies = [
   {
     id: 'bachelor1br',
     label: '1BR Bachelor',
+    shortLabel: '1 Bedroom',
     dwelling: 'Older 1BR walk-up',
     bedrooms: 1,
     intent: 'cheapest honest ownership, commute first',
@@ -147,6 +162,7 @@ export const decideStrategies = [
       beach: 1,
       safetyQuality: 1,
       personalNetwork: 2,
+      chineseCommunity: 1,
     },
     filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'], maxPrice: 550000 },
     priceNote:
@@ -155,6 +171,7 @@ export const decideStrategies = [
   {
     id: 'family3br',
     label: '3BR Family',
+    shortLabel: '3 Bedroom',
     dwelling: '3BR house, townhouse or large villa unit',
     bedrooms: 3,
     intent: 'three real bedrooms with schools leading',
@@ -166,6 +183,7 @@ export const decideStrategies = [
       beach: 2,
       safetyQuality: 2,
       personalNetwork: 3,
+      chineseCommunity: 1,
     },
     filters: {
       minBedrooms: 3,
@@ -177,6 +195,7 @@ export const decideStrategies = [
   {
     id: 'landBuild',
     label: 'Land Build',
+    shortLabel: 'Land Build',
     dwelling: 'Land with a modest new build',
     bedrooms: 3,
     intent: 'cheap land and a modest build on the fringe',
@@ -188,6 +207,7 @@ export const decideStrategies = [
       beach: 2,
       safetyQuality: 1,
       personalNetwork: 1,
+      chineseCommunity: 1,
     },
     filters: { minBedrooms: 3, dwellingTypes: ['house'], maxPrice: 700000 },
     priceNote:
@@ -196,6 +216,7 @@ export const decideStrategies = [
   {
     id: 'villaTownhouse',
     label: 'Villa / Townhouse',
+    shortLabel: 'Villa / Townhouse',
     dwelling: '2-3BR villa unit or townhouse',
     bedrooms: 2,
     intent: 'courtyard living with strong schools',
@@ -207,6 +228,7 @@ export const decideStrategies = [
       beach: 2,
       safetyQuality: 2,
       personalNetwork: 3,
+      chineseCommunity: 1,
     },
     filters: { minBedrooms: 2, dwellingTypes: ['villa-unit', 'townhouse'], maxPrice: 800000 },
     priceNote: null,

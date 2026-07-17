@@ -5,11 +5,11 @@
 // 2021 SAL records, statically imported — never fetched at runtime).
 //
 // CONTRACT (from the dataset itself and the README):
-// - Descriptive context ONLY. Every record carries contextOnly: true,
-//   excludeFromSuburbScore: true and scoreContribution: 0. Nothing exported
-//   here may feed suburb scores, rankings, recommendations, filter weights or
-//   suitability calculations, and the ranking composables never import this
-//   module.
+// - Descriptive by default. Every record carries contextOnly: true,
+//   excludeFromSuburbScore: true and scoreContribution: 0, so none of it enters
+//   the preset ranking automatically. The one deliberate exception is the
+//   named, off-by-default personal lens in chineseCommunity.js; it derives a
+//   small additive language-community bonus only when the user opts in.
 // - Combined /dwelling labels (e.g. "Brunswick / Coburg") resolve to their
 //   COMPONENT SAL records via coverage.dwellingLensEntries. Component
 //   percentages are never averaged and published medians are never

@@ -1,13 +1,11 @@
 // Informational ranking-card chips. Their order is deliberate and they never
-// feed the scoring engine: personal context first, then beach access, named
-// rail, transfer-free commute and strong zoned-school evidence.
+// feed the scoring engine: personal context first, then beach access,
+// Chinese-language presence, fast commute and strong zoned-school evidence.
 
 import { beachAccessByAreaId } from './beachAccess.js'
+import { chineseLanguageCommunityFor } from './chineseCommunity.js'
 import { friendContextFor } from './personalAnchors.js'
-import { linesForArea, trainLines } from './trainLines.js'
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
-
-const lineById = Object.fromEntries(trainLines.map((line) => [line.id, line]))
 
 export function differentiatingChipsFor(row) {
   const chips = []
@@ -22,14 +20,18 @@ export function differentiatingChipsFor(row) {
   if (beach?.estMin <= 12) chips.push({ key: 'beach', text: 'Beach', tone: 'beach' })
   else if (beach?.estMin <= 25) chips.push({ key: 'beach', text: 'Beach nearby', tone: 'beach' })
 
-  const line = linesForArea(areaId)
-    .map((id) => lineById[id])
-    .find(Boolean)
-  if (line) chips.push({ key: 'train-line', text: `${line.name} line`, tone: 'train' })
+  const chineseShare = chineseLanguageCommunityFor(areaId)?.percentage
+  if (chineseShare >= 5) {
+    chips.push({
+      key: 'chinese-community',
+      text: `Chinese ${Math.round(chineseShare)}%`,
+      tone: 'chinese',
+    })
+  }
 
   const commute = row.commute || row.rec.commute
-  if (commute?.transfers === 0) {
-    chips.push({ key: 'one-seat', text: 'One-seat commute', tone: 'commute' })
+  if (commute?.typical <= 30) {
+    chips.push({ key: 'fast-commute', text: 'Fast commute', tone: 'commute' })
   }
 
   const schools = zonedSchoolEvidenceForArea(areaId)
@@ -37,7 +39,7 @@ export function differentiatingChipsFor(row) {
     (school) => (school?.evidence?.strength ?? 0) >= 4,
   )
   if (strongSchool) {
-    chips.push({ key: 'schools', text: 'Strong zoned schools', tone: 'schools' })
+    chips.push({ key: 'schools', text: 'Strong Schools', tone: 'schools' })
   }
 
   return chips.slice(0, 3)
