@@ -1,13 +1,14 @@
 <template>
-  <div class="max-w-[1600px] mx-auto px-6 lg:px-10 py-10 space-y-8">
-    <!-- THE WORKSPACE: map and suburb decision pane as equal stars.
-         Left ~60%: intro, strategy selector, Melbourne map, weighting toggles.
-         Right ~40%: the single authoritative suburb pane (ranked list /
-         hover preview / pinned inspector). Below lg the grid children stack
-         map first, pane second, controls after (the pane spans both left rows
-         on desktop). -->
-    <div class="grid lg:grid-cols-[1.5fr_1fr] gap-6 items-start">
-      <!-- LEFT column, upper: intro + map -->
+  <div class="max-w-[1680px] mx-auto px-6 lg:px-10 py-10 space-y-8">
+    <!-- THE WORKSPACE: map and suburb decision tools as equal stars.
+         Left: intro, strategy selector and Melbourne map. Right: a slightly
+         narrower ranked pane with its weighting controls kept alongside it.
+         The weighting rail stacks below the pane when the available width is
+         too tight for both to remain readable. -->
+    <div
+      class="grid lg:grid-cols-[1.5fr_1fr] xl:grid-cols-[minmax(0,1.35fr)_minmax(570px,1fr)] gap-6 items-start"
+    >
+      <!-- LEFT column: intro + map -->
       <div class="space-y-5 min-w-0 lg:col-start-1 lg:row-start-1">
         <div class="space-y-4">
           <div class="max-w-3xl">
@@ -68,79 +69,93 @@
         />
       </div>
 
-      <!-- LEFT column, lower: weighting toggles -->
-      <div class="space-y-5 min-w-0 order-3 lg:order-none lg:col-start-1 lg:row-start-2">
-        <!-- weighting toggles: the active preset, criterion by criterion.
-             Standard criteria renormalise over what remains; Beach is an
+      <!-- RIGHT column: ranked suburbs with a live weighting rail. -->
+      <div
+        class="order-2 min-w-0 lg:col-start-2 lg:row-start-1 grid gap-4 xl:grid-cols-[minmax(0,1fr)_184px] xl:items-start"
+      >
+        <SuburbDecisionPane
+          v-model="activeLocationId"
+          :rows="rankedLocations"
+          :hovered-context="hoveredContext"
+          :shortlist-ids="shortlist"
+          :payoff-years="payoffYears"
+          :deposit="deposit"
+          :rate="rate"
+          :strategy="activeStrategy"
+          class="min-w-0"
+          @toggle-shortlist="toggleShortlist"
+        />
+
+        <!-- Standard criteria renormalise over what remains; Beach is an
              additive premium whose toggle simply adds or removes it. -->
-        <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4">
-          <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-2">
-            <h3 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
-              Weightings · {{ activeStrategy.label }} preset
-            </h3>
-            <div class="flex items-center gap-2 ml-auto">
-              <span class="font-mono text-[10.5px] text-ob-faint">payoff</span>
-              <div class="inline-flex rounded-[6px] border border-ob-sand/14 overflow-hidden">
-                <button
-                  v-for="y in [15, 20, 30]"
-                  :key="y"
-                  @click="payoffYears = y"
-                  class="px-2.5 py-[4px] font-mono text-[11px] transition-colors border-r border-ob-sand/14 last:border-r-0"
-                  :class="
-                    payoffYears === y
-                      ? 'bg-ob-teal/15 text-ob-teal'
-                      : 'text-ob-faint hover:text-ob-muted'
-                  "
-                >
-                  {{ y }}yr
-                </button>
-              </div>
-              <button
-                @click="resetToggles"
-                class="font-mono text-[11px] text-ob-faint hover:text-ob-teal transition-colors"
-              >
-                reset
-              </button>
+        <aside
+          class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-3 min-w-0 xl:sticky xl:top-6"
+          aria-label="Ranking weightings"
+        >
+          <div class="flex items-start justify-between gap-2 xl:block">
+            <div class="min-w-0">
+              <h3 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
+                Weightings
+              </h3>
+              <p class="mt-1 text-[11px] font-semibold leading-snug text-ob-text">
+                {{ activeStrategy.label }} preset
+              </p>
+              <p class="mt-0.5 font-mono text-[10px] text-ob-faint">Toggle to re-rank</p>
             </div>
+            <button
+              @click="resetToggles"
+              class="font-mono text-[10.5px] text-ob-faint hover:text-ob-teal transition-colors shrink-0 xl:mt-2"
+            >
+              reset
+            </button>
           </div>
-          <p class="text-[11.5px] leading-snug text-ob-dim mb-3">
-            Standard criteria carry their preset weight or nothing, with disabled weight
-            redistributed across the rest. Beach is a true additive premium: enabling it can only
-            lift assessed coastal suburbs. Switching strategy resets the toggles.
-          </p>
-          <div class="flex flex-wrap gap-2">
+
+          <div class="mt-3 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-2 xl:grid-cols-1 gap-2">
             <button
               v-for="c in decideCriteria"
               :key="c.key"
               @click="toggleCriterion(c.key)"
               :disabled="enabled[c.key] && enabledCount === 1"
+              :aria-pressed="enabled[c.key]"
               :title="c.hint"
-              class="font-mono text-[11px] px-2.5 py-[5px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
+              class="w-full flex items-center justify-between gap-2 font-mono text-[11px] px-2.5 py-[6px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
               :class="
                 enabled[c.key]
                   ? 'border-ob-teal/45 text-ob-teal bg-ob-teal/8'
                   : 'border-ob-sand/14 text-ob-faint hover:text-ob-muted line-through'
               "
             >
-              {{ c.label }} ×{{ enabled[c.key] ? activeStrategy.weights[c.key] : 0 }}
+              <span class="truncate">{{ c.label }}</span>
+              <span class="shrink-0"
+                >×{{ enabled[c.key] ? activeStrategy.weights[c.key] : 0 }}</span
+              >
             </button>
           </div>
-        </div>
-      </div>
 
-      <!-- RIGHT column: the decision pane, spanning both left rows on desktop -->
-      <SuburbDecisionPane
-        v-model="activeLocationId"
-        :rows="rankedLocations"
-        :hovered-context="hoveredContext"
-        :shortlist-ids="shortlist"
-        :payoff-years="payoffYears"
-        :deposit="deposit"
-        :rate="rate"
-        :strategy="activeStrategy"
-        class="order-2 lg:order-none lg:col-start-2 lg:row-start-1 lg:row-span-2 min-w-0"
-        @toggle-shortlist="toggleShortlist"
-      />
+          <div class="mt-3 pt-3 border-t border-ob-sand/8">
+            <span
+              class="block mb-1.5 font-mono text-[10px] uppercase tracking-[0.08em] text-ob-faint"
+            >
+              payoff
+            </span>
+            <div class="grid grid-cols-3 rounded-[6px] border border-ob-sand/14 overflow-hidden">
+              <button
+                v-for="y in [15, 20, 30]"
+                :key="y"
+                @click="payoffYears = y"
+                class="px-1.5 py-[5px] font-mono text-[10.5px] transition-colors border-r border-ob-sand/14 last:border-r-0"
+                :class="
+                  payoffYears === y
+                    ? 'bg-ob-teal/15 text-ob-teal'
+                    : 'text-ob-faint hover:text-ob-muted'
+                "
+              >
+                {{ y }}yr
+              </button>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   </div>
 </template>

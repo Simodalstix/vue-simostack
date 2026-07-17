@@ -631,7 +631,6 @@ export const areaGeo = {
   },
   'chelsea-2br': {
     localityNames: ['Chelsea'],
-    allowMissingLocality: true,
     stationPoints: [
       {
         id: 'chelsea',
@@ -644,7 +643,6 @@ export const areaGeo = {
   },
   'bonbeach-2br': {
     localityNames: ['Bonbeach'],
-    allowMissingLocality: true,
     stationPoints: [
       {
         id: 'bonbeach',

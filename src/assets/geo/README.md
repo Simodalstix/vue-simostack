@@ -55,7 +55,8 @@ result. It is about 870 KB uncompressed and has zero scoring impact.
   and Sunbury were added 2026-07-14, and Spotswood, Armadale, Burnley,
   Hawthorn, McKinnon, Glen Waverley, Balwyn North and Mentone 2026-07-15, all
   with the same recipe and tolerance. Doncaster was added from the same WFS
-  source on 2026-07-16 (85 polygons total).
+  source on 2026-07-16; Chelsea and Bonbeach were added on 2026-07-17 (87
+  polygons total).
 - **Simplification**: Douglas-Peucker, tolerance 0.0004 deg (~40 m). ~37 KB.
 - Properties carry `name` only (Title Case). The assessed/areaId linkage is
   derived at build time in `localityFeatures.js`, never baked into the asset.
