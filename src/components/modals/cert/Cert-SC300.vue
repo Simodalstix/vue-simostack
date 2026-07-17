@@ -30,7 +30,7 @@ import BaseModal from '../BaseModal.vue'
       <p class="text-sm text-ob-faint italic mb-4">Identity is the control plane of modern infrastructure. This certification proves the ability to design and enforce zero-trust access at the platform level.</p>
       <div>
         <a
-          href="https://learn.microsoft.com/en-us/users/simonparker-8212/credentials/certification/identity-and-access-administrator?tab=credentials-tab"
+          href="https://learn.microsoft.com/api/credentials/share/en-us/SimonParker-8212/7FDC2A1432E89196?sharingId=F0664CD37994DC5D"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-block bg-[#0078D4] hover:bg-[#106EBE] text-ob-bright font-medium py-2 px-4 rounded-md shadow-sm transition-colors duration-200"
