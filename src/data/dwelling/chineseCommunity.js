@@ -43,7 +43,7 @@ export function chineseLanguageCommunityFor(areaId) {
 }
 
 // 20% combined Cantonese/Mandarin use earns 10/10; higher shares stay capped.
-// The criterion converts this to at most +2 displayed ranking points.
+// At the personal lens's x2 preset, this becomes at most +4 ranking points.
 export function chineseCommunityScore(areaId) {
   const share = chineseLanguageCommunityFor(areaId)?.percentage
   if (share == null) return null

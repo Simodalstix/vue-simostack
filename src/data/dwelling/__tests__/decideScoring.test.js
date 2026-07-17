@@ -62,6 +62,7 @@ describe('preset weight vectors', () => {
     const criterion = decideCriteria.find((item) => item.key === 'chineseCommunity')
     expect(criterion.defaultEnabled).toBe(false)
     expect(decideCriteria.filter((item) => item.defaultEnabled === false)).toEqual([criterion])
+    expect(decideStrategies.every((strategy) => strategy.weights.chineseCommunity === 2)).toBe(true)
   })
 })
 
@@ -219,12 +220,15 @@ describe('Chinese-language community personal lens', () => {
     const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
     const boxHill = areaCorridors.find((rec) => rec.id === 'box-hill-2br')
     const baseWeights = { ...balanced.weights, chineseCommunity: 0 }
-    const enabledWeights = { ...baseWeights, chineseCommunity: 1 }
+    const enabledWeights = {
+      ...baseWeights,
+      chineseCommunity: balanced.weights.chineseCommunity,
+    }
     const base = weightedScore(boxHill, commuteScoreFor(boxHill), baseWeights)
     const enabled = weightedScore(boxHill, commuteScoreFor(boxHill), enabledWeights)
 
     expect(enabled).toBeGreaterThanOrEqual(base)
-    expect(enabled - base).toBeLessThanOrEqual(2)
+    expect(enabled - base).toBeLessThanOrEqual(4)
   })
 })
 
