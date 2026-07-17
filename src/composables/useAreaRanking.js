@@ -8,13 +8,11 @@
 //      (dwelling types, minimum bedrooms, price cap) tag a record
 //      reject | conditional | ok. A cheap area must NOT out-rank a workable
 //      one on price alone, so gates precede scoring.
-//   2. WEIGHTED SCORE over the seven Decide criteria (decideStrategies.js):
-//      score = sum(w * s) / sum(w) over ENABLED criteria only, normalised to
-//      0-100. Criteria the record has no data for are left out of both sides
-//      of the mean (never scored as zero), and if every enabled criterion has
-//      weight 0 the score falls back to an equal-weight mean, so no subset of
-//      toggles can produce NaN. The demographic communityProfile is NEVER
-//      read here.
+//   2. SCORE over the seven Decide criteria (decideStrategies.js): standard
+//      criteria use sum(w * s) / sum(w), normalised to 0-100. Explicit bonus
+//      criteria add a small bounded premium after that mean. Missing data is
+//      never scored as zero, and the all-zero fallback prevents NaN. The
+//      demographic communityProfile is NEVER read here.
 //
 // Returns a computed list sorted ok > conditional > reject > unscored, then by
 // weighted score descending.
@@ -71,32 +69,53 @@ function gate(rec, filters, commute) {
 }
 
 // `weights` is the effective weight per criterion key from the Decide panel:
-// the strategy preset value when the toggle is on, 0 when it is off. Each
-// criterion resolves its own 0-10 value from the record (decideStrategies.js);
-// a null value means "not assessed" and drops out of both numerator and
-// denominator, so a record missing a field is never punished as if it scored
-// zero. If the enabled weights sum to 0, fall back to an equal-weight mean of
-// whatever data exists rather than dividing by zero.
+// the strategy preset value when the toggle is on, 0 when it is off. Standard
+// criteria form the renormalised weighted mean. An explicitly additive bonus
+// (currently Beach) stays outside that denominator and can only lift the base
+// score. A null value means "not assessed" and contributes nothing. If the
+// enabled standard weights sum to 0, fall back to their equal-weight mean so
+// no toggle combination can produce NaN.
 export function weightedScore(rec, commuteScore, weights, scoringContext = {}) {
   const entries = decideCriteria
     .map((c) => ({
+      criterion: c,
       w: weights[c.key] ?? 0,
       s: c.value(rec, commuteScore, scoringContext),
     }))
     .filter((e) => e.s != null)
   if (!entries.length) return null
+
+  const standardEntries = entries.filter((entry) => entry.criterion.scoringMode !== 'additiveBonus')
+  const bonusEntries = entries.filter(
+    (entry) => entry.criterion.scoringMode === 'additiveBonus' && entry.w > 0,
+  )
+  if (!standardEntries.length) {
+    const bonusOnly = bonusEntries.reduce(
+      (sum, entry) => sum + entry.w * (entry.s / 10) * (entry.criterion.bonusPointsPerWeight ?? 0),
+      0,
+    )
+    return Math.round(Math.min(100, bonusOnly))
+  }
+
   let sum = 0
   let totalWeight = 0
-  for (const e of entries) {
+  for (const e of standardEntries) {
     sum += e.w * e.s
     totalWeight += e.w
   }
   if (totalWeight === 0) {
-    sum = entries.reduce((a, e) => a + e.s, 0)
-    totalWeight = entries.length
+    sum = standardEntries.reduce((a, e) => a + e.s, 0)
+    totalWeight = standardEntries.length
   }
-  // s is 0-10, so the weighted mean x10 reads as a percentage of the ideal.
-  return Math.round((sum / totalWeight) * 10)
+  // Standard s is 0-10, so the weighted mean x10 reads as a percentage of the
+  // ideal. Bonus points are already expressed on that 0-100 display scale.
+  const baseScore = (sum / totalWeight) * 10
+  const bonusPoints = bonusEntries.reduce(
+    (bonus, entry) =>
+      bonus + entry.w * (entry.s / 10) * (entry.criterion.bonusPointsPerWeight ?? 0),
+    0,
+  )
+  return Math.round(Math.min(100, baseScore + bonusPoints))
 }
 
 export function useAreaRanking(records, filtersRef, weightsRef) {

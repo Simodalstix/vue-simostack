@@ -71,8 +71,8 @@
       <!-- LEFT column, lower: weighting toggles -->
       <div class="space-y-5 min-w-0 order-3 lg:order-none lg:col-start-1 lg:row-start-2">
         <!-- weighting toggles: the active preset, criterion by criterion.
-             Binary on/off only; off means weight 0 and the score renormalises
-             over what remains, so switching one off never punishes a suburb. -->
+             Standard criteria renormalise over what remains; Beach is an
+             additive premium whose toggle simply adds or removes it. -->
         <div class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4">
           <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mb-2">
             <h3 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
@@ -104,9 +104,9 @@
             </div>
           </div>
           <p class="text-[11.5px] leading-snug text-ob-dim mb-3">
-            Each criterion carries its preset weight or nothing. Toggling one off redistributes its
-            weight across the rest, so a suburb is never marked down for a criterion you are
-            ignoring. Switching strategy resets the toggles.
+            Standard criteria carry their preset weight or nothing, with disabled weight
+            redistributed across the rest. Beach is a true additive premium: enabling it can only
+            lift assessed coastal suburbs. Switching strategy resets the toggles.
           </p>
           <div class="flex flex-wrap gap-2">
             <button
@@ -190,7 +190,8 @@ function resetToggles() {
 watch(activeStrategyId, resetToggles)
 
 // Effective weight per criterion: the preset value while the toggle is on,
-// 0 while it is off. The score renormalises over these inside useAreaRanking.
+// 0 while it is off. Standard criteria renormalise inside useAreaRanking;
+// additive criteria use the value as their premium multiplier.
 const effectiveWeights = computed(() =>
   Object.fromEntries(
     decideCriteria.map((c) => [c.key, enabled[c.key] ? activeStrategy.value.weights[c.key] : 0]),

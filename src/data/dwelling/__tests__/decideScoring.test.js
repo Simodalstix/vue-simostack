@@ -1,7 +1,7 @@
 // Tests for the Decide strategy-preset scoring model (decideStrategies.js +
-// useAreaRanking.weightedScore): score = sum(w * s) / sum(w) over enabled
-// criteria only, renormalised so toggling a criterion off redistributes its
-// weight instead of penalising anyone.
+// useAreaRanking.weightedScore): standard criteria use sum(w * s) / sum(w)
+// over enabled criteria, while explicitly additive criteria apply a bounded
+// premium after that base mean.
 
 import { describe, it, expect } from 'vitest'
 

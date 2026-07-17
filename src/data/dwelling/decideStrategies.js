@@ -4,9 +4,9 @@
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
 // tests. Selecting a strategy loads its weight vector over the seven suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
-// off (weight 0). The score renormalises over the enabled weights, so
-// toggling a criterion off redistributes its weight rather than penalising
-// anyone (cost off means Toorak rises, not sinks).
+// off (weight 0). Standard criteria renormalise over the enabled weights;
+// explicitly additive criteria such as Beach apply a small bounded premium
+// outside the mean, so enabling a bonus can never lower a suburb.
 //
 // This supersedes the old purchase modes + criteria sliders + lens buttons
 // (all removed July 2026). Gates still run exactly as before: the strategy's
@@ -18,7 +18,8 @@
 // Seven criteria, each scored 0-10 per suburb, derived from the existing
 // record data (nothing new is fabricated here). `value(rec, commuteScore)`
 // returns 0-10 or null when the record carries no data for it; a null is
-// left out of both sides of the weighted mean rather than scored as zero.
+// omitted rather than scored as zero. `scoringMode: 'additiveBonus'` keeps a
+// criterion outside the standard weighted-mean denominator.
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
 import { personalNetworkByAreaId, pnScore } from './personalNetwork.js'
 import { beachAccessByAreaId, beachScore } from './beachAccess.js'
@@ -86,7 +87,9 @@ export const decideCriteria = [
   {
     key: 'beach',
     label: 'Beach',
-    hint: 'Walkable access to a swimmable foreshore; bonus-only, banded. Non-coastal suburbs are not assessed rather than penalised.',
+    hint: 'Additive premium for walkable access to a swimmable foreshore. Non-coastal suburbs receive no bonus and are never penalised.',
+    scoringMode: 'additiveBonus',
+    bonusPointsPerWeight: 2,
     value: (rec) => beachScore(beachAccessByAreaId[rec.id]?.estMin ?? null),
   },
   {
@@ -120,10 +123,10 @@ export const decideStrategies = [
     intent: 'commute, cost and Lulu in balance',
     weights: {
       cost: 2,
-      commute: 3,
+      commute: 2,
       schools: 2,
       kidAmenity: 2,
-      beach: 1,
+      beach: 2,
       safetyQuality: 1,
       personalNetwork: 2,
     },

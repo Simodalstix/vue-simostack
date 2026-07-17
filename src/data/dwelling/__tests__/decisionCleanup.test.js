@@ -5,6 +5,8 @@ import { beachAccessByAreaId } from '../beachAccess.js'
 import { decideCriterionByKey, decideCriteria, decideStrategies } from '../decideStrategies.js'
 import { differentiatingChipsFor, gateExceptionChipFor } from '../decisionChips.js'
 import { costScoreFor, headroomScore, liquidityScore } from '../cost/costScoring.js'
+import { weightedScore } from '../../../composables/useAreaRanking.js'
+import { scoreCommute } from '../../../composables/useCommuteScoring.js'
 
 describe('bonus-only criteria', () => {
   it('leaves beach absent rather than scoring it as zero', () => {
@@ -17,6 +19,35 @@ describe('bonus-only criteria', () => {
     expect(decideCriterionByKey.kidAmenity.value(toorak)).toBe(
       toorak.childhood.teenIndependence * 2,
     )
+  })
+
+  it('makes every assessed beach band additive and never score-reducing', () => {
+    const strategy = decideStrategies.find((item) => item.id === 'balanced2br')
+    for (const rec of areaCorridors) {
+      const commute = scoreCommute(rec.commute?.typical, rec.commute?.transfers)
+      const beachOff = weightedScore(
+        rec,
+        commute,
+        { ...strategy.weights, beach: 0 },
+        { maxPrice: strategy.filters.maxPrice },
+      )
+      const beachOn = weightedScore(rec, commute, strategy.weights, {
+        maxPrice: strategy.filters.maxPrice,
+      })
+      expect(beachOn).toBeGreaterThanOrEqual(beachOff)
+      if (!beachAccessByAreaId[rec.id]) expect(beachOn).toBe(beachOff)
+    }
+  })
+
+  it('uses the owner-approved balanced 2BR weights and beach premiums', () => {
+    const beach = decideCriterionByKey.beach
+    expect(beach.bonusPointsPerWeight).toBe(2)
+    const balanced = decideStrategies.find((item) => item.id === 'balanced2br')
+    expect(balanced.weights.beach).toBe(2)
+    expect(balanced.weights.commute).toBe(2)
+    expect(2 * (10 / 10) * beach.bonusPointsPerWeight).toBe(4)
+    expect(2 * (7 / 10) * beach.bonusPointsPerWeight).toBe(2.8)
+    expect(2 * (4 / 10) * beach.bonusPointsPerWeight).toBe(1.6)
   })
 })
 
