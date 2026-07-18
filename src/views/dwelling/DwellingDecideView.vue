@@ -185,6 +185,7 @@ function criterionButtonClass(criterion) {
     return 'border-ob-sand/14 text-ob-faint hover:text-ob-muted line-through'
   if (criterion.accent === 'amber') return 'border-amber-500/45 text-amber-300 bg-amber-500/10'
   if (criterion.accent === 'red') return 'border-red-500/45 text-red-300 bg-red-500/10'
+  if (criterion.accent === 'pink') return 'border-pink-500/45 text-pink-300 bg-pink-500/10'
   return 'border-ob-teal/45 text-ob-teal bg-ob-teal/8'
 }
 function resetToggles() {

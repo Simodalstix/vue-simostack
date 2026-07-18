@@ -37,9 +37,18 @@ def qa_row(record: dict) -> dict:
     )
     unpartnered = additional["unpartnered2554"]
     lone_parent = additional["loneParentFamilies"]
+    language_measures = [
+        additional[key]
+        for key in ("filipinoSpokenAtHome", "tagalogSpokenAtHome", "thaiSpokenAtHome")
+    ]
     checks = [
         community["totalPopulation"]["count"] > 0,
         tenure["denominator"] > 0,
+        *(
+            0 <= measure["count"] <= measure["denominator"]
+            and measure["percentage"] == percentage(measure["count"], measure["denominator"])
+            for measure in language_measures
+        ),
         0 <= unpartnered["count"] <= unpartnered["denominator"],
         unpartnered["percentage"]
         == percentage(unpartnered["count"], unpartnered["denominator"]),
@@ -61,6 +70,9 @@ def qa_row(record: dict) -> dict:
         "mandarinPct": additional["mandarinSpokenAtHome"]["percentage"],
         "hongKongBornPct": additional["hongKongBornPopulation"]["percentage"],
         "chinaBornPct": additional["chinaBornPopulation"]["percentage"],
+        "filipinoPct": additional["filipinoSpokenAtHome"]["percentage"],
+        "tagalogPct": additional["tagalogSpokenAtHome"]["percentage"],
+        "thaiPct": additional["thaiSpokenAtHome"]["percentage"],
         "topBirthplacesCount": len(community["topOverseasCountriesOfBirth"]),
         "topLanguagesCount": len(community["topLanguagesSpokenAtHome"]),
         "topNonEnglishLanguagesCount": len(

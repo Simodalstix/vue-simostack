@@ -362,6 +362,9 @@ def build_record(
         ("mandarinSpokenAtHome", "G13c", "G20", "G65"),
         ("hongKongBornPopulation", "G09c", "K28", "K65"),
         ("chinaBornPopulation", "G09c", "K20", "K65"),
+        ("filipinoSpokenAtHome", "G13c", "G50", "G65"),
+        ("tagalogSpokenAtHome", "G13c", "G52", "G65"),
+        ("thaiSpokenAtHome", "G13c", "G57", "G65"),
     ):
         count = number(workbook, sheet, cell)
         denominator = number(workbook, sheet, denominator_cell)

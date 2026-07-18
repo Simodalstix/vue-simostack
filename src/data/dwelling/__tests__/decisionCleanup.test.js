@@ -100,7 +100,7 @@ describe('cost scoring', () => {
   })
 
   it('keeps generated-data fallback available without inventing placeholder values', () => {
-    expect(decideCriteria).toHaveLength(9)
+    expect(decideCriteria).toHaveLength(11)
     for (const strategy of decideStrategies) {
       expect(strategy.weights).toHaveProperty('beach')
       expect(strategy.weights).not.toHaveProperty('greenspace')

@@ -727,6 +727,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 9,
+          "denominator": 5143,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 16,
+          "denominator": 5143,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 16,
+          "denominator": 5143,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -1171,6 +1216,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 50,
+          "denominator": 11729,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 91,
+          "denominator": 11729,
+          "percentage": 0.8,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 37,
+          "denominator": 11729,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -1615,6 +1705,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 62,
+          "denominator": 17131,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 105,
+          "denominator": 17131,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 56,
+          "denominator": 17131,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -2059,6 +2194,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 77,
+          "denominator": 9445,
+          "percentage": 0.8,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 92,
+          "denominator": 9445,
+          "percentage": 1.0,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 29,
+          "denominator": 9445,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -2503,6 +2683,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 415,
+          "denominator": 38042,
+          "percentage": 1.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 551,
+          "denominator": 38042,
+          "percentage": 1.4,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 81,
+          "denominator": 38042,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -2947,6 +3172,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 31,
+          "denominator": 24896,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 34,
+          "denominator": 24896,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 30,
+          "denominator": 24896,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -3391,6 +3661,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 32,
+          "denominator": 26574,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 54,
+          "denominator": 26574,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 67,
+          "denominator": 26574,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -3835,6 +4150,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 43,
+          "denominator": 18171,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 73,
+          "denominator": 18171,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 42,
+          "denominator": 18171,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -4279,6 +4639,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 98,
+          "denominator": 23792,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 122,
+          "denominator": 23792,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 64,
+          "denominator": 23792,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -4723,6 +5128,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 13,
+          "denominator": 10745,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 24,
+          "denominator": 10745,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 39,
+          "denominator": 10745,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -5167,6 +5617,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 12,
+          "denominator": 7025,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 18,
+          "denominator": 7025,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 12,
+          "denominator": 7025,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -5611,6 +6106,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 151,
+          "denominator": 51096,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 211,
+          "denominator": 51096,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 127,
+          "denominator": 51096,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -6055,6 +6595,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 47,
+          "denominator": 17909,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 60,
+          "denominator": 17909,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 72,
+          "denominator": 17909,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -6499,6 +7084,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 42,
+          "denominator": 8442,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 26,
+          "denominator": 8442,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 23,
+          "denominator": 8442,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -6943,6 +7573,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 121,
+          "denominator": 22174,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 145,
+          "denominator": 22174,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 206,
+          "denominator": 22174,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -7387,6 +8062,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 259,
+          "denominator": 32257,
+          "percentage": 0.8,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 256,
+          "denominator": 32257,
+          "percentage": 0.8,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 161,
+          "denominator": 32257,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -7831,6 +8551,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 26,
+          "denominator": 6287,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 18,
+          "denominator": 6287,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 16,
+          "denominator": 6287,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -8275,6 +9040,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 37,
+          "denominator": 23992,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 66,
+          "denominator": 23992,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 53,
+          "denominator": 23992,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -8719,6 +9529,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 0,
+          "denominator": 2158,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 0,
+          "denominator": 2158,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 4,
+          "denominator": 2158,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -9163,6 +10018,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 63,
+          "denominator": 28587,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 71,
+          "denominator": 28587,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 74,
+          "denominator": 28587,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -9607,6 +10507,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 7,
+          "denominator": 9179,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 26,
+          "denominator": 9179,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 34,
+          "denominator": 9179,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -10051,6 +10996,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 40,
+          "denominator": 9088,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 33,
+          "denominator": 9088,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 53,
+          "denominator": 9088,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -10495,6 +11485,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 53,
+          "denominator": 25028,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 67,
+          "denominator": 25028,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 121,
+          "denominator": 25028,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -10939,6 +11974,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 12,
+          "denominator": 7273,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 11,
+          "denominator": 7273,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 31,
+          "denominator": 7273,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -11383,6 +12463,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 25,
+          "denominator": 12203,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 21,
+          "denominator": 12203,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 42,
+          "denominator": 12203,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -11827,6 +12952,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 45,
+          "denominator": 19490,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 45,
+          "denominator": 19490,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 53,
+          "denominator": 19490,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -12271,6 +13441,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 10,
+          "denominator": 5392,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 9,
+          "denominator": 5392,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 9,
+          "denominator": 5392,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -12715,6 +13930,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 22,
+          "denominator": 12571,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 35,
+          "denominator": 12571,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 35,
+          "denominator": 12571,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -13159,6 +14419,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 13,
+          "denominator": 15153,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 18,
+          "denominator": 15153,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 29,
+          "denominator": 15153,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -13603,6 +14908,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 0,
+          "denominator": 4000,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 5,
+          "denominator": 4000,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 0,
+          "denominator": 4000,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -14047,6 +15397,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 17,
+          "denominator": 13197,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 33,
+          "denominator": 13197,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 19,
+          "denominator": 13197,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -14491,6 +15886,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 19,
+          "denominator": 8347,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 27,
+          "denominator": 8347,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 21,
+          "denominator": 8347,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -14935,6 +16375,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 11,
+          "denominator": 6855,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 12,
+          "denominator": 6855,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 33,
+          "denominator": 6855,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -15379,6 +16864,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 718,
+          "denominator": 56370,
+          "percentage": 1.3,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 1047,
+          "denominator": 56370,
+          "percentage": 1.9,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 74,
+          "denominator": 56370,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -15823,6 +17353,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 132,
+          "denominator": 20518,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 176,
+          "denominator": 20518,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 65,
+          "denominator": 20518,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -16267,6 +17842,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 440,
+          "denominator": 65178,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 432,
+          "denominator": 65178,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 131,
+          "denominator": 65178,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -16711,6 +18331,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 39,
+          "denominator": 2100,
+          "percentage": 1.9,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 31,
+          "denominator": 2100,
+          "percentage": 1.5,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 0,
+          "denominator": 2100,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -17155,6 +18820,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 20,
+          "denominator": 24499,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 17,
+          "denominator": 24499,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 47,
+          "denominator": 24499,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -17599,6 +19309,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 23,
+          "denominator": 9929,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 20,
+          "denominator": 9929,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 14,
+          "denominator": 9929,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -18043,6 +19798,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 9,
+          "denominator": 12817,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 18,
+          "denominator": 12817,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 26,
+          "denominator": 12817,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -18487,6 +20287,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 70,
+          "denominator": 14353,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 52,
+          "denominator": 14353,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 49,
+          "denominator": 14353,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -18931,6 +20776,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 14,
+          "denominator": 13495,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 19,
+          "denominator": 13495,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 24,
+          "denominator": 13495,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -19375,6 +21265,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 15,
+          "denominator": 19005,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 27,
+          "denominator": 19005,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 34,
+          "denominator": 19005,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -19819,6 +21754,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 82,
+          "denominator": 33790,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 112,
+          "denominator": 33790,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 78,
+          "denominator": 33790,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -20263,6 +22243,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 17,
+          "denominator": 25276,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 24,
+          "denominator": 25276,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 28,
+          "denominator": 25276,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -20707,6 +22732,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 0,
+          "denominator": 6044,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 0,
+          "denominator": 6044,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 4,
+          "denominator": 6044,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -21151,6 +23221,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 54,
+          "denominator": 14953,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 52,
+          "denominator": 14953,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 55,
+          "denominator": 14953,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -21595,6 +23710,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 94,
+          "denominator": 38851,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 160,
+          "denominator": 38851,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 89,
+          "denominator": 38851,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -22039,6 +24199,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 8,
+          "denominator": 9368,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 15,
+          "denominator": 9368,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 40,
+          "denominator": 9368,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -22483,6 +24688,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 24,
+          "denominator": 15197,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 35,
+          "denominator": 15197,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 39,
+          "denominator": 15197,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -22927,6 +25177,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 20,
+          "denominator": 21302,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 26,
+          "denominator": 21302,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 37,
+          "denominator": 21302,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -23371,6 +25666,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 0,
+          "denominator": 794,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 0,
+          "denominator": 794,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 0,
+          "denominator": 794,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -23815,6 +26155,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 0,
+          "denominator": 6606,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 8,
+          "denominator": 6606,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 4,
+          "denominator": 6606,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -24259,6 +26644,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 57,
+          "denominator": 25020,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 52,
+          "denominator": 25020,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 72,
+          "denominator": 25020,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -24703,6 +27133,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 60,
+          "denominator": 42642,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 104,
+          "denominator": 42642,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 107,
+          "denominator": 42642,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -25147,6 +27622,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 25,
+          "denominator": 22322,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 34,
+          "denominator": 22322,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 89,
+          "denominator": 22322,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -25591,6 +28111,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 11,
+          "denominator": 6878,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 5,
+          "denominator": 6878,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 7,
+          "denominator": 6878,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -26035,6 +28600,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 19,
+          "denominator": 11548,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 32,
+          "denominator": 11548,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 47,
+          "denominator": 11548,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -26479,6 +29089,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 5,
+          "denominator": 2820,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 10,
+          "denominator": 2820,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 8,
+          "denominator": 2820,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -26923,6 +29578,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 6,
+          "denominator": 15636,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 35,
+          "denominator": 15636,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 38,
+          "denominator": 15636,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -27367,6 +30067,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 8,
+          "denominator": 13374,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 13,
+          "denominator": 13374,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 23,
+          "denominator": 13374,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -27811,6 +30556,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 8,
+          "denominator": 7952,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 4,
+          "denominator": 7952,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 12,
+          "denominator": 7952,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -28255,6 +31045,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 36,
+          "denominator": 17921,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 34,
+          "denominator": 17921,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 64,
+          "denominator": 17921,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -28699,6 +31534,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 40,
+          "denominator": 14478,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 32,
+          "denominator": 14478,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 46,
+          "denominator": 14478,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -29143,6 +32023,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 4,
+          "denominator": 6535,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 5,
+          "denominator": 6535,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 8,
+          "denominator": 6535,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -29587,6 +32512,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 55,
+          "denominator": 7360,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 39,
+          "denominator": 7360,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 23,
+          "denominator": 7360,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -30031,6 +33001,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 50,
+          "denominator": 35340,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 59,
+          "denominator": 35340,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 77,
+          "denominator": 35340,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -30475,6 +33490,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 9,
+          "denominator": 13658,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 17,
+          "denominator": 13658,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 32,
+          "denominator": 13658,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -30919,6 +33979,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 12,
+          "denominator": 8616,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 9,
+          "denominator": 8616,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 24,
+          "denominator": 8616,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -31363,6 +34468,51 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of enumeration"
+        },
+        "filipinoSpokenAtHome": {
+          "count": 11,
+          "denominator": 13655,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Filipino at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G50"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "tagalogSpokenAtHome": {
+          "count": 20,
+          "denominator": 13655,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Tagalog at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G52"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "thaiSpokenAtHome": {
+          "count": 15,
+          "denominator": 13655,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Thai at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     }

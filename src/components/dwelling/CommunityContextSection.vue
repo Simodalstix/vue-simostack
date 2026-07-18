@@ -277,6 +277,9 @@ function householdContext(record) {
     { label: 'Mandarin at home', m: a.mandarinSpokenAtHome },
     { label: 'Hong Kong-born', m: a.hongKongBornPopulation },
     { label: 'China-born', m: a.chinaBornPopulation },
+    { label: 'Filipino at home', m: a.filipinoSpokenAtHome },
+    { label: 'Tagalog at home', m: a.tagalogSpokenAtHome },
+    { label: 'Thai at home', m: a.thaiSpokenAtHome },
     { label: 'Unpartnered 25-54 (2021)', m: a.unpartnered2554 },
     { label: 'One-parent families (2021)', m: a.loneParentFamilies },
   ]

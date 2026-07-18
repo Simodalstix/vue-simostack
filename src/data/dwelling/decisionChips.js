@@ -4,6 +4,12 @@
 
 import { beachAccessByAreaId } from './beachAccess.js'
 import { chineseLanguageCommunityFor } from './chineseCommunity.js'
+import {
+  FILIPINO_COMMUNITY_FULL_BONUS_SHARE,
+  THAI_COMMUNITY_FULL_BONUS_SHARE,
+  filipinoCommunityFor,
+  thaiCommunityFor,
+} from './languageCommunities.js'
 import { friendContextFor } from './personalAnchors.js'
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
 
@@ -26,6 +32,26 @@ export function differentiatingChipsFor(row) {
       key: 'chinese-community',
       text: `Chinese ${Math.round(chineseShare)}%`,
       tone: 'chinese',
+    })
+  }
+
+  // Same quarter-of-full-bonus threshold as the Chinese chip, shown with one
+  // decimal because these community shares sit well under 10%.
+  const filipinoShare = filipinoCommunityFor(areaId)?.percentage
+  if (filipinoShare >= FILIPINO_COMMUNITY_FULL_BONUS_SHARE / 4) {
+    chips.push({
+      key: 'filipino-community',
+      text: `Filipino ${filipinoShare.toFixed(1)}%`,
+      tone: 'pink',
+    })
+  }
+
+  const thaiShare = thaiCommunityFor(areaId)?.percentage
+  if (thaiShare >= THAI_COMMUNITY_FULL_BONUS_SHARE / 4) {
+    chips.push({
+      key: 'thai-community',
+      text: `Thai ${thaiShare.toFixed(1)}%`,
+      tone: 'pink',
     })
   }
 
