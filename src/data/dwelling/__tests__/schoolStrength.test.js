@@ -2,7 +2,11 @@ import { describe, expect, it } from 'vitest'
 
 import { schoolPoints } from '../schools/dwelling-school-points.js'
 import { schoolContextByAreaId } from '../schools/dwelling-school-context.js'
-import { schoolStrengthByName, schoolStrengthBySchoolNo } from '../schools/schoolStrength.js'
+import {
+  schoolStrengthByName,
+  schoolStrengthBySchoolNo,
+  zonedSchoolEvidenceForArea,
+} from '../schools/schoolStrength.js'
 
 const pointSchoolNos = new Set(
   schoolPoints.filter((school) => school.schoolNo != null).map((school) => String(school.schoolNo)),
@@ -24,7 +28,7 @@ describe('school strength research table', () => {
       ...Object.values(schoolStrengthBySchoolNo),
       ...Object.values(schoolStrengthByName),
     ]
-    expect(entries.length).toBe(76)
+    expect(entries.length).toBe(91)
     for (const entry of entries) {
       expect(
         entry.strength === null ||
@@ -47,5 +51,23 @@ describe('catchment zone roles', () => {
     const balwynNorth = schoolContextByAreaId['balwyn-north-2br']
     expect(balwynNorth.zonedSecondary).toBe('Balwyn High School')
     expect(balwynNorth.alsoInCatchmentSecondary).toEqual([])
+  })
+
+  it.each([
+    ['heidelberg-3br-townhouse', 4, 4],
+    ['rosanna-house', 3, 1],
+    ['fairfield-house', 4, 4],
+    ['surrey-hills-house', 4, 4],
+    ['blackburn-house', 4, 4],
+    ['mount-waverley-villa', 5, 4],
+    ['ashburton-villa', 4, 4],
+    ['bentleigh-house', 4, 5],
+    ['newport-house', 3, 2],
+  ])('resolves zoned-school evidence for %s', (areaId, primary, secondary) => {
+    const evidence = zonedSchoolEvidenceForArea(areaId)
+    expect(evidence.primary.evidence?.strength).toBe(primary)
+    expect(evidence.secondary.evidence?.strength).toBe(secondary)
+    expect(evidence.primary.evidence?.confidence).toBe('high')
+    expect(evidence.secondary.evidence?.sources[0]).toContain('vrqa.vic.gov.au')
   })
 })

@@ -3934,7 +3934,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'The station anchor is close to a 2027 school-zone boundary; verify the exact address.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Provisional 3-bedroom townhouse band. Published suburb pages have too few comparable 3-bedroom unit/townhouse sales for a stable median.',
@@ -4023,7 +4023,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'The station anchor is close to a 2027 school-zone boundary; verify the exact address.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Broad 3-bedroom-house band spanning current Domain and REA suburb medians.',
@@ -4036,7 +4036,7 @@ const AREA_CORRIDOR_BASE = [
       'Compare the listing against the nominated dwelling-type and bedroom contract.',
     ],
     primaryWarning:
-      'Viewbank College zoning is a hypothesis until the 2027 polygon intersection is completed.',
+      'The station anchor is zoned to Charles La Trobe P-12 College; Viewbank College applies only to part of the 800 m catchment.',
     verifiedAt: null,
     placeholder: true,
     sources: ['abs', 'csa', 'vicplan', 'ptv', 'domain', 'detSchoolLocations', 'detSchoolZones2027'],
@@ -4112,7 +4112,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'The station anchor is close to a 2027 school-zone boundary; verify the exact address.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Broad 3-bedroom-house band centred on the current Domain suburb median.',
@@ -4189,7 +4189,7 @@ const AREA_CORRIDOR_BASE = [
     feeNote: 'Detached freehold assumption; confirm title and shared-property obligations.',
     caseFor: [
       'Direct rail and established local services provide a strong practical base.',
-      'The 2027 zone overlay may intersect several strong school catchments, but this must be mapped rather than assumed.',
+      'The 2027 overlay confirms Koonung Secondary at the station anchor, with Box Hill High and Camberwell High intersecting other parts of the catchment.',
     ],
     caseAgainst: ['Purchase cost is severe enough that this is primarily a benchmark record.'],
     bestType:
@@ -4200,7 +4200,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'The station anchor is close to a 2027 school-zone boundary; verify the exact address.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Broad 3-bedroom-house band spanning current Domain and REA suburb medians.',
@@ -4276,7 +4276,7 @@ const AREA_CORRIDOR_BASE = [
       'The station, village and lake form a coherent family-lifestyle package.',
       'Chinese-community and partner-pool signals should come from the existing Census-derived criteria, not narrative assumptions.',
     ],
-    caseAgainst: ['Blackburn High strength and exact zone coverage remain evidence tasks.'],
+    caseAgainst: ['Commute, safety and detached-house pricing remain evidence tasks.'],
     bestType:
       'Three-bedroom houses within the station catchment; bushland character, overlays and condition require property-level review.',
     avoidType:
@@ -4285,7 +4285,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'The station anchor is close to a 2027 school-zone boundary; verify the exact address.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Broad 3-bedroom-house band spanning current Domain and REA suburb medians.',
@@ -4297,7 +4297,8 @@ const AREA_CORRIDOR_BASE = [
       'Verify title, owners-corporation and planning overlays.',
       'Compare the listing against the nominated dwelling-type and bedroom contract.',
     ],
-    primaryWarning: 'Do not encode the school or Chinese-community hypotheses manually.',
+    primaryWarning:
+      'School and Chinese-community signals now come from their evidence pipelines; commute, safety and price remain provisional.',
     verifiedAt: null,
     placeholder: true,
     sources: ['abs', 'csa', 'vicplan', 'ptv', 'domain', 'detSchoolLocations', 'detSchoolZones2027'],
@@ -4373,7 +4374,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'Verify the exact address against the 2027 school zones before relying on enrolment eligibility.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Broad 3-bedroom unit/villa band supported by similar current Domain and REA medians.',
@@ -4460,7 +4461,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'Verify the exact address against the 2027 school zones before relying on enrolment eligibility.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Provisional 3-bedroom villa band. The latest Domain profile had too few 3-bedroom unit sales for a stable published median.',
@@ -4552,7 +4553,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'The station anchor is close to a 2027 school-zone boundary; verify the exact address.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Broad 3-bedroom-house band supported by current Domain and REA medians.',
@@ -4564,7 +4565,8 @@ const AREA_CORRIDOR_BASE = [
       'Verify title, owners-corporation and planning overlays.',
       'Compare the listing against the nominated dwelling-type and bedroom contract.',
     ],
-    primaryWarning: 'Do not claim McKinnon Secondary College zoning before polygon intersection.',
+    primaryWarning:
+      'The station anchor is zoned to McKinnon Secondary College, but other parts of the 800 m catchment are not; verify the exact address.',
     verifiedAt: null,
     placeholder: true,
     sources: ['abs', 'csa', 'vicplan', 'ptv', 'domain', 'detSchoolLocations', 'detSchoolZones2027'],
@@ -4638,7 +4640,7 @@ const AREA_CORRIDOR_BASE = [
       'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
     coparentingGeometry: 'Not assessed for this onboarding pack.',
     risks: [
-      'School-zone coverage unresolved until polygon intersection.',
+      'Verify the exact address against the 2027 school zones before relying on enrolment eligibility.',
       'Safety and environmental-risk scores not yet populated.',
       "Provisional commute must be reproduced using the repository's standard journey protocol.",
       'Broad 3-bedroom-house band centred on the current REA suburb median.',

@@ -1058,7 +1058,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'The claimed Viewbank College benefit must be confirmed by intersecting the actual 2027 zone with the 800 m catchment.',
+        text: 'The station anchor is zoned to Charles La Trobe P-12 College; Viewbank College applies only to part of the catchment.',
         tag: 'tradeoff',
       },
     ],
@@ -1066,7 +1066,7 @@ export const suburbProfiles = {
       bestFor: 'A quieter Hurstbridge-line family option where space and local calm matter.',
       mainRisk: 'Price remains high and school-zone coverage may not include the entire catchment.',
       pursueWhen:
-        'After the zone overlay identifies which parts of the catchment receive the intended secondary school.',
+        'Only where an exact-address check confirms the intended secondary zone and the price trade-off remains acceptable.',
     },
   },
   'fairfield-house': {
@@ -1106,7 +1106,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'The 2027 zone overlay may intersect several strong school catchments, but this must be mapped rather than assumed.',
+        text: 'The 2027 overlay confirms Koonung Secondary at the station anchor, with Box Hill High and Camberwell High intersecting other parts of the catchment.',
         tag: null,
       },
       {
@@ -1132,11 +1132,11 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'Chinese-community and partner-pool signals should come from the existing Census-derived criteria, not narrative assumptions.',
+        text: 'Chinese-community and partner-pool signals now resolve through the generated Census criteria.',
         tag: null,
       },
       {
-        text: 'Blackburn High strength and exact zone coverage remain evidence tasks.',
+        text: 'Price, commute and safety remain provisional despite the now-evidenced school and community context.',
         tag: 'tradeoff',
       },
     ],
@@ -1144,7 +1144,7 @@ export const suburbProfiles = {
       bestFor:
         'An eastern family benchmark balancing rail, greenery and somewhat lower prices than inner-east options.',
       mainRisk: 'Price and a longer door-to-door commute may outweigh the amenity advantage.',
-      pursueWhen: 'After the school overlay and generated Census criteria are complete.',
+      pursueWhen: 'When verified commute and property evidence justify the above-cap purchase price.',
     },
   },
   'mount-waverley-villa': {
@@ -1158,7 +1158,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'School and Chinese-community signals must resolve through the existing zone and Census pipelines.',
+        text: 'School and Chinese-community signals resolve through the official zone and generated Census pipelines.',
         tag: null,
       },
       {
@@ -1171,7 +1171,7 @@ export const suburbProfiles = {
       mainRisk:
         'Three-bedroom villas may still be too expensive while adding owners-corporation complexity.',
       pursueWhen:
-        'When the generated criteria and school-zone intersection confirm the expected strengths.',
+        'When verified commute and owners-corporation evidence justify the above-cap purchase price.',
     },
   },
   'ashburton-villa': {
@@ -1185,7 +1185,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'Creek and open-space access should be measured by the existing greenspace pipeline.',
+        text: 'The generated greenspace pipeline confirms strong station-catchment open-space access.',
         tag: null,
       },
       {
@@ -1221,8 +1221,9 @@ export const suburbProfiles = {
     decision: {
       bestFor:
         'Comparing a southern family-house and school-zone proposition against villa options.',
-      mainRisk: 'Price and uncertain McKinnon-zone overlap may remove the intended advantage.',
-      pursueWhen: 'Only after the zone overlay isolates qualifying parts of the 800 m catchment.',
+      mainRisk: 'Price remains severe, and McKinnon zoning applies only to part of the catchment.',
+      pursueWhen:
+        'Only where an exact-address check confirms McKinnon eligibility and the purchase-price gate is acceptable.',
     },
   },
   'newport-house': {
