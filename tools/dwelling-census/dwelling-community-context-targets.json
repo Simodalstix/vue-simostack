@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-13",
+  "version": "2021-gcp-sal-extension-22",
   "retrievedAt": "2026-07-18",
-  "recordCount": 13,
+  "recordCount": 22,
   "records": [
     {
       "id": "yarraville-2br",
@@ -55,6 +55,42 @@
     {
       "id": "ivanhoe-house",
       "salComponents": [{ "suburb": "Ivanhoe", "salCode": "21246" }]
+    },
+    {
+      "id": "heidelberg-3br-townhouse",
+      "salComponents": [{ "suburb": "Heidelberg", "salCode": "21167" }]
+    },
+    {
+      "id": "rosanna-house",
+      "salComponents": [{ "suburb": "Rosanna", "salCode": "22194" }]
+    },
+    {
+      "id": "fairfield-house",
+      "salComponents": [{ "suburb": "Fairfield", "salCode": "20901" }]
+    },
+    {
+      "id": "surrey-hills-house",
+      "salComponents": [{ "suburb": "Surrey Hills", "salCode": "22399" }]
+    },
+    {
+      "id": "blackburn-house",
+      "salComponents": [{ "suburb": "Blackburn", "salCode": "20252" }]
+    },
+    {
+      "id": "mount-waverley-villa",
+      "salComponents": [{ "suburb": "Mount Waverley", "salCode": "21816" }]
+    },
+    {
+      "id": "ashburton-villa",
+      "salComponents": [{ "suburb": "Ashburton", "salCode": "20077" }]
+    },
+    {
+      "id": "bentleigh-house",
+      "salComponents": [{ "suburb": "Bentleigh", "salCode": "20214" }]
+    },
+    {
+      "id": "newport-house",
+      "salComponents": [{ "suburb": "Newport", "salCode": "21934" }]
     }
   ]
 }

@@ -120,6 +120,40 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "ashburton-primary-school",
+    "schoolNo": "4317",
+    "name": "Ashburton Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.08362,
+      -37.8622
+    ],
+    "areaIds": [
+      "ashburton-villa"
+    ],
+    "zonedFor": [
+      "ashburton-villa"
+    ]
+  },
+  {
+    "id": "ashwood-high-school",
+    "schoolNo": "8743",
+    "name": "Ashwood High School",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.10333,
+      -37.86453
+    ],
+    "areaIds": [
+      "ashburton-villa"
+    ],
+    "zonedFor": [
+      "ashburton-villa"
+    ]
+  },
+  {
     "id": "auburn-high-school",
     "schoolNo": "7526",
     "name": "Auburn High School",
@@ -208,6 +242,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "bayside-p-12-college",
+    "schoolNo": "8800",
+    "name": "Bayside P-12 College",
+    "category": "combined",
+    "sector": "government",
+    "coordinates": [
+      144.88521,
+      -37.8577
+    ],
+    "areaIds": [
+      "newport-house"
+    ],
+    "zonedFor": [
+      "newport-house"
+    ]
+  },
+  {
     "id": "bell-primary-school",
     "schoolNo": "4309",
     "name": "Bell Primary School",
@@ -221,6 +272,23 @@ export const schoolPoints = [
       "preston-villa"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "bentleigh-west-primary-school",
+    "schoolNo": "4318",
+    "name": "Bentleigh West Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.02677,
+      -37.92059
+    ],
+    "areaIds": [
+      "bentleigh-house"
+    ],
+    "zonedFor": [
+      "bentleigh-house"
+    ]
   },
   {
     "id": "birralee-primary-school",
@@ -237,6 +305,40 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "doncaster-villa"
+    ]
+  },
+  {
+    "id": "blackburn-high-school",
+    "schoolNo": "7610",
+    "name": "Blackburn High School",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.14989,
+      -37.81037
+    ],
+    "areaIds": [
+      "blackburn-house"
+    ],
+    "zonedFor": [
+      "blackburn-house"
+    ]
+  },
+  {
+    "id": "blackburn-primary-school",
+    "schoolNo": "2923",
+    "name": "Blackburn Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.1567,
+      -37.81657
+    ],
+    "areaIds": [
+      "blackburn-house"
+    ],
+    "zonedFor": [
+      "blackburn-house"
     ]
   },
   {
@@ -386,6 +488,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "malvern-2br"
+    ]
+  },
+  {
+    "id": "charles-la-trobe-p-12-college",
+    "schoolNo": "8890",
+    "name": "Charles La Trobe P-12 College",
+    "category": "combined",
+    "sector": "government",
+    "coordinates": [
+      145.05865,
+      -37.72897
+    ],
+    "areaIds": [
+      "rosanna-house"
+    ],
+    "zonedFor": [
+      "rosanna-house"
     ]
   },
   {
@@ -632,6 +751,23 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "fairfield-primary-school",
+    "schoolNo": "2711",
+    "name": "Fairfield Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.0204,
+      -37.77799
+    ],
+    "areaIds": [
+      "fairfield-house"
+    ],
+    "zonedFor": [
+      "fairfield-house"
+    ]
+  },
+  {
     "id": "fitzroy-high-school",
     "schoolNo": "8742",
     "name": "Fitzroy High School",
@@ -868,6 +1004,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "heidelberg-primary-school",
+    "schoolNo": "294",
+    "name": "Heidelberg Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.0678,
+      -37.75471
+    ],
+    "areaIds": [
+      "heidelberg-3br-townhouse"
+    ],
+    "zonedFor": [
+      "heidelberg-3br-townhouse"
+    ]
+  },
+  {
     "id": "ivanhoe-east-primary-school",
     "schoolNo": "4386",
     "name": "Ivanhoe East Primary School",
@@ -992,10 +1145,12 @@ export const schoolPoints = [
       -37.80219
     ],
     "areaIds": [
-      "doncaster-villa"
+      "doncaster-villa",
+      "surrey-hills-house"
     ],
     "zonedFor": [
-      "doncaster-villa"
+      "doncaster-villa",
+      "surrey-hills-house"
     ]
   },
   {
@@ -1054,10 +1209,12 @@ export const schoolPoints = [
       -37.9122
     ],
     "areaIds": [
-      "mckinnon-villa"
+      "mckinnon-villa",
+      "bentleigh-house"
     ],
     "zonedFor": [
-      "mckinnon-villa"
+      "mckinnon-villa",
+      "bentleigh-house"
     ]
   },
   {
@@ -1225,6 +1382,57 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "mount-waverley-primary-school",
+    "schoolNo": "3432",
+    "name": "Mount Waverley Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.12411,
+      -37.88127
+    ],
+    "areaIds": [
+      "mount-waverley-villa"
+    ],
+    "zonedFor": [
+      "mount-waverley-villa"
+    ]
+  },
+  {
+    "id": "mount-waverley-secondary-college",
+    "schoolNo": "8105",
+    "name": "Mount Waverley Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.13231,
+      -37.86909
+    ],
+    "areaIds": [
+      "mount-waverley-villa"
+    ],
+    "zonedFor": [
+      "mount-waverley-villa"
+    ]
+  },
+  {
+    "id": "newport-lakes-primary-school",
+    "schoolNo": "113",
+    "name": "Newport Lakes Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.87834,
+      -37.83842
+    ],
+    "areaIds": [
+      "newport-house"
+    ],
+    "zonedFor": [
+      "newport-house"
+    ]
+  },
+  {
     "id": "noble-park-secondary-college",
     "schoolNo": "8813",
     "name": "Noble Park Secondary College",
@@ -1268,11 +1476,13 @@ export const schoolPoints = [
     ],
     "areaIds": [
       "northcote-2br",
-      "thornbury-2br"
+      "thornbury-2br",
+      "fairfield-house"
     ],
     "zonedFor": [
       "northcote-2br",
-      "thornbury-2br"
+      "thornbury-2br",
+      "fairfield-house"
     ]
   },
   {
@@ -1540,6 +1750,23 @@ export const schoolPoints = [
       "inner-richmond-2br",
       "cremorne-2br",
       "burnley-2br"
+    ]
+  },
+  {
+    "id": "rosanna-primary-school",
+    "schoolNo": "4568",
+    "name": "Rosanna Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.0629,
+      -37.73539
+    ],
+    "areaIds": [
+      "rosanna-house"
+    ],
+    "zonedFor": [
+      "rosanna-house"
     ]
   },
   {
@@ -1887,6 +2114,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "surrey-hills-primary-school",
+    "schoolNo": "2778",
+    "name": "Surrey Hills Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.1009,
+      -37.82553
+    ],
+    "areaIds": [
+      "surrey-hills-house"
+    ],
+    "zonedFor": [
+      "surrey-hills-house"
+    ]
+  },
+  {
     "id": "tarneit-p-9-college",
     "schoolNo": "8914",
     "name": "Tarneit P-9 College",
@@ -1984,6 +2228,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "north-melbourne-2br"
+    ]
+  },
+  {
+    "id": "viewbank-college",
+    "schoolNo": "8812",
+    "name": "Viewbank College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.08659,
+      -37.7412
+    ],
+    "areaIds": [
+      "heidelberg-3br-townhouse"
+    ],
+    "zonedFor": [
+      "heidelberg-3br-townhouse"
     ]
   },
   {

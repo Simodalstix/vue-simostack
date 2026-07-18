@@ -237,7 +237,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--target-id",
-        help="Optionally calculate one target id from the targets file.",
+        action="append",
+        help="Calculate one target id; repeat to build an incremental batch.",
     )
     parser.add_argument(
         "--no-download",
@@ -1384,9 +1385,11 @@ def main() -> int:
 
     _, targets = load_targets(args.targets)
     if args.target_id:
-        targets = [target for target in targets if target["id"] == args.target_id]
-        if not targets:
-            raise ValueError(f"Unknown target id: {args.target_id}")
+        requested_ids = set(args.target_id)
+        targets = [target for target in targets if target["id"] in requested_ids]
+        found_ids = {target["id"] for target in targets}
+        if missing_ids := requested_ids - found_ids:
+            raise ValueError(f"Unknown target ids: {sorted(missing_ids)}")
     target_codes = {
         component["salCode"]
         for target in targets

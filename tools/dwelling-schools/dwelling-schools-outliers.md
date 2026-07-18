@@ -1,6 +1,6 @@
 # dwelling-schools outliers — zone year 2027
 
-## Anchors within 150 m of a zone boundary (24)
+## Anchors within 150 m of a zone boundary (31)
 - inner-south-yarra-2br (primary): Toorak Primary School — 23.5 m. Street-level: the zone can flip within the catchment.
 - inner-richmond-2br (primary): Richmond Primary School — 51.9 m. Street-level: the zone can flip within the catchment.
 - inner-collingwood-2br (primary): Collingwood College — 111.3 m. Street-level: the zone can flip within the catchment.
@@ -18,6 +18,7 @@
 - south-melbourne-2br (primary): South Melbourne Park Primary School — 140.2 m. Street-level: the zone can flip within the catchment.
 - mckinnon-villa (primary): Ormond Primary School — 63.8 m. Street-level: the zone can flip within the catchment.
 - clifton-hill-2br (primary): Clifton Hill Primary School — 50.4 m. Street-level: the zone can flip within the catchment.
+- rosanna-house (primary): Rosanna Primary School — 95.5 m. Street-level: the zone can flip within the catchment.
 - sunshine-station-2br (secondary): Sunshine College — 94.9 m. Street-level: the zone can flip within the catchment.
 - footscray-station-2br (secondary): Footscray High School — 123.9 m. Street-level: the zone can flip within the catchment.
 - northern-rail-value (secondary): Reservoir High School — 0.1 m. Street-level: the zone can flip within the catchment.
@@ -25,6 +26,12 @@
 - growth-corridor-stress-test (secondary): Baden Powell P-9 College — 3.8 m. Street-level: the zone can flip within the catchment.
 - spotswood-2br (secondary): Footscray High School — 55.0 m. Street-level: the zone can flip within the catchment.
 - mentone-2br (secondary): Parkdale Secondary College — 122.7 m. Street-level: the zone can flip within the catchment.
+- heidelberg-3br-townhouse (secondary): Viewbank College — 136.3 m. Street-level: the zone can flip within the catchment.
+- rosanna-house (secondary): Charles La Trobe P-12 College — 79.4 m. Street-level: the zone can flip within the catchment.
+- fairfield-house (secondary): Northcote High School — 109.7 m. Street-level: the zone can flip within the catchment.
+- surrey-hills-house (secondary): Koonung Secondary College — 4.1 m. Street-level: the zone can flip within the catchment.
+- blackburn-house (secondary): Blackburn High School — 37.3 m. Street-level: the zone can flip within the catchment.
+- bentleigh-house (secondary): McKinnon Secondary College — 78.7 m. Street-level: the zone can flip within the catchment.
 
 ## Anchors with no containing zone (0)
 

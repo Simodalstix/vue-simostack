@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-greenspace-targets-app",
-  "version": "v4-repo-active-51-mixed-official-and-derived",
+  "version": "v5-repo-active-60-mixed-official-and-derived",
   "retrievedAt": "2026-07-18",
-  "recordCount": 51,
+  "recordCount": 60,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -675,6 +675,82 @@
         }
       ],
       "censusPopulation2021": 13374
+    },
+    {
+      "id": "heidelberg-3br-townhouse",
+      "displayName": "Heidelberg",
+      "salComponents": [
+        { "suburb": "Heidelberg", "salCode": "21167", "censusPopulation2021": 7360 }
+      ],
+      "censusPopulation2021": 7360
+    },
+    {
+      "id": "rosanna-house",
+      "displayName": "Rosanna",
+      "salComponents": [
+        { "suburb": "Rosanna", "salCode": "22194", "censusPopulation2021": 8616 }
+      ],
+      "censusPopulation2021": 8616
+    },
+    {
+      "id": "fairfield-house",
+      "displayName": "Fairfield",
+      "salComponents": [
+        { "suburb": "Fairfield", "salCode": "20901", "censusPopulation2021": 6535 }
+      ],
+      "censusPopulation2021": 6535
+    },
+    {
+      "id": "surrey-hills-house",
+      "displayName": "Surrey Hills",
+      "salComponents": [
+        { "suburb": "Surrey Hills", "salCode": "22399", "censusPopulation2021": 13655 }
+      ],
+      "censusPopulation2021": 13655
+    },
+    {
+      "id": "blackburn-house",
+      "displayName": "Blackburn",
+      "salComponents": [
+        { "suburb": "Blackburn", "salCode": "20252", "censusPopulation2021": 14478 }
+      ],
+      "censusPopulation2021": 14478
+    },
+    {
+      "id": "mount-waverley-villa",
+      "displayName": "Mount Waverley",
+      "salComponents": [
+        {
+          "suburb": "Mount Waverley",
+          "salCode": "21816",
+          "censusPopulation2021": 35340
+        }
+      ],
+      "censusPopulation2021": 35340
+    },
+    {
+      "id": "ashburton-villa",
+      "displayName": "Ashburton",
+      "salComponents": [
+        { "suburb": "Ashburton", "salCode": "20077", "censusPopulation2021": 7952 }
+      ],
+      "censusPopulation2021": 7952
+    },
+    {
+      "id": "bentleigh-house",
+      "displayName": "Bentleigh",
+      "salComponents": [
+        { "suburb": "Bentleigh", "salCode": "20214", "censusPopulation2021": 17921 }
+      ],
+      "censusPopulation2021": 17921
+    },
+    {
+      "id": "newport-house",
+      "displayName": "Newport",
+      "salComponents": [
+        { "suburb": "Newport", "salCode": "21934", "censusPopulation2021": 13658 }
+      ],
+      "censusPopulation2021": 13658
     }
   ]
 }

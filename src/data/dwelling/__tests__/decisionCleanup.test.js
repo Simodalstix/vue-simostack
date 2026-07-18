@@ -107,7 +107,9 @@ describe('cost scoring', () => {
     }
     for (const rec of areaCorridors.filter((record) => record.scored !== false)) {
       const cost = decideCriterionByKey.cost.value(rec)
-      if (rec.id === 'ivanhoe-house') expect(cost).toBeNull()
+      // Onboarding placeholders carry no hand score and no generated cost
+      // context yet; they stay null rather than receiving invented values.
+      if (rec.placeholder && rec.scores?.housingValue == null) expect(cost).toBeNull()
       else expect(Number.isFinite(cost)).toBe(true)
     }
   })

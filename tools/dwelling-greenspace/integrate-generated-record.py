@@ -98,19 +98,22 @@ def app_record(generated: dict[str, Any], qa: dict[str, str]) -> dict[str, Any]:
 def main() -> int:
     args = parse_args()
     generated_payload = json.loads(args.generated.read_text(encoding="utf-8"))
-    if len(generated_payload["records"]) != 1:
-        raise ValueError("Expected exactly one generated record.")
     with args.qa.open(newline="", encoding="utf-8") as handle:
         qa_rows = list(csv.DictReader(handle))
-    if len(qa_rows) != 1:
-        raise ValueError("Expected exactly one QA row.")
+    qa_by_id = {row["id"]: row for row in qa_rows}
+    generated_ids = {record["id"] for record in generated_payload["records"]}
+    if set(qa_by_id) != generated_ids:
+        raise ValueError("Generated records and QA rows do not have identical ids.")
 
     payload = json.loads(args.json.read_text(encoding="utf-8"))
-    record = app_record(generated_payload["records"][0], qa_rows[0])
-    payload["records"] = [
-        item for item in payload["records"] if item["id"] != record["id"]
+    records = [
+        app_record(record, qa_by_id[record["id"]])
+        for record in generated_payload["records"]
     ]
-    payload["records"].append(record)
+    payload["records"] = [
+        item for item in payload["records"] if item["id"] not in generated_ids
+    ]
+    payload["records"].extend(records)
     payload["records"].sort(key=lambda item: item["displayName"].casefold())
 
     rendered = json.dumps(payload, indent=2, ensure_ascii=False)
@@ -119,8 +122,8 @@ def main() -> int:
 
     with args.app_qa.open(newline="", encoding="utf-8") as handle:
         app_qa_rows = list(csv.DictReader(handle))
-    app_qa_rows = [row for row in app_qa_rows if row["id"] != record["id"]]
-    app_qa_rows.append(qa_rows[0])
+    app_qa_rows = [row for row in app_qa_rows if row["id"] not in generated_ids]
+    app_qa_rows.extend(qa_rows)
     app_qa_rows.sort(key=lambda row: float(row["greenspace"]), reverse=True)
     for rank, row in enumerate(app_qa_rows, start=1):
         row["rank"] = str(rank)
@@ -129,7 +132,10 @@ def main() -> int:
         writer.writeheader()
         writer.writerows(app_qa_rows)
 
-    print(f"Integrated {record['id']}; context now has {len(payload['records'])} records.")
+    print(
+        f"Integrated {len(records)} records; "
+        f"context now has {len(payload['records'])} records."
+    )
     return 0
 
 

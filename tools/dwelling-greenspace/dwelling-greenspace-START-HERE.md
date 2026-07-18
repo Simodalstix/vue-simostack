@@ -3,7 +3,7 @@
 ## Current status
 
 The version-one method, suburb mapping and reproducible build pipeline are
-complete for all 51 current Decide-page records.
+complete for all 60 current Decide-page records.
 
 The package intentionally does **not** contain made-up greenspace scores. Final
 JSON/TypeScript values are emitted only after the spatial source files are
@@ -61,8 +61,8 @@ python build-dwelling-greenspace.py \
 After source inspection, download the current official PARKRES spatial file and
 run the full build with `--parkres /absolute/path/to/PARKRES-file`.
 
-For a single-area incremental build, `--target-id` selects one configured
-target. `--mesh-blocks` accepts an official ABS SHP/GPKG/GeoJSON subset in
+For an incremental build, repeat `--target-id` for each configured target in
+the batch. `--mesh-blocks` accepts an official ABS SHP/GPKG/GeoJSON subset in
 place of the national Mesh Block ZIP; this is useful with the official ABS
 ArcGIS feature service when the national download is impractical.
 

@@ -5,12 +5,18 @@ armadale-2br,primary,Armadale Primary School,,414.2,station
 armadale-2br,secondary,Auburn High School,,557.5,station
 ascot-vale-2br,primary,Ascot Vale Primary School,,234.3,station
 ascot-vale-2br,secondary,Mount Alexander 7-12 College,,896.7,station
+ashburton-villa,primary,Ashburton Primary School,,589.2,station
+ashburton-villa,secondary,Ashwood High School,,993.1,station
 balaclava-2br,primary,St Kilda Primary School,,448.5,station
 balaclava-2br,secondary,Elwood College,,841.8,station
 balwyn-2br,primary,Balwyn Primary School,,198.3,locality-representative-point
 balwyn-2br,secondary,Balwyn High School,,460.1,locality-representative-point
 balwyn-north-2br,primary,Boroondara Park Primary School,,352.7,locality-representative-point
 balwyn-north-2br,secondary,Balwyn High School,,896.9,locality-representative-point
+bentleigh-house,primary,Bentleigh West Primary School,,334.7,station
+bentleigh-house,secondary,McKinnon Secondary College,,78.7,station
+blackburn-house,primary,Blackburn Primary School,,264.2,station
+blackburn-house,secondary,Blackburn High School,,37.3,station
 bonbeach-2br,primary,Bonbeach Primary School,,121.2,station
 bonbeach-2br,secondary,Patterson River Secondary College,,390.1,station
 box-hill-2br,primary,Mont Albert Primary School,,86.9,station
@@ -33,6 +39,8 @@ elwood-2br,primary,St Kilda Primary School,,448.5,station
 elwood-2br,secondary,Elwood College,,841.8,station
 established-western-value,primary,St Albans Primary School,,168.0,station
 established-western-value,secondary,St Albans Secondary College,,1089.1,station
+fairfield-house,primary,Fairfield Primary School,,372.2,station
+fairfield-house,secondary,Northcote High School,,109.7,station
 footscray-station-2br,primary,Footscray City Primary School,,59.8,station
 footscray-station-2br,secondary,Footscray High School,,123.9,station
 frankston-middle-ring,primary,Moorabbin Primary School,,434.9,station
@@ -43,6 +51,8 @@ growth-corridor-stress-test,primary,Baden Powell P-9 College,,4.6,station
 growth-corridor-stress-test,secondary,Baden Powell P-9 College,,3.8,station
 hawthorn-2br,primary,Hawthorn West Primary School,,254.0,station
 hawthorn-2br,secondary,Richmond High School,,470.3,station
+heidelberg-3br-townhouse,primary,Heidelberg Primary School,,610.0,station
+heidelberg-3br-townhouse,secondary,Viewbank College,,136.3,station
 inner-abbotsford-2br,primary,Collingwood College,,111.3,station
 inner-abbotsford-2br,secondary,Collingwood College,,530.5,station
 inner-collingwood-2br,primary,Collingwood College,,111.3,station
@@ -69,6 +79,10 @@ mentone-2br,primary,Mentone Primary School,,831.4,station
 mentone-2br,secondary,Parkdale Secondary College,,122.7,station
 middle-park-2br,primary,Middle Park Primary School,,164.6,locality-representative-point
 middle-park-2br,secondary,Albert Park College,,658.4,locality-representative-point
+mount-waverley-villa,primary,Mount Waverley Primary School,,339.0,station
+mount-waverley-villa,secondary,Mount Waverley Secondary College,,1072.1,station
+newport-house,primary,Newport Lakes Primary School,,513.5,station
+newport-house,secondary,Bayside P-12 College,,993.3,station
 north-melbourne-2br,primary,North Melbourne Primary School,,51.6,station
 north-melbourne-2br,secondary,University High School,,1085.9,station
 northcote-2br,primary,Northcote Primary School,,547.3,station
@@ -79,6 +93,8 @@ northwest-villa-corridor,primary,Pascoe Vale Primary School,,630.9,station
 northwest-villa-corridor,secondary,Strathmore Secondary College,,921.8,station
 preston-villa,primary,Preston West Primary School,,397.7,station
 preston-villa,secondary,Preston High School,,948.2,station
+rosanna-house,primary,Rosanna Primary School,,95.5,station
+rosanna-house,secondary,Charles La Trobe P-12 College,,79.4,station
 se-value-corridor,primary,Springvale Rise Primary School,,391.5,station
 se-value-corridor,secondary,Westall Secondary College,,300.9,station
 seddon-westfootscray-villa,primary,Footscray City Primary School,,12.0,station
@@ -93,6 +109,8 @@ sunbury-house,primary,Sunbury West Primary School,,160.2,station
 sunbury-house,secondary,Sunbury College,,845.1,station
 sunshine-station-2br,primary,Sunshine Primary School,,581.1,station
 sunshine-station-2br,secondary,Sunshine College,,94.9,station
+surrey-hills-house,primary,Surrey Hills Primary School,,342.6,station
+surrey-hills-house,secondary,Koonung Secondary College,,4.1,station
 thornbury-2br,primary,Thornbury Primary School,,243.1,station
 thornbury-2br,secondary,Northcote High School,,388.4,station
 toorak-2br,primary,Armadale Primary School,,179.4,station

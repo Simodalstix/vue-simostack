@@ -790,6 +790,114 @@ export const areaGeo = {
       },
     ],
   },
+  'heidelberg-3br-townhouse': {
+    localityNames: ['Heidelberg'],
+    stationPoints: [
+      {
+        id: 'heidelberg',
+        name: 'Heidelberg',
+        coordinates: [145.0607923, -37.7571092],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'rosanna-house': {
+    localityNames: ['Rosanna'],
+    stationPoints: [
+      {
+        id: 'rosanna',
+        name: 'Rosanna',
+        coordinates: [145.0661791, -37.7428788],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'fairfield-house': {
+    localityNames: ['Fairfield'],
+    stationPoints: [
+      {
+        id: 'fairfield',
+        name: 'Fairfield',
+        coordinates: [145.0169241, -37.7791763],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'surrey-hills-house': {
+    localityNames: ['Surrey Hills'],
+    stationPoints: [
+      {
+        id: 'union',
+        name: 'Union',
+        coordinates: [145.1014154, -37.8223766],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'blackburn-house': {
+    localityNames: ['Blackburn'],
+    stationPoints: [
+      {
+        id: 'blackburn',
+        name: 'Blackburn',
+        coordinates: [145.1500487, -37.8200847],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'mount-waverley-villa': {
+    localityNames: ['Mount Waverley'],
+    stationPoints: [
+      {
+        id: 'mount-waverley',
+        name: 'Mount Waverley',
+        coordinates: [145.1281258, -37.8752637],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'ashburton-villa': {
+    localityNames: ['Ashburton'],
+    stationPoints: [
+      {
+        id: 'ashburton',
+        name: 'Ashburton',
+        coordinates: [145.0814007, -37.8620025],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'bentleigh-house': {
+    localityNames: ['Bentleigh'],
+    stationPoints: [
+      {
+        id: 'bentleigh',
+        name: 'Bentleigh',
+        coordinates: [145.0369346, -37.9175354],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'newport-house': {
+    localityNames: ['Newport'],
+    stationPoints: [
+      {
+        id: 'newport',
+        name: 'Newport',
+        coordinates: [144.8835734, -37.8424593],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
 }
 
 export function localitiesForArea(areaId) {

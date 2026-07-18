@@ -799,8 +799,10 @@ export const suburbProfiles = {
     ],
     decision: {
       bestFor: 'Premium-village living where lifestyle and resale quality lead the call.',
-      mainRisk: 'Paying east-side money for a small floorplan that does not materially change life.',
-      pursueWhen: 'A deco 2BR lands near the bottom of the suburb band and beats inner-south comps.',
+      mainRisk:
+        'Paying east-side money for a small floorplan that does not materially change life.',
+      pursueWhen:
+        'A deco 2BR lands near the bottom of the suburb band and beats inner-south comps.',
     },
   },
   'burnley-2br': {
@@ -825,7 +827,8 @@ export const suburbProfiles = {
     decision: {
       bestFor: 'Richmond access with a quieter home base if a listing appears.',
       mainRisk: 'Treating a very small, thin market as if it will regularly produce candidates.',
-      pursueWhen: 'A liveable low-rise 2BR appears in the pocket away from the viaduct and junction.',
+      pursueWhen:
+        'A liveable low-rise 2BR appears in the pocket away from the viaduct and junction.',
     },
   },
   'hawthorn-2br': {
@@ -874,7 +877,8 @@ export const suburbProfiles = {
     ],
     decision: {
       bestFor: 'A school-first purchase where the zone is genuinely decisive.',
-      mainRisk: 'Paying a zone premium for a dwelling and neighbourhood you would not otherwise pick.',
+      mainRisk:
+        'Paying a zone premium for a dwelling and neighbourhood you would not otherwise pick.',
       pursueWhen: 'A well-kept villa unit inside the zone lists at neighbouring-suburb money.',
     },
   },
@@ -899,8 +903,10 @@ export const suburbProfiles = {
     ],
     decision: {
       bestFor: 'A schools-first brief where east-side education weight outranks commute pain.',
-      mainRisk: 'Discovering the family logic is correct on paper but exhausting in daily practice.',
-      pursueWhen: 'A quality unit near the station and inside the zone justifies the daily travel cost.',
+      mainRisk:
+        'Discovering the family logic is correct on paper but exhausting in daily practice.',
+      pursueWhen:
+        'A quality unit near the station and inside the zone justifies the daily travel cost.',
     },
   },
   'balwyn-north-2br': {
@@ -925,7 +931,8 @@ export const suburbProfiles = {
     decision: {
       bestFor: 'A pure public-school premium play with strong resale support.',
       mainRisk: 'Paying school money plus a long daily commute for a suburb that does little else.',
-      pursueWhen: 'A zone unit lists near the bottom of the band and the school weighting is truly dominant.',
+      pursueWhen:
+        'A zone unit lists near the bottom of the band and the school weighting is truly dominant.',
     },
   },
   'middle-park-2br': {
@@ -948,9 +955,11 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'A continuity-heavy, lifestyle-rich family base close to the current Southbank orbit.',
+      bestFor:
+        'A continuity-heavy, lifestyle-rich family base close to the current Southbank orbit.',
       mainRisk: 'Buying too little dwelling because the suburb itself is so compelling.',
-      pursueWhen: 'A period 2BR appears at the bottom of the suburb band with parking and a sane body corp.',
+      pursueWhen:
+        'A period 2BR appears at the bottom of the suburb band with parking and a sane body corp.',
     },
   },
   'mentone-2br': {
@@ -960,7 +969,7 @@ export const suburbProfiles = {
       'A broader stock mix than most premium school suburbs: houses, villa units and older apartments in usable numbers. The main trade is commute length rather than listing scarcity.',
     fit: [
       {
-        text: 'Mentone Girls\' Secondary and the wider school cluster are the key family draw.',
+        text: "Mentone Girls' Secondary and the wider school cluster are the key family draw.",
         tag: null,
       },
       {
@@ -974,8 +983,9 @@ export const suburbProfiles = {
     ],
     decision: {
       bestFor: 'A family-oriented beach-and-schools compromise at middle-ring prices.',
-      mainRisk: 'Accepting a daily commute burden that erodes the suburb\'s upsides over years.',
-      pursueWhen: 'A solid 2BR near both the station and the school cluster lists without needing the car for basics.',
+      mainRisk: "Accepting a daily commute burden that erodes the suburb's upsides over years.",
+      pursueWhen:
+        'A solid 2BR near both the station and the school cluster lists without needing the car for basics.',
     },
   },
   'ivanhoe-house': {
@@ -1005,6 +1015,244 @@ export const suburbProfiles = {
     },
   },
 
+  'heidelberg-3br-townhouse': {
+    lives:
+      'Burgundy Street, Heidelberg station and the Austin–Mercy hospital precinct form a concentrated activity centre.',
+    housing:
+      'Three-bedroom townhouses are the intended product, but the current sales sample is too thin for a confident price band.',
+    fit: [
+      {
+        text: 'Austin Hospital and Mercy Hospital for Women sit next to the station precinct, creating a real healthcare-employment hedge.',
+        tag: null,
+      },
+      {
+        text: 'Direct rail and an established shopping strip support low-car routines.',
+        tag: null,
+      },
+      {
+        text: 'Townhouse availability and owners-corporation exposure need property-level checks.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor:
+        'A household valuing rail access plus direct proximity to a major hospital employment precinct.',
+      mainRisk:
+        'Suitable three-bedroom townhouse stock may be scarce or priced above the provisional band.',
+      pursueWhen:
+        'After a live-listing sample confirms at least several suitable properties within the catchment.',
+    },
+  },
+  'rosanna-house': {
+    lives:
+      'Rosanna combines a smaller station shopping strip with quieter residential streets and access to local parklands.',
+    housing:
+      'Three-bedroom detached houses remain expensive, although generally below Ivanhoe pricing.',
+    fit: [
+      {
+        text: 'The rebuilt station provides lifts, safer access and direct rail.',
+        tag: null,
+      },
+      {
+        text: 'A quieter residential setting may suit family life better than denser inner options.',
+        tag: null,
+      },
+      {
+        text: 'The claimed Viewbank College benefit must be confirmed by intersecting the actual 2027 zone with the 800 m catchment.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A quieter Hurstbridge-line family option where space and local calm matter.',
+      mainRisk: 'Price remains high and school-zone coverage may not include the entire catchment.',
+      pursueWhen:
+        'After the zone overlay identifies which parts of the catchment receive the intended secondary school.',
+    },
+  },
+  'fairfield-house': {
+    lives:
+      'Station Street provides the village centre, while Yarra Bend and nearby river trails distinguish Fairfield from denser inner-north records.',
+    housing:
+      'The requested detached-house product is a premium inner-middle option and is likely outside current strategy caps.',
+    fit: [
+      {
+        text: 'Direct rail, village shops and cycling links support independent daily movement.',
+        tag: null,
+      },
+      {
+        text: 'River and parkland access creates a strong lifestyle case.',
+        tag: null,
+      },
+      {
+        text: 'Detached-house cost may make the record useful mainly as a comparison benchmark.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A closer-in compromise between inner-north amenity and north-east parkland access.',
+      mainRisk: 'House prices are likely to trigger the strategy price gate.',
+      pursueWhen:
+        'Only when the requested stock falls materially below the prevailing suburb median.',
+    },
+  },
+  'surrey-hills-house': {
+    lives:
+      'Union station and the surrounding village connect an established family area to the Belgrave and Lilydale lines.',
+    housing:
+      'Three-bedroom houses are firmly premium-priced and sit well above the current family strategy ceiling.',
+    fit: [
+      {
+        text: 'Direct rail and established local services provide a strong practical base.',
+        tag: null,
+      },
+      {
+        text: 'The 2027 zone overlay may intersect several strong school catchments, but this must be mapped rather than assumed.',
+        tag: null,
+      },
+      {
+        text: 'Purchase cost is severe enough that this is primarily a benchmark record.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor:
+        'Testing the value of established eastern family amenity against a very high purchase price.',
+      mainRisk: 'The house product is incompatible with current price filters.',
+      pursueWhen: 'Only after a substantial budget change or if the dwelling type is changed.',
+    },
+  },
+  'blackburn-house': {
+    lives:
+      'Blackburn combines a station village with access to Blackburn Lake and a more suburban eastern setting.',
+    housing:
+      'Three-bedroom houses are cheaper than Surrey Hills but remain well above the current family strategy cap.',
+    fit: [
+      {
+        text: 'The station, village and lake form a coherent family-lifestyle package.',
+        tag: null,
+      },
+      {
+        text: 'Chinese-community and partner-pool signals should come from the existing Census-derived criteria, not narrative assumptions.',
+        tag: null,
+      },
+      {
+        text: 'Blackburn High strength and exact zone coverage remain evidence tasks.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor:
+        'An eastern family benchmark balancing rail, greenery and somewhat lower prices than inner-east options.',
+      mainRisk: 'Price and a longer door-to-door commute may outweigh the amenity advantage.',
+      pursueWhen: 'After the school overlay and generated Census criteria are complete.',
+    },
+  },
+  'mount-waverley-villa': {
+    lives:
+      'Mount Waverley station anchors a suburban shopping centre with direct Glen Waverley-line access.',
+    housing:
+      'Three-bedroom villas are more attainable than detached houses but current medians remain above the existing strategy cap.',
+    fit: [
+      {
+        text: 'Villa stock tests a lower-maintenance family format without switching to a large apartment complex.',
+        tag: null,
+      },
+      {
+        text: 'School and Chinese-community signals must resolve through the existing zone and Census pipelines.',
+        tag: null,
+      },
+      {
+        text: 'Commute length and owners-corporation quality require careful comparison with Glen Waverley.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A south-east villa option prioritising schools, community context and direct rail.',
+      mainRisk:
+        'Three-bedroom villas may still be too expensive while adding owners-corporation complexity.',
+      pursueWhen:
+        'When the generated criteria and school-zone intersection confirm the expected strengths.',
+    },
+  },
+  'ashburton-villa': {
+    lives:
+      'Ashburton station, the High Street strip and nearby Gardiners Creek create a smaller-scale suburban centre.',
+    housing:
+      'The intended villa format exists, but the latest sales sample is too thin to support a confident three-bedroom median.',
+    fit: [
+      {
+        text: 'The station and village support practical daily routines.',
+        tag: null,
+      },
+      {
+        text: 'Creek and open-space access should be measured by the existing greenspace pipeline.',
+        tag: null,
+      },
+      {
+        text: 'Stock scarcity and price are the principal uncertainties.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A compact eastern family option where village scale and open-space access matter.',
+      mainRisk:
+        'There may not be enough suitable three-bedroom villa stock to justify a dedicated record.',
+      pursueWhen: 'After a live-listing and settled-sales sample confirms recurring supply.',
+    },
+  },
+  'bentleigh-house': {
+    lives:
+      'Centre Road supplies a substantial shopping strip around a direct Frankston-line station.',
+    housing: 'Three-bedroom houses are expensive and likely to fail current purchase filters.',
+    fit: [
+      {
+        text: 'The station and Centre Road strip support a practical low-car routine.',
+        tag: null,
+      },
+      {
+        text: 'Any McKinnon Secondary College benefit must be tied to the exact 2027 polygon, not the Bentleigh name.',
+        tag: null,
+      },
+      {
+        text: 'Detached-house pricing is the major constraint.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor:
+        'Comparing a southern family-house and school-zone proposition against villa options.',
+      mainRisk: 'Price and uncertain McKinnon-zone overlap may remove the intended advantage.',
+      pursueWhen: 'Only after the zone overlay isolates qualifying parts of the 800 m catchment.',
+    },
+  },
+  'newport-house': {
+    lives:
+      'Newport combines a rail junction, Mason Street services and Newport Lakes, with Williamstown reachable by rail or bicycle.',
+    housing:
+      'Three-bedroom houses remain expensive but are generally below comparable inner-east family-house records.',
+    fit: [
+      {
+        text: 'Newport Lakes is approximately one kilometre from the station and provides a substantial local nature reserve.',
+        tag: null,
+      },
+      {
+        text: 'Council identifies a roughly 3.8 km cycling route from Newport station to Williamstown Beach.',
+        tag: null,
+      },
+      {
+        text: 'Freight, industrial and major-road exposure need street-level inspection.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor:
+        'A western family option combining rail, local nature and practical access to a swimming beach.',
+      mainRisk:
+        'House pricing remains above current caps, and environmental nuisance varies sharply by street.',
+      pursueWhen:
+        'When a quieter station-catchment property appears and the beach-access route is acceptable in practice.',
+    },
+  },
   // 'Collingwood/Abbotsford' (shared)
   'inner-collingwood-2br': collingwoodAbbotsford,
   // 'Collingwood/Abbotsford' (shared)

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-16",
+ "generatedAt": "2026-07-18",
  "recipe": "Derived from areaGeo.js stationPoints + areaCorridors.js childhood name hints. Regenerate after adding records; never hand-edit.",
  "records": [
   {
@@ -1375,6 +1375,92 @@
     ],
     "privateContext": []
    }
+  },
+  {
+   "id": "heidelberg-3br-townhouse",
+   "suburb": "Heidelberg",
+   "localityNames": ["Heidelberg"],
+   "anchors": [
+    { "id": "heidelberg", "name": "Heidelberg", "lng": 145.0607923, "lat": -37.7571092 }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+  },
+  {
+   "id": "rosanna-house",
+   "suburb": "Rosanna",
+   "localityNames": ["Rosanna"],
+   "anchors": [
+    { "id": "rosanna", "name": "Rosanna", "lng": 145.0661791, "lat": -37.7428788 }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+  },
+  {
+   "id": "fairfield-house",
+   "suburb": "Fairfield",
+   "localityNames": ["Fairfield"],
+   "anchors": [
+    { "id": "fairfield", "name": "Fairfield", "lng": 145.0169241, "lat": -37.7791763 }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+  },
+  {
+   "id": "surrey-hills-house",
+   "suburb": "Surrey Hills",
+   "localityNames": ["Surrey Hills"],
+   "anchors": [
+    { "id": "union", "name": "Union", "lng": 145.1014154, "lat": -37.8223766 }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+  },
+  {
+   "id": "blackburn-house",
+   "suburb": "Blackburn",
+   "localityNames": ["Blackburn"],
+   "anchors": [
+    { "id": "blackburn", "name": "Blackburn", "lng": 145.1500487, "lat": -37.8200847 }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+  },
+  {
+   "id": "mount-waverley-villa",
+   "suburb": "Mount Waverley",
+   "localityNames": ["Mount Waverley"],
+   "anchors": [
+    {
+     "id": "mount-waverley",
+     "name": "Mount Waverley",
+     "lng": 145.1281258,
+     "lat": -37.8752637
+    }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+  },
+  {
+   "id": "ashburton-villa",
+   "suburb": "Ashburton",
+   "localityNames": ["Ashburton"],
+   "anchors": [
+    { "id": "ashburton", "name": "Ashburton", "lng": 145.0814007, "lat": -37.8620025 }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+  },
+  {
+   "id": "bentleigh-house",
+   "suburb": "Bentleigh",
+   "localityNames": ["Bentleigh"],
+   "anchors": [
+    { "id": "bentleigh", "name": "Bentleigh", "lng": 145.0369346, "lat": -37.9175354 }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+  },
+  {
+   "id": "newport-house",
+   "suburb": "Newport",
+   "localityNames": ["Newport"],
+   "anchors": [
+    { "id": "newport", "name": "Newport", "lng": 144.8835734, "lat": -37.8424593 }
+   ],
+   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
   }
  ]
 }

@@ -20,7 +20,7 @@
 // a track map. Lines run to their real terminus where it fits the map frame
 // (Mernda, Sandringham, Werribee, Upfield); Belgrave/Lilydale, Frankston and
 // the Dandenong end truncate at the frame edge. Only lines relevant to
-// candidate suburbs are included; the Hurstbridge branch truncates at Ivanhoe,
+// candidate suburbs are included; the Hurstbridge branch truncates at Rosanna,
 // the outermost candidate currently served by that line.
 
 // Station coordinate lookup, [lng, lat]. Shared shaping stations only; the
@@ -40,7 +40,9 @@ const P = {
   hawthorn: [145.0233, -37.8217],
   glenferrie: [145.0353, -37.8219],
   camberwell: [145.0587, -37.8266],
+  union: [145.1014154, -37.8223766],
   boxHill: [145.1195, -37.8193],
+  blackburn: [145.1500487, -37.8200847],
   southYarra: [144.9924, -37.8389],
   hawksburn: [145.0044, -37.846],
   toorak: [145.0141, -37.8506],
@@ -54,6 +56,7 @@ const P = {
   springvale: [145.152, -37.9483],
   noblePark: [145.1743, -37.9662],
   mckinnon: [145.0381, -37.9115],
+  bentleigh: [145.0369346, -37.9175354],
   prahran: [144.9931, -37.8517],
   windsor: [144.9906, -37.8558],
   balaclava: [144.993, -37.8693],
@@ -70,6 +73,8 @@ const P = {
   alphington: [145.0313, -37.7784],
   darebin: [145.0385, -37.7749],
   ivanhoe: [145.0455, -37.7689],
+  heidelberg: [145.0607923, -37.7571092],
+  rosanna: [145.0661791, -37.7428788],
   victoriaPark: [144.9906, -37.7986],
   collingwood: [144.9878, -37.8017],
   merri: [144.9906, -37.7757],
@@ -123,6 +128,7 @@ const P = {
   mountWaverley: [145.1281, -37.8753],
   syndal: [145.1498, -37.8763],
   glenWaverley: [145.1629, -37.8797],
+  ashburton: [145.0814007, -37.8620025],
 }
 
 // Line definitions. `stations` is the ordered schematic path; `group` keys the
@@ -232,6 +238,8 @@ export const trainLines = [
       P.alphington,
       P.darebin,
       P.ivanhoe,
+      P.heidelberg,
+      P.rosanna,
     ],
   },
   {
@@ -246,7 +254,9 @@ export const trainLines = [
       P.hawthorn,
       P.glenferrie,
       P.camberwell,
+      P.union,
       P.boxHill,
+      P.blackburn,
     ],
   },
   {
@@ -266,6 +276,13 @@ export const trainLines = [
     ],
   },
   {
+    id: 'alamein',
+    name: 'Alamein',
+    group: 'Burnley',
+    color: '#152C6B',
+    stations: [P.flindersSt, P.richmond, P.burnley, P.camberwell, P.ashburton],
+  },
+  {
     id: 'frankston',
     name: 'Frankston',
     group: 'Frankston',
@@ -280,6 +297,7 @@ export const trainLines = [
       P.malvern,
       P.caulfield,
       P.mckinnon,
+      P.bentleigh,
       P.moorabbin,
       P.highett,
       P.cheltenham,
@@ -393,6 +411,15 @@ export const linesByArea = {
   'clifton-hill-2br': ['mernda'],
   'doncaster-villa': [],
   'ivanhoe-house': ['hurstbridge'],
+  'heidelberg-3br-townhouse': ['hurstbridge'],
+  'rosanna-house': ['hurstbridge'],
+  'fairfield-house': ['hurstbridge'],
+  'surrey-hills-house': ['burnley'],
+  'blackburn-house': ['burnley'],
+  'mount-waverley-villa': ['glen-waverley'],
+  'ashburton-villa': ['alamein'],
+  'bentleigh-house': ['frankston'],
+  'newport-house': ['werribee-williamstown'],
 }
 
 export function linesForArea(areaId) {

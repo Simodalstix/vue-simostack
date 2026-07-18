@@ -674,5 +674,129 @@ export const schoolContextByAreaId = {
     ],
     "anchorSource": "station",
     "boundaryFlag": false
+  },
+  "heidelberg-3br-townhouse": {
+    "zonedPrimary": "Heidelberg Primary School",
+    "zonedSecondary": "Viewbank College",
+    "alsoInCatchmentPrimary": [
+      "Ivanhoe East Primary School",
+      "Ivanhoe Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Charles La Trobe P-12 College",
+      "Thornbury High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "rosanna-house": {
+    "zonedPrimary": "Rosanna Primary School",
+    "zonedSecondary": "Charles La Trobe P-12 College",
+    "alsoInCatchmentPrimary": [
+      "Banyule Primary School",
+      "Heidelberg Primary School",
+      "Rosanna Golf Links Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Macleod College",
+      "Viewbank College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "fairfield-house": {
+    "zonedPrimary": "Fairfield Primary School",
+    "zonedSecondary": "Northcote High School",
+    "alsoInCatchmentPrimary": [
+      "Alphington Primary School",
+      "Spensley Street Primary School",
+      "Westgarth Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Fitzroy High School",
+      "Thornbury High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "surrey-hills-house": {
+    "zonedPrimary": "Surrey Hills Primary School",
+    "zonedSecondary": "Koonung Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Chatham Primary School",
+      "Mont Albert Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Box Hill High School",
+      "Camberwell High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "blackburn-house": {
+    "zonedPrimary": "Blackburn Primary School",
+    "zonedSecondary": "Blackburn High School",
+    "alsoInCatchmentPrimary": [
+      "Blackburn Lake Primary School",
+      "Laburnum Primary School",
+      "Old Orchard Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Box Hill High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "mount-waverley-villa": {
+    "zonedPrimary": "Mount Waverley Primary School",
+    "zonedSecondary": "Mount Waverley Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Essex Heights Primary School",
+      "Mount Waverley North Primary School",
+      "Syndal South Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "ashburton-villa": {
+    "zonedPrimary": "Ashburton Primary School",
+    "zonedSecondary": "Ashwood High School",
+    "alsoInCatchmentPrimary": [
+      "Glen Iris Primary School",
+      "Hartwell Primary School",
+      "Solway Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "bentleigh-house": {
+    "zonedPrimary": "Bentleigh West Primary School",
+    "zonedSecondary": "McKinnon Secondary College",
+    "alsoInCatchmentPrimary": [
+      "McKinnon Primary School",
+      "Ormond Primary School",
+      "Tucker Road Bentleigh Primary School",
+      "Valkstone Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Bentleigh Secondary College",
+      "Brighton Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "newport-house": {
+    "zonedPrimary": "Newport Lakes Primary School",
+    "zonedSecondary": "Bayside P-12 College",
+    "alsoInCatchmentPrimary": [
+      "Newport Gardens Primary School",
+      "Spotswood Primary School",
+      "Williamstown North Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
   }
 }
