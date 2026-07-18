@@ -53,7 +53,7 @@
             :active-zone-category="activeZoneCategory"
             :facilities="facilityFeatures"
             :open-space="openSpaceUrl"
-            :hovered-area-id="hoveredAreaId"
+            :hovered-area-id="displayHoveredId"
             :show-all-schools="layers.schools"
             :show-all-facilities="layers.facilities"
             :show-open-space="layers.openSpace"
@@ -196,6 +196,9 @@ const props = defineProps({
   rate: { type: Number, default: 5.9 },
   // Active Decide strategy (decideStrategies.js).
   strategy: { type: Object, default: null },
+  // Suburb hovered in the ranked list; highlighted on the map exactly like a
+  // pointer hover. The map's own pointer hover wins while both are live.
+  listHoveredId: { type: String, default: null },
 })
 const modelValue = defineModel({ default: null })
 const emit = defineEmits(['hover', 'toggle-shortlist'])
@@ -267,7 +270,10 @@ const selectedRow = computed(() =>
 )
 
 const hoveredAreaId = ref(null)
-const hoverLineIds = computed(() => (hoveredAreaId.value ? linesForArea(hoveredAreaId.value) : []))
+const displayHoveredId = computed(() => hoveredAreaId.value || props.listHoveredId || null)
+const hoverLineIds = computed(() =>
+  displayHoveredId.value ? linesForArea(displayHoveredId.value) : [],
+)
 const selectedLineIds = computed(() => (modelValue.value ? linesForArea(modelValue.value) : []))
 
 watch(

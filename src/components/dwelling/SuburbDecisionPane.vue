@@ -61,6 +61,36 @@
           Expected cost {{ priceBand(previewRow.rec) }} · Commute {{ commuteShort(previewRow) }}
         </p>
 
+        <!-- Why the score is what it is: the same criterion values and weights
+             the ranking uses, shown as labelled micro-meters. Bonus criteria
+             keep their workspace accent (amber beach, red Chinese lens). -->
+        <div
+          v-if="breakdown(previewRow).length"
+          class="grid grid-cols-3 gap-x-3 gap-y-1.5"
+          aria-label="Score breakdown by criterion"
+        >
+          <div v-for="b in breakdown(previewRow)" :key="b.key" class="min-w-0" :title="b.hint">
+            <div class="flex items-baseline justify-between gap-1">
+              <span class="font-mono text-[8.5px] uppercase tracking-[0.04em] text-ob-faint truncate">
+                {{ b.label }}
+              </span>
+              <span
+                class="font-mono text-[9.5px] leading-none"
+                :class="b.value == null ? 'italic text-ob-faint' : 'text-ob-muted2'"
+              >
+                {{ b.display }}
+              </span>
+            </div>
+            <div class="mt-[3px] h-[3px] rounded-full bg-ob-sand/10 overflow-hidden">
+              <div
+                class="h-full rounded-full"
+                :class="b.barClass"
+                :style="{ width: b.pct + '%' }"
+              ></div>
+            </div>
+          </div>
+        </div>
+
         <div class="flex flex-wrap gap-1.5 mt-auto">
           <span
             v-for="badge in previewBadges(previewRow)"
@@ -73,10 +103,18 @@
         </div>
       </button>
 
-      <ul class="min-h-0 flex-1 overflow-y-auto" role="listbox" aria-label="Ranked suburbs">
+      <ul
+        class="min-h-0 flex-1 overflow-y-auto themed-scroll"
+        role="listbox"
+        aria-label="Ranked suburbs"
+      >
         <li v-for="row in scoredRows" :key="row.rec.id">
           <button
             @click="togglePin(row.rec.id)"
+            @mouseenter="setListHover(row.rec.id)"
+            @mouseleave="setListHover(null)"
+            @focus="setListHover(row.rec.id)"
+            @blur="setListHover(null)"
             role="option"
             :aria-selected="modelValue === row.rec.id"
             class="w-full text-left px-4 py-2.5 border-b border-ob-sand/6 transition-colors focus:bg-ob-surface/60"
@@ -153,7 +191,7 @@
         >
           Unscored · pending evidence ({{ unscoredRows.length }})
         </summary>
-        <div class="max-h-32 overflow-y-auto border-t border-ob-sand/6">
+        <div class="max-h-32 overflow-y-auto themed-scroll border-t border-ob-sand/6">
           <div
             v-for="row in unscoredRows"
             :key="row.rec.id"
@@ -172,15 +210,16 @@
       <p
         class="px-4 py-2 font-mono text-[10px] leading-relaxed text-ob-faint border-t border-ob-sand/8 shrink-0"
       >
-        Hover the map to preview · click a suburb to open the full card · ✕/~ follows the active
-        strategy · provisional data until verified.
+        Hover the map or the list to preview · click a suburb to open the full card · ✕/~ follows
+        the active strategy · provisional data until verified.
       </p>
     </div>
   </section>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+import { decideCriteria } from '@/data/dwelling/decideStrategies.js'
 import { fitBandBadgeFill, fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
 import { isUnscoredRow, partitionDecisionRows } from '@/data/dwelling/unscoredUx.js'
@@ -194,8 +233,11 @@ const props = defineProps({
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
   strategy: { type: Object, default: null },
+  // Effective weight per criterion key (preset value or 0 when toggled off),
+  // so the preview breakdown reads the exact inputs the ranking used.
+  weights: { type: Object, default: () => ({}) },
 })
-defineEmits(['toggle-shortlist'])
+const emit = defineEmits(['toggle-shortlist', 'hover'])
 
 const modelValue = defineModel({ default: null })
 
@@ -223,8 +265,20 @@ const hoveredRow = computed(() =>
 const pinnedRow = computed(() =>
   modelValue.value ? rowById.value[modelValue.value] || null : null,
 )
+
+// Hovering a ranked row previews it here and highlights it on the map (the
+// parent routes the emitted id into the map's hover feature-state).
+const listHoverId = ref(null)
+function setListHover(id) {
+  listHoverId.value = id
+  emit('hover', id)
+}
+const listHoverRow = computed(() =>
+  listHoverId.value ? rowById.value[listHoverId.value] || null : null,
+)
+
 const previewRow = computed(
-  () => hoveredRow.value || pinnedRow.value || scoredRows.value[0] || null,
+  () => hoveredRow.value || listHoverRow.value || pinnedRow.value || scoredRows.value[0] || null,
 )
 
 const previewHeading = computed(() => {
@@ -300,6 +354,34 @@ function chipClass(chip) {
   }[chip.tone]
 }
 
+// Per-criterion contributions for the preview card: the same value() calls and
+// effective weights useAreaRanking scores with, never a recomputed rival.
+// Null stays an honest n/a with an empty meter.
+function breakdown(row) {
+  if (!row || isUnscoredRow(row)) return []
+  const maxPrice = props.strategy?.filters?.maxPrice
+  return decideCriteria
+    .filter((c) => (props.weights[c.key] ?? 0) > 0)
+    .map((c) => {
+      const value = c.value(row.rec, row.commuteScore, { maxPrice })
+      const bonus = c.scoringMode === 'additiveBonus'
+      const display = value == null ? 'n/a' : (Math.round(value * 10) / 10).toFixed(1)
+      return {
+        key: c.key,
+        label: c.label,
+        value,
+        display,
+        pct: value == null ? 0 : Math.max(0, Math.min(100, value * 10)),
+        barClass:
+          c.accent === 'amber' ? 'bg-amber-400' : c.accent === 'red' ? 'bg-red-400' : 'bg-ob-teal',
+        hint:
+          value == null
+            ? `${c.label}: not assessed, contributes nothing`
+            : `${c.label} ${display}/10 × weight ${props.weights[c.key]}${bonus ? ' · additive bonus' : ''}`,
+      }
+    })
+}
+
 function previewBadges(row) {
   const badges = []
   const exception = gateExceptionChipFor(row)
@@ -313,6 +395,13 @@ function previewBadges(row) {
 </script>
 
 <style scoped>
+/* On-palette scrollbar (standard properties cover Chrome 121+ and Firefox):
+   sand thumb over a transparent track, matching the rank numerals. */
+.themed-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212, 144, 58, 0.38) transparent;
+}
+
 .preview-clamp-1 {
   overflow: hidden;
   text-overflow: ellipsis;

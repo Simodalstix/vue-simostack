@@ -601,15 +601,18 @@ function applyAllState() {
   applyLocalityState(selected, shortSet)
 }
 
-// Locality polygons carry the score hue. Hover is per-polygon: only the exact
-// feature under the pointer lifts, even when several polygons share a grouped
-// ranking record.
+// Locality polygons carry the score hue. Pointer hover is per-polygon: only
+// the exact feature under the pointer lifts, even when several polygons share
+// a grouped ranking record. A hover arriving via the hoveredAreaId prop (the
+// ranked list) has no single polygon, so it lifts every component polygon of
+// that record instead.
 function applyLocalityState(
   selected = props.selectedAreaId,
   shortSet = new Set(props.shortlistIds),
 ) {
   if (!loaded || !map || !props.localities?.features?.length) return
   const hoveredLocalityId = hoverContext?.localityFeatureId ?? null
+  const externalHoverAreaId = hoveredLocalityId == null ? props.hoveredAreaId : null
   for (const feature of props.localities.features) {
     const areaIds = Array.isArray(feature.properties?.areaIds) ? feature.properties.areaIds : []
     const primary = feature.properties?.primaryAreaId
@@ -625,7 +628,9 @@ function applyLocalityState(
         shortlisted: areaIds.some(
           (areaId) => !props.areaState[areaId]?.unscored && shortSet.has(areaId),
         ),
-        hovered: feature.id === hoveredLocalityId,
+        hovered:
+          feature.id === hoveredLocalityId ||
+          (externalHoverAreaId != null && areaIds.includes(externalHoverAreaId)),
       },
     )
   }

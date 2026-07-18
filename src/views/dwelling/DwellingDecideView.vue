@@ -112,6 +112,7 @@
           :deposit="deposit"
           :rate="rate"
           :strategy="activeStrategy"
+          :list-hovered-id="listHoverId"
           @hover="hoveredContext = $event"
           @toggle-shortlist="toggleShortlist"
         />
@@ -127,8 +128,10 @@
         :deposit="deposit"
         :rate="rate"
         :strategy="activeStrategy"
+        :weights="effectiveWeights"
         class="order-2 min-w-0 lg:col-start-2 lg:row-start-1"
         @toggle-shortlist="toggleShortlist"
+        @hover="listHoverId = $event"
       />
     </div>
   </div>
@@ -154,6 +157,8 @@ import SuburbDecisionPane from '@/components/dwelling/SuburbDecisionPane.vue'
 const payoffYears = ref(15)
 const activeLocationId = ref(null)
 const hoveredContext = ref(null)
+// Suburb hovered in the ranked list; routed into the map's hover highlight.
+const listHoverId = ref(null)
 
 const deposit = personalPosition.calc.deposit
 const rate = personalPosition.calc.rate
