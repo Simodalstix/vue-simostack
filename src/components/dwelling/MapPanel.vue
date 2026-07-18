@@ -42,6 +42,7 @@
             :get-popup-html="popupHtml"
             :basemap="coastlineUrl"
             :water="bayUrl"
+            :water-bodies="waterBodiesUrl"
             :river="yarraUrl"
             :theme="theme"
             :train-lines="trainLineFeatures"
@@ -176,6 +177,7 @@ import { facilityFeatures } from '@/data/dwelling/facilities.js'
 import { personalAnchors } from '@/data/dwelling/personalAnchors.js'
 import coastlineUrl from '@/assets/geo/melbourne-coastline.geojson?url'
 import bayUrl from '@/assets/geo/port-phillip-bay.geojson?url'
+import waterBodiesUrl from '@/assets/geo/melbourne-water-bodies.geojson?url'
 import yarraUrl from '@/assets/geo/yarra-river.geojson?url'
 import openSpaceUrl from '@/assets/geo/melbourne-open-space.geojson?url'
 import SuburbProfileCard from './SuburbProfileCard.vue'

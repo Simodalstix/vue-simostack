@@ -11,7 +11,9 @@ geometry shown is our own:
 
 1. **Locality polygons** — suburb decision-fit fills and boundaries.
 2. **Eligible open space** — subdued context-only VPA polygons.
-3. **Station markers and schematic train lines**.
+3. **Inland water bodies** — lakes, river surfaces and wetlands, drawn in the
+   same water colour as the bay. Orientation only, zero scoring impact.
+4. **Station markers and schematic train lines**.
 
 Station geometry is **derived at build time**, so it never drifts from the data:
 
@@ -73,6 +75,21 @@ the map frame.
 `yarra-river.geojson` — the Yarra centreline from the same Vicmap WFS, layer
 `open-data-platform:vmlite_hy_watercourse`, `name='YARRA RIVER'`, clipped to
 the map frame (144.80..145.25, -37.92..-37.68) and DP-simplified at 0.0004 deg.
+
+`melbourne-water-bodies.geojson` (retrieved 2026-07-18) — inland lakes,
+river-surface polygons and wetlands, from the same Vicmap WFS, full-detail
+layer `open-data-platform:hy_water_area_polygon`, bbox
+`144.55,-38.10,145.26,-37.47`. The scoring pipeline deliberately excludes water
+polygons from greenspace access, so without this layer lakes such as Albert
+Park read as blank land; this asset is display-only context and must never
+feed scoring. Filter (geodesic area): keep `watercourse_area_river` >= 0.3 ha;
+`wb_lake`/`reservoir` >= 2 ha, or named >= 0.5 ha; `wetland_swamp` >= 3 ha, or
+named >= 1 ha. Pondage, sewerage ponds, channels/drains and intertidal flats
+are dropped. DP-simplified at 0.0004 deg, coordinates quantised to 5 dp,
+properties stripped to `name` (Title Case) where present. 379 features,
+~300 KB, lazy-loaded with the route chunk. Includes Albert Park Lake, Ruffey
+Lake, Newport Lakes (unnamed in Vicmap), Karkarook, Cherry Lake, the
+Maribyrnong and Patterson rivers and the Edithvale-Seaford wetlands.
 
 Refetch recipe: WFS GetFeature with `service=WFS&version=2.0.0&
 request=GetFeature&typeNames=<layer>&outputFormat=application/json&

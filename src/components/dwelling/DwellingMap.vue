@@ -54,6 +54,9 @@ const props = defineProps({
   // Same-origin bundled orientation assets, not third-party tiles.
   basemap: { type: String, default: null },
   water: { type: String, default: null },
+  // Inland lakes, river-surface and wetland polygons. Orientation context only,
+  // zero scoring impact (scoring excludes water polygons on purpose).
+  waterBodies: { type: String, default: null },
   river: { type: String, default: null },
   // Train-line FeatureCollection (properties: lineId, color) + the line ids to
   // highlight for the hovered and the selected suburb.
@@ -117,6 +120,7 @@ let containerLeaveHandler = null
 const POINT_SRC = 'points'
 const LOCALITY_SRC = 'localities'
 const WATER_SRC = 'water'
+const WATER_BODY_SRC = 'water-bodies'
 const RIVER_SRC = 'river'
 const LINE_SRC = 'train-lines'
 const SCHOOL_SRC = 'schools'
@@ -372,6 +376,19 @@ function addLayers() {
       source: OPEN_SPACE_SRC,
       layout: { visibility: props.showOpenSpace ? 'visible' : 'none' },
       paint: { 'fill-color': '#4F8062', 'fill-opacity': 0.18 },
+    })
+  }
+
+  // Inland lakes, river surfaces and wetlands. Drawn above the score and
+  // open-space fills so water inside a park (Albert Park Lake) reads as water,
+  // but below transport, stations and labels. Orientation context only.
+  if (props.waterBodies) {
+    map.addSource(WATER_BODY_SRC, { type: 'geojson', data: props.waterBodies })
+    map.addLayer({
+      id: 'water-body-fill',
+      type: 'fill',
+      source: WATER_BODY_SRC,
+      paint: { 'fill-color': '#163645', 'fill-opacity': 0.9 },
     })
   }
 
