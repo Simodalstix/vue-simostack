@@ -3,7 +3,7 @@
 ## Current status
 
 The version-one method, suburb mapping and reproducible build pipeline are
-complete for all 35 current Decide-page records.
+complete for all 51 current Decide-page records.
 
 The package intentionally does **not** contain made-up greenspace scores. Final
 JSON/TypeScript values are emitted only after the spatial source files are
@@ -60,6 +60,29 @@ python build-dwelling-greenspace.py \
 
 After source inspection, download the current official PARKRES spatial file and
 run the full build with `--parkres /absolute/path/to/PARKRES-file`.
+
+For a single-area incremental build, `--target-id` selects one configured
+target. `--mesh-blocks` accepts an official ABS SHP/GPKG/GeoJSON subset in
+place of the national Mesh Block ZIP; this is useful with the official ABS
+ArcGIS feature service when the national download is impractical.
+
+The Ivanhoe pilot used this reproducible official-service subset (the builder
+then spatially joins residential representative points to SAL 21246):
+
+```bash
+curl -fsSL -G \
+  'https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/MB/MapServer/0/query' \
+  --data-urlencode 'where=1=1' \
+  --data-urlencode 'geometry=145.02,-37.79,145.07,-37.74' \
+  --data-urlencode 'geometryType=esriGeometryEnvelope' \
+  --data-urlencode 'inSR=4326' \
+  --data-urlencode 'spatialRel=esriSpatialRelIntersects' \
+  --data-urlencode 'outFields=mb_code_2021,mb_category_2021' \
+  --data-urlencode 'returnGeometry=true' \
+  --data-urlencode 'outSR=4326' \
+  --data-urlencode 'f=geojson' \
+  -o /tmp/ivanhoe-mesh-blocks.geojson
+```
 
 ## Expected generated files
 

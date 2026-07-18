@@ -33,7 +33,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
     "implementationRule": "Do not connect this dataset to default ranking or filtering beyond the named derived measures. The exceptions are the off-by-default Chinese-language community personal lens (Cantonese and Mandarin language-at-home counts) and the partner-pool criterion (unpartnered 25-54 and one-parent-family counts). Both recombine raw counts over a common denominator; percentages are never averaged."
   },
   "coverage": {
-    "recordCount": 60,
+    "recordCount": 61,
     "recordUnit": "One record per individual ABS Suburb and Locality",
     "corridorRule": "Combined /dwelling labels are mapped to their component SAL records; demographic counts are not blended unless the UI explicitly aggregates them using counts and applicable denominators.",
     "dwellingLensEntries": [
@@ -26911,6 +26911,450 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "count": 522,
           "denominator": 4245,
           "percentage": 12.3,
+          "numeratorLabel": "One-parent families",
+          "denominatorLabel": "All families in occupied private dwellings (G29)",
+          "sourceTable": "G29",
+          "sourceCells": {
+            "numerator": [
+              "B43"
+            ],
+            "denominator": [
+              "B47"
+            ]
+          },
+          "basis": "Place of enumeration"
+        }
+      }
+    },
+    {
+      "suburb": "Ivanhoe",
+      "geographyType": "SAL",
+      "geographyCode": "SAL21246",
+      "censusYear": 2021,
+      "source": "Australian Bureau of Statistics",
+      "retrievedAt": "2026-07-18",
+      "contextOnly": true,
+      "excludeFromSuburbScore": true,
+      "scoreContribution": 0,
+      "sourceMetadata": {
+        "product": "2021 Census General Community Profile",
+        "profileUrl": "https://www.abs.gov.au/census/find-census-data/community-profiles/2021/SAL21246",
+        "downloadUrl": "https://www.abs.gov.au/census/find-census-data/community-profiles/2021/SAL21246/download/GCP_SAL21246.xlsx",
+        "sourceWorkbook": "GCP_SAL21246.xlsx",
+        "sourceWorkbookSha256": "617b3540695b71198586512f2fa2c2272f1d2cef5f918077d9e5f7a99a3d3c8d",
+        "geographicBoundaryEdition": "ASGS Edition 3",
+        "privacyNote": "ABS applies small random adjustments to cell values. Component sums can differ slightly from published totals."
+      },
+      "community": {
+        "totalPopulation": {
+          "count": 13374,
+          "sourceTable": "G01",
+          "sourceCells": {
+            "value": "D17"
+          },
+          "basis": "Place of usual residence"
+        },
+        "medianAge": {
+          "value": 40,
+          "unit": "years",
+          "applicablePopulation": "Persons, excluding overseas visitors",
+          "sourceTable": "G02",
+          "sourceCells": {
+            "value": "B13"
+          },
+          "basis": "Place of usual residence"
+        },
+        "householdsWithChildren": {
+          "count": 2109,
+          "denominator": 5310,
+          "percentage": 39.7,
+          "numeratorLabel": "Occupied private dwellings whose primary family is a couple family with children or a one-parent family",
+          "denominatorLabel": "Total occupied private dwellings in G42, excluding visitor-only and other non-classifiable households",
+          "sourceTable": "G42",
+          "sourceCells": {
+            "numerator": [
+              "C36",
+              "D36"
+            ],
+            "denominator": "I36"
+          },
+          "basis": "Place of enumeration",
+          "components": {
+            "coupleFamilyWithChildren": 1658,
+            "oneParentFamily": 451
+          },
+          "notes": "For multiple-family households, G42 classifies the household using the primary family's composition."
+        },
+        "medianHouseholdIncome": {
+          "value": 2232,
+          "unit": "AUD per week",
+          "applicablePopulation": "Occupied private dwellings; published ABS median household income",
+          "sourceTable": "G02",
+          "sourceCells": {
+            "value": "B19"
+          },
+          "basis": "Place of enumeration"
+        },
+        "tenure": {
+          "denominator": 5310,
+          "denominatorLabel": "Total occupied private dwellings in G37, excluding visitor-only and other non-classifiable households",
+          "basis": "Place of enumeration",
+          "sourceTable": "G37",
+          "ownerOccupied": {
+            "count": 3456,
+            "percentage": 65.1,
+            "components": {
+              "ownedOutright": 1862,
+              "ownedWithMortgage": 1594
+            },
+            "sourceCells": [
+              "G14",
+              "G16"
+            ]
+          },
+          "renting": {
+            "count": 1729,
+            "percentage": 32.6,
+            "sourceCells": [
+              "G25"
+            ],
+            "notes": "G37 rented total excludes dwellings occupied rent-free; those are included in other tenure."
+          },
+          "otherTenure": {
+            "count": 89,
+            "percentage": 1.7,
+            "sourceCells": [
+              "G27"
+            ]
+          },
+          "notStated": {
+            "count": 39,
+            "percentage": 0.7,
+            "sourceCells": [
+              "G29"
+            ]
+          },
+          "denominatorCell": "G31"
+        },
+        "overseasBornPopulation": {
+          "count": 3611,
+          "denominator": 13374,
+          "percentage": 27.0,
+          "numeratorLabel": "Persons born outside Australia",
+          "denominatorLabel": "Total persons",
+          "sourceTable": "G01",
+          "sourceCells": {
+            "numerator": [
+              "D44"
+            ],
+            "denominator": "D17"
+          },
+          "basis": "Place of usual residence",
+          "notes": "The G01 'Elsewhere' numerator includes inadequately described birthplaces and people at sea, and excludes birthplace not stated. The denominator is all persons."
+        },
+        "topOverseasCountriesOfBirth": [
+          {
+            "name": "China (excludes SARs and Taiwan)",
+            "count": 580,
+            "denominator": 13374,
+            "percentage": 4.3,
+            "sourceTable": "G09c",
+            "sourceCell": "K20",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "England",
+            "count": 396,
+            "denominator": 13374,
+            "percentage": 3.0,
+            "sourceTable": "G09c",
+            "sourceCell": "K23",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "India",
+            "count": 255,
+            "denominator": 13374,
+            "percentage": 1.9,
+            "sourceTable": "G09c",
+            "sourceCell": "K29",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Italy",
+            "count": 211,
+            "denominator": 13374,
+            "percentage": 1.6,
+            "sourceTable": "G09c",
+            "sourceCell": "K34",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "New Zealand",
+            "count": 189,
+            "denominator": 13374,
+            "percentage": 1.4,
+            "sourceTable": "G09c",
+            "sourceCell": "K44",
+            "basis": "Place of usual residence"
+          }
+        ],
+        "topLanguagesSpokenAtHome": [
+          {
+            "name": "English only",
+            "count": 9830,
+            "denominator": 13374,
+            "percentage": 73.5,
+            "sourceTable": "G13c",
+            "sourceCell": "G12",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Mandarin",
+            "count": 742,
+            "denominator": 13374,
+            "percentage": 5.5,
+            "sourceTable": "G13c",
+            "sourceCell": "G20",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Greek",
+            "count": 399,
+            "denominator": 13374,
+            "percentage": 3.0,
+            "sourceTable": "G13c",
+            "sourceCell": "G26",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Italian",
+            "count": 358,
+            "denominator": 13374,
+            "percentage": 2.7,
+            "sourceTable": "G13c",
+            "sourceCell": "G37",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Cantonese",
+            "count": 174,
+            "denominator": 13374,
+            "percentage": 1.3,
+            "sourceTable": "G13c",
+            "sourceCell": "G19",
+            "basis": "Place of usual residence"
+          }
+        ],
+        "topNonEnglishLanguagesSpokenAtHome": [
+          {
+            "name": "Mandarin",
+            "count": 742,
+            "denominator": 13374,
+            "percentage": 5.5,
+            "sourceTable": "G13c",
+            "sourceCell": "G20",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Greek",
+            "count": 399,
+            "denominator": 13374,
+            "percentage": 3.0,
+            "sourceTable": "G13c",
+            "sourceCell": "G26",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Italian",
+            "count": 358,
+            "denominator": 13374,
+            "percentage": 2.7,
+            "sourceTable": "G13c",
+            "sourceCell": "G37",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Cantonese",
+            "count": 174,
+            "denominator": 13374,
+            "percentage": 1.3,
+            "sourceTable": "G13c",
+            "sourceCell": "G19",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Spanish",
+            "count": 116,
+            "denominator": 13374,
+            "percentage": 0.9,
+            "sourceTable": "G13c",
+            "sourceCell": "G55",
+            "basis": "Place of usual residence"
+          }
+        ],
+        "religiousAffiliationSummary": [
+          {
+            "name": "No religion / secular or other spiritual beliefs",
+            "count": 6183,
+            "denominator": 13374,
+            "percentage": 46.2,
+            "sourceTable": "G14",
+            "sourceCell": "D43",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Christianity",
+            "count": 5694,
+            "denominator": 13374,
+            "percentage": 42.6,
+            "sourceTable": "G14",
+            "sourceCell": "D30",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Buddhism",
+            "count": 244,
+            "denominator": 13374,
+            "percentage": 1.8,
+            "sourceTable": "G14",
+            "sourceCell": "D9",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Hinduism",
+            "count": 288,
+            "denominator": 13374,
+            "percentage": 2.2,
+            "sourceTable": "G14",
+            "sourceCell": "D31",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Islam",
+            "count": 187,
+            "denominator": 13374,
+            "percentage": 1.4,
+            "sourceTable": "G14",
+            "sourceCell": "D32",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Judaism",
+            "count": 40,
+            "denominator": 13374,
+            "percentage": 0.3,
+            "sourceTable": "G14",
+            "sourceCell": "D33",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Other religions",
+            "count": 95,
+            "denominator": 13374,
+            "percentage": 0.7,
+            "sourceTable": "G14",
+            "sourceCell": "D38",
+            "basis": "Place of usual residence"
+          },
+          {
+            "name": "Religious affiliation not stated",
+            "count": 647,
+            "denominator": 13374,
+            "percentage": 4.8,
+            "sourceTable": "G14",
+            "sourceCell": "D44",
+            "basis": "Place of usual residence"
+          }
+        ]
+      },
+      "additionalHouseholdContext": {
+        "cantoneseSpokenAtHome": {
+          "count": 174,
+          "denominator": 13374,
+          "percentage": 1.3,
+          "numeratorLabel": "Persons who used Cantonese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G19"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "mandarinSpokenAtHome": {
+          "count": 742,
+          "denominator": 13374,
+          "percentage": 5.5,
+          "numeratorLabel": "Persons who used Mandarin at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G20"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "hongKongBornPopulation": {
+          "count": 73,
+          "denominator": 13374,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons born in Hong Kong (SAR of China)",
+          "denominatorLabel": "All persons in G09, including country of birth not stated",
+          "sourceTable": "G09c",
+          "sourceCells": {
+            "numerator": [
+              "K28"
+            ],
+            "denominator": "K65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "chinaBornPopulation": {
+          "count": 580,
+          "denominator": 13374,
+          "percentage": 4.3,
+          "numeratorLabel": "Persons born in China, excluding SARs and Taiwan",
+          "denominatorLabel": "All persons in G09, including country of birth not stated",
+          "sourceTable": "G09c",
+          "sourceCells": {
+            "numerator": [
+              "K20"
+            ],
+            "denominator": "K65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "unpartnered2554": {
+          "count": 1708,
+          "denominator": 5276,
+          "percentage": 32.4,
+          "numeratorLabel": "Persons aged 25-54 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 25-54 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D42",
+              "D43",
+              "D44"
+            ],
+            "denominator": [
+              "E42",
+              "E43",
+              "E44"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+        },
+        "loneParentFamilies": {
+          "count": 460,
+          "denominator": 3608,
+          "percentage": 12.7,
           "numeratorLabel": "One-parent families",
           "denominatorLabel": "All families in occupied private dwellings (G29)",
           "sourceTable": "G29",

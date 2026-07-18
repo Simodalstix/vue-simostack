@@ -27,7 +27,8 @@
       "dataDate": "2021",
       "status": "downloaded-by-pipeline-at-build-time",
       "metadataUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files",
-      "downloadUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/MB_2021_AUST_SHP_GDA2020.zip"
+      "downloadUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/MB_2021_AUST_SHP_GDA2020.zip",
+      "alternateFeatureServiceUrl": "https://geo.abs.gov.au/arcgis/rest/services/ASGS2021/MB/MapServer/0"
     },
     {
       "name": "ABS Census Mesh Block Counts",

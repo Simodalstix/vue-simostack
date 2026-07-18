@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-greenspace-targets-app",
-  "version": "v3-repo-active-50-mixed-official-and-derived",
-  "retrievedAt": "2026-07-16",
-  "recordCount": 50,
+  "version": "v4-repo-active-51-mixed-official-and-derived",
+  "retrievedAt": "2026-07-18",
+  "recordCount": 51,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -663,6 +663,18 @@
         }
       ],
       "censusPopulation2021": 25020
+    },
+    {
+      "id": "ivanhoe-house",
+      "displayName": "Ivanhoe",
+      "salComponents": [
+        {
+          "suburb": "Ivanhoe",
+          "salCode": "21246",
+          "censusPopulation2021": 13374
+        }
+      ],
+      "censusPopulation2021": 13374
     }
   ]
 }

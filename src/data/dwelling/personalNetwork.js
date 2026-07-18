@@ -227,6 +227,12 @@ export const personalNetworkByAreaId = {
     confidence: 'low',
     rationale: 'DART to the city then rail out; no direct line.',
   },
+  'ivanhoe-house': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
   'box-hill-2br': {
     estMin: 35,
     mode: 'train+transfer',

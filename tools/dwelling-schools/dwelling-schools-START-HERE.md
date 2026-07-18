@@ -2,8 +2,8 @@
 
 ## Current status
 
-Pipeline code, anchors config and tests are complete for all 50 Decide-page
-records (including the July 2026 Clifton Hill and Doncaster additions). The
+Pipeline code, anchors config and tests are complete for all 51 Decide-page
+records (including the July 2026 Ivanhoe pilot). The
 package intentionally contains **no school data**: generated files are emitted
 only after the two official source files are supplied and the QA report is
 reviewed. 21 pytest cases cover the transform logic with synthetic fixtures.

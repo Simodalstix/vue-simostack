@@ -33,10 +33,10 @@ import { decideCriteria } from '../decideStrategies.js'
 const src = (rel) => readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 'utf8')
 
 describe('dataset coverage and lookup', () => {
-  it('exposes the complete 60-record SAL dataset', () => {
-    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(60)
+  it('exposes the complete 61-record SAL dataset', () => {
+    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(61)
     expect(COMMUNITY_DATASET.title).toBe('Community Context · ABS Census 2021')
-    expect(COMMUNITY_DATASET.recordCount).toBe(60)
+    expect(COMMUNITY_DATASET.recordCount).toBe(61)
     expect(DWELLING_CENSUS_CONTEXT).toBe(DWELLING_COMMUNITY_CONTEXT)
   })
 
@@ -59,6 +59,7 @@ describe('dataset coverage and lookup', () => {
       ['balaclava-2br', 'Balaclava'],
       ['chelsea-2br', 'Chelsea'],
       ['bonbeach-2br', 'Bonbeach'],
+      ['ivanhoe-house', 'Ivanhoe'],
     ]) {
       const ctx = communityContextFor(areaId)
       expect(ctx.components.map((c) => c.record.suburb)).toEqual([suburb])
@@ -183,12 +184,15 @@ describe('coverage completion and missing-value handling', () => {
     ['mckinnon-villa', 'McKinnon'],
     ['glen-waverley-2br', 'Glen Waverley'],
     ['balwyn-north-2br', 'Balwyn North'],
+    ['ivanhoe-house', 'Ivanhoe'],
   ])('resolves the completed SAL evidence for %s', (areaId, suburb) => {
     const ctx = communityContextFor(areaId)
     expect(ctx.components.map((component) => component.record.suburb)).toEqual([suburb])
     expect(ctx.missing).toEqual([])
     expect(communitySnapshotFor(areaId)).not.toBeNull()
-    expect(ctx.components[0].record.retrievedAt).toBe('2026-07-16')
+    expect(ctx.components[0].record.retrievedAt).toBe(
+      areaId === 'ivanhoe-house' ? '2026-07-18' : '2026-07-16',
+    )
   })
 
   it('an unknown area id returns an empty resolution', () => {
@@ -204,7 +208,7 @@ describe('source metadata', () => {
       expect(s.geographyCode).toMatch(/^SAL\d+$/)
       expect(s.censusYear).toBe(2021)
       expect(s.source).toBe('Australian Bureau of Statistics')
-      expect(s.retrievedAt).toMatch(/^2026-07-(14|16)$/)
+      expect(s.retrievedAt).toMatch(/^2026-07-(14|16|18)$/)
       expect(s.privacyNote).toBeTruthy()
     }
   })

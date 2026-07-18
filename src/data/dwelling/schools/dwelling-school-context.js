@@ -8,7 +8,7 @@
 
 export const SCHOOL_CONTEXT_DATASET = {
   "zoneYear": "2027",
-  "generatedAt": "2026-07-16"
+  "generatedAt": "2026-07-18"
 }
 
 export const schoolContextByAreaId = {
@@ -659,6 +659,18 @@ export const schoolContextByAreaId = {
     ],
     "alsoInCatchmentSecondary": [
       "Balwyn High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "ivanhoe-house": {
+    "zonedPrimary": "Ivanhoe Primary School",
+    "zonedSecondary": "Thornbury High School",
+    "alsoInCatchmentPrimary": [
+      "Ivanhoe East Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Kew High School"
     ],
     "anchorSource": "station",
     "boundaryFlag": false

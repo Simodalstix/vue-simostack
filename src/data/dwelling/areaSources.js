@@ -45,4 +45,20 @@ export const areaSources = {
     url: 'https://www.domain.com.au/',
     lastChecked: null,
   },
+  detSchoolLocations: {
+    id: 'detSchoolLocations',
+    name: 'Victorian Department of Education — School Locations 2025',
+    detail:
+      'Official school names, school numbers, type, status and coordinates. Joined by School_No after exact-name resolution.',
+    url: 'https://discover.data.vic.gov.au/dataset/school-locations-2025',
+    lastChecked: '2026-07-18',
+  },
+  detSchoolZones2027: {
+    id: 'detSchoolZones2027',
+    name: 'Victorian Department of Education — School Zones 2027',
+    detail:
+      'Official 2027 primary and secondary spatial zones. Intersected with station catchments rather than inferred from suburb names.',
+    url: 'https://discover.data.vic.gov.au/dataset/victorian-government-school-zones-2027',
+    lastChecked: '2026-07-18',
+  },
 }

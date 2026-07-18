@@ -63,6 +63,9 @@ RELIGION_ROWS = [
     ("Other religions", 38),
     ("Religious affiliation not stated", 44),
 ]
+G06_PARTNER_POOL_ROWS = [(42, "25-34 years"), (43, "35-44 years"), (44, "45-54 years")]
+G29_ONE_PARENT_ROW = 43
+G29_TOTAL_ROW = 47
 
 
 def parse_args() -> argparse.Namespace:
@@ -103,6 +106,71 @@ def percentage(count: int, denominator: int) -> float | None:
     if denominator <= 0:
         return None
     return round(count / denominator * 100, 1)
+
+
+def text(workbook: Any, sheet: str, coordinate: str) -> str:
+    return str(workbook[sheet][coordinate].value or "").strip()
+
+
+def partner_pool_measures(workbook: Any, workbook_name: str) -> dict[str, dict[str, Any]]:
+    """Read the live partner-pool inputs while adding a new SAL record.
+
+    The original importer predates partnerPool.js. Reading these measures here
+    prevents a new record from inheriting the template suburb's counts before
+    the full historical backfill can be rerun.
+    """
+    for row, expected in G06_PARTNER_POOL_ROWS:
+        found = text(workbook, "G06", f"A{row}")
+        if found != expected:
+            raise ValueError(
+                f"{workbook_name} G06!A{row}: expected {expected!r}, found {found!r}"
+            )
+    if text(workbook, "G06", "B38") != "PERSONS":
+        raise ValueError(f"{workbook_name} G06!B38 is not the PERSONS block")
+    if not text(workbook, "G29", "A4").startswith("G29 FAMILY COMPOSITION"):
+        raise ValueError(f"{workbook_name} G29 is not the family composition table")
+    if not text(workbook, "G29", "A29").startswith("One parent family"):
+        raise ValueError(f"{workbook_name} G29!A29 is not the one-parent-family block")
+    for row in (G29_ONE_PARENT_ROW, G29_TOTAL_ROW):
+        if text(workbook, "G29", f"A{row}") != "Total":
+            raise ValueError(f"{workbook_name} G29!A{row} is not a Total row")
+
+    unpartnered = sum(number(workbook, "G06", f"D{row}") for row, _ in G06_PARTNER_POOL_ROWS)
+    persons_25_54 = sum(number(workbook, "G06", f"E{row}") for row, _ in G06_PARTNER_POOL_ROWS)
+    one_parent = number(workbook, "G29", f"B{G29_ONE_PARENT_ROW}")
+    families = number(workbook, "G29", f"B{G29_TOTAL_ROW}")
+    return {
+        "unpartnered2554": {
+            "count": unpartnered,
+            "denominator": persons_25_54,
+            "percentage": percentage(unpartnered, persons_25_54),
+            "numeratorLabel": "Persons aged 25-54 not in a registered or de facto marriage",
+            "denominatorLabel": "All persons aged 25-54 in G06",
+            "sourceTable": "G06",
+            "sourceCells": {
+                "numerator": [f"D{row}" for row, _ in G06_PARTNER_POOL_ROWS],
+                "denominator": [f"E{row}" for row, _ in G06_PARTNER_POOL_ROWS],
+            },
+            "basis": "Place of usual residence",
+            "note": (
+                "G06 publishes 10-year age bands (25-34, 35-44, 45-54); "
+                "25-54 is the closest available cover of the requested 30-49 range."
+            ),
+        },
+        "loneParentFamilies": {
+            "count": one_parent,
+            "denominator": families,
+            "percentage": percentage(one_parent, families),
+            "numeratorLabel": "One-parent families",
+            "denominatorLabel": "All families in occupied private dwellings (G29)",
+            "sourceTable": "G29",
+            "sourceCells": {
+                "numerator": [f"B{G29_ONE_PARENT_ROW}"],
+                "denominator": [f"B{G29_TOTAL_ROW}"],
+            },
+            "basis": "Place of enumeration",
+        },
+    }
 
 
 def ranked_measure(
@@ -304,6 +372,7 @@ def build_record(
                 "percentage": percentage(count, denominator),
             }
         )
+    additional.update(partner_pool_measures(workbook, workbook_path.name))
     return record
 
 

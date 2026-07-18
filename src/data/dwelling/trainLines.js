@@ -20,8 +20,8 @@
 // a track map. Lines run to their real terminus where it fits the map frame
 // (Mernda, Sandringham, Werribee, Upfield); Belgrave/Lilydale, Frankston and
 // the Dandenong end truncate at the frame edge. Only lines relevant to
-// candidate suburbs are included; the Hurstbridge branch is omitted because
-// the shared Clifton Hill trunk already covers every candidate it would serve.
+// candidate suburbs are included; the Hurstbridge branch truncates at Ivanhoe,
+// the outermost candidate currently served by that line.
 
 // Station coordinate lookup, [lng, lat]. Shared shaping stations only; the
 // per-record commute anchors stay in areaGeo.js.
@@ -64,6 +64,12 @@ const P = {
   chelsea: [145.1168, -38.0512],
   bonbeach: [145.1207, -38.0624],
   cliftonHill: [144.9953, -37.7887],
+  westgarth: [144.9993, -37.7807],
+  dennis: [145.0085, -37.7792],
+  fairfield: [145.0185, -37.779],
+  alphington: [145.0313, -37.7784],
+  darebin: [145.0385, -37.7749],
+  ivanhoe: [145.0455, -37.7689],
   victoriaPark: [144.9906, -37.7986],
   collingwood: [144.9878, -37.8017],
   merri: [144.9906, -37.7757],
@@ -207,6 +213,25 @@ export const trainLines = [
       P.collingwood,
       P.jolimont,
       P.flindersSt,
+    ],
+  },
+  {
+    id: 'hurstbridge',
+    name: 'Hurstbridge',
+    group: 'Clifton Hill',
+    color: '#BE1014',
+    stations: [
+      P.flindersSt,
+      P.jolimont,
+      P.collingwood,
+      P.victoriaPark,
+      P.cliftonHill,
+      P.westgarth,
+      P.dennis,
+      P.fairfield,
+      P.alphington,
+      P.darebin,
+      P.ivanhoe,
     ],
   },
   {
@@ -367,6 +392,7 @@ export const linesByArea = {
   'sunbury-house': ['metro-tunnel'],
   'clifton-hill-2br': ['mernda'],
   'doncaster-villa': [],
+  'ivanhoe-house': ['hurstbridge'],
 }
 
 export function linesForArea(areaId) {

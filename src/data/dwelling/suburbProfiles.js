@@ -978,6 +978,32 @@ export const suburbProfiles = {
       pursueWhen: 'A solid 2BR near both the station and the school cluster lists without needing the car for basics.',
     },
   },
+  'ivanhoe-house': {
+    lives:
+      'Upper Heidelberg Road provides the main village spine, with direct Hurstbridge-line access and nearby river and parkland networks.',
+    housing:
+      'The requested product is an established three-bedroom house. Current suburb medians place this well above the existing family strategy cap.',
+    fit: [
+      {
+        text: 'Direct rail and a walkable village make day-to-day independence plausible.',
+        tag: null,
+      },
+      {
+        text: 'Darebin and Yarra parkland access is a meaningful family-lifestyle advantage.',
+        tag: null,
+      },
+      {
+        text: 'Detached-house pricing is the dominant trade-off.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A north-east family benchmark prioritising village life, rail and parklands.',
+      mainRisk: 'The requested house product is likely to fail the current purchase-price gates.',
+      pursueWhen:
+        'Retain for comparison or inspect only if the budget changes or a materially discounted property appears.',
+    },
+  },
 
   // 'Collingwood/Abbotsford' (shared)
   'inner-collingwood-2br': collingwoodAbbotsford,

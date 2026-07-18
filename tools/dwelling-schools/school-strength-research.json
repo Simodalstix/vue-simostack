@@ -461,6 +461,21 @@
       "confidence": "medium"
     },
     {
+      "name": "Thornbury High School",
+      "schoolNo": "8797",
+      "vceMedianStudyScore": 30.1,
+      "vcePct40Plus": null,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "strength": 3,
+      "evidenceNote": "The official 2025 report recorded a mean VCE study score of 30.1, 98.0% VCE/VCE VM completion and three-year NAPLAN averages above the state in all four published measures, supporting a solid-middle rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8797&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
       "name": "University High School",
       "schoolNo": "8405",
       "vceMedianStudyScore": 31,
@@ -1103,6 +1118,78 @@
       "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 90.2% for the school, +4.4 percentage points versus similar schools and +20.6 points versus the state, supporting a strength rating of 5.",
       "sources": [
         "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=293&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Ivanhoe East Primary School",
+      "schoolNo": "4386",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 85.4,
+            "similarSchools": 85.3,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 92.7,
+            "similarSchools": 90.4,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 80.0,
+            "similarSchools": 84.4,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 84.0,
+            "similarSchools": 85.3,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 85.5% for the school, -0.8 percentage points versus similar schools and +15.9 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=4386&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Ivanhoe Primary School",
+      "schoolNo": "2436",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": {
+            "school": 89.0,
+            "similarSchools": 85.1,
+            "state": 69.3
+          },
+          "readingYear5": {
+            "school": 93.0,
+            "similarSchools": 89.2,
+            "state": 74.6
+          },
+          "numeracyYear3": {
+            "school": 90.7,
+            "similarSchools": 83.8,
+            "state": 66.4
+          },
+          "numeracyYear5": {
+            "school": 91.1,
+            "similarSchools": 85.7,
+            "state": 68.1
+          }
+        }
+      },
+      "strength": 5,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 91.0% for the school, +5.0 percentage points versus similar schools and +21.4 points versus the state, supporting a strength rating of 5.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2436&Type=AnnualReport&requestFileType=Pdf"
       ],
       "confidence": "high"
     },

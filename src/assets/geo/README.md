@@ -62,6 +62,9 @@ result. It is about 870 KB uncompressed and has zero scoring impact.
 - **Simplification**: Douglas-Peucker, tolerance 0.0004 deg (~40 m). ~37 KB.
 - Properties carry `name` only (Title Case). The assessed/areaId linkage is
   derived at build time in `localityFeatures.js`, never baked into the asset.
+- Ivanhoe was added from the same WFS source on 2026-07-18. The reproducible
+  `tools/dwelling-geo/add-locality.py` helper applies the documented
+  simplification and compact-output rules to a single-locality WFS response.
 
 `port-phillip-bay.geojson` — a single closed Port Phillip water polygon,
 constructed from the OSM coastline ways above: the Bellarine shore (from Point

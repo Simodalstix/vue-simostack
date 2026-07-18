@@ -115,6 +115,15 @@ export const schoolStrengthBySchoolNo = {
       'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2374&Type=AnnualReport&requestFileType=Pdf',
     ],
   },
+  2436: {
+    strength: 5,
+    evidenceNote:
+      'The four published three-year NAPLAN proficiency averages averaged 91.0% for the school, +5.0 percentage points versus similar schools and +21.4 points versus the state, supporting a strength rating of 5.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=2436&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
   2460: {
     strength: 3,
     evidenceNote:
@@ -293,6 +302,15 @@ export const schoolStrengthBySchoolNo = {
     confidence: 'high',
     sources: [
       'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3960&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  4386: {
+    strength: 4,
+    evidenceNote:
+      'The four published three-year NAPLAN proficiency averages averaged 85.5% for the school, -0.8 percentage points versus similar schools and +15.9 points versus the state, supporting a strength rating of 4.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=4386&Type=AnnualReport&requestFileType=Pdf',
     ],
   },
   4798: {
@@ -660,6 +678,15 @@ export const schoolStrengthBySchoolNo = {
     sources: [
       'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8790&Type=AnnualReport&requestFileType=Pdf',
       'https://www.schoolexplorer.com.au/schools/sunshine-west/sunshine-college?year=2025',
+    ],
+  },
+  8797: {
+    strength: 3,
+    evidenceNote:
+      'The official 2025 report recorded a mean VCE study score of 30.1, 98.0% VCE/VCE VM completion and three-year NAPLAN averages above the state in all four published measures, supporting a solid-middle rating.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8797&Type=AnnualReport&requestFileType=Pdf',
     ],
   },
   8807: {

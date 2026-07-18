@@ -99,14 +99,16 @@ describe('cost scoring', () => {
     expect(costScoreFor(720000, 80, 900000)).toBeCloseTo(0.7 * headroom + 0.3 * liquidity)
   })
 
-  it('keeps generated-data fallback available for every current record', () => {
+  it('keeps generated-data fallback available without inventing placeholder values', () => {
     expect(decideCriteria).toHaveLength(9)
     for (const strategy of decideStrategies) {
       expect(strategy.weights).toHaveProperty('beach')
       expect(strategy.weights).not.toHaveProperty('greenspace')
     }
     for (const rec of areaCorridors.filter((record) => record.scored !== false)) {
-      expect(Number.isFinite(decideCriterionByKey.cost.value(rec))).toBe(true)
+      const cost = decideCriterionByKey.cost.value(rec)
+      if (rec.id === 'ivanhoe-house') expect(cost).toBeNull()
+      else expect(Number.isFinite(cost)).toBe(true)
     }
   })
 })

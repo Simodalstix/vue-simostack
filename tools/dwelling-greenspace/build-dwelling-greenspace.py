@@ -51,7 +51,7 @@ except ImportError as exc:  # pragma: no cover - clear runtime guidance
 
 
 METHOD_VERSION = "greenspace-access-v1"
-RETRIEVED_AT = "2026-07-16"
+RETRIEVED_AT = "2026-07-18"
 ANALYSIS_CRS = "EPSG:7855"  # GDA2020 / MGA zone 55
 WGS84_CRS = "EPSG:4326"
 
@@ -71,6 +71,10 @@ SOURCE_URLS = {
         "australian-statistical-geography-standard-asgs/"
         "edition-3-july-2021-june-2026/access-and-downloads/"
         "digital-boundary-files/MB_2021_AUST_SHP_GDA2020.zip"
+    ),
+    "absMeshBlockFeatureService": (
+        "https://geo.abs.gov.au/arcgis/rest/services/"
+        "ASGS2021/MB/MapServer/0"
     ),
     "absMeshBlockCountsXlsx": (
         "https://www.abs.gov.au/census/guide-census-data/"
@@ -224,6 +228,18 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--mesh-blocks",
+        type=Path,
+        help=(
+            "Optional official ABS Mesh Block SHP/GPKG/GeoJSON subset. "
+            "Use this instead of downloading the national Mesh Block ZIP."
+        ),
+    )
+    parser.add_argument(
+        "--target-id",
+        help="Optionally calculate one target id from the targets file.",
+    )
+    parser.add_argument(
         "--no-download",
         action="store_true",
         help="Require all source files to already exist in --cache.",
@@ -349,11 +365,12 @@ def ensure_sources(
     *,
     no_download: bool,
     force_download: bool,
+    mesh_blocks: Path | None,
 ) -> SourcePaths:
     cache.mkdir(parents=True, exist_ok=True)
 
     sal_zip = cache / "SAL_2021_AUST_GDA2020_SHP.zip"
-    mb_zip = cache / "MB_2021_AUST_SHP_GDA2020.zip"
+    mb_zip = mesh_blocks or cache / "MB_2021_AUST_SHP_GDA2020.zip"
     mb_counts = cache / "Mesh_Block_Counts_2021.xlsx"
     open_space = cache / "VPA_Open_Space.geojson"
     sal_dir = cache / "SAL_2021_AUST_GDA2020_SHP"
@@ -361,10 +378,16 @@ def ensure_sources(
 
     required_downloads = [
         (SOURCE_URLS["absSalShapefileZip"], sal_zip),
-        (SOURCE_URLS["absMeshBlockShapefileZip"], mb_zip),
         (SOURCE_URLS["absMeshBlockCountsXlsx"], mb_counts),
         (SOURCE_URLS["vpaOpenSpaceGeoJson"], open_space),
     ]
+    if mesh_blocks is None:
+        required_downloads.insert(
+            1,
+            (SOURCE_URLS["absMeshBlockShapefileZip"], mb_zip),
+        )
+    elif not mesh_blocks.exists():
+        raise FileNotFoundError(f"Mesh Block subset does not exist: {mesh_blocks}")
 
     if no_download:
         missing = [str(path) for _, path in required_downloads if not path.exists()]
@@ -379,7 +402,10 @@ def ensure_sources(
             download(url, path, force=force_download)
 
     extract_zip(sal_zip, sal_dir)
-    extract_zip(mb_zip, mb_dir)
+    if mesh_blocks is None:
+        extract_zip(mb_zip, mb_dir)
+    else:
+        mb_dir = mesh_blocks
     return SourcePaths(
         sal_zip=sal_zip,
         mb_zip=mb_zip,
@@ -492,7 +518,7 @@ def load_residential_samples(
     sal: gpd.GeoDataFrame,
     counts: pd.DataFrame,
 ) -> gpd.GeoDataFrame:
-    mb_path = locate_file(mb_dir, "*.shp")
+    mb_path = mb_dir if mb_dir.is_file() else locate_file(mb_dir, "*.shp")
     info = pyogrio.read_info(mb_path)
     code_field = resolve_field(
         info["fields"],
@@ -1219,7 +1245,11 @@ def source_metadata(
             "dataDate": "2021",
             "retrievedAt": RETRIEVED_AT,
             "url": SOURCE_URLS["absBoundaryMetadata"],
-            "downloadUrl": SOURCE_URLS["absMeshBlockShapefileZip"],
+            "downloadUrl": (
+                SOURCE_URLS["absMeshBlockFeatureService"]
+                if paths.mb_zip.is_file() and paths.mb_zip.suffix.lower() != ".zip"
+                else SOURCE_URLS["absMeshBlockShapefileZip"]
+            ),
             "localFile": paths.mb_zip.name,
             "sha256": sha256_file(paths.mb_zip),
         },
@@ -1353,6 +1383,10 @@ def main() -> int:
         )
 
     _, targets = load_targets(args.targets)
+    if args.target_id:
+        targets = [target for target in targets if target["id"] == args.target_id]
+        if not targets:
+            raise ValueError(f"Unknown target id: {args.target_id}")
     target_codes = {
         component["salCode"]
         for target in targets
@@ -1363,6 +1397,7 @@ def main() -> int:
         args.cache,
         no_download=args.no_download,
         force_download=args.force_download,
+        mesh_blocks=args.mesh_blocks,
     )
     sal = load_sal_boundaries(paths.sal_dir, target_codes)
     open_space, inspection = load_open_space(paths.open_space, sal)

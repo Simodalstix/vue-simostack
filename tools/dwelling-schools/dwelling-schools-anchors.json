@@ -1349,6 +1349,32 @@
     ],
     "privateContext": []
    }
+  },
+  {
+   "id": "ivanhoe-house",
+   "suburb": "Ivanhoe",
+   "localityNames": [
+    "Ivanhoe"
+   ],
+   "anchors": [
+    {
+     "id": "ivanhoe",
+     "name": "Ivanhoe",
+     "lng": 145.0455,
+     "lat": -37.7689
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Ivanhoe Primary School",
+     "Ivanhoe East Primary School"
+    ],
+    "publicSecondary": [
+     "Thornbury High School",
+     "Kew High School"
+    ],
+    "privateContext": []
+   }
   }
  ]
 }

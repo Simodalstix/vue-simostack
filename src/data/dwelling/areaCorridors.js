@@ -3779,6 +3779,86 @@ const AREA_CORRIDOR_BASE = [
     placeholder: true,
     sources: ['ptv', 'domain', 'csa', 'vicplan'],
   },
+
+  // ---- July 2026 onboarding pilot #51: Ivanhoe ---------------------------
+  {
+    id: 'ivanhoe-house',
+    suburb: 'Ivanhoe',
+    municipality: 'Banyule',
+    region: 'Middle north-east',
+    corridor: 'Hurstbridge line',
+    station: 'Ivanhoe',
+    catchmentMetres: 800,
+    altRoute:
+      'Route 510 and local buses provide cross-suburban alternatives; the CBD journey remains rail-led.',
+    headline:
+      'Established north-east village and river-parklands option with direct rail, but detached houses carry a large price premium.',
+    dwelling: {
+      types: ['house'],
+      bedrooms: 3,
+      indicativePrice: [1400000, 1650000],
+      annualOc: [0, 0],
+      parkingTypes: ['garage', 'off-street'],
+      suitableStock:
+        'Established 3-bedroom detached houses within an 800 m station catchment; stock and condition vary materially.',
+      expectedTransportCost:
+        'Use the existing Melbourne myki modelling assumption; no area-specific fare premium.',
+    },
+    stationWalkMin: 8,
+    carDaily: false,
+    secondBedroom: true,
+    commute: { typical: 38, stressed: 50, transfers: 0 },
+    scores: {
+      housingValue: null,
+      coparenting: null,
+      lowCar: null,
+      recurringCosts: null,
+      walkability: null,
+      safety: null,
+      privacyWfh: null,
+      resale: null,
+      community: null,
+    },
+    childhood: {
+      schoolStrength: null,
+      teenIndependence: null,
+      publicPrimary: ['Ivanhoe Primary School', 'Ivanhoe East Primary School'],
+      publicSecondary: ['Thornbury High School', 'Kew High School'],
+      privateContext: [],
+      note: 'At the station anchor, the 2027 zones are Ivanhoe Primary and Thornbury High. Parts of the 800 m catchment overlap Ivanhoe East Primary and Kew High zones; verify the exact address.',
+    },
+    feeNote: 'Detached freehold assumption; confirm title and shared-property obligations.',
+    caseFor: [
+      'Direct rail and a walkable village make day-to-day independence plausible.',
+      'Darebin and Yarra parkland access is a meaningful family-lifestyle advantage.',
+    ],
+    caseAgainst: ['Detached-house pricing is the dominant trade-off.'],
+    bestType:
+      'Established 3-bedroom detached houses within an 800 m station catchment; stock and condition vary materially.',
+    avoidType:
+      'Properties outside the station catchment or with unresolved planning, owners-corporation, noise, flood or major-road exposure.',
+    oneCar:
+      'Likely workable for the CBD commute; test non-work household trips before treating the record as fully low-car.',
+    coparentingGeometry: 'Not assessed for this onboarding pilot.',
+    risks: [
+      'School-zone coverage remains subject to exact-address verification.',
+      'Safety and environmental-risk scores are not yet populated.',
+      'The provisional commute must be reproduced using the repository standard journey protocol.',
+      'The broad 3-bedroom-house band is an indicative suburb benchmark, not a valuation.',
+    ],
+    inspectionChecklist: [
+      'Walk the station route at school-run and evening periods.',
+      'Check major-road, rail, freight and aircraft noise at the actual property.',
+      'Confirm the 2027 school zones using the exact address.',
+      'Verify title, owners-corporation and planning overlays.',
+      'Compare the listing against the nominated dwelling-type and bedroom contract.',
+    ],
+    primaryWarning:
+      'Price benchmark only until school zones, active scores and generated context are complete.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['abs', 'csa', 'vicplan', 'ptv', 'domain', 'detSchoolLocations', 'detSchoolZones2027'],
+  },
 ]
 
 export const areaCorridors = AREA_CORRIDOR_BASE.map((rec) => {

@@ -9,7 +9,7 @@
 export const SCHOOL_POINTS_DATASET = {
   "source": "School Locations CSV + School Zones (data.vic.gov.au)",
   "zoneYear": "2027",
-  "generatedAt": "2026-07-16"
+  "generatedAt": "2026-07-18"
 }
 
 export const schoolPoints = [
@@ -868,6 +868,38 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "ivanhoe-east-primary-school",
+    "schoolNo": "4386",
+    "name": "Ivanhoe East Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.05945,
+      -37.77459
+    ],
+    "areaIds": [
+      "ivanhoe-house"
+    ],
+    "zonedFor": []
+  },
+  {
+    "id": "ivanhoe-primary-school",
+    "schoolNo": "2436",
+    "name": "Ivanhoe Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.04298,
+      -37.76657
+    ],
+    "areaIds": [
+      "ivanhoe-house"
+    ],
+    "zonedFor": [
+      "ivanhoe-house"
+    ]
+  },
+  {
     "id": "kensington-primary-school",
     "schoolNo": "2374",
     "name": "Kensington Primary School",
@@ -895,7 +927,8 @@ export const schoolPoints = [
       -37.79555
     ],
     "areaIds": [
-      "kew-2br"
+      "kew-2br",
+      "ivanhoe-house"
     ],
     "zonedFor": [
       "kew-2br"
@@ -1894,9 +1927,12 @@ export const schoolPoints = [
       -37.75649
     ],
     "areaIds": [
+      "ivanhoe-house",
       "thornbury-2br"
     ],
-    "zonedFor": []
+    "zonedFor": [
+      "ivanhoe-house"
+    ]
   },
   {
     "id": "thornbury-primary-school",

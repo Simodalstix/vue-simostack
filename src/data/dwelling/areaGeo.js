@@ -778,6 +778,18 @@ export const areaGeo = {
       },
     ],
   },
+  'ivanhoe-house': {
+    localityNames: ['Ivanhoe'],
+    stationPoints: [
+      {
+        id: 'ivanhoe',
+        name: 'Ivanhoe',
+        coordinates: [145.0455, -37.7689],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
 }
 
 export function localitiesForArea(areaId) {

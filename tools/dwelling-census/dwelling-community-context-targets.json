@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-12",
-  "retrievedAt": "2026-07-16",
-  "recordCount": 12,
+  "version": "2021-gcp-sal-extension-13",
+  "retrievedAt": "2026-07-18",
+  "recordCount": 13,
   "records": [
     {
       "id": "yarraville-2br",
@@ -51,6 +51,10 @@
     {
       "id": "balwyn-north-2br",
       "salComponents": [{ "suburb": "Balwyn North", "salCode": "20124" }]
+    },
+    {
+      "id": "ivanhoe-house",
+      "salComponents": [{ "suburb": "Ivanhoe", "salCode": "21246" }]
     }
   ]
 }

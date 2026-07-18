@@ -1,7 +1,7 @@
 /**
- * Generated dwelling greenspace context.
+ * Population-weighted greenspace access for /dwelling.
  *
- * Source pipeline: tools/dwelling-greenspace/build-dwelling-greenspace.py
+ * Generated from official ABS, VPA and PARKRES spatial sources.
  */
 export const DWELLING_GREENSPACE_CONTEXT = {
   "dataset": "dwelling-greenspace-context",
@@ -2025,6 +2025,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 95.1,
         "componentSpread": 2.1,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "ivanhoe-house",
+      "displayName": "Ivanhoe",
+      "salSuburbs": [
+        "Ivanhoe"
+      ],
+      "salCodes": [
+        "21246"
+      ],
+      "greenspace": 9.3787,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 8.8894,
+        "natureCorridorAccess": 8.5596
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 96.3,
+        "representedPopulation": 13216,
+        "sampledMeshBlocks": 150
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-18",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 134,
+          "majorPark": 523,
+          "natureCorridor": 564
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Yarra River",
+            "areaHa": 78.61
+          },
+          {
+            "name": "Yarra Valley Parklands - Banyule",
+            "areaHa": 72.75
+          },
+          {
+            "name": "Wilson Reserve",
+            "areaHa": 25.28
+          },
+          {
+            "name": "Darebin Parklands",
+            "areaHa": 19.97
+          },
+          {
+            "name": "Burke Road Billabong Reserve, Kew East",
+            "areaHa": 9.68
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Yarra River",
+            "areaHa": 78.61
+          },
+          {
+            "name": "Yarra Valley Parklands - Banyule",
+            "areaHa": 72.75
+          },
+          {
+            "name": "Yarra Valley Parklands",
+            "areaHa": 72.13
+          },
+          {
+            "name": "Darebin Parklands",
+            "areaHa": 19.82
+          },
+          {
+            "name": "Burke Road Billabong Reserve, Kew East",
+            "areaHa": 9.68
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.8,
+        "componentSpread": 1.4,
         "reviewFlags": []
       }
     },
