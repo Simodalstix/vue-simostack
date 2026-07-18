@@ -8,7 +8,8 @@
       "WebFetch(domain:en.wikipedia.org)",
       "Bash(curl -s -o /dev/null -m 2 http://localhost:5199)",
       "Bash(mkdir -p /home/simoda/projects/vue-simostack/.claude/skills/verify)",
-      "Skill(dataviz)"
+      "Skill(dataviz)",
+      "WebFetch(domain:discover.data.vic.gov.au)"
     ]
   }
 }
