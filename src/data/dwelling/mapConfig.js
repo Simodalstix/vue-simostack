@@ -18,7 +18,7 @@
 import { fitBandColor, fitBandLegend, getFitBand } from './fitBands.js'
 
 export const MAP_THEME = {
-  bg: '#252D37',
+  bg: '#111418',
   faintFill: '#2A3138',
   markerDim: '#7A8A99',
   ink: '#0C0F12',
@@ -42,7 +42,9 @@ export { getFitBand }
 // reads while the hue remains aligned with the shared fit band.
 export function fillOpacityFor(rec, status) {
   if (status === 'unscored') return 0.08
-  const base = rec.placeholder ? 0.16 : 0.3
+  // Solid enough to read bright against the near-black canvas; provisional
+  // placeholder records still sit a clear step fainter than verified ones.
+  const base = rec.placeholder ? 0.3 : 0.55
   if (status === 'reject') return base * 0.78
   if (status === 'conditional') return base * 0.88
   return base

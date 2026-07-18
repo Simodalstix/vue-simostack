@@ -38,8 +38,8 @@ describe('shared fit colours', () => {
   })
 
   it('keeps gated suburbs visible enough for the fill to read', () => {
-    expect(fillOpacityFor({ placeholder: false }, 'ok')).toBe(0.3)
-    expect(fillOpacityFor({ placeholder: false }, 'conditional')).toBeGreaterThan(0.25)
-    expect(fillOpacityFor({ placeholder: false }, 'reject')).toBeGreaterThan(0.2)
+    expect(fillOpacityFor({ placeholder: false }, 'ok')).toBe(0.55)
+    expect(fillOpacityFor({ placeholder: false }, 'conditional')).toBeGreaterThan(0.45)
+    expect(fillOpacityFor({ placeholder: false }, 'reject')).toBeGreaterThan(0.4)
   })
 })
