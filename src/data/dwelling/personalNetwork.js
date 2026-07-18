@@ -72,10 +72,10 @@ export const personalNetworkByAreaId = {
     rationale: 'Route 78/16 into Chapel St; no rail.',
   },
   'balaclava-2br': {
-    estMin: 8,
+    estMin: 14,
     mode: 'train',
     confidence: 'high',
-    rationale: 'Three Sandringham-line stops.',
+    rationale: 'Three Sandringham-line stops; two stops beyond the Windsor estimate.',
   },
   'elwood-2br': {
     estMin: 26,
