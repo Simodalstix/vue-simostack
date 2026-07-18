@@ -8,12 +8,13 @@
 //      (dwelling types, minimum bedrooms, price cap) tag a record
 //      reject | conditional | ok. A cheap area must NOT out-rank a workable
 //      one on price alone, so gates precede scoring.
-//   2. SCORE over the eight Decide criteria (decideStrategies.js): standard
+//   2. SCORE over the nine Decide criteria (decideStrategies.js): standard
 //      criteria use sum(w * s) / sum(w), normalised to 0-100. Explicit bonus
 //      criteria add a small bounded premium after that mean. Missing data is
 //      never scored as zero, and the all-zero fallback prevents NaN. The
-//      demographic context is never read here directly; the explicitly
-//      opt-in Chinese-language lens supplies one derived additive value.
+//      demographic context is never read here directly; the opt-in
+//      Chinese-language lens and the partner-pool criterion each supply one
+//      derived additive value.
 //
 // Returns a computed list sorted ok > conditional > reject > unscored, then by
 // weighted score descending.
@@ -72,7 +73,8 @@ function gate(rec, filters, commute) {
 // `weights` is the effective weight per criterion key from the Decide panel:
 // the strategy preset value when the toggle is on, 0 when it is off. Standard
 // criteria form the renormalised weighted mean. Explicitly additive bonuses
-// (Beach and the opt-in Chinese-community lens) stay outside that denominator and can only lift the base
+// (Beach, the opt-in Chinese-community lens and the Partner-pool lens) stay
+// outside that denominator and can only lift the base
 // score. A null value means "not assessed" and contributes nothing. If the
 // enabled standard weights sum to 0, fall back to their equal-weight mean so
 // no toggle combination can produce NaN.

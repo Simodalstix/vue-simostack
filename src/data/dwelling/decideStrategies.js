@@ -2,7 +2,7 @@
 //
 // The Decide page's single control model: a STRATEGY is a weighting preset
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
-// tests. Selecting a strategy loads its weight vector over the eight suburb
+// tests. Selecting a strategy loads its weight vector over the nine suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
 // off (weight 0). Standard criteria renormalise over the enabled weights;
 // explicitly additive criteria such as Beach apply a small bounded premium
@@ -15,7 +15,7 @@
 
 // ---- criteria -------------------------------------------------------------
 //
-// Seven criteria, each scored 0-10 per suburb, derived from the existing
+// Nine criteria, each scored 0-10 per suburb, derived from the existing
 // record data (nothing new is fabricated here). `value(rec, commuteScore)`
 // returns 0-10 or null when the record carries no data for it; a null is
 // omitted rather than scored as zero. `scoringMode: 'additiveBonus'` keeps a
@@ -25,6 +25,7 @@ import { personalNetworkByAreaId, pnScore } from './personalNetwork.js'
 import { beachAccessByAreaId, beachScore } from './beachAccess.js'
 import { girlsSportFor, sportAccessScore } from './girlsSport.js'
 import { chineseCommunityScore } from './chineseCommunity.js'
+import { partnerPoolScore } from './partnerPool.js'
 import { DWELLING_COST_BY_ID } from './cost/dwelling-cost-context.ts'
 import { costScoreFor } from './cost/costScoring.js'
 
@@ -116,6 +117,14 @@ export const decideCriteria = [
     accent: 'red',
     value: (rec) => chineseCommunityScore(rec.id),
   },
+  {
+    key: 'partnerPool',
+    label: 'Partner pool',
+    hint: '2021 Census; relative signal: suburb demographic profiles are sticky, absolute figures are dated. Refresh when the 2026 Census publishes (mid-2027).',
+    scoringMode: 'additiveBonus',
+    bonusPointsPerWeight: 2,
+    value: (rec) => partnerPoolScore(rec.id),
+  },
 ]
 
 export const decideCriterionByKey = Object.fromEntries(decideCriteria.map((c) => [c.key, c]))
@@ -143,6 +152,7 @@ export const decideStrategies = [
       safetyQuality: 1,
       personalNetwork: 2,
       chineseCommunity: 2,
+      partnerPool: 1,
     },
     filters: { minBedrooms: 2, dwellingTypes: [], maxPrice: 900000 },
     priceNote: null,
@@ -163,6 +173,7 @@ export const decideStrategies = [
       safetyQuality: 1,
       personalNetwork: 2,
       chineseCommunity: 2,
+      partnerPool: 1,
     },
     filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'], maxPrice: 550000 },
     priceNote:
@@ -184,6 +195,7 @@ export const decideStrategies = [
       safetyQuality: 2,
       personalNetwork: 3,
       chineseCommunity: 2,
+      partnerPool: 1,
     },
     filters: {
       minBedrooms: 3,
@@ -208,6 +220,7 @@ export const decideStrategies = [
       safetyQuality: 1,
       personalNetwork: 1,
       chineseCommunity: 2,
+      partnerPool: 1,
     },
     filters: { minBedrooms: 3, dwellingTypes: ['house'], maxPrice: 700000 },
     priceNote:
@@ -229,6 +242,7 @@ export const decideStrategies = [
       safetyQuality: 2,
       personalNetwork: 3,
       chineseCommunity: 2,
+      partnerPool: 1,
     },
     filters: { minBedrooms: 2, dwellingTypes: ['villa-unit', 'townhouse'], maxPrice: 800000 },
     priceNote: null,

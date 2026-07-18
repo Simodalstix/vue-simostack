@@ -13,6 +13,12 @@ import {
   chineseCommunityScore,
   chineseLanguageCommunityFor,
 } from '../chineseCommunity.js'
+import {
+  PARTNER_POOL_FULL_BONUS_SHARE,
+  PARTNER_POOL_MIN_DENOMINATOR,
+  partnerPoolFor,
+  partnerPoolScore,
+} from '../partnerPool.js'
 import { useAreaRanking, weightedScore } from '../../../composables/useAreaRanking.js'
 import { commuteFor, scoreCommute } from '../../../composables/useCommuteScoring.js'
 
@@ -29,7 +35,7 @@ function weightsFor(strategy, enabledKeys) {
   )
 }
 
-// Every non-empty subset of the eight criteria, plus the empty set (all off).
+// Every non-empty subset of the nine criteria, plus the empty set (all off).
 function allSubsets(keys) {
   const out = []
   for (let mask = 0; mask < 1 << keys.length; mask++) {
@@ -39,7 +45,7 @@ function allSubsets(keys) {
 }
 
 describe('preset weight vectors', () => {
-  it('ships the five strategies with 0-3 weights over exactly the eight criteria', () => {
+  it('ships the five strategies with 0-3 weights over exactly the nine criteria', () => {
     expect(decideStrategies.map((s) => s.id)).toEqual([
       'balanced2br',
       'bachelor1br',
@@ -48,7 +54,7 @@ describe('preset weight vectors', () => {
       'villaTownhouse',
     ])
     const keys = decideCriteria.map((c) => c.key).sort()
-    expect(keys).toHaveLength(8)
+    expect(keys).toHaveLength(9)
     for (const s of decideStrategies) {
       expect(Object.keys(s.weights).sort()).toEqual(keys)
       for (const w of Object.values(s.weights)) {
@@ -229,6 +235,66 @@ describe('Chinese-language community personal lens', () => {
 
     expect(enabled).toBeGreaterThanOrEqual(base)
     expect(enabled - base).toBeLessThanOrEqual(4)
+  })
+})
+
+describe('partner-pool criterion', () => {
+  it('recombines unpartnered counts over the common G06 denominator', () => {
+    const pool = partnerPoolFor('st-kilda-2br')
+    expect(pool.count).toBeGreaterThan(0)
+    expect(pool.denominator).toBeGreaterThan(pool.count)
+    expect(pool.percentage).toBeCloseTo((pool.count / pool.denominator) * 100)
+    expect(pool.loneParentPercentage).toBeCloseTo(
+      (pool.loneParentCount / pool.loneParentDenominator) * 100,
+    )
+  })
+
+  it('aggregates combined suburb records by counts, never averaged percentages', () => {
+    // Hand-verified against the QA report: Seddon 839/2639 + West Footscray
+    // 2131/5827 recombine to 2970/8466 = 35.08%. A naive percentage average
+    // would read 34.2%.
+    const combined = partnerPoolFor('seddon-westfootscray-villa')
+    expect(combined.count).toBe(2970)
+    expect(combined.denominator).toBe(8466)
+    expect(combined.percentage).toBeCloseTo(35.08, 1)
+  })
+
+  it('nulls a record under the minimum denominator instead of trusting a noisy rate', () => {
+    expect(PARTNER_POOL_MIN_DENOMINATOR).toBe(800)
+    const burnley = partnerPoolFor('burnley-2br')
+    expect(burnley.denominator).toBeLessThan(PARTNER_POOL_MIN_DENOMINATOR)
+    expect(partnerPoolScore('burnley-2br')).toBeNull()
+  })
+
+  it('caps the primary component at the full-bonus share', () => {
+    expect(PARTNER_POOL_FULL_BONUS_SHARE).toBe(40)
+    // Windsor/Prahran and St Kilda both exceed the 40% mark, so their primary
+    // component saturates and only the lone-parent blend separates them.
+    const score = partnerPoolScore('inner-windsor-prahran-2br')
+    expect(score).toBeGreaterThan(8)
+    expect(score).toBeLessThanOrEqual(10)
+  })
+
+  it('drops the criterion for a guarded record without touching its base score', () => {
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const burnley = areaCorridors.find((rec) => rec.id === 'burnley-2br')
+    const baseWeights = { ...balanced.weights, partnerPool: 0 }
+    const enabledWeights = { ...baseWeights, partnerPool: balanced.weights.partnerPool }
+    const base = weightedScore(burnley, commuteScoreFor(burnley), baseWeights)
+    const enabled = weightedScore(burnley, commuteScoreFor(burnley), enabledWeights)
+    expect(enabled).toBe(base)
+  })
+
+  it('can only add points when enabled, bounded by the x1 preset weight', () => {
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    expect(decideStrategies.every((strategy) => strategy.weights.partnerPool === 1)).toBe(true)
+    const stKilda = areaCorridors.find((rec) => rec.id === 'st-kilda-2br')
+    const baseWeights = { ...balanced.weights, partnerPool: 0 }
+    const enabledWeights = { ...baseWeights, partnerPool: balanced.weights.partnerPool }
+    const base = weightedScore(stKilda, commuteScoreFor(stKilda), baseWeights)
+    const enabled = weightedScore(stKilda, commuteScoreFor(stKilda), enabledWeights)
+    expect(enabled).toBeGreaterThanOrEqual(base)
+    expect(enabled - base).toBeLessThanOrEqual(2)
   })
 })
 

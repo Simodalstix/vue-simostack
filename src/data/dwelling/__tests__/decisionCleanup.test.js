@@ -100,7 +100,7 @@ describe('cost scoring', () => {
   })
 
   it('keeps generated-data fallback available for every current record', () => {
-    expect(decideCriteria).toHaveLength(8)
+    expect(decideCriteria).toHaveLength(9)
     for (const strategy of decideStrategies) {
       expect(strategy.weights).toHaveProperty('beach')
       expect(strategy.weights).not.toHaveProperty('greenspace')

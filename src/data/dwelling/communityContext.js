@@ -7,9 +7,11 @@
 // CONTRACT (from the dataset itself and the README):
 // - Descriptive by default. Every record carries contextOnly: true,
 //   excludeFromSuburbScore: true and scoreContribution: 0, so none of it enters
-//   the preset ranking automatically. The one deliberate exception is the
-//   named, off-by-default personal lens in chineseCommunity.js; it derives a
-//   small additive language-community bonus only when the user opts in.
+//   the preset ranking automatically. Two deliberate, named exceptions derive
+//   small additive bonuses: the off-by-default Chinese-language lens
+//   (chineseCommunity.js) and the partner-pool criterion (partnerPool.js).
+//   Both recombine raw counts over a common denominator; nothing else here is
+//   scored.
 // - Combined /dwelling labels (e.g. "Brunswick / Coburg") resolve to their
 //   COMPONENT SAL records via coverage.dwellingLensEntries. Component
 //   percentages are never averaged and published medians are never
