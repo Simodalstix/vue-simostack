@@ -43,6 +43,14 @@ export const facilities = [
     provisional: true,
   },
   {
+    id: 'ivanhoe-aquatic',
+    name: 'Ivanhoe Aquatic & Fitness Centre',
+    kind: 'aquatic',
+    coordinates: [145.0431, -37.7622],
+    areaIds: ['ivanhoe-house'],
+    provisional: true,
+  },
+  {
     id: 'aqualink-box-hill',
     name: 'Aqualink Box Hill',
     kind: 'aquatic',

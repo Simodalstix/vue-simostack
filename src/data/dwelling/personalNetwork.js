@@ -228,6 +228,61 @@ export const personalNetworkByAreaId = {
     rationale: 'DART to the city then rail out; no direct line.',
   },
   'ivanhoe-house': {
+    estMin: 36,
+    mode: 'train+transfer',
+    confidence: 'medium',
+    rationale:
+      'Hurstbridge line, change at Jolimont/Richmond; sits between the Northcote and Thornbury estimates on the same corridor.',
+  },
+  'heidelberg-3br-townhouse': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
+  'rosanna-house': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
+  'fairfield-house': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
+  'surrey-hills-house': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
+  'blackburn-house': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
+  'mount-waverley-villa': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
+  'ashburton-villa': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
+  'bentleigh-house': {
+    estMin: null,
+    mode: null,
+    confidence: null,
+    rationale: 'Not assessed; requires the standard non-car journey verification.',
+  },
+  'newport-house': {
     estMin: null,
     mode: null,
     confidence: null,

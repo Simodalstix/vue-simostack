@@ -706,6 +706,27 @@ export const girlsSportByArea = {
     ],
   },
 
+  // 'Ivanhoe' (July 2026 onboarding pilot)
+  'ivanhoe-house': {
+    line: "Ivanhoe Aquatic anchors swimming and gym access; netball, girls' footy and junior soccer clubs are all active, though netball matches run at Macleod courts.",
+    facilities: ['Ivanhoe Aquatic and Fitness Centre', 'Chelsworth Park'],
+    clubPresence: {
+      netball: true,
+      girlsFooty: true,
+      soccer: true,
+    },
+    confidence: 'medium',
+    sources: [
+      'https://www.banyule.vic.gov.au/Banyule-leisure/Ivanhoe-Aquatic-Banyule',
+      'https://www.ivanhoenetballclub.org.au/',
+      'https://www.ivanhoejfc.com.au/',
+      'https://www.oldivanhoesc.com/',
+      'https://vic.netball.com.au/netball-finder',
+      'https://play.afl/club-finder-map',
+      'https://playfootball.com.au/football-finder',
+    ],
+  },
+
   // 'Collingwood/Abbotsford' (shared)
   'inner-collingwood-2br': collingwoodAbbotsford,
   // 'Collingwood/Abbotsford' (shared)
