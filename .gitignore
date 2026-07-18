@@ -51,3 +51,5 @@ design_handoff_portfolio/
 
 # Exact personal-anchor coordinates stay local-only (see src/data/dwelling/personalAnchors.js)
 src/data/dwelling/personalAnchors.local.js
+
+handoff_docs
