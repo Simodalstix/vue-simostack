@@ -6,8 +6,10 @@ import { beachAccessByAreaId } from './beachAccess.js'
 import { chineseLanguageCommunityFor } from './chineseCommunity.js'
 import {
   FILIPINO_COMMUNITY_FULL_BONUS_SHARE,
+  SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE,
   THAI_COMMUNITY_FULL_BONUS_SHARE,
   filipinoCommunityFor,
+  southAmericanCommunityFor,
   thaiCommunityFor,
 } from './languageCommunities.js'
 import { friendContextFor } from './personalAnchors.js'
@@ -51,6 +53,15 @@ export function differentiatingChipsFor(row) {
     chips.push({
       key: 'thai-community',
       text: `Thai ${thaiShare.toFixed(1)}%`,
+      tone: 'pink',
+    })
+  }
+
+  const southAmericanShare = southAmericanCommunityFor(areaId)?.percentage
+  if (southAmericanShare >= SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE / 4) {
+    chips.push({
+      key: 'south-american-community',
+      text: `Sth American ${southAmericanShare.toFixed(1)}%`,
       tone: 'pink',
     })
   }

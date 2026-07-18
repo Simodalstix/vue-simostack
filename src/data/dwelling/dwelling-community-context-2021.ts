@@ -772,6 +772,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 29,
+          "denominator": 5143,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 8,
+          "denominator": 5143,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -1257,6 +1287,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 168,
+          "denominator": 11729,
+          "percentage": 1.4,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 38,
+          "denominator": 11729,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -1750,6 +1810,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 346,
+          "denominator": 17131,
+          "percentage": 2.0,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 37,
+          "denominator": 17131,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -2235,6 +2325,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 155,
+          "denominator": 9445,
+          "percentage": 1.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 13,
+          "denominator": 9445,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -2728,6 +2848,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 380,
+          "denominator": 38042,
+          "percentage": 1.0,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 45,
+          "denominator": 38042,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -3213,6 +3363,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 341,
+          "denominator": 24896,
+          "percentage": 1.4,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 68,
+          "denominator": 24896,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -3706,6 +3886,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 266,
+          "denominator": 26574,
+          "percentage": 1.0,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 64,
+          "denominator": 26574,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -4191,6 +4401,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 217,
+          "denominator": 18171,
+          "percentage": 1.2,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 86,
+          "denominator": 18171,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -4684,6 +4924,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 178,
+          "denominator": 23792,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 39,
+          "denominator": 23792,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -5169,6 +5439,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 171,
+          "denominator": 10745,
+          "percentage": 1.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 31,
+          "denominator": 10745,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -5662,6 +5962,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 119,
+          "denominator": 7025,
+          "percentage": 1.7,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 14,
+          "denominator": 7025,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -6147,6 +6477,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 516,
+          "denominator": 51096,
+          "percentage": 1.0,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 118,
+          "denominator": 51096,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -6640,6 +7000,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 158,
+          "denominator": 17909,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 33,
+          "denominator": 17909,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -7125,6 +7515,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 94,
+          "denominator": 8442,
+          "percentage": 1.1,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 20,
+          "denominator": 8442,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -7618,6 +8038,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 142,
+          "denominator": 22174,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 18,
+          "denominator": 22174,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -8103,6 +8553,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 274,
+          "denominator": 32257,
+          "percentage": 0.8,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 27,
+          "denominator": 32257,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -8596,6 +9076,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 56,
+          "denominator": 6287,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 15,
+          "denominator": 6287,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -9081,6 +9591,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 219,
+          "denominator": 23992,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 94,
+          "denominator": 23992,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -9574,6 +10114,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 25,
+          "denominator": 2158,
+          "percentage": 1.2,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 12,
+          "denominator": 2158,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -10059,6 +10629,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 286,
+          "denominator": 28587,
+          "percentage": 1.0,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 62,
+          "denominator": 28587,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -10552,6 +11152,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 82,
+          "denominator": 9179,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 17,
+          "denominator": 9179,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -11037,6 +11667,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 151,
+          "denominator": 9088,
+          "percentage": 1.7,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 45,
+          "denominator": 9088,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -11530,6 +12190,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 502,
+          "denominator": 25028,
+          "percentage": 2.0,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 101,
+          "denominator": 25028,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -12015,6 +12705,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 114,
+          "denominator": 7273,
+          "percentage": 1.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 28,
+          "denominator": 7273,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -12508,6 +13228,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 183,
+          "denominator": 12203,
+          "percentage": 1.5,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 39,
+          "denominator": 12203,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -12993,6 +13743,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 513,
+          "denominator": 19490,
+          "percentage": 2.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 148,
+          "denominator": 19490,
+          "percentage": 0.8,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -13486,6 +14266,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 83,
+          "denominator": 5392,
+          "percentage": 1.5,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 14,
+          "denominator": 5392,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -13971,6 +14781,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 208,
+          "denominator": 12571,
+          "percentage": 1.7,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 42,
+          "denominator": 12571,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -14464,6 +15304,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 225,
+          "denominator": 15153,
+          "percentage": 1.5,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 82,
+          "denominator": 15153,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -14949,6 +15819,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 27,
+          "denominator": 4000,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 21,
+          "denominator": 4000,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -15442,6 +16342,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 145,
+          "denominator": 13197,
+          "percentage": 1.1,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 35,
+          "denominator": 13197,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -15927,6 +16857,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 64,
+          "denominator": 8347,
+          "percentage": 0.8,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 18,
+          "denominator": 8347,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -16420,6 +17380,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 45,
+          "denominator": 6855,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 15,
+          "denominator": 6855,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -16905,6 +17895,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 360,
+          "denominator": 56370,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 40,
+          "denominator": 56370,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -17398,6 +18418,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 108,
+          "denominator": 20518,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 39,
+          "denominator": 20518,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -17883,6 +18933,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 253,
+          "denominator": 65178,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 95,
+          "denominator": 65178,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -18376,6 +19456,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 3,
+          "denominator": 2100,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 7,
+          "denominator": 2100,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -18861,6 +19971,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 166,
+          "denominator": 24499,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 32,
+          "denominator": 24499,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -19354,6 +20494,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 62,
+          "denominator": 9929,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 11,
+          "denominator": 9929,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -19839,6 +21009,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 117,
+          "denominator": 12817,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 23,
+          "denominator": 12817,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -20332,6 +21532,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 38,
+          "denominator": 14353,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 12,
+          "denominator": 14353,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -20817,6 +22047,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 73,
+          "denominator": 13495,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 20,
+          "denominator": 13495,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -21310,6 +22570,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 169,
+          "denominator": 19005,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 46,
+          "denominator": 19005,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -21795,6 +23085,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 397,
+          "denominator": 33790,
+          "percentage": 1.2,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 76,
+          "denominator": 33790,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -22288,6 +23608,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 222,
+          "denominator": 25276,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 76,
+          "denominator": 25276,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -22773,6 +24123,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 40,
+          "denominator": 6044,
+          "percentage": 0.7,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 22,
+          "denominator": 6044,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -23266,6 +24646,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 283,
+          "denominator": 14953,
+          "percentage": 1.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 44,
+          "denominator": 14953,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -23751,6 +25161,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 137,
+          "denominator": 38851,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 42,
+          "denominator": 38851,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -24244,6 +25684,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 81,
+          "denominator": 9368,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 25,
+          "denominator": 9368,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -24729,6 +26199,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 182,
+          "denominator": 15197,
+          "percentage": 1.2,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 37,
+          "denominator": 15197,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -25222,6 +26722,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 104,
+          "denominator": 21302,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 27,
+          "denominator": 21302,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -25707,6 +27237,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 0,
+          "denominator": 794,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 0,
+          "denominator": 794,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -26200,6 +27760,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 59,
+          "denominator": 6606,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 11,
+          "denominator": 6606,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -26685,6 +28275,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 147,
+          "denominator": 25020,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 27,
+          "denominator": 25020,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -27178,6 +28798,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 118,
+          "denominator": 42642,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 21,
+          "denominator": 42642,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -27663,6 +29313,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 214,
+          "denominator": 22322,
+          "percentage": 1.0,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 44,
+          "denominator": 22322,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -28156,6 +29836,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 55,
+          "denominator": 6878,
+          "percentage": 0.8,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 18,
+          "denominator": 6878,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -28641,6 +30351,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 204,
+          "denominator": 11548,
+          "percentage": 1.8,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 52,
+          "denominator": 11548,
+          "percentage": 0.5,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -29134,6 +30874,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 25,
+          "denominator": 2820,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 6,
+          "denominator": 2820,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -29619,6 +31389,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 197,
+          "denominator": 15636,
+          "percentage": 1.3,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 28,
+          "denominator": 15636,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -30112,6 +31912,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 116,
+          "denominator": 13374,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 36,
+          "denominator": 13374,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -30597,6 +32427,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 30,
+          "denominator": 7952,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 18,
+          "denominator": 7952,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -31090,6 +32950,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 153,
+          "denominator": 17921,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 56,
+          "denominator": 17921,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -31575,6 +33465,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 65,
+          "denominator": 14478,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 6,
+          "denominator": 14478,
+          "percentage": 0.0,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -32068,6 +33988,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 70,
+          "denominator": 6535,
+          "percentage": 1.1,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 7,
+          "denominator": 6535,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -32553,6 +34503,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 63,
+          "denominator": 7360,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 17,
+          "denominator": 7360,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -33046,6 +35026,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 136,
+          "denominator": 35340,
+          "percentage": 0.4,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 39,
+          "denominator": 35340,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -33531,6 +35541,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 125,
+          "denominator": 13658,
+          "percentage": 0.9,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 32,
+          "denominator": 13658,
+          "percentage": 0.2,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },
@@ -34024,6 +36064,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 50,
+          "denominator": 8616,
+          "percentage": 0.6,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 11,
+          "denominator": 8616,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
         }
       }
     },
@@ -34509,6 +36579,36 @@ export const DWELLING_COMMUNITY_CONTEXT = {
           "sourceCells": {
             "numerator": [
               "G57"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "spanishSpokenAtHome": {
+          "count": 46,
+          "denominator": 13655,
+          "percentage": 0.3,
+          "numeratorLabel": "Persons who used Spanish at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G55"
+            ],
+            "denominator": "G65"
+          },
+          "basis": "Place of usual residence"
+        },
+        "portugueseSpokenAtHome": {
+          "count": 16,
+          "denominator": 13655,
+          "percentage": 0.1,
+          "numeratorLabel": "Persons who used Portuguese at home",
+          "denominatorLabel": "All persons in G13, including language/proficiency not stated",
+          "sourceTable": "G13c",
+          "sourceCells": {
+            "numerator": [
+              "G45"
             ],
             "denominator": "G65"
           },

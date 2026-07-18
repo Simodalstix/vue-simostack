@@ -2,7 +2,7 @@
 //
 // The Decide page's single control model: a STRATEGY is a weighting preset
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
-// tests. Selecting a strategy loads its weight vector over the eleven suburb
+// tests. Selecting a strategy loads its weight vector over the twelve suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
 // off (weight 0). Standard criteria renormalise over the enabled weights;
 // explicitly additive criteria such as Beach apply a small bounded premium
@@ -15,7 +15,7 @@
 
 // ---- criteria -------------------------------------------------------------
 //
-// Eleven criteria, each scored 0-10 per suburb, derived from the existing
+// Twelve criteria, each scored 0-10 per suburb, derived from the existing
 // record data (nothing new is fabricated here). `value(rec, commuteScore)`
 // returns 0-10 or null when the record carries no data for it; a null is
 // omitted rather than scored as zero. `scoringMode: 'additiveBonus'` keeps a
@@ -25,7 +25,11 @@ import { personalNetworkByAreaId, pnScore } from './personalNetwork.js'
 import { beachAccessByAreaId, beachScore } from './beachAccess.js'
 import { girlsSportFor, sportAccessScore } from './girlsSport.js'
 import { chineseCommunityScore } from './chineseCommunity.js'
-import { filipinoCommunityScore, thaiCommunityScore } from './languageCommunities.js'
+import {
+  filipinoCommunityScore,
+  southAmericanCommunityScore,
+  thaiCommunityScore,
+} from './languageCommunities.js'
 import { partnerPoolScore } from './partnerPool.js'
 import { DWELLING_COST_BY_ID } from './cost/dwelling-cost-context.ts'
 import { costScoreFor } from './cost/costScoring.js'
@@ -139,6 +143,16 @@ export const decideCriteria = [
     value: (rec) => thaiCommunityScore(rec.id),
   },
   {
+    key: 'southAmericanCommunity',
+    label: 'Sth American',
+    hint: 'Optional personal bonus from the combined ABS Census 2021 share using Spanish or Portuguese at home. The census country list has no Colombia row, so language is the closest signal; Iberian speakers are included. Off by default.',
+    scoringMode: 'additiveBonus',
+    bonusPointsPerWeight: 2,
+    defaultEnabled: false,
+    accent: 'pink',
+    value: (rec) => southAmericanCommunityScore(rec.id),
+  },
+  {
     key: 'partnerPool',
     label: 'Partner pool',
     hint: '2021 Census; relative signal: suburb demographic profiles are sticky, absolute figures are dated. Refresh when the 2026 Census publishes (mid-2027).',
@@ -175,6 +189,7 @@ export const decideStrategies = [
       chineseCommunity: 2,
       filipinoCommunity: 2,
       thaiCommunity: 2,
+      southAmericanCommunity: 2,
       partnerPool: 1,
     },
     filters: { minBedrooms: 2, dwellingTypes: [], maxPrice: 900000 },
@@ -198,6 +213,7 @@ export const decideStrategies = [
       chineseCommunity: 2,
       filipinoCommunity: 2,
       thaiCommunity: 2,
+      southAmericanCommunity: 2,
       partnerPool: 1,
     },
     filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'], maxPrice: 550000 },
@@ -222,6 +238,7 @@ export const decideStrategies = [
       chineseCommunity: 2,
       filipinoCommunity: 2,
       thaiCommunity: 2,
+      southAmericanCommunity: 2,
       partnerPool: 1,
     },
     filters: {
@@ -249,6 +266,7 @@ export const decideStrategies = [
       chineseCommunity: 2,
       filipinoCommunity: 2,
       thaiCommunity: 2,
+      southAmericanCommunity: 2,
       partnerPool: 1,
     },
     filters: { minBedrooms: 3, dwellingTypes: ['house'], maxPrice: 700000 },
@@ -273,6 +291,7 @@ export const decideStrategies = [
       chineseCommunity: 2,
       filipinoCommunity: 2,
       thaiCommunity: 2,
+      southAmericanCommunity: 2,
       partnerPool: 1,
     },
     filters: { minBedrooms: 2, dwellingTypes: ['villa-unit', 'townhouse'], maxPrice: 800000 },

@@ -9,16 +9,24 @@
 // aggregate component SAL counts over the common G13 denominator; percentages
 // are never averaged.
 //
+// The South American lens uses Spanish plus Portuguese at home: the standard
+// ABS G09 country list carries no Colombia row, so language is the closest
+// available census signal. It spans the Spanish-speaking Americas plus
+// Brazil, and unavoidably also counts Iberian speakers; the hint carries
+// that caveat.
+//
 // Full-bonus caps sit at the strongest observed concentration among the
 // covered SALs (Filipino+Tagalog peaks at 3.3% in Donnybrook, Thai at 0.9%
-// in Springvale), rounded, so each lens reads relative presence on a scale
-// where Melbourne's strongest suburb saturates. They are population-share
-// saturation points, never tuned against ranking output.
+// in Springvale, Spanish+Portuguese at 3.4% in St Kilda), rounded, so each
+// lens reads relative presence on a scale where Melbourne's strongest suburb
+// saturates. They are population-share saturation points, never tuned
+// against ranking output.
 
 import { communityContextFor } from './communityContext.js'
 
 export const FILIPINO_COMMUNITY_FULL_BONUS_SHARE = 3
 export const THAI_COMMUNITY_FULL_BONUS_SHARE = 1
+export const SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE = 3
 
 // Recombine raw counts for the given language measures across component SALs
 // over their common G13 denominator. Null on any missing component,
@@ -63,6 +71,10 @@ export function thaiCommunityFor(areaId) {
   return languageCommunityFor(areaId, ['thaiSpokenAtHome'])
 }
 
+export function southAmericanCommunityFor(areaId) {
+  return languageCommunityFor(areaId, ['spanishSpokenAtHome', 'portugueseSpokenAtHome'])
+}
+
 export function filipinoCommunityScore(areaId) {
   const share = filipinoCommunityFor(areaId)?.percentage
   if (share == null) return null
@@ -73,4 +85,10 @@ export function thaiCommunityScore(areaId) {
   const share = thaiCommunityFor(areaId)?.percentage
   if (share == null) return null
   return Math.min(10, (share / THAI_COMMUNITY_FULL_BONUS_SHARE) * 10)
+}
+
+export function southAmericanCommunityScore(areaId) {
+  const share = southAmericanCommunityFor(areaId)?.percentage
+  if (share == null) return null
+  return Math.min(10, (share / SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE) * 10)
 }

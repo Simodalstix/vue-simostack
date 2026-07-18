@@ -22,11 +22,15 @@ from typing import Any
 
 import openpyxl
 
-# G13c persons rows, with the labels the workbook must carry.
+# G13c persons rows, with the labels the workbook must carry. Spanish and
+# Portuguese together are the closest census signal for the South American
+# community lens: the standard G09 country list carries no Colombia row.
 LANGUAGE_ROWS = [
     ("filipinoSpokenAtHome", 50, "Filipino", "Persons who used Filipino at home"),
     ("tagalogSpokenAtHome", 52, "Tagalog", "Persons who used Tagalog at home"),
     ("thaiSpokenAtHome", 57, "Thai", "Persons who used Thai at home"),
+    ("spanishSpokenAtHome", 55, "Spanish", "Persons who used Spanish at home"),
+    ("portugueseSpokenAtHome", 45, "Portuguese", "Persons who used Portuguese at home"),
 ]
 DENOMINATOR_CELL = "G65"
 

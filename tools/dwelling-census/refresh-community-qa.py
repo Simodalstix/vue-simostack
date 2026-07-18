@@ -39,7 +39,13 @@ def qa_row(record: dict) -> dict:
     lone_parent = additional["loneParentFamilies"]
     language_measures = [
         additional[key]
-        for key in ("filipinoSpokenAtHome", "tagalogSpokenAtHome", "thaiSpokenAtHome")
+        for key in (
+            "filipinoSpokenAtHome",
+            "tagalogSpokenAtHome",
+            "thaiSpokenAtHome",
+            "spanishSpokenAtHome",
+            "portugueseSpokenAtHome",
+        )
     ]
     checks = [
         community["totalPopulation"]["count"] > 0,
@@ -73,6 +79,8 @@ def qa_row(record: dict) -> dict:
         "filipinoPct": additional["filipinoSpokenAtHome"]["percentage"],
         "tagalogPct": additional["tagalogSpokenAtHome"]["percentage"],
         "thaiPct": additional["thaiSpokenAtHome"]["percentage"],
+        "spanishPct": additional["spanishSpokenAtHome"]["percentage"],
+        "portuguesePct": additional["portugueseSpokenAtHome"]["percentage"],
         "topBirthplacesCount": len(community["topOverseasCountriesOfBirth"]),
         "topLanguagesCount": len(community["topLanguagesSpokenAtHome"]),
         "topNonEnglishLanguagesCount": len(
