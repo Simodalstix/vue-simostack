@@ -39,12 +39,12 @@
             :style="scoreBadgeStyle(previewRow)"
             :title="bandLabel(previewRow)"
           >
-            <span class="text-[15px] font-bold leading-none text-ob-sand"
+            <span class="text-[12px] font-bold leading-none text-ob-sand"
               >#{{ rankById[previewRow.rec.id] }}</span
             >
             <span class="text-[10px] text-ob-faint">·</span>
             <span
-              class="text-[14px] font-extrabold leading-none"
+              class="text-[11px] font-extrabold leading-none"
               :style="{ color: bandColor(previewRow) }"
               >{{ previewRow.weighted }}</span
             >
@@ -126,7 +126,7 @@
           >
             <div class="flex items-start gap-3">
               <span
-                class="w-10 shrink-0 pt-[1px] font-mono text-[15px] font-bold leading-none text-ob-sand"
+                class="w-10 shrink-0 pt-[1px] font-mono text-[12px] font-bold leading-none text-ob-sand"
               >
                 #{{ rankById[row.rec.id] }}
               </span>
@@ -144,7 +144,7 @@
                     ★
                   </span>
                   <span
-                    class="shrink-0 font-mono text-[14px] font-extrabold leading-none"
+                    class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
                     :style="{ color: bandColor(row) }"
                     :title="bandLabel(row)"
                   >
@@ -396,10 +396,10 @@ function previewBadges(row) {
 
 <style scoped>
 /* On-palette scrollbar (standard properties cover Chrome 121+ and Firefox):
-   sand thumb over a transparent track, matching the rank numerals. */
+   solid sand thumb, matching the rank numerals. */
 .themed-scroll {
   scrollbar-width: thin;
-  scrollbar-color: rgba(212, 144, 58, 0.38) transparent;
+  scrollbar-color: #d4903a transparent;
 }
 
 .preview-clamp-1 {

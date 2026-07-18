@@ -18,7 +18,7 @@
 import { fitBandColor, fitBandLegend, getFitBand } from './fitBands.js'
 
 export const MAP_THEME = {
-  bg: '#111418',
+  bg: '#252D37',
   faintFill: '#2A3138',
   markerDim: '#7A8A99',
   ink: '#0C0F12',
