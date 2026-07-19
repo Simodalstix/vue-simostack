@@ -6,11 +6,9 @@
 //
 // Source mix:
 // - original owner-supplied draft (2026-07-15) for the first shipped batch;
-//   the recovered draft lives locally at handoff_docs/research/ (gitignored)
-//   and is the source of truth for the 35 names it covers
+//   the reviewed copy below is now the canonical integrated record
 // - the ten July 2026 expansion entries (Spotswood through Mentone) were
-//   briefly reconstructed while the draft was parked; restored verbatim from
-//   the recovered draft 2026-07-19
+//   reviewed and integrated into the same canonical registry on 2026-07-19
 // Expect wording to be edited over time.
 //
 // Fields per record:
@@ -158,7 +156,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'Land Build and 3BR strategies both work here on real budgets.',
+        text: 'House and 3BR strategies both work here on real budgets.',
         tag: null,
       },
       {
@@ -190,7 +188,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'Strong Land Build and expandable-house economics.',
+        text: 'Strong house and expandable-home economics.',
         tag: null,
       },
       {
@@ -301,7 +299,7 @@ export const suburbProfiles = {
       'Villa units everywhere, post-war houses on generous land, and early-stage townhouse development. Supply is genuinely good across unit and house stock.',
     fit: [
       {
-        text: 'Land Build and Villa/Townhouse strategies both price in comfortably.',
+        text: 'House and Villa/Townhouse strategies both price in comfortably.',
         tag: null,
       },
       {
@@ -644,7 +642,7 @@ export const suburbProfiles = {
     decision: {
       bestFor: 'Cheapest metro-rail house-and-land equation.',
       mainRisk: 'Distance from every personal anchor on the board.',
-      pursueWhen: 'Land Build strategy leads and the block is walkable to the station.',
+      pursueWhen: 'House strategy leads and the property is walkable to the station.',
     },
   },
 
@@ -655,7 +653,7 @@ export const suburbProfiles = {
     housing: 'House-and-land almost exclusively. The cheapest new-build path on the list.',
     fit: [
       {
-        text: 'Pure Land Build economics; nothing else competes on price.',
+        text: 'Pure house economics; nothing else competes on price.',
         tag: null,
       },
       {

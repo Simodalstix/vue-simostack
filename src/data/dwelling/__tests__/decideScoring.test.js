@@ -65,7 +65,7 @@ describe('preset weight vectors', () => {
       'balanced2br',
       'bachelor1br',
       'family3br',
-      'landBuild',
+      'house',
       'villaTownhouse',
     ])
     const keys = decideCriteria.map((c) => c.key).sort()
@@ -77,6 +77,22 @@ describe('preset weight vectors', () => {
         expect(w).toBeLessThanOrEqual(3)
       }
     }
+  })
+
+  it('uses the standalone House preset for established three-bedroom stock', () => {
+    const house = decideStrategies.find((strategy) => strategy.id === 'house')
+    expect(house).toMatchObject({
+      label: 'House',
+      dwelling: 'Established 3BR house',
+      bedrooms: 3,
+      pricePropertyType: 'house',
+      filters: {
+        minBedrooms: 3,
+        dwellingTypes: ['house'],
+        maxPrice: 900000,
+      },
+    })
+    expect(house.priceNote).toBeNull()
   })
 
   it('keeps the community personal lenses off by default', () => {

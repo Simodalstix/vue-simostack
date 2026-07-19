@@ -99,7 +99,7 @@ export const decideCriteria = [
   {
     key: 'safetyQuality',
     label: 'Safety',
-    hint: 'Measured offence rates and street conditions, not perception.',
+    hint: 'Measured offence rates and street conditions, not perception. This joins the weighted average, so even a good score can slightly lower a suburb whose other enabled scores average higher.',
     accent: 'purple',
     value: (rec) => tenScale(rec.scores?.safety),
   },
@@ -122,7 +122,7 @@ export const decideCriteria = [
   },
   {
     key: 'otherCommunities',
-    label: 'Other communities',
+    label: 'International',
     hint: 'One optional personal bonus for Filipino/Tagalog, Thai, Spanish/Portuguese or Vietnamese language presence. Uses the strongest available source-backed measure so several communities cannot stack several bonuses. Off by default.',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
@@ -132,7 +132,7 @@ export const decideCriteria = [
   },
   {
     key: 'partnerPool',
-    label: 'Partner pool',
+    label: 'Partners',
     hint: '2021 Census; relative signal: suburb demographic profiles are sticky, absolute figures are dated. Refresh when the 2026 Census publishes (mid-2027).',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
@@ -225,13 +225,13 @@ export const decideStrategies = [
     priceNote: null,
   },
   {
-    id: 'landBuild',
-    label: 'Land Build',
-    shortLabel: 'Land Build',
-    dwelling: 'Land with a modest new build',
+    id: 'house',
+    label: 'House',
+    shortLabel: 'House',
+    dwelling: 'Established 3BR house',
     bedrooms: 3,
     pricePropertyType: 'house',
-    intent: 'cheap land and a modest build on the fringe',
+    intent: 'a standalone established house, value first',
     weights: {
       cost: 3,
       commute: 1,
@@ -244,9 +244,8 @@ export const decideStrategies = [
       otherCommunities: 2,
       partnerPool: 2,
     },
-    filters: { minBedrooms: 3, dwellingTypes: ['house'], maxPrice: 700000 },
-    priceNote:
-      'Recorded bands price established stock, not land-plus-build packages; treat viability here as a corridor hint only.',
+    filters: { minBedrooms: 3, dwellingTypes: ['house'], maxPrice: 900000 },
+    priceNote: null,
   },
   {
     id: 'villaTownhouse',

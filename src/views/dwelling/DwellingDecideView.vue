@@ -2,9 +2,9 @@
   <div
     class="max-w-[1680px] mx-auto px-3 sm:px-6 lg:px-10 py-5 sm:py-8 lg:py-10 space-y-5 lg:space-y-8"
   >
-    <!-- THE WORKSPACE: map and suburb decision pane as equal stars. Weighting
-         toggles lead the compact control card above the map; the five purchase
-         strategies sit beneath them as a quieter one-line selector. -->
+    <!-- THE WORKSPACE: map and suburb decision pane as equal stars. Themed
+         weighting rows lead the compact control card above the map; the five
+         purchase strategies sit beneath them as a quieter one-line selector. -->
     <div
       class="grid lg:grid-cols-[1.5fr_1fr] xl:grid-cols-[minmax(0,1.35fr)_minmax(570px,1fr)] gap-6 items-start"
     >
@@ -97,20 +97,33 @@
               </div>
             </div>
 
-            <div class="mt-3 flex flex-wrap gap-2">
-              <button
-                v-for="c in decideCriteria"
-                :key="c.key"
-                @click="toggleCriterion(c.key)"
-                :disabled="enabled[c.key] && enabledCount === 1"
-                :aria-pressed="enabled[c.key]"
-                :title="c.hint"
-                class="inline-flex items-center justify-between gap-2 font-mono text-[11px] px-2.5 py-[6px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
-                :class="criterionButtonClass(c)"
+            <div class="mt-3 space-y-2" aria-label="Weighting themes">
+              <div
+                v-for="group in criterionGroups"
+                :key="group.label"
+                class="grid grid-cols-[76px_minmax(0,1fr)] items-start gap-2"
               >
-                <span>{{ c.label }}</span>
-                <span>×{{ enabled[c.key] ? activeStrategy.weights[c.key] : 0 }}</span>
-              </button>
+                <span
+                  class="pt-[7px] font-mono text-[9px] uppercase tracking-[0.1em] text-ob-faint"
+                >
+                  {{ group.label }}
+                </span>
+                <div class="flex min-w-0 flex-wrap gap-2">
+                  <button
+                    v-for="c in group.criteria"
+                    :key="c.key"
+                    @click="toggleCriterion(c.key)"
+                    :disabled="enabled[c.key] && enabledCount === 1"
+                    :aria-pressed="enabled[c.key]"
+                    :title="c.hint"
+                    class="inline-flex items-center justify-between gap-2 font-mono text-[11px] px-2.5 py-[6px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
+                    :class="criterionButtonClass(c)"
+                  >
+                    <span>{{ c.label }}</span>
+                    <span>×{{ enabled[c.key] ? activeStrategy.weights[c.key] : 0 }}</span>
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div class="mt-3 pt-3 border-t border-ob-sand/8 flex items-center gap-3 min-w-0">
@@ -177,6 +190,7 @@ import { useRoute, useRouter } from 'vue-router'
 import {
   decideStrategies,
   decideCriteria,
+  decideCriterionByKey,
   defaultStrategyId,
   strategyById,
 } from '@/data/dwelling/decideStrategies.js'
@@ -205,6 +219,15 @@ const activeStrategy = computed(() => strategyById(activeStrategyId.value))
 const mobileStrategies = decideStrategies.filter((strategy) =>
   ['balanced2br', 'bachelor1br'].includes(strategy.id),
 )
+const criterionGroups = [
+  { label: 'Staples', keys: ['cost', 'commute'] },
+  { label: 'Family', keys: ['schools', 'kidAmenity', 'safetyQuality'] },
+  { label: 'Life', keys: ['beach', 'personalNetwork', 'partnerPool'] },
+  { label: 'Community', keys: ['chineseCommunity', 'otherCommunities'] },
+].map(({ label, keys }) => ({
+  label,
+  criteria: keys.map((key) => decideCriterionByKey[key]),
+}))
 
 // Do not merely hide MapLibre with CSS on phones: avoid mounting it and
 // downloading its map/school-zone payload entirely until the desktop layout
