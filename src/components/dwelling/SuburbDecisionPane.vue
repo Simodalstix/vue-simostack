@@ -1,8 +1,36 @@
 <template>
   <section
-    class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] flex flex-col overflow-hidden lg:sticky lg:top-6 lg:max-h-[calc(100vh-48px)]"
+    class="h-[calc(100dvh-10rem)] min-h-[460px] bg-ob-surface2 border border-ob-sand/8 rounded-[8px] flex flex-col overflow-hidden lg:h-auto lg:min-h-0 lg:sticky lg:top-6 lg:max-h-[calc(100vh-48px)]"
   >
-    <div class="px-4 py-2.5 border-b border-ob-sand/8 flex items-center gap-3 shrink-0">
+    <!-- On phones the list is the navigation. Selecting a row swaps this pane
+         to the existing full profile card; MapLibre is deliberately absent. -->
+    <div v-if="pinnedRow" class="lg:hidden flex min-h-0 flex-1 flex-col">
+      <div class="flex items-center gap-3 border-b border-ob-sand/8 px-3 py-2.5 shrink-0">
+        <button type="button" class="font-mono text-[11px] text-ob-teal" @click="unpin">
+          ← rankings
+        </button>
+        <span class="min-w-0 flex-1 truncate text-right font-mono text-[10px] text-ob-faint">
+          {{ pinnedRow.rec.suburb }} · {{ strategy?.shortLabel }}
+        </span>
+      </div>
+      <SuburbProfileCard
+        class="min-h-0 flex-1"
+        :row="pinnedRow"
+        :rank-by-id="rankById"
+        :shortlist-ids="shortlistIds"
+        :payoff-years="payoffYears"
+        :deposit="deposit"
+        :rate="rate"
+        :strategy="strategy"
+        :close-on-card-click="false"
+        @toggle-shortlist="$emit('toggle-shortlist', $event)"
+      />
+    </div>
+
+    <div
+      class="px-3 sm:px-4 py-2.5 border-b border-ob-sand/8 items-center gap-3 shrink-0"
+      :class="pinnedRow ? 'hidden lg:flex' : 'flex'"
+    >
       <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">Ranked suburbs</h2>
       <span v-if="strategy" class="font-mono text-[10.5px] text-ob-dim truncate">
         testing: {{ strategy.label }}
@@ -20,11 +48,14 @@
       </button>
     </div>
 
-    <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
+    <div
+      class="min-h-0 flex-1 flex-col overflow-hidden"
+      :class="pinnedRow ? 'hidden lg:flex' : 'flex'"
+    >
       <button
         v-if="previewRow"
         @click="togglePin(previewRow.rec.id)"
-        class="px-4 py-3 border-b border-ob-sand/8 shrink-0 min-h-[128px] flex flex-col gap-2 text-left transition-colors hover:bg-ob-surface/45 focus:bg-ob-surface/45"
+        class="hidden sm:flex px-4 py-3 border-b border-ob-sand/8 shrink-0 min-h-[128px] flex-col gap-2 text-left transition-colors hover:bg-ob-surface/45 focus:bg-ob-surface/45"
       >
         <div class="flex items-start justify-between gap-3">
           <div class="min-w-0">
@@ -119,7 +150,7 @@
             @blur="setListHover(null)"
             role="option"
             :aria-selected="modelValue === row.rec.id"
-            class="w-full text-left px-4 py-2.5 border-b border-ob-sand/6 transition-colors focus:bg-ob-surface/60"
+            class="w-full text-left px-3 sm:px-4 py-3 sm:py-2.5 border-b border-ob-sand/6 transition-colors focus:bg-ob-surface/60"
             :class="
               modelValue === row.rec.id
                 ? 'bg-ob-surface/70 ring-inset ring-1 ring-ob-teal/20'
@@ -227,6 +258,7 @@ import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
 import { isUnscoredRow, partitionDecisionRows } from '@/data/dwelling/unscoredUx.js'
 import { differentiatingChipsFor, gateExceptionChipFor } from '@/data/dwelling/decisionChips.js'
 import { costMetricForArea, formatCostMetric } from '@/data/dwelling/cost/costContext.js'
+import SuburbProfileCard from './SuburbProfileCard.vue'
 
 const props = defineProps({
   rows: { type: Array, required: true },

@@ -1,12 +1,14 @@
 <template>
-  <div class="max-w-[1500px] mx-auto px-6 lg:px-10 py-10 space-y-8">
+  <div
+    class="max-w-[1500px] mx-auto px-3 sm:px-6 lg:px-10 py-5 sm:py-8 lg:py-10 space-y-6 lg:space-y-8"
+  >
     <!-- PERMANENT: thesis + non-negotiables share the first row -->
-    <section class="grid lg:grid-cols-[1.25fr_1fr] gap-x-14 gap-y-10 items-start">
+    <section class="grid lg:grid-cols-[1.25fr_1fr] gap-x-14 gap-y-6 lg:gap-y-10 items-start">
       <div>
         <p class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-sand mb-3">
           The brief, distilled
         </p>
-        <h1 class="text-[26px] md:text-[32px] font-extrabold leading-tight">
+        <h1 class="text-[24px] sm:text-[26px] md:text-[32px] font-extrabold leading-tight">
           A modest Melbourne home, on a one-seat ride to Collins St,
           <span class="text-ob-teal">paid off in 10–15 years</span> — with a real room for Lulu.
         </h1>
@@ -16,6 +18,13 @@
           make mid-2026 an unusually good moment for exactly this brief: the market is soft, the
           transport map just improved, and every first-home incentive is at a cyclical high.
         </p>
+        <router-link
+          :to="{ name: 'DwellingDecide' }"
+          class="mt-5 sm:hidden flex items-center justify-between rounded-[8px] border border-ob-teal/30 bg-ob-teal/8 px-4 py-3 text-[13px] font-semibold text-ob-teal"
+        >
+          <span>Open mobile suburb rankings</span>
+          <span aria-hidden="true">→</span>
+        </router-link>
       </div>
       <div>
         <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft mb-4">
@@ -392,9 +401,9 @@ function shortCost(s) {
 
 // Collapsed-header one-liners, derived from the data files so they never rot.
 const summaries = computed(() => ({
-  position: `transition plan · deposit ${figVal('Deposit outlook')} · borrow ${figVal(
-    'Indicative borrowing',
-  ).split(',')[0]}`,
+  position: `transition plan · deposit ${figVal('Deposit outlook')} · borrow ${
+    figVal('Indicative borrowing').split(',')[0]
+  }`,
   market: `Median ${marketVal('median-dwelling')} · ${marketVal(
     'buyers-window',
   )} · Metro Tunnel ${marketVal('metro-tunnel').split(' ')[0].toLowerCase()}`,

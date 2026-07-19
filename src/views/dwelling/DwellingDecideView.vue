@@ -1,5 +1,7 @@
 <template>
-  <div class="max-w-[1680px] mx-auto px-6 lg:px-10 py-10 space-y-8">
+  <div
+    class="max-w-[1680px] mx-auto px-3 sm:px-6 lg:px-10 py-5 sm:py-8 lg:py-10 space-y-5 lg:space-y-8"
+  >
     <!-- THE WORKSPACE: map and suburb decision pane as equal stars. Weighting
          toggles lead the compact control card above the map; the five purchase
          strategies sit beneath them as a quieter one-line selector. -->
@@ -7,19 +9,54 @@
       class="grid lg:grid-cols-[1.5fr_1fr] xl:grid-cols-[minmax(0,1.35fr)_minmax(570px,1fr)] gap-6 items-start"
     >
       <!-- LEFT column: intro + map -->
-      <div class="space-y-5 min-w-0 lg:col-start-1 lg:row-start-1">
-        <div class="space-y-4">
+      <div class="space-y-4 lg:space-y-5 min-w-0 lg:col-start-1 lg:row-start-1">
+        <div class="space-y-3 sm:space-y-4">
           <div class="max-w-3xl">
             <p class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-sand mb-2">
               Decide
             </p>
-            <h1 class="text-[24px] md:text-[30px] font-extrabold leading-tight">
+            <h1 class="text-[22px] sm:text-[24px] md:text-[30px] font-extrabold leading-tight">
               One place to weigh it all:
               <span class="text-ob-teal">strategy, location and cost.</span>
             </h1>
           </div>
+
+          <!-- Phone controls: the ranking is primarily a 2BR tool, with one
+               compact escape hatch for the 1BR strategy. The full weighting
+               workspace remains available from md upward. -->
           <div
-            class="bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4"
+            class="md:hidden bg-ob-surface2 border border-ob-sand/10 rounded-[8px] p-2.5"
+            aria-label="Mobile ranking strategy"
+          >
+            <div class="flex items-center gap-2">
+              <span class="font-mono text-[9.5px] uppercase tracking-[0.1em] text-ob-faint">
+                Rank for
+              </span>
+              <div class="grid grid-cols-2 gap-1.5 flex-1">
+                <button
+                  v-for="s in mobileStrategies"
+                  :key="s.id"
+                  type="button"
+                  @click="activeStrategyId = s.id"
+                  :aria-pressed="activeStrategyId === s.id"
+                  class="rounded-[6px] border px-3 py-2 font-mono text-[11px] transition-colors"
+                  :class="
+                    activeStrategyId === s.id
+                      ? 'border-ob-teal/40 bg-ob-teal/10 text-ob-teal'
+                      : 'border-ob-sand/14 text-ob-faint'
+                  "
+                >
+                  {{ s.shortLabel }}
+                </button>
+              </div>
+            </div>
+            <p class="mt-1.5 font-mono text-[9px] leading-snug text-ob-faint">
+              {{ activeStrategy.intent }} · preset weights
+            </p>
+          </div>
+
+          <div
+            class="hidden md:block bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4"
             aria-label="Ranking controls"
           >
             <div class="flex items-center flex-wrap gap-x-4 gap-y-2">
@@ -103,6 +140,7 @@
         </div>
 
         <MapPanel
+          v-if="showDesktopMap"
           v-model="activeLocationId"
           :rows="rankedLocations"
           :features="mapFeatures"
@@ -138,7 +176,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, watch, onMounted } from 'vue'
+import { ref, reactive, computed, watch, onMounted, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import {
   decideStrategies,
@@ -168,6 +206,24 @@ const rate = personalPosition.calc.rate
 // through the same named filter gates as before.
 const activeStrategyId = ref(defaultStrategyId)
 const activeStrategy = computed(() => strategyById(activeStrategyId.value))
+const mobileStrategies = decideStrategies.filter((strategy) =>
+  ['balanced2br', 'bachelor1br'].includes(strategy.id),
+)
+
+// Do not merely hide MapLibre with CSS on phones: avoid mounting it and
+// downloading its map/school-zone payload entirely until the desktop layout
+// is active.
+const showDesktopMap = ref(false)
+let desktopMapQuery = null
+function syncDesktopMap(event) {
+  showDesktopMap.value = event.matches
+}
+onMounted(() => {
+  desktopMapQuery = window.matchMedia('(min-width: 1024px)')
+  showDesktopMap.value = desktopMapQuery.matches
+  desktopMapQuery.addEventListener('change', syncDesktopMap)
+})
+onBeforeUnmount(() => desktopMapQuery?.removeEventListener('change', syncDesktopMap))
 
 // Binary criterion toggles over the active preset. Switching strategy restores
 // each criterion's default (Chinese stays off); the last enabled criterion

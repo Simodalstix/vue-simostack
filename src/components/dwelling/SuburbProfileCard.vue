@@ -1,5 +1,9 @@
 <template>
-  <div class="h-full cursor-pointer overflow-hidden" @click="emit('close')">
+  <div
+    class="h-full overflow-hidden"
+    :class="closeOnCardClick ? 'cursor-pointer' : ''"
+    @click="closeOnCardClick && emit('close')"
+  >
     <div v-if="showEvidence" class="h-full overflow-y-auto" @click.stop>
       <div class="px-4 py-3.5 space-y-3">
         <div class="flex items-center justify-between gap-3">
@@ -84,7 +88,9 @@
               </template>
               <span class="text-[10.5px] text-ob-faint">{{ row.rec.region }}</span>
             </p>
-            <p class="font-mono text-[9px] text-ob-faint">click card to return to map</p>
+            <p v-if="closeOnCardClick" class="font-mono text-[9px] text-ob-faint">
+              click card to return to map
+            </p>
           </div>
         </div>
 
@@ -353,7 +359,7 @@
           >
             full evidence & research detail ▸
           </button>
-          <p class="font-mono text-[9px] text-ob-faint ml-auto">
+          <p v-if="closeOnCardClick" class="font-mono text-[9px] text-ob-faint ml-auto">
             click anywhere else on the card to close
           </p>
         </div>
@@ -392,6 +398,7 @@ const props = defineProps({
   rate: { type: Number, default: 5.9 },
   // Active Decide strategy (decideStrategies.js).
   strategy: { type: Object, default: null },
+  closeOnCardClick: { type: Boolean, default: true },
 })
 
 const emit = defineEmits(['toggle-shortlist', 'close'])
