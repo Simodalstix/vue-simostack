@@ -24,8 +24,8 @@
 // copy in areaCorridors.js (see SuburbProfileCard.vue).
 //
 // Owner TODOs carried over from the draft:
-// - Tama's suburb (Sunbury) has no drafted profile yet.
 // - Verify school-zone claims at findmyschool.vic.gov.au (zones shift yearly).
+// (Sunbury/Tama profile drafted 2026-07-19 in the in-repo batch below.)
 
 // Supplied as one combined 'Collingwood/Abbotsford' profile; both records share it.
 const collingwoodAbbotsford = {
@@ -1254,6 +1254,283 @@ export const suburbProfiles = {
         'When a quieter station-catchment property appears and the beach-access route is acceptable in practice.',
     },
   },
+  // ---- 2026-07-19 batch: drafted in-repo against areaCorridors record data
+  //      (no parked owner draft existed for these 13). Owner review expected. ----
+
+  // 'Ascot Vale'
+  'ascot-vale-2br': {
+    lives:
+      'Flat, close-in north-west with a village strip on Union Rd, the Craigieburn line running one-seat through the City Loop, and tram 57 as the second route. Showgrounds and Maribyrnong River trails set the weekend rhythm.',
+    housing:
+      'Older walk-ups and villa units at a genuine discount to the inner north; the Union Rd value pocket persists. Quality varies sharply by street and block.',
+    fit: [
+      { text: 'Train plus tram redundancy gives Lulu real independence at 12-15.', tag: null },
+      {
+        text: 'Royal Melbourne and Footscray hospital precincts both reachable for Jeanie.',
+        tag: null,
+      },
+      {
+        text: 'Flood overlays and estate edges make street selection the whole game.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Inner value with two transport modes and a 16-minute commute.',
+      mainRisk: 'Buying the wrong pocket: arterial noise or a flood overlay under a good price.',
+      pursueWhen:
+        'A solid walk-up or villa unit lists on a quiet street between Union Rd and the station.',
+    },
+  },
+
+  // 'Northcote'
+  'northcote-2br': {
+    lives:
+      "High St's arts-and-food spine with Westgarth's cinema corner, Merri Creek trails, and two real routes to town: the Mernda line and tram 86. Busy, social, family-thick.",
+    housing:
+      'Older units, walk-ups and a growing mid-rise layer. Renovated 2BRs push the top of the band; the honest value is the unrenovated walk-up on a side street.',
+    fit: [
+      { text: 'Northcote High is a strong zoned public secondary for Lulu.', tag: null },
+      {
+        text: 'Train and tram redundancy plus creek trails: teen independence is genuine.',
+        tag: null,
+      },
+      { text: 'Entry prices crowd the budget ceiling for the good stock.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: "2BR Balanced with the inner north's best strip life.",
+      mainRisk: 'Paying renovated money for what the suburb, not the apartment, is worth.',
+      pursueWhen: 'An unrenovated walk-up 2BR lists a block or two off High St.',
+    },
+  },
+
+  // 'Thornbury'
+  'thornbury-2br': {
+    lives:
+      "Northcote's quieter continuation: same corridor, same creek, smaller strips, more room to breathe. The 86 and the Mernda line both run through it.",
+    housing:
+      'Villa units with courtyards are the distinctive stock, alongside older walk-ups. The Northcote discount is real and the fabric nearly identical.',
+    fit: [
+      { text: 'A villa-unit courtyard within budget is rare this close in.', tag: null },
+      { text: 'Same teen independence as Northcote at a lower entry.', tag: null },
+      {
+        text: 'Thornbury High vs Northcote High zoning is street-by-street; verify by address.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Northcote life at a price that leaves margin.',
+      mainRisk: 'Assuming the school zone without checking the exact street.',
+      pursueWhen: 'A villa unit with a real courtyard lists under the Northcote comparable.',
+    },
+  },
+
+  // 'Preston'
+  'preston-villa': {
+    lives:
+      'Preston Market anchors a genuinely multicultural food-and-shopping life, with rebuilt stations after the level-crossing removals and the 86 and 11 trams as backup. Unpolished and improving.',
+    housing:
+      'The most realistic villa-unit-with-courtyard market on the corridor, plus older units and townhouses. Block-by-block variation is the sorting problem.',
+    fit: [
+      { text: 'Best space-per-dollar on the Mernda corridor.', tag: null },
+      { text: 'Market, trams and trains give Lulu a workable independent radius.', tag: null },
+      {
+        text: 'Preston High is re-established and growing but its senior years are still building depth.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Villa strategies that want a courtyard without leaving the rail corridor.',
+      mainRisk: 'The commute edge: 35 minutes typical becomes 46 stressed.',
+      pursueWhen: "A villa unit near Preston or Bell station lists in the band's lower half.",
+    },
+  },
+
+  // 'Malvern'
+  'malvern-2br': {
+    lives:
+      "Calm, established inner-east streets between good strips, with Malvern station's one-seat 25-minute run and three tram routes through the suburb. Family-ordered and quietly expensive.",
+    housing:
+      'Art deco and older 2BR apartments beneath a serious house market; villa units appear occasionally. The band starts where cheaper corridors end.',
+    fit: [
+      { text: 'Strong primaries and safe streets suit the co-parenting brief.', tag: null },
+      { text: 'Nathan a few stops up the line in South Yarra.', tag: 'network' },
+      {
+        text: 'Secondary zoning splits toward Glen Eira College and Prahran High; verify by address.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A calm, school-rich base with blue-chip resale.',
+      mainRisk: 'Budget exhaustion: entry cost buys the postcode before the floorplan.',
+      pursueWhen: "A deco 2BR lists at the band's bottom near the station.",
+    },
+  },
+
+  // 'Toorak'
+  'toorak-2br': {
+    lives:
+      'The priciest postcode at its cheapest entry point: older walk-ups south of Toorak Rd, a 23-minute one-seat ride, and amenity that skews older and wealthier than the household.',
+    housing:
+      'Older 2BR apartments only; the band buys less floorplan here than anywhere in the lens. The resale floor is the strongest in the file.',
+    fit: [
+      { text: 'Nathan one suburb over in South Yarra.', tag: 'network' },
+      { text: 'Commute and safety are top-tier.', tag: null },
+      {
+        text: "Little community traction for a single-parent household; the suburb's life stage is not yours.",
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A calibration point: what blue-chip costs against what it returns.',
+      mainRisk: 'Paying the postcode premium for a lifestyle mismatch.',
+      pursueWhen:
+        'Probably never ahead of Windsor or Armadale; revisit only if a walk-up lists far under band.',
+    },
+  },
+
+  // 'Kew'
+  'kew-2br': {
+    lives:
+      'Leafy Boroondara at its most school-dense, organised around Kew Junction and the 48 and 109 trams. No train, and daily life is calmer and more private than any inner strip.',
+    housing:
+      "Older apartments and villa units beneath serious house money. The band tops out at the tool's ceiling and the stock is thin.",
+    fit: [
+      {
+        text: 'Kew High zone plus one of the strongest school environments in Melbourne.',
+        tag: null,
+      },
+      { text: 'A 40-minute-plus tram-only commute with no rail fallback.', tag: 'tradeoff' },
+      { text: 'Weekend life beyond the tram spine leans on a car.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'A schools-first play where commute weighting is genuinely low.',
+      mainRisk: 'The daily tram grind eroding everything the schools bought.',
+      pursueWhen: 'School weighting dominates and a villa unit lists near Kew Junction.',
+    },
+  },
+
+  // 'Balwyn'
+  'balwyn-2br': {
+    lives:
+      'Quiet, prosperous streets on the 109 tram spine with the Balwyn High zone as the organising fact of the local market. The measured version of the school-zone premium.',
+    housing:
+      'A thin unit and villa market where the zone premium is priced into everything; houses are another universe.',
+    fit: [
+      { text: 'Balwyn High is the benchmark zoned public secondary.', tag: null },
+      {
+        text: "A 45-minute tram-only commute fails the brief's reliability test.",
+        tag: 'tradeoff',
+      },
+      { text: 'Life beyond the 109 spine assumes a car.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Testing whether the zone premium beats the commute penalty.',
+      mainRisk: 'Buying the zone and resenting the transport every working day.',
+      pursueWhen:
+        'Only if schools outweigh commute after honest weighting, and a zone unit lists cheap.',
+    },
+  },
+
+  // 'Albert Park'
+  'albert-park-2br': {
+    lives:
+      'Village streets between the park, the lake and the beach, with the 96 light rail running reserved track to the Collins St end of Southern Cross. Serene, complete, expensive.',
+    housing:
+      'Older apartments only, and the band clears the budget ceiling for most of them. Listings are scarce; parking and heritage compromises are standard.',
+    fit: [
+      {
+        text: 'Albert Park College plus park, beach and MSAC: the strongest child environment in the lens.',
+        tag: null,
+      },
+      { text: 'Close to the current Southbank orbit, keeping continuity for Lulu.', tag: null },
+      { text: 'Entry price is the whole problem.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Lifestyle and schools together if the budget stretches.',
+      mainRisk: "Overreaching on price for the suburb's calm.",
+      pursueWhen: "A small older 2BR lists at the band's floor with a sane body corporate.",
+    },
+  },
+
+  // 'North Melbourne'
+  'north-melbourne-2br': {
+    lives:
+      "Errol St's village core beside the Parkville hospital precinct, with the shortest commute in the lens: every northern line, Arden on the Metro Tunnel, and trams 57 and 58. Gritty edges, real convenience.",
+    housing:
+      'Older walk-ups and a growing new-apartment layer around Arden. The value pocket is the older stock on the quiet western streets.',
+    fit: [
+      { text: 'Parkville hospital precinct in walking distance for Jeanie.', tag: null },
+      { text: 'University High is a strong zoned secondary for Lulu.', tag: null },
+      { text: 'Arden construction will run for years on the precinct edges.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Commute-first living with hospital-precinct employment insurance.',
+      mainRisk: 'Buying next to a decade of construction.',
+      pursueWhen: 'An older 2BR lists on a settled street away from the Arden works.',
+    },
+  },
+
+  // 'Sunbury' (Tama's suburb)
+  'sunbury-house': {
+    lives:
+      'An established country-town-turned-suburb with its own centre, schools and aquatic centre, out on the Sunbury line with Metro Tunnel through-running. Space is the entire proposition.',
+    housing:
+      'Whole houses with yards at 2BR-apartment money; the strongest space-per-dollar in the file. Established streets, not greenfield paddocks.',
+    fit: [
+      {
+        text: 'Tama is local: the one suburb on the list with day-to-day family backup.',
+        tag: 'network',
+      },
+      { text: 'A house and yard transform Lulu weeks at home.', tag: null },
+      {
+        text: 'The 55-minute door-to-door commute is the whole trade, every working day.',
+        tag: 'tradeoff',
+      },
+      { text: 'Teen independence drops to lifts and timetables.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Space and family backup when commute weighting honestly drops.',
+      mainRisk: 'Discovering the commute is unlivable after buying the house.',
+      pursueWhen: 'Remote-heavy work patterns firm up, making the trip 2-3 days not 5.',
+    },
+  },
+
+  // 'Clifton Hill'
+  'clifton-hill-2br': {
+    lives:
+      "A pocket-sized junction suburb: Queens Pde's strip, Darling Gardens, the Merri Creek trail, and the Mernda/Hurstbridge junction giving rail redundancy no single-line suburb can match.",
+    housing:
+      'Older walk-ups in tight supply; the good ones are known quantities at auction and the Yarra postcode premium is priced in.',
+    fit: [
+      { text: "St Vincent's precinct one stop away for Jeanie.", tag: null },
+      { text: 'Two-line junction plus tram 86: elite teen independence.', tag: null },
+      { text: 'Thin stock makes the search slow and competitive.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Inner-north life with the best transport redundancy on the northside.',
+      mainRisk: 'Waiting out a thin market while prices drift.',
+      pursueWhen: "A quality walk-up 2BR lists off Hoddle St's noise shadow.",
+    },
+  },
+
+  // 'Doncaster'
+  'doncaster-villa': {
+    lives:
+      'Prosperous, quiet school-belt streets with Westfield as the de facto town centre and the DART busway as the only transport story. The measured counterexample to the rail-first rule.',
+    housing:
+      'Villa units and townhouses at 2BR-apartment money beneath a strong house market; stock is decent and less contested than in rail suburbs.',
+    fit: [
+      { text: 'Primary and secondary school strength across the belt for Lulu.', tag: null },
+      { text: 'Box Hill Hospital corridor reachable for Jeanie.', tag: null },
+      { text: 'No rail, bus-dependent teen years, car-shaped daily life.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Schools and space if transport weighting truly collapses.',
+      mainRisk: 'The busway feeling like a compromise every single day.',
+      pursueWhen: 'It rarely wins under this brief; revisit only if work goes mostly remote.',
+    },
+  },
+
   // 'Collingwood/Abbotsford' (shared)
   'inner-collingwood-2br': collingwoodAbbotsford,
   // 'Collingwood/Abbotsford' (shared)

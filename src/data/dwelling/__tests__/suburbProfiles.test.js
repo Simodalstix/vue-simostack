@@ -34,14 +34,17 @@ describe('suburb profile copy', () => {
   })
 
   it('shares the combined-name profiles across both member records', () => {
-    expect(suburbProfileFor('inner-collingwood-2br')).toBe(
-      suburbProfileFor('inner-abbotsford-2br'),
-    )
+    expect(suburbProfileFor('inner-collingwood-2br')).toBe(suburbProfileFor('inner-abbotsford-2br'))
     expect(suburbProfileFor('chelsea-2br')).toBe(suburbProfileFor('bonbeach-2br'))
   })
 
-  it('returns null for records without drafted copy (fallback path)', () => {
-    expect(suburbProfileFor('toorak-2br')).toBeNull()
-    expect(suburbProfileFor('sunbury-house')).toBeNull()
+  it('returns null for unknown ids (fallback path)', () => {
+    expect(suburbProfileFor('no-such-record')).toBeNull()
+  })
+
+  it('covers every atlas record since the 2026-07-19 batch', () => {
+    for (const rec of areaCorridors) {
+      expect(suburbProfileFor(rec.id), `missing profile for ${rec.id}`).not.toBeNull()
+    }
   })
 })
