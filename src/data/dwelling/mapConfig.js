@@ -10,7 +10,7 @@
 // carrying every meaning):
 //   fill hue      = the weighted fit score band
 //   fill opacity  = data confidence (provisional placeholder vs verified)
-//   solid ring    = selected / shortlisted / hovered (feature-state in the map)
+//   solid ring    = selected / hovered (feature-state in the map)
 
 // On-palette site colours reused by the map canvas + legend + component theme.
 // purple = school / community context; gold = personal network. Both are
@@ -23,7 +23,6 @@ export const MAP_THEME = {
   markerDim: '#7A8A99',
   ink: '#0C0F12',
   selected: '#FAF8F3',
-  shortlist: '#D4903A',
   hover: '#4FCBB3',
   outline: '#3A434B',
   unscoredFill: '#2A3138',

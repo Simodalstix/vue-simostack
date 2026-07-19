@@ -17,13 +17,11 @@
         class="min-h-0 flex-1"
         :row="pinnedRow"
         :rank-by-id="rankById"
-        :shortlist-ids="shortlistIds"
         :payoff-years="payoffYears"
         :deposit="deposit"
         :rate="rate"
         :strategy="strategy"
         :close-on-card-click="false"
-        @toggle-shortlist="$emit('toggle-shortlist', $event)"
       />
     </div>
 
@@ -170,13 +168,6 @@
                     {{ row.rec.suburb }}
                   </span>
                   <span
-                    v-if="shortlistIds.includes(row.rec.id)"
-                    class="text-ob-sand text-[11px] shrink-0"
-                    title="Shortlisted"
-                  >
-                    ★
-                  </span>
-                  <span
                     class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
                     :style="{ color: bandColor(row) }"
                     :title="bandLabel(row)"
@@ -263,7 +254,6 @@ import SuburbProfileCard from './SuburbProfileCard.vue'
 const props = defineProps({
   rows: { type: Array, required: true },
   hoveredContext: { type: Object, default: null },
-  shortlistIds: { type: Array, default: () => [] },
   payoffYears: { type: Number, default: 15 },
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
@@ -272,7 +262,7 @@ const props = defineProps({
   // so the preview breakdown reads the exact inputs the ranking used.
   weights: { type: Object, default: () => ({}) },
 })
-const emit = defineEmits(['toggle-shortlist', 'hover'])
+const emit = defineEmits(['hover'])
 
 const modelValue = defineModel({ default: null })
 

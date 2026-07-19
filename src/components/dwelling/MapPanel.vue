@@ -38,7 +38,6 @@
             :bounds="features.bounds"
             :area-state="areaState"
             :selected-area-id="modelValue"
-            :shortlist-ids="shortlistIds"
             :get-popup-html="popupHtml"
             :basemap="coastlineUrl"
             :water="bayUrl"
@@ -69,12 +68,10 @@
           class="absolute inset-0 z-10 bg-ob-surface2"
           :row="selectedRow"
           :rank-by-id="rankById"
-          :shortlist-ids="shortlistIds"
           :payoff-years="payoffYears"
           :deposit="deposit"
           :rate="rate"
           :strategy="strategy"
-          @toggle-shortlist="$emit('toggle-shortlist', $event)"
           @close="closeProfile"
         />
       </div>
@@ -190,7 +187,6 @@ const props = defineProps({
   rows: { type: Array, required: true },
   features: { type: Object, required: true }, // { points, localities, bounds }
   indexById: { type: Object, required: true },
-  shortlistIds: { type: Array, default: () => [] },
   payoffYears: { type: Number, default: 15 },
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
@@ -201,7 +197,7 @@ const props = defineProps({
   listHoveredId: { type: String, default: null },
 })
 const modelValue = defineModel({ default: null })
-const emit = defineEmits(['hover', 'toggle-shortlist'])
+const emit = defineEmits(['hover'])
 
 const theme = MAP_THEME
 const legend = fitBandLegend()

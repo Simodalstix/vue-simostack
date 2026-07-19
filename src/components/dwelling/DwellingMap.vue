@@ -21,7 +21,7 @@
 //   train line colour      = route identity only (official line-group hues)
 //   purple points          = schools / community context
 //   gold markers           = personal network anchors
-//   solid ring             = selected / shortlisted / hovered (feature-state)
+//   solid ring             = selected / hovered (feature-state)
 //   warm fill override     = less-favoured under the active purchase mode
 //
 // The locality polygon is the primary hover target. Where the vendored suburb
@@ -43,7 +43,6 @@ const props = defineProps({
   areaState: { type: Object, default: () => ({}) },
   selectedAreaId: { type: String, default: null },
   hoveredAreaId: { type: String, default: null },
-  shortlistIds: { type: Array, default: () => [] },
   ariaLabel: {
     type: String,
     default: 'Map of Melbourne suburbs, coloured by decision-fit score',
@@ -99,7 +98,6 @@ const T = {
   markerDim: '#7A8A99',
   ink: '#0C0F12',
   selected: '#FAF8F3',
-  shortlist: '#D4903A',
   hover: '#4FCBB3',
   outline: '#3A434B',
   reject: '#D4903A',
@@ -337,8 +335,6 @@ function addLayers() {
           T.hover,
           ['boolean', ['feature-state', 'selected'], false],
           T.selected,
-          ['boolean', ['feature-state', 'shortlisted'], false],
-          T.shortlist,
           'rgba(0,0,0,0)',
         ],
         'line-width': [
@@ -347,8 +343,6 @@ function addLayers() {
           2.2,
           ['boolean', ['feature-state', 'selected'], false],
           1.9,
-          ['boolean', ['feature-state', 'shortlisted'], false],
-          1.6,
           0.5,
         ],
         'line-opacity': [
@@ -357,8 +351,6 @@ function addLayers() {
           0.96,
           ['boolean', ['feature-state', 'selected'], false],
           0.85,
-          ['boolean', ['feature-state', 'shortlisted'], false],
-          0.72,
           0,
         ],
       },
@@ -581,12 +573,11 @@ function addLayers() {
   applyContextFilters()
 }
 
-// Push data styling + selection/shortlist into feature-state on the record
-// station source and the locality polygons.
+// Push data styling + selection into feature-state on the record station
+// source and the locality polygons.
 function applyAllState() {
   if (!loaded || !map) return
   const selected = props.selectedAreaId
-  const shortSet = new Set(props.shortlistIds)
   for (const [areaId, st] of Object.entries(props.areaState)) {
     const state = {
       color: st.color,
@@ -594,11 +585,10 @@ function applyAllState() {
       status: st.status,
       unscored: st.unscored,
       selected: areaId === selected,
-      shortlisted: !st.unscored && shortSet.has(areaId),
     }
     map.setFeatureState({ source: POINT_SRC, id: st.fid }, state)
   }
-  applyLocalityState(selected, shortSet)
+  applyLocalityState(selected)
 }
 
 // Locality polygons carry the score hue. Pointer hover is per-polygon: only
@@ -606,10 +596,7 @@ function applyAllState() {
 // a grouped ranking record. A hover arriving via the hoveredAreaId prop (the
 // ranked list) has no single polygon, so it lifts every component polygon of
 // that record instead.
-function applyLocalityState(
-  selected = props.selectedAreaId,
-  shortSet = new Set(props.shortlistIds),
-) {
+function applyLocalityState(selected = props.selectedAreaId) {
   if (!loaded || !map || !props.localities?.features?.length) return
   const hoveredLocalityId = hoverContext?.localityFeatureId ?? null
   const externalHoverAreaId = hoveredLocalityId == null ? props.hoveredAreaId : null
@@ -625,9 +612,6 @@ function applyLocalityState(
         status: st?.status ?? null,
         unscored: st?.unscored ?? false,
         selected: selected != null && areaIds.includes(selected),
-        shortlisted: areaIds.some(
-          (areaId) => !props.areaState[areaId]?.unscored && shortSet.has(areaId),
-        ),
         hovered:
           feature.id === hoveredLocalityId ||
           (externalHoverAreaId != null && areaIds.includes(externalHoverAreaId)),
@@ -909,7 +893,7 @@ watch(
   { deep: true },
 )
 watch(
-  () => [props.selectedAreaId, props.hoveredAreaId, props.shortlistIds, props.activeZoneCategory],
+  () => [props.selectedAreaId, props.hoveredAreaId, props.activeZoneCategory],
   () => {
     applyAllState()
     applyContextFilters()

@@ -35,24 +35,6 @@
                 <span class="text-[15px] font-extrabold leading-none">{{ scoreDisplay(row) }}</span>
                 <span class="text-[9px] uppercase tracking-[0.08em]">{{ bandLabel(row) }}</span>
               </span>
-              <button
-                v-if="!unscored"
-                @click.stop="$emit('toggle-shortlist', row.rec.id)"
-                class="font-mono text-[10px] px-2 py-[3px] rounded-full border transition-colors"
-                :class="
-                  shortlistIds.includes(row.rec.id)
-                    ? 'border-ob-sand/45 text-ob-sand'
-                    : 'border-ob-sand/14 text-ob-faint hover:text-ob-muted'
-                "
-              >
-                {{ shortlistIds.includes(row.rec.id) ? '★ shortlisted' : '☆ shortlist' }}
-              </button>
-              <span
-                v-if="row.rec.placeholder"
-                class="font-mono text-[9.5px] text-ob-sand"
-                title="Placeholder data pending verification"
-                >provisional data</span
-              >
             </div>
             <p
               v-if="headerNote"
@@ -392,7 +374,6 @@ import CommunityContextSection from './CommunityContextSection.vue'
 const props = defineProps({
   row: { type: Object, required: true },
   rankById: { type: Object, required: true },
-  shortlistIds: { type: Array, default: () => [] },
   payoffYears: { type: Number, default: 15 },
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
@@ -401,7 +382,7 @@ const props = defineProps({
   closeOnCardClick: { type: Boolean, default: true },
 })
 
-const emit = defineEmits(['toggle-shortlist', 'close'])
+const emit = defineEmits(['close'])
 
 const showEvidence = ref(false)
 watch(

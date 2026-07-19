@@ -145,14 +145,12 @@
           :rows="rankedLocations"
           :features="mapFeatures"
           :index-by-id="areaIndexById"
-          :shortlist-ids="shortlist"
           :payoff-years="payoffYears"
           :deposit="deposit"
           :rate="rate"
           :strategy="activeStrategy"
           :list-hovered-id="listHoverId"
           @hover="hoveredContext = $event"
-          @toggle-shortlist="toggleShortlist"
         />
       </div>
 
@@ -161,14 +159,12 @@
         v-model="activeLocationId"
         :rows="rankedLocations"
         :hovered-context="hoveredContext"
-        :shortlist-ids="shortlist"
         :payoff-years="payoffYears"
         :deposit="deposit"
         :rate="rate"
         :strategy="activeStrategy"
         :weights="effectiveWeights"
         class="order-2 min-w-0 lg:col-start-2 lg:row-start-1"
-        @toggle-shortlist="toggleShortlist"
         @hover="listHoverId = $event"
       />
     </div>
@@ -280,14 +276,6 @@ const mapFeatures = {
   points: stationPointFeatures,
   localities: localityFeatures,
   bounds: areaBounds,
-}
-
-// Shortlist for map + pane (capped at three, per the brief).
-const shortlist = ref([])
-function toggleShortlist(id) {
-  const i = shortlist.value.indexOf(id)
-  if (i >= 0) shortlist.value = shortlist.value.filter((x) => x !== id)
-  else if (shortlist.value.length < 3) shortlist.value = [...shortlist.value, id]
 }
 
 // Deep-link the active suburb via ?area=. Read once on mount, then mirror
