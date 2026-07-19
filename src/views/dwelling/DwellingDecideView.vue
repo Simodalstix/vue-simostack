@@ -97,7 +97,7 @@
               </div>
             </div>
 
-            <div class="mt-3 space-y-2" aria-label="Weighting themes">
+            <div class="mt-3 grid grid-cols-2 gap-x-6 gap-y-2" aria-label="Weighting themes">
               <div
                 v-for="group in criterionGroups"
                 :key="group.label"
