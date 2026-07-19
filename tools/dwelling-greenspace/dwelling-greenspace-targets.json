@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-greenspace-targets",
-  "version": "v6-canonical-60-mixed-official-and-derived",
-  "retrievedAt": "2026-07-18",
-  "recordCount": 60,
+  "version": "v7-canonical-70-mixed-official-and-derived",
+  "retrievedAt": "2026-07-19",
+  "recordCount": 70,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -747,6 +747,82 @@
       "displayName": "Newport",
       "salComponents": [{ "suburb": "Newport", "salCode": "21934", "censusPopulation2021": 13658 }],
       "censusPopulation2021": 13658
+    },
+    {
+      "id": "melbourne-cbd-2br",
+      "displayName": "Melbourne CBD",
+      "salComponents": [
+        { "suburb": "Melbourne", "salCode": "21640", "censusPopulation2021": 54941 }
+      ],
+      "censusPopulation2021": 54941
+    },
+    {
+      "id": "east-melbourne-2br",
+      "displayName": "East Melbourne",
+      "salComponents": [
+        { "suburb": "East Melbourne", "salCode": "20830", "censusPopulation2021": 4896 }
+      ],
+      "censusPopulation2021": 4896
+    },
+    {
+      "id": "west-melbourne-2br",
+      "displayName": "West Melbourne",
+      "salComponents": [
+        { "suburb": "West Melbourne", "salCode": "22757", "censusPopulation2021": 8025 }
+      ],
+      "censusPopulation2021": 8025
+    },
+    {
+      "id": "docklands-2br",
+      "displayName": "Docklands",
+      "salComponents": [
+        { "suburb": "Docklands", "salCode": "20766", "censusPopulation2021": 15495 }
+      ],
+      "censusPopulation2021": 15495
+    },
+    {
+      "id": "carlton-2br",
+      "displayName": "Carlton",
+      "salComponents": [{ "suburb": "Carlton", "salCode": "20495", "censusPopulation2021": 16055 }],
+      "censusPopulation2021": 16055
+    },
+    {
+      "id": "fitzroy-2br",
+      "displayName": "Fitzroy",
+      "salComponents": [{ "suburb": "Fitzroy", "salCode": "20924", "censusPopulation2021": 10431 }],
+      "censusPopulation2021": 10431
+    },
+    {
+      "id": "parkville-2br",
+      "displayName": "Parkville",
+      "salComponents": [
+        { "suburb": "Parkville", "salCode": "22038", "censusPopulation2021": 7074 }
+      ],
+      "censusPopulation2021": 7074
+    },
+    {
+      "id": "carlton-north-2br",
+      "displayName": "Carlton North",
+      "salComponents": [
+        { "suburb": "Carlton North", "salCode": "20496", "censusPopulation2021": 6177 }
+      ],
+      "censusPopulation2021": 6177
+    },
+    {
+      "id": "fitzroy-north-2br",
+      "displayName": "Fitzroy North",
+      "salComponents": [
+        { "suburb": "Fitzroy North", "salCode": "20925", "censusPopulation2021": 12781 }
+      ],
+      "censusPopulation2021": 12781
+    },
+    {
+      "id": "brunswick-east-2br",
+      "displayName": "Brunswick East",
+      "salComponents": [
+        { "suburb": "Brunswick East", "salCode": "20362", "censusPopulation2021": 13279 }
+      ],
+      "censusPopulation2021": 13279
     }
   ]
 }

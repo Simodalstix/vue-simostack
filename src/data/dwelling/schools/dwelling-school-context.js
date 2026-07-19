@@ -8,7 +8,7 @@
 
 export const SCHOOL_CONTEXT_DATASET = {
   "zoneYear": "2027",
-  "generatedAt": "2026-07-18"
+  "generatedAt": "2026-07-19"
 }
 
 export const schoolContextByAreaId = {
@@ -797,6 +797,148 @@ export const schoolContextByAreaId = {
     ],
     "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "melbourne-cbd-2br": {
+    "zonedPrimary": "Carlton Gardens Primary School",
+    "zonedSecondary": "University High School",
+    "alsoInCatchmentPrimary": [
+      "Docklands Primary School",
+      "North Melbourne Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Collingwood College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "east-melbourne-2br": {
+    "zonedPrimary": "Carlton Gardens Primary School",
+    "zonedSecondary": "Collingwood College",
+    "alsoInCatchmentPrimary": [
+      "Collingwood College",
+      "Fitzroy Primary School",
+      "Richmond West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "University High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "west-melbourne-2br": {
+    "zonedPrimary": "North Melbourne Primary School",
+    "zonedSecondary": "University High School",
+    "alsoInCatchmentPrimary": [
+      "Docklands Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "docklands-2br": {
+    "zonedPrimary": "Docklands Primary School",
+    "zonedSecondary": "University High School",
+    "alsoInCatchmentPrimary": [
+      "North Melbourne Primary School",
+      "South Melbourne Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Port Melbourne Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "carlton-2br": {
+    "zonedPrimary": "Carlton Gardens Primary School",
+    "zonedSecondary": "University High School",
+    "alsoInCatchmentPrimary": [
+      "Carlton North Primary School",
+      "Carlton Primary School",
+      "Fitzroy Primary School",
+      "North Melbourne Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Collingwood College",
+      "Fitzroy High School",
+      "Princes Hill Secondary College"
+    ],
+    "anchorSource": "locality-representative-point",
+    "boundaryFlag": false
+  },
+  "fitzroy-2br": {
+    "zonedPrimary": "Fitzroy Primary School",
+    "zonedSecondary": "Collingwood College",
+    "alsoInCatchmentPrimary": [
+      "Carlton Gardens Primary School",
+      "Carlton North Primary School",
+      "Carlton Primary School",
+      "Clifton Hill Primary School",
+      "Collingwood College"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Fitzroy High School",
+      "Princes Hill Secondary College",
+      "University High School"
+    ],
+    "anchorSource": "locality-representative-point",
+    "boundaryFlag": false
+  },
+  "parkville-2br": {
+    "zonedPrimary": "North Melbourne Primary School",
+    "zonedSecondary": "University High School",
+    "alsoInCatchmentPrimary": [
+      "Carlton Gardens Primary School",
+      "Carlton Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "carlton-north-2br": {
+    "zonedPrimary": "Carlton North Primary School",
+    "zonedSecondary": "Princes Hill Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Brunswick South Primary School",
+      "Carlton Primary School",
+      "Fitzroy North Primary School",
+      "Princes Hill Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Fitzroy High School",
+      "University High School"
+    ],
+    "anchorSource": "locality-representative-point",
+    "boundaryFlag": true
+  },
+  "fitzroy-north-2br": {
+    "zonedPrimary": "Fitzroy North Primary School",
+    "zonedSecondary": "Fitzroy High School",
+    "alsoInCatchmentPrimary": [
+      "Brunswick South Primary School",
+      "Carlton North Primary School",
+      "Clifton Hill Primary School",
+      "Merri Creek Primary School",
+      "Spensley Street Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Northcote High School"
+    ],
+    "anchorSource": "locality-representative-point",
+    "boundaryFlag": false
+  },
+  "brunswick-east-2br": {
+    "zonedPrimary": "Brunswick East Primary School",
+    "zonedSecondary": "Northcote High School",
+    "alsoInCatchmentPrimary": [
+      "Brunswick South Primary School",
+      "Merri Creek Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Brunswick Secondary College",
+      "Princes Hill Secondary College"
+    ],
+    "anchorSource": "locality-representative-point",
     "boundaryFlag": false
   }
 }

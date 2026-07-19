@@ -51,7 +51,7 @@ except ImportError as exc:  # pragma: no cover - clear runtime guidance
 
 
 METHOD_VERSION = "greenspace-access-v1"
-RETRIEVED_AT = "2026-07-18"
+RETRIEVED_AT = "2026-07-19"
 ANALYSIS_CRS = "EPSG:7855"  # GDA2020 / MGA zone 55
 WGS84_CRS = "EPSG:4326"
 

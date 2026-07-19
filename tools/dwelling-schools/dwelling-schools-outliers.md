@@ -1,6 +1,6 @@
 # dwelling-schools outliers — zone year 2027
 
-## Anchors within 150 m of a zone boundary (31)
+## Anchors within 150 m of a zone boundary (33)
 - inner-south-yarra-2br (primary): Toorak Primary School — 23.5 m. Street-level: the zone can flip within the catchment.
 - inner-richmond-2br (primary): Richmond Primary School — 51.9 m. Street-level: the zone can flip within the catchment.
 - inner-collingwood-2br (primary): Collingwood College — 111.3 m. Street-level: the zone can flip within the catchment.
@@ -19,6 +19,8 @@
 - mckinnon-villa (primary): Ormond Primary School — 63.8 m. Street-level: the zone can flip within the catchment.
 - clifton-hill-2br (primary): Clifton Hill Primary School — 50.4 m. Street-level: the zone can flip within the catchment.
 - rosanna-house (primary): Rosanna Primary School — 95.5 m. Street-level: the zone can flip within the catchment.
+- west-melbourne-2br (primary): North Melbourne Primary School — 51.6 m. Street-level: the zone can flip within the catchment.
+- carlton-north-2br (primary): Carlton North Primary School — 76.9 m. Street-level: the zone can flip within the catchment.
 - sunshine-station-2br (secondary): Sunshine College — 94.9 m. Street-level: the zone can flip within the catchment.
 - footscray-station-2br (secondary): Footscray High School — 123.9 m. Street-level: the zone can flip within the catchment.
 - northern-rail-value (secondary): Reservoir High School — 0.1 m. Street-level: the zone can flip within the catchment.

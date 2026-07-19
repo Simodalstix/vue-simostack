@@ -9,7 +9,7 @@
 export const SCHOOL_POINTS_DATASET = {
   "source": "School Locations CSV + School Zones (data.vic.gov.au)",
   "zoneYear": "2027",
-  "generatedAt": "2026-07-18"
+  "generatedAt": "2026-07-19"
 }
 
 export const schoolPoints = [
@@ -408,6 +408,23 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "brunswick-east-primary-school",
+    "schoolNo": "3179",
+    "name": "Brunswick East Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.98,
+      -37.76527
+    ],
+    "areaIds": [
+      "brunswick-east-2br"
+    ],
+    "zonedFor": [
+      "brunswick-east-2br"
+    ]
+  },
+  {
     "id": "brunswick-north-primary-school",
     "schoolNo": "3585",
     "name": "Brunswick North Primary School",
@@ -454,6 +471,44 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "upfield-corridor"
+    ]
+  },
+  {
+    "id": "carlton-gardens-primary-school",
+    "schoolNo": "2605",
+    "name": "Carlton Gardens Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.96951,
+      -37.80205
+    ],
+    "areaIds": [
+      "melbourne-cbd-2br",
+      "east-melbourne-2br",
+      "carlton-2br"
+    ],
+    "zonedFor": [
+      "melbourne-cbd-2br",
+      "east-melbourne-2br",
+      "carlton-2br"
+    ]
+  },
+  {
+    "id": "carlton-north-primary-school",
+    "schoolNo": "1252",
+    "name": "Carlton North Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.97303,
+      -37.79106
+    ],
+    "areaIds": [
+      "carlton-north-2br"
+    ],
+    "zonedFor": [
+      "carlton-north-2br"
     ]
   },
   {
@@ -614,11 +669,15 @@ export const schoolPoints = [
     "areaIds": [
       "inner-collingwood-2br",
       "inner-abbotsford-2br",
+      "east-melbourne-2br",
+      "fitzroy-2br",
       "clifton-hill-2br"
     ],
     "zonedFor": [
       "inner-collingwood-2br",
-      "inner-abbotsford-2br"
+      "inner-abbotsford-2br",
+      "east-melbourne-2br",
+      "fitzroy-2br"
     ]
   },
   {
@@ -668,6 +727,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "craigieburn-townhouse"
+    ]
+  },
+  {
+    "id": "docklands-primary-school",
+    "schoolNo": "5573",
+    "name": "Docklands Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.94055,
+      -37.81271
+    ],
+    "areaIds": [
+      "docklands-2br"
+    ],
+    "zonedFor": [
+      "docklands-2br"
     ]
   },
   {
@@ -778,10 +854,46 @@ export const schoolPoints = [
       -37.78491
     ],
     "areaIds": [
-      "clifton-hill-2br"
+      "clifton-hill-2br",
+      "fitzroy-north-2br"
     ],
     "zonedFor": [
-      "clifton-hill-2br"
+      "clifton-hill-2br",
+      "fitzroy-north-2br"
+    ]
+  },
+  {
+    "id": "fitzroy-north-primary-school",
+    "schoolNo": "1490",
+    "name": "Fitzroy North Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.98415,
+      -37.78502
+    ],
+    "areaIds": [
+      "fitzroy-north-2br"
+    ],
+    "zonedFor": [
+      "fitzroy-north-2br"
+    ]
+  },
+  {
+    "id": "fitzroy-primary-school",
+    "schoolNo": "450",
+    "name": "Fitzroy Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.98151,
+      -37.7996
+    ],
+    "areaIds": [
+      "fitzroy-2br"
+    ],
+    "zonedFor": [
+      "fitzroy-2br"
     ]
   },
   {
@@ -1458,10 +1570,14 @@ export const schoolPoints = [
       -37.79873
     ],
     "areaIds": [
-      "north-melbourne-2br"
+      "north-melbourne-2br",
+      "west-melbourne-2br",
+      "parkville-2br"
     ],
     "zonedFor": [
-      "north-melbourne-2br"
+      "north-melbourne-2br",
+      "west-melbourne-2br",
+      "parkville-2br"
     ]
   },
   {
@@ -1477,12 +1593,14 @@ export const schoolPoints = [
     "areaIds": [
       "northcote-2br",
       "thornbury-2br",
-      "fairfield-house"
+      "fairfield-house",
+      "brunswick-east-2br"
     ],
     "zonedFor": [
       "northcote-2br",
       "thornbury-2br",
-      "fairfield-house"
+      "fairfield-house",
+      "brunswick-east-2br"
     ]
   },
   {
@@ -1657,6 +1775,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "preston-villa"
+    ]
+  },
+  {
+    "id": "princes-hill-secondary-college",
+    "schoolNo": "8245",
+    "name": "Princes Hill Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.96503,
+      -37.78348
+    ],
+    "areaIds": [
+      "carlton-north-2br"
+    ],
+    "zonedFor": [
+      "carlton-north-2br"
     ]
   },
   {
@@ -2224,10 +2359,20 @@ export const schoolPoints = [
       -37.79698
     ],
     "areaIds": [
-      "north-melbourne-2br"
+      "north-melbourne-2br",
+      "melbourne-cbd-2br",
+      "west-melbourne-2br",
+      "docklands-2br",
+      "carlton-2br",
+      "parkville-2br"
     ],
     "zonedFor": [
-      "north-melbourne-2br"
+      "north-melbourne-2br",
+      "melbourne-cbd-2br",
+      "west-melbourne-2br",
+      "docklands-2br",
+      "carlton-2br",
+      "parkville-2br"
     ]
   },
   {

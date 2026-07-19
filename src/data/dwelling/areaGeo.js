@@ -144,6 +144,91 @@ export const areaGeo = {
       },
     ],
   },
+  'melbourne-cbd-2br': {
+    localityNames: ['Melbourne'],
+    stationPoints: [
+      {
+        id: 'melbourne-central',
+        name: 'Melbourne Central',
+        coordinates: [144.9629, -37.8102],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'east-melbourne-2br': {
+    localityNames: ['East Melbourne'],
+    stationPoints: [
+      {
+        id: 'parliament-east-melbourne',
+        name: 'Parliament',
+        coordinates: [144.9729, -37.8111],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'west-melbourne-2br': {
+    localityNames: ['West Melbourne'],
+    stationPoints: [
+      {
+        id: 'north-melbourne-west-melbourne',
+        name: 'North Melbourne',
+        coordinates: [144.9426, -37.8071],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'docklands-2br': {
+    localityNames: ['Docklands'],
+    stationPoints: [
+      {
+        id: 'southern-cross-docklands',
+        name: 'Southern Cross',
+        coordinates: [144.951, -37.8183],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'carlton-2br': {
+    localityNames: ['Carlton'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'fitzroy-2br': {
+    localityNames: ['Fitzroy'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'parkville-2br': {
+    localityNames: ['Parkville'],
+    stationPoints: [
+      {
+        id: 'parkville-metro',
+        name: 'Parkville (Metro Tunnel)',
+        coordinates: [144.958, -37.8009],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'carlton-north-2br': {
+    localityNames: ['Carlton North'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'fitzroy-north-2br': {
+    localityNames: ['Fitzroy North'],
+    tramOnly: true,
+    stationPoints: [],
+  },
+  'brunswick-east-2br': {
+    localityNames: ['Brunswick East'],
+    tramOnly: true,
+    stationPoints: [],
+  },
 
   // ---- West ----------------------------------------------------------------
   'sunshine-station-2br': {

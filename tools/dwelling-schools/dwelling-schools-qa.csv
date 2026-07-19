@@ -21,8 +21,14 @@ bonbeach-2br,primary,Bonbeach Primary School,,121.2,station
 bonbeach-2br,secondary,Patterson River Secondary College,,390.1,station
 box-hill-2br,primary,Mont Albert Primary School,,86.9,station
 box-hill-2br,secondary,Box Hill High School,,228.1,station
+brunswick-east-2br,primary,Brunswick East Primary School,,453.2,locality-representative-point
+brunswick-east-2br,secondary,Northcote High School,,465.0,locality-representative-point
 burnley-2br,primary,Richmond Primary School,,222.8,station
 burnley-2br,secondary,Richmond High School,,458.3,station
+carlton-2br,primary,Carlton Gardens Primary School,,151.2,locality-representative-point
+carlton-2br,secondary,University High School,,319.0,locality-representative-point
+carlton-north-2br,primary,Carlton North Primary School,,76.9,locality-representative-point
+carlton-north-2br,secondary,Princes Hill Secondary College,,565.5,locality-representative-point
 chelsea-2br,primary,Chelsea Primary School,,451.7,station
 chelsea-2br,secondary,Patterson River Secondary College,,449.5,station
 clifton-hill-2br,primary,Clifton Hill Primary School,,50.4,station
@@ -31,16 +37,24 @@ craigieburn-townhouse,primary,Craigieburn South Primary School,,782.9,station
 craigieburn-townhouse,secondary,Craigieburn Secondary College,,1213.7,station
 cremorne-2br,primary,Richmond Primary School,,51.9,station
 cremorne-2br,secondary,Richmond High School,,644.3,station
+docklands-2br,primary,Docklands Primary School,,538.3,station
+docklands-2br,secondary,University High School,,544.9,station
 doncaster-villa,primary,Birralee Primary School,,266.8,station
 doncaster-villa,secondary,Koonung Secondary College,,328.5,station
 donnybrook-house-land,primary,Gilgai Plains Primary School,,573.0,station
 donnybrook-house-land,secondary,Ngayuk College,,1970.0,station
+east-melbourne-2br,primary,Carlton Gardens Primary School,,506.2,station
+east-melbourne-2br,secondary,Collingwood College,,259.4,station
 elwood-2br,primary,St Kilda Primary School,,448.5,station
 elwood-2br,secondary,Elwood College,,841.8,station
 established-western-value,primary,St Albans Primary School,,168.0,station
 established-western-value,secondary,St Albans Secondary College,,1089.1,station
 fairfield-house,primary,Fairfield Primary School,,372.2,station
 fairfield-house,secondary,Northcote High School,,109.7,station
+fitzroy-2br,primary,Fitzroy Primary School,,309.5,locality-representative-point
+fitzroy-2br,secondary,Collingwood College,,549.4,locality-representative-point
+fitzroy-north-2br,primary,Fitzroy North Primary School,,283.1,locality-representative-point
+fitzroy-north-2br,secondary,Fitzroy High School,,491.3,locality-representative-point
 footscray-station-2br,primary,Footscray City Primary School,,59.8,station
 footscray-station-2br,secondary,Footscray High School,,123.9,station
 frankston-middle-ring,primary,Moorabbin Primary School,,434.9,station
@@ -75,6 +89,8 @@ malvern-2br,primary,Caulfield Junior College,,117.8,station
 malvern-2br,secondary,Glen Eira College,,526.9,station
 mckinnon-villa,primary,Ormond Primary School,,63.8,station
 mckinnon-villa,secondary,McKinnon Secondary College,,405.1,station
+melbourne-cbd-2br,primary,Carlton Gardens Primary School,,363.4,station
+melbourne-cbd-2br,secondary,University High School,,621.6,station
 mentone-2br,primary,Mentone Primary School,,831.4,station
 mentone-2br,secondary,Parkdale Secondary College,,122.7,station
 middle-park-2br,primary,Middle Park Primary School,,164.6,locality-representative-point
@@ -91,6 +107,8 @@ northern-rail-value,primary,Reservoir Primary School,,546.2,station
 northern-rail-value,secondary,Reservoir High School,,0.1,station
 northwest-villa-corridor,primary,Pascoe Vale Primary School,,630.9,station
 northwest-villa-corridor,secondary,Strathmore Secondary College,,921.8,station
+parkville-2br,primary,North Melbourne Primary School,,166.2,station
+parkville-2br,secondary,University High School,,1182.9,station
 preston-villa,primary,Preston West Primary School,,397.7,station
 preston-villa,secondary,Preston High School,,948.2,station
 rosanna-house,primary,Rosanna Primary School,,95.5,station
@@ -117,5 +135,7 @@ toorak-2br,primary,Armadale Primary School,,179.4,station
 toorak-2br,secondary,Auburn High School,,173.4,station
 upfield-corridor,primary,Brunswick North Primary School,,97.7,station
 upfield-corridor,secondary,Brunswick Secondary College,,802.1,station
+west-melbourne-2br,primary,North Melbourne Primary School,,51.6,station
+west-melbourne-2br,secondary,University High School,,1085.9,station
 yarraville-2br,primary,Yarraville West Primary School,,544.9,station
 yarraville-2br,secondary,Footscray High School,,1274.6,station

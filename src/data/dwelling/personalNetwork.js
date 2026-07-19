@@ -23,6 +23,66 @@ export function pnScore(estMin) {
 }
 
 export const personalNetworkByAreaId = {
+  'melbourne-cbd-2br': {
+    estMin: 20,
+    mode: 'train',
+    confidence: 'medium',
+    rationale: 'City Loop to Flinders Street, then one Sandringham-line stop.',
+  },
+  'east-melbourne-2br': {
+    estMin: 20,
+    mode: 'train+walk',
+    confidence: 'medium',
+    rationale: 'Walk to Parliament, then loop and Sandringham-line connection.',
+  },
+  'west-melbourne-2br': {
+    estMin: 30,
+    mode: 'train+transfer',
+    confidence: 'medium',
+    rationale: 'North Melbourne to Flinders Street, then the Sandringham line.',
+  },
+  'docklands-2br': {
+    estMin: 25,
+    mode: 'train',
+    confidence: 'medium',
+    rationale: 'Southern Cross to Flinders Street, then one stop to South Yarra.',
+  },
+  'carlton-2br': {
+    estMin: 30,
+    mode: 'tram+train',
+    confidence: 'medium',
+    rationale: 'Tram to the city, then one Sandringham-line stop.',
+  },
+  'fitzroy-2br': {
+    estMin: 30,
+    mode: 'tram',
+    confidence: 'medium',
+    rationale: 'Route 78 provides the most direct cross-town connection to South Yarra.',
+  },
+  'parkville-2br': {
+    estMin: 30,
+    mode: 'train+walk',
+    confidence: 'medium',
+    rationale: 'Metro Tunnel to Anzac, then the walk into South Yarra.',
+  },
+  'carlton-north-2br': {
+    estMin: 30,
+    mode: 'tram+train',
+    confidence: 'medium',
+    rationale: 'Tram to the city, then the Sandringham line.',
+  },
+  'fitzroy-north-2br': {
+    estMin: 30,
+    mode: 'tram+train',
+    confidence: 'medium',
+    rationale: 'Tram to Parliament or the CBD, then rail south.',
+  },
+  'brunswick-east-2br': {
+    estMin: 30,
+    mode: 'tram+train',
+    confidence: 'medium',
+    rationale: 'Route 96 or 6 to the city, then rail south; cycling can be quicker.',
+  },
   'inner-south-yarra-2br': {
     estMin: 5,
     mode: 'walk',

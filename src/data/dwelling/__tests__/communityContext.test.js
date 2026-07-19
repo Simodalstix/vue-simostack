@@ -33,10 +33,10 @@ import { decideCriteria } from '../decideStrategies.js'
 const src = (rel) => readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 'utf8')
 
 describe('dataset coverage and lookup', () => {
-  it('exposes the complete 70-record SAL dataset', () => {
-    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(70)
+  it('exposes the complete 80-record SAL dataset', () => {
+    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(80)
     expect(COMMUNITY_DATASET.title).toBe('Community Context · ABS Census 2021')
-    expect(COMMUNITY_DATASET.recordCount).toBe(70)
+    expect(COMMUNITY_DATASET.recordCount).toBe(80)
     expect(DWELLING_CENSUS_CONTEXT).toBe(DWELLING_COMMUNITY_CONTEXT)
   })
 
@@ -208,7 +208,7 @@ describe('source metadata', () => {
       expect(s.geographyCode).toMatch(/^SAL\d+$/)
       expect(s.censusYear).toBe(2021)
       expect(s.source).toBe('Australian Bureau of Statistics')
-      expect(s.retrievedAt).toMatch(/^2026-07-(14|16|18)$/)
+      expect(s.retrievedAt).toMatch(/^2026-07-(14|16|18|19)$/)
       expect(s.privacyNote).toBeTruthy()
     }
   })

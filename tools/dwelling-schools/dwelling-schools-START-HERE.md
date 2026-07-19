@@ -2,7 +2,7 @@
 
 ## Current status
 
-Pipeline code, anchors, generated app data and tests cover all 60 current
+Pipeline code, anchors, generated app data and tests cover all 70 current
 Decide-page records. The reusable School Locations 2025 CSV and School Zones
 2027 ZIP are present locally under the gitignored `source/` directory. Generated
 files remain committed under `src/data/dwelling/schools/`; raw publisher files

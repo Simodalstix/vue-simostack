@@ -452,6 +452,33 @@
       "confidence": "medium"
     },
     {
+      "name": "Princes Hill Secondary College",
+      "schoolNo": "8245",
+      "vceMedianStudyScore": null,
+      "vcePct40Plus": null,
+      "meanVceStudyScore": 31.8,
+      "vceCompletionRate": 100.0,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear7": { "school": 89.4, "similarSchools": 85.1, "state": 65.7 },
+          "readingYear9": { "school": 92.3, "similarSchools": 80.6, "state": 61.0 },
+          "numeracyYear7": { "school": 80.5, "similarSchools": 83.6, "state": 63.5 },
+          "numeracyYear9": { "school": 84.6, "similarSchools": 80.2, "state": 60.2 }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The official 2025 report recorded a mean VCE study score of 31.8, 100% VCE/VCE VM completion and three-year NAPLAN proficiency above the state in all four published measures, supporting a strong rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8245&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
       "name": "Reservoir High School",
       "schoolNo": "8708",
       "vceMedianStudyScore": 27,

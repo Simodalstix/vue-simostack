@@ -3,7 +3,7 @@
 ## Status
 
 This package establishes the reproducible version-one greenspace pipeline for
-the canonical Decide-page target registry (currently 60 suburb records).
+the canonical Decide-page target registry (currently 70 suburb records).
 
 It does not contain fabricated scores. The final JSON and TypeScript datasets
 are generated only after the official spatial source files have been downloaded

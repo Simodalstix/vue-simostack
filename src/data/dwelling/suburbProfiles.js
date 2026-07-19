@@ -80,6 +80,177 @@ const chelseaBonbeach = {
 }
 
 export const suburbProfiles = {
+  'melbourne-cbd-2br': {
+    lives:
+      'Maximum city access: jobs, universities, culture and late-night transport are downstairs rather than a commute away.',
+    housing:
+      'A deep apartment market spanning compact investor stock, older towers and larger owner-occupier buildings; floor plan, light, noise and owners-corporation health matter more than the postcode.',
+    fit: [
+      { text: 'The strongest car-free and teen-independent proposition in the set.', tag: null },
+      { text: 'Little private outdoor space and uneven building quality.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'A genuinely urban household that values time and access over space.',
+      mainRisk: 'Buying the wrong building in a market with many superficially similar apartments.',
+      pursueWhen: 'A quiet, well-run building offers a real second bedroom and useful storage.',
+    },
+  },
+  'east-melbourne-2br': {
+    lives:
+      'Leafy, quiet and immediately beside the CBD, with gardens, hospitals, sport and Parliament all walkable.',
+    housing:
+      'Scarce older apartments and premium low-rise stock sit beside a smaller number of towers; the postcode premium buys calm and proximity.',
+    fit: [
+      { text: 'Exceptional access to hospital work and central-city life.', tag: null },
+      { text: 'Thin stock and premium pricing reduce bargaining power.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'CBD convenience without CBD intensity.',
+      mainRisk: 'Overpaying for the address while compromising on the apartment itself.',
+      pursueWhen:
+        'An established two-bedroom has good light away from major roads and event noise.',
+    },
+  },
+  'west-melbourne-2br': {
+    lives:
+      'A changing city-fringe neighbourhood linking the CBD, Queen Victoria Market, North Melbourne and the rail yards.',
+    housing:
+      'Warehouse conversions, small walk-ups and rapid apartment development coexist; construction exposure and street-by-street amenity vary sharply.',
+    fit: [
+      { text: 'Central access at a discount to the polished inner east.', tag: null },
+      {
+        text: 'Arden construction and traffic corridors can dominate the wrong address.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'City-fringe value with future precinct upside.',
+      mainRisk: 'Buying next to prolonged construction or a hostile road edge.',
+      pursueWhen: 'A settled side-street building has a clear view of its future surroundings.',
+    },
+  },
+  'docklands-2br': {
+    lives:
+      'Waterfront promenades, stadium access and free-tram CBD proximity, but a quieter and more corporate street life than older inner suburbs.',
+    housing:
+      'Apartment choice is abundant and negotiating leverage can be real; building defects, wind, orientation and high shared-facility costs separate good value from a trap.',
+    fit: [
+      { text: 'Excellent city access and strong apartment value for the location.', tag: null },
+      {
+        text: 'School, street-life and building-quality stories are highly address-specific.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Waterfront apartment living with a short CBD commute.',
+      mainRisk: 'High owners-corporation costs or a compromised tower erasing the price advantage.',
+      pursueWhen: 'A proven building offers sun, wind protection and conservative fees.',
+    },
+  },
+  'carlton-2br': {
+    lives:
+      'University, hospital and Lygon Street life within walking distance of the CBD, with strong trams and major parks close by.',
+    housing:
+      'The headline unit median is distorted by studios and student stock; a credible family two-bedroom is a distinct, more expensive product.',
+    fit: [
+      { text: 'Outstanding education, hospital and cultural access.', tag: null },
+      {
+        text: 'Student-oriented stock makes median-price comparisons unreliable.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Car-light university-precinct living with city access.',
+      mainRisk: 'Mistaking investor accommodation pricing for the cost of a liveable two-bedroom.',
+      pursueWhen: 'An owner-occupier floor plan appears away from nightlife and arterial noise.',
+    },
+  },
+  'fitzroy-2br': {
+    lives:
+      'Dense, creative and walkable, with Brunswick and Smith streets, trams and the CBD all close enough to make the car optional.',
+    housing:
+      'Warehouse conversions, Victorian fabric and boutique apartments are attractive but scarce; noise and design quality are intensely site-specific.',
+    fit: [
+      { text: 'One of the strongest adult-life and low-car neighbourhoods.', tag: null },
+      {
+        text: 'A high lifestyle premium buys less space and little quiet by default.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Walkable inner-city life with genuine neighbourhood character.',
+      mainRisk: 'Paying a lifestyle premium for a noisy or compromised apartment.',
+      pursueWhen:
+        'A quiet-edge warehouse or boutique two-bedroom has strong light and ventilation.',
+    },
+  },
+  'parkville-2br': {
+    lives:
+      'University, hospital, Royal Park and the new Metro Tunnel define a calm institutional precinct immediately north of the city.',
+    housing:
+      'Apartment supply is limited and heterogeneous, from older blocks to student-heavy buildings; true family-scale two-bedrooms are not the median product.',
+    fit: [
+      { text: 'Elite hospital, university, park and city access.', tag: null },
+      {
+        text: 'Thin owner-occupier stock makes the search slower than the median suggests.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A quiet green base tied closely to hospitals and the CBD.',
+      mainRisk: 'Relying on a unit median shaped by smaller or student-oriented stock.',
+      pursueWhen: 'An established full-size apartment appears near the park or Metro station.',
+    },
+  },
+  'carlton-north-2br': {
+    lives:
+      'Village-like Rathdowne and Nicholson Street living, with Princes Park, trams and cycling routes compensating for the absence of rail.',
+    housing:
+      'Apartments are scarcer than terraces and the good low-rise stock carries a family-neighbourhood premium.',
+    fit: [
+      { text: 'Strong parks, schools and everyday family amenity close to the city.', tag: null },
+      { text: 'No station means tram reliability matters every day.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Inner-north family life without giving up city proximity.',
+      mainRisk: 'Paying near-house-location money for thin apartment choice and tram dependence.',
+      pursueWhen: 'A quiet low-rise two-bedroom appears near Princes Park or a frequent tram.',
+    },
+  },
+  'fitzroy-north-2br': {
+    lives:
+      'Edinburgh Gardens, village strips and dense tram and cycling links create a softer family version of Fitzroy.',
+    housing:
+      'Older walk-ups and boutique apartments are limited and keenly held; arterial edges are much less appealing than the garden-side streets.',
+    fit: [
+      { text: 'Excellent park access and strong independent neighbourhood life.', tag: null },
+      { text: 'No heavy rail and scarce quality stock weaken the value case.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Park-led inner-north family life with character.',
+      mainRisk: 'Compromising on noise or apartment quality just to secure the suburb.',
+      pursueWhen: 'A proven walk-up lists off the main roads within easy reach of the gardens.',
+    },
+  },
+  'brunswick-east-2br': {
+    lives:
+      'Food, trams, cycling and Merri Creek access give it an energetic but more affordable inner-north proposition.',
+    housing:
+      'There is meaningful two-bedroom supply, though main-road investor buildings vary widely in noise, ventilation, defects and owners-corporation burden.',
+    fit: [
+      { text: 'The strongest value step-down among these close-in northern suburbs.', tag: null },
+      {
+        text: 'Tram-only commuting and uneven apartment quality require careful selection.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Inner-north amenity at a more achievable apartment price.',
+      mainRisk: 'A poor corridor building erasing both comfort and resale appeal.',
+      pursueWhen:
+        'An established quiet-side two-bedroom has good natural light and conservative fees.',
+    },
+  },
   // 'Footscray'
   'footscray-station-2br': {
     lives:

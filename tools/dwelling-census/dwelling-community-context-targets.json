@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-22",
-  "retrievedAt": "2026-07-18",
-  "recordCount": 22,
+  "version": "2021-gcp-sal-extension-32",
+  "retrievedAt": "2026-07-19",
+  "recordCount": 32,
   "records": [
     {
       "id": "yarraville-2br",
@@ -91,6 +91,46 @@
     {
       "id": "newport-house",
       "salComponents": [{ "suburb": "Newport", "salCode": "21934" }]
+    },
+    {
+      "id": "melbourne-cbd-2br",
+      "salComponents": [{ "suburb": "Melbourne", "salCode": "21640" }]
+    },
+    {
+      "id": "east-melbourne-2br",
+      "salComponents": [{ "suburb": "East Melbourne", "salCode": "20830" }]
+    },
+    {
+      "id": "west-melbourne-2br",
+      "salComponents": [{ "suburb": "West Melbourne", "salCode": "22757" }]
+    },
+    {
+      "id": "docklands-2br",
+      "salComponents": [{ "suburb": "Docklands", "salCode": "20766" }]
+    },
+    {
+      "id": "carlton-2br",
+      "salComponents": [{ "suburb": "Carlton", "salCode": "20495" }]
+    },
+    {
+      "id": "fitzroy-2br",
+      "salComponents": [{ "suburb": "Fitzroy", "salCode": "20924" }]
+    },
+    {
+      "id": "parkville-2br",
+      "salComponents": [{ "suburb": "Parkville", "salCode": "22038" }]
+    },
+    {
+      "id": "carlton-north-2br",
+      "salComponents": [{ "suburb": "Carlton North", "salCode": "20496" }]
+    },
+    {
+      "id": "fitzroy-north-2br",
+      "salComponents": [{ "suburb": "Fitzroy North", "salCode": "20925" }]
+    },
+    {
+      "id": "brunswick-east-2br",
+      "salComponents": [{ "suburb": "Brunswick East", "salCode": "20362" }]
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "dataset": "dwelling-greenspace-source-manifest",
   "methodologyVersion": "greenspace-access-v1",
-  "retrievedAt": "2026-07-16",
+  "retrievedAt": "2026-07-19",
   "sources": [
     {
       "name": "Victorian Planning Authority Open Space",
@@ -49,9 +49,9 @@
       "downloadUrl": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform:parkres&srsName=EPSG:4326&bbox=144.4,-38.15,145.25,-37.45,EPSG:4326&outputFormat=application/json",
       "filename": "PARKRES_metro_bbox.geojson",
       "sha256": "f0f369d58f187edc2e5684e436f30af65b06554fd84041c597442f7d9ce99b30",
-      "refreshedAt": "2026-07-18",
-      "refreshedSha256": "8d51af19ff67d951f1c82e6db3fe6cf36e8d855d395bf28259df59fa6b57ec82",
-      "note": "Supplement used only for major-park and nature-corridor layers, never for local-access scoring, because public pedestrian access is not encoded consistently enough for local-park eligibility. The July 2026 onboarding batch (nine records, 2026-07-18) used a refreshed PARKRES pull; PARKRES is a live dataset and had drifted since 2026-06-29, while the four primary sources remained hash-identical to this manifest."
+      "refreshedAt": "2026-07-19",
+      "refreshedSha256": "1646be9cf16c0c89493e280ce7b2754111f63628588da1585cef24a77c30f63c",
+      "note": "Supplement used only for major-park and nature-corridor layers, never for local-access scoring, because public pedestrian access is not encoded consistently enough for local-park eligibility. The ten-record inner-core onboarding batch used a fresh bounded PARKRES pull on 2026-07-19; PARKRES is a live dataset, while the four primary sources remained hash-identical to this manifest."
     }
   ],
   "classificationReview": {

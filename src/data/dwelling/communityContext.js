@@ -45,6 +45,11 @@ export const COMMUNITY_DATASET = {
 const recordBySuburb = DWELLING_COMMUNITY_CONTEXT_BY_SUBURB
 const corridorById = Object.fromEntries(areaCorridors.map((r) => [r.id, r]))
 
+// Presentation labels that intentionally differ from the official ABS SAL name.
+const salNamesByAreaId = {
+  'melbourne-cbd-2br': ['Melbourne'],
+}
+
 // "Windsor / Prahran" and "Windsor/Prahran" are the same label.
 function normaliseLabel(label) {
   return String(label || '')
@@ -68,6 +73,7 @@ const lensEntryByLabel = Object.fromEntries(
 export function componentSuburbNamesFor(areaId) {
   const rec = corridorById[areaId]
   if (!rec) return []
+  if (salNamesByAreaId[areaId]) return salNamesByAreaId[areaId]
   const fromLens = lensEntryByLabel[normaliseLabel(rec.suburb)]?.salSuburbs
   if (fromLens?.length) return fromLens
   return [rec.suburb]

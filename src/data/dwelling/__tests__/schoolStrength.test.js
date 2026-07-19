@@ -28,7 +28,7 @@ describe('school strength research table', () => {
       ...Object.values(schoolStrengthBySchoolNo),
       ...Object.values(schoolStrengthByName),
     ]
-    expect(entries.length).toBe(91)
+    expect(entries.length).toBe(92)
     for (const entry of entries) {
       expect(
         entry.strength === null ||

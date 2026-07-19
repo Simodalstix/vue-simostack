@@ -1,5 +1,5 @@
 // Hand-generated from tools/dwelling-schools/school-strength-research.json.
-// Owner-reviewed 2026-07-16. Strengths are decision-tool research ratings,
+// Owner-reviewed through 2026-07-19. Strengths are decision-tool research ratings,
 // not official Department of Education, VCAA or ACARA ratings. Null means
 // the published evidence was insufficient and must never be coerced.
 
@@ -684,6 +684,15 @@ export const schoolStrengthBySchoolNo = {
     sources: [
       'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8241&Type=AnnualReport&requestFileType=Pdf',
       'https://www.schoolexplorer.com.au/schools/preston/preston-high-school?year=2025',
+    ],
+  },
+  8245: {
+    strength: 4,
+    evidenceNote:
+      'The official 2025 report recorded a mean VCE study score of 31.8, 100% VCE/VCE VM completion and three-year NAPLAN proficiency above the state in all four published measures, supporting a strong rating.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8245&Type=AnnualReport&requestFileType=Pdf',
     ],
   },
   8271: {

@@ -1135,6 +1135,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "brunswick-east-2br",
+      "displayName": "Brunswick East",
+      "salSuburbs": [
+        "Brunswick East"
+      ],
+      "salCodes": [
+        "20362"
+      ],
+      "greenspace": 8.9027,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 6.7802,
+        "natureCorridorAccess": 9.343
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 99.5,
+        "representedPopulation": 12992,
+        "sampledMeshBlocks": 140
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 132,
+          "majorPark": 986,
+          "natureCorridor": 434
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Princes Park",
+            "areaHa": 32.73
+          },
+          {
+            "name": "Edinburgh Gardens",
+            "areaHa": 10.66
+          },
+          {
+            "name": "Ryder, Ransford and McAlister Ovals",
+            "areaHa": 9.39
+          },
+          {
+            "name": "Edinburgh Gardens - Sports Fields",
+            "areaHa": 6.39
+          },
+          {
+            "name": "Merri Park",
+            "areaHa": 5.82
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Merri Park Winifred St",
+            "areaHa": 4.32
+          },
+          {
+            "name": "Merri Creek Frontage - Darebin",
+            "areaHa": 3.81
+          },
+          {
+            "name": "Merri Creek Frontage - Moreland",
+            "areaHa": 2.62
+          },
+          {
+            "name": "Merri Creek Recreation Reserve",
+            "areaHa": 2.55
+          },
+          {
+            "name": "Thomas Kidney Reserve",
+            "areaHa": 1.41
+          }
+        ],
+        "residentialPopulationCoveragePct": 97.8,
+        "componentSpread": 3.2,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "burnley-2br",
       "displayName": "Burnley",
       "salSuburbs": [
@@ -1219,6 +1307,172 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 98.5,
         "componentSpread": 0.0,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "carlton-2br",
+      "displayName": "Carlton",
+      "salSuburbs": [
+        "Carlton"
+      ],
+      "salCodes": [
+        "20495"
+      ],
+      "greenspace": 9.5624,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.2271,
+        "natureCorridorAccess": 8.9714
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 12002,
+        "sampledMeshBlocks": 121
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 95,
+          "majorPark": 520,
+          "natureCorridor": 499
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Royal Park",
+            "areaHa": 42.6
+          },
+          {
+            "name": "Princes Park",
+            "areaHa": 29.33
+          },
+          {
+            "name": "Fitzroy Gardens",
+            "areaHa": 26.28
+          },
+          {
+            "name": "Royal Park Ovals",
+            "areaHa": 11.28
+          },
+          {
+            "name": "Edinburgh Gardens",
+            "areaHa": 10.66
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Mark Street Linear Park",
+            "areaHa": 0.43
+          },
+          {
+            "name": "Carlton Court House Historic Reserve",
+            "areaHa": 0.04
+          }
+        ],
+        "residentialPopulationCoveragePct": 74.8,
+        "componentSpread": 1.0,
+        "reviewFlags": [
+          "lowResidentialPopulationCoverage"
+        ]
+      }
+    },
+    {
+      "id": "carlton-north-2br",
+      "displayName": "Carlton North",
+      "salSuburbs": [
+        "Carlton North"
+      ],
+      "salCodes": [
+        "20496"
+      ],
+      "greenspace": 9.2963,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.8436,
+        "majorParkAccess": 8.7594,
+        "natureCorridorAccess": 8.7335
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 93.5,
+        "representedPopulation": 6090,
+        "sampledMeshBlocks": 78
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 210,
+          "majorPark": 644,
+          "natureCorridor": 658
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Royal Park",
+            "areaHa": 78.69
+          },
+          {
+            "name": "Princes Park",
+            "areaHa": 32.73
+          },
+          {
+            "name": "Royal Park Ovals",
+            "areaHa": 11.28
+          },
+          {
+            "name": "Edinburgh Gardens",
+            "areaHa": 10.66
+          },
+          {
+            "name": "Ryder, Ransford and McAlister Ovals",
+            "areaHa": 9.39
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Royal Park Wetlands and Bushland",
+            "areaHa": 7.67
+          },
+          {
+            "name": "Merri Park Winifred St",
+            "areaHa": 4.32
+          },
+          {
+            "name": "Merri Creek Recreation Reserve",
+            "areaHa": 2.55
+          },
+          {
+            "name": "Merri Creek Frontage - Darebin",
+            "areaHa": 2.07
+          },
+          {
+            "name": "Thomas Kidney Reserve",
+            "areaHa": 1.41
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.6,
+        "componentSpread": 1.1,
         "reviewFlags": []
       }
     },
@@ -1757,6 +2011,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "docklands-2br",
+      "displayName": "Docklands",
+      "salSuburbs": [
+        "Docklands"
+      ],
+      "salCodes": [
+        "20766"
+      ],
+      "greenspace": 8.586,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.3982,
+        "majorParkAccess": 8.2598,
+        "natureCorridorAccess": 9.5446
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 79.8,
+        "representedPopulation": 14745,
+        "sampledMeshBlocks": 40
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 127,
+          "majorPark": 773,
+          "natureCorridor": 389
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 52.51
+          },
+          {
+            "name": "J.L. Murphy Recreation Reserve",
+            "areaHa": 11.35
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 10.96
+          },
+          {
+            "name": "Birrarung Marr",
+            "areaHa": 7.38
+          },
+          {
+            "name": "Flagstaff Gardens",
+            "areaHa": 7.35
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 52.51
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 10.96
+          },
+          {
+            "name": "River Esplanade",
+            "areaHa": 1.2
+          },
+          {
+            "name": "Moonee Ponds Creek Trail",
+            "areaHa": 1.14
+          },
+          {
+            "name": "Moonee Ponds Creek",
+            "areaHa": 0.76
+          }
+        ],
+        "residentialPopulationCoveragePct": 95.2,
+        "componentSpread": 1.3,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "doncaster-villa",
       "displayName": "Doncaster",
       "salSuburbs": [
@@ -1925,6 +2267,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 99.1,
         "componentSpread": 2.4,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "east-melbourne-2br",
+      "displayName": "East Melbourne",
+      "salSuburbs": [
+        "East Melbourne"
+      ],
+      "salCodes": [
+        "20830"
+      ],
+      "greenspace": 9.3639,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.949,
+        "natureCorridorAccess": 6.8959
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 4100,
+        "sampledMeshBlocks": 61
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 101,
+          "majorPark": 164,
+          "natureCorridor": 987
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Royal Botanic Gardens - Melbourne",
+            "areaHa": 37.96
+          },
+          {
+            "name": "Yarra Park",
+            "areaHa": 27.74
+          },
+          {
+            "name": "Fitzroy Gardens",
+            "areaHa": 26.28
+          },
+          {
+            "name": "The Kings Domain Reserve",
+            "areaHa": 16.59
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 13.98
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Yarra River",
+            "areaHa": 13.98
+          },
+          {
+            "name": "Yarra River Frontage - Yarra",
+            "areaHa": 3.92
+          },
+          {
+            "name": "Stapely Parade Reserve",
+            "areaHa": 0.64
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 0.05
+          },
+          {
+            "name": "Carlton Court House Historic Reserve",
+            "areaHa": 0.04
+          }
+        ],
+        "residentialPopulationCoveragePct": 83.7,
+        "componentSpread": 3.1,
         "reviewFlags": []
       }
     },
@@ -2101,6 +2531,174 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 93.9,
         "componentSpread": 0.6,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "fitzroy-2br",
+      "displayName": "Fitzroy",
+      "salSuburbs": [
+        "Fitzroy"
+      ],
+      "salCodes": [
+        "20924"
+      ],
+      "greenspace": 9.1674,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.3438,
+        "natureCorridorAccess": 6.8215
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 99.6,
+        "representedPopulation": 8922,
+        "sampledMeshBlocks": 108
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 150,
+          "majorPark": 483,
+          "natureCorridor": 1061
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Fitzroy Gardens",
+            "areaHa": 26.28
+          },
+          {
+            "name": "Yarra Park",
+            "areaHa": 25.46
+          },
+          {
+            "name": "Edinburgh Gardens",
+            "areaHa": 10.66
+          },
+          {
+            "name": "Carlton Gardens South",
+            "areaHa": 8.81
+          },
+          {
+            "name": "Birrarung Marr",
+            "areaHa": 7.62
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Mark Street Linear Park",
+            "areaHa": 0.57
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 0.05
+          },
+          {
+            "name": "Carlton Court House Historic Reserve",
+            "areaHa": 0.04
+          }
+        ],
+        "residentialPopulationCoveragePct": 85.5,
+        "componentSpread": 3.2,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "fitzroy-north-2br",
+      "displayName": "Fitzroy North",
+      "salSuburbs": [
+        "Fitzroy North"
+      ],
+      "salCodes": [
+        "20925"
+      ],
+      "greenspace": 9.8244,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.6937,
+        "natureCorridorAccess": 9.5817
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 12407,
+        "sampledMeshBlocks": 137
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 149,
+          "majorPark": 346,
+          "natureCorridor": 353
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Princes Park",
+            "areaHa": 27.86
+          },
+          {
+            "name": "Edinburgh Gardens",
+            "areaHa": 10.66
+          },
+          {
+            "name": "Darling Gardens - Clifton Hill",
+            "areaHa": 7.12
+          },
+          {
+            "name": "Carlton Gardens North",
+            "areaHa": 7.12
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 6.83
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Merri Park Winifred St",
+            "areaHa": 4.32
+          },
+          {
+            "name": "Merri Creek Frontage - Darebin",
+            "areaHa": 3.86
+          },
+          {
+            "name": "Merri Creek Recreation Reserve",
+            "areaHa": 2.55
+          },
+          {
+            "name": "Merri Creek Frontage - Moreland",
+            "areaHa": 2.18
+          },
+          {
+            "name": "Thomas Kidney Reserve",
+            "areaHa": 1.41
+          }
+        ],
+        "residentialPopulationCoveragePct": 97.1,
+        "componentSpread": 0.4,
         "reviewFlags": []
       }
     },
@@ -2891,6 +3489,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "melbourne-cbd-2br",
+      "displayName": "Melbourne CBD",
+      "salSuburbs": [
+        "Melbourne"
+      ],
+      "salCodes": [
+        "21640"
+      ],
+      "greenspace": 9.2553,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.7205,
+        "natureCorridorAccess": 6.6955
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 45024,
+        "sampledMeshBlocks": 177
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 173,
+          "majorPark": 290,
+          "natureCorridor": 1164
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Albert Park",
+            "areaHa": 120.27
+          },
+          {
+            "name": "Royal Park",
+            "areaHa": 78.54
+          },
+          {
+            "name": "Albert Park Lake",
+            "areaHa": 48.92
+          },
+          {
+            "name": "Fawkner Park",
+            "areaHa": 41.19
+          },
+          {
+            "name": "Royal Botanic Gardens - Melbourne",
+            "areaHa": 37.96
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Albert Park Lake",
+            "areaHa": 48.92
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 13.98
+          },
+          {
+            "name": "Port Melb, Albert & Middle Parks F/shore",
+            "areaHa": 11.29
+          },
+          {
+            "name": "Yarra River Frontage - Yarra",
+            "areaHa": 3.92
+          },
+          {
+            "name": "St Kilda Catani Gardens & Surrounding Foreshore",
+            "areaHa": 2.0
+          }
+        ],
+        "residentialPopulationCoveragePct": 81.9,
+        "componentSpread": 3.3,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "mentone-2br",
       "displayName": "Mentone",
       "salSuburbs": [
@@ -3500,6 +4186,96 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         "residentialPopulationCoveragePct": 100.0,
         "componentSpread": 1.6,
         "reviewFlags": []
+      }
+    },
+    {
+      "id": "parkville-2br",
+      "displayName": "Parkville",
+      "salSuburbs": [
+        "Parkville"
+      ],
+      "salCodes": [
+        "22038"
+      ],
+      "greenspace": 9.6566,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.9406,
+        "natureCorridorAccess": 8.3719
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 5092,
+        "sampledMeshBlocks": 58
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 60,
+          "majorPark": 148,
+          "natureCorridor": 723
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Royal Park",
+            "areaHa": 81.13
+          },
+          {
+            "name": "Princes Park",
+            "areaHa": 32.73
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 12.5
+          },
+          {
+            "name": "Royal Park Ovals",
+            "areaHa": 11.28
+          },
+          {
+            "name": "Ryder, Ransford and McAlister Ovals",
+            "areaHa": 9.39
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Royal Park Wetlands and Bushland",
+            "areaHa": 7.67
+          },
+          {
+            "name": "Moonee Ponds Creek & Trail",
+            "areaHa": 3.15
+          },
+          {
+            "name": "Moonee Ponds Creek Trail",
+            "areaHa": 2.95
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 2.82
+          },
+          {
+            "name": "Moonee Ponds Creek Linear Reserve",
+            "areaHa": 1.89
+          }
+        ],
+        "residentialPopulationCoveragePct": 72.0,
+        "componentSpread": 1.6,
+        "reviewFlags": [
+          "lowResidentialPopulationCoverage"
+        ]
       }
     },
     {
@@ -5089,6 +5865,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 100.0,
         "componentSpread": 0.6,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "west-melbourne-2br",
+      "displayName": "West Melbourne",
+      "salSuburbs": [
+        "West Melbourne"
+      ],
+      "salCodes": [
+        "22757"
+      ],
+      "greenspace": 9.1101,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.6408,
+        "natureCorridorAccess": 6.0894
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 7062,
+        "sampledMeshBlocks": 44
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 153,
+          "majorPark": 245,
+          "natureCorridor": 1261
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 56.35
+          },
+          {
+            "name": "Westgate Park",
+            "areaHa": 26.02
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 22.28
+          },
+          {
+            "name": "Footscray Park - Lower Maribyrnong parklands",
+            "areaHa": 14.29
+          },
+          {
+            "name": "Lower Maribyrnong Parklands - Maribyrnong",
+            "areaHa": 10.56
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 56.35
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 22.28
+          },
+          {
+            "name": "Pipemakers, Burndap and Footscay Park Parklands (COM)",
+            "areaHa": 20.12
+          },
+          {
+            "name": "Footscray Park - Lower Maribyrnong parklands",
+            "areaHa": 14.29
+          },
+          {
+            "name": "Lower Maribyrnong Parklands - Maribyrnong",
+            "areaHa": 10.56
+          }
+        ],
+        "residentialPopulationCoveragePct": 88.0,
+        "componentSpread": 3.9,
         "reviewFlags": []
       }
     },

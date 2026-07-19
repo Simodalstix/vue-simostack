@@ -12,7 +12,7 @@ export const areaSources = {
     detail:
       'Suburb and regional ancestry, birthplace, language and household data. Full profiles are 2021 Census.',
     url: 'https://www.abs.gov.au/census/find-census-data/quickstats',
-    lastChecked: null,
+    lastChecked: '2026-07-19',
   },
   csa: {
     id: 'csa',
@@ -20,7 +20,7 @@ export const areaSources = {
     detail:
       'Recorded offence rates by suburb, postcode and LGA. Downloadable data updated June 2026.',
     url: 'https://www.crimestatistics.vic.gov.au/',
-    lastChecked: null,
+    lastChecked: '2026-07-19',
   },
   vicplan: {
     id: 'vicplan',
@@ -28,15 +28,15 @@ export const areaSources = {
     detail:
       'Property-level planning reports: zones, overlays, flood, bushfire, heritage, reservations.',
     url: 'https://mapshare.vic.gov.au/vicplan/',
-    lastChecked: null,
+    lastChecked: '2026-07-19',
   },
   ptv: {
     id: 'ptv',
     name: 'Public Transport Victoria',
     detail:
       'Timetables, frequencies and Metro Tunnel / City Loop running patterns for door-to-door commute modelling.',
-    url: 'https://www.ptv.vic.gov.au/',
-    lastChecked: null,
+    url: 'https://transport.vic.gov.au/',
+    lastChecked: '2026-07-19',
   },
   domain: {
     id: 'domain',
@@ -44,6 +44,14 @@ export const areaSources = {
     detail: 'Indicative price bands by suburb and dwelling type. Estimates, not quotes.',
     url: 'https://www.domain.com.au/',
     lastChecked: null,
+  },
+  vgv: {
+    id: 'vgv',
+    name: 'Valuer-General Victoria — suburb property sales statistics',
+    detail:
+      'Official annual settled-price medians by suburb and broad property type. Unit figures are explicitly treated as all-bedroom proxies.',
+    url: 'https://www.land.vic.gov.au/land-registration/publications',
+    lastChecked: '2026-07-19',
   },
   detSchoolLocations: {
     id: 'detSchoolLocations',

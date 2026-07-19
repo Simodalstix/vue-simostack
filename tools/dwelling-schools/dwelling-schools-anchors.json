@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-18",
+ "generatedAt": "2026-07-19",
  "recipe": "Derived from areaGeo.js stationPoints + areaCorridors.js childhood name hints. Regenerate after adding records; never hand-edit.",
  "records": [
   {
@@ -631,7 +631,7 @@
      "new estate primaries opening in stages"
     ],
     "publicSecondary": [
-     "none established — buses toward Craigieburn/Mount Ridley"
+     "none established \u2014 buses toward Craigieburn/Mount Ridley"
     ],
     "privateContext": []
    }
@@ -1379,52 +1379,109 @@
   {
    "id": "heidelberg-3br-townhouse",
    "suburb": "Heidelberg",
-   "localityNames": ["Heidelberg"],
-   "anchors": [
-    { "id": "heidelberg", "name": "Heidelberg", "lng": 145.0607923, "lat": -37.7571092 }
+   "localityNames": [
+    "Heidelberg"
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "anchors": [
+    {
+     "id": "heidelberg",
+     "name": "Heidelberg",
+     "lng": 145.0607923,
+     "lat": -37.7571092
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   },
   {
    "id": "rosanna-house",
    "suburb": "Rosanna",
-   "localityNames": ["Rosanna"],
-   "anchors": [
-    { "id": "rosanna", "name": "Rosanna", "lng": 145.0661791, "lat": -37.7428788 }
+   "localityNames": [
+    "Rosanna"
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "anchors": [
+    {
+     "id": "rosanna",
+     "name": "Rosanna",
+     "lng": 145.0661791,
+     "lat": -37.7428788
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   },
   {
    "id": "fairfield-house",
    "suburb": "Fairfield",
-   "localityNames": ["Fairfield"],
-   "anchors": [
-    { "id": "fairfield", "name": "Fairfield", "lng": 145.0169241, "lat": -37.7791763 }
+   "localityNames": [
+    "Fairfield"
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "anchors": [
+    {
+     "id": "fairfield",
+     "name": "Fairfield",
+     "lng": 145.0169241,
+     "lat": -37.7791763
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   },
   {
    "id": "surrey-hills-house",
    "suburb": "Surrey Hills",
-   "localityNames": ["Surrey Hills"],
-   "anchors": [
-    { "id": "union", "name": "Union", "lng": 145.1014154, "lat": -37.8223766 }
+   "localityNames": [
+    "Surrey Hills"
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "anchors": [
+    {
+     "id": "union",
+     "name": "Union",
+     "lng": 145.1014154,
+     "lat": -37.8223766
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   },
   {
    "id": "blackburn-house",
    "suburb": "Blackburn",
-   "localityNames": ["Blackburn"],
-   "anchors": [
-    { "id": "blackburn", "name": "Blackburn", "lng": 145.1500487, "lat": -37.8200847 }
+   "localityNames": [
+    "Blackburn"
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "anchors": [
+    {
+     "id": "blackburn",
+     "name": "Blackburn",
+     "lng": 145.1500487,
+     "lat": -37.8200847
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   },
   {
    "id": "mount-waverley-villa",
    "suburb": "Mount Waverley",
-   "localityNames": ["Mount Waverley"],
+   "localityNames": [
+    "Mount Waverley"
+   ],
    "anchors": [
     {
      "id": "mount-waverley",
@@ -1433,34 +1490,236 @@
      "lat": -37.8752637
     }
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   },
   {
    "id": "ashburton-villa",
    "suburb": "Ashburton",
-   "localityNames": ["Ashburton"],
-   "anchors": [
-    { "id": "ashburton", "name": "Ashburton", "lng": 145.0814007, "lat": -37.8620025 }
+   "localityNames": [
+    "Ashburton"
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "anchors": [
+    {
+     "id": "ashburton",
+     "name": "Ashburton",
+     "lng": 145.0814007,
+     "lat": -37.8620025
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   },
   {
    "id": "bentleigh-house",
    "suburb": "Bentleigh",
-   "localityNames": ["Bentleigh"],
-   "anchors": [
-    { "id": "bentleigh", "name": "Bentleigh", "lng": 145.0369346, "lat": -37.9175354 }
+   "localityNames": [
+    "Bentleigh"
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "anchors": [
+    {
+     "id": "bentleigh",
+     "name": "Bentleigh",
+     "lng": 145.0369346,
+     "lat": -37.9175354
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   },
   {
    "id": "newport-house",
    "suburb": "Newport",
-   "localityNames": ["Newport"],
-   "anchors": [
-    { "id": "newport", "name": "Newport", "lng": 144.8835734, "lat": -37.8424593 }
+   "localityNames": [
+    "Newport"
    ],
-   "nameHints": { "publicPrimary": [], "publicSecondary": [], "privateContext": [] }
+   "anchors": [
+    {
+     "id": "newport",
+     "name": "Newport",
+     "lng": 144.8835734,
+     "lat": -37.8424593
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "melbourne-cbd-2br",
+   "suburb": "Melbourne CBD",
+   "localityNames": [
+    "Melbourne"
+   ],
+   "anchors": [
+    {
+     "id": "melbourne-central",
+     "name": "Melbourne Central",
+     "lng": 144.9629,
+     "lat": -37.8102
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "east-melbourne-2br",
+   "suburb": "East Melbourne",
+   "localityNames": [
+    "East Melbourne"
+   ],
+   "anchors": [
+    {
+     "id": "parliament-east-melbourne",
+     "name": "Parliament",
+     "lng": 144.9729,
+     "lat": -37.8111
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "west-melbourne-2br",
+   "suburb": "West Melbourne",
+   "localityNames": [
+    "West Melbourne"
+   ],
+   "anchors": [
+    {
+     "id": "north-melbourne-west-melbourne",
+     "name": "North Melbourne",
+     "lng": 144.9426,
+     "lat": -37.8071
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "docklands-2br",
+   "suburb": "Docklands",
+   "localityNames": [
+    "Docklands"
+   ],
+   "anchors": [
+    {
+     "id": "southern-cross-docklands",
+     "name": "Southern Cross",
+     "lng": 144.951,
+     "lat": -37.8183
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "carlton-2br",
+   "suburb": "Carlton",
+   "localityNames": [
+    "Carlton"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "fitzroy-2br",
+   "suburb": "Fitzroy",
+   "localityNames": [
+    "Fitzroy"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "parkville-2br",
+   "suburb": "Parkville",
+   "localityNames": [
+    "Parkville"
+   ],
+   "anchors": [
+    {
+     "id": "parkville-metro",
+     "name": "Parkville (Metro Tunnel)",
+     "lng": 144.958,
+     "lat": -37.8009
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "carlton-north-2br",
+   "suburb": "Carlton North",
+   "localityNames": [
+    "Carlton North"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "fitzroy-north-2br",
+   "suburb": "Fitzroy North",
+   "localityNames": [
+    "Fitzroy North"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "brunswick-east-2br",
+   "suburb": "Brunswick East",
+   "localityNames": [
+    "Brunswick East"
+   ],
+   "anchors": [],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   }
  ]
 }
