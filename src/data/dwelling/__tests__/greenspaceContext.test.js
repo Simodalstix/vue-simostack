@@ -18,7 +18,7 @@ const rankedRows = useAreaRanking(
 const generatedTargets = JSON.parse(
   readFileSync(
     new URL(
-      '../../../../tools/dwelling-greenspace/dwelling-greenspace-targets-app.json',
+      '../../../../tools/dwelling-greenspace/dwelling-greenspace-targets.json',
       import.meta.url,
     ),
     'utf-8',

@@ -31,7 +31,7 @@ third-party request). Re-fetch/re-simplify if the shoreline needs more detail.
 
 `melbourne-open-space.geojson` is the context-only eligible public-open-space
 layer sourced from the Victorian Planning Authority Open Space dataset named in
-`tools/dwelling-greenspace/dwelling-greenspace-source-manifest.json`. The
+`src/data/dwelling/greenspace/dwelling-greenspace-source-manifest.json`. The
 reproducible `build-open-space-map.py` tool reuses the scoring pipeline's
 eligibility filter (public/open/existing, permitted categories; no golf, race
 course, median park, green buffer, transport/restricted land or water-only

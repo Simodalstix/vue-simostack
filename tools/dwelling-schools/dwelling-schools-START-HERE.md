@@ -2,15 +2,15 @@
 
 ## Current status
 
-Pipeline code, anchors config and tests are complete for all 60 Decide-page
-records (including the July 2026 ten-area onboarding batch). The
-package intentionally contains **no school data**: generated files are emitted
-only after the two official source files are supplied and the QA report is
-reviewed. 21 pytest cases cover the transform logic with synthetic fixtures.
+Pipeline code, anchors, generated app data and tests cover all 60 current
+Decide-page records. The reusable School Locations 2025 CSV and School Zones
+2027 ZIP are present locally under the gitignored `source/` directory. Generated
+files remain committed under `src/data/dwelling/schools/`; raw publisher files
+remain local. 21 pytest cases cover the transform logic with synthetic fixtures.
 
-## Inputs to download (operator step)
+## Reusable local inputs
 
-Place both under `tools/dwelling-schools/source/`:
+Keep both under `tools/dwelling-schools/source/`:
 
 1. **Victorian Government School Zones 2027** — data.vic.gov.au, the spatial
    ZIP (primary zones + per-year secondary zones, EPSG:3111).
@@ -25,8 +25,8 @@ Both are CC BY 4.0, (c) State of Victoria (Department of Education).
 python -m pip install -r requirements-schools.txt
 python -m pytest test-dwelling-schools.py
 python build-dwelling-schools.py \
-  --locations-csv source/<locations>.csv \
-  --zones-zip source/<zones>.zip \
+  --locations-csv source/dv402-SchoolLocations2025.csv \
+  --zones-zip source/dv419_DataVic_School_Zones_2027_MAR26.zip \
   --zone-year 2027
 ```
 

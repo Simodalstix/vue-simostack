@@ -6,14 +6,11 @@
 // the claim never outruns the owner research.
 //
 // Source mix:
-// - original owner-supplied research JSON (melbourne_girls_sport_facilities_35_
-//   records.json, 2026-07-15), 35 records checked against club finders and
-//   council facility pages; the recovered artifact lives locally at
-//   handoff_docs/research/ (gitignored) and is the source of truth for
-//   those 35 names
+// - original owner-supplied research (2026-07-15), 35 records checked against
+//   club finders and council facility pages; the reviewed summaries, venue
+//   names and source URLs below are now the canonical integrated record
 // - the ten July 2026 expansion entries (Spotswood through Mentone) were
-//   briefly reconstructed while the artifact was parked; restored verbatim
-//   from the recovered artifact 2026-07-19
+//   reviewed and integrated into the same canonical registry on 2026-07-19
 // Shipped as:
 //   line         -> one-sentence summary for the card
 //   facilities   -> named venues (merged into the card's facility chips)

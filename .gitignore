@@ -11,6 +11,9 @@ src/views/OldContent.vue
 src/data/starStories.js
 
 node_modules
+__pycache__/
+*.py[cod]
+.pytest_cache/
 .DS_Store
 dist
 dist-ssr
@@ -40,9 +43,6 @@ claude.md
 CLEARANCE_SPEC.md
 IMPLEMENTATION_NOTES.md
 
-# Local design reference, not part of the shipped app
-design_handoff_portfolio/
-
 # Windows/WSL alternate-data-stream artifacts
 *:Zone.Identifier
 
@@ -51,5 +51,3 @@ design_handoff_portfolio/
 
 # Exact personal-anchor coordinates stay local-only (see src/data/dwelling/personalAnchors.js)
 src/data/dwelling/personalAnchors.local.js
-
-handoff_docs

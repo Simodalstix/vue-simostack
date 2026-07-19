@@ -3,7 +3,7 @@
 ## Status
 
 This package establishes the reproducible version-one greenspace pipeline for
-the 35 current Decide-page suburb records.
+the canonical Decide-page target registry (currently 60 suburb records).
 
 It does not contain fabricated scores. The final JSON and TypeScript datasets
 are generated only after the official spatial source files have been downloaded
@@ -103,12 +103,12 @@ ABS or Victorian Government classification.
 Each residential sampling point receives a distance score:
 
 | Straight-line distance | Score |
-|---:|---:|
-| 0–400 m | 10 |
-| 800 m | 8 |
-| 1,200 m | 6 |
-| 1,600 m | 4 |
-| 2,400 m or more | 0 |
+| ---------------------: | ----: |
+|                0–400 m |    10 |
+|                  800 m |     8 |
+|                1,200 m |     6 |
+|                1,600 m |     4 |
+|        2,400 m or more |     0 |
 
 Values between thresholds are linearly interpolated. The suburb component is
 the population-weighted mean.

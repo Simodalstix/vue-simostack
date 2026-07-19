@@ -21,7 +21,7 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[2]
 TOOL_DIR = Path(__file__).resolve().parent
-DEFAULT_TARGETS = ROOT / "tools/dwelling-greenspace/dwelling-greenspace-targets-app.json"
+DEFAULT_TARGETS = ROOT / "tools/dwelling-greenspace/dwelling-greenspace-targets.json"
 DEFAULT_CONFIG = TOOL_DIR / "dwelling-cost-config.json"
 DEFAULT_SOURCE = TOOL_DIR / "source"
 DEFAULT_OUTPUT = ROOT / "src/data/dwelling/cost/dwelling-cost-context.ts"

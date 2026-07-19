@@ -2,8 +2,8 @@
 
 ## Current status
 
-The version-one method, suburb mapping and reproducible build pipeline are
-complete for all 60 current Decide-page records.
+The version-one method, canonical 60-record target registry and reproducible
+build pipeline are complete for all current Decide-page records.
 
 The package intentionally does **not** contain made-up greenspace scores. Final
 JSON/TypeScript values are emitted only after the spatial source files are
@@ -16,7 +16,8 @@ environment with internet access.
 
 ## What has already been decided
 
-- Unit of analysis: the 35 current Decide-page records.
+- Unit of analysis: every record in `dwelling-greenspace-targets.json`
+  (currently 60 Decide-page records).
 - Combined records pool population-weighted residential samples from their
   component SALs; component suburb percentages are not averaged.
 - Residential samples: ABS 2021 Residential Mesh Blocks with usual-resident
@@ -41,10 +42,9 @@ greenspace =
 - The current PARKRES layer is supplemental for major/nature access and does
   not replace the metropolitan local-open-space base.
 
-## First command to give Codex or Claude CLI
+## Run
 
-Copy this bundle into the repository and provide `greenspace-codex-handoff.md`.
-The agent should run:
+From this directory, the agent should run:
 
 ```bash
 python -m pip install -r requirements-greenspace.txt

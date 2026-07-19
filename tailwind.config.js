@@ -19,11 +19,11 @@ export default {
         sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
         display: ['"DM Sans"', 'system-ui', 'sans-serif'],
         // The `mono` key is the technical-label face (uppercase, wide tracking),
-        // not actually monospace. Space Grotesk per the design handoff.
+        // not actually monospace. Space Grotesk per the design reference.
         mono: ['"Space Grotesk"', 'ui-sans-serif', 'sans-serif'],
       },
       colors: {
-        // Portfolio palette (design_handoff_portfolio). Single source of truth
+        // Portfolio palette. Single source of truth
         // for the theme; reskins happen here. Near-black canvas with dual
         // accents: amber (sand/bronze) for identity/section-numbers/in-progress,
         // teal for live-status/CTAs/nav-underline.
