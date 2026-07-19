@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the small, context-only VPA open-space layer used by /dwelling."""
+"""Build the small, context-only VPA open-space layer used by Settle."""
 
 from __future__ import annotations
 

@@ -1,6 +1,6 @@
 // src/data/dwelling/trainLines.js
 //
-// Simplified Melbourne train-line geometry for the Decide map, plus the
+// Simplified Melbourne train-line geometry for the Settle map, plus the
 // palette that keeps line colours semantically separate from suburb score
 // colours: LINE COLOUR = route identity, POLYGON FILL = decision fit.
 //

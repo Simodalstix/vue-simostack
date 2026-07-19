@@ -1,4 +1,4 @@
-# `/dwelling` suburb cost methodology
+# Settle suburb cost methodology
 
 ## Scope
 

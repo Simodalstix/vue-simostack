@@ -1,7 +1,7 @@
 // src/composables/useRepayment.js
 //
 // Single source for the mortgage repayment math. Used by the Money model on the
-// Overview tab and by the live expected-cost strip on the Decide tab. P&I,
+// Settle overview and by the live expected-cost strip in the ranking workspace. P&I,
 // monthly compounding.
 
 export function monthlyPayment(principal, annualRatePct, years) {

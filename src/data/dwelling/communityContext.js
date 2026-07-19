@@ -1,6 +1,6 @@
 // src/data/dwelling/communityContext.js
 //
-// Adapter between the /dwelling ranking records and the authoritative
+// Adapter between the Settle ranking records and the authoritative
 // Community Context dataset (dwelling-community-context-2021.ts, ABS Census
 // 2021 SAL records, statically imported — never fetched at runtime).
 //
@@ -13,7 +13,7 @@
 //   (languageCommunities.js), and the partner-pool criterion (partnerPool.js).
 //   Counts are recombined only over compatible denominators; nothing else here
 //   is scored.
-// - Combined /dwelling labels (e.g. "Brunswick / Coburg") resolve to their
+// - Combined Settle labels (e.g. "Brunswick / Coburg") resolve to their
 //   COMPONENT SAL records via coverage.dwellingLensEntries. Component
 //   percentages are never averaged and published medians are never
 //   arithmetically combined; the UI shows each component suburb separately.

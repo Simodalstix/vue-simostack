@@ -1,7 +1,7 @@
 /**
  * Community Context · ABS Census 2021
  *
- * Static, source-attributed community context for every suburb used by /dwelling.
+ * Static, source-attributed community context for every suburb used by Settle.
  * Descriptive by default. The scoring exceptions are the explicitly named
  * derived measures: the off-by-default Chinese-language community personal
  * lens and the partner-pool criterion (unpartnered 25-54, one-parent
@@ -14,7 +14,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
   "title": "Community Context · ABS Census 2021",
   "generatedAt": "2026-07-19",
   "usage": {
-    "purpose": "Reusable descriptive community context for every suburb used by the /dwelling application",
+    "purpose": "Reusable descriptive community context for every suburb used by Settle",
     "contextOnly": true,
     "excludeFromSuburbScore": true,
     "scoreContribution": 0,
@@ -35,7 +35,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
   "coverage": {
     "recordCount": 80,
     "recordUnit": "One record per individual ABS Suburb and Locality",
-    "corridorRule": "Combined /dwelling labels are mapped to their component SAL records; demographic counts are not blended unless the UI explicitly aggregates them using counts and applicable denominators.",
+    "corridorRule": "Combined Settle labels are mapped to their component SAL records; demographic counts are not blended unless the UI explicitly aggregates them using counts and applicable denominators.",
     "dwellingLensEntries": [
       {
         "lensLabel": "Seddon/West Footscray",

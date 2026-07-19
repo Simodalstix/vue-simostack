@@ -1,4 +1,4 @@
-"""Build the /dwelling school datasets from official Victorian sources.
+"""Build the Settle school datasets from official Victorian sources.
 
 Inputs (vendored under ./source/, downloaded by the operator — see START-HERE):
   1. School Locations CSV  (data.vic.gov.au "School Locations <year>")

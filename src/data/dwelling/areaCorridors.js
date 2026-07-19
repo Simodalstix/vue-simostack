@@ -1623,7 +1623,7 @@ const AREA_CORRIDOR_BASE = [
     sources: ['ptv', 'domain', 'vicplan'],
   },
 
-  // ---- July 2026 Decide expansion. Twelve individual suburb records added so
+  // ---- July 2026 Settle expansion. Twelve individual suburb records added so
   //      the workspace can compare corridor, family, lifestyle and calibration
   //      candidates side by side. EVERYTHING below is a provisional research
   //      hypothesis (placeholder: true): price bands, commute minutes and all

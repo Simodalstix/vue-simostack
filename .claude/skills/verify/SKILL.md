@@ -5,12 +5,12 @@ description: Build, launch and drive vue-simostack to observe a change working a
 
 # Verifying vue-simostack changes
 
-Vite + Vue 3 SPA. No auth needed for /dwelling routes in dev; /clearance is gated.
+Vite + Vue 3 SPA. No auth needed for `/tool/settle` routes in dev; `/clearance` is gated.
 
 ## Launch
 
 ```bash
-npm run dev -- --port 5199 &   # ready in ~2s; check: curl -s -o /dev/null -w "%{http_code}" http://localhost:5199/dwelling/decide
+npm run dev -- --port 5199 &   # ready in ~2s; check: curl -s -o /dev/null -w "%{http_code}" http://localhost:5199/tool/settle/decide
 ```
 
 ## Drive (headless browser)
@@ -35,19 +35,20 @@ Script skeleton (ESM, run with `LD_LIBRARY_PATH=$PWD/libs/extracted/usr/lib/x86_
 ```js
 import { chromium } from '/home/simoda/projects/vue-simostack/node_modules/playwright-core/index.mjs'
 const browser = await chromium.launch({
-  executablePath: process.env.HOME +
+  executablePath:
+    process.env.HOME +
     '/.cache/ms-playwright/chromium_headless_shell-1228/chrome-headless-shell-linux64/chrome-headless-shell',
   headless: true,
 })
 const page = await browser.newPage({ viewport: { width: 1600, height: 1100 } })
-await page.goto('http://localhost:5199/dwelling/decide', { waitUntil: 'networkidle' })
+await page.goto('http://localhost:5199/tool/settle/decide', { waitUntil: 'networkidle' })
 await page.waitForTimeout(2500) // async maplibre chunk + canvas settle
 ```
 
 Check the `chromium_headless_shell-*` version in `~/.cache/ms-playwright/` and
 match it to `node_modules/playwright-core/package.json` version if either moves.
 
-## Flows worth driving on /dwelling/decide
+## Flows worth driving in Settle
 
 - Ranked suburb rows: `[role=listbox] li button`; suburb name in `.truncate`,
   score in `.text-right`.

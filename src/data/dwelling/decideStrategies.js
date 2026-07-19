@@ -1,6 +1,6 @@
 // src/data/dwelling/decideStrategies.js
 //
-// The Decide page's single control model: a STRATEGY is a weighting preset
+// The Settle workspace's single control model: a STRATEGY is a weighting preset
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
 // tests. Selecting a strategy loads its weight vector over the ten suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or

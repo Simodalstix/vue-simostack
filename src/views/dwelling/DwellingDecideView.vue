@@ -310,6 +310,6 @@ watch(activeLocationId, (id) => {
   const next = { ...route.query }
   if (id == null) delete next.area
   else next.area = id
-  router.replace({ query: next })
+  router.replace({ query: next, hash: route.hash })
 })
 </script>

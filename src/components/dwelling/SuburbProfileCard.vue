@@ -377,7 +377,7 @@ const props = defineProps({
   payoffYears: { type: Number, default: 15 },
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
-  // Active Decide strategy (decideStrategies.js).
+  // Active Settle strategy (decideStrategies.js).
   strategy: { type: Object, default: null },
   closeOnCardClick: { type: Boolean, default: true },
 })

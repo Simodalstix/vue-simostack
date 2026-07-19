@@ -1,6 +1,6 @@
-# Dwelling Decide map — geographic assets
+# Settle map — geographic assets
 
-The Decide map is **local-only**. It makes no runtime request to Google Maps,
+The Settle map is **local-only**. It makes no runtime request to Google Maps,
 Mapbox, third-party basemap tiles or any boundary API. The route is behind the
 site auth gate and must stay network-silent for third parties.
 

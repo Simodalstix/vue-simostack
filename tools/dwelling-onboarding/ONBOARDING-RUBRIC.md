@@ -1,4 +1,4 @@
-# `/dwelling` onboarding readiness rubric
+# Settle onboarding readiness rubric
 
 Apply this rubric to each new area ID and to the batch as a whole. It is a gate,
 not a points competition: a high total cannot hide a failed critical row.

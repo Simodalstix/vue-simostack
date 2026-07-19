@@ -4,7 +4,7 @@
 // for professionals, research plan). Presentation-agnostic.
 
 // Criteria keys map 1:1 to strategies[].scores. Weights are 0–10.
-// HISTORICAL: this weighted-criteria set drove the old Decide sliders and
+// HISTORICAL: this weighted-criteria set drove the old sliders and
 // strategy ranking, both removed July 2026 in favour of the six-criterion
 // strategy presets in decideStrategies.js. Kept as reference data.
 export const criteria = [
@@ -86,7 +86,7 @@ export const criteria = [
 
 // The subset of criteria that score PLACES (via the corridor `childhood` block)
 // rather than strategies. useAreaRanking folds these into the suburb lens score
-// using their live weights from the Decide panel. Keys map to childhood fields.
+// using their live weights from the Settle panel. Keys map to childhood fields.
 export const lensChildhoodKeys = ['schoolStrength', 'teenIndependence']
 
 export const infoNeeded = [

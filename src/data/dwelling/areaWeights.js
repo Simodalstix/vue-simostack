@@ -4,7 +4,7 @@
 // criteria (which rank dwelling STRATEGIES); these rank PLACES. Weights sum to
 // 100 so a weighted score reads as a percentage of the ideal.
 //
-// HISTORICAL: the live Decide ranking moved to the eight-criterion strategy
+// HISTORICAL: the live Settle ranking moved to the strategy
 // presets in decideStrategies.js (July 2026). This table is kept as reference
 // data for the per-record `scores` fields it documents.
 //
@@ -12,7 +12,7 @@
 //
 // IMPORTANT: the historical `community` weight funds measurable AMENITY
 // (grocers, markets, restaurants and language services), not demographic
-// desirability. The live Decide page has one separate, explicitly personal,
+// desirability. Settle has one separate, explicitly personal,
 // off-by-default Chinese-language community bonus; see chineseCommunity.js.
 
 export const areaWeights = [
@@ -35,7 +35,7 @@ export const areaWeights = [
     hint: 'Room for Lulu, school access, and manageable travel to the other parent.',
   },
   // NOTE: the former 'lowCar' weight (low-car daily life, 12) was removed from
-  // the Decide interface July 2026. The per-record scores.lowCar data is kept
+  // the Settle interface July 2026. The per-record scores.lowCar data is kept
   // for a future actual-property comparison tool but no longer influences the
   // suburb ranking; weights self-normalise via areaWeightTotal.
   {

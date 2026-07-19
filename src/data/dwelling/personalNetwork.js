@@ -1,4 +1,4 @@
-// Personal-network access for the Decide score. The anchor is the public,
+// Personal-network access for the Settle score. The anchor is the public,
 // suburb-level approximate South Yarra point described in personalAnchors.js;
 // exact coordinates are never used because these bands are deliberately
 // insensitive to sub-suburb precision. Estimates use the best realistic

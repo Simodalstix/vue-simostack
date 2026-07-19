@@ -25,7 +25,7 @@
 //   client env values end up in the bundle and are not a privacy control.
 //
 // SCORING DECISION (2026-07-16): access to the South Yarra network anchor is a
-// scored Decide criterion via banded suburb-level estimates in
+// scored Settle criterion via banded suburb-level estimates in
 // personalNetwork.js. Exact coordinates remain excluded from scoring, and the
 // local-override privacy mechanism above is unchanged. friendContext remains
 // narrative copy for the small gold badge or line in the pane.

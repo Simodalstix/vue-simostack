@@ -1,6 +1,6 @@
 // src/data/dwelling/areaGeo.js
 //
-// Geographic registry for the Decide map. Keyed by areaCorridors[].id — the SAME
+// Geographic registry for the Settle map. Keyed by areaCorridors[].id — the SAME
 // id that strategies[].lensSuburbs already reference — so this is a stable
 // extension of the existing linkage, never a parallel identity scheme.
 //
@@ -516,7 +516,7 @@ export const areaGeo = {
     ],
   },
 
-  // ---- July 2026 Decide expansion: individual suburb records. -----------
+  // ---- July 2026 Settle expansion: individual suburb records. -----------
   // Coordinates are OSM-derived to roughly station precision and provisional
   // (verifiedAt: null) like the rest of the registry. Records with
   // tramOnly: true have no heavy-rail station; their commute runs on trams or

@@ -1,6 +1,6 @@
 // src/data/dwelling/facts.js
 //
-// Source of truth for market, scheme and transport facts used by /dwelling.
+// Source of truth for market, scheme and transport facts used by Settle.
 // Presentation-agnostic. Every figure is dated. VERIFY before acting —
 // medians are indicative, schemes change, and none of this is financial advice.
 
@@ -198,7 +198,7 @@ export const transportCosts = [
 // a new systems/infrastructure role, a marriage ending into co-parenting, and
 // a modest budget.
 // Indicative and dated. Update as the settlement, sign-on and role start land.
-// Not financial, legal or credit advice. Feeds the Overview "Your position"
+// Not financial, legal or credit advice. Feeds the Settle "Your position"
 // panel and seeds the Money tab calculator (calc), so it stays single-source.
 export const personalPosition = {
   asAt: AS_AT,

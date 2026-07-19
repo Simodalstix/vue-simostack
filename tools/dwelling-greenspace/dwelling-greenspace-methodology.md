@@ -1,9 +1,9 @@
-# `/dwelling` greenspace access methodology
+# Settle greenspace access methodology
 
 ## Status
 
 This package establishes the reproducible version-one greenspace pipeline for
-the canonical Decide-page target registry (currently 70 suburb records).
+the canonical Settle target registry (currently 70 suburb records).
 
 It does not contain fabricated scores. The final JSON and TypeScript datasets
 are generated only after the official spatial source files have been downloaded
@@ -62,7 +62,7 @@ For each residential Mesh Block:
 
 This represents where residents live more honestly than a suburb centroid.
 
-For combined Decide records such as `Brunswick/Coburg`, all residential points
+For combined Settle records such as `Brunswick/Coburg`, all residential points
 and weights from both SALs are pooled before calculation. Component scores are
 not averaged.
 
@@ -97,7 +97,7 @@ walking-route calculation.
 Adjacent eligible open-space parcels are dissolved into contiguous features.
 Features of at least 5 hectares are treated as major parks or reserves.
 
-The 5-hectare threshold is a `/dwelling` project definition, not an official
+The 5-hectare threshold is a Settle project definition, not an official
 ABS or Victorian Government classification.
 
 Each residential sampling point receives a distance score:

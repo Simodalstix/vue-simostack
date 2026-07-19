@@ -1,7 +1,7 @@
-# `/dwelling` suburb onboarding — start here
+# Settle suburb onboarding — start here
 
 Use this pack whenever one to ten new suburbs need to become first-class
-`/dwelling` records. This directory is the single onboarding contract and
+Settle records at `/tool/settle`. This directory is the single onboarding contract and
 source of truth.
 
 ## The short version
@@ -9,7 +9,7 @@ source of truth.
 The owner can start an onboarding batch with only this:
 
 ```text
-Onboard these suburbs into /dwelling:
+Onboard these suburbs into Settle at /tool/settle:
 1. Suburb A
 2. Suburb B
 ...

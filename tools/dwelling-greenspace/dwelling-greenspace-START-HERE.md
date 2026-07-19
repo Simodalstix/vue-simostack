@@ -1,9 +1,9 @@
-# `/dwelling` greenspace pipeline — start here
+# Settle greenspace pipeline — start here
 
 ## Current status
 
 The version-one method, canonical 70-record target registry and reproducible
-build pipeline are complete for all current Decide-page records.
+build pipeline are complete for all current Settle records.
 
 The package intentionally does **not** contain made-up greenspace scores. Final
 JSON/TypeScript values are emitted only after the spatial source files are
@@ -17,7 +17,7 @@ environment with internet access.
 ## What has already been decided
 
 - Unit of analysis: every record in `dwelling-greenspace-targets.json`
-  (currently 70 Decide-page records).
+  (currently 70 Settle records).
 - Combined records pool population-weighted residential samples from their
   component SALs; component suburb percentages are not averaged.
 - Residential samples: ABS 2021 Residential Mesh Blocks with usual-resident

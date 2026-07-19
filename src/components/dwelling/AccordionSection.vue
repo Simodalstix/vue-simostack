@@ -1,5 +1,5 @@
 <template>
-  <!-- Collapsible Overview card. Matches the Decide strategy-card expand
+  <!-- Collapsible Settle overview card. Matches the strategy-card expand
        pattern: +/- indicator, teal border when open. Open cards span both
        columns of the masonry grid; the body height animates smoothly. -->
   <section

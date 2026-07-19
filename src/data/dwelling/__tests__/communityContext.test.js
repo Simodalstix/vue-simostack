@@ -96,7 +96,7 @@ describe('combined-label handling', () => {
     expect(ctx.missing).toEqual([])
   })
 
-  it('covers every /dwelling ranking record without a missing SAL component', () => {
+  it('covers every Settle ranking record without a missing SAL component', () => {
     for (const rec of areaCorridors) {
       const names = componentSuburbNamesFor(rec.id)
       expect(names.length).toBeGreaterThan(0)

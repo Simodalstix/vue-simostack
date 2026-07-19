@@ -1,6 +1,6 @@
 // src/data/dwelling/suburbProfiles.js
 //
-// Narrative copy for the EXPANDED suburb profile card on the Decide page,
+// Narrative copy for the expanded Settle suburb profile card,
 // keyed by the areaCorridors record id. Presentation copy only: nothing here
 // is scored, ranked or read by the ranking engine.
 //

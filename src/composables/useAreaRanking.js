@@ -8,7 +8,7 @@
 //      (dwelling types, minimum bedrooms, price cap) tag a record
 //      reject | conditional | ok. A cheap area must NOT out-rank a workable
 //      one on price alone, so gates precede scoring.
-//   2. SCORE over the ten Decide criteria (decideStrategies.js): standard
+//   2. SCORE over the ten Settle criteria (decideStrategies.js): standard
 //      criteria use sum(w * s) / sum(w), normalised to 0-100. Explicit bonus
 //      criteria add a small bounded premium after that mean. Missing data is
 //      never scored as zero, and the all-zero fallback prevents NaN. The
@@ -43,7 +43,7 @@ function gate(rec, filters, commute) {
   }
 
   // Intrinsic non-negotiables. (The former car-dependence gate was removed
-  // from Decide July 2026; rec.carDaily is retained as data only.)
+  // from Settle July 2026; rec.carDaily is retained as data only.)
   if (commute && commute.typical > 65) reject('Over ~65 min door-to-door at peak')
   if (commute && commute.transfers > 1) reject('More than one routine transfer')
   if ((filters.minBedrooms ?? 2) >= 2 && rec.secondBedroom === false)
@@ -79,7 +79,7 @@ function gate(rec, filters, commute) {
   return { status, reasons }
 }
 
-// `weights` is the effective weight per criterion key from the Decide panel:
+// `weights` is the effective weight per criterion key from the Settle panel:
 // the strategy preset value when the toggle is on, 0 when it is off. Standard
 // criteria form the renormalised weighted mean. Explicitly additive bonuses
 // (Beach, the opt-in community lenses and the Partner-pool lens) stay

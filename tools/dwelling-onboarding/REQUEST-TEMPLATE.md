@@ -3,7 +3,7 @@
 ## Minimal request
 
 ```text
-Please onboard these suburbs into /dwelling:
+Please onboard these suburbs into Settle at /tool/settle:
 
 1. [Suburb]
 2. [Suburb]

@@ -1,4 +1,4 @@
-// Tests for the Decide strategy-preset scoring model (decideStrategies.js +
+// Tests for the Settle strategy-preset scoring model (decideStrategies.js +
 // useAreaRanking.weightedScore): standard criteria use sum(w * s) / sum(w)
 // over enabled criteria, while explicitly additive criteria apply a bounded
 // premium after that base mean.

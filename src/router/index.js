@@ -1,60 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import RaspBlog from '../views/RaspBlog.vue'
+import { appRoutes } from './routes.js'
 
-export const appRoutes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('../views/HomeView.vue'),
-  },
-
-  { path: '/blog', name: 'Blog', component: RaspBlog },
-
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('../views/AboutView.vue'),
-  },
-  {
-    path: '/projects',
-    name: 'Projects',
-    component: () => import('../views/ProjectsView.vue'),
-  },
-  {
-    path: '/prep',
-    name: 'Prep',
-    component: () => import('../views/PrepView.vue'),
-  },
-  {
-    path: '/clearance',
-    name: 'Clearance',
-    component: () => import('../views/ClearanceView.vue'),
-  },
-  {
-    path: '/dwelling',
-    component: () => import('../views/dwelling/DwellingShell.vue'),
-    redirect: '/dwelling/overview',
-    meta: {
-      section: 'dwelling',
-    },
-    children: [
-      {
-        path: 'overview',
-        name: 'DwellingOverview',
-        component: () => import('../components/dwelling/OverviewPage.vue'),
-      },
-      {
-        path: 'decide',
-        name: 'DwellingDecide',
-        component: () => import('../views/dwelling/DwellingDecideView.vue'),
-      },
-    ],
-  },
-]
+export { appRoutes } from './routes.js'
 
 const router = createRouter({
   history: createWebHistory(),
   routes: appRoutes,
+})
+
+router.afterEach((to) => {
+  if (typeof document !== 'undefined') document.title = to.meta.title || 'Simon Parker'
 })
 
 export default router

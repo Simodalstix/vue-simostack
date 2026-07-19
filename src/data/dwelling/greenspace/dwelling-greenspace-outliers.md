@@ -1,4 +1,4 @@
-# Dwelling Greenspace Outliers
+# Settle Greenspace Outliers
 
 Methodology version: `greenspace-access-v1`  
 Build retrieved at: `2026-07-16`

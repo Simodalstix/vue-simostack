@@ -1,9 +1,9 @@
-# `/dwelling` schools pipeline — start here
+# Settle schools pipeline — start here
 
 ## Current status
 
 Pipeline code, anchors, generated app data and tests cover all 70 current
-Decide-page records. The reusable School Locations 2025 CSV and School Zones
+Settle records. The reusable School Locations 2025 CSV and School Zones
 2027 ZIP are present locally under the gitignored `source/` directory. Generated
 files remain committed under `src/data/dwelling/schools/`; raw publisher files
 remain local. 21 pytest cases cover the transform logic with synthetic fixtures.

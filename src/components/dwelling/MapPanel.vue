@@ -179,7 +179,7 @@ import yarraUrl from '@/assets/geo/yarra-river.geojson?url'
 import openSpaceUrl from '@/assets/geo/melbourne-open-space.geojson?url'
 import SuburbProfileCard from './SuburbProfileCard.vue'
 
-// maplibre-gl is heavy; keep it in its own async chunk so the rest of the Decide
+// maplibre-gl is heavy; keep it in its own async chunk so the rest of Settle
 // view (and every other route) never pays for it up front.
 const DwellingMap = defineAsyncComponent(() => import('./DwellingMap.vue'))
 
@@ -190,7 +190,7 @@ const props = defineProps({
   payoffYears: { type: Number, default: 15 },
   deposit: { type: Number, required: true },
   rate: { type: Number, default: 5.9 },
-  // Active Decide strategy (decideStrategies.js).
+  // Active Settle strategy (decideStrategies.js).
   strategy: { type: Object, default: null },
   // Suburb hovered in the ranked list; highlighted on the map exactly like a
   // pointer hover. The map's own pointer hover wins while both are live.

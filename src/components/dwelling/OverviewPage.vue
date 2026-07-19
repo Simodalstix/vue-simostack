@@ -19,7 +19,7 @@
           transport map just improved, and every first-home incentive is at a cyclical high.
         </p>
         <router-link
-          :to="{ name: 'DwellingDecide' }"
+          :to="{ name: 'Settle' }"
           class="mt-5 sm:hidden flex items-center justify-between rounded-[8px] border border-ob-teal/30 bg-ob-teal/8 px-4 py-3 text-[13px] font-semibold text-ob-teal"
         >
           <span>Open mobile suburb rankings</span>

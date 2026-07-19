@@ -1,7 +1,7 @@
 // src/data/dwelling/regions.js
 //
-// Regional reading material for the Overview tab. Presentation-agnostic prose
-// consumed by RegionLens.vue and summarised in the Overview accordion.
+// Regional reading material for the Settle overview. Presentation-agnostic prose
+// consumed by RegionLens.vue and summarised in its accordion.
 
 export const regions = [
   {

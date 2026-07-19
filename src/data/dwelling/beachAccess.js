@@ -1,4 +1,4 @@
-// Bonus-only beach access for the Decide score. Estimates are deliberately
+// Bonus-only beach access for the Settle score. Estimates are deliberately
 // broad owner-judgment bands for the best realistic walk or short flat cycle
 // to a swimmable foreshore; every seeded row remains a placeholder pending
 // owner review. Suburbs outside the plausible coastal set are absent rather

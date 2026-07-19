@@ -20,31 +20,15 @@
           class="hidden md:flex items-center gap-7 font-display font-semibold text-[13px] min-w-0"
         >
           <router-link
-            v-for="link in visibleGlobalNavLinks"
+            v-for="link in mainNavLinks"
             :key="link.name"
             :to="{ name: link.name }"
             class="text-ob-faint hover:text-ob-text transition-colors border-b-2 border-transparent pb-[3px]"
             :exact-active-class="link.exact ? '!text-ob-text !border-ob-teal' : undefined"
             :active-class="link.exact ? undefined : '!text-ob-text !border-ob-teal'"
+            :class="{ '!text-ob-text !border-ob-teal': link.tool && route.meta.tool === link.tool }"
             >{{ link.label }}</router-link
           >
-          <template v-if="isDwellingSection">
-            <span
-              class="hidden xl:inline-block h-5 border-l border-ob-sand/14"
-              aria-hidden="true"
-            ></span>
-            <span class="font-mono text-[12px] leading-none tracking-[0.04em] text-ob-soft truncate"
-              >dwelling · Melbourne strategy</span
-            >
-            <router-link
-              v-for="link in dwellingNavLinks"
-              :key="link.name"
-              :to="{ name: link.name }"
-              class="text-ob-faint hover:text-ob-text transition-colors border-b-2 border-transparent pb-[3px]"
-              active-class="!text-ob-text !border-ob-teal"
-              >{{ link.label }}</router-link
-            >
-          </template>
           <span
             class="font-mono text-[12px] leading-none text-ob-faint tracking-[0.04em] pl-6 border-l border-ob-sand/14 ml-auto"
             >Melbourne, AU</span
@@ -80,31 +64,16 @@
         class="md:hidden px-6 pb-4 flex flex-col gap-1 font-display font-semibold text-sm border-t border-ob-sand/14"
       >
         <router-link
-          v-for="link in visibleGlobalNavLinks"
+          v-for="link in mainNavLinks"
           :key="link.name"
           :to="{ name: link.name }"
           class="px-2 py-2 text-ob-faint hover:text-ob-text transition-colors"
           :exact-active-class="link.exact ? '!text-ob-text' : undefined"
           :active-class="link.exact ? undefined : '!text-ob-text'"
+          :class="{ '!text-ob-text': link.tool && route.meta.tool === link.tool }"
           @click="closeMobileMenu"
           >{{ link.label }}</router-link
         >
-        <template v-if="isDwellingSection">
-          <div class="mt-2 pt-2 border-t border-ob-sand/14 space-y-1">
-            <p class="px-2 font-mono text-[10.5px] tracking-[0.08em] uppercase text-ob-soft">
-              dwelling · Melbourne strategy
-            </p>
-            <router-link
-              v-for="link in dwellingNavLinks"
-              :key="link.name"
-              :to="{ name: link.name }"
-              class="block px-2 py-2 text-ob-faint hover:text-ob-text transition-colors"
-              active-class="!text-ob-text"
-              @click="closeMobileMenu"
-              >{{ link.label }}</router-link
-            >
-          </div>
-        </template>
       </div>
     </header>
 
@@ -129,35 +98,11 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRoute } from 'vue-router'
+import { MAIN_NAV_LINKS } from '@/router/routes.js'
 
 const route = useRoute()
 const isPrep = computed(() => route.path.startsWith('/prep') || route.path.startsWith('/clearance'))
-const isDwellingSection = computed(() =>
-  route.matched.some((record) => record.meta.section === 'dwelling'),
-)
-
-const globalNavLinks = [
-  { name: 'Home', label: 'Home', exact: true },
-  { name: 'About', label: 'About', exact: false },
-  { name: 'Projects', label: 'Projects', exact: false },
-  {
-    name: 'DwellingDecide',
-    label: 'Dwelling',
-    exact: false,
-    section: 'dwelling',
-  },
-]
-
-const visibleGlobalNavLinks = computed(() =>
-  isDwellingSection.value
-    ? globalNavLinks.filter((link) => link.section !== 'dwelling')
-    : globalNavLinks,
-)
-
-const dwellingNavLinks = [
-  { name: 'DwellingOverview', label: 'Overview' },
-  { name: 'DwellingDecide', label: 'Decide' },
-]
+const mainNavLinks = MAIN_NAV_LINKS
 
 const isMobileMenuOpen = ref(false)
 const toggleMobileMenu = () => {

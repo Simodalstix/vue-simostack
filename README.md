@@ -14,6 +14,12 @@ This site is statically deployed and uses Vue Router for client-side navigation.
 - **CI/CD via GitHub Actions**, deployed to AWS S3 + CloudFront
 - **Serverless backend** (Lambda, API Gateway, DynamoDB) for lightweight telemetry
 
+## Tools namespace
+
+- **Settle** is the Melbourne suburb strategy tool at `/tool/settle`.
+- `/tool/gauge` is reserved for a future property-listing benchmarking tool. It has no route or implementation yet.
+- Legacy `/dwelling`, `/dwelling/overview` and `/dwelling/decide` links redirect to their Settle equivalents.
+
 ## Purpose
 
 This project serves as a personal sandbox to grow deeper with Vue and full-stack integrations. Every element — from component structure to deployment pipeline — reflects an emphasis on modularity, maintainability, and real-world readiness.
