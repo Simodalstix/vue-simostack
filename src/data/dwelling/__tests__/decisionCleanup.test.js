@@ -5,6 +5,7 @@ import { beachAccessByAreaId } from '../beachAccess.js'
 import { decideCriterionByKey, decideCriteria, decideStrategies } from '../decideStrategies.js'
 import { differentiatingChipsFor, gateExceptionChipFor } from '../decisionChips.js'
 import { costScoreFor, headroomScore, liquidityScore } from '../cost/costScoring.js'
+import { DWELLING_COST_BY_ID } from '../cost/dwelling-cost-context.ts'
 import { weightedScore } from '../../../composables/useAreaRanking.js'
 import { scoreCommute } from '../../../composables/useCommuteScoring.js'
 
@@ -107,9 +108,11 @@ describe('cost scoring', () => {
     }
     for (const rec of areaCorridors.filter((record) => record.scored !== false)) {
       const cost = decideCriterionByKey.cost.value(rec)
-      // Onboarding placeholders carry no hand score and no generated cost
-      // context yet; they stay null rather than receiving invented values.
-      if (rec.placeholder && rec.scores?.housingValue == null) expect(cost).toBeNull()
+      // A record scores only from generated VGV context or a hand score;
+      // with neither (e.g. no VGV units row for the suburb) it stays null
+      // rather than receiving invented values.
+      const hasGenerated = DWELLING_COST_BY_ID[rec.id]?.medianPrice2br != null
+      if (!hasGenerated && rec.scores?.housingValue == null) expect(cost).toBeNull()
       else expect(Number.isFinite(cost)).toBe(true)
     }
   })

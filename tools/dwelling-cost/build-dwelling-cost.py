@@ -38,6 +38,7 @@ class Observation:
     sales: float | None
     source_file: str
     source_sheet: str
+    marker: str | None = None
 
 
 def parse_args() -> argparse.Namespace:
@@ -158,13 +159,13 @@ def parse_wide_table(
     if suburb_row is None or suburb_col is None:
         return []
 
+    header_rows = range(max(0, suburb_row - 3), min(len(raw), suburb_row + 3))
+    joined_headers = [
+        " ".join(normalise(raw.iat[row_index, col_index]) for row_index in header_rows)
+        for col_index in range(raw.shape[1])
+    ]
     metric_columns: list[tuple[int, int | None, str]] = []
-    for col_index in range(raw.shape[1]):
-        header_values = [
-            normalise(raw.iat[row_index, col_index])
-            for row_index in range(max(0, suburb_row - 3), min(len(raw), suburb_row + 3))
-        ]
-        joined = " ".join(header_values)
+    for col_index, joined in enumerate(joined_headers):
         years = [int(match.group()) for match in YEAR_RE.finditer(joined)]
         metric = None
         if any(alias in joined for alias in ("median", "median price")):
@@ -173,8 +174,18 @@ def parse_wide_table(
             metric = "sales"
         if metric:
             metric_columns.append((col_index, max(years) if years else None, metric))
+    if not metric_columns:
+        # VGV also publishes year-matrix sheets (Locality + one column per
+        # year, e.g. the houses/units-by-suburb 2015-2025 workbooks) where the
+        # metric is implied by the workbook title. A bare-year header is that
+        # year's median for the file's property type; the unlabelled column
+        # after each year holds VGV's low-sample footnote marker (^ or *).
+        for col_index, joined in enumerate(joined_headers):
+            label = joined.strip()
+            if re.fullmatch(r"(19|20)\d{2}", label):
+                metric_columns.append((col_index, int(label), "median"))
 
-    observations: dict[tuple[str, int | None], dict[str, float | None]] = {}
+    observations: dict[tuple[str, int | None], dict[str, Any]] = {}
     for row_index in range(suburb_row + 1, len(raw)):
         suburb = str(raw.iat[row_index, suburb_col]).strip()
         if not suburb or normalise(suburb) in {"nan", "total", "victoria"}:
@@ -182,9 +193,14 @@ def parse_wide_table(
         for col_index, year, metric in metric_columns:
             value = number(raw.iat[row_index, col_index])
             if value is not None:
-                observations.setdefault((suburb, year), {"median": None, "sales": None})[
-                    metric
-                ] = value
+                entry = observations.setdefault(
+                    (suburb, year), {"median": None, "sales": None, "marker": None}
+                )
+                entry[metric] = value
+                if metric == "median" and col_index + 1 < raw.shape[1]:
+                    flag = str(raw.iat[row_index, col_index + 1]).strip()
+                    if flag in {"^", "*"} and not joined_headers[col_index + 1].strip():
+                        entry["marker"] = flag
 
     return [
         Observation(
@@ -195,6 +211,7 @@ def parse_wide_table(
             sales=values["sales"],
             source_file=source_file,
             source_sheet=source_sheet,
+            marker=values["marker"],
         )
         for (suburb, year), values in observations.items()
     ]
@@ -273,6 +290,7 @@ def latest_by_suburb(
                 sales=current.sales if current.sales is not None else observation.sales,
                 source_file=current.source_file,
                 source_sheet=current.source_sheet,
+                marker=current.marker or observation.marker,
             )
     return selected
 
@@ -407,6 +425,14 @@ def build_records(
                         "sales-weighted component median approximation"
                         if len(components) > 1
                         else "reported suburb median"
+                    ),
+                    "lowSampleMarkers": (
+                        {
+                            suburb: observation.marker
+                            for suburb, observation in components
+                            if observation.marker
+                        }
+                        or None
                     ),
                 },
             }

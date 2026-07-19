@@ -48,6 +48,50 @@ def test_tidy_vgv_rows_build_a_bounded_record():
     )
 
 
+def test_year_matrix_sheet_yields_latest_median_and_marker():
+    # Mirrors the published VGV houses/units-by-suburb workbooks: no metric
+    # labels, a Locality column, one column per year with an unlabelled
+    # footnote-marker column after each, then Prelim and growth columns.
+    raw = pd.DataFrame(
+        [
+            [None, None, None, None, None, None, None, None],
+            ["Locality", "2024", None, "2025", None, "Prelim", "24-25", "PA"],
+            [None, None, None, None, None, None, None, None],
+            [None, None, None, None, None, None, None, None],
+            [None, None, None, None, None, None, None, None],
+            ["EXAMPLE", "$700,000", " ", "$720,000", "^", "710000", "3", "1.2"],
+            ["STALE ONLY", "$500,000", " ", "-", " ", None, None, None],
+        ]
+    )
+    observations = MODULE.parse_table(
+        raw, path=Path("units-by-suburb-2015-2025.xlsx"), sheet="Sheet1", config=config()
+    )
+    targets = {
+        "records": [
+            {
+                "id": "example-2br",
+                "displayName": "Example",
+                "salComponents": [{"suburb": "Example"}],
+            },
+            {
+                "id": "stale-only-2br",
+                "displayName": "Stale Only",
+                "salComponents": [{"suburb": "Stale Only"}],
+            },
+        ]
+    }
+    records = MODULE.build_records(targets, observations, config())
+    by_id = {record["id"]: record for record in records}
+    assert by_id["example-2br"]["medianPrice2br"] == 720000
+    assert by_id["example-2br"]["salesPerYear"] is None
+    assert by_id["example-2br"]["evidence"]["latestYear"] == 2025
+    assert by_id["example-2br"]["evidence"]["lowSampleMarkers"] == {"Example": "^"}
+    # A blank latest year falls back to the newest year that has a value,
+    # and the source year stays visible in evidence.
+    assert by_id["stale-only-2br"]["medianPrice2br"] == 500000
+    assert by_id["stale-only-2br"]["evidence"]["latestYear"] == 2024
+
+
 def test_missing_vgv_data_stays_absent():
     targets = {
         "records": [

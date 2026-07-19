@@ -10,7 +10,7 @@
 
    `python build-dwelling-cost.py`
 
-The default build reuses the app's canonical 50-record suburb target file and
+The default build reuses the app's canonical 60-record suburb target file and
 writes `src/data/dwelling/cost/dwelling-cost-context.ts` plus
 `generated/dwelling-cost-outliers.md`. Override paths with `--help` options.
 
