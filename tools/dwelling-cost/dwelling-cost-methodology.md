@@ -8,17 +8,21 @@ fact. Those belong in a later unit-analysis tool.
 
 ## Inputs
 
-- Valuer-General Victoria annual suburb sales workbooks downloaded
-  by the owner into `source/`. VGV is authoritative for median prices and
-  transaction counts. Unit medians are used as the current proxy for the
-  requested `medianPrice2br`; VGV does not split those published suburb tables
-  by bedroom count, so the limitation stays explicit.
-- Optional Domain current-listing counts. When `DOMAIN_CLIENT_ID` and
+- Valuer-General Victoria annual suburb sales workbooks downloaded by the
+  owner into `source/`. VGV is authoritative settled-price evidence, but its
+  published suburb tables do not split units or houses by bedroom count.
+  These values are therefore stored as `all` bedroom metrics and explicitly
+  labelled as proxies whenever a strategy needs 1BR, 2BR, or 3BR evidence.
+- Optional tidy CSV/XLSX inputs can provide a `Bedrooms` column alongside
+  suburb, property type, year, median price, and sales. Exact-bedroom settled
+  metrics take precedence over the all-bedroom VGV fallback.
+- Optional Domain current-listing evidence. When `DOMAIN_CLIENT_ID` and
   `DOMAIN_CLIENT_SECRET` are absent, no network call is made and the build
   completes from VGV alone. Domain enrichment uses OAuth client credentials
   with `api_listings_read`, then `POST /v1/listings/residential/_search` for an
-  exact suburb and bedroom/dwelling filter. Listing counts are context only;
-  they do not replace settled-sale liquidity.
+  exact suburb, unit, and 1BR/2BR filter. It records listing counts and, when at
+  least five results disclose a parseable price, an asking-price median.
+  Asking evidence is labelled as such and never represented as settled sales.
 
 Grouped ranking records aggregate component suburbs by reported sales volume.
 The weighted average of component medians is an approximation, not a true
@@ -26,20 +30,22 @@ pooled median, and is labelled as such in generated evidence.
 
 ## Scores
 
-`headroomScore` compares the median with the active strategy's `maxPrice`.
-Piecewise-linear knots are `(price/cap → score)`: `0→4`, `0.5→7`, `0.7→10`,
-`0.8→10`, `1.0→6`, `1.15→0`. This rewards credible stock around 70–80% of
-the cap, tapers above the cap, and gives only diminishing credit to a headline
-median far below the brief.
+`affordabilityScore` compares the bedroom-selected median with the active
+strategy's `maxPrice`. Piecewise-linear knots are `(price/cap → score)`:
+`0→10`, `0.55→10`, `0.65→8`, `0.75→5`, `0.85→2`, `1.0→0`. The function is
+monotonic: a cheaper median can never receive a worse Cost score.
 
 `liquidityScore = min(10, 10 × log(1 + annual sales) / log(121))`.
 
-`costScore = 0.7 × headroomScore + 0.3 × liquidityScore`.
+Liquidity/availability is retained as separate evidence and does not alter the
+Cost criterion. This prevents thin stock from making a cheaper suburb look
+more expensive; a future Availability criterion can expose it independently.
 
-Generated files record scores against the $900,000 default for auditability.
-The app recomputes headroom and cost against the active strategy cap. Missing
-generated records fall back to the existing `scores.housingValue` field until
-VGV coverage is complete.
+Generated metrics record affordability against the $900,000 default for
+auditability. The app selects the active strategy's property type and bedroom
+count, falls back to the matching all-bedroom metric when necessary, and then
+recomputes Cost against the active cap. Missing records retain the existing
+`scores.housingValue` fallback until coverage is complete.
 
 ## QA
 

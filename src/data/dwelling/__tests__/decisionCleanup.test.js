@@ -4,7 +4,8 @@ import { areaCorridors } from '../areaCorridors.js'
 import { beachAccessByAreaId } from '../beachAccess.js'
 import { decideCriterionByKey, decideCriteria, decideStrategies } from '../decideStrategies.js'
 import { differentiatingChipsFor, gateExceptionChipFor } from '../decisionChips.js'
-import { costScoreFor, headroomScore, liquidityScore } from '../cost/costScoring.js'
+import { affordabilityScore, costScoreFor, liquidityScore } from '../cost/costScoring.js'
+import { costMetricForArea, formatCostMetric } from '../cost/costContext.js'
 import { DWELLING_COST_BY_ID } from '../cost/dwelling-cost-context.ts'
 import { weightedScore } from '../../../composables/useAreaRanking.js'
 import { scoreCommute } from '../../../composables/useCommuteScoring.js'
@@ -89,15 +90,42 @@ describe('decision chips', () => {
 })
 
 describe('cost scoring', () => {
-  it('rewards suitable headroom rather than the cheapest headline median', () => {
-    expect(headroomScore(675000, 900000)).toBeGreaterThan(headroomScore(300000, 900000))
-    expect(headroomScore(675000, 900000)).toBeGreaterThan(headroomScore(1000000, 900000))
+  it('is monotonic so a cheaper median never receives a worse cost score', () => {
+    expect(affordabilityScore(300000, 900000)).toBeGreaterThanOrEqual(
+      affordabilityScore(675000, 900000),
+    )
+    expect(affordabilityScore(675000, 900000)).toBeGreaterThan(affordabilityScore(1000000, 900000))
   })
 
-  it('uses the documented 70/30 blend', () => {
-    const headroom = headroomScore(720000, 900000)
-    const liquidity = liquidityScore(80)
-    expect(costScoreFor(720000, 80, 900000)).toBeCloseTo(0.7 * headroom + 0.3 * liquidity)
+  it('uses the stricter balanced-budget anchors across the full 0-10 range', () => {
+    expect(affordabilityScore(495000, 900000)).toBe(10)
+    expect(affordabilityScore(585000, 900000)).toBe(8)
+    expect(affordabilityScore(675000, 900000)).toBe(5)
+    expect(affordabilityScore(765000, 900000)).toBe(2)
+    expect(affordabilityScore(900000, 900000)).toBe(0)
+  })
+
+  it('keeps availability separate from Cost', () => {
+    expect(costScoreFor(720000, 900000)).toBe(affordabilityScore(720000, 900000))
+    expect(liquidityScore(80)).toBeGreaterThan(0)
+  })
+
+  it('selects strategy property type and labels bedroom fallbacks honestly', () => {
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const family = decideStrategies.find((strategy) => strategy.id === 'family3br')
+    const armadale = costMetricForArea('armadale-2br', balanced)
+    const ivanhoe = costMetricForArea('ivanhoe-house', family)
+    const ivanhoeRec = areaCorridors.find((record) => record.id === 'ivanhoe-house')
+    const balancedIvanhoe = costMetricForArea('ivanhoe-house', balanced, ivanhoeRec)
+
+    expect(armadale).toMatchObject({ propertyType: 'unit', bedrooms: 2, isBedroomProxy: true })
+    expect(formatCostMetric(armadale)).toContain('2BR proxy')
+    expect(ivanhoe).toMatchObject({ propertyType: 'house', bedrooms: 3, isBedroomProxy: true })
+    expect(balancedIvanhoe).toMatchObject({
+      propertyType: 'house',
+      bedrooms: 3,
+      isBedroomProxy: true,
+    })
   })
 
   it('keeps generated-data fallback available without inventing placeholder values', () => {
@@ -111,7 +139,7 @@ describe('cost scoring', () => {
       // A record scores only from generated VGV context or a hand score;
       // with neither (e.g. no VGV units row for the suburb) it stays null
       // rather than receiving invented values.
-      const hasGenerated = DWELLING_COST_BY_ID[rec.id]?.medianPrice2br != null
+      const hasGenerated = DWELLING_COST_BY_ID[rec.id]?.prices?.unit?.all?.medianPrice != null
       if (!hasGenerated && rec.scores?.housingValue == null) expect(cost).toBeNull()
       else expect(Number.isFinite(cost)).toBe(true)
     }

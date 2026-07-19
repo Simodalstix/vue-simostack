@@ -211,6 +211,7 @@ const areaFilters = computed(() => ({
   maxStationWalk: 20,
   minBedrooms: activeStrategy.value.filters.minBedrooms,
   dwellingTypes: activeStrategy.value.filters.dwellingTypes,
+  strategy: activeStrategy.value,
   includeStretch: true,
 }))
 

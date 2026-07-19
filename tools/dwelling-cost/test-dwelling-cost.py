@@ -37,15 +37,12 @@ def test_tidy_vgv_rows_build_a_bounded_record():
         ]
     }
     records = MODULE.build_records(targets, observations, config())
-    assert records[0]["medianPrice2br"] == 720000
-    assert records[0]["salesPerYear"] == 80
-    assert 0 <= records[0]["headroomScore"] <= 10
-    assert 0 <= records[0]["liquidityScore"] <= 10
-    assert records[0]["costScore"] == round(
-        0.7 * records[0]["headroomScore"]
-        + 0.3 * records[0]["liquidityScore"],
-        4,
-    )
+    metric = records[0]["prices"]["unit"]["all"]
+    assert metric["medianPrice"] == 720000
+    assert metric["salesPerYear"] == 80
+    assert metric["evidence"]["bedroomSpecific"] is False
+    assert 0 <= metric["defaultAffordabilityScore"] <= 10
+    assert 0 <= metric["availabilityScore"] <= 10
 
 
 def test_year_matrix_sheet_yields_latest_median_and_marker():
@@ -82,14 +79,16 @@ def test_year_matrix_sheet_yields_latest_median_and_marker():
     }
     records = MODULE.build_records(targets, observations, config())
     by_id = {record["id"]: record for record in records}
-    assert by_id["example-2br"]["medianPrice2br"] == 720000
-    assert by_id["example-2br"]["salesPerYear"] is None
-    assert by_id["example-2br"]["evidence"]["latestYear"] == 2025
-    assert by_id["example-2br"]["evidence"]["lowSampleMarkers"] == {"Example": "^"}
+    example = by_id["example-2br"]["prices"]["unit"]["all"]
+    assert example["medianPrice"] == 720000
+    assert example["salesPerYear"] is None
+    assert example["evidence"]["latestYear"] == 2025
+    assert example["evidence"]["lowSampleMarkers"] == {"Example": "^"}
     # A blank latest year falls back to the newest year that has a value,
     # and the source year stays visible in evidence.
-    assert by_id["stale-only-2br"]["medianPrice2br"] == 500000
-    assert by_id["stale-only-2br"]["evidence"]["latestYear"] == 2024
+    stale = by_id["stale-only-2br"]["prices"]["unit"]["all"]
+    assert stale["medianPrice"] == 500000
+    assert stale["evidence"]["latestYear"] == 2024
 
 
 def test_missing_vgv_data_stays_absent():
@@ -105,6 +104,47 @@ def test_missing_vgv_data_stays_absent():
     assert MODULE.build_records(targets, [], config()) == []
 
 
-def test_headroom_rewards_credible_stock_not_absolute_cheapness():
-    assert MODULE.headroom_score(675000, 900000) > MODULE.headroom_score(300000, 900000)
-    assert MODULE.headroom_score(675000, 900000) > MODULE.headroom_score(1000000, 900000)
+def test_affordability_is_monotonic():
+    assert MODULE.affordability_score(300000, 900000) >= MODULE.affordability_score(675000, 900000)
+    assert MODULE.affordability_score(675000, 900000) > MODULE.affordability_score(1000000, 900000)
+
+
+def test_affordability_uses_strict_full_range_anchors():
+    assert MODULE.affordability_score(495000, 900000) == 10
+    assert MODULE.affordability_score(585000, 900000) == 8
+    assert MODULE.affordability_score(675000, 900000) == 5
+    assert MODULE.affordability_score(765000, 900000) == 2
+    assert MODULE.affordability_score(900000, 900000) == 0
+
+
+def test_tidy_bedroom_rows_stay_separate_from_all_unit_proxy():
+    raw = pd.DataFrame(
+        [
+            ["Suburb", "Property type", "Bedrooms", "Year", "Median price", "No. of sales"],
+            ["Example", "unit", None, 2025, 600000, 100],
+            ["Example", "unit", 1, 2025, 450000, 40],
+            ["Example", "unit", 2, 2025, 680000, 60],
+        ]
+    )
+    observations = MODULE.parse_table(
+        raw, path=Path("bedroom-sales.csv"), sheet="csv", config=config()
+    )
+    targets = {
+        "records": [
+            {
+                "id": "example-2br",
+                "displayName": "Example",
+                "salComponents": [{"suburb": "Example"}],
+            }
+        ]
+    }
+    prices = MODULE.build_records(targets, observations, config())[0]["prices"]["unit"]
+    assert prices["all"]["medianPrice"] == 600000
+    assert prices["1"]["medianPrice"] == 450000
+    assert prices["2"]["medianPrice"] == 680000
+    assert prices["2"]["evidence"]["bedroomSpecific"] is True
+
+
+def test_domain_display_price_parser_uses_range_midpoint():
+    assert MODULE.advertised_price({"priceDetails": {"displayPrice": "$600k–$700k"}}) == 650000
+    assert MODULE.advertised_price({"priceDetails": {"displayPrice": "Contact agent"}}) is None

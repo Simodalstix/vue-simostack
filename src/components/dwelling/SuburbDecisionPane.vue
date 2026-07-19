@@ -46,7 +46,7 @@
             <span
               class="text-[11px] font-extrabold leading-none"
               :style="{ color: bandColor(previewRow) }"
-              >{{ previewRow.weighted }}</span
+              >{{ scoreDisplay(previewRow) }}</span
             >
           </span>
           <span
@@ -58,7 +58,7 @@
         </div>
 
         <p class="font-mono text-[10.5px] text-ob-soft">
-          Expected cost {{ priceBand(previewRow.rec) }} · Commute {{ commuteShort(previewRow) }}
+          Cost evidence {{ costEvidence(previewRow.rec) }} · Commute {{ commuteShort(previewRow) }}
         </p>
 
         <!-- Why the score is what it is: the same criterion values and weights
@@ -71,7 +71,9 @@
         >
           <div v-for="b in breakdown(previewRow)" :key="b.key" class="min-w-0" :title="b.hint">
             <div class="flex items-baseline justify-between gap-1">
-              <span class="font-mono text-[8.5px] uppercase tracking-[0.04em] text-ob-faint truncate">
+              <span
+                class="font-mono text-[8.5px] uppercase tracking-[0.04em] text-ob-faint truncate"
+              >
                 {{ b.label }}
               </span>
               <span
@@ -148,7 +150,7 @@
                     :style="{ color: bandColor(row) }"
                     :title="bandLabel(row)"
                   >
-                    {{ row.weighted }}
+                    {{ scoreDisplay(row) }}
                   </span>
                 </div>
 
@@ -159,7 +161,7 @@
                 <div
                   class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-ob-faint"
                 >
-                  <span>{{ priceBand(row.rec) }}</span>
+                  <span>{{ costEvidence(row.rec, true) }}</span>
                   <span>Commute {{ commuteShort(row) }}</span>
                 </div>
                 <div v-if="gateChip(row) || rowChips(row).length" class="mt-1 flex flex-wrap gap-1">
@@ -210,8 +212,8 @@
       <p
         class="px-4 py-2 font-mono text-[10px] leading-relaxed text-ob-faint border-t border-ob-sand/8 shrink-0"
       >
-        Hover the map or the list to preview · click a suburb to open the full card · ✕/~ follows
-        the active strategy · provisional data until verified.
+        Hard gates rank before weighted fit · “gated” rows retain their criterion breakdown for
+        diagnosis · provisional data until verified.
       </p>
     </div>
   </section>
@@ -224,6 +226,7 @@ import { fitBandBadgeFill, fitBandColor, getFitBand } from '@/data/dwelling/fitB
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
 import { isUnscoredRow, partitionDecisionRows } from '@/data/dwelling/unscoredUx.js'
 import { differentiatingChipsFor, gateExceptionChipFor } from '@/data/dwelling/decisionChips.js'
+import { costMetricForArea, formatCostMetric } from '@/data/dwelling/cost/costContext.js'
 
 const props = defineProps({
   rows: { type: Array, required: true },
@@ -299,22 +302,28 @@ function unpin() {
 }
 
 function scoreBadgeStyle(row) {
+  if (row.status === 'reject') return { backgroundColor: 'rgba(248, 113, 113, 0.12)' }
   return {
     backgroundColor: fitBandBadgeFill(row.weighted),
   }
 }
 
 function bandColor(row) {
+  if (row.status === 'reject') return '#f87171'
   return fitBandColor(row.weighted)
 }
 
 function bandLabel(row) {
+  if (row.status === 'reject') return `Gated: ${row.reasons[0] || 'hard requirement failed'}`
   return getFitBand(row.weighted).ariaLabel
 }
 
-function priceBand(rec) {
-  const price = rec.dwelling?.indicativePrice
-  return price ? `$${Math.round(price[0] / 1000)}k-$${Math.round(price[1] / 1000)}k` : 'n/a'
+function scoreDisplay(row) {
+  return row.status === 'reject' ? 'gated' : row.weighted
+}
+
+function costEvidence(rec, compact = false) {
+  return formatCostMetric(costMetricForArea(rec.id, props.strategy, rec), { compact })
 }
 
 function commuteShort(row) {
@@ -364,7 +373,7 @@ function breakdown(row) {
   return decideCriteria
     .filter((c) => (props.weights[c.key] ?? 0) > 0)
     .map((c) => {
-      const value = c.value(row.rec, row.commuteScore, { maxPrice })
+      const value = c.value(row.rec, row.commuteScore, { maxPrice, strategy: props.strategy })
       const bonus = c.scoringMode === 'additiveBonus'
       const display = value == null ? 'n/a' : (Math.round(value * 10) / 10).toFixed(1)
       return {

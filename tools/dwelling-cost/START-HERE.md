@@ -14,7 +14,8 @@ The default build reuses the app's canonical 60-record suburb target file and
 writes `src/data/dwelling/cost/dwelling-cost-context.ts` plus
 `generated/dwelling-cost-outliers.md`. Override paths with `--help` options.
 
-Domain is optional. To enrich current two-bedroom listing counts, set
+Domain is optional. To enrich current one- and two-bedroom unit listing counts
+and disclosed asking-price medians, set
 `DOMAIN_CLIENT_ID` and `DOMAIN_CLIENT_SECRET` in the shell before running.
 Secrets are read only from the environment and are never written to output.
 

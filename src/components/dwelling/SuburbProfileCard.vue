@@ -28,7 +28,7 @@
                 class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
                 :style="{ backgroundColor: bandBadgeFill(row), color: bandColor(row) }"
               >
-                <span class="text-[15px] font-extrabold leading-none">{{ row.weighted }}</span>
+                <span class="text-[15px] font-extrabold leading-none">{{ scoreDisplay(row) }}</span>
                 <span class="text-[9px] uppercase tracking-[0.08em]">{{ bandLabel(row) }}</span>
               </span>
               <button
@@ -375,6 +375,7 @@ import { differentiatingChipsFor, gateExceptionChipFor } from '@/data/dwelling/d
 import { friendContextFor } from '@/data/dwelling/personalAnchors.js'
 import { personalNetworkByAreaId } from '@/data/dwelling/personalNetwork.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
+import { costMetricForArea, formatCostMetric } from '@/data/dwelling/cost/costContext.js'
 import { schoolContextByAreaId } from '@/data/dwelling/schools/dwelling-school-context.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import { UNSCORED_BANNER, fitLineForRow, isUnscoredRow } from '@/data/dwelling/unscoredUx.js'
@@ -416,11 +417,14 @@ const gateNote = computed(() => {
 })
 const headerNote = computed(() => [sharedNote.value, gateNote.value].filter(Boolean).join(' · '))
 const headerMetrics = computed(() => [
-  { label: 'Purchase band', value: priceBand(props.row.rec) },
-  { label: 'Expected cost', value: monthlyLabel(props.row.rec), tone: 'text-ob-teal' },
+  { label: 'Scored price', value: scoredPriceLabel.value },
+  { label: 'Repayment estimate', value: monthlyLabel(props.row.rec), tone: 'text-ob-teal' },
   { label: 'Collins St commute', value: commuteLabel(props.row), tone: bandClass(props.row.band) },
   { label: 'Owners-corp', value: ocLabel(props.row.rec), tone: 'text-ob-muted2' },
 ])
+const scoredPriceLabel = computed(() =>
+  formatCostMetric(costMetricForArea(props.row.rec.id, props.strategy, props.row.rec)),
+)
 const unscored = computed(() => isUnscoredRow(props.row))
 const suburbProfile = computed(() => suburbProfileFor(props.row.rec.id))
 const girlsSport = computed(() => girlsSportFor(props.row.rec.id))
@@ -485,13 +489,19 @@ function chipClass(chip) {
   }[chip.tone]
 }
 function bandColor(row) {
+  if (row.status === 'reject') return '#f87171'
   return fitBandColor(row.weighted)
 }
 function bandBadgeFill(row) {
+  if (row.status === 'reject') return 'rgba(248, 113, 113, 0.12)'
   return fitBandBadgeFill(row.weighted)
 }
 function bandLabel(row) {
+  if (row.status === 'reject') return 'gated'
   return getFitBand(row.weighted).label
+}
+function scoreDisplay(row) {
+  return row.status === 'reject' ? 'gated' : row.weighted
 }
 function bandClass(band) {
   return (
@@ -502,12 +512,6 @@ function bandClass(band) {
       Difficult: 'text-ob-faint',
     }[band] || 'text-ob-dim'
   )
-}
-function priceBand(rec) {
-  const price = rec.dwelling?.indicativePrice
-  return price
-    ? '$' + Math.round(price[0] / 1000) + 'k–$' + Math.round(price[1] / 1000) + 'k'
-    : 'n/a'
 }
 function feeEstimate(rec) {
   if (rec.feeEstimate != null) return rec.feeEstimate

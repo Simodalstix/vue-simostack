@@ -1,11 +1,12 @@
 {
-  "methodVersion": "dwelling-cost-v1",
+  "methodVersion": "dwelling-cost-v2",
   "defaultMaxPrice": 900000,
   "liquidityFullScoreSales": 120,
   "domain": {
     "state": "VIC",
     "listingType": "Sale",
-    "bedrooms": 2,
+    "bedrooms": [1, 2],
+    "minimumPricedListings": 5,
     "propertyTypes": ["ApartmentUnitFlat"],
     "authUrl": "https://auth.domain.com.au/v1/connect/token",
     "searchUrl": "https://api.domain.com.au/v1/listings/residential/_search"
@@ -13,6 +14,7 @@
   "fieldAliases": {
     "suburb": ["suburb", "locality", "town"],
     "propertyType": ["property type", "dwelling type", "type"],
+    "bedrooms": ["bedrooms", "bedroom count", "beds"],
     "year": ["year", "calendar year"],
     "medianPrice": ["median price", "median", "price median"],
     "sales": ["no. of sales", "number of sales", "sales", "count"]

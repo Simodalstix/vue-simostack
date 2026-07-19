@@ -21,6 +21,7 @@
 
 import { computed, unref } from 'vue'
 import { decideCriteria } from '@/data/dwelling/decideStrategies.js'
+import { costMetricForArea } from '@/data/dwelling/cost/costContext.js'
 import { commuteFor, scoreCommute, commuteBandLabel } from './useCommuteScoring.js'
 
 const STATUS_ORDER = { ok: 0, conditional: 1, reject: 2, unscored: 3 }
@@ -45,10 +46,18 @@ function gate(rec, filters, commute) {
   // from Decide July 2026; rec.carDaily is retained as data only.)
   if (commute && commute.typical > 65) reject('Over ~65 min door-to-door at peak')
   if (commute && commute.transfers > 1) reject('More than one routine transfer')
-  if (rec.secondBedroom === false) reject('No viable second bedroom or path to one')
+  if ((filters.minBedrooms ?? 2) >= 2 && rec.secondBedroom === false)
+    reject('No viable second bedroom or path to one')
 
   // Strategy filter gates.
-  if (filters.maxPrice && rec.dwelling?.indicativePrice?.[0] > filters.maxPrice)
+  const costMetric = costMetricForArea(rec.id, filters.strategy, rec)
+  const gatePrice =
+    filters.strategy && costMetric && !costMetric.isBedroomProxy
+      ? costMetric.medianPrice
+      : filters.minBedrooms !== 1
+        ? rec.dwelling?.indicativePrice?.[0]
+        : null
+  if (filters.maxPrice && gatePrice > filters.maxPrice)
     reject(`Entry price above the ${fmtPrice(filters.maxPrice)} cap`)
   if (filters.minBedrooms && rec.dwelling?.bedrooms < filters.minBedrooms)
     reject('Fewer bedrooms than the strategy requires')
@@ -145,6 +154,7 @@ export function useAreaRanking(records, filtersRef, weightsRef) {
       const { status, reasons } = gate(rec, filters, commute)
       const weighted = weightedScore(rec, commuteScore, weights, {
         maxPrice: filters.maxPrice,
+        strategy: filters.strategy,
       })
       return {
         rec,

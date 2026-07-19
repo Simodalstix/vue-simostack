@@ -31,8 +31,8 @@ import {
   thaiCommunityScore,
 } from './languageCommunities.js'
 import { partnerPoolScore } from './partnerPool.js'
-import { DWELLING_COST_BY_ID } from './cost/dwelling-cost-context.ts'
 import { costScoreFor } from './cost/costScoring.js'
+import { costMetricForArea } from './cost/costContext.js'
 
 const tenScale = (v) => (v == null ? null : v * 2) // existing 1-5 scores -> 2-10
 
@@ -55,15 +55,11 @@ export const decideCriteria = [
   {
     key: 'cost',
     label: 'Cost',
-    hint: 'Suitable stock at a price the brief can carry, not just a low median.',
+    hint: 'Bedroom-matched affordability against the strategy cap. Lower cost never scores worse.',
     value: (rec, _commuteScore, context = {}) => {
-      const generated = DWELLING_COST_BY_ID[rec.id]
-      if (!generated?.medianPrice2br) return tenScale(rec.scores?.housingValue)
-      return costScoreFor(
-        generated.medianPrice2br,
-        generated.salesPerYear,
-        context.maxPrice ?? 900000,
-      )
+      const metric = costMetricForArea(rec.id, context.strategy, rec)
+      if (!metric?.medianPrice) return tenScale(rec.scores?.housingValue)
+      return costScoreFor(metric.medianPrice, context.maxPrice ?? 900000)
     },
   },
   {
@@ -177,6 +173,7 @@ export const decideStrategies = [
     shortLabel: '2 Bedroom',
     dwelling: 'Older 2BR apartment or villa unit',
     bedrooms: 2,
+    pricePropertyType: 'unit',
     intent: 'commute, cost and Lulu in balance',
     weights: {
       cost: 2,
@@ -201,6 +198,7 @@ export const decideStrategies = [
     shortLabel: '1 Bedroom',
     dwelling: 'Older 1BR walk-up',
     bedrooms: 1,
+    pricePropertyType: 'unit',
     intent: 'cheapest honest ownership, commute first',
     weights: {
       cost: 2,
@@ -218,7 +216,7 @@ export const decideStrategies = [
     },
     filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'], maxPrice: 550000 },
     priceNote:
-      '1BR stock is not separately priced per suburb yet; viability is tested against the recorded 2BR entry band as a conservative ceiling.',
+      'Exact 1BR evidence is used where available; otherwise the UI identifies the all-unit proxy.',
   },
   {
     id: 'family3br',
@@ -226,6 +224,7 @@ export const decideStrategies = [
     shortLabel: '3 Bedroom',
     dwelling: '3BR house, townhouse or large villa unit',
     bedrooms: 3,
+    pricePropertyType: 'house',
     intent: 'three real bedrooms with schools leading',
     weights: {
       cost: 3,
@@ -254,6 +253,7 @@ export const decideStrategies = [
     shortLabel: 'Land Build',
     dwelling: 'Land with a modest new build',
     bedrooms: 3,
+    pricePropertyType: 'house',
     intent: 'cheap land and a modest build on the fringe',
     weights: {
       cost: 3,
@@ -279,6 +279,7 @@ export const decideStrategies = [
     shortLabel: 'Villa / Townhouse',
     dwelling: '2-3BR villa unit or townhouse',
     bedrooms: 2,
+    pricePropertyType: 'unit',
     intent: 'courtyard living with strong schools',
     weights: {
       cost: 2,

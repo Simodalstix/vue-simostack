@@ -8,6 +8,7 @@ import json
 import math
 import os
 import re
+import statistics
 import sys
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -33,6 +34,7 @@ YEAR_RE = re.compile(r"\b(19|20)\d{2}\b")
 class Observation:
     suburb: str
     property_type: str
+    bedrooms: int | None
     year: int | None
     median_price: float | None
     sales: float | None
@@ -121,10 +123,12 @@ def parse_tidy_table(
         if "propertyType" in columns:
             property_type = normalise(row.iloc[columns["propertyType"]]) or property_type
         year_value = number(row.iloc[columns["year"]]) if "year" in columns else None
+        bedroom_value = number(row.iloc[columns["bedrooms"]]) if "bedrooms" in columns else None
         observations.append(
             Observation(
                 suburb=suburb,
                 property_type=property_type,
+                bedrooms=int(bedroom_value) if bedroom_value else None,
                 year=int(year_value) if year_value else None,
                 median_price=(
                     number(row.iloc[columns["medianPrice"]])
@@ -206,6 +210,7 @@ def parse_wide_table(
         Observation(
             suburb=suburb,
             property_type=fallback_property_type,
+            bedrooms=None,
             year=year,
             median_price=values["median"],
             sales=values["sales"],
@@ -265,11 +270,13 @@ def load_observations(source: Path, config: dict[str, Any]) -> list[Observation]
 
 
 def latest_by_suburb(
-    observations: Iterable[Observation], property_type: str
+    observations: Iterable[Observation], property_type: str, bedrooms: int | None = None
 ) -> dict[str, Observation]:
     selected: dict[str, Observation] = {}
     for observation in observations:
         if property_type not in normalise(observation.property_type):
+            continue
+        if observation.bedrooms != bedrooms:
             continue
         key = normalise(observation.suburb)
         current = selected.get(key)
@@ -285,6 +292,7 @@ def latest_by_suburb(
             selected[key] = Observation(
                 suburb=current.suburb,
                 property_type=current.property_type,
+                bedrooms=current.bedrooms,
                 year=current.year,
                 median_price=current.median_price or observation.median_price,
                 sales=current.sales if current.sales is not None else observation.sales,
@@ -295,8 +303,8 @@ def latest_by_suburb(
     return selected
 
 
-def headroom_score(median_price: float, cap: float) -> float:
-    knots = [(0, 4), (0.5, 7), (0.7, 10), (0.8, 10), (1, 6), (1.15, 0)]
+def affordability_score(median_price: float, cap: float) -> float:
+    knots = [(0, 10), (0.55, 10), (0.65, 8), (0.75, 5), (0.85, 2), (1, 0)]
     ratio = median_price / cap
     for index in range(1, len(knots)):
         left, right = knots[index - 1], knots[index]
@@ -321,15 +329,53 @@ def domain_token(config: dict[str, Any], client_id: str, secret: str) -> str:
     return response.json()["access_token"]
 
 
-def domain_listing_count(
-    config: dict[str, Any], token: str, suburb: str
-) -> int:
+def domain_listing_payloads(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    listings: list[dict[str, Any]] = []
+    for item in items:
+        if normalise(item.get("type")) == "project":
+            project = item.get("project") or {}
+            children = project.get("childListings") or project.get("listings") or []
+            listings.extend((child.get("listing") or child) for child in children)
+        else:
+            listings.append(item.get("listing") or item)
+    return listings
+
+
+def advertised_price(listing: dict[str, Any]) -> float | None:
+    details = listing.get("priceDetails") or {}
+    lower = number(details.get("priceFrom"))
+    upper = number(details.get("priceTo"))
+    if lower is not None and upper is not None:
+        return (lower + upper) / 2
+    for key in ("price", "priceGuide", "priceFrom", "priceTo"):
+        value = number(details.get(key))
+        if value is not None and value >= 100_000:
+            return value
+
+    display = str(details.get("displayPrice") or "")
+    values = []
+    for raw, suffix in re.findall(r"\$?\s*([0-9][0-9,.]*(?:\.[0-9]+)?)\s*([kKmM]?)", display):
+        value = float(raw.replace(",", ""))
+        if suffix.casefold() == "k":
+            value *= 1_000
+        elif suffix.casefold() == "m":
+            value *= 1_000_000
+        if value >= 100_000:
+            values.append(value)
+    if not values:
+        return None
+    return statistics.median(values[:2])
+
+
+def domain_listing_metrics(
+    config: dict[str, Any], token: str, suburb: str, bedrooms: int
+) -> dict[str, Any]:
     domain = config["domain"]
     payload = {
         "listingType": domain["listingType"],
         "propertyTypes": domain["propertyTypes"],
-        "minBedrooms": domain["bedrooms"],
-        "maxBedrooms": domain["bedrooms"],
+        "minBedrooms": bedrooms,
+        "maxBedrooms": bedrooms,
         "locations": [
             {
                 "state": domain["state"],
@@ -345,14 +391,13 @@ def domain_listing_count(
         timeout=30,
     )
     response.raise_for_status()
-    count = 0
-    for item in response.json():
-        if normalise(item.get("type")) == "project":
-            project = item.get("project") or {}
-            count += len(project.get("childListings") or project.get("listings") or [])
-        else:
-            count += 1
-    return count
+    listings = domain_listing_payloads(response.json())
+    prices = [price for listing in listings if (price := advertised_price(listing)) is not None]
+    return {
+        "listingCount": len(listings),
+        "pricedCount": len(prices),
+        "medianPrice": round(statistics.median(prices)) if prices else None,
+    }
 
 
 def hand_scores(path: Path) -> dict[str, float]:
@@ -369,21 +414,26 @@ def build_records(
     observations: list[Observation],
     config: dict[str, Any],
     *,
-    domain_counts: dict[str, int] | None = None,
+    domain_metrics: dict[tuple[str, int], dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
-    units = latest_by_suburb(observations, "unit")
     default_cap = float(config["defaultMaxPrice"])
     full_sales = float(config["liquidityFullScoreSales"])
-    records: list[dict[str, Any]] = []
-    for target in targets["records"]:
+    source_indexes = {
+        (property_type, bedrooms): latest_by_suburb(observations, property_type, bedrooms)
+        for property_type in ("unit", "house")
+        for bedrooms in (None, 1, 2, 3)
+    }
+
+    def source_metric(target: dict[str, Any], property_type: str, bedrooms: int | None):
+        selected = source_indexes[(property_type, bedrooms)]
         components = []
         for component in target["salComponents"]:
             suburb = component["suburb"]
-            observation = units.get(normalise(suburb))
+            observation = selected.get(normalise(suburb))
             if observation and observation.median_price is not None:
                 components.append((suburb, observation))
         if not components:
-            continue
+            return None
 
         weights = [observation.sales or 1 for _, observation in components]
         weight_total = sum(weights)
@@ -394,47 +444,113 @@ def build_records(
         reported_sales = [observation.sales for _, observation in components]
         sales = sum(value for value in reported_sales if value is not None)
         sales_value = sales if any(value is not None for value in reported_sales) else None
-        headroom = headroom_score(median, default_cap)
-        liquidity = liquidity_score(sales_value, full_sales) if sales_value is not None else None
-        cost = headroom if liquidity is None else 0.7 * headroom + 0.3 * liquidity
-        component_suburbs = [suburb for suburb, _ in components]
+        availability = (
+            liquidity_score(sales_value, full_sales) if sales_value is not None else None
+        )
+        return {
+            "medianPrice": round(median),
+            "priceType": "settled",
+            "bedrooms": bedrooms,
+            "sampleSize": round(sales_value) if sales_value is not None else None,
+            "salesPerYear": round(sales_value, 1) if sales_value is not None else None,
+            "listingCount": None,
+            "availabilityScore": round(availability, 4) if availability is not None else None,
+            "defaultAffordabilityScore": round(affordability_score(median, default_cap), 4),
+            "evidence": {
+                "propertyType": property_type,
+                "bedroomSpecific": bedrooms is not None,
+                "componentSuburbs": [suburb for suburb, _ in components],
+                "sourceFiles": sorted(
+                    {observation.source_file for _, observation in components}
+                ),
+                "latestYear": max(
+                    (observation.year or 0 for _, observation in components), default=None
+                )
+                or None,
+                "groupedMedianMethod": (
+                    "sales-weighted component median approximation"
+                    if len(components) > 1
+                    else "reported suburb median"
+                ),
+                "lowSampleMarkers": (
+                    {
+                        suburb: observation.marker
+                        for suburb, observation in components
+                        if observation.marker
+                    }
+                    or None
+                ),
+            },
+        }
+
+    def domain_metric(target: dict[str, Any], bedrooms: int):
+        if domain_metrics is None:
+            return None
+        components = []
+        for component in target["salComponents"]:
+            suburb = component["suburb"]
+            metric = domain_metrics.get((normalise(suburb), bedrooms))
+            if metric:
+                components.append((suburb, metric))
+        priced = [(suburb, metric) for suburb, metric in components if metric["medianPrice"]]
+        priced_count = sum(metric["pricedCount"] for _, metric in priced)
+        minimum = int(config["domain"].get("minimumPricedListings", 5))
+        if not priced or priced_count < minimum:
+            return None
+        median = sum(
+            metric["medianPrice"] * metric["pricedCount"] for _, metric in priced
+        ) / priced_count
+        listing_count = sum(metric["listingCount"] for _, metric in components)
+        availability = liquidity_score(listing_count, full_sales)
+        return {
+            "medianPrice": round(median),
+            "priceType": "asking",
+            "bedrooms": bedrooms,
+            "sampleSize": priced_count,
+            "salesPerYear": None,
+            "listingCount": listing_count,
+            "availabilityScore": round(availability, 4),
+            "defaultAffordabilityScore": round(affordability_score(median, default_cap), 4),
+            "evidence": {
+                "propertyType": "unit",
+                "bedroomSpecific": True,
+                "componentSuburbs": [suburb for suburb, _ in components],
+                "sourceFiles": ["Domain residential listing search"],
+                "latestYear": datetime.now(timezone.utc).year,
+                "groupedMedianMethod": (
+                    "priced-listing-weighted component asking median approximation"
+                    if len(components) > 1
+                    else "current disclosed asking-price median"
+                ),
+                "lowSampleMarkers": None,
+            },
+        }
+
+    records: list[dict[str, Any]] = []
+    for target in targets["records"]:
+        prices: dict[str, dict[str, Any]] = {}
+        for property_type in ("unit", "house"):
+            by_bedroom: dict[str, Any] = {}
+            general = source_metric(target, property_type, None)
+            if general:
+                by_bedroom["all"] = general
+            for bedrooms in (1, 2, 3):
+                exact = source_metric(target, property_type, bedrooms)
+                if exact:
+                    by_bedroom[str(bedrooms)] = exact
+                elif property_type == "unit" and bedrooms in config["domain"]["bedrooms"]:
+                    current = domain_metric(target, bedrooms)
+                    if current:
+                        by_bedroom[str(bedrooms)] = current
+            if by_bedroom:
+                prices[property_type] = by_bedroom
+        if not prices:
+            continue
         records.append(
             {
                 "id": target["id"],
                 "suburb": target["displayName"],
-                "medianPrice2br": round(median),
-                "salesPerYear": round(sales_value, 1) if sales_value is not None else None,
-                "headroomScore": round(headroom, 4),
-                "liquidityScore": round(liquidity, 4) if liquidity is not None else None,
-                "costScore": round(cost, 4),
-                "currentListings2br": (
-                    sum(domain_counts.get(normalise(name), 0) for name in component_suburbs)
-                    if domain_counts is not None
-                    else None
-                ),
-                "evidence": {
-                    "propertyType": "unit",
-                    "componentSuburbs": component_suburbs,
-                    "sourceFiles": sorted(
-                        {observation.source_file for _, observation in components}
-                    ),
-                    "latestYear": max(
-                        (observation.year or 0 for _, observation in components), default=None
-                    ) or None,
-                    "groupedMedianMethod": (
-                        "sales-weighted component median approximation"
-                        if len(components) > 1
-                        else "reported suburb median"
-                    ),
-                    "lowSampleMarkers": (
-                        {
-                            suburb: observation.marker
-                            for suburb, observation in components
-                            if observation.marker
-                        }
-                        or None
-                    ),
-                },
+                "prices": prices,
             }
         )
     return records
@@ -452,8 +568,8 @@ def write_typescript(path: Path, records: list[dict[str, Any]], config: dict[str
     content = f"""// src/data/dwelling/cost/dwelling-cost-context.ts
 //
 // Generated by tools/dwelling-cost/build-dwelling-cost.py. Do not hand-edit;
-// rebuild from owner-downloaded VGV workbooks. Domain counts are optional
-// context and no credential is ever written here.
+// rebuild from owner-downloaded source files. Domain bedroom-specific asking
+// metrics are optional and no credential is ever written here.
 
 export const DWELLING_COST_CONTEXT = {serialized} as const
 
@@ -466,10 +582,16 @@ export const DWELLING_COST_BY_ID = Object.fromEntries(
 
 
 def write_outliers(path: Path, records: list[dict[str, Any]], hand: dict[str, float]) -> None:
-    flagged = [
-        (record, hand[record["id"]])
+    scored = [
+        (record, record.get("prices", {}).get("unit", {}).get("all"))
         for record in records
-        if record["id"] in hand and abs(record["costScore"] - hand[record["id"]]) >= 2
+    ]
+    flagged = [
+        (record, metric, hand[record["id"]])
+        for record, metric in scored
+        if metric
+        and record["id"] in hand
+        and abs(metric["defaultAffordabilityScore"] - hand[record["id"]]) >= 2
     ]
     lines = [
         "# Dwelling cost QA / outliers",
@@ -487,8 +609,8 @@ def write_outliers(path: Path, records: list[dict[str, Any]], hand: dict[str, fl
                 "| Record | Generated | Hand | Difference |",
                 "|---|---:|---:|---:|",
                 *[
-                    f"| {record['id']} | {record['costScore']:.2f} | {manual:.2f} | {record['costScore'] - manual:+.2f} |"
-                    for record, manual in flagged
+                    f"| {record['id']} | {metric['defaultAffordabilityScore']:.2f} | {manual:.2f} | {metric['defaultAffordabilityScore'] - manual:+.2f} |"
+                    for record, metric, manual in flagged
                 ],
             ]
         )
@@ -506,7 +628,7 @@ def main() -> None:
     if bool(credentials[0]) != bool(credentials[1]):
         raise RuntimeError("Set both DOMAIN_CLIENT_ID and DOMAIN_CLIENT_SECRET, or neither.")
 
-    domain_counts = None
+    domain_metrics = None
     if all(credentials) and not args.skip_domain:
         token = domain_token(config, credentials[0], credentials[1])
         suburbs = sorted(
@@ -516,17 +638,20 @@ def main() -> None:
                 for component in target["salComponents"]
             }
         )
-        domain_counts = {
-            normalise(suburb): domain_listing_count(config, token, suburb)
+        domain_metrics = {
+            (normalise(suburb), bedrooms): domain_listing_metrics(
+                config, token, suburb, bedrooms
+            )
             for suburb in suburbs
+            for bedrooms in config["domain"]["bedrooms"]
         }
 
-    records = build_records(targets, observations, config, domain_counts=domain_counts)
+    records = build_records(targets, observations, config, domain_metrics=domain_metrics)
     write_typescript(args.out, records, config)
     write_outliers(args.outliers, records, hand_scores(args.area_corridors))
     print(
         f"Generated {len(records)} cost records from {len(observations)} VGV observations; "
-        f"Domain enrichment {'on' if domain_counts is not None else 'off'}."
+        f"Domain enrichment {'on' if domain_metrics is not None else 'off'}."
     )
     if not observations:
         print("No VGV workbook rows found; the app will use hand-score fallback.", file=sys.stderr)
