@@ -3,8 +3,9 @@
 `build-dwelling-community-context.py` extends the checked-in ABS 2021 SAL
 community-context dataset from official General Community Profile workbooks.
 It does not aggregate combined suburbs. Scoring reads only the explicitly
-named derived fields (the Chinese-language lens and the partner-pool
-criterion); everything else remains descriptive.
+named derived fields (the Chinese-language lens, grouped other-language
+communities lens, and partner-pool criterion); everything else remains
+descriptive.
 
 `backfill-partner-pool-context.py` adds the partner-pool measures
 (`unpartnered2554` from G06, `loneParentFamilies` from G29) to every record

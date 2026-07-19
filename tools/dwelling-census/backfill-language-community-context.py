@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Backfill Filipino, Tagalog and Thai language measures into the SAL context.
+"""Backfill named language-community measures into the SAL context.
 
-Adds three measures to additionalHouseholdContext on EVERY dataset record,
+Adds Filipino, Tagalog, Thai, Spanish, Portuguese and Vietnamese measures to
+additionalHouseholdContext on EVERY dataset record,
 from the same G13c language-at-home table and G65 denominator the Cantonese
 and Mandarin measures use. Filipino and Tagalog are separate, mutually
 exclusive ABS language responses, so a Filipino-community lens can add their
@@ -31,13 +32,14 @@ LANGUAGE_ROWS = [
     ("thaiSpokenAtHome", 57, "Thai", "Persons who used Thai at home"),
     ("spanishSpokenAtHome", 55, "Spanish", "Persons who used Spanish at home"),
     ("portugueseSpokenAtHome", 45, "Portuguese", "Persons who used Portuguese at home"),
+    ("vietnameseSpokenAtHome", 59, "Vietnamese", "Persons who used Vietnamese at home"),
 ]
 DENOMINATOR_CELL = "G65"
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Backfill Filipino/Tagalog/Thai measures into the community context."
+        description="Backfill named language-community measures into the community context."
     )
     parser.add_argument("--dataset", type=Path, required=True)
     parser.add_argument("--cache", type=Path, required=True)
