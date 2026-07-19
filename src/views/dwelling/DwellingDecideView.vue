@@ -201,7 +201,7 @@ const listHoverId = ref(null)
 const deposit = personalPosition.calc.deposit
 const rate = personalPosition.calc.rate
 
-// The strategy is the single mode: a weight preset over the eight criteria plus
+// The strategy is the single mode: a weight preset over the ten criteria plus
 // the purchase proposition (dwelling types, bedrooms, price cap) expressed
 // through the same named filter gates as before.
 const activeStrategyId = ref(defaultStrategyId)
@@ -226,7 +226,7 @@ onMounted(() => {
 onBeforeUnmount(() => desktopMapQuery?.removeEventListener('change', syncDesktopMap))
 
 // Binary criterion toggles over the active preset. Switching strategy restores
-// each criterion's default (Chinese stays off); the last enabled criterion
+// each criterion's default (community lenses stay off); the last enabled criterion
 // cannot be switched off, so the weight set can never go empty from the UI.
 const enabled = reactive(
   Object.fromEntries(decideCriteria.map((c) => [c.key, c.defaultEnabled !== false])),
@@ -240,6 +240,8 @@ function criterionButtonClass(criterion) {
   if (!enabled[criterion.key])
     return 'border-ob-sand/14 text-ob-faint hover:text-ob-muted line-through'
   if (criterion.accent === 'amber') return 'border-amber-500/45 text-amber-300 bg-amber-500/10'
+  if (criterion.accent === 'blue') return 'border-blue-500/45 text-blue-300 bg-blue-500/10'
+  if (criterion.accent === 'purple') return 'border-purple-500/45 text-purple-300 bg-purple-500/10'
   if (criterion.accent === 'red') return 'border-red-500/45 text-red-300 bg-red-500/10'
   if (criterion.accent === 'pink') return 'border-pink-500/45 text-pink-300 bg-pink-500/10'
   return 'border-ob-teal/45 text-ob-teal bg-ob-teal/8'

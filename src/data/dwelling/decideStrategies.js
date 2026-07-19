@@ -2,7 +2,7 @@
 //
 // The Decide page's single control model: a STRATEGY is a weighting preset
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
-// tests. Selecting a strategy loads its weight vector over the twelve suburb
+// tests. Selecting a strategy loads its weight vector over the ten suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
 // off (weight 0). Standard criteria renormalise over the enabled weights;
 // explicitly additive criteria such as Beach apply a small bounded premium
@@ -15,7 +15,7 @@
 
 // ---- criteria -------------------------------------------------------------
 //
-// Twelve criteria, each scored 0-10 per suburb, derived from the existing
+// Ten criteria, each scored 0-10 per suburb, derived from the existing
 // record data (nothing new is fabricated here). `value(rec, commuteScore)`
 // returns 0-10 or null when the record carries no data for it; a null is
 // omitted rather than scored as zero. `scoringMode: 'additiveBonus'` keeps a
@@ -25,11 +25,7 @@ import { personalNetworkByAreaId, pnScore } from './personalNetwork.js'
 import { beachAccessByAreaId, beachScore } from './beachAccess.js'
 import { girlsSportFor, sportAccessScore } from './girlsSport.js'
 import { chineseCommunityScore } from './chineseCommunity.js'
-import {
-  filipinoCommunityScore,
-  southAmericanCommunityScore,
-  thaiCommunityScore,
-} from './languageCommunities.js'
+import { otherCommunitiesScore } from './languageCommunities.js'
 import { partnerPoolScore } from './partnerPool.js'
 import { costScoreFor } from './cost/costScoring.js'
 import { costMetricForArea } from './cost/costContext.js'
@@ -56,6 +52,7 @@ export const decideCriteria = [
     key: 'cost',
     label: 'Cost',
     hint: 'Bedroom-matched affordability against the strategy cap. Lower cost never scores worse.',
+    accent: 'blue',
     value: (rec, _commuteScore, context = {}) => {
       const metric = costMetricForArea(rec.id, context.strategy, rec)
       if (!metric?.medianPrice) return tenScale(rec.scores?.housingValue)
@@ -66,18 +63,21 @@ export const decideCriteria = [
     key: 'commute',
     label: 'Commute',
     hint: 'Door-to-door to 555 Collins St, transfer-penalised.',
+    accent: 'blue',
     value: (rec, commuteScore) => tenScale(commuteScore),
   },
   {
     key: 'schools',
     label: 'Schools',
     hint: 'Zoned public school strength.',
+    accent: 'purple',
     value: (rec) => tenScale(zonedSchoolStrength(rec) ?? rec.childhood?.schoolStrength),
   },
   {
     key: 'kidAmenity',
     label: 'Kid amenity',
     hint: 'How independently a 12-15yo can get around, blended equally with girls’ sport access where researched.',
+    accent: 'purple',
     value: (rec) => {
       const teen = tenScale(rec.childhood?.teenIndependence)
       const sport = sportAccessScore(girlsSportFor(rec.id))
@@ -100,12 +100,14 @@ export const decideCriteria = [
     key: 'safetyQuality',
     label: 'Safety',
     hint: 'Measured offence rates and street conditions, not perception.',
+    accent: 'purple',
     value: (rec) => tenScale(rec.scores?.safety),
   },
   {
     key: 'personalNetwork',
     label: 'Friends',
     hint: 'Practical non-car access to the inner-circle anchor in South Yarra; banded estimate at suburb level.',
+    accent: 'amber',
     value: (rec) => pnScore(personalNetworkByAreaId[rec.id]?.estMin ?? null),
   },
   {
@@ -119,34 +121,14 @@ export const decideCriteria = [
     value: (rec) => chineseCommunityScore(rec.id),
   },
   {
-    key: 'filipinoCommunity',
-    label: 'Filipino',
-    hint: 'Optional personal bonus from the combined ABS Census 2021 share using Filipino or Tagalog at home. Off by default.',
+    key: 'otherCommunities',
+    label: 'Other communities',
+    hint: 'One optional personal bonus for Filipino/Tagalog, Thai, Spanish/Portuguese or Vietnamese language presence. Uses the strongest available source-backed measure so several communities cannot stack several bonuses. Off by default.',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
     defaultEnabled: false,
     accent: 'pink',
-    value: (rec) => filipinoCommunityScore(rec.id),
-  },
-  {
-    key: 'thaiCommunity',
-    label: 'Thai',
-    hint: 'Optional personal bonus from the ABS Census 2021 share using Thai at home. Off by default.',
-    scoringMode: 'additiveBonus',
-    bonusPointsPerWeight: 2,
-    defaultEnabled: false,
-    accent: 'pink',
-    value: (rec) => thaiCommunityScore(rec.id),
-  },
-  {
-    key: 'southAmericanCommunity',
-    label: 'Sth American',
-    hint: 'Optional personal bonus from the combined ABS Census 2021 share using Spanish or Portuguese at home. The census country list has no Colombia row, so language is the closest signal; Iberian speakers are included. Off by default.',
-    scoringMode: 'additiveBonus',
-    bonusPointsPerWeight: 2,
-    defaultEnabled: false,
-    accent: 'pink',
-    value: (rec) => southAmericanCommunityScore(rec.id),
+    value: (rec) => otherCommunitiesScore(rec.id),
   },
   {
     key: 'partnerPool',
@@ -154,6 +136,7 @@ export const decideCriteria = [
     hint: '2021 Census; relative signal: suburb demographic profiles are sticky, absolute figures are dated. Refresh when the 2026 Census publishes (mid-2027).',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
+    accent: 'pink',
     value: (rec) => partnerPoolScore(rec.id),
   },
 ]
@@ -184,10 +167,8 @@ export const decideStrategies = [
       safetyQuality: 1,
       personalNetwork: 2,
       chineseCommunity: 2,
-      filipinoCommunity: 2,
-      thaiCommunity: 2,
-      southAmericanCommunity: 2,
-      partnerPool: 1,
+      otherCommunities: 2,
+      partnerPool: 2,
     },
     filters: { minBedrooms: 2, dwellingTypes: [], maxPrice: 900000 },
     priceNote: null,
@@ -209,10 +190,8 @@ export const decideStrategies = [
       safetyQuality: 1,
       personalNetwork: 2,
       chineseCommunity: 2,
-      filipinoCommunity: 2,
-      thaiCommunity: 2,
-      southAmericanCommunity: 2,
-      partnerPool: 1,
+      otherCommunities: 2,
+      partnerPool: 2,
     },
     filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'], maxPrice: 550000 },
     priceNote:
@@ -235,10 +214,8 @@ export const decideStrategies = [
       safetyQuality: 2,
       personalNetwork: 3,
       chineseCommunity: 2,
-      filipinoCommunity: 2,
-      thaiCommunity: 2,
-      southAmericanCommunity: 2,
-      partnerPool: 1,
+      otherCommunities: 2,
+      partnerPool: 2,
     },
     filters: {
       minBedrooms: 3,
@@ -264,10 +241,8 @@ export const decideStrategies = [
       safetyQuality: 1,
       personalNetwork: 1,
       chineseCommunity: 2,
-      filipinoCommunity: 2,
-      thaiCommunity: 2,
-      southAmericanCommunity: 2,
-      partnerPool: 1,
+      otherCommunities: 2,
+      partnerPool: 2,
     },
     filters: { minBedrooms: 3, dwellingTypes: ['house'], maxPrice: 700000 },
     priceNote:
@@ -290,10 +265,8 @@ export const decideStrategies = [
       safetyQuality: 2,
       personalNetwork: 3,
       chineseCommunity: 2,
-      filipinoCommunity: 2,
-      thaiCommunity: 2,
-      southAmericanCommunity: 2,
-      partnerPool: 1,
+      otherCommunities: 2,
+      partnerPool: 2,
     },
     filters: { minBedrooms: 2, dwellingTypes: ['villa-unit', 'townhouse'], maxPrice: 800000 },
     priceNote: null,

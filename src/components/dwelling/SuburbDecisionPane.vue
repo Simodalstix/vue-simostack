@@ -388,6 +388,8 @@ function chipClass(chip) {
     beach: 'border-amber-500/35 text-amber-300 bg-amber-500/10',
     chinese: 'border-red-500/35 text-red-300 bg-red-500/10',
     pink: 'border-pink-500/35 text-pink-300 bg-pink-500/10',
+    green: 'border-emerald-600/50 text-emerald-300 bg-emerald-700/25',
+    yellow: 'border-yellow-500/40 text-yellow-300 bg-yellow-500/10',
     train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
     commute: 'border-ob-teal/25 text-ob-teal-bright bg-ob-teal/6',
     schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
@@ -417,11 +419,15 @@ function breakdown(row) {
         barClass:
           c.accent === 'amber'
             ? 'bg-amber-400'
-            : c.accent === 'red'
-              ? 'bg-red-400'
-              : c.accent === 'pink'
-                ? 'bg-pink-400'
-                : 'bg-ob-teal',
+            : c.accent === 'blue'
+              ? 'bg-blue-400'
+              : c.accent === 'purple'
+                ? 'bg-purple-400'
+                : c.accent === 'red'
+                  ? 'bg-red-400'
+                  : c.accent === 'pink'
+                    ? 'bg-pink-400'
+                    : 'bg-ob-teal',
         hint:
           value == null
             ? `${c.label}: not assessed, contributes nothing`

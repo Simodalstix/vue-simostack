@@ -23,12 +23,16 @@ import {
   FILIPINO_COMMUNITY_FULL_BONUS_SHARE,
   SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE,
   THAI_COMMUNITY_FULL_BONUS_SHARE,
+  VIETNAMESE_COMMUNITY_FULL_BONUS_SHARE,
   filipinoCommunityFor,
   filipinoCommunityScore,
+  otherCommunitiesScore,
   southAmericanCommunityFor,
   southAmericanCommunityScore,
   thaiCommunityFor,
   thaiCommunityScore,
+  vietnameseCommunityFor,
+  vietnameseCommunityScore,
 } from '../languageCommunities.js'
 import { useAreaRanking, weightedScore } from '../../../composables/useAreaRanking.js'
 import { commuteFor, scoreCommute } from '../../../composables/useCommuteScoring.js'
@@ -46,7 +50,7 @@ function weightsFor(strategy, enabledKeys) {
   )
 }
 
-// Every non-empty subset of the nine criteria, plus the empty set (all off).
+// Every non-empty subset of the ten criteria, plus the empty set (all off).
 function allSubsets(keys) {
   const out = []
   for (let mask = 0; mask < 1 << keys.length; mask++) {
@@ -56,7 +60,7 @@ function allSubsets(keys) {
 }
 
 describe('preset weight vectors', () => {
-  it('ships the five strategies with 0-3 weights over exactly the twelve criteria', () => {
+  it('ships the five strategies with 0-3 weights over exactly the ten criteria', () => {
     expect(decideStrategies.map((s) => s.id)).toEqual([
       'balanced2br',
       'bachelor1br',
@@ -65,7 +69,7 @@ describe('preset weight vectors', () => {
       'villaTownhouse',
     ])
     const keys = decideCriteria.map((c) => c.key).sort()
-    expect(keys).toHaveLength(12)
+    expect(keys).toHaveLength(10)
     for (const s of decideStrategies) {
       expect(Object.keys(s.weights).sort()).toEqual(keys)
       for (const w of Object.values(s.weights)) {
@@ -76,39 +80,57 @@ describe('preset weight vectors', () => {
   })
 
   it('keeps the community personal lenses off by default', () => {
-    const lensKeys = [
-      'chineseCommunity',
-      'filipinoCommunity',
-      'thaiCommunity',
-      'southAmericanCommunity',
-    ]
-    expect(decideCriteria.filter((item) => item.defaultEnabled === false).map((c) => c.key)).toEqual(
-      lensKeys,
-    )
+    const lensKeys = ['chineseCommunity', 'otherCommunities']
+    expect(
+      decideCriteria.filter((item) => item.defaultEnabled === false).map((c) => c.key),
+    ).toEqual(lensKeys)
     for (const key of lensKeys) {
       expect(decideStrategies.every((strategy) => strategy.weights[key] === 2)).toBe(true)
     }
+    for (const strategy of decideStrategies) {
+      expect(strategy.weights).not.toHaveProperty('filipinoCommunity')
+      expect(strategy.weights).not.toHaveProperty('thaiCommunity')
+      expect(strategy.weights).not.toHaveProperty('southAmericanCommunity')
+    }
+  })
+
+  it('groups criterion accents by decision theme', () => {
+    const accents = Object.fromEntries(decideCriteria.map(({ key, accent }) => [key, accent]))
+    expect(accents).toMatchObject({
+      cost: 'blue',
+      commute: 'blue',
+      schools: 'purple',
+      kidAmenity: 'purple',
+      safetyQuality: 'purple',
+      beach: 'amber',
+      personalNetwork: 'amber',
+      partnerPool: 'pink',
+    })
   })
 })
 
 describe('score robustness', () => {
   const keys = decideCriteria.map((c) => c.key)
 
-  // Exhaustive over 2^11 toggle subsets; needs more than the default timeout.
-  it('every scored record gets a finite 0-100 score for every strategy and toggle subset', { timeout: 60000 }, () => {
-    expect(scoredRecords.length).toBeGreaterThanOrEqual(17)
-    for (const strategy of decideStrategies) {
-      for (const subset of allSubsets(keys)) {
-        const weights = weightsFor(strategy, subset)
-        for (const rec of scoredRecords) {
-          const score = weightedScore(rec, commuteScoreFor(rec), weights)
-          expect(Number.isFinite(score)).toBe(true)
-          expect(score).toBeGreaterThanOrEqual(0)
-          expect(score).toBeLessThanOrEqual(100)
+  // Exhaustive over 2^10 toggle subsets; needs more than the default timeout.
+  it(
+    'every scored record gets a finite 0-100 score for every strategy and toggle subset',
+    { timeout: 60000 },
+    () => {
+      expect(scoredRecords.length).toBeGreaterThanOrEqual(17)
+      for (const strategy of decideStrategies) {
+        for (const subset of allSubsets(keys)) {
+          const weights = weightsFor(strategy, subset)
+          for (const rec of scoredRecords) {
+            const score = weightedScore(rec, commuteScoreFor(rec), weights)
+            expect(Number.isFinite(score)).toBe(true)
+            expect(score).toBeGreaterThanOrEqual(0)
+            expect(score).toBeLessThanOrEqual(100)
+          }
         }
       }
-    }
-  })
+    },
+  )
 
   it('falls back to an equal-weight mean when every toggle is off', () => {
     const rec = scoredRecords[0]
@@ -258,14 +280,12 @@ describe('Chinese-language community personal lens', () => {
   })
 })
 
-describe('Filipino and Thai community personal lenses', () => {
+describe('grouped non-Chinese community personal lens', () => {
   it('adds Filipino and Tagalog counts over one language denominator', () => {
     const donnybrook = filipinoCommunityFor('donnybrook-house-land')
     expect(donnybrook.count).toBeGreaterThan(0)
     expect(donnybrook.denominator).toBeGreaterThan(donnybrook.count)
-    expect(donnybrook.percentage).toBeCloseTo(
-      (donnybrook.count / donnybrook.denominator) * 100,
-    )
+    expect(donnybrook.percentage).toBeCloseTo((donnybrook.count / donnybrook.denominator) * 100)
   })
 
   it('aggregates combined suburb records by counts and denominators', () => {
@@ -279,6 +299,7 @@ describe('Filipino and Thai community personal lenses', () => {
     expect(FILIPINO_COMMUNITY_FULL_BONUS_SHARE).toBe(3)
     expect(THAI_COMMUNITY_FULL_BONUS_SHARE).toBe(1)
     expect(SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE).toBe(3)
+    expect(VIETNAMESE_COMMUNITY_FULL_BONUS_SHARE).toBe(25)
     expect(filipinoCommunityScore('donnybrook-house-land')).toBe(10)
     expect(filipinoCommunityScore('chelsea-2br')).toBeLessThan(10)
     expect(thaiCommunityScore('se-value-corridor')).toBeLessThanOrEqual(10)
@@ -287,6 +308,7 @@ describe('Filipino and Thai community personal lenses', () => {
     )
     expect(southAmericanCommunityScore('st-kilda-2br')).toBe(10)
     expect(southAmericanCommunityScore('donnybrook-house-land')).toBeLessThan(10)
+    expect(vietnameseCommunityScore('established-western-value')).toBe(10)
   })
 
   it('recombines Spanish and Portuguese counts over one language denominator', () => {
@@ -296,17 +318,37 @@ describe('Filipino and Thai community personal lenses', () => {
     expect(stKilda.percentage).toBeCloseTo((stKilda.count / stKilda.denominator) * 100)
   })
 
+  it('surfaces exact Vietnamese counts from published source rows', () => {
+    const stAlbans = vietnameseCommunityFor('established-western-value')
+    expect(stAlbans.count).toBe(11102)
+    expect(stAlbans.denominator).toBe(38042)
+    expect(stAlbans.percentage).toBeCloseTo((stAlbans.count / stAlbans.denominator) * 100)
+    expect(stAlbans.sourceCoverage).toBe('published-top-five')
+    expect(vietnameseCommunityFor('donnybrook-house-land')).toBeNull()
+  })
+
+  it('uses the strongest available measure for one non-stacking grouped score', () => {
+    const areaId = 'established-western-value'
+    expect(otherCommunitiesScore(areaId)).toBe(
+      Math.max(
+        filipinoCommunityScore(areaId),
+        thaiCommunityScore(areaId),
+        southAmericanCommunityScore(areaId),
+        vietnameseCommunityScore(areaId),
+      ),
+    )
+  })
+
   it('can only add points when enabled', () => {
     const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
     const donnybrook = areaCorridors.find((rec) => rec.id === 'donnybrook-house-land')
     const baseWeights = {
       ...balanced.weights,
-      filipinoCommunity: 0,
-      thaiCommunity: 0,
+      otherCommunities: 0,
     }
     const enabledWeights = {
       ...baseWeights,
-      filipinoCommunity: balanced.weights.filipinoCommunity,
+      otherCommunities: balanced.weights.otherCommunities,
     }
     const base = weightedScore(donnybrook, commuteScoreFor(donnybrook), baseWeights)
     const enabled = weightedScore(donnybrook, commuteScoreFor(donnybrook), enabledWeights)
@@ -363,16 +405,16 @@ describe('partner-pool criterion', () => {
     expect(enabled).toBe(base)
   })
 
-  it('can only add points when enabled, bounded by the x1 preset weight', () => {
+  it('can only add points when enabled, bounded by the x2 preset weight', () => {
     const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
-    expect(decideStrategies.every((strategy) => strategy.weights.partnerPool === 1)).toBe(true)
+    expect(decideStrategies.every((strategy) => strategy.weights.partnerPool === 2)).toBe(true)
     const stKilda = areaCorridors.find((rec) => rec.id === 'st-kilda-2br')
     const baseWeights = { ...balanced.weights, partnerPool: 0 }
     const enabledWeights = { ...baseWeights, partnerPool: balanced.weights.partnerPool }
     const base = weightedScore(stKilda, commuteScoreFor(stKilda), baseWeights)
     const enabled = weightedScore(stKilda, commuteScoreFor(stKilda), enabledWeights)
     expect(enabled).toBeGreaterThanOrEqual(base)
-    expect(enabled - base).toBeLessThanOrEqual(2)
+    expect(enabled - base).toBeLessThanOrEqual(4)
   })
 })
 

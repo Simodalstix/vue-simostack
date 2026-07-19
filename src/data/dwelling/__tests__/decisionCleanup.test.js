@@ -71,6 +71,12 @@ describe('decision chips', () => {
     expect(chips.some((chip) => chip.tone === 'chinese' && /^Chinese \d+%$/.test(chip.text))).toBe(
       true,
     )
+    expect(
+      chips.some((chip) => chip.tone === 'green' && /^Sth American \d+\.\d%$/.test(chip.text)),
+    ).toBe(true)
+    expect(
+      chips.some((chip) => chip.tone === 'yellow' && /^Vietnamese \d+\.\d%$/.test(chip.text)),
+    ).toBe(true)
     expect(texts).toContain('Fast commute')
     expect(texts).toContain('Strong Schools')
     expect(chips.some((chip) => chip.key === 'train-line')).toBe(false)
@@ -129,7 +135,7 @@ describe('cost scoring', () => {
   })
 
   it('keeps generated-data fallback available without inventing placeholder values', () => {
-    expect(decideCriteria).toHaveLength(12)
+    expect(decideCriteria).toHaveLength(10)
     for (const strategy of decideStrategies) {
       expect(strategy.weights).toHaveProperty('beach')
       expect(strategy.weights).not.toHaveProperty('greenspace')

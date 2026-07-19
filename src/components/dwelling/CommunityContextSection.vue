@@ -1,11 +1,11 @@
 <template>
   <!-- Community Context · ABS Census 2021. Descriptive by default: records
-       carry contextOnly / excludeFromSuburbScore / scoreContribution: 0. Two
-       named derived measures are scored: the opt-in Chinese-community lens
-       and the partner-pool criterion (unpartnered 25-54, one-parent
-       families). Combined lens labels render each component SAL suburb
-       separately; percentages are never averaged and medians never
-       blended. -->
+       carry contextOnly / excludeFromSuburbScore / scoreContribution: 0. Three
+       named derived measures are scored: the opt-in Chinese-community lens,
+       grouped other-communities lens, and the partner-pool criterion
+       (unpartnered 25-54, one-parent families). Combined lens labels render
+       each component SAL suburb separately; percentages are never averaged
+       and medians never blended. -->
   <div v-if="ctx" :class="rootClass">
     <div :class="compact ? 'flex flex-wrap items-baseline gap-x-2 gap-y-0.5' : ''">
       <p

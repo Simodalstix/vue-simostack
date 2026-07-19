@@ -8,9 +8,11 @@ import {
   FILIPINO_COMMUNITY_FULL_BONUS_SHARE,
   SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE,
   THAI_COMMUNITY_FULL_BONUS_SHARE,
+  VIETNAMESE_COMMUNITY_FULL_BONUS_SHARE,
   filipinoCommunityFor,
   southAmericanCommunityFor,
   thaiCommunityFor,
+  vietnameseCommunityFor,
 } from './languageCommunities.js'
 import { friendContextFor } from './personalAnchors.js'
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
@@ -39,6 +41,15 @@ export function differentiatingChipsFor(row) {
 
   // Same quarter-of-full-bonus threshold as the Chinese chip, shown with one
   // decimal because these community shares sit well under 10%.
+  const vietnameseShare = vietnameseCommunityFor(areaId)?.percentage
+  if (vietnameseShare >= VIETNAMESE_COMMUNITY_FULL_BONUS_SHARE / 4) {
+    chips.push({
+      key: 'vietnamese-community',
+      text: `Vietnamese ${vietnameseShare.toFixed(1)}%`,
+      tone: 'yellow',
+    })
+  }
+
   const filipinoShare = filipinoCommunityFor(areaId)?.percentage
   if (filipinoShare >= FILIPINO_COMMUNITY_FULL_BONUS_SHARE / 4) {
     chips.push({
@@ -62,7 +73,7 @@ export function differentiatingChipsFor(row) {
     chips.push({
       key: 'south-american-community',
       text: `Sth American ${southAmericanShare.toFixed(1)}%`,
-      tone: 'pink',
+      tone: 'green',
     })
   }
 

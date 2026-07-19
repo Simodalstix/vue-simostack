@@ -30,7 +30,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
       "Better ethnicity score.",
       "Preferred demographic."
     ],
-    "implementationRule": "Do not connect this dataset to default ranking or filtering beyond the named derived measures. The exceptions are the off-by-default Chinese-language community personal lens (Cantonese and Mandarin language-at-home counts) and the partner-pool criterion (unpartnered 25-54 and one-parent-family counts). Both recombine raw counts over a common denominator; percentages are never averaged."
+    "implementationRule": "Do not connect this dataset to default ranking or filtering beyond the named derived measures. The exceptions are the off-by-default Chinese-language community personal lens (Cantonese and Mandarin language-at-home counts), the grouped other-language-communities lens (Filipino/Tagalog, Thai, Spanish/Portuguese and source-listed Vietnamese), and the partner-pool criterion (unpartnered 25-54 and one-parent-family counts). Compatible counts are recombined over a common denominator; percentages are never averaged."
   },
   "coverage": {
     "recordCount": 70,
