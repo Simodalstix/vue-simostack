@@ -12,9 +12,6 @@
       <div class="space-y-4 lg:space-y-5 min-w-0 lg:col-start-1 lg:row-start-1">
         <div class="space-y-3 sm:space-y-4">
           <div class="max-w-3xl">
-            <p class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-sand mb-2">
-              Decide
-            </p>
             <h1 class="text-[22px] sm:text-[24px] md:text-[30px] font-extrabold leading-tight">
               One place to weigh it all:
               <span class="text-ob-teal">strategy, location and cost.</span>
@@ -64,7 +61,6 @@
                 <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
                   Weightings · {{ activeStrategy.label }} preset
                 </h2>
-                <p class="mt-0.5 font-mono text-[10px] text-ob-faint">Toggle to re-rank</p>
               </div>
 
               <div class="flex items-center gap-2 ml-auto">
