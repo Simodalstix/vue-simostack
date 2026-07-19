@@ -8,10 +8,12 @@
 // Source mix:
 // - original owner-supplied research JSON (melbourne_girls_sport_facilities_35_
 //   records.json, 2026-07-15), 35 records checked against club finders and
-//   council facility pages
-// - July 2026 expansion entries below, attached from venue/council pages plus
-//   the three official sport finders because the parked JSON artifact is not
-//   in-repo
+//   council facility pages; the recovered artifact lives locally at
+//   handoff_docs/research/ (gitignored) and is the source of truth for
+//   those 35 names
+// - the ten July 2026 expansion entries (Spotswood through Mentone) were
+//   briefly reconstructed while the artifact was parked; restored verbatim
+//   from the recovered artifact 2026-07-19
 // Shipped as:
 //   line         -> one-sentence summary for the card
 //   facilities   -> named venues (merged into the card's facility chips)
@@ -541,25 +543,25 @@ export const girlsSportByArea = {
     ],
   },
   'spotswood-2br': {
-    line: "Hobsons Bay Aquatic Centre and west-side courts cover swimming and indoor sport, with girls' netball, football and soccer active nearby.",
-    facilities: ['Hobsons Bay Aquatic Centre', 'Altona Sports Centre'],
+    line: 'No major facility in-suburb; Maribyrnong Aquatic Centre and RecWest Braybrook require a short trip.',
+    facilities: ['Maribyrnong Aquatic Centre', 'RecWest Braybrook'],
     clubPresence: {
       netball: true,
       girlsFooty: true,
-      soccer: true,
+      soccer: 'unknown',
     },
-    confidence: 'medium',
+    confidence: 'low',
     sources: [
-      'https://www.hobsonsbay.vic.gov.au/Home',
-      'https://www.hobsonsbay.vic.gov.au/Community/Sports-and-recreation',
+      'https://www.maribyrnong.vic.gov.au/mac/Home',
+      'https://www.maribyrnong.vic.gov.au/Parks/RecWest-Braybrook',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'south-melbourne-2br': {
-    line: "MSAC and the Albert Park precinct provide elite swim-and-court access, with strong girls' netball, football and soccer pathways close by.",
-    facilities: ['Melbourne Sports & Aquatic Centre (MSAC)', 'Albert Park sports precinct'],
+    line: 'MSAC and Lakeside Stadium are on the doorstep for swimming, courts, athletics and soccer.',
+    facilities: ['Melbourne Sports and Aquatic Centre (MSAC)', 'Lakeside Stadium'],
     clubPresence: {
       netball: true,
       girlsFooty: true,
@@ -568,15 +570,14 @@ export const girlsSportByArea = {
     confidence: 'high',
     sources: [
       'https://melbournesportscentres.com.au/',
-      'https://www.portphillip.vic.gov.au/',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'armadale-2br': {
-    line: "Harold Holt Swim Centre anchors aquatics, while Stonnington clubs keep netball, girls' football and soccer active nearby.",
-    facilities: ['Harold Holt Swim Centre', 'Orrong Romanis Reserve'],
+    line: "Prahran Aquatic Centre and MSAC provide nearby swimming and courts; active girls' field-sport pathways surround Armadale.",
+    facilities: ['Prahran Aquatic Centre', 'Melbourne Sports and Aquatic Centre (MSAC)'],
     clubPresence: {
       netball: true,
       girlsFooty: true,
@@ -584,31 +585,32 @@ export const girlsSportByArea = {
     },
     confidence: 'medium',
     sources: [
-      'https://www.stonnington.vic.gov.au/active/Home',
-      'https://www.stonnington.vic.gov.au/active',
+      'https://www.stonnington.vic.gov.au/active/Swim/Prahran-Aquatic-Centre',
+      'https://melbournesportscentres.com.au/',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'burnley-2br': {
-    line: "Richmond Recreation Centre and nearby Yarra park grounds give solid sport coverage, with all three girls' club pathways active.",
-    facilities: ['Richmond Recreation Centre', 'Burnley Park'],
+    line: 'Richmond Recreation Centre and Hawthorn Aquatic are nearby; major indoor court access requires travelling.',
+    facilities: ['Richmond Recreation Centre', 'Hawthorn Aquatic and Leisure Centre'],
     clubPresence: {
-      netball: true,
-      girlsFooty: true,
-      soccer: true,
+      netball: 'unknown',
+      girlsFooty: 'unknown',
+      soccer: 'unknown',
     },
-    confidence: 'medium',
+    confidence: 'low',
     sources: [
-      'https://www.yarracity.vic.gov.au/',
+      'https://www.yarracity.vic.gov.au/yarra-leisure/locations/richmond-recreation-centre',
+      'https://www.boroondara.vic.gov.au/explore-boroondara/sports-and-recreation/leisure-centres-and-pools/hawthorn-aquatic-and-leisure-centre',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'hawthorn-2br': {
-    line: "Hawthorn Aquatic and Leisure Centre plus Boroondara Sports Complex give strong swim-and-court access, with active girls' club pathways across all three sports.",
+    line: 'Hawthorn Aquatic and Leisure Centre anchors swimming; Boroondara Sports Complex adds basketball and netball courts nearby.',
     facilities: ['Hawthorn Aquatic and Leisure Centre', 'Boroondara Sports Complex'],
     clubPresence: {
       netball: true,
@@ -617,15 +619,16 @@ export const girlsSportByArea = {
     },
     confidence: 'high',
     sources: [
-      'https://www.boroondara.vic.gov.au/',
+      'https://www.boroondara.vic.gov.au/explore-boroondara/sports-and-recreation/leisure-centres-and-pools/hawthorn-aquatic-and-leisure-centre',
+      'https://www.boroondara.vic.gov.au/explore-boroondara/sports-and-recreation/leisure-centres-and-pools/boroondara-sports-complex',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'mckinnon-villa': {
-    line: "GESAC and Duncan Mackinnon Reserve cover aquatics, courts and fields, with all three girls' sports active through Glen Eira.",
-    facilities: ['Glen Eira Sports and Aquatic Centre', 'Duncan Mackinnon Reserve'],
+    line: "GESAC provides nearby swimming, basketball and netball, with active girls' football and soccer pathways locally.",
+    facilities: ['Glen Eira Sports and Aquatic Centre (GESAC)'],
     clubPresence: {
       netball: true,
       girlsFooty: true,
@@ -633,15 +636,20 @@ export const girlsSportByArea = {
     },
     confidence: 'high',
     sources: [
-      'https://www.gleneira.vic.gov.au/',
+      'https://www.geleisure.com.au/locations/glen-eira-sports-and-aquatic-centre',
+      'https://www.geleisure.com.au/stadium/stadium-bookings',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'glen-waverley-2br': {
-    line: "Monash Aquatic and Recreation Centre and Waverley Basketball Stadium anchor swimming and indoor sport, with deep girls' club pathways across the east.",
-    facilities: ['Monash Aquatic and Recreation Centre', 'Waverley Basketball Stadium'],
+    line: 'Monash Aquatic and Recreation Centre leads swimming; Waverley basketball and netball venues provide extensive court access.',
+    facilities: [
+      'Monash Aquatic and Recreation Centre',
+      'Waverley Basketball Complex',
+      'Waverley Netball Centre',
+    ],
     clubPresence: {
       netball: true,
       girlsFooty: true,
@@ -649,31 +657,34 @@ export const girlsSportByArea = {
     },
     confidence: 'high',
     sources: [
-      'https://www.monash.vic.gov.au/Home',
+      'https://www.activemonash.vic.gov.au/Swimming/Pool-Facilities-Availability/Monash-Aquatic-Recreation-Centre',
+      'https://www.monash.vic.gov.au/Things-to-Do/Sports-and-Recreation',
+      'https://www.monash.vic.gov.au/Things-to-Do/Sports-and-Recreation/Sports-Stadiums/Waverley-Netball-Centre',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'balwyn-north-2br': {
-    line: "Boroondara Sports Complex and nearby east-side grounds provide strong swim-and-court access, with netball, girls' football and soccer all active nearby.",
-    facilities: ['Boroondara Sports Complex', 'Gordon Barnard Reserve'],
+    line: 'Boroondara Sports Complex combines pools and courts; Myrtle and Macleay Parks add eight outdoor netball courts.',
+    facilities: ['Boroondara Sports Complex', 'Myrtle and Macleay Parks'],
     clubPresence: {
       netball: true,
       girlsFooty: true,
       soccer: true,
     },
-    confidence: 'medium',
+    confidence: 'high',
     sources: [
-      'https://www.boroondara.vic.gov.au/',
+      'https://www.boroondara.vic.gov.au/explore-boroondara/sports-and-recreation/leisure-centres-and-pools/boroondara-sports-complex',
+      'https://yoursay.boroondara.vic.gov.au/myrtle-macleay-parks-master-plan',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'middle-park-2br': {
-    line: "MSAC and the Albert Park precinct make this one of the strongest swim-and-court locations in the file, with active girls' netball, football and soccer pathways nearby.",
-    facilities: ['Melbourne Sports & Aquatic Centre (MSAC)', 'Albert Park sports precinct'],
+    line: 'MSAC is on the doorstep for swimming and courts; Lakeside Stadium adds athletics and soccer.',
+    facilities: ['Melbourne Sports and Aquatic Centre (MSAC)', 'Lakeside Stadium'],
     clubPresence: {
       netball: true,
       girlsFooty: true,
@@ -682,24 +693,23 @@ export const girlsSportByArea = {
     confidence: 'high',
     sources: [
       'https://melbournesportscentres.com.au/',
-      'https://www.portphillip.vic.gov.au/',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',
     ],
   },
   'mentone-2br': {
-    line: "Kingston Waves and Mentone Reserve provide strong swimming and field-sport access, with girls' netball, football and soccer all active through the Kingston corridor.",
-    facilities: ['Kingston Waves', 'Mentone Reserve'],
+    line: "Waves Leisure Centre and Southern Basketball Centre provide nearby swimming and basketball; local girls' field sports are active.",
+    facilities: ['Waves Leisure Centre', 'Southern Basketball Centre'],
     clubPresence: {
       netball: true,
       girlsFooty: true,
       soccer: true,
     },
-    confidence: 'high',
+    confidence: 'medium',
     sources: [
-      'https://www.kingston.vic.gov.au/home',
-      'https://www.kingston.vic.gov.au/environment/parks-and-reserves/sports-grounds-and-facilities',
+      'https://kingstonactive.com.au/',
+      'https://www.southernbasketball.com.au/contact-us/',
       'https://vic.netball.com.au/netball-finder',
       'https://play.afl/club-finder-map',
       'https://playfootball.com.au/football-finder',

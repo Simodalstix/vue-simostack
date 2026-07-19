@@ -5,9 +5,12 @@
 // is scored, ranked or read by the ranking engine.
 //
 // Source mix:
-// - original owner-supplied draft (2026-07-15) for the first shipped batch
-// - July 2026 expansion entries below, reconstructed from areaCorridors.js
-//   placeholder research because the parked draft artifact is not in-repo
+// - original owner-supplied draft (2026-07-15) for the first shipped batch;
+//   the recovered draft lives locally at handoff_docs/research/ (gitignored)
+//   and is the source of truth for the 35 names it covers
+// - the ten July 2026 expansion entries (Spotswood through Mentone) were
+//   briefly reconstructed while the draft was parked; restored verbatim from
+//   the recovered draft 2026-07-19
 // Expect wording to be edited over time.
 //
 // Fields per record:
@@ -730,262 +733,258 @@ export const suburbProfiles = {
   },
   'spotswood-2br': {
     lives:
-      'A quiet, low-turnover pocket tucked between the rail line, the river-industrial edge and Newport. Hudsons Rd is modest rather than buzzy; Yarraville supplies most of the village energy one stop away.',
+      'A tiny, quiet pocket between Yarraville and the river — Hudsons Rd’s small strip, Scienceworks, industrial surrounds, and a station on the Werribee/Williamstown lines. Sleepy in a way some people love.',
     housing:
-      'Mostly weatherboards and the occasional older unit or small block. The real issue is not sorting quality but waiting for enough stock to appear.',
+      'Small suburb, small market: weatherboards and the occasional unit. Listings are rare; patience is structural.',
     fit: [
       {
-        text: 'Real train access on the Werribee/Williamstown corridor.',
+        text: 'Cheaper entry to the inner west with a genuine station.',
         tag: null,
       },
       {
-        text: 'Yarraville village amenity is one stop away.',
-        tag: null,
+        text: 'School zoning varies at the boundary — verify by address.',
+        tag: 'tradeoff',
       },
       {
-        text: 'Industrial edges and thin listing flow are the structural compromise.',
+        text: 'Minimal local amenity; Yarraville carries the lifestyle load.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Cheaper inner-west entry with a genuine station.',
-      mainRisk: 'Waiting months, then compromising on street quality because stock is scarce.',
-      pursueWhen: 'A quiet-street weatherboard or rare solid 2BR lists near the station.',
+      bestFor: 'Quiet inner-west value one stop from Yarraville’s amenity.',
+      mainRisk: 'Waiting a long time in a market this thin.',
+      pursueWhen: 'The rare quiet-street listing undercuts Yarraville comparables.',
     },
   },
   'south-melbourne-2br': {
     lives:
-      'Dense inner-city life without needing the CBD itself: market energy, Clarendon St, easy cycling, and trams everywhere. It is active and highly practical, but less serene than Albert Park or Middle Park.',
+      'Market-anchored inner living — South Melbourne Market, Clarendon St, dense tram coverage and the 96 light rail, with the beach and CBD both walkable-ish. No heavy rail, but everything else.',
     housing:
-      'A deep apartment market ranging from art deco walk-ups to newer towers and warehouse conversions. Plenty of choice, but building quality and owners-corp health vary sharply.',
+      'Terraces, converted warehouses and a deep apartment market from art deco to new. 2BR supply is genuine; quality and OC health vary block to block.',
     fit: [
       {
-        text: 'Albert Park College is the headline public-school card.',
+        text: 'Albert Park College zone — a top-tier public secondary for Lulu.',
         tag: null,
       },
       {
-        text: 'Jeanie already works here and Lulu already has routine here.',
-        tag: 'network',
+        text: 'The Alfred and CBD hospital precincts both reachable for Jeanie.',
+        tag: null,
       },
       {
-        text: 'The commute is easy but tram-based rather than rail-redundant.',
+        text: 'Tram-dependent commute, though it’s a short one.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Continuity with current life plus strong inner-city kid independence.',
-      mainRisk: 'Buying a compromised apartment because the suburb-level fit feels so strong.',
-      pursueWhen: 'A quality low-rise 2BR in the APC zone lists with sane fees and no defect tail.',
+      bestFor: '2BR Balanced inside a genuinely strong school zone.',
+      mainRisk: 'Building-quality lottery in the apartment stock.',
+      pursueWhen: 'A quality low-rise 2BR in the APC zone lists with sane fees.',
     },
   },
   'armadale-2br': {
     lives:
-      'Polished High St village life: boutiques, cafes, period streets and a calm, old-money feel. It is visibly settled, safe and attractive, but you are paying for that polish every day.',
+      'Polished High St village — antiques, cafes and immaculate streets on the Frankston/Dandenong-corridor rail. Quietly wealthy, calm, and extremely liveable if the budget stretches.',
     housing:
-      'The workable stock is art deco apartments and period walk-ups beneath a house market that sits in a different price universe. Good 2BRs do exist, but the postcode is fully priced in.',
+      'Period apartments and art deco blocks are the realistic entry beneath the mansions. Stock is decent for 1–2BRs; prices carry the postcode.',
     fit: [
       {
-        text: 'Rail plus trams gives strong transport redundancy.',
+        text: 'Prahran High zone covers much of the area; verify by address.',
         tag: null,
       },
       {
-        text: 'A calm, safe daily environment is the real product here.',
+        text: 'Nathan a couple of stops away.',
+        tag: 'network',
+      },
+      {
+        text: 'The Alfred reachable for Jeanie.',
         tag: null,
       },
       {
-        text: 'Value is the honest weak point versus Windsor or inner-west alternatives.',
+        text: 'Postcode premium buys polish, not space.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Premium-village living where lifestyle and resale quality lead the call.',
-      mainRisk:
-        'Paying east-side money for a small floorplan that does not materially change life.',
-      pursueWhen:
-        'A deco 2BR lands near the bottom of the suburb band and beats inner-south comps.',
+      bestFor: 'Premium-village 2BR living with rail and network access.',
+      mainRisk: 'Paying Toorak-adjacent money for a small footprint.',
+      pursueWhen: 'A deco 2BR lists at the suburb’s lower band — the zone and station do the rest.',
     },
   },
   'burnley-2br': {
     lives:
-      'A tiny pocket of quiet streets and rail access tucked beside Richmond, the Yarra and the golf course. It feels like borrowed Richmond amenity without Richmond’s constant noise.',
+      'Richmond’s quietest corner — golf course, river parkland and a four-line station, with Swan St’s noise safely at arm’s length.',
     housing:
-      'Very limited stock: cottages, a few low-rise apartments, and not much else. Searches here are opportunistic rather than dependable.',
+      'A small pocket of cottages and low-rise apartments. Stock flow is thin; think of it as Richmond’s quiet-street filter pre-applied.',
     fit: [
       {
-        text: 'Burnley station gives elite line redundancy for the commute.',
+        text: 'Shares Richmond’s school access including MGC proximity.',
         tag: null,
       },
       {
-        text: 'Richmond schools, hospitals and amenity sit effectively next door.',
-        tag: null,
+        text: 'Nathan nearby.',
+        tag: 'network',
       },
       {
-        text: 'Flood edges, freeway noise and stock scarcity mean this cannot be the main plan.',
-        tag: 'tradeoff',
+        text: 'Four-line station is elite commute redundancy.',
+        tag: null,
       },
     ],
     decision: {
-      bestFor: 'Richmond access with a quieter home base if a listing appears.',
-      mainRisk: 'Treating a very small, thin market as if it will regularly produce candidates.',
-      pursueWhen:
-        'A liveable low-rise 2BR appears in the pocket away from the viaduct and junction.',
+      bestFor: 'Richmond’s transport and schools without Richmond’s noise.',
+      mainRisk: 'Thin listings making the search slow.',
+      pursueWhen: 'Any quality low-rise 2BR lists — the pocket itself is the quality filter.',
     },
   },
   'hawthorn-2br': {
     lives:
-      'Leafy heritage streets, Glenferrie Rd amenity and a visible university pulse around Swinburne. One street is elegant and calm; the next can feel younger, busier and more transient.',
+      'Glenferrie Rd’s student-and-family bustle around Swinburne, leafy heritage streets, and strong transport — Lilydale/Belgrave/Alamein lines plus trams. Established, green, expensive.',
     housing:
-      'Deep walk-up and art deco stock compared with most prestige suburbs. Genuine 2BR supply exists, but buyers know that and price the better blocks accordingly.',
+      'One of Melbourne’s deepest art deco and walk-up markets — genuinely good 2BR hunting despite the postcode. Houses are another price universe.',
     fit: [
       {
-        text: 'Two stations plus trams creates real transport backup.',
+        text: 'Auburn High is the local public secondary; strong primaries throughout.',
         tag: null,
       },
       {
-        text: 'Strong primaries and a credible public-secondary path keep the kid story solid.',
+        text: 'Deep walk-up stock means steady candidate flow, rare at this quality tier.',
         tag: null,
       },
       {
-        text: 'You still pay a Hawthorn premium against very similar stock elsewhere.',
+        text: 'Student-precinct pockets near Swinburne can be noisy.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Quality low-rise stock and school strength with east-side polish.',
-      mainRisk: 'Overpaying for the postcode when the actual apartment is merely fine.',
-      pursueWhen: 'A quiet-street deco 2BR turns up at overlap money with Windsor or Malvern.',
+      bestFor: 'Quality-tier 2BR walk-ups with elite transport redundancy.',
+      mainRisk: 'Stretching for the postcode when Windsor buys the same stock cheaper.',
+      pursueWhen: 'A quiet-street deco 2BR lists at the overlap with inner-south pricing.',
     },
   },
   'mckinnon-villa': {
     lives:
-      'A school-zone suburb first and almost everything else second: calm family streets, little theatre, and daily life organised around the station, the school and the house.',
+      'A suburb organised around its school — quiet streets, small station-side shops on the Frankston line, and a family rhythm set by McKinnon SC’s catchment.',
     housing:
-      'Villa units are the realistic entry to a market otherwise dominated by houses and school-premium pricing. The dwelling can be modest; the zone is what you are really buying.',
+      'Houses and villa units with the zone premium fully priced in. Villa units are the value entry into the zone.',
     fit: [
       {
-        text: 'McKinnon SC is one of the strongest zoned public-secondary cards in the set.',
+        text: 'McKinnon SC — arguably the strongest public-school card on the entire board for Lulu.',
         tag: null,
       },
       {
-        text: 'Direct Frankston-line access keeps the CBD commute straightforward.',
+        text: 'Direct Frankston-line commute to the loop.',
         tag: null,
       },
       {
-        text: 'Lifestyle variety is thin if the school story stops carrying the suburb.',
+        text: 'You pay for the zone whether or not you use every year of it.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'A school-first purchase where the zone is genuinely decisive.',
-      mainRisk:
-        'Paying a zone premium for a dwelling and neighbourhood you would not otherwise pick.',
-      pursueWhen: 'A well-kept villa unit inside the zone lists at neighbouring-suburb money.',
+      bestFor: '3BR or villa strategies where school strength leads everything.',
+      mainRisk: 'Zone premium on a dwelling you’d otherwise not choose.',
+      pursueWhen: 'A villa unit inside the zone lists at neighbouring-suburb money.',
     },
   },
   'glen-waverley-2br': {
     lives:
-      'The eastern education magnet: Kingsway food strip, The Glen, buses in every direction, and a suburb organised around schools and the terminus station. It feels functional and family-heavy rather than village-like.',
+      'The east’s education magnet — GWSC’s pull, Kingsway’s food strip, The Glen, and a line terminus that guarantees a seat. Family-dense and unashamedly suburban.',
     housing:
-      'Houses and rebuild sites sit beyond the brief; the practical targets are villa units and newer apartments near the station core. Demand stays firm because the school story is the product.',
+      'Post-war houses, knock-down-rebuilds, and a newer apartment core near the station. Zone demand keeps everything firm.',
     fit: [
       {
-        text: 'Glen Waverley SC plus notable primaries is the deepest school stack in the file.',
+        text: 'Glen Waverley SC plus renowned primaries (Glendal PS) — the deepest school stack on the list.',
         tag: null,
       },
       {
-        text: 'The terminus guarantees a seat, even if the ride is long.',
+        text: 'Monash Medical Centre corridor for Jeanie.',
         tag: null,
       },
       {
-        text: 'The commute and car dependence are the tax you pay for the school offer.',
+        text: '~40-minute commute is the schools tax.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'A schools-first brief where east-side education weight outranks commute pain.',
-      mainRisk:
-        'Discovering the family logic is correct on paper but exhausting in daily practice.',
-      pursueWhen:
-        'A quality unit near the station and inside the zone justifies the daily travel cost.',
+      bestFor: 'The pure schools-maximising family strategy.',
+      mainRisk: 'Trading your commute and inner-city life for the zone.',
+      pursueWhen: 'Family-together scenarios lead and a unit or house near the terminus lists.',
     },
   },
   'balwyn-north-2br': {
     lives:
-      'Wide, prosperous, deliberately quiet streets with Doncaster Rd as the movement spine. Daily life is safe and ordered, but solo-week energy is limited and the suburb can feel suburban in the fullest sense.',
+      'Leafy, prosperous, and deliberately quiet — wide streets, Balwyn HS’s catchment gravity, and tram-only transport (route 48). The classic schools-over-commute counterexample.',
     housing:
-      'Houses dominate, with units and villas acting as the only entry to a school-premium market. The housing stock is respectable; the challenge is paying the zone price for small-format dwellings.',
+      'Houses dominate at serious prices; units and townhouses are the only realistic entry, and they still carry the zone premium.',
     fit: [
       {
-        text: 'Balwyn High in-suburb is the entire thesis.',
+        text: 'Balwyn HS zone — elite public secondary for Lulu.',
         tag: null,
       },
       {
-        text: 'Box Hill and Kew corridors are reachable without being local.',
+        text: 'Box Hill Hospital reachable for Jeanie.',
         tag: null,
       },
       {
-        text: 'The long tram 48 commute is the cleanest reason this should rank below Balwyn proper.',
+        text: 'No train: the commute relies entirely on a long tram ride.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'A pure public-school premium play with strong resale support.',
-      mainRisk: 'Paying school money plus a long daily commute for a suburb that does little else.',
+      bestFor: 'Testing whether school weighting truly outranks commute weighting.',
+      mainRisk: 'The tram commute grinding daily against your transport-first values.',
       pursueWhen:
-        'A zone unit lists near the bottom of the band and the school weighting is truly dominant.',
+        'It probably shouldn’t be — unless a zone unit lists cheap and schools toggle dominates.',
     },
   },
   'middle-park-2br': {
     lives:
-      'One of the calmest inner-bayside pockets in Melbourne: beach, lake, tram, period streets and almost no obvious roughness. It feels settled and graceful, but also expensive in every visible way.',
+      'Immaculate Victorian streets between the beach and Albert Park Lake, with the 96 light rail as the spine. Small, expensive, serene.',
     housing:
-      'The realistic stock is period apartments and the occasional small terrace-scale dwelling. Listings are scarce and most have parking or heritage compromises somewhere in the story.',
+      'Terraces and period apartments; stock is scarce and dear. The 2BR apartment is the only realistic entry.',
     fit: [
       {
-        text: 'Beach, lake and MSAC make kid amenity unusually strong.',
+        text: 'Albert Park College is a genuinely strong public secondary.',
         tag: null,
       },
       {
-        text: 'Albert Park College keeps the public-school story top tier.',
+        text: 'Best-in-class kid amenity: beach, lake, MSAC.',
         tag: null,
       },
       {
-        text: 'Value is brutally weak; you are paying for the pocket, not the apartment.',
+        text: 'Price per square metre is the highest bayside on the list.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor:
-        'A continuity-heavy, lifestyle-rich family base close to the current Southbank orbit.',
-      mainRisk: 'Buying too little dwelling because the suburb itself is so compelling.',
+      bestFor: 'Premium bayside calm inside a top school zone.',
+      mainRisk: 'Paying house money for an apartment.',
       pursueWhen:
-        'A period 2BR appears at the bottom of the suburb band with parking and a sane body corp.',
+        'A period 2BR lists at the bottom of the suburb’s band — zone value does the rest.',
     },
   },
   'mentone-2br': {
     lives:
-      'A beachside station village shaped by schools, sport and the bay. It is calmer and more family-coded than the inner bayside, with enough strip life to function but little urban surplus.',
+      'Beachside school town — a station village on the Frankston line surrounded by a dense cluster of schools, with a calm, family-suburban rhythm.',
     housing:
-      'A broader stock mix than most premium school suburbs: houses, villa units and older apartments in usable numbers. The main trade is commute length rather than listing scarcity.',
+      'Houses, units and 70s apartments in reasonable supply; school-cluster demand supports prices but stock is broader than the inner bayside.',
     fit: [
       {
-        text: "Mentone Girls' Secondary and the wider school cluster are the key family draw.",
+        text: 'Mentone Girls’ Secondary is a strong public option for Lulu.',
         tag: null,
       },
       {
-        text: 'Beach and village life are meaningfully better than the price suggests.',
+        text: 'Direct Frankston-line commute, though it’s a long one.',
         tag: null,
       },
       {
-        text: 'Distance from the city network compounds over time, especially in solo weeks.',
+        text: 'Optimised for Lulu weeks; solo weeks risk feeling isolated.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'A family-oriented beach-and-schools compromise at middle-ring prices.',
-      mainRisk: "Accepting a daily commute burden that erodes the suburb's upsides over years.",
-      pursueWhen:
-        'A solid 2BR near both the station and the school cluster lists without needing the car for basics.',
+      bestFor: '3BR family strategy anchored on schools and beach.',
+      mainRisk: 'Solo-week flatness a long way from your people.',
+      pursueWhen: 'Family-together scenarios firm up and a 3BR near station and schools lists.',
     },
   },
   'ivanhoe-house': {
@@ -1144,7 +1143,8 @@ export const suburbProfiles = {
       bestFor:
         'An eastern family benchmark balancing rail, greenery and somewhat lower prices than inner-east options.',
       mainRisk: 'Price and a longer door-to-door commute may outweigh the amenity advantage.',
-      pursueWhen: 'When verified commute and property evidence justify the above-cap purchase price.',
+      pursueWhen:
+        'When verified commute and property evidence justify the above-cap purchase price.',
     },
   },
   'mount-waverley-villa': {
