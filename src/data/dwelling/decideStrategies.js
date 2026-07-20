@@ -26,7 +26,7 @@ import { beachAccessByAreaId, beachScore } from './beachAccess.js'
 import { girlsSportFor, sportAccessScore } from './girlsSport.js'
 import { chineseCommunityScore } from './chineseCommunity.js'
 import { otherCommunitiesScore } from './languageCommunities.js'
-import { partnerPoolScore } from './partnerPool.js'
+import { relativeScoreFor } from './relativeScoring.js'
 import { costScoreFor } from './cost/costScoring.js'
 import { costMetricForArea } from './cost/costContext.js'
 
@@ -99,9 +99,9 @@ export const decideCriteria = [
   {
     key: 'safetyQuality',
     label: 'Safety',
-    hint: 'Measured offence rates and street conditions, not perception. This joins the weighted average, so even a good score can slightly lower a suburb whose other enabled scores average higher.',
+    hint: 'Measured offence rates and street conditions, percentile-ranked across the currently scored cohort. Nulls remain unassessed.',
     accent: 'purple',
-    value: (rec) => tenScale(rec.scores?.safety),
+    value: (rec) => relativeScoreFor('safetyQuality', rec.id),
   },
   {
     key: 'personalNetwork',
@@ -135,11 +135,11 @@ export const decideCriteria = [
   {
     key: 'partnerPool',
     label: 'Partners',
-    hint: '2021 Census; relative signal: suburb demographic profiles are sticky, absolute figures are dated. Refresh when the 2026 Census publishes (mid-2027).',
+    hint: '2021 Census relative signal, blended 50/50 between its raw score and cohort percentile. Nulls remain unassessed; refresh after 2026 Census data publishes.',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
     accent: 'pink',
-    value: (rec) => partnerPoolScore(rec.id),
+    value: (rec) => relativeScoreFor('partnerPool', rec.id),
   },
 ]
 

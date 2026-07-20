@@ -34,6 +34,13 @@ import {
   vietnameseCommunityFor,
   vietnameseCommunityScore,
 } from '../languageCommunities.js'
+import {
+  PARTNER_PERCENTILE_BLEND,
+  RELATIVE_SCORING_BY_CRITERION,
+  SAFETY_PERCENTILE_BLEND,
+  blendRawAndPercentile,
+  percentileRanksById,
+} from '../relativeScoring.js'
 import { useAreaRanking, weightedScore } from '../../../composables/useAreaRanking.js'
 import { commuteFor, scoreCommute } from '../../../composables/useCommuteScoring.js'
 
@@ -451,6 +458,52 @@ describe('partner-pool criterion', () => {
     const enabled = weightedScore(stKilda, commuteScoreFor(stKilda), enabledWeights)
     expect(enabled).toBeGreaterThanOrEqual(base)
     expect(enabled - base).toBeLessThanOrEqual(4)
+  })
+})
+
+describe('cohort-relative criteria', () => {
+  it('averages ties and excludes nulls from percentile ranks', () => {
+    const records = [
+      { id: 'low', value: 2 },
+      { id: 'tie-a', value: 4 },
+      { id: 'tie-b', value: 4 },
+      { id: 'high', value: 8 },
+      { id: 'missing', value: null },
+    ]
+    const ranks = percentileRanksById(records, (record) => record.value)
+
+    expect(ranks.low).toBe(0)
+    expect(ranks['tie-a']).toBe(5)
+    expect(ranks['tie-b']).toBe(5)
+    expect(ranks.high).toBe(10)
+    expect(ranks.missing).toBeNull()
+  })
+
+  it('exposes one blend constant and full mapping per relative criterion', () => {
+    expect(SAFETY_PERCENTILE_BLEND).toBe(1)
+    expect(PARTNER_PERCENTILE_BLEND).toBe(0.5)
+    expect(RELATIVE_SCORING_BY_CRITERION.safetyQuality.percentileBlend).toBe(1)
+    expect(RELATIVE_SCORING_BY_CRITERION.partnerPool.percentileBlend).toBe(0.5)
+
+    const stKilda = RELATIVE_SCORING_BY_CRITERION.partnerPool
+    expect(stKilda.blendedScoreById['st-kilda-2br']).toBeCloseTo(
+      blendRawAndPercentile(
+        stKilda.rawScoreById['st-kilda-2br'],
+        stKilda.percentileScoreById['st-kilda-2br'],
+        PARTNER_PERCENTILE_BLEND,
+      ),
+    )
+  })
+
+  it('keeps null Safety and guarded Partners values null and out of the cohort', () => {
+    const safety = RELATIVE_SCORING_BY_CRITERION.safetyQuality
+    const partners = RELATIVE_SCORING_BY_CRITERION.partnerPool
+    expect(safety.rawScoreById['melbourne-cbd-2br']).toBeNull()
+    expect(safety.percentileScoreById['melbourne-cbd-2br']).toBeNull()
+    expect(safety.blendedScoreById['melbourne-cbd-2br']).toBeNull()
+    expect(partners.rawScoreById['burnley-2br']).toBeNull()
+    expect(partners.percentileScoreById['burnley-2br']).toBeNull()
+    expect(partners.blendedScoreById['burnley-2br']).toBeNull()
   })
 })
 
