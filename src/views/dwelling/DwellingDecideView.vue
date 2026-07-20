@@ -130,7 +130,6 @@
                     :class="criterionButtonClass(c)"
                   >
                     <span>{{ c.label }}</span>
-                    <span v-if="c.scoringRole !== 'gate'">{{ controlValue(c) }}</span>
                   </button>
                 </div>
               </div>
@@ -274,9 +273,6 @@ function toggleControl(control) {
 }
 function controlEnabled(control) {
   return control.scoringRole === 'gate' ? soulEnabled.value : enabled[control.key]
-}
-function controlValue(control) {
-  return `×${enabled[control.key] ? activeStrategy.value.weights[control.key] : 0}`
 }
 function criterionButtonClass(criterion) {
   if (!controlEnabled(criterion))

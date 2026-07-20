@@ -136,7 +136,7 @@
             <span
               v-for="badge in previewBadges(previewRow)"
               :key="badge.key"
-              class="inline-flex items-center rounded-full px-2 py-[3px] font-mono text-[10px] leading-none border"
+              class="rank-pill inline-flex items-center rounded-full px-2 py-[3px] font-mono text-[10px] leading-none border"
               :class="badge.className"
             >
               {{ badge.text }}
@@ -144,12 +144,13 @@
           </div>
           <div
             v-if="rowContext(previewRow).length"
-            class="decision-context-grid flex shrink-0 flex-col gap-0 text-right font-mono text-[8px] leading-[1.15]"
+            class="decision-context-grid flex shrink-0 flex-col items-end gap-1 text-right"
             aria-label="Descriptive context; does not affect rank"
           >
             <span
               v-for="fact in rowContext(previewRow)"
               :key="fact.key"
+              class="context-badge inline-flex items-center rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
               :class="contextClass(fact)"
             >
               {{ fact.label }} {{ fact.value }}
@@ -235,7 +236,7 @@
                         <span
                           v-for="chip in rowChips(row)"
                           :key="chip.key"
-                          class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                          class="rank-pill rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
                           :class="chipClass(chip)"
                         >
                           {{ chip.text }}
@@ -244,12 +245,13 @@
                     </div>
                     <div
                       v-if="rowContext(row).length"
-                      class="decision-context-grid flex shrink-0 flex-col gap-0 text-right font-mono text-[7.5px] leading-[1.15]"
+                      class="decision-context-grid flex shrink-0 flex-col items-end gap-1 text-right"
                       aria-label="Descriptive context; does not affect rank"
                     >
                       <span
                         v-for="fact in rowContext(row)"
                         :key="fact.key"
+                        class="context-badge inline-flex items-center rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
                         :class="contextClass(fact)"
                       >
                         {{ fact.label }} {{ fact.value }}
@@ -463,12 +465,12 @@ function chipClass(chip) {
 
 function contextClass(fact) {
   return {
-    beach: 'text-amber-300',
-    chinese: 'text-red-300',
-    pink: 'text-pink-300',
-    green: 'text-emerald-300',
-    yellow: 'text-yellow-300',
-    rainbow: 'text-purple-300',
+    beach: 'border-amber-500/35 text-amber-300 bg-amber-500/10',
+    chinese: 'border-red-500/35 text-red-300 bg-red-500/10',
+    pink: 'border-pink-500/35 text-pink-300 bg-pink-500/10',
+    green: 'border-emerald-600/50 text-emerald-300 bg-emerald-700/25',
+    yellow: 'border-yellow-500/40 text-yellow-300 bg-yellow-500/10',
+    rainbow: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
   }[fact.tone]
 }
 

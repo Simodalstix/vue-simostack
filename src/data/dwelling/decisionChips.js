@@ -1,6 +1,6 @@
 // Ranking-card presentation follows one semantic rule:
 // - pills identify active inputs that affected this ranking;
-// - flat context facts describe the place without implying score impact.
+// - context badges describe the place without implying score impact.
 
 import { beachAccessByAreaId } from './beachAccess.js'
 import { chineseLanguageCommunityFor } from './chineseCommunity.js'

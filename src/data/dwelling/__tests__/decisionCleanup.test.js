@@ -132,7 +132,7 @@ describe('decision-card pills and context', () => {
     ).toEqual([])
   })
 
-  it('keeps only community percentages in flat descriptive context', () => {
+  it('keeps only community percentages in descriptive context with stable colour tones', () => {
     const facts = areaCorridors.flatMap((rec) =>
       decisionContextFor({ rec, commute: rec.commute, status: 'ok', reasons: [] }),
     )
@@ -146,6 +146,9 @@ describe('decision-card pills and context', () => {
     )
     expect(facts.find((fact) => fact.key === 'chinese-community')?.tone).toBe('chinese')
     expect(facts.find((fact) => fact.key === 'vietnamese-community')?.tone).toBe('yellow')
+    expect(facts.find((fact) => fact.key === 'filipino-community')?.tone).toBe('pink')
+    expect(facts.find((fact) => fact.key === 'thai-community')?.tone).toBe('pink')
+    expect(facts.find((fact) => fact.key === 'south-american-community')?.tone).toBe('green')
   })
 
   it('uses the first gate reason for reject and conditional exceptions', () => {
