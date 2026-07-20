@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Backfill partner-pool census measures into the SAL community context.
+"""Backfill Mingle and neutral family-context measures into the SAL dataset.
 
 Adds two measures to additionalHouseholdContext on EVERY dataset record,
 sourced from the same official ABS GCP workbooks as the rest of the record:
@@ -9,8 +9,9 @@ sourced from the same official ABS GCP workbooks as the rest of the record:
   G06 publishes 10-year bands (25-34 / 35-44 / 45-54), so 25-54 is the
   closest available cover of the requested 30-49 range; the band note is
   recorded on the measure itself.
-- loneParentFamilies: one-parent families over all families in occupied
-  private dwellings (G29, family composition; place of enumeration).
+- loneParentFamilies: neutral descriptive context only: one-parent families
+  over all families in occupied private dwellings (G29, family composition;
+  place of enumeration). This measure must never enter the Mingle score.
 
 Also regenerates the community-context QA report, extending it with the new
 measures. Every workbook is checked against the SHA-256 recorded on its
@@ -220,6 +221,16 @@ def main() -> int:
 
     dataset["generatedAt"] = args.generated_at
     dataset["version"] = "2021-gcp-sal-v3"
+    dataset["usage"]["implementationRule"] = (
+        "Do not connect this dataset to default ranking or filtering beyond the named "
+        "derived measures. The exceptions are the off-by-default Chinese-language "
+        "community personal lens (Cantonese and Mandarin language-at-home counts), the "
+        "grouped other-language-communities lens (Filipino/Tagalog, Thai, "
+        "Spanish/Portuguese and source-listed Vietnamese), and the Mingle criterion "
+        "(unpartnered adults aged 25-54). One-parent-family counts are descriptive "
+        "context only and never enter Mingle. Compatible counts are recombined over a "
+        "common denominator; percentages are never averaged."
+    )
     body = json.dumps(dataset, indent=2, ensure_ascii=False)
     args.out.write_text(source[:start] + body + source[end:], encoding="utf-8")
 

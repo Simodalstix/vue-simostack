@@ -667,7 +667,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'Excellent kid-amenity: beach, parks, safe streets.',
+        text: 'Excellent recreation: beach, parks, safe streets.',
         tag: null,
       },
       {
@@ -1116,7 +1116,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'Best-in-class kid amenity: beach, lake, MSAC.',
+        text: 'Best-in-class recreation: beach, lake, MSAC.',
         tag: null,
       },
       {
@@ -1300,7 +1300,7 @@ export const suburbProfiles = {
         tag: null,
       },
       {
-        text: 'Chinese-community and partner-pool signals now resolve through the generated Census criteria.',
+        text: 'Chinese-community and Mingle signals now resolve through the generated Census criteria.',
         tag: null,
       },
       {

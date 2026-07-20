@@ -401,15 +401,13 @@ describe('grouped non-Chinese community personal lens', () => {
   })
 })
 
-describe('partner-pool criterion', () => {
+describe('Mingle criterion', () => {
   it('recombines unpartnered counts over the common G06 denominator', () => {
     const pool = partnerPoolFor('st-kilda-2br')
     expect(pool.count).toBeGreaterThan(0)
     expect(pool.denominator).toBeGreaterThan(pool.count)
     expect(pool.percentage).toBeCloseTo((pool.count / pool.denominator) * 100)
-    expect(pool.loneParentPercentage).toBeCloseTo(
-      (pool.loneParentCount / pool.loneParentDenominator) * 100,
-    )
+    expect(pool).not.toHaveProperty('loneParentPercentage')
   })
 
   it('aggregates combined suburb records by counts, never averaged percentages', () => {
@@ -431,11 +429,10 @@ describe('partner-pool criterion', () => {
 
   it('caps the primary component at the full-bonus share', () => {
     expect(PARTNER_POOL_FULL_BONUS_SHARE).toBe(40)
-    // Windsor/Prahran and St Kilda both exceed the 40% mark, so their primary
-    // component saturates and only the lone-parent blend separates them.
+    // Windsor/Prahran exceeds the 40% mark, so its compatible unpartnered-adult
+    // measure saturates without using lone-parent households as a proxy.
     const score = partnerPoolScore('inner-windsor-prahran-2br')
-    expect(score).toBeGreaterThan(8)
-    expect(score).toBeLessThanOrEqual(10)
+    expect(score).toBe(10)
   })
 
   it('drops the criterion for a guarded record without touching its base score', () => {
@@ -495,7 +492,7 @@ describe('cohort-relative criteria', () => {
     )
   })
 
-  it('keeps null Safety and guarded Partners values null and out of the cohort', () => {
+  it('keeps null Safety and guarded Mingle values null and out of the cohort', () => {
     const safety = RELATIVE_SCORING_BY_CRITERION.safetyQuality
     const partners = RELATIVE_SCORING_BY_CRITERION.partnerPool
     expect(safety.rawScoreById['melbourne-cbd-2br']).toBeNull()

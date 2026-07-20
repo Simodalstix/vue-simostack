@@ -101,7 +101,7 @@ batch when their pipeline is deterministic and the QA output remains legible.
 4. Cost target coverage and generated VGV context.
 5. School anchors, official zones/locations, context and strength evidence.
 6. Greenspace targets and generated context.
-7. Commute, safety, kid amenity and other evidence-backed manual fields.
+7. Commute, safety, recreation and other evidence-backed manual fields.
 8. Personal network, beach, girls' sport and facilities where applicable.
 9. Expanded suburb profile and evidence copy.
 10. Batch coverage test, full test suite, build and manual UI check.

@@ -11,6 +11,15 @@ import { weightedScore } from '../../../composables/useAreaRanking.js'
 import { scoreCommute } from '../../../composables/useCommuteScoring.js'
 
 describe('bonus-only criteria', () => {
+  it('keeps stable IDs while exposing the Recreation and Mingle names', () => {
+    expect(decideCriterionByKey.kidAmenity.label).toBe('Recreation')
+    expect(decideCriterionByKey.partnerPool.label).toBe('Mingle')
+    expect(decideCriterionByKey.kidAmenity.hint).toContain('Childcare is separate')
+    expect(decideCriterionByKey.partnerPool.hint).toContain(
+      'not in a registered or de facto marriage',
+    )
+  })
+
   it('leaves beach absent rather than scoring it as zero', () => {
     const inland = areaCorridors.find((record) => !beachAccessByAreaId[record.id])
     expect(decideCriterionByKey.beach.value(inland)).toBeNull()

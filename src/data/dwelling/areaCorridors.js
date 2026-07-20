@@ -3529,7 +3529,7 @@ const AREA_CORRIDOR_BASE = [
       publicPrimary: ['Middle Park PS'],
       publicSecondary: ['Albert Park College'],
       privateContext: [],
-      note: 'best-in-class kid amenity: beach, lake and MSAC on foot',
+      note: 'best-in-class recreation: beach, lake and MSAC on foot',
     },
     caseFor: [
       'Albert Park College zone with beach, lake and MSAC walkable.',
@@ -4282,7 +4282,7 @@ const AREA_CORRIDOR_BASE = [
     feeNote: 'Detached freehold assumption; confirm title and shared-property obligations.',
     caseFor: [
       'The station, village and lake form a coherent family-lifestyle package.',
-      'Chinese-community and partner-pool signals should come from the existing Census-derived criteria, not narrative assumptions.',
+      'Chinese-community and Mingle signals should come from the existing Census-derived criteria, not narrative assumptions.',
     ],
     caseAgainst: ['Commute, safety and detached-house pricing remain evidence tasks.'],
     bestType:

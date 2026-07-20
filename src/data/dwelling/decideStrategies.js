@@ -75,8 +75,8 @@ export const decideCriteria = [
   },
   {
     key: 'kidAmenity',
-    label: 'Kid amenity',
-    hint: 'How independently a 12-15yo can get around, blended equally with girls’ sport access where researched.',
+    label: 'Recreation',
+    hint: 'Usable sport, leisure, playground and other recreational amenity: teen independence blended equally with girls’ sport access where researched. Childcare is separate and not included.',
     accent: 'purple',
     value: (rec) => {
       const teen = tenScale(rec.childhood?.teenIndependence)
@@ -134,8 +134,8 @@ export const decideCriteria = [
   },
   {
     key: 'partnerPool',
-    label: 'Partners',
-    hint: '2021 Census relative signal, blended 50/50 between its raw score and cohort percentile. Nulls remain unassessed; refresh after 2026 Census data publishes.',
+    label: 'Mingle',
+    hint: 'Playful name, honest measure: the ABS 2021 Census share of adults aged 25–54 who were not in a registered or de facto marriage, blended 50/50 between raw score and cohort percentile. It does not infer availability, orientation or interest; nulls remain unassessed.',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
     accent: 'pink',

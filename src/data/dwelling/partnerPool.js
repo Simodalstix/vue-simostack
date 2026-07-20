@@ -4,10 +4,10 @@
 // marriage (G06 social marital status — NOT G05 registered status, which
 // miscounts de facto couples as single). G06 publishes 10-year age bands, so
 // 25-54 is the closest available cover of the intended 30-49 range; the
-// dataset records this on the measure itself. A secondary lone-parent-family
-// rate (G29) leavens the blend. Combined ranking areas aggregate component
-// SAL counts over the common denominators, chineseCommunity-style: counts are
-// recombined, percentages never averaged.
+// dataset records this on the measure itself. Combined ranking areas aggregate
+// component SAL counts over the common denominator, chineseCommunity-style:
+// counts are recombined, percentages never averaged. This does not claim that
+// every unpartnered adult is available, interested or a potential partner.
 //
 // The two constants:
 // - PARTNER_POOL_FULL_BONUS_SHARE: a 40% unpartnered share among 25-54s earns
@@ -30,47 +30,34 @@ export function partnerPoolFor(areaId) {
 
   let count = 0
   let denominator = 0
-  let loneParentCount = 0
-  let loneParentDenominator = 0
   for (const component of context.components) {
     const household = component.record.additionalHouseholdContext
     const unpartnered = household?.unpartnered2554
-    const loneParent = household?.loneParentFamilies
     if (
       !Number.isFinite(unpartnered?.count) ||
       !Number.isFinite(unpartnered?.denominator) ||
-      unpartnered.denominator <= 0 ||
-      !Number.isFinite(loneParent?.count) ||
-      !Number.isFinite(loneParent?.denominator) ||
-      loneParent.denominator <= 0
+      unpartnered.denominator <= 0
     )
       return null
 
     count += unpartnered.count
     denominator += unpartnered.denominator
-    loneParentCount += loneParent.count
-    loneParentDenominator += loneParent.denominator
   }
 
-  if (denominator <= 0 || loneParentDenominator <= 0) return null
+  if (denominator <= 0) return null
   return {
     count,
     denominator,
     percentage: (count / denominator) * 100,
-    loneParentCount,
-    loneParentDenominator,
-    loneParentPercentage: (loneParentCount / loneParentDenominator) * 100,
     censusYear: 2021,
   }
 }
 
-// 80% unpartnered-share signal, 20% lone-parent-family rate (25% of families
-// earns that component's 10/10). Both components stay capped, so at the
-// criterion's x1 preset this is at most +2 ranking points.
+// A 40% unpartnered share earns 10/10. The component stays capped, so at the
+// criterion's x1 preset this is at most +2 ranking points. Lone-parent family
+// counts remain available as neutral Census context but never enter this score.
 export function partnerPoolScore(areaId) {
   const pool = partnerPoolFor(areaId)
   if (pool == null || pool.denominator < PARTNER_POOL_MIN_DENOMINATOR) return null
-  const primary = Math.min(10, (pool.percentage / PARTNER_POOL_FULL_BONUS_SHARE) * 10)
-  const lone = Math.min(10, (pool.loneParentPercentage / 25) * 10)
-  return 0.8 * primary + 0.2 * lone
+  return Math.min(10, (pool.percentage / PARTNER_POOL_FULL_BONUS_SHARE) * 10)
 }

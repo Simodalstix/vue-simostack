@@ -58,7 +58,7 @@
                     : 'border-ob-sand/14 text-ob-faint line-through'
                 "
               >
-                Soul {{ soulEnabled ? 'on' : 'off' }}
+                Soul
               </button>
             </div>
             <p class="mt-1.5 font-mono text-[9px] leading-snug text-ob-faint">
@@ -130,7 +130,7 @@
                     :class="criterionButtonClass(c)"
                   >
                     <span>{{ c.label }}</span>
-                    <span>{{ controlValue(c) }}</span>
+                    <span v-if="c.scoringRole !== 'gate'">{{ controlValue(c) }}</span>
                   </button>
                 </div>
               </div>
@@ -275,7 +275,6 @@ function controlEnabled(control) {
   return control.scoringRole === 'gate' ? soulEnabled.value : enabled[control.key]
 }
 function controlValue(control) {
-  if (control.scoringRole === 'gate') return soulEnabled.value ? 'on' : 'off'
   return `×${enabled[control.key] ? activeStrategy.value.weights[control.key] : 0}`
 }
 function criterionButtonClass(criterion) {

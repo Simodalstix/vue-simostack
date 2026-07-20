@@ -97,6 +97,18 @@ needed, use the official
 and prefer SHP, GDB or WFS/GeoJSON. The pipeline uses it only as a major-park
 and nature-corridor supplement.
 
+## Future source note — childcare (not in Recreation)
+
+Childcare is intentionally a future, separate criterion. Do not fold it into
+Recreation. Its intended source is the **ACECQA Victoria Approved Services
+CSV**. It is not required for the current scoring session and must not be
+downloaded or wired into ranking yet.
+
+When childcare is deliberately onboarded later, retain the untouched CSV and
+record both its UTC download date and SHA-256 checksum in the generated source
+manifest. Validate Victoria coverage and the publisher schema before deriving
+any access measure; a missing, suppressed or incompatible value remains null.
+
 ## How to return files
 
 Use either method:

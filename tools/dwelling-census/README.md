@@ -4,17 +4,18 @@
 community-context dataset from official General Community Profile workbooks.
 It does not aggregate combined suburbs. Scoring reads only the explicitly
 named derived fields (the Chinese-language lens, grouped other-language
-communities lens, and partner-pool criterion); everything else remains
+communities lens, and Mingle criterion); everything else remains
 descriptive.
 
-`backfill-partner-pool-context.py` adds the partner-pool measures
-(`unpartnered2554` from G06, `loneParentFamilies` from G29) to every record
+`backfill-partner-pool-context.py` adds the Census measures used by Mingle and
+nearby neutral context (`unpartnered2554` from G06, `loneParentFamilies` from G29) to every record
 of the checked-in dataset and regenerates
 `dwelling-community-context-qa.csv`. It verifies each workbook against the
 SHA-256 recorded on its record and asserts the G06/G29 row labels before
 reading any cell. Note: G06 publishes 10-year age bands, so 25-54 is the
-closest available cover of the intended 30-49 partner-pool range; G29 counts
-are on a place-of-enumeration basis.
+closest available cover of the intended 30-49 range. Only that compatible
+unpartnered-adult measure feeds Mingle. G29 counts are descriptive context on
+a place-of-enumeration basis and never enter the Mingle score.
 
 Requires Python 3.10+ and `openpyxl>=3.1`.
 
