@@ -244,7 +244,9 @@ const layerToggles = [
   },
 ]
 
-const scoredRows = computed(() => props.rows.filter((r) => r.status !== 'unscored'))
+const scoredRows = computed(() =>
+  props.rows.filter((row) => row.status !== 'unscored' && row.status !== 'veto'),
+)
 
 // Rank follows the displayed order (viable first, then score), matching the
 // decision pane's ranked list.
@@ -317,10 +319,12 @@ function popupHtml(payload) {
   const base =
     row.status === 'unscored'
       ? `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${theme.unscoredOutline}">unscored</span>`
-      : (() => {
-          const b = getFitBand(row.weighted)
-          return `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${fitBandColor(b)}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
-        })()
+      : row.status === 'veto'
+        ? `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${theme.markerDim}">owner veto · score ${row.weighted}</span>`
+        : (() => {
+            const b = getFitBand(row.weighted)
+            return `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${fitBandColor(b)}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
+          })()
   return linesHtml ? `${base}<br>${linesHtml}` : base
 }
 function esc(s) {

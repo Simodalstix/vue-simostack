@@ -366,7 +366,12 @@ import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
 import { costMetricForArea, formatCostMetric } from '@/data/dwelling/cost/costContext.js'
 import { schoolContextByAreaId } from '@/data/dwelling/schools/dwelling-school-context.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
-import { UNSCORED_BANNER, fitLineForRow, isUnscoredRow } from '@/data/dwelling/unscoredUx.js'
+import {
+  UNSCORED_BANNER,
+  fitLineForRow,
+  isUnscoredRow,
+  isVetoedRow,
+} from '@/data/dwelling/unscoredUx.js'
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
 import CommunityContextSection from './CommunityContextSection.vue'
@@ -401,6 +406,7 @@ const gateNote = computed(() => {
   if (!props.row.reasons.length) return null
   const lead = props.row.reasons[0]
   const suffix = props.row.reasons.length > 1 ? ` +${props.row.reasons.length - 1}` : ''
+  if (isVetoedRow(props.row)) return `${lead}${suffix}`
   return `${props.row.status === 'reject' ? 'Fails' : 'Conditional'}: ${lead}${suffix}`
 })
 const headerNote = computed(() => [sharedNote.value, gateNote.value].filter(Boolean).join(' · '))
@@ -471,17 +477,21 @@ function chipClass(chip) {
     schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
     conditional: 'border-ob-sand/30 text-ob-sand bg-ob-sand/8',
     reject: 'border-red-400/35 text-red-300 bg-red-400/8',
+    veto: 'border-ob-sand/20 text-ob-faint bg-ob-sand/5',
   }[chip.tone]
 }
 function bandColor(row) {
+  if (isVetoedRow(row)) return '#7A8A99'
   if (row.status === 'reject') return '#f87171'
   return fitBandColor(row.weighted)
 }
 function bandBadgeFill(row) {
+  if (isVetoedRow(row)) return 'rgba(122, 138, 153, 0.12)'
   if (row.status === 'reject') return 'rgba(248, 113, 113, 0.12)'
   return fitBandBadgeFill(row.weighted)
 }
 function bandLabel(row) {
+  if (isVetoedRow(row)) return 'owner veto'
   if (row.status === 'reject') return 'gated'
   return getFitBand(row.weighted).label
 }
@@ -557,7 +567,12 @@ function friendFor(areaId) {
   return friendContextFor(areaId)
 }
 function fitClass(row) {
-  return { ok: 'text-ob-teal', conditional: 'text-ob-muted', reject: 'text-ob-sand' }[row.status]
+  return {
+    ok: 'text-ob-teal',
+    conditional: 'text-ob-muted',
+    reject: 'text-ob-sand',
+    veto: 'text-ob-faint',
+  }[row.status]
 }
 function fitLine(row) {
   return fitLineForRow(row, props.strategy?.label)

@@ -5,16 +5,22 @@
       v-if="row.reasons.length"
       class="mt-4 rounded-[6px] px-4 py-3"
       :class="
-        row.status === 'reject'
+        row.status === 'reject' || row.status === 'veto'
           ? 'bg-ob-sand/8 border border-ob-sand/25'
           : 'bg-ob-surface2 border border-ob-sand/14'
       "
     >
       <p
         class="font-mono text-[11px] uppercase tracking-[0.08em] mb-1"
-        :class="row.status === 'reject' ? 'text-ob-sand' : 'text-ob-muted'"
+        :class="row.status === 'reject' || row.status === 'veto' ? 'text-ob-sand' : 'text-ob-muted'"
       >
-        {{ row.status === 'reject' ? 'Rejected by a hard gate' : 'Conditional' }}
+        {{
+          row.status === 'veto'
+            ? 'Soul exclusion · owner judgment'
+            : row.status === 'reject'
+              ? 'Rejected by a hard gate'
+              : 'Conditional'
+        }}
       </p>
       <ul class="space-y-1">
         <li v-for="(r, i) in row.reasons" :key="i" class="text-[12.5px] text-ob-muted2 flex gap-2">

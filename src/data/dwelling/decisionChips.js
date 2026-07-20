@@ -95,6 +95,13 @@ export function differentiatingChipsFor(row) {
 
 export function gateExceptionChipFor(row) {
   if (!row || row.status === 'ok' || row.status === 'unscored') return null
+  if (row.status === 'veto') {
+    return {
+      key: 'owner-veto',
+      text: row.reasons?.[0] || 'Owner judgment veto',
+      tone: 'veto',
+    }
+  }
   return {
     key: 'gate',
     text: row.reasons?.[0] || (row.status === 'reject' ? 'Does not pass gates' : 'Conditional'),

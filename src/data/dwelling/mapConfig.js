@@ -41,6 +41,7 @@ export { getFitBand }
 // reads while the hue remains aligned with the shared fit band.
 export function fillOpacityFor(rec, status) {
   if (status === 'unscored') return 0.08
+  if (status === 'veto') return 0.12
   // Solid enough to read bright against the near-black canvas; provisional
   // placeholder records still sit a clear step fainter than verified ones.
   const base = rec.placeholder ? 0.3 : 0.55
@@ -63,12 +64,14 @@ export function computeAreaState(rows, indexById) {
     const fid = indexById[areaId]
     if (fid == null) continue
     const unscored = row.status === 'unscored'
+    const vetoed = row.status === 'veto'
     state[areaId] = {
       fid,
-      color: unscored ? MAP_THEME.unscoredFill : colorForRow(row),
+      color: unscored || vetoed ? MAP_THEME.unscoredFill : colorForRow(row),
       fillOpacity: fillOpacityFor(row.rec, row.status),
       status: row.status,
       unscored,
+      vetoed,
     }
   }
   return state

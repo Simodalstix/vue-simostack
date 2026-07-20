@@ -63,7 +63,7 @@
             </p>
           </div>
           <span
-            v-if="!isUnscoredRow(previewRow)"
+            v-if="isRankedRow(previewRow)"
             class="shrink-0 inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
             :style="scoreBadgeStyle(previewRow)"
             :title="bandLabel(previewRow)"
@@ -77,6 +77,12 @@
               :style="{ color: bandColor(previewRow) }"
               >{{ scoreDisplay(previewRow) }}</span
             >
+          </span>
+          <span
+            v-else-if="isVetoedRow(previewRow)"
+            class="shrink-0 rounded-full border border-ob-sand/20 bg-ob-sand/5 px-2 py-[3px] font-mono text-[10px] text-ob-faint"
+          >
+            owner veto · score {{ previewRow.weighted }}
           </span>
           <span
             v-else
@@ -139,74 +145,87 @@
         role="listbox"
         aria-label="Ranked suburbs"
       >
-        <li v-for="row in scoredRows" :key="row.rec.id">
-          <button
-            @click="togglePin(row.rec.id)"
-            @mouseenter="setListHover(row.rec.id)"
-            @mouseleave="setListHover(null)"
-            @focus="setListHover(row.rec.id)"
-            @blur="setListHover(null)"
-            role="option"
-            :aria-selected="modelValue === row.rec.id"
-            class="w-full text-left px-3 sm:px-4 py-3 sm:py-2.5 border-b border-ob-sand/6 transition-colors focus:bg-ob-surface/60"
-            :class="
-              modelValue === row.rec.id
-                ? 'bg-ob-surface/70 ring-inset ring-1 ring-ob-teal/20'
-                : 'hover:bg-ob-surface/50'
-            "
+        <template v-for="row in displayRows" :key="row.rec.id">
+          <li
+            v-if="isVetoedRow(row) && row === vetoedRows[0]"
+            class="border-y border-ob-sand/10 bg-ob-surface/25 px-4 py-2 font-mono text-[9.5px] uppercase tracking-[0.08em] text-ob-faint"
           >
-            <div class="flex items-start gap-3">
-              <span
-                class="w-10 shrink-0 pt-[1px] font-mono text-[12px] font-bold leading-none text-ob-sand"
-              >
-                #{{ rankById[row.rec.id] }}
-              </span>
-
-              <div class="min-w-0 flex-1">
-                <div class="flex items-start gap-2">
-                  <span class="text-[12.5px] font-semibold text-ob-text flex-1 truncate">
-                    {{ row.rec.suburb }}
-                  </span>
-                  <span
-                    class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
-                    :style="{ color: bandColor(row) }"
-                    :title="bandLabel(row)"
-                  >
-                    {{ scoreDisplay(row) }}
-                  </span>
-                </div>
-
-                <p class="mt-0.5 text-[10.5px] leading-snug text-ob-muted2 preview-clamp-1">
-                  {{ previewTagline(row) }}
-                </p>
-
-                <div
-                  class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-ob-faint"
+            Soul exclusions · owner judgment
+          </li>
+          <li>
+            <button
+              @click="togglePin(row.rec.id)"
+              @mouseenter="setListHover(row.rec.id)"
+              @mouseleave="setListHover(null)"
+              @focus="setListHover(row.rec.id)"
+              @blur="setListHover(null)"
+              role="option"
+              :aria-selected="modelValue === row.rec.id"
+              class="w-full text-left px-3 sm:px-4 py-3 sm:py-2.5 border-b border-ob-sand/6 transition-colors focus:bg-ob-surface/60"
+              :class="
+                isVetoedRow(row)
+                  ? 'opacity-45 grayscale hover:opacity-60'
+                  : modelValue === row.rec.id
+                    ? 'bg-ob-surface/70 ring-inset ring-1 ring-ob-teal/20'
+                    : 'hover:bg-ob-surface/50'
+              "
+            >
+              <div class="flex items-start gap-3">
+                <span
+                  class="w-10 shrink-0 pt-[1px] font-mono text-[12px] font-bold leading-none text-ob-sand"
                 >
-                  <span>{{ costEvidence(row.rec, true) }}</span>
-                  <span>Commute {{ commuteShort(row) }}</span>
-                </div>
-                <div v-if="gateChip(row) || rowChips(row).length" class="mt-1 flex flex-wrap gap-1">
-                  <span
-                    v-if="gateChip(row)"
-                    class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                    :class="chipClass(gateChip(row))"
+                  {{ isRankedRow(row) ? `#${rankById[row.rec.id]}` : '—' }}
+                </span>
+
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-start gap-2">
+                    <span class="text-[12.5px] font-semibold text-ob-text flex-1 truncate">
+                      {{ row.rec.suburb }}
+                    </span>
+                    <span
+                      class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
+                      :style="{ color: bandColor(row) }"
+                      :title="bandLabel(row)"
+                    >
+                      {{ scoreDisplay(row) }}
+                    </span>
+                  </div>
+
+                  <p class="mt-0.5 text-[10.5px] leading-snug text-ob-muted2 preview-clamp-1">
+                    {{ previewTagline(row) }}
+                  </p>
+
+                  <div
+                    class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-ob-faint"
                   >
-                    {{ gateChip(row).text }}
-                  </span>
-                  <span
-                    v-for="chip in rowChips(row)"
-                    :key="chip.key"
-                    class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                    :class="chipClass(chip)"
+                    <span>{{ costEvidence(row.rec, true) }}</span>
+                    <span>Commute {{ commuteShort(row) }}</span>
+                  </div>
+                  <div
+                    v-if="gateChip(row) || rowChips(row).length"
+                    class="mt-1 flex flex-wrap gap-1"
                   >
-                    {{ chip.text }}
-                  </span>
+                    <span
+                      v-if="gateChip(row)"
+                      class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                      :class="chipClass(gateChip(row))"
+                    >
+                      {{ gateChip(row).text }}
+                    </span>
+                    <span
+                      v-for="chip in rowChips(row)"
+                      :key="chip.key"
+                      class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                      :class="chipClass(chip)"
+                    >
+                      {{ chip.text }}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </button>
-        </li>
+            </button>
+          </li>
+        </template>
       </ul>
 
       <details v-if="unscoredRows.length" class="shrink-0 border-t border-ob-sand/10">
@@ -246,7 +265,12 @@ import { computed, ref } from 'vue'
 import { decideCriteria } from '@/data/dwelling/decideStrategies.js'
 import { fitBandBadgeFill, fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
-import { isUnscoredRow, partitionDecisionRows } from '@/data/dwelling/unscoredUx.js'
+import {
+  isRankedRow,
+  isUnscoredRow,
+  isVetoedRow,
+  partitionDecisionRows,
+} from '@/data/dwelling/unscoredUx.js'
 import { differentiatingChipsFor, gateExceptionChipFor } from '@/data/dwelling/decisionChips.js'
 import { costMetricForArea, formatCostMetric } from '@/data/dwelling/cost/costContext.js'
 import SuburbProfileCard from './SuburbProfileCard.vue'
@@ -268,7 +292,9 @@ const modelValue = defineModel({ default: null })
 
 const rowGroups = computed(() => partitionDecisionRows(props.rows))
 const scoredRows = computed(() => rowGroups.value.ranked)
+const vetoedRows = computed(() => rowGroups.value.vetoed)
 const unscoredRows = computed(() => rowGroups.value.unscored)
+const displayRows = computed(() => [...scoredRows.value, ...vetoedRows.value])
 
 const rankById = computed(() => {
   const map = {}
@@ -324,6 +350,7 @@ function unpin() {
 }
 
 function scoreBadgeStyle(row) {
+  if (isVetoedRow(row)) return { backgroundColor: 'rgba(122, 138, 153, 0.12)' }
   if (row.status === 'reject') return { backgroundColor: 'rgba(248, 113, 113, 0.12)' }
   return {
     backgroundColor: fitBandBadgeFill(row.weighted),
@@ -331,11 +358,13 @@ function scoreBadgeStyle(row) {
 }
 
 function bandColor(row) {
+  if (isVetoedRow(row)) return '#7A8A99'
   if (row.status === 'reject') return '#f87171'
   return fitBandColor(row.weighted)
 }
 
 function bandLabel(row) {
+  if (isVetoedRow(row)) return `Owner judgment veto: ${row.reasons[0] || ''}`
   if (row.status === 'reject') return `Gated: ${row.reasons[0] || 'hard requirement failed'}`
   return getFitBand(row.weighted).ariaLabel
 }
@@ -385,6 +414,7 @@ function chipClass(chip) {
     schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
     conditional: 'border-ob-sand/30 text-ob-sand bg-ob-sand/8',
     reject: 'border-red-400/35 text-red-300 bg-red-400/8',
+    veto: 'border-ob-sand/20 text-ob-faint bg-ob-sand/5',
   }[chip.tone]
 }
 

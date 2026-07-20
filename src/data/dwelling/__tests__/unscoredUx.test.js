@@ -56,6 +56,7 @@ describe('unscored record presentation contract', () => {
       fillOpacity: 0.08,
       status: 'unscored',
       unscored: true,
+      vetoed: false,
     })
     expect(state.color).not.toBe(fitBandColor(row.weighted))
   })

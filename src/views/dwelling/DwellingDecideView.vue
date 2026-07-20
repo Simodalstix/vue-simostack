@@ -46,6 +46,20 @@
                   {{ s.shortLabel }}
                 </button>
               </div>
+              <button
+                type="button"
+                @click="soulEnabled = !soulEnabled"
+                :aria-pressed="soulEnabled"
+                :title="SOUL_GATE.hint"
+                class="rounded-[6px] border px-2.5 py-2 font-mono text-[10.5px] transition-colors"
+                :class="
+                  soulEnabled
+                    ? 'border-blue-500/45 bg-blue-500/10 text-blue-300'
+                    : 'border-ob-sand/14 text-ob-faint line-through'
+                "
+              >
+                Soul {{ soulEnabled ? 'on' : 'off' }}
+              </button>
             </div>
             <p class="mt-1.5 font-mono text-[9px] leading-snug text-ob-faint">
               {{ activeStrategy.intent }} · preset weights
@@ -108,15 +122,15 @@
                   <button
                     v-for="c in group.criteria"
                     :key="c.key"
-                    @click="toggleCriterion(c.key)"
-                    :disabled="enabled[c.key] && enabledCount === 1"
-                    :aria-pressed="enabled[c.key]"
+                    @click="toggleControl(c)"
+                    :disabled="c.scoringRole !== 'gate' && enabled[c.key] && enabledCount === 1"
+                    :aria-pressed="controlEnabled(c)"
                     :title="c.hint"
                     class="inline-flex items-center justify-between gap-2 font-mono text-[11px] px-2.5 py-[6px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
                     :class="criterionButtonClass(c)"
                   >
                     <span>{{ c.label }}</span>
-                    <span>×{{ enabled[c.key] ? activeStrategy.weights[c.key] : 0 }}</span>
+                    <span>{{ controlValue(c) }}</span>
                   </button>
                 </div>
               </div>
@@ -195,6 +209,7 @@ import { stationPointFeatures, areaBounds, areaIndexById } from '@/data/dwelling
 import { localityFeatures } from '@/data/dwelling/localityFeatures.js'
 import { personalPosition } from '@/data/dwelling/facts.js'
 import { useAreaRanking } from '@/composables/useAreaRanking.js'
+import { SOUL_GATE } from '@/data/dwelling/ownerVetoes.js'
 import MapPanel from '@/components/dwelling/MapPanel.vue'
 import SuburbDecisionPane from '@/components/dwelling/SuburbDecisionPane.vue'
 
@@ -216,13 +231,13 @@ const mobileStrategies = decideStrategies.filter((strategy) =>
   ['balanced2br', 'bachelor1br'].includes(strategy.id),
 )
 const criterionGroups = [
-  { label: 'Staples', keys: ['cost', 'commute'] },
+  { label: 'Staples', keys: ['cost', 'commute', 'soul'] },
   { label: 'Family', keys: ['schools', 'kidAmenity', 'safetyQuality'] },
   { label: 'Life', keys: ['beach', 'personalNetwork', 'partnerPool'] },
   { label: 'Community', keys: ['chineseCommunity', 'otherCommunities'] },
 ].map(({ label, keys }) => ({
   label,
-  criteria: keys.map((key) => decideCriterionByKey[key]),
+  criteria: keys.map((key) => (key === SOUL_GATE.key ? SOUL_GATE : decideCriterionByKey[key])),
 }))
 
 // Do not merely hide MapLibre with CSS on phones: avoid mounting it and
@@ -246,13 +261,25 @@ onBeforeUnmount(() => desktopMapQuery?.removeEventListener('change', syncDesktop
 const enabled = reactive(
   Object.fromEntries(decideCriteria.map((c) => [c.key, c.defaultEnabled !== false])),
 )
+const soulEnabled = ref(SOUL_GATE.defaultEnabled)
 const enabledCount = computed(() => decideCriteria.filter((c) => enabled[c.key]).length)
 function toggleCriterion(key) {
   if (enabled[key] && enabledCount.value === 1) return
   enabled[key] = !enabled[key]
 }
+function toggleControl(control) {
+  if (control.scoringRole === 'gate') soulEnabled.value = !soulEnabled.value
+  else toggleCriterion(control.key)
+}
+function controlEnabled(control) {
+  return control.scoringRole === 'gate' ? soulEnabled.value : enabled[control.key]
+}
+function controlValue(control) {
+  if (control.scoringRole === 'gate') return soulEnabled.value ? 'on' : 'off'
+  return `×${enabled[control.key] ? activeStrategy.value.weights[control.key] : 0}`
+}
 function criterionButtonClass(criterion) {
-  if (!enabled[criterion.key])
+  if (!controlEnabled(criterion))
     return 'border-ob-sand/14 text-ob-faint hover:text-ob-muted line-through'
   if (criterion.accent === 'amber') return 'border-amber-500/45 text-amber-300 bg-amber-500/10'
   if (criterion.accent === 'blue') return 'border-blue-500/45 text-blue-300 bg-blue-500/10'
@@ -263,6 +290,7 @@ function criterionButtonClass(criterion) {
 }
 function resetToggles() {
   decideCriteria.forEach((c) => (enabled[c.key] = c.defaultEnabled !== false))
+  soulEnabled.value = SOUL_GATE.defaultEnabled
 }
 watch(activeStrategyId, resetToggles)
 
@@ -286,6 +314,7 @@ const areaFilters = computed(() => ({
   dwellingTypes: activeStrategy.value.filters.dwellingTypes,
   strategy: activeStrategy.value,
   includeStretch: true,
+  soulEnabled: soulEnabled.value,
 }))
 
 const rankedLocations = useAreaRanking(areaCorridors, areaFilters, effectiveWeights)

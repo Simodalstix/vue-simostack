@@ -22,9 +22,10 @@
 import { computed, unref } from 'vue'
 import { decideCriteria } from '@/data/dwelling/decideStrategies.js'
 import { costMetricForArea } from '@/data/dwelling/cost/costContext.js'
+import { ownerVetoFor } from '@/data/dwelling/ownerVetoes.js'
 import { commuteFor, scoreCommute, commuteBandLabel } from './useCommuteScoring.js'
 
-const STATUS_ORDER = { ok: 0, conditional: 1, reject: 2, unscored: 3 }
+const STATUS_ORDER = { ok: 0, conditional: 1, reject: 2, veto: 3, unscored: 4 }
 
 function fmtPrice(n) {
   return '$' + Math.round(n / 1000) + 'k'
@@ -75,6 +76,12 @@ function gate(rec, filters, commute) {
   // Softer flags.
   if (filters.maxOc && rec.dwelling?.annualOc?.[1] > filters.maxOc)
     flag('Owners-corp fees may undermine the payoff strategy')
+
+  const ownerVeto = ownerVetoFor(rec.id)
+  if (filters.soulEnabled !== false && ownerVeto) {
+    reasons.unshift(`${ownerVeto.basis}: ${ownerVeto.reason}`)
+    status = 'veto'
+  }
 
   return { status, reasons }
 }
