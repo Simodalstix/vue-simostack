@@ -20,7 +20,10 @@ describe('personal map anchors', () => {
     for (const anchor of personalAnchors) {
       if (!anchor.labelOffset) continue
       expect(anchor.labelOffset).toHaveLength(2)
-      expect(anchor.labelOffset.every((value) => Number.isFinite(value)), anchor.id).toBe(true)
+      expect(
+        anchor.labelOffset.every((value) => Number.isFinite(value)),
+        anchor.id,
+      ).toBe(true)
       expect(Number.isFinite(anchor.longitude), `${anchor.id} longitude`).toBe(true)
       expect(Number.isFinite(anchor.latitude), `${anchor.id} latitude`).toBe(true)
     }
