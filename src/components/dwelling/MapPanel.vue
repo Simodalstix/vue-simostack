@@ -166,8 +166,13 @@
 
 <script setup>
 import { ref, reactive, computed, defineAsyncComponent, watch, onMounted } from 'vue'
-import { MAP_THEME, computeAreaState, scoreLegend } from '@/data/dwelling/mapConfig.js'
-import { fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
+import {
+  MAP_THEME,
+  computeAreaState,
+  mapFitBandColor,
+  scoreLegend,
+} from '@/data/dwelling/mapConfig.js'
+import { getFitBand } from '@/data/dwelling/fitBands.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLineFeatures, linesForArea } from '@/data/dwelling/trainLines.js'
 import { schoolPoints } from '@/data/dwelling/schools/dwelling-school-points.js'
@@ -325,7 +330,7 @@ function popupHtml(payload) {
         ? `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${theme.markerDim}">owner veto · score ${row.weighted}</span>`
         : (() => {
             const b = getFitBand(row.weighted)
-            return `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${fitBandColor(b)}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
+            return `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${mapFitBandColor(b)}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
           })()
   return linesHtml ? `${base}<br>${linesHtml}` : base
 }

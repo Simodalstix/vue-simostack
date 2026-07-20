@@ -4,7 +4,9 @@ import {
   colorForRow,
   computeAreaState,
   fillOpacityFor,
+  MAP_FIT_BAND_TOKENS,
   MAP_THEME,
+  mapFitBandColor,
   scoreLegend,
 } from '../mapConfig.js'
 import { FIT_BAND_TOKENS, fitBandColor, getFitBand } from '../fitBands.js'
@@ -33,9 +35,9 @@ describe('fit band thresholds', () => {
   })
 })
 
-describe('shared fit colours', () => {
-  it('uses a bright, distinct blue-to-red palette with an explicit yellow band', () => {
-    expect(FIT_BAND_TOKENS).toMatchObject({
+describe('fit colours', () => {
+  it('keeps the bright palette isolated to the map', () => {
+    expect(MAP_FIT_BAND_TOKENS).toMatchObject({
       sTier: '#60A5FA',
       darkGreen: '#10B981',
       strongGreen: '#22C55E',
@@ -45,13 +47,24 @@ describe('shared fit colours', () => {
       orange: '#F97316',
       red: '#EF4444',
     })
-    expect(new Set(Object.values(FIT_BAND_TOKENS)).size).toBe(Object.values(FIT_BAND_TOKENS).length)
+    expect(FIT_BAND_TOKENS).toMatchObject({
+      sTier: '#2C79C7',
+      darkGreen: '#23733E',
+      strongGreen: '#32964D',
+      midGreen: '#57B25C',
+      yellowGreen: '#8FBE4B',
+      amber: '#D4A13A',
+      orange: '#DA7435',
+      red: '#C54A42',
+    })
+    expect(mapFitBandColor(92)).toBe('#60A5FA')
+    expect(fitBandColor(92)).toBe('#2C79C7')
   })
 
-  it('keeps map fills on the same fit-band helper regardless of strategy gate status', () => {
-    expect(colorForRow({ status: 'ok', weighted: 82 })).toBe(fitBandColor(82))
-    expect(colorForRow({ status: 'conditional', weighted: 68 })).toBe(fitBandColor(68))
-    expect(colorForRow({ status: 'reject', weighted: 42 })).toBe(fitBandColor(42))
+  it('keeps map fills on the map palette regardless of strategy gate status', () => {
+    expect(colorForRow({ status: 'ok', weighted: 82 })).toBe(mapFitBandColor(82))
+    expect(colorForRow({ status: 'conditional', weighted: 68 })).toBe(mapFitBandColor(68))
+    expect(colorForRow({ status: 'reject', weighted: 42 })).toBe(mapFitBandColor(42))
   })
 
   it('keeps gated suburbs visible enough for the fill to read', () => {
@@ -75,7 +88,7 @@ describe('shared fit colours', () => {
       vetoed: true,
     })
     expect(state.color).not.toBe(MAP_THEME.unscoredFill)
-    expect(state.color).not.toBe(fitBandColor(row.weighted))
+    expect(state.color).not.toBe(mapFitBandColor(row.weighted))
     expect(scoreLegend()).toContainEqual({
       key: 'soul-veto',
       label: 'Soul veto: excluded',

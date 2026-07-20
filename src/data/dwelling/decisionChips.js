@@ -30,6 +30,13 @@ export function differentiatingChipsFor(row, weights = null) {
     chips.push({ key: 'friend', text: 'Friend bonus', tone: 'friend' })
   }
 
+  const beach = beachAccessByAreaId[areaId]
+  if (criterionIsActive(weights, 'beach') && beach?.estMin <= 12) {
+    chips.push({ key: 'beach', text: 'Beach', tone: 'beach' })
+  } else if (criterionIsActive(weights, 'beach') && beach?.estMin <= 25) {
+    chips.push({ key: 'beach', text: 'Beach nearby', tone: 'beach' })
+  }
+
   const commute = row.commute || row.rec.commute
   if (criterionIsActive(weights, 'commute') && commute?.typical <= 30) {
     chips.push({ key: 'fast-commute', text: 'Fast commute', tone: 'commute' })
@@ -50,16 +57,6 @@ export function decisionContextFor(row) {
   const facts = []
   const areaId = row?.rec?.id
   if (!areaId) return facts
-
-  const beach = beachAccessByAreaId[areaId]
-  if (beach?.estMin <= 25) {
-    facts.push({
-      key: 'beach',
-      label: 'Beach',
-      value: beach.estMin <= 12 ? `~${beach.estMin} min` : `nearby · ~${beach.estMin} min`,
-      tone: 'beach',
-    })
-  }
 
   const chineseShare = chineseLanguageCommunityFor(areaId)?.percentage
   if (chineseShare >= 5) {

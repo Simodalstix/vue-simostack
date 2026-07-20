@@ -144,7 +144,7 @@
           </div>
           <div
             v-if="rowContext(previewRow).length"
-            class="decision-context-grid grid shrink-0 grid-cols-2 gap-x-3 gap-y-0.5 text-right font-mono text-[8.5px] leading-tight"
+            class="decision-context-grid flex shrink-0 flex-col gap-0 text-right font-mono text-[8px] leading-[1.15]"
             aria-label="Descriptive context; does not affect rank"
           >
             <span
@@ -244,7 +244,7 @@
                     </div>
                     <div
                       v-if="rowContext(row).length"
-                      class="decision-context-grid grid shrink-0 grid-cols-2 gap-x-2.5 gap-y-0.5 text-right font-mono text-[8px] leading-tight"
+                      class="decision-context-grid flex shrink-0 flex-col gap-0 text-right font-mono text-[7.5px] leading-[1.15]"
                       aria-label="Descriptive context; does not affect rank"
                     >
                       <span
@@ -515,7 +515,7 @@ function previewBadges(row) {
   const exception = gateExceptionChipFor(row)
   if (exception) badges.push(exception)
   badges.push(...differentiatingChipsFor(row, props.weights))
-  return badges.slice(0, 3).map((badge) => ({
+  return badges.slice(0, 4).map((badge) => ({
     ...badge,
     className: chipClass(badge),
   }))

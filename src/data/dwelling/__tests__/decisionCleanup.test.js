@@ -97,10 +97,10 @@ describe('bonus-only criteria', () => {
 })
 
 describe('decision-card pills and context', () => {
-  it('caps differentiating chips at three and keeps viable rows silent', () => {
+  it('caps differentiating chips at four and keeps viable rows silent', () => {
     for (const rec of areaCorridors) {
       const row = { rec, commute: rec.commute, status: 'ok', reasons: [] }
-      expect(differentiatingChipsFor(row).length).toBeLessThanOrEqual(3)
+      expect(differentiatingChipsFor(row).length).toBeLessThanOrEqual(4)
       expect(gateExceptionChipFor(row)).toBeNull()
     }
   })
@@ -116,14 +116,15 @@ describe('decision-card pills and context', () => {
     const texts = chips.map((chip) => chip.text)
 
     expect(texts).toContain('Friend bonus')
+    expect(texts).toContain('Beach')
     expect(texts).toContain('Fast commute')
     expect(texts).toContain('Strong Schools')
-    expect(chips.every((chip) => ['friend', 'fast-commute', 'schools'].includes(chip.key))).toBe(
-      true,
-    )
+    expect(
+      chips.every((chip) => ['friend', 'beach', 'fast-commute', 'schools'].includes(chip.key)),
+    ).toBe(true)
     expect(chips.some((chip) => chip.key === 'train-line')).toBe(false)
 
-    const allOff = { commute: 0, personalNetwork: 0, schools: 0 }
+    const allOff = { commute: 0, personalNetwork: 0, beach: 0, schools: 0 }
     expect(
       areaCorridors.flatMap((rec) =>
         differentiatingChipsFor({ rec, commute: rec.commute }, allOff),
@@ -131,12 +132,12 @@ describe('decision-card pills and context', () => {
     ).toEqual([])
   })
 
-  it('moves beach and community percentages into flat descriptive context', () => {
+  it('keeps only community percentages in flat descriptive context', () => {
     const facts = areaCorridors.flatMap((rec) =>
       decisionContextFor({ rec, commute: rec.commute, status: 'ok', reasons: [] }),
     )
 
-    expect(facts.some((fact) => fact.key === 'beach')).toBe(true)
+    expect(facts.some((fact) => fact.key === 'beach')).toBe(false)
     expect(facts.some((fact) => fact.key === 'chinese-community')).toBe(true)
     expect(facts.some((fact) => fact.key === 'vietnamese-community')).toBe(true)
     expect(facts.some((fact) => fact.key === 'south-american-community')).toBe(true)

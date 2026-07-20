@@ -15,7 +15,19 @@
 // On-palette site colours reused by the map canvas + legend + component theme.
 // purple = school / community context; gold = personal network. Both are
 // accents with fixed semantic roles, never score hues.
-import { fitBandColor, fitBandLegend, getFitBand } from './fitBands.js'
+import { FIT_BANDS, getFitBand } from './fitBands.js'
+
+export const MAP_FIT_BAND_TOKENS = {
+  sTier: '#60A5FA',
+  darkGreen: '#10B981',
+  strongGreen: '#22C55E',
+  midGreen: '#84CC16',
+  yellowGreen: '#FACC15',
+  amber: '#F59E0B',
+  orange: '#F97316',
+  red: '#EF4444',
+  unscored: '#7A8A99',
+}
 
 export const MAP_THEME = {
   bg: '#111418',
@@ -53,7 +65,12 @@ export function fillOpacityFor(rec, status) {
 }
 
 export function colorForRow(row) {
-  return fitBandColor(row.weighted)
+  return mapFitBandColor(row.weighted)
+}
+
+export function mapFitBandColor(input) {
+  const band = typeof input === 'object' && input?.colourToken ? input : getFitBand(input)
+  return MAP_FIT_BAND_TOKENS[band.colourToken] || MAP_FIT_BAND_TOKENS.unscored
 }
 
 // Build the feature-state payload the map consumes, keyed by areaId. `rows` are
@@ -82,7 +99,11 @@ export function computeAreaState(rows, indexById) {
 // Legend rows: the fixed fit bands plus the non-ranking Soul state.
 export function scoreLegend() {
   return [
-    ...fitBandLegend(),
+    ...FIT_BANDS.map((band) => ({
+      ...band,
+      color: mapFitBandColor(band),
+      label: `${band.label}: ${band.rangeLabel}`,
+    })),
     {
       key: 'soul-veto',
       label: 'Soul veto: excluded',
