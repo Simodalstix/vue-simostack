@@ -3,7 +3,11 @@ import { describe, expect, it } from 'vitest'
 import { areaCorridors } from '../areaCorridors.js'
 import { beachAccessByAreaId } from '../beachAccess.js'
 import { decideCriterionByKey, decideCriteria, decideStrategies } from '../decideStrategies.js'
-import { differentiatingChipsFor, gateExceptionChipFor } from '../decisionChips.js'
+import {
+  decisionContextFor,
+  differentiatingChipsFor,
+  gateExceptionChipFor,
+} from '../decisionChips.js'
 import { affordabilityScore, costScoreFor, liquidityScore } from '../cost/costScoring.js'
 import { costMetricForArea, formatCostMetric } from '../cost/costContext.js'
 import { DWELLING_COST_BY_ID } from '../cost/dwelling-cost-context.ts'
@@ -92,7 +96,7 @@ describe('bonus-only criteria', () => {
   })
 })
 
-describe('decision chips', () => {
+describe('decision-card pills and context', () => {
   it('caps differentiating chips at three and keeps viable rows silent', () => {
     for (const rec of areaCorridors) {
       const row = { rec, commute: rec.commute, status: 'ok', reasons: [] }
@@ -101,26 +105,42 @@ describe('decision chips', () => {
     }
   })
 
-  it('uses concise badges and removes train-line badges from ranking rows', () => {
+  it('keeps only active rank inputs in pills', () => {
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
     const chips = areaCorridors.flatMap((rec) =>
-      differentiatingChipsFor({ rec, commute: rec.commute, status: 'ok', reasons: [] }),
+      differentiatingChipsFor(
+        { rec, commute: rec.commute, status: 'ok', reasons: [] },
+        balanced.weights,
+      ),
     )
     const texts = chips.map((chip) => chip.text)
 
-    expect(chips.some((chip) => chip.tone === 'chinese' && /^Chinese \d+%$/.test(chip.text))).toBe(
-      true,
-    )
-    expect(
-      chips.some((chip) => chip.tone === 'green' && /^Sth American \d+\.\d%$/.test(chip.text)),
-    ).toBe(true)
-    expect(
-      chips.some((chip) => chip.tone === 'yellow' && /^Vietnamese \d+\.\d%$/.test(chip.text)),
-    ).toBe(true)
+    expect(texts).toContain('Friend bonus')
     expect(texts).toContain('Fast commute')
     expect(texts).toContain('Strong Schools')
+    expect(chips.every((chip) => ['friend', 'fast-commute', 'schools'].includes(chip.key))).toBe(
+      true,
+    )
     expect(chips.some((chip) => chip.key === 'train-line')).toBe(false)
-    expect(texts).not.toContain('One-seat commute')
-    expect(texts).not.toContain('Strong zoned schools')
+
+    const allOff = { commute: 0, personalNetwork: 0, schools: 0 }
+    expect(
+      areaCorridors.flatMap((rec) =>
+        differentiatingChipsFor({ rec, commute: rec.commute }, allOff),
+      ),
+    ).toEqual([])
+  })
+
+  it('moves beach and community percentages into flat descriptive context', () => {
+    const facts = areaCorridors.flatMap((rec) =>
+      decisionContextFor({ rec, commute: rec.commute, status: 'ok', reasons: [] }),
+    )
+
+    expect(facts.some((fact) => fact.key === 'beach')).toBe(true)
+    expect(facts.some((fact) => fact.key === 'chinese-community')).toBe(true)
+    expect(facts.some((fact) => fact.key === 'vietnamese-community')).toBe(true)
+    expect(facts.some((fact) => fact.key === 'south-american-community')).toBe(true)
+    expect(facts.every((fact) => fact.text == null && fact.tone == null)).toBe(true)
   })
 
   it('uses the first gate reason for reject and conditional exceptions', () => {

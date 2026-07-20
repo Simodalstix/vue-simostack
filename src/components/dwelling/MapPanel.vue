@@ -72,6 +72,7 @@
           :deposit="deposit"
           :rate="rate"
           :strategy="strategy"
+          :weights="weights"
           @close="closeProfile"
         />
       </div>
@@ -192,6 +193,7 @@ const props = defineProps({
   rate: { type: Number, default: 5.9 },
   // Active Settle strategy (decideStrategies.js).
   strategy: { type: Object, default: null },
+  weights: { type: Object, default: () => ({}) },
   // Suburb hovered in the ranked list; highlighted on the map exactly like a
   // pointer hover. The map's own pointer hover wins while both are live.
   listHoveredId: { type: String, default: null },

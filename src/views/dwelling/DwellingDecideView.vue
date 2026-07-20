@@ -172,6 +172,7 @@
           :deposit="deposit"
           :rate="rate"
           :strategy="activeStrategy"
+          :weights="effectiveWeights"
           :list-hovered-id="listHoverId"
           @hover="hoveredContext = $event"
         />

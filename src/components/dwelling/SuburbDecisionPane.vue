@@ -21,6 +21,7 @@
         :deposit="deposit"
         :rate="rate"
         :strategy="strategy"
+        :weights="weights"
         :close-on-card-click="false"
       />
     </div>
@@ -62,34 +63,45 @@
               {{ previewTagline(previewRow) }}
             </p>
           </div>
-          <span
-            v-if="isRankedRow(previewRow)"
-            class="shrink-0 inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
-            :style="scoreBadgeStyle(previewRow)"
-            :title="bandLabel(previewRow)"
-          >
-            <span class="text-[12px] font-bold leading-none text-ob-sand"
-              >#{{ rankById[previewRow.rec.id] }}</span
-            >
-            <span class="text-[10px] text-ob-faint">·</span>
+          <div class="w-[150px] shrink-0 text-right">
             <span
-              class="text-[11px] font-extrabold leading-none"
-              :style="{ color: bandColor(previewRow) }"
-              >{{ scoreDisplay(previewRow) }}</span
+              v-if="isRankedRow(previewRow)"
+              class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
+              :style="scoreBadgeStyle(previewRow)"
+              :title="bandLabel(previewRow)"
             >
-          </span>
-          <span
-            v-else-if="isVetoedRow(previewRow)"
-            class="shrink-0 rounded-full border border-ob-sand/20 bg-ob-sand/5 px-2 py-[3px] font-mono text-[10px] text-ob-faint"
-          >
-            owner veto · score {{ previewRow.weighted }}
-          </span>
-          <span
-            v-else
-            class="shrink-0 rounded-full border border-ob-sand/30 bg-ob-sand/8 px-2 py-[3px] font-mono text-[11px] uppercase tracking-[0.06em] text-ob-sand"
-          >
-            unscored
-          </span>
+              <span class="text-[12px] font-bold leading-none text-ob-sand"
+                >#{{ rankById[previewRow.rec.id] }}</span
+              >
+              <span class="text-[10px] text-ob-faint">·</span>
+              <span
+                class="text-[11px] font-extrabold leading-none"
+                :style="{ color: bandColor(previewRow) }"
+                >{{ scoreDisplay(previewRow) }}</span
+              >
+            </span>
+            <span
+              v-else-if="isVetoedRow(previewRow)"
+              class="inline-flex rounded-full border border-ob-sand/20 bg-ob-sand/5 px-2 py-[3px] font-mono text-[10px] text-ob-faint"
+            >
+              owner veto · score {{ previewRow.weighted }}
+            </span>
+            <span
+              v-else
+              class="inline-flex rounded-full border border-ob-sand/30 bg-ob-sand/8 px-2 py-[3px] font-mono text-[11px] uppercase tracking-[0.06em] text-ob-sand"
+            >
+              unscored
+            </span>
+            <div
+              v-if="rowContext(previewRow).length"
+              class="mt-1 grid grid-cols-2 gap-x-2 gap-y-0.5 font-mono text-[8.5px] leading-tight text-ob-faint"
+              aria-label="Descriptive context; does not affect rank"
+            >
+              <span v-for="fact in rowContext(previewRow)" :key="fact.key">
+                {{ fact.label }} <span class="text-ob-dim">{{ fact.value }}</span>
+              </span>
+            </div>
+          </div>
         </div>
 
         <p class="font-mono text-[10.5px] text-ob-soft">
@@ -182,13 +194,24 @@
                     <span class="text-[12.5px] font-semibold text-ob-text flex-1 truncate">
                       {{ row.rec.suburb }}
                     </span>
-                    <span
-                      class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
-                      :style="{ color: bandColor(row) }"
-                      :title="bandLabel(row)"
-                    >
-                      {{ scoreDisplay(row) }}
-                    </span>
+                    <div class="w-[112px] shrink-0 text-right">
+                      <span
+                        class="font-mono text-[11px] font-extrabold leading-none"
+                        :style="{ color: bandColor(row) }"
+                        :title="bandLabel(row)"
+                      >
+                        {{ scoreDisplay(row) }}
+                      </span>
+                      <div
+                        v-if="rowContext(row).length"
+                        class="mt-1 flex flex-col gap-0.5 font-mono text-[8px] leading-tight text-ob-faint"
+                        aria-label="Descriptive context; does not affect rank"
+                      >
+                        <span v-for="fact in rowContext(row)" :key="fact.key">
+                          {{ fact.label }} <span class="text-ob-dim">{{ fact.value }}</span>
+                        </span>
+                      </div>
+                    </div>
                   </div>
 
                   <p class="mt-0.5 text-[10.5px] leading-snug text-ob-muted2 preview-clamp-1">
@@ -271,7 +294,11 @@ import {
   isVetoedRow,
   partitionDecisionRows,
 } from '@/data/dwelling/unscoredUx.js'
-import { differentiatingChipsFor, gateExceptionChipFor } from '@/data/dwelling/decisionChips.js'
+import {
+  decisionContextFor,
+  differentiatingChipsFor,
+  gateExceptionChipFor,
+} from '@/data/dwelling/decisionChips.js'
 import { costMetricForArea, formatCostMetric } from '@/data/dwelling/cost/costContext.js'
 import SuburbProfileCard from './SuburbProfileCard.vue'
 
@@ -394,7 +421,11 @@ function previewTagline(row) {
 }
 
 function rowChips(row) {
-  return differentiatingChipsFor(row)
+  return differentiatingChipsFor(row, props.weights)
+}
+
+function rowContext(row) {
+  return decisionContextFor(row)
 }
 
 function gateChip(row) {
@@ -460,7 +491,7 @@ function previewBadges(row) {
   const badges = []
   const exception = gateExceptionChipFor(row)
   if (exception) badges.push(exception)
-  badges.push(...differentiatingChipsFor(row))
+  badges.push(...differentiatingChipsFor(row, props.weights))
   return badges.slice(0, 3).map((badge) => ({
     ...badge,
     className: chipClass(badge),

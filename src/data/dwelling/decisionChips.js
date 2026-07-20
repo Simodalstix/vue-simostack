@@ -1,6 +1,6 @@
-// Informational ranking-card chips. Their order is deliberate and they never
-// feed the scoring engine: personal context first, then beach access,
-// Chinese-language presence, fast commute and strong zoned-school evidence.
+// Ranking-card presentation follows one semantic rule:
+// - pills identify active inputs that affected this ranking;
+// - flat context facts describe the place without implying score impact.
 
 import { beachAccessByAreaId } from './beachAccess.js'
 import { chineseLanguageCommunityFor } from './chineseCommunity.js'
@@ -17,68 +17,21 @@ import {
 import { friendContextFor } from './personalAnchors.js'
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
 
-export function differentiatingChipsFor(row) {
+function criterionIsActive(weights, key) {
+  return weights == null || (weights[key] ?? 0) > 0
+}
+
+export function differentiatingChipsFor(row, weights = null) {
   const chips = []
   const areaId = row?.rec?.id
   if (!areaId) return chips
 
-  if (friendContextFor(areaId)) {
+  if (criterionIsActive(weights, 'personalNetwork') && friendContextFor(areaId)) {
     chips.push({ key: 'friend', text: 'Friend bonus', tone: 'friend' })
   }
 
-  const beach = beachAccessByAreaId[areaId]
-  if (beach?.estMin <= 12) chips.push({ key: 'beach', text: 'Beach', tone: 'beach' })
-  else if (beach?.estMin <= 25) chips.push({ key: 'beach', text: 'Beach nearby', tone: 'beach' })
-
-  const chineseShare = chineseLanguageCommunityFor(areaId)?.percentage
-  if (chineseShare >= 5) {
-    chips.push({
-      key: 'chinese-community',
-      text: `Chinese ${Math.round(chineseShare)}%`,
-      tone: 'chinese',
-    })
-  }
-
-  // Same quarter-of-full-bonus threshold as the Chinese chip, shown with one
-  // decimal because these community shares sit well under 10%.
-  const vietnameseShare = vietnameseCommunityFor(areaId)?.percentage
-  if (vietnameseShare >= VIETNAMESE_COMMUNITY_FULL_BONUS_SHARE / 4) {
-    chips.push({
-      key: 'vietnamese-community',
-      text: `Vietnamese ${vietnameseShare.toFixed(1)}%`,
-      tone: 'yellow',
-    })
-  }
-
-  const filipinoShare = filipinoCommunityFor(areaId)?.percentage
-  if (filipinoShare >= FILIPINO_COMMUNITY_FULL_BONUS_SHARE / 4) {
-    chips.push({
-      key: 'filipino-community',
-      text: `Filipino ${filipinoShare.toFixed(1)}%`,
-      tone: 'pink',
-    })
-  }
-
-  const thaiShare = thaiCommunityFor(areaId)?.percentage
-  if (thaiShare >= THAI_COMMUNITY_FULL_BONUS_SHARE / 4) {
-    chips.push({
-      key: 'thai-community',
-      text: `Thai ${thaiShare.toFixed(1)}%`,
-      tone: 'pink',
-    })
-  }
-
-  const southAmericanShare = southAmericanCommunityFor(areaId)?.percentage
-  if (southAmericanShare >= SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE / 4) {
-    chips.push({
-      key: 'south-american-community',
-      text: `Sth American ${southAmericanShare.toFixed(1)}%`,
-      tone: 'green',
-    })
-  }
-
   const commute = row.commute || row.rec.commute
-  if (commute?.typical <= 30) {
+  if (criterionIsActive(weights, 'commute') && commute?.typical <= 30) {
     chips.push({ key: 'fast-commute', text: 'Fast commute', tone: 'commute' })
   }
 
@@ -86,11 +39,75 @@ export function differentiatingChipsFor(row) {
   const strongSchool = [schools?.primary, schools?.secondary].some(
     (school) => (school?.evidence?.strength ?? 0) >= 4,
   )
-  if (strongSchool) {
+  if (criterionIsActive(weights, 'schools') && strongSchool) {
     chips.push({ key: 'schools', text: 'Strong Schools', tone: 'schools' })
   }
 
-  return chips.slice(0, 3)
+  return chips
+}
+
+export function decisionContextFor(row) {
+  const facts = []
+  const areaId = row?.rec?.id
+  if (!areaId) return facts
+
+  const beach = beachAccessByAreaId[areaId]
+  if (beach?.estMin <= 25) {
+    facts.push({
+      key: 'beach',
+      label: 'Beach',
+      value: beach.estMin <= 12 ? `~${beach.estMin} min` : `nearby · ~${beach.estMin} min`,
+    })
+  }
+
+  const chineseShare = chineseLanguageCommunityFor(areaId)?.percentage
+  if (chineseShare >= 5) {
+    facts.push({
+      key: 'chinese-community',
+      label: 'Chinese',
+      value: `${Math.round(chineseShare)}%`,
+    })
+  }
+
+  // Same quarter-of-full-bonus threshold as the former community pills, shown with one
+  // decimal because these community shares sit well under 10%.
+  const vietnameseShare = vietnameseCommunityFor(areaId)?.percentage
+  if (vietnameseShare >= VIETNAMESE_COMMUNITY_FULL_BONUS_SHARE / 4) {
+    facts.push({
+      key: 'vietnamese-community',
+      label: 'Vietnamese',
+      value: `${vietnameseShare.toFixed(1)}%`,
+    })
+  }
+
+  const filipinoShare = filipinoCommunityFor(areaId)?.percentage
+  if (filipinoShare >= FILIPINO_COMMUNITY_FULL_BONUS_SHARE / 4) {
+    facts.push({
+      key: 'filipino-community',
+      label: 'Filipino',
+      value: `${filipinoShare.toFixed(1)}%`,
+    })
+  }
+
+  const thaiShare = thaiCommunityFor(areaId)?.percentage
+  if (thaiShare >= THAI_COMMUNITY_FULL_BONUS_SHARE / 4) {
+    facts.push({
+      key: 'thai-community',
+      label: 'Thai',
+      value: `${thaiShare.toFixed(1)}%`,
+    })
+  }
+
+  const southAmericanShare = southAmericanCommunityFor(areaId)?.percentage
+  if (southAmericanShare >= SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE / 4) {
+    facts.push({
+      key: 'south-american-community',
+      label: 'Sth American',
+      value: `${southAmericanShare.toFixed(1)}%`,
+    })
+  }
+
+  return facts
 }
 
 export function gateExceptionChipFor(row) {

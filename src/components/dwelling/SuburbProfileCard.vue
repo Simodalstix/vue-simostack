@@ -384,6 +384,7 @@ const props = defineProps({
   rate: { type: Number, default: 5.9 },
   // Active Settle strategy (decideStrategies.js).
   strategy: { type: Object, default: null },
+  weights: { type: Object, default: () => ({}) },
   closeOnCardClick: { type: Boolean, default: true },
 })
 
@@ -423,7 +424,7 @@ const unscored = computed(() => isUnscoredRow(props.row))
 const suburbProfile = computed(() => suburbProfileFor(props.row.rec.id))
 const girlsSport = computed(() => girlsSportFor(props.row.rec.id))
 const beachAccess = computed(() => beachAccessByAreaId[props.row.rec.id] || null)
-const headerChips = computed(() => differentiatingChipsFor(props.row))
+const headerChips = computed(() => differentiatingChipsFor(props.row, props.weights))
 const gateChip = computed(() => gateExceptionChipFor(props.row))
 const girlsSportPathways = computed(() =>
   GIRLS_SPORT_CLUBS.filter((sport) => girlsSport.value?.clubPresence?.[sport.key] === true),
