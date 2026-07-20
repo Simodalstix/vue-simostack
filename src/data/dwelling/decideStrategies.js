@@ -110,7 +110,7 @@ export const decideCriteria = [
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
     accent: 'amber',
-    value: (rec) => pnScore(personalNetworkByAreaId[rec.id]?.estMin ?? null),
+    value: (rec) => pnScore(personalNetworkByAreaId[rec.id]?.distanceKm ?? null),
   },
   {
     key: 'chineseCommunity',

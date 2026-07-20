@@ -48,7 +48,7 @@ describe('remaining new-area onboarding batch', () => {
       school.zonedSecondary,
       ...school.alsoInCatchmentSecondary,
     ])
-    expect(personalNetworkByAreaId[areaId]?.estMin).toBeNull()
+    expect(personalNetworkByAreaId[areaId]?.distanceKm).toBeGreaterThan(0)
   })
 
   it('keeps all nine visible to the existing ranking with honest null criteria', () => {

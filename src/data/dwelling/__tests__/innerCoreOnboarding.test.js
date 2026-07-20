@@ -54,7 +54,9 @@ describe('inner-core onboarding batch', () => {
       school.zonedSecondary,
       ...school.alsoInCatchmentSecondary,
     ])
-    expect(personalNetworkByAreaId[areaId]?.estMin).toBeGreaterThan(0)
+    const stationAnchor = areaGeo[areaId]?.stationPoints?.[0]
+    if (stationAnchor) expect(personalNetworkByAreaId[areaId]?.distanceKm).toBeGreaterThan(0)
+    else expect(personalNetworkByAreaId[areaId]?.distanceKm).toBeNull()
     for (const sourceId of record.sources) expect(areaSources[sourceId]).toBeTruthy()
   })
 

@@ -213,18 +213,38 @@ describe('score robustness', () => {
 
 describe('personal network data', () => {
   it('uses the documented band edges', () => {
-    expect(pnScore(10)).toBe(10)
-    expect(pnScore(11)).toBe(8)
-    expect(pnScore(30)).toBe(6)
-    expect(pnScore(31)).toBeNull()
-    expect(pnScore(41)).toBeNull()
+    expect(pnScore(1.5)).toBe(10)
+    expect(pnScore(1.51)).toBe(8)
+    expect(pnScore(3)).toBe(8)
+    expect(pnScore(3.01)).toBe(6)
+    expect(pnScore(6)).toBe(6)
+    expect(pnScore(6.01)).toBeNull()
     expect(pnScore(null)).toBeNull()
   })
 
-  it('covers all 50 dwelling records', () => {
+  it('covers every dwelling record', () => {
     expect(Object.keys(personalNetworkByAreaId).sort()).toEqual(
       areaCorridors.map((rec) => rec.id).sort(),
     )
+  })
+
+  it('measures South Yarra to each station anchor and never a locality polygon', () => {
+    expect(personalNetworkByAreaId['inner-south-yarra-2br']).toMatchObject({
+      referenceAnchorId: 'nathan',
+      stationAnchorId: 'south-yarra',
+      score: 10,
+    })
+    expect(personalNetworkByAreaId['melbourne-cbd-2br']).toMatchObject({
+      referenceAnchorId: 'nathan',
+      stationAnchorId: 'melbourne-central',
+      score: 6,
+    })
+    expect(personalNetworkByAreaId['melbourne-cbd-2br'].distanceKm).toBeGreaterThan(4)
+    expect(personalNetworkByAreaId['south-melbourne-2br']).toMatchObject({
+      stationAnchorId: null,
+      distanceKm: null,
+      score: null,
+    })
   })
 
   it('changes scores without changing any gate status', () => {

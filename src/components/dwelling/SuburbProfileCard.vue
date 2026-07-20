@@ -455,14 +455,8 @@ const zonedSchoolRows = computed(() => {
 })
 const personalNetworkLine = computed(() => {
   const network = personalNetworkByAreaId[props.row.rec.id]
-  if (!network || network.estMin == null) return null
-  const suffix =
-    network.confidence === 'medium'
-      ? ' (estimate)'
-      : network.confidence === 'low'
-        ? ' (rough estimate — verify)'
-        : ''
-  return `Network: ~${network.estMin} min by ${network.mode}${suffix}`
+  if (!network || network.distanceKm == null) return null
+  return `Friends: ${network.distanceKm.toFixed(1)} km from ${network.stationAnchorName} station anchor to South Yarra`
 })
 function chipClass(chip) {
   return {
