@@ -56,14 +56,14 @@
         @click="togglePin(previewRow.rec.id)"
         class="hidden sm:flex px-4 py-3 border-b border-ob-sand/8 shrink-0 min-h-[128px] flex-col gap-2 text-left transition-colors hover:bg-ob-surface/45 focus:bg-ob-surface/45"
       >
-        <div class="flex items-start justify-between gap-3">
+        <div class="decision-preview-heading flex items-start justify-between gap-3">
           <div class="min-w-0">
             <p class="text-[15px] font-bold text-ob-text">{{ previewHeading }}</p>
             <p class="mt-1 text-[11.5px] leading-snug text-ob-muted2 preview-clamp-2">
               {{ previewTagline(previewRow) }}
             </p>
           </div>
-          <div class="w-[150px] shrink-0 text-right">
+          <div class="shrink-0 text-right">
             <span
               v-if="isRankedRow(previewRow)"
               class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
@@ -92,15 +92,6 @@
             >
               unscored
             </span>
-            <div
-              v-if="rowContext(previewRow).length"
-              class="mt-1 grid grid-cols-2 gap-x-2 gap-y-0.5 font-mono text-[8.5px] leading-tight text-ob-faint"
-              aria-label="Descriptive context; does not affect rank"
-            >
-              <span v-for="fact in rowContext(previewRow)" :key="fact.key">
-                {{ fact.label }} <span class="text-ob-dim">{{ fact.value }}</span>
-              </span>
-            </div>
           </div>
         </div>
 
@@ -140,15 +131,30 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap gap-1.5 mt-auto">
-          <span
-            v-for="badge in previewBadges(previewRow)"
-            :key="badge.key"
-            class="inline-flex items-center rounded-full px-2 py-[3px] font-mono text-[10px] leading-none border"
-            :class="badge.className"
+        <div class="mt-auto flex items-end justify-between gap-3">
+          <div class="flex flex-wrap gap-1.5">
+            <span
+              v-for="badge in previewBadges(previewRow)"
+              :key="badge.key"
+              class="inline-flex items-center rounded-full px-2 py-[3px] font-mono text-[10px] leading-none border"
+              :class="badge.className"
+            >
+              {{ badge.text }}
+            </span>
+          </div>
+          <div
+            v-if="rowContext(previewRow).length"
+            class="decision-context-grid grid shrink-0 grid-cols-2 gap-x-3 gap-y-0.5 text-right font-mono text-[8.5px] leading-tight"
+            aria-label="Descriptive context; does not affect rank"
           >
-            {{ badge.text }}
-          </span>
+            <span
+              v-for="fact in rowContext(previewRow)"
+              :key="fact.key"
+              :class="contextClass(fact)"
+            >
+              {{ fact.label }} {{ fact.value }}
+            </span>
+          </div>
         </div>
       </button>
 
@@ -194,55 +200,61 @@
                     <span class="text-[12.5px] font-semibold text-ob-text flex-1 truncate">
                       {{ row.rec.suburb }}
                     </span>
-                    <div class="w-[112px] shrink-0 text-right">
-                      <span
-                        class="font-mono text-[11px] font-extrabold leading-none"
-                        :style="{ color: bandColor(row) }"
-                        :title="bandLabel(row)"
-                      >
-                        {{ scoreDisplay(row) }}
-                      </span>
-                      <div
-                        v-if="rowContext(row).length"
-                        class="mt-1 flex flex-col gap-0.5 font-mono text-[8px] leading-tight text-ob-faint"
-                        aria-label="Descriptive context; does not affect rank"
-                      >
-                        <span v-for="fact in rowContext(row)" :key="fact.key">
-                          {{ fact.label }} <span class="text-ob-dim">{{ fact.value }}</span>
-                        </span>
-                      </div>
-                    </div>
+                    <span
+                      class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
+                      :style="{ color: bandColor(row) }"
+                      :title="bandLabel(row)"
+                    >
+                      {{ scoreDisplay(row) }}
+                    </span>
                   </div>
 
                   <p class="mt-0.5 text-[10.5px] leading-snug text-ob-muted2 preview-clamp-1">
                     {{ previewTagline(row) }}
                   </p>
 
-                  <div
-                    class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-ob-faint"
-                  >
-                    <span>{{ costEvidence(row.rec, true) }}</span>
-                    <span>Commute {{ commuteShort(row) }}</span>
-                  </div>
-                  <div
-                    v-if="gateChip(row) || rowChips(row).length"
-                    class="mt-1 flex flex-wrap gap-1"
-                  >
-                    <span
-                      v-if="gateChip(row)"
-                      class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                      :class="chipClass(gateChip(row))"
+                  <div class="decision-row-lower mt-1 flex items-end justify-between gap-2">
+                    <div class="min-w-0">
+                      <div
+                        class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-ob-faint"
+                      >
+                        <span>{{ costEvidence(row.rec, true) }}</span>
+                        <span>Commute {{ commuteShort(row) }}</span>
+                      </div>
+                      <div
+                        v-if="gateChip(row) || rowChips(row).length"
+                        class="mt-1 flex flex-wrap gap-1"
+                      >
+                        <span
+                          v-if="gateChip(row)"
+                          class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                          :class="chipClass(gateChip(row))"
+                        >
+                          {{ gateChip(row).text }}
+                        </span>
+                        <span
+                          v-for="chip in rowChips(row)"
+                          :key="chip.key"
+                          class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                          :class="chipClass(chip)"
+                        >
+                          {{ chip.text }}
+                        </span>
+                      </div>
+                    </div>
+                    <div
+                      v-if="rowContext(row).length"
+                      class="decision-context-grid grid shrink-0 grid-cols-2 gap-x-2.5 gap-y-0.5 text-right font-mono text-[8px] leading-tight"
+                      aria-label="Descriptive context; does not affect rank"
                     >
-                      {{ gateChip(row).text }}
-                    </span>
-                    <span
-                      v-for="chip in rowChips(row)"
-                      :key="chip.key"
-                      class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                      :class="chipClass(chip)"
-                    >
-                      {{ chip.text }}
-                    </span>
+                      <span
+                        v-for="fact in rowContext(row)"
+                        :key="fact.key"
+                        :class="contextClass(fact)"
+                      >
+                        {{ fact.label }} {{ fact.value }}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -447,6 +459,17 @@ function chipClass(chip) {
     reject: 'border-red-400/35 text-red-300 bg-red-400/8',
     veto: 'border-ob-sand/20 text-ob-faint bg-ob-sand/5',
   }[chip.tone]
+}
+
+function contextClass(fact) {
+  return {
+    beach: 'text-amber-300',
+    chinese: 'text-red-300',
+    pink: 'text-pink-300',
+    green: 'text-emerald-300',
+    yellow: 'text-yellow-300',
+    rainbow: 'text-purple-300',
+  }[fact.tone]
 }
 
 // Per-criterion contributions for the preview card: the same value() calls and

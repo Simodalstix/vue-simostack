@@ -140,7 +140,11 @@ describe('decision-card pills and context', () => {
     expect(facts.some((fact) => fact.key === 'chinese-community')).toBe(true)
     expect(facts.some((fact) => fact.key === 'vietnamese-community')).toBe(true)
     expect(facts.some((fact) => fact.key === 'south-american-community')).toBe(true)
-    expect(facts.every((fact) => fact.text == null && fact.tone == null)).toBe(true)
+    expect(facts.every((fact) => fact.text == null && fact.label && fact.value && fact.tone)).toBe(
+      true,
+    )
+    expect(facts.find((fact) => fact.key === 'chinese-community')?.tone).toBe('chinese')
+    expect(facts.find((fact) => fact.key === 'vietnamese-community')?.tone).toBe('yellow')
   })
 
   it('uses the first gate reason for reject and conditional exceptions', () => {

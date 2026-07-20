@@ -57,6 +57,7 @@ export function decisionContextFor(row) {
       key: 'beach',
       label: 'Beach',
       value: beach.estMin <= 12 ? `~${beach.estMin} min` : `nearby · ~${beach.estMin} min`,
+      tone: 'beach',
     })
   }
 
@@ -66,6 +67,7 @@ export function decisionContextFor(row) {
       key: 'chinese-community',
       label: 'Chinese',
       value: `${Math.round(chineseShare)}%`,
+      tone: 'chinese',
     })
   }
 
@@ -77,6 +79,7 @@ export function decisionContextFor(row) {
       key: 'vietnamese-community',
       label: 'Vietnamese',
       value: `${vietnameseShare.toFixed(1)}%`,
+      tone: 'yellow',
     })
   }
 
@@ -86,6 +89,7 @@ export function decisionContextFor(row) {
       key: 'filipino-community',
       label: 'Filipino',
       value: `${filipinoShare.toFixed(1)}%`,
+      tone: 'pink',
     })
   }
 
@@ -95,6 +99,7 @@ export function decisionContextFor(row) {
       key: 'thai-community',
       label: 'Thai',
       value: `${thaiShare.toFixed(1)}%`,
+      tone: 'pink',
     })
   }
 
@@ -104,6 +109,7 @@ export function decisionContextFor(row) {
       key: 'south-american-community',
       label: 'Sth American',
       value: `${southAmericanShare.toFixed(1)}%`,
+      tone: 'green',
     })
   }
 
