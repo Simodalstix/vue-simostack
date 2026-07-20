@@ -1,12 +1,12 @@
 export const FIT_BAND_TOKENS = {
-  sTier: '#2C79C7',
-  darkGreen: '#23733E',
-  strongGreen: '#32964D',
-  midGreen: '#57B25C',
-  yellowGreen: '#8FBE4B',
-  amber: '#D4A13A',
-  orange: '#DA7435',
-  red: '#C54A42',
+  sTier: '#60A5FA',
+  darkGreen: '#10B981',
+  strongGreen: '#22C55E',
+  midGreen: '#84CC16',
+  yellowGreen: '#FACC15',
+  amber: '#F59E0B',
+  orange: '#F97316',
+  red: '#EF4444',
   unscored: '#7A8A99',
 }
 

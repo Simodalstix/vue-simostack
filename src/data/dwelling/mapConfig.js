@@ -27,6 +27,8 @@ export const MAP_THEME = {
   outline: '#3A434B',
   unscoredFill: '#2A3138',
   unscoredOutline: '#D4903A',
+  vetoFill: '#8B949E',
+  vetoOutline: '#B7C0C8',
   reject: '#D4903A',
   purple: '#9B82E5',
   gold: '#E5C35A',
@@ -41,7 +43,7 @@ export { getFitBand }
 // reads while the hue remains aligned with the shared fit band.
 export function fillOpacityFor(rec, status) {
   if (status === 'unscored') return 0.08
-  if (status === 'veto') return 0.12
+  if (status === 'veto') return 0.42
   // Solid enough to read bright against the near-black canvas; provisional
   // placeholder records still sit a clear step fainter than verified ones.
   const base = rec.placeholder ? 0.3 : 0.55
@@ -67,7 +69,7 @@ export function computeAreaState(rows, indexById) {
     const vetoed = row.status === 'veto'
     state[areaId] = {
       fid,
-      color: unscored || vetoed ? MAP_THEME.unscoredFill : colorForRow(row),
+      color: unscored ? MAP_THEME.unscoredFill : vetoed ? MAP_THEME.vetoFill : colorForRow(row),
       fillOpacity: fillOpacityFor(row.rec, row.status),
       status: row.status,
       unscored,
@@ -77,7 +79,14 @@ export function computeAreaState(rows, indexById) {
   return state
 }
 
-// Legend rows: the fixed fit bands.
+// Legend rows: the fixed fit bands plus the non-ranking Soul state.
 export function scoreLegend() {
-  return fitBandLegend()
+  return [
+    ...fitBandLegend(),
+    {
+      key: 'soul-veto',
+      label: 'Soul veto: excluded',
+      color: MAP_THEME.vetoFill,
+    },
+  ]
 }

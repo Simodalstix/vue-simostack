@@ -166,8 +166,8 @@
 
 <script setup>
 import { ref, reactive, computed, defineAsyncComponent, watch, onMounted } from 'vue'
-import { MAP_THEME, computeAreaState } from '@/data/dwelling/mapConfig.js'
-import { fitBandColor, fitBandLegend, getFitBand } from '@/data/dwelling/fitBands.js'
+import { MAP_THEME, computeAreaState, scoreLegend } from '@/data/dwelling/mapConfig.js'
+import { fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLineFeatures, linesForArea } from '@/data/dwelling/trainLines.js'
 import { schoolPoints } from '@/data/dwelling/schools/dwelling-school-points.js'
@@ -202,7 +202,7 @@ const modelValue = defineModel({ default: null })
 const emit = defineEmits(['hover'])
 
 const theme = MAP_THEME
-const legend = fitBandLegend()
+const legend = scoreLegend()
 const schoolFeatures = {
   type: 'FeatureCollection',
   features: schoolPoints.map((school, index) => ({

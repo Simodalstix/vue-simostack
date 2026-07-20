@@ -316,6 +316,8 @@ function addLayers() {
           'case',
           ['boolean', ['feature-state', 'unscored'], false],
           T.unscoredOutline,
+          ['boolean', ['feature-state', 'vetoed'], false],
+          T.vetoOutline,
           ['boolean', ['get', 'assessed'], false],
           '#5F6F7B',
           '#3E4851',
@@ -439,6 +441,8 @@ function addLayers() {
         T.selected,
         ['boolean', ['feature-state', 'unscored'], false],
         T.unscoredOutline,
+        ['boolean', ['feature-state', 'vetoed'], false],
+        T.vetoFill,
         T.markerDim,
       ],
       'circle-opacity': ['case', ['boolean', ['feature-state', 'selected'], false], 1, 0.8],
@@ -495,6 +499,8 @@ function addLayers() {
           '#E6EBEF',
           ['boolean', ['feature-state', 'unscored'], false],
           T.unscoredOutline,
+          ['boolean', ['feature-state', 'vetoed'], false],
+          T.vetoOutline,
           ['boolean', ['get', 'assessed'], false],
           '#8A98A4',
           '#66737E',
@@ -584,6 +590,7 @@ function applyAllState() {
       fillOpacity: st.fillOpacity,
       status: st.status,
       unscored: st.unscored,
+      vetoed: st.vetoed,
       selected: areaId === selected,
     }
     map.setFeatureState({ source: POINT_SRC, id: st.fid }, state)
@@ -611,6 +618,7 @@ function applyLocalityState(selected = props.selectedAreaId) {
         fillOpacity: st?.fillOpacity ?? null,
         status: st?.status ?? null,
         unscored: st?.unscored ?? false,
+        vetoed: st?.vetoed ?? false,
         selected: selected != null && areaIds.includes(selected),
         hovered:
           feature.id === hoveredLocalityId ||
