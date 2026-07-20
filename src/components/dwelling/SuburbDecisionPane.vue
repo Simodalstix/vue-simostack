@@ -144,12 +144,13 @@
           </div>
           <div
             v-if="rowContext(previewRow).length"
-            class="decision-context-grid flex shrink-0 flex-col items-end gap-1 text-right"
+            class="decision-context-grid grid shrink-0 grid-flow-col grid-rows-3 justify-end gap-1 text-right [direction:rtl]"
             aria-label="Descriptive context; does not affect rank"
           >
             <span
               v-for="fact in rowContext(previewRow)"
               :key="fact.key"
+              dir="ltr"
               class="context-badge inline-flex items-center rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
               :class="contextClass(fact)"
             >
@@ -189,9 +190,9 @@
                     : 'hover:bg-ob-surface/50'
               "
             >
-              <div class="flex items-start gap-3">
+              <div class="grid grid-cols-[40px_minmax(0,1fr)_auto] items-start gap-x-3">
                 <span
-                  class="w-10 shrink-0 pt-[1px] font-mono text-[12px] font-bold leading-none text-ob-sand"
+                  class="row-span-2 pt-[1px] font-mono text-[12px] font-bold leading-none text-ob-sand sm:row-span-1"
                 >
                   {{ isRankedRow(row) ? `#${rankById[row.rec.id]}` : '—' }}
                 </span>
@@ -213,7 +214,7 @@
                   </div>
                   <div
                     v-if="gateChip(row) || rowChips(row).length"
-                    class="mt-1 flex flex-wrap gap-1"
+                    class="mt-1 hidden flex-wrap gap-1 sm:flex"
                   >
                     <span
                       v-if="gateChip(row)"
@@ -234,7 +235,7 @@
                 </div>
 
                 <div
-                  class="decision-row-context-column flex w-[104px] shrink-0 flex-col items-end gap-2 text-right"
+                  class="decision-row-context-column flex min-w-[104px] shrink-0 flex-col items-end gap-2 text-right"
                 >
                   <span
                     class="font-mono text-[11px] font-extrabold leading-none"
@@ -245,18 +246,40 @@
                   </span>
                   <div
                     v-if="rowContext(row).length"
-                    class="decision-context-grid flex flex-col items-end gap-1"
+                    class="decision-context-grid grid grid-flow-col grid-rows-3 justify-end gap-1 [direction:rtl]"
                     aria-label="Descriptive context; does not affect rank"
                   >
                     <span
                       v-for="fact in rowContext(row)"
                       :key="fact.key"
+                      dir="ltr"
                       class="context-badge inline-flex items-center rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
                       :class="contextClass(fact)"
                     >
                       {{ fact.label }} {{ fact.value }}
                     </span>
                   </div>
+                </div>
+
+                <div
+                  v-if="gateChip(row) || rowChips(row).length"
+                  class="col-start-2 col-end-4 mt-1 flex flex-wrap gap-1 sm:hidden"
+                >
+                  <span
+                    v-if="gateChip(row)"
+                    class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                    :class="chipClass(gateChip(row))"
+                  >
+                    {{ gateChip(row).text }}
+                  </span>
+                  <span
+                    v-for="chip in rowChips(row)"
+                    :key="chip.key"
+                    class="rank-pill rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                    :class="chipClass(chip)"
+                  >
+                    {{ chip.text }}
+                  </span>
                 </div>
               </div>
             </button>
