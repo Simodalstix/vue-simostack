@@ -197,66 +197,65 @@
                 </span>
 
                 <div class="min-w-0 flex-1">
-                  <div class="flex items-start gap-2">
-                    <span class="text-[12.5px] font-semibold text-ob-text flex-1 truncate">
-                      {{ row.rec.suburb }}
-                    </span>
-                    <span
-                      class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
-                      :style="{ color: bandColor(row) }"
-                      :title="bandLabel(row)"
-                    >
-                      {{ scoreDisplay(row) }}
-                    </span>
-                  </div>
+                  <span class="block truncate text-[12.5px] font-semibold text-ob-text">
+                    {{ row.rec.suburb }}
+                  </span>
 
                   <p class="mt-0.5 text-[10.5px] leading-snug text-ob-muted2 preview-clamp-1">
                     {{ previewTagline(row) }}
                   </p>
 
-                  <div class="decision-row-lower mt-1 flex items-end justify-between gap-2">
-                    <div class="min-w-0">
-                      <div
-                        class="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-ob-faint"
-                      >
-                        <span>{{ costEvidence(row.rec, true) }}</span>
-                        <span>Commute {{ commuteShort(row) }}</span>
-                      </div>
-                      <div
-                        v-if="gateChip(row) || rowChips(row).length"
-                        class="mt-1 flex flex-wrap gap-1"
-                      >
-                        <span
-                          v-if="gateChip(row)"
-                          class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                          :class="chipClass(gateChip(row))"
-                        >
-                          {{ gateChip(row).text }}
-                        </span>
-                        <span
-                          v-for="chip in rowChips(row)"
-                          :key="chip.key"
-                          class="rank-pill rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                          :class="chipClass(chip)"
-                        >
-                          {{ chip.text }}
-                        </span>
-                      </div>
-                    </div>
-                    <div
-                      v-if="rowContext(row).length"
-                      class="decision-context-grid flex shrink-0 flex-col items-end gap-1 text-right"
-                      aria-label="Descriptive context; does not affect rank"
+                  <div
+                    class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] text-ob-faint"
+                  >
+                    <span>{{ costEvidence(row.rec, true) }}</span>
+                    <span>Commute {{ commuteShort(row) }}</span>
+                  </div>
+                  <div
+                    v-if="gateChip(row) || rowChips(row).length"
+                    class="mt-1 flex flex-wrap gap-1"
+                  >
+                    <span
+                      v-if="gateChip(row)"
+                      class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                      :class="chipClass(gateChip(row))"
                     >
-                      <span
-                        v-for="fact in rowContext(row)"
-                        :key="fact.key"
-                        class="context-badge inline-flex items-center rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                        :class="contextClass(fact)"
-                      >
-                        {{ fact.label }} {{ fact.value }}
-                      </span>
-                    </div>
+                      {{ gateChip(row).text }}
+                    </span>
+                    <span
+                      v-for="chip in rowChips(row)"
+                      :key="chip.key"
+                      class="rank-pill rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                      :class="chipClass(chip)"
+                    >
+                      {{ chip.text }}
+                    </span>
+                  </div>
+                </div>
+
+                <div
+                  class="decision-row-context-column flex w-[104px] shrink-0 flex-col items-end gap-2 text-right"
+                >
+                  <span
+                    class="font-mono text-[11px] font-extrabold leading-none"
+                    :style="{ color: bandColor(row) }"
+                    :title="bandLabel(row)"
+                  >
+                    {{ scoreDisplay(row) }}
+                  </span>
+                  <div
+                    v-if="rowContext(row).length"
+                    class="decision-context-grid flex flex-col items-end gap-1"
+                    aria-label="Descriptive context; does not affect rank"
+                  >
+                    <span
+                      v-for="fact in rowContext(row)"
+                      :key="fact.key"
+                      class="context-badge inline-flex items-center rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                      :class="contextClass(fact)"
+                    >
+                      {{ fact.label }} {{ fact.value }}
+                    </span>
                   </div>
                 </div>
               </div>
