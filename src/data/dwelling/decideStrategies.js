@@ -5,7 +5,7 @@
 // tests. Selecting a strategy loads its weight vector over the ten suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
 // off (weight 0). Standard criteria renormalise over the enabled weights;
-// explicitly additive criteria such as Beach apply a small bounded premium
+// explicitly additive criteria such as Beach and Friends apply a small bounded premium
 // outside the mean, so enabling a bonus can never lower a suburb.
 //
 // This supersedes the old purchase modes + criteria sliders + lens buttons
@@ -106,7 +106,9 @@ export const decideCriteria = [
   {
     key: 'personalNetwork',
     label: 'Friends',
-    hint: 'Practical non-car access to the inner-circle anchor in South Yarra; banded estimate at suburb level.',
+    hint: 'Additive premium for practical access to the inner-circle anchor in South Yarra. Distant or unassessed records receive no bonus and are never penalised.',
+    scoringMode: 'additiveBonus',
+    bonusPointsPerWeight: 2,
     accent: 'amber',
     value: (rec) => pnScore(personalNetworkByAreaId[rec.id]?.estMin ?? null),
   },

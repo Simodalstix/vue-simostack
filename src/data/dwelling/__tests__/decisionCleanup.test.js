@@ -23,22 +23,52 @@ describe('bonus-only criteria', () => {
     )
   })
 
-  it('makes every assessed beach band additive and never score-reducing', () => {
+  it('makes every bonus criterion monotonic for every record', () => {
     const strategy = decideStrategies.find((item) => item.id === 'balanced2br')
-    for (const rec of areaCorridors) {
-      const commute = scoreCommute(rec.commute?.typical, rec.commute?.transfers)
-      const beachOff = weightedScore(
-        rec,
-        commute,
-        { ...strategy.weights, beach: 0 },
-        { maxPrice: strategy.filters.maxPrice },
-      )
-      const beachOn = weightedScore(rec, commute, strategy.weights, {
-        maxPrice: strategy.filters.maxPrice,
-      })
-      expect(beachOn).toBeGreaterThanOrEqual(beachOff)
-      if (!beachAccessByAreaId[rec.id]) expect(beachOn).toBe(beachOff)
+    const bonusCriteria = decideCriteria.filter(
+      (criterion) => criterion.scoringMode === 'additiveBonus',
+    )
+
+    expect(bonusCriteria.map((criterion) => criterion.key)).toEqual([
+      'beach',
+      'personalNetwork',
+      'chineseCommunity',
+      'otherCommunities',
+      'partnerPool',
+    ])
+    for (const criterion of bonusCriteria) {
+      for (const rec of areaCorridors) {
+        const commute = scoreCommute(rec.commute?.typical, rec.commute?.transfers)
+        const withoutBonus = weightedScore(
+          rec,
+          commute,
+          { ...strategy.weights, [criterion.key]: 0 },
+          { maxPrice: strategy.filters.maxPrice, strategy },
+        )
+        const withBonus = weightedScore(rec, commute, strategy.weights, {
+          maxPrice: strategy.filters.maxPrice,
+          strategy,
+        })
+        expect(
+          withBonus,
+          `${rec.id}: removing ${criterion.key} increased its score`,
+        ).toBeGreaterThanOrEqual(withoutBonus)
+      }
     }
+  })
+
+  it("does not let Balaclava's lower beach bonus reverse Windsor under 2BR Balanced", () => {
+    const strategy = decideStrategies.find((item) => item.id === 'balanced2br')
+    const score = (id) => {
+      const rec = areaCorridors.find((record) => record.id === id)
+      const commute = scoreCommute(rec.commute?.typical, rec.commute?.transfers)
+      return weightedScore(rec, commute, strategy.weights, {
+        maxPrice: strategy.filters.maxPrice,
+        strategy,
+      })
+    }
+
+    expect(score('inner-windsor-prahran-2br')).toBeGreaterThanOrEqual(score('balaclava-2br'))
   })
 
   it('uses the owner-approved balanced 2BR weights and beach premiums', () => {
