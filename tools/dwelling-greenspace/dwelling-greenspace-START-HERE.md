@@ -47,7 +47,9 @@ greenspace =
 From this directory, the agent should run:
 
 ```bash
-python -m pip install -r requirements-greenspace.txt
+# Note: requirements-greenspace.txt is not in the repository (the root
+# .gitignore excludes *.txt). Install the builder's actual imports directly:
+python -m pip install geopandas numpy pandas requests shapely pytest
 pytest -q test-dwelling-greenspace.py
 
 python build-dwelling-greenspace.py \
