@@ -131,32 +131,16 @@
           </div>
         </div>
 
-        <div class="mt-auto flex items-end justify-between gap-3">
-          <div class="flex flex-wrap gap-1.5">
-            <span
-              v-for="badge in previewBadges(previewRow)"
-              :key="badge.key"
-              class="rank-pill inline-flex items-center rounded-full px-2 py-[3px] font-mono text-[10px] leading-none border"
-              :class="badge.className"
-            >
-              {{ badge.text }}
-            </span>
-          </div>
-          <div
-            v-if="rowContext(previewRow).length"
-            class="decision-context-grid grid shrink-0 grid-flow-col grid-rows-3 justify-end gap-1 text-right [direction:rtl]"
-            aria-label="Descriptive context; does not affect rank"
+        <div class="mt-auto flex flex-wrap gap-1.5">
+          <span
+            v-for="badge in previewBadges(previewRow)"
+            :key="badge.key"
+            class="rank-pill inline-flex items-center rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
+            :class="[badge.className, badge.title ? 'context-pill' : null]"
+            :title="badge.title"
           >
-            <span
-              v-for="fact in rowContext(previewRow)"
-              :key="fact.key"
-              dir="ltr"
-              class="context-badge inline-flex items-center rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
-              :class="contextClass(fact)"
-            >
-              {{ fact.label }} {{ fact.value }}
-            </span>
-          </div>
+            {{ badge.text }}
+          </span>
         </div>
       </button>
 
@@ -190,17 +174,26 @@
                     : 'hover:bg-ob-surface/50'
               "
             >
-              <div class="grid grid-cols-[40px_minmax(0,1fr)_auto] items-start gap-x-3">
+              <div class="flex items-start gap-3">
                 <span
-                  class="row-span-2 pt-[1px] font-mono text-[12px] font-bold leading-none text-ob-sand sm:row-span-1"
+                  class="w-10 shrink-0 pt-[1px] font-mono text-[12px] font-bold leading-none text-ob-sand"
                 >
                   {{ isRankedRow(row) ? `#${rankById[row.rec.id]}` : '—' }}
                 </span>
 
                 <div class="min-w-0 flex-1">
-                  <span class="block truncate text-[12.5px] font-semibold text-ob-text">
-                    {{ row.rec.suburb }}
-                  </span>
+                  <div class="flex items-start gap-2">
+                    <span class="flex-1 truncate text-[12.5px] font-semibold text-ob-text">
+                      {{ row.rec.suburb }}
+                    </span>
+                    <span
+                      class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
+                      :style="{ color: bandColor(row) }"
+                      :title="bandLabel(row)"
+                    >
+                      {{ scoreDisplay(row) }}
+                    </span>
+                  </div>
 
                   <p class="mt-0.5 text-[10.5px] leading-snug text-ob-muted2 preview-clamp-1">
                     {{ previewTagline(row) }}
@@ -213,8 +206,8 @@
                     <span>Commute {{ commuteShort(row) }}</span>
                   </div>
                   <div
-                    v-if="gateChip(row) || rowChips(row).length"
-                    class="mt-1 hidden flex-wrap gap-1 sm:flex"
+                    v-if="gateChip(row) || rowBadges(row).length"
+                    class="mt-1 flex flex-wrap gap-1"
                   >
                     <span
                       v-if="gateChip(row)"
@@ -224,62 +217,15 @@
                       {{ gateChip(row).text }}
                     </span>
                     <span
-                      v-for="chip in rowChips(row)"
+                      v-for="chip in rowBadges(row)"
                       :key="chip.key"
                       class="rank-pill rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                      :class="chipClass(chip)"
+                      :class="[chipClass(chip), chip.title ? 'context-pill' : null]"
+                      :title="chip.title"
                     >
                       {{ chip.text }}
                     </span>
                   </div>
-                </div>
-
-                <div
-                  class="decision-row-context-column flex min-w-[104px] shrink-0 flex-col items-end gap-2 text-right"
-                >
-                  <span
-                    class="font-mono text-[11px] font-extrabold leading-none"
-                    :style="{ color: bandColor(row) }"
-                    :title="bandLabel(row)"
-                  >
-                    {{ scoreDisplay(row) }}
-                  </span>
-                  <div
-                    v-if="rowContext(row).length"
-                    class="decision-context-grid grid grid-flow-col grid-rows-3 justify-end gap-1 [direction:rtl]"
-                    aria-label="Descriptive context; does not affect rank"
-                  >
-                    <span
-                      v-for="fact in rowContext(row)"
-                      :key="fact.key"
-                      dir="ltr"
-                      class="context-badge inline-flex items-center rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                      :class="contextClass(fact)"
-                    >
-                      {{ fact.label }} {{ fact.value }}
-                    </span>
-                  </div>
-                </div>
-
-                <div
-                  v-if="gateChip(row) || rowChips(row).length"
-                  class="col-start-2 col-end-4 mt-1 flex flex-wrap gap-1 sm:hidden"
-                >
-                  <span
-                    v-if="gateChip(row)"
-                    class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                    :class="chipClass(gateChip(row))"
-                  >
-                    {{ gateChip(row).text }}
-                  </span>
-                  <span
-                    v-for="chip in rowChips(row)"
-                    :key="chip.key"
-                    class="rank-pill rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                    :class="chipClass(chip)"
-                  >
-                    {{ chip.text }}
-                  </span>
                 </div>
               </div>
             </button>
@@ -456,12 +402,17 @@ function previewTagline(row) {
   )
 }
 
-function rowChips(row) {
-  return differentiatingChipsFor(row, props.weights)
-}
-
-function rowContext(row) {
-  return decisionContextFor(row)
+function rowBadges(row) {
+  const rankBadges = differentiatingChipsFor(row, props.weights)
+  const contextBadges = decisionContextFor(row).map((fact) => ({
+    key: fact.key,
+    text: `${fact.label} ${fact.value}`,
+    tone: fact.tone,
+    title: 'Descriptive context; does not affect rank',
+  }))
+  const leadingRankBadges = rankBadges.filter((badge) => ['friend', 'beach'].includes(badge.key))
+  const trailingRankBadges = rankBadges.filter((badge) => !['friend', 'beach'].includes(badge.key))
+  return [...leadingRankBadges, ...contextBadges, ...trailingRankBadges]
 }
 
 function gateChip(row) {
@@ -476,6 +427,7 @@ function chipClass(chip) {
     pink: 'border-pink-500/35 text-pink-300 bg-pink-500/10',
     green: 'border-emerald-600/50 text-emerald-300 bg-emerald-700/25',
     yellow: 'border-yellow-500/40 text-yellow-300 bg-yellow-500/10',
+    rainbow: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
     train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
     commute: 'border-ob-teal/25 text-ob-teal-bright bg-ob-teal/6',
     schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
@@ -483,17 +435,6 @@ function chipClass(chip) {
     reject: 'border-red-400/35 text-red-300 bg-red-400/8',
     veto: 'border-ob-sand/20 text-ob-faint bg-ob-sand/5',
   }[chip.tone]
-}
-
-function contextClass(fact) {
-  return {
-    beach: 'border-amber-500/35 text-amber-300 bg-amber-500/10',
-    chinese: 'border-red-500/35 text-red-300 bg-red-500/10',
-    pink: 'border-pink-500/35 text-pink-300 bg-pink-500/10',
-    green: 'border-emerald-600/50 text-emerald-300 bg-emerald-700/25',
-    yellow: 'border-yellow-500/40 text-yellow-300 bg-yellow-500/10',
-    rainbow: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
-  }[fact.tone]
 }
 
 // Per-criterion contributions for the preview card: the same value() calls and
@@ -538,8 +479,8 @@ function previewBadges(row) {
   const badges = []
   const exception = gateExceptionChipFor(row)
   if (exception) badges.push(exception)
-  badges.push(...differentiatingChipsFor(row, props.weights))
-  return badges.slice(0, 4).map((badge) => ({
+  badges.push(...rowBadges(row))
+  return badges.map((badge) => ({
     ...badge,
     className: chipClass(badge),
   }))

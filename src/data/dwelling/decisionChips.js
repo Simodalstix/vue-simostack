@@ -1,6 +1,6 @@
-// Ranking-card presentation follows one semantic rule:
-// - pills identify active inputs that affected this ranking;
-// - context badges describe the place without implying score impact.
+// Ranking-card badge data stays semantically split even when the UI presents
+// both groups in one row: active rank inputs come from differentiatingChipsFor,
+// while descriptive community facts come from decisionContextFor.
 
 import { beachAccessByAreaId } from './beachAccess.js'
 import { chineseLanguageCommunityFor } from './chineseCommunity.js'
