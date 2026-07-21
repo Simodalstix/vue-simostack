@@ -67,7 +67,7 @@
           </div>
 
           <div
-            class="hidden md:block bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-4"
+            class="hidden md:block bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-3.5"
             aria-label="Ranking controls"
           >
             <div class="flex items-center flex-wrap gap-x-4 gap-y-2">
@@ -107,35 +107,22 @@
               </div>
             </div>
 
-            <div class="mt-3 grid grid-cols-2 gap-x-6 gap-y-2" aria-label="Weighting themes">
-              <div
-                v-for="group in criterionGroups"
-                :key="group.label"
-                class="grid grid-cols-[76px_minmax(0,1fr)] items-start gap-2"
+            <div class="mt-2.5 flex flex-wrap gap-1.5" aria-label="Weighting themes">
+              <button
+                v-for="c in allCriteria"
+                :key="c.key"
+                @click="toggleControl(c)"
+                :disabled="c.scoringRole !== 'gate' && enabled[c.key] && enabledCount === 1"
+                :aria-pressed="controlEnabled(c)"
+                :title="c.hint"
+                class="inline-flex items-center justify-between gap-2 font-mono text-[11px] px-2 py-[5px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
+                :class="criterionButtonClass(c)"
               >
-                <span
-                  class="pt-[7px] font-mono text-[9px] uppercase tracking-[0.1em] text-ob-faint"
-                >
-                  {{ group.label }}
-                </span>
-                <div class="flex min-w-0 flex-wrap gap-2">
-                  <button
-                    v-for="c in group.criteria"
-                    :key="c.key"
-                    @click="toggleControl(c)"
-                    :disabled="c.scoringRole !== 'gate' && enabled[c.key] && enabledCount === 1"
-                    :aria-pressed="controlEnabled(c)"
-                    :title="c.hint"
-                    class="inline-flex items-center justify-between gap-2 font-mono text-[11px] px-2.5 py-[6px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
-                    :class="criterionButtonClass(c)"
-                  >
-                    <span>{{ c.label }}</span>
-                  </button>
-                </div>
-              </div>
+                <span>{{ c.label }}</span>
+              </button>
             </div>
 
-            <div class="mt-3 pt-3 border-t border-ob-sand/8 flex items-center gap-3 min-w-0">
+            <div class="mt-2.5 pt-2.5 border-t border-ob-sand/8 flex items-center gap-3 min-w-0">
               <span
                 class="shrink-0 font-mono text-[9.5px] uppercase tracking-[0.1em] text-ob-faint"
               >
@@ -213,7 +200,7 @@ import { SOUL_GATE } from '@/data/dwelling/ownerVetoes.js'
 import MapPanel from '@/components/dwelling/MapPanel.vue'
 import SuburbDecisionPane from '@/components/dwelling/SuburbDecisionPane.vue'
 
-const payoffYears = ref(15)
+const payoffYears = ref(30)
 const activeLocationId = ref(null)
 const hoveredContext = ref(null)
 // Suburb hovered in the ranked list; routed into the map's hover highlight.
@@ -230,15 +217,19 @@ const activeStrategy = computed(() => strategyById(activeStrategyId.value))
 const mobileStrategies = decideStrategies.filter((strategy) =>
   ['balanced2br', 'bachelor1br'].includes(strategy.id),
 )
-const criterionGroups = [
-  { label: 'Staples', keys: ['cost', 'commute', 'soul'] },
-  { label: 'Family', keys: ['schools', 'kidAmenity', 'safetyQuality'] },
-  { label: 'Life', keys: ['beach', 'personalNetwork', 'partnerPool'] },
-  { label: 'Community', keys: ['chineseCommunity', 'otherCommunities'] },
-].map(({ label, keys }) => ({
-  label,
-  criteria: keys.map((key) => (key === SOUL_GATE.key ? SOUL_GATE : decideCriterionByKey[key])),
-}))
+const allCriteria = [
+  'cost',
+  'commute',
+  'soul',
+  'schools',
+  'kidAmenity',
+  'safetyQuality',
+  'beach',
+  'personalNetwork',
+  'partnerPool',
+  'chineseCommunity',
+  'otherCommunities',
+].map((key) => (key === SOUL_GATE.key ? SOUL_GATE : decideCriterionByKey[key]))
 
 // Do not merely hide MapLibre with CSS on phones: avoid mounting it and
 // downloading its map/school-zone payload entirely until the desktop layout
