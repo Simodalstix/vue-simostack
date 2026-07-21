@@ -998,6 +998,310 @@ export const areaGeo = {
       },
     ],
   },
+
+  'fawkner-house': {
+    localityNames: ['Fawkner'],
+    stationPoints: [
+      {
+        id: 'fawkner',
+        name: 'Fawkner',
+        // OSM-derived this pass; re-verify against a public gazetteer next pass.
+        coordinates: [144.9601, -37.7147],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'thomastown-house': {
+    localityNames: ['Thomastown'],
+    stationPoints: [
+      {
+        id: 'thomastown',
+        name: 'Thomastown',
+        // Same OSM-derived point the schematic map already uses in trainLines.js.
+        coordinates: [145.0128, -37.6811],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'bundoora-house': {
+    localityNames: ['Bundoora'],
+    tramOnly: true,
+    stationPoints: [
+      {
+        id: 'bundoora-anchor',
+        name: 'Bundoora (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [145.06, -37.7],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'viewbank-house': {
+    localityNames: ['Viewbank'],
+    stationPoints: [
+      {
+        id: 'viewbank-anchor',
+        name: 'Viewbank (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [145.091, -37.74],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'watsonia-house': {
+    localityNames: ['Watsonia'],
+    stationPoints: [
+      {
+        id: 'watsonia',
+        name: 'Watsonia',
+        // OSM-derived this pass; re-verify against a public gazetteer next pass.
+        coordinates: [145.0837, -37.711],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'eltham-house': {
+    localityNames: ['Eltham'],
+    stationPoints: [
+      {
+        id: 'eltham',
+        name: 'Eltham',
+        // OSM-derived this pass; re-verify against a public gazetteer next pass.
+        coordinates: [145.1445, -37.7156],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'williamstown-house': {
+    localityNames: ['Williamstown'],
+    stationPoints: [
+      {
+        id: 'williamstown',
+        name: 'Williamstown',
+        // OSM-derived this pass; re-verify against a public gazetteer next pass.
+        coordinates: [144.897, -37.8687],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'point-cook-house': {
+    localityNames: ['Point Cook'],
+    stationPoints: [
+      {
+        id: 'point-cook-anchor',
+        name: 'Point Cook (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [144.748, -37.889],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'werribee-house': {
+    localityNames: ['Werribee'],
+    stationPoints: [
+      {
+        id: 'werribee',
+        name: 'Werribee',
+        // Same OSM-derived point the schematic map already uses in trainLines.js.
+        coordinates: [144.66, -37.9],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'moonee-ponds-2br': {
+    localityNames: ['Moonee Ponds'],
+    stationPoints: [
+      {
+        id: 'moonee-ponds',
+        name: 'Moonee Ponds',
+        // OSM-derived this pass; re-verify against a public gazetteer next pass.
+        coordinates: [144.9188, -37.766],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'eltham-north-house': {
+    localityNames: ['Eltham North'],
+    stationPoints: [
+      {
+        id: 'eltham-north-anchor',
+        name: 'Eltham North (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [145.15, -37.695],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'essendon-west-house': {
+    localityNames: ['Essendon West'],
+    stationPoints: [
+      {
+        id: 'essendon-west-anchor',
+        name: 'Essendon West (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [144.893, -37.755],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'watsonia-north-house': {
+    localityNames: ['Watsonia North'],
+    stationPoints: [
+      {
+        id: 'watsonia-north-anchor',
+        name: 'Watsonia North (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [145.083, -37.7],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'black-rock-house': {
+    localityNames: ['Black Rock'],
+    stationPoints: [
+      {
+        id: 'black-rock-anchor',
+        name: 'Black Rock (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [145.017, -37.9735],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'braybrook-villa': {
+    localityNames: ['Braybrook'],
+    stationPoints: [
+      {
+        id: 'braybrook-anchor',
+        name: 'Braybrook (locality anchor)',
+        // Representative point of the vendored locality polygon.
+        coordinates: [144.8557, -37.7837],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'brighton-house': {
+    localityNames: ['Brighton'],
+    stationPoints: [
+      {
+        id: 'brighton-beach',
+        name: 'Brighton Beach',
+        // Same OSM-derived point the schematic map already uses in trainLines.js.
+        coordinates: [145.01, -37.9199],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'bulleen-house': {
+    localityNames: ['Bulleen'],
+    stationPoints: [
+      {
+        id: 'bulleen-anchor',
+        name: 'Bulleen (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [145.085, -37.766],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'burwood-house': {
+    localityNames: ['Burwood'],
+    tramOnly: true,
+    stationPoints: [
+      {
+        id: 'burwood-anchor',
+        name: 'Burwood (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [145.108, -37.8495],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'camberwell-2br': {
+    localityNames: ['Camberwell'],
+    stationPoints: [
+      {
+        id: 'camberwell',
+        name: 'Camberwell',
+        // OSM-derived this pass; re-verify against a public gazetteer next pass.
+        coordinates: [145.0587, -37.8265],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'elsternwick-2br': {
+    localityNames: ['Elsternwick'],
+    stationPoints: [
+      {
+        id: 'elsternwick',
+        name: 'Elsternwick',
+        // Same OSM-derived point the schematic map already uses in trainLines.js.
+        coordinates: [145.0037, -37.8853],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'hawthorn-east-2br': {
+    localityNames: ['Hawthorn East'],
+    stationPoints: [
+      {
+        id: 'auburn',
+        name: 'Auburn',
+        // OSM-derived this pass; re-verify against a public gazetteer next pass.
+        coordinates: [145.046, -37.8222],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'st-kilda-east-2br': {
+    localityNames: ['St Kilda East'],
+    tramOnly: true,
+    stationPoints: [
+      {
+        id: 'st-kilda-east-anchor',
+        name: 'St Kilda East (locality anchor)',
+        // Representative point of the vendored locality polygon.
+        coordinates: [145.0037, -37.8717],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'st-kilda-west-2br': {
+    localityNames: ['St Kilda West'],
+    tramOnly: true,
+    stationPoints: [
+      {
+        id: 'st-kilda-west-anchor',
+        name: 'St Kilda West (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
+        coordinates: [144.9705, -37.8598],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
 }
 
 export function localitiesForArea(areaId) {

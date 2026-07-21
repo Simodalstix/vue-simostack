@@ -2,7 +2,7 @@
   "dataset": "dwelling-greenspace-targets",
   "version": "v7-canonical-70-mixed-official-and-derived",
   "retrievedAt": "2026-07-19",
-  "recordCount": 71,
+  "recordCount": 94,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -915,6 +915,282 @@
         }
       ],
       "censusPopulation2021": 21240
+    },
+    {
+      "id": "fawkner-house",
+      "displayName": "Fawkner",
+      "salComponents": [
+        {
+          "suburb": "Fawkner",
+          "salCode": "20909",
+          "censusPopulation2021": 14274
+        }
+      ],
+      "censusPopulation2021": 14274
+    },
+    {
+      "id": "thomastown-house",
+      "displayName": "Thomastown",
+      "salComponents": [
+        {
+          "suburb": "Thomastown",
+          "salCode": "22504",
+          "censusPopulation2021": 20234
+        }
+      ],
+      "censusPopulation2021": 20234
+    },
+    {
+      "id": "bundoora-house",
+      "displayName": "Bundoora",
+      "salComponents": [
+        {
+          "suburb": "Bundoora",
+          "salCode": "20399",
+          "censusPopulation2021": 28068
+        }
+      ],
+      "censusPopulation2021": 28068
+    },
+    {
+      "id": "viewbank-house",
+      "displayName": "Viewbank",
+      "salComponents": [
+        {
+          "suburb": "Viewbank",
+          "salCode": "22633",
+          "censusPopulation2021": 7030
+        }
+      ],
+      "censusPopulation2021": 7030
+    },
+    {
+      "id": "watsonia-house",
+      "displayName": "Watsonia",
+      "salComponents": [
+        {
+          "suburb": "Watsonia",
+          "salCode": "22721",
+          "censusPopulation2021": 5352
+        }
+      ],
+      "censusPopulation2021": 5352
+    },
+    {
+      "id": "eltham-house",
+      "displayName": "Eltham",
+      "salComponents": [
+        {
+          "suburb": "Eltham",
+          "salCode": "20865",
+          "censusPopulation2021": 18847
+        }
+      ],
+      "censusPopulation2021": 18847
+    },
+    {
+      "id": "williamstown-house",
+      "displayName": "Williamstown",
+      "salComponents": [
+        {
+          "suburb": "Williamstown",
+          "salCode": "22792",
+          "censusPopulation2021": 14407
+        }
+      ],
+      "censusPopulation2021": 14407
+    },
+    {
+      "id": "point-cook-house",
+      "displayName": "Point Cook",
+      "salComponents": [
+        {
+          "suburb": "Point Cook",
+          "salCode": "22086",
+          "censusPopulation2021": 66781
+        }
+      ],
+      "censusPopulation2021": 66781
+    },
+    {
+      "id": "werribee-house",
+      "displayName": "Werribee",
+      "salComponents": [
+        {
+          "suburb": "Werribee",
+          "salCode": "22750",
+          "censusPopulation2021": 50027
+        }
+      ],
+      "censusPopulation2021": 50027
+    },
+    {
+      "id": "moonee-ponds-2br",
+      "displayName": "Moonee Ponds",
+      "salComponents": [
+        {
+          "suburb": "Moonee Ponds",
+          "salCode": "21742",
+          "censusPopulation2021": 16224
+        }
+      ],
+      "censusPopulation2021": 16224
+    },
+    {
+      "id": "eltham-north-house",
+      "displayName": "Eltham North",
+      "salComponents": [
+        {
+          "suburb": "Eltham North",
+          "salCode": "20866",
+          "censusPopulation2021": 6830
+        }
+      ],
+      "censusPopulation2021": 6830
+    },
+    {
+      "id": "essendon-west-house",
+      "displayName": "Essendon West",
+      "salComponents": [
+        {
+          "suburb": "Essendon West",
+          "salCode": "20888",
+          "censusPopulation2021": 1559
+        }
+      ],
+      "censusPopulation2021": 1559
+    },
+    {
+      "id": "watsonia-north-house",
+      "displayName": "Watsonia North",
+      "salComponents": [
+        {
+          "suburb": "Watsonia North",
+          "salCode": "22722",
+          "censusPopulation2021": 3799
+        }
+      ],
+      "censusPopulation2021": 3799
+    },
+    {
+      "id": "black-rock-house",
+      "displayName": "Black Rock",
+      "salComponents": [
+        {
+          "suburb": "Black Rock",
+          "salCode": "20251",
+          "censusPopulation2021": 6389
+        }
+      ],
+      "censusPopulation2021": 6389
+    },
+    {
+      "id": "braybrook-villa",
+      "displayName": "Braybrook",
+      "salComponents": [
+        {
+          "suburb": "Braybrook",
+          "salCode": "20324",
+          "censusPopulation2021": 9682
+        }
+      ],
+      "censusPopulation2021": 9682
+    },
+    {
+      "id": "brighton-house",
+      "displayName": "Brighton",
+      "salComponents": [
+        {
+          "suburb": "Brighton",
+          "salCode": "20337",
+          "censusPopulation2021": 23252
+        }
+      ],
+      "censusPopulation2021": 23252
+    },
+    {
+      "id": "bulleen-house",
+      "displayName": "Bulleen",
+      "salComponents": [
+        {
+          "suburb": "Bulleen",
+          "salCode": "20386",
+          "censusPopulation2021": 11219
+        }
+      ],
+      "censusPopulation2021": 11219
+    },
+    {
+      "id": "burwood-house",
+      "displayName": "Burwood",
+      "salComponents": [
+        {
+          "suburb": "Burwood",
+          "salCode": "20426",
+          "censusPopulation2021": 15147
+        }
+      ],
+      "censusPopulation2021": 15147
+    },
+    {
+      "id": "camberwell-2br",
+      "displayName": "Camberwell",
+      "salComponents": [
+        {
+          "suburb": "Camberwell",
+          "salCode": "20453",
+          "censusPopulation2021": 21965
+        }
+      ],
+      "censusPopulation2021": 21965
+    },
+    {
+      "id": "elsternwick-2br",
+      "displayName": "Elsternwick",
+      "salComponents": [
+        {
+          "suburb": "Elsternwick",
+          "salCode": "20864",
+          "censusPopulation2021": 10887
+        }
+      ],
+      "censusPopulation2021": 10887
+    },
+    {
+      "id": "hawthorn-east-2br",
+      "displayName": "Hawthorn East",
+      "salComponents": [
+        {
+          "suburb": "Hawthorn East",
+          "salCode": "21153",
+          "censusPopulation2021": 14834
+        }
+      ],
+      "censusPopulation2021": 14834
+    },
+    {
+      "id": "st-kilda-east-2br",
+      "displayName": "St Kilda East",
+      "salComponents": [
+        {
+          "suburb": "St Kilda East",
+          "salCode": "22344",
+          "censusPopulation2021": 12571
+        }
+      ],
+      "censusPopulation2021": 12571
+    },
+    {
+      "id": "st-kilda-west-2br",
+      "displayName": "St Kilda West",
+      "salComponents": [
+        {
+          "suburb": "St Kilda West",
+          "salCode": "22345",
+          "censusPopulation2021": 2951
+        }
+      ],
+      "censusPopulation2021": 2951
     }
   ]
 }

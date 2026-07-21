@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-43",
+  "version": "2021-gcp-sal-extension-56",
   "retrievedAt": "2026-07-21",
-  "recordCount": 43,
+  "recordCount": 56,
   "records": [
     {
       "id": "yarraville-2br",
@@ -388,6 +388,123 @@
         {
           "suburb": "Essendon",
           "salCode": "20885"
+        }
+      ]
+    },
+    {
+      "id": "eltham-north-house",
+      "salComponents": [
+        {
+          "suburb": "Eltham North",
+          "salCode": "20866"
+        }
+      ]
+    },
+    {
+      "id": "essendon-west-house",
+      "salComponents": [
+        {
+          "suburb": "Essendon West",
+          "salCode": "20888"
+        }
+      ]
+    },
+    {
+      "id": "watsonia-north-house",
+      "salComponents": [
+        {
+          "suburb": "Watsonia North",
+          "salCode": "22722"
+        }
+      ]
+    },
+    {
+      "id": "black-rock-house",
+      "salComponents": [
+        {
+          "suburb": "Black Rock",
+          "salCode": "20251"
+        }
+      ]
+    },
+    {
+      "id": "braybrook-villa",
+      "salComponents": [
+        {
+          "suburb": "Braybrook",
+          "salCode": "20324"
+        }
+      ]
+    },
+    {
+      "id": "brighton-house",
+      "salComponents": [
+        {
+          "suburb": "Brighton",
+          "salCode": "20337"
+        }
+      ]
+    },
+    {
+      "id": "bulleen-house",
+      "salComponents": [
+        {
+          "suburb": "Bulleen",
+          "salCode": "20386"
+        }
+      ]
+    },
+    {
+      "id": "burwood-house",
+      "salComponents": [
+        {
+          "suburb": "Burwood",
+          "salCode": "20426"
+        }
+      ]
+    },
+    {
+      "id": "camberwell-2br",
+      "salComponents": [
+        {
+          "suburb": "Camberwell",
+          "salCode": "20453"
+        }
+      ]
+    },
+    {
+      "id": "elsternwick-2br",
+      "salComponents": [
+        {
+          "suburb": "Elsternwick",
+          "salCode": "20864"
+        }
+      ]
+    },
+    {
+      "id": "hawthorn-east-2br",
+      "salComponents": [
+        {
+          "suburb": "Hawthorn East",
+          "salCode": "21153"
+        }
+      ]
+    },
+    {
+      "id": "st-kilda-east-2br",
+      "salComponents": [
+        {
+          "suburb": "St Kilda East",
+          "salCode": "22344"
+        }
+      ]
+    },
+    {
+      "id": "st-kilda-west-2br",
+      "salComponents": [
+        {
+          "suburb": "St Kilda West",
+          "salCode": "22345"
         }
       ]
     }
