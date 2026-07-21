@@ -50,13 +50,13 @@ def test_component_weights_sum_to_one():
     assert round(sum(weights.values()), 10) == 1.0
 
 
-def test_target_file_matches_current_70_record_registry():
+def test_target_file_matches_current_71_record_registry():
     payload, records = MODULE.load_targets(
         Path(__file__).with_name("dwelling-greenspace-targets.json")
     )
-    assert payload["recordCount"] == 70
-    assert len(records) == 70
-    assert len({record["id"] for record in records}) == 70
+    assert payload["recordCount"] == 71
+    assert len(records) == 71
+    assert len({record["id"] for record in records}) == 71
 
 
 def test_load_targets_normalises_sal_prefixes(tmp_path):

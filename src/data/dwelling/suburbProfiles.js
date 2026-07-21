@@ -1451,6 +1451,29 @@ export const suburbProfiles = {
     },
   },
 
+  // 'Essendon' — pending-evidence pilot of the 2026-07-21 onboarding batch.
+  'essendon-2br': {
+    lives:
+      'Established north-west suburb on the Craigieburn line, one stop pattern through the City Loop. ABS 2021: 21,240 residents, median age 39, a long-standing Italian-Australian community thread. Full lifestyle evidence pending.',
+    housing:
+      'Proposed product is the older 2BR apartment near the station; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+    fit: [
+      {
+        text: 'Census community context is integrated and visible on the card.',
+        tag: null,
+      },
+      {
+        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
+      mainRisk: 'Reading this placeholder as a scored recommendation.',
+      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+    },
+  },
+
   // 'Northcote'
   'northcote-2br': {
     lives:

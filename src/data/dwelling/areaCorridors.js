@@ -1404,6 +1404,78 @@ const AREA_CORRIDOR_BASE = [
     sources: ['ptv', 'domain', 'csa', 'vicplan'],
   },
   {
+    // Pilot record of the 2026-07-21 north/west onboarding batch. UNSCORED by
+    // design: commute, safety, price band, school zones and greenspace all
+    // await their evidence passes, so the record sits in the pending-evidence
+    // section rather than the ranking. See
+    // tools/dwelling-onboarding/batches/2026-07-21-north-west-11.md.
+    id: 'essendon-2br',
+    suburb: 'Essendon',
+    municipality: 'Moonee Valley',
+    region: 'North',
+    corridor: 'Craigieburn line',
+    station: 'Essendon',
+    catchmentMetres: 800,
+    scored: false,
+    altRoute:
+      'Craigieburn line runs one-seat through the City Loop; secondary tram and bus routes pending verification.',
+    headline: 'older 2BR apartment near Essendon station (pending evidence)',
+    dwelling: {
+      types: ['older-apartment'],
+      bedrooms: 2,
+      indicativePrice: null,
+      annualOc: null,
+      parkingTypes: [],
+      suitableStock:
+        'Older brick 2BR apartments within the 800 m station catchment; recurring-stock assumption pending listing evidence.',
+      expectedTransportCost:
+        'Use the existing Melbourne myki modelling assumption; no area-specific fare premium.',
+    },
+    stationWalkMin: null,
+    carDaily: null,
+    secondBedroom: true,
+    commute: null,
+    scores: {
+      housingValue: null,
+      coparenting: null,
+      lowCar: null,
+      recurringCosts: null,
+      walkability: null,
+      safety: null,
+      privacyWfh: null,
+      resale: null,
+      community: null,
+    },
+    childhood: {
+      schoolStrength: null,
+      teenIndependence: null,
+      publicPrimary: [],
+      publicSecondary: [],
+      privateContext: [],
+      note: 'School zones and points pending the schools pipeline run for this record.',
+    },
+    caseFor: [
+      'Established north-west suburb with a direct Craigieburn-line ride through the City Loop.',
+      'ABS 2021 Census context is integrated: 21,240 residents, established family-suburb profile.',
+    ],
+    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    bestType:
+      'Older 2BR apartment near the station; confirm the pocket once commute and price evidence land.',
+    avoidType: 'Any purchase decision from this record before its evidence passes complete.',
+    oneCar: 'Not assessed yet.',
+    coparentingGeometry: 'Not assessed yet.',
+    risks: [
+      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Dwelling product is an agent assumption from the onboarding batch; confirm recurring 2BR stock.',
+    ],
+    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    primaryWarning:
+      'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
+    verifiedAt: null,
+    placeholder: true,
+    sources: ['abs', 'ptv'],
+  },
+  {
     id: 'growth-corridor-stress-test',
     suburb: 'Tarneit / Wyndham Vale',
     municipality: 'Wyndham',

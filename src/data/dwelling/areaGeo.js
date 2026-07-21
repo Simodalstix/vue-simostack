@@ -389,6 +389,21 @@ export const areaGeo = {
     ],
   },
 
+  'essendon-2br': {
+    localityNames: ['Essendon'],
+    stationPoints: [
+      {
+        id: 'essendon',
+        name: 'Essendon',
+        // Same OSM-derived point the schematic Craigieburn line already uses
+        // in trainLines.js; re-verify against a public gazetteer next pass.
+        coordinates: [144.9095, -37.7561],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+
   // ---- East and south-east -------------------------------------------------
   'inner-se-apartment-corridor': {
     localityNames: ['Carnegie', 'Murrumbeena', 'Oakleigh'],
