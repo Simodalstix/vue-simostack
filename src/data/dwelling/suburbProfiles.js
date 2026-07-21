@@ -1451,26 +1451,29 @@ export const suburbProfiles = {
     },
   },
 
-  // 'Essendon' — pending-evidence pilot of the 2026-07-21 onboarding batch.
+  // 'Essendon' — graduated pilot of the 2026-07-21 onboarding batch.
   'essendon-2br': {
     lives:
-      'Established north-west suburb on the Craigieburn line, one stop pattern through the City Loop. ABS 2021: 21,240 residents, median age 39, a long-standing Italian-Australian community thread. Full lifestyle evidence pending.',
+      'Established north-west suburb on the Craigieburn line, one stop pattern through the City Loop. ABS 2021: 21,240 residents, median age 39, a long-standing Italian-Australian community thread.',
     housing:
-      'Proposed product is the older 2BR apartment near the station; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2BR apartment near the station; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       {
         text: 'Census community context is integrated and visible on the card.',
         tag: null,
       },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
 
@@ -1731,441 +1734,494 @@ export const suburbProfiles = {
   'chelsea-2br': chelseaBonbeach,
   // 'Chelsea/Bonbeach' (shared)
   'bonbeach-2br': chelseaBonbeach,
-  // 'Fawkner' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Fawkner' — graduated record of the 2026-07-21 onboarding batch.
   'fawkner-house': {
-    lives:
-      'Fawkner: ABS 2021 records 14,274 residents. Corridor: upfield line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Fawkner: ABS 2021 records 14,274 residents. Corridor: upfield line.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Thomastown' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Thomastown' — graduated record of the 2026-07-21 onboarding batch.
   'thomastown-house': {
-    lives:
-      'Thomastown: ABS 2021 records 20,234 residents. Corridor: mernda line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Thomastown: ABS 2021 records 20,234 residents. Corridor: mernda line.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Bundoora' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Bundoora' — graduated record of the 2026-07-21 onboarding batch.
   'bundoora-house': {
-    lives:
-      'Bundoora: ABS 2021 records 28,068 residents. Corridor: tram 86 / bus (verification pending). Full lifestyle evidence pending.',
+    lives: 'Bundoora: ABS 2021 records 28,068 residents. Corridor: tram 86 / bus.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Viewbank' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Viewbank' — graduated record of the 2026-07-21 onboarding batch.
   'viewbank-house': {
     lives:
-      'Viewbank: ABS 2021 records 7,030 residents. Corridor: bus to heidelberg (hurstbridge line) (verification pending). Full lifestyle evidence pending.',
+      'Viewbank: ABS 2021 records 7,030 residents. Corridor: bus to heidelberg (hurstbridge line).',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Watsonia' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Watsonia' — graduated record of the 2026-07-21 onboarding batch.
   'watsonia-house': {
-    lives:
-      'Watsonia: ABS 2021 records 5,352 residents. Corridor: hurstbridge line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Watsonia: ABS 2021 records 5,352 residents. Corridor: hurstbridge line.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Eltham' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Eltham' — graduated record of the 2026-07-21 onboarding batch.
   'eltham-house': {
-    lives:
-      'Eltham: ABS 2021 records 18,847 residents. Corridor: hurstbridge line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Eltham: ABS 2021 records 18,847 residents. Corridor: hurstbridge line.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Williamstown' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Williamstown' — graduated record of the 2026-07-21 onboarding batch.
   'williamstown-house': {
-    lives:
-      'Williamstown: ABS 2021 records 14,407 residents. Corridor: williamstown line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Williamstown: ABS 2021 records 14,407 residents. Corridor: williamstown line.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Point Cook' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Point Cook' — graduated record of the 2026-07-21 onboarding batch.
   'point-cook-house': {
     lives:
-      'Point Cook: ABS 2021 records 66,781 residents. Corridor: bus to williams landing (werribee line) (verification pending). Full lifestyle evidence pending.',
+      'Point Cook: ABS 2021 records 66,781 residents. Corridor: bus to williams landing (werribee line).',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Werribee' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Werribee' — graduated record of the 2026-07-21 onboarding batch.
   'werribee-house': {
-    lives:
-      'Werribee: ABS 2021 records 50,027 residents. Corridor: werribee line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Werribee: ABS 2021 records 50,027 residents. Corridor: werribee line.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Moonee Ponds' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Moonee Ponds' — graduated record of the 2026-07-21 onboarding batch.
   'moonee-ponds-2br': {
-    lives:
-      'Moonee Ponds: ABS 2021 records 16,224 residents. Corridor: craigieburn line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Moonee Ponds: ABS 2021 records 16,224 residents. Corridor: craigieburn line.',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Eltham North' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Eltham North' — graduated record of the 2026-07-21 onboarding batch.
   'eltham-north-house': {
     lives:
-      'Eltham North: ABS 2021 records 6,830 residents. Corridor: bus to eltham (hurstbridge line) (verification pending). Full lifestyle evidence pending.',
+      'Eltham North: ABS 2021 records 6,830 residents. Corridor: bus to eltham (hurstbridge line).',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Essendon West' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Essendon West' — graduated record of the 2026-07-21 onboarding batch.
   'essendon-west-house': {
-    lives:
-      'Essendon West: ABS 2021 records 1,559 residents. Corridor: bus routes (verification pending). Full lifestyle evidence pending.',
+    lives: 'Essendon West: ABS 2021 records 1,559 residents. Corridor: bus routes.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Watsonia North' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Watsonia North' — graduated record of the 2026-07-21 onboarding batch.
   'watsonia-north-house': {
     lives:
-      'Watsonia North: ABS 2021 records 3,799 residents. Corridor: bus to watsonia (hurstbridge line) (verification pending). Full lifestyle evidence pending.',
+      'Watsonia North: ABS 2021 records 3,799 residents. Corridor: bus to watsonia (hurstbridge line).',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Black Rock' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Black Rock' — graduated record of the 2026-07-21 onboarding batch.
   'black-rock-house': {
     lives:
-      'Black Rock: ABS 2021 records 6,389 residents. Corridor: bus to sandringham (sandringham line) (verification pending). Full lifestyle evidence pending.',
+      'Black Rock: ABS 2021 records 6,389 residents. Corridor: bus to sandringham (sandringham line).',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Braybrook' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Braybrook' — graduated record of the 2026-07-21 onboarding batch.
   'braybrook-villa': {
-    lives:
-      'Braybrook: ABS 2021 records 9,682 residents. Corridor: bus / sunbury line edge (verification pending). Full lifestyle evidence pending.',
+    lives: 'Braybrook: ABS 2021 records 9,682 residents. Corridor: bus / sunbury line edge.',
     housing:
-      'Proposed product is the villa unit; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the villa unit; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Brighton' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Brighton' — graduated record of the 2026-07-21 onboarding batch.
   'brighton-house': {
-    lives:
-      'Brighton: ABS 2021 records 23,252 residents. Corridor: sandringham line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Brighton: ABS 2021 records 23,252 residents. Corridor: sandringham line.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Bulleen' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Bulleen' — graduated record of the 2026-07-21 onboarding batch.
   'bulleen-house': {
-    lives:
-      'Bulleen: ABS 2021 records 11,219 residents. Corridor: bus (manningham corridor) (verification pending). Full lifestyle evidence pending.',
+    lives: 'Bulleen: ABS 2021 records 11,219 residents. Corridor: bus (manningham corridor).',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Burwood' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Burwood' — graduated record of the 2026-07-21 onboarding batch.
   'burwood-house': {
-    lives:
-      'Burwood: ABS 2021 records 15,147 residents. Corridor: tram 75 (verification pending). Full lifestyle evidence pending.',
+    lives: 'Burwood: ABS 2021 records 15,147 residents. Corridor: tram 75.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Camberwell' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Camberwell' — graduated record of the 2026-07-21 onboarding batch.
   'camberwell-2br': {
     lives:
-      'Camberwell: ABS 2021 records 21,965 residents. Corridor: belgrave / lilydale / alamein junction (verification pending). Full lifestyle evidence pending.',
+      'Camberwell: ABS 2021 records 21,965 residents. Corridor: belgrave / lilydale / alamein junction.',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Elsternwick' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Elsternwick' — graduated record of the 2026-07-21 onboarding batch.
   'elsternwick-2br': {
-    lives:
-      'Elsternwick: ABS 2021 records 10,887 residents. Corridor: sandringham line (verification pending). Full lifestyle evidence pending.',
+    lives: 'Elsternwick: ABS 2021 records 10,887 residents. Corridor: sandringham line.',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Hawthorn East' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'Hawthorn East' — graduated record of the 2026-07-21 onboarding batch.
   'hawthorn-east-2br': {
     lives:
-      'Hawthorn East: ABS 2021 records 14,834 residents. Corridor: belgrave / lilydale (auburn edge) (verification pending). Full lifestyle evidence pending.',
+      'Hawthorn East: ABS 2021 records 14,834 residents. Corridor: belgrave / lilydale (auburn edge).',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'St Kilda East' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'St Kilda East' — graduated record of the 2026-07-21 onboarding batch.
   'st-kilda-east-2br': {
-    lives:
-      'St Kilda East: ABS 2021 records 12,571 residents. Corridor: trams 3 / 16 / 67 (verification pending). Full lifestyle evidence pending.',
+    lives: 'St Kilda East: ABS 2021 records 12,571 residents. Corridor: trams 3 / 16 / 67.',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'St Kilda West' — pending-evidence record of the 2026-07-21 onboarding batch.
+  // 'St Kilda West' — graduated record of the 2026-07-21 onboarding batch.
   'st-kilda-west-2br': {
-    lives:
-      'St Kilda West: ABS 2021 records 2,951 residents. Corridor: trams 12 / 96 (verification pending). Full lifestyle evidence pending.',
+    lives: 'St Kilda West: ABS 2021 records 2,951 residents. Corridor: trams 12 / 96.',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Recreation and kid-amenity are not yet scored, so that criterion drops out of the weighted mean.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor:
+        'A 2026 north/west batch candidate; weigh it on the scored criteria and price band shown on this card.',
+      mainRisk:
+        'Commute, safety and price bands are evidence-based estimates, not verified to a specific block.',
+      pursueWhen:
+        'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
 }

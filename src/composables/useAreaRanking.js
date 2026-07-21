@@ -86,6 +86,20 @@ function gate(rec, filters, commute) {
   return { status, reasons }
 }
 
+// A record is "Prestige" when its entry price sits well above the active
+// budget cap: genuinely out of reach rather than merely over the line. This is
+// presentation only (no scoring, weight or gate effect) and is what lets an
+// aspirational suburb read as premium instead of a plain over-cap rejection.
+// The multiple keeps a suburb that is just above the cap out of the tier.
+export const PRESTIGE_CAP_MULTIPLE = 1.5
+
+export function prestigeFor(rec, filters) {
+  const cap = filters?.maxPrice
+  const entry = rec?.dwelling?.indicativePrice?.[0]
+  if (!cap || !Number.isFinite(entry)) return false
+  return entry >= cap * PRESTIGE_CAP_MULTIPLE
+}
+
 // `weights` is the effective weight per criterion key from the Settle panel:
 // the strategy preset value when the toggle is on, 0 when it is off. Standard
 // criteria form the renormalised weighted mean. Explicitly additive bonuses
@@ -154,6 +168,7 @@ export function useAreaRanking(records, filtersRef, weightsRef) {
           commute: null,
           commuteScore: null,
           band: null,
+          prestige: prestigeFor(rec, filters),
         }
       }
       const commute = commuteFor(rec)
@@ -171,6 +186,7 @@ export function useAreaRanking(records, filtersRef, weightsRef) {
         commute,
         commuteScore,
         band: commute ? commuteBandLabel(commute.typical) : null,
+        prestige: prestigeFor(rec, filters),
       }
     })
 

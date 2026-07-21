@@ -63,8 +63,15 @@ describe('dwelling greenspace context', () => {
     expect(decideCriterionByKey.beach).toBeTruthy()
   })
 
-  it('keeps the generated context in lockstep with the active ranked records', () => {
-    expect(DWELLING_GREENSPACE_CONTEXT.records.length).toBe(activeRecords.length)
+  it('gives every scored record greenspace evidence', () => {
+    // No count-lockstep: the generated context may legitimately hold more
+    // records than are scored (pending-evidence records are built ahead of
+    // graduation, same as cost and school context). The only thing that
+    // matters is that a record which IS scored is never missing its
+    // greenspace data.
+    for (const rec of activeRecords) {
+      expect(greenspaceIds.has(rec.id)).toBe(true)
+    }
   })
 
   it.each([

@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-19",
+ "generatedAt": "2026-07-21",
  "recipe": "Derived from areaGeo.js stationPoints + areaCorridors.js childhood name hints. Regenerate after adding records; never hand-edit.",
  "records": [
   {
@@ -556,6 +556,26 @@
    }
   },
   {
+   "id": "essendon-2br",
+   "suburb": "Essendon",
+   "localityNames": [
+    "Essendon"
+   ],
+   "anchors": [
+    {
+     "id": "essendon",
+     "name": "Essendon",
+     "lng": 144.9162,
+     "lat": -37.756
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
    "id": "growth-corridor-stress-test",
    "suburb": "Tarneit / Wyndham Vale",
    "localityNames": [
@@ -631,7 +651,7 @@
      "new estate primaries opening in stages"
     ],
     "publicSecondary": [
-     "none established \u2014 buses toward Craigieburn/Mount Ridley"
+     "none established — buses toward Craigieburn/Mount Ridley"
     ],
     "privateContext": []
    }
@@ -1715,6 +1735,484 @@
     "Brunswick East"
    ],
    "anchors": [],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "fawkner-house",
+   "suburb": "Fawkner",
+   "localityNames": [
+    "Fawkner"
+   ],
+   "anchors": [
+    {
+     "id": "fawkner",
+     "name": "Fawkner",
+     "lng": 144.9606,
+     "lat": -37.7146
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "thomastown-house",
+   "suburb": "Thomastown",
+   "localityNames": [
+    "Thomastown"
+   ],
+   "anchors": [
+    {
+     "id": "thomastown",
+     "name": "Thomastown",
+     "lng": 145.0143,
+     "lat": -37.6803
+    },
+    {
+     "id": "keon-park",
+     "name": "Keon Park",
+     "lng": 145.0118,
+     "lat": -37.6959
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "bundoora-house",
+   "suburb": "Bundoora",
+   "localityNames": [
+    "Bundoora"
+   ],
+   "anchors": [
+    {
+     "id": "bundoora-anchor",
+     "name": "Bundoora (locality anchor)",
+     "lng": 145.0561,
+     "lat": -37.7027
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "viewbank-house",
+   "suburb": "Viewbank",
+   "localityNames": [
+    "Viewbank"
+   ],
+   "anchors": [
+    {
+     "id": "viewbank-anchor",
+     "name": "Viewbank (locality anchor)",
+     "lng": 145.0931,
+     "lat": -37.7425
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "watsonia-house",
+   "suburb": "Watsonia",
+   "localityNames": [
+    "Watsonia"
+   ],
+   "anchors": [
+    {
+     "id": "watsonia",
+     "name": "Watsonia",
+     "lng": 145.0837,
+     "lat": -37.7109
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "eltham-house",
+   "suburb": "Eltham",
+   "localityNames": [
+    "Eltham"
+   ],
+   "anchors": [
+    {
+     "id": "eltham",
+     "name": "Eltham",
+     "lng": 145.1479,
+     "lat": -37.7135
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "williamstown-house",
+   "suburb": "Williamstown",
+   "localityNames": [
+    "Williamstown"
+   ],
+   "anchors": [
+    {
+     "id": "williamstown",
+     "name": "Williamstown",
+     "lng": 144.9053,
+     "lat": -37.8677
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "point-cook-house",
+   "suburb": "Point Cook",
+   "localityNames": [
+    "Point Cook"
+   ],
+   "anchors": [
+    {
+     "id": "point-cook-anchor",
+     "name": "Point Cook (locality anchor)",
+     "lng": 144.7568,
+     "lat": -37.9046
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "werribee-house",
+   "suburb": "Werribee",
+   "localityNames": [
+    "Werribee"
+   ],
+   "anchors": [
+    {
+     "id": "werribee",
+     "name": "Werribee",
+     "lng": 144.6609,
+     "lat": -37.8996
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "moonee-ponds-2br",
+   "suburb": "Moonee Ponds",
+   "localityNames": [
+    "Moonee Ponds"
+   ],
+   "anchors": [
+    {
+     "id": "moonee-ponds",
+     "name": "Moonee Ponds",
+     "lng": 144.9192,
+     "lat": -37.7657
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "eltham-north-house",
+   "suburb": "Eltham North",
+   "localityNames": [
+    "Eltham North"
+   ],
+   "anchors": [
+    {
+     "id": "eltham-north-anchor",
+     "name": "Eltham North (locality anchor)",
+     "lng": 145.1428,
+     "lat": -37.6976
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "essendon-west-house",
+   "suburb": "Essendon West",
+   "localityNames": [
+    "Essendon West"
+   ],
+   "anchors": [
+    {
+     "id": "essendon-west-anchor",
+     "name": "Essendon West (locality anchor)",
+     "lng": 144.8837,
+     "lat": -37.7549
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "watsonia-north-house",
+   "suburb": "Watsonia North",
+   "localityNames": [
+    "Watsonia North"
+   ],
+   "anchors": [
+    {
+     "id": "watsonia-north-anchor",
+     "name": "Watsonia North (locality anchor)",
+     "lng": 145.0858,
+     "lat": -37.6983
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "black-rock-house",
+   "suburb": "Black Rock",
+   "localityNames": [
+    "Black Rock"
+   ],
+   "anchors": [
+    {
+     "id": "black-rock-anchor",
+     "name": "Black Rock (locality anchor)",
+     "lng": 145.0234,
+     "lat": -37.9717
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "braybrook-villa",
+   "suburb": "Braybrook",
+   "localityNames": [
+    "Braybrook"
+   ],
+   "anchors": [
+    {
+     "id": "braybrook-anchor",
+     "name": "Braybrook (locality anchor)",
+     "lng": 144.8557,
+     "lat": -37.7837
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "brighton-house",
+   "suburb": "Brighton",
+   "localityNames": [
+    "Brighton"
+   ],
+   "anchors": [
+    {
+     "id": "brighton-beach",
+     "name": "Brighton Beach",
+     "lng": 144.9893,
+     "lat": -37.9265
+    },
+    {
+     "id": "middle-brighton",
+     "name": "Middle Brighton",
+     "lng": 144.9963,
+     "lat": -37.9151
+    },
+    {
+     "id": "north-brighton",
+     "name": "North Brighton",
+     "lng": 145.0026,
+     "lat": -37.9049
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "bulleen-house",
+   "suburb": "Bulleen",
+   "localityNames": [
+    "Bulleen"
+   ],
+   "anchors": [
+    {
+     "id": "bulleen-anchor",
+     "name": "Bulleen (locality anchor)",
+     "lng": 145.0887,
+     "lat": -37.767
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "burwood-house",
+   "suburb": "Burwood",
+   "localityNames": [
+    "Burwood"
+   ],
+   "anchors": [
+    {
+     "id": "burwood-anchor",
+     "name": "Burwood (locality anchor)",
+     "lng": 145.1141,
+     "lat": -37.8507
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "camberwell-2br",
+   "suburb": "Camberwell",
+   "localityNames": [
+    "Camberwell"
+   ],
+   "anchors": [
+    {
+     "id": "camberwell",
+     "name": "Camberwell",
+     "lng": 145.0587,
+     "lat": -37.8266
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "elsternwick-2br",
+   "suburb": "Elsternwick",
+   "localityNames": [
+    "Elsternwick"
+   ],
+   "anchors": [
+    {
+     "id": "elsternwick",
+     "name": "Elsternwick",
+     "lng": 145.0009,
+     "lat": -37.8847
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "hawthorn-east-2br",
+   "suburb": "Hawthorn East",
+   "localityNames": [
+    "Hawthorn East"
+   ],
+   "anchors": [
+    {
+     "id": "auburn",
+     "name": "Auburn",
+     "lng": 145.0458,
+     "lat": -37.8224
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "st-kilda-east-2br",
+   "suburb": "St Kilda East",
+   "localityNames": [
+    "St Kilda East"
+   ],
+   "anchors": [
+    {
+     "id": "st-kilda-east-anchor",
+     "name": "St Kilda East (locality anchor)",
+     "lng": 145.0037,
+     "lat": -37.8717
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "st-kilda-west-2br",
+   "suburb": "St Kilda West",
+   "localityNames": [
+    "St Kilda West"
+   ],
+   "anchors": [
+    {
+     "id": "st-kilda-west-anchor",
+     "name": "St Kilda West (locality anchor)",
+     "lng": 144.9714,
+     "lat": -37.8584
+    }
+   ],
    "nameHints": {
     "publicPrimary": [],
     "publicSecondary": [],

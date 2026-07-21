@@ -212,7 +212,11 @@ describe('cost scoring', () => {
       // A record scores only from generated VGV context or a hand score;
       // with neither (e.g. no VGV units row for the suburb) it stays null
       // rather than receiving invented values.
-      const hasGenerated = DWELLING_COST_BY_ID[rec.id]?.prices?.unit?.all?.medianPrice != null
+      const prices = DWELLING_COST_BY_ID[rec.id]?.prices
+      // House-product records score cost off the house median when no unit
+      // row exists, so generated data means either type is present.
+      const hasGenerated =
+        prices?.unit?.all?.medianPrice != null || prices?.house?.all?.medianPrice != null
       if (!hasGenerated && rec.scores?.housingValue == null) expect(cost).toBeNull()
       else expect(Number.isFinite(cost)).toBe(true)
     }

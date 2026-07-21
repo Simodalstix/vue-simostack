@@ -776,6 +776,94 @@
       }
     },
     {
+      "id": "black-rock-house",
+      "displayName": "Black Rock",
+      "salSuburbs": [
+        "Black Rock"
+      ],
+      "salCodes": [
+        "20251"
+      ],
+      "greenspace": 9.0137,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.3296,
+        "majorParkAccess": 9.7145,
+        "natureCorridorAccess": 9.6727
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 79.1,
+        "representedPopulation": 6311,
+        "sampledMeshBlocks": 76
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 207,
+          "majorPark": 286,
+          "natureCorridor": 349
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Beach Park - Black Rock to Beaumaris",
+            "areaHa": 51.42
+          },
+          {
+            "name": "Tjilatjirrin Reserve",
+            "areaHa": 8.46
+          },
+          {
+            "name": "Donald MacDonald Reserve",
+            "areaHa": 6.16
+          },
+          {
+            "name": "Royal Ave Parkland",
+            "areaHa": 5.74
+          },
+          {
+            "name": "Banksia Reserve",
+            "areaHa": 4.74
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Beach Park - Black Rock to Beaumaris",
+            "areaHa": 51.42
+          },
+          {
+            "name": "Merindah Park",
+            "areaHa": 2.6
+          },
+          {
+            "name": "Donald MacDonald Reserve",
+            "areaHa": 2.59
+          },
+          {
+            "name": "Long Hollow Heathland - Beaumaris",
+            "areaHa": 2.35
+          },
+          {
+            "name": "The Urban Forest",
+            "areaHa": 2.16
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.8,
+        "componentSpread": 1.4,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "blackburn-house",
       "displayName": "Blackburn",
       "salSuburbs": [
@@ -1040,6 +1128,182 @@
       }
     },
     {
+      "id": "braybrook-villa",
+      "displayName": "Braybrook",
+      "salSuburbs": [
+        "Braybrook"
+      ],
+      "salCodes": [
+        "20324"
+      ],
+      "greenspace": 9.7523,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.7563,
+        "natureCorridorAccess": 9.1272
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 96.9,
+        "representedPopulation": 9538,
+        "sampledMeshBlocks": 92
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 155,
+          "majorPark": 337,
+          "natureCorridor": 550
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Lower Maribyrnong Parklands - Moonee Valley",
+            "areaHa": 60.53
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 35.73
+          },
+          {
+            "name": "Maribyrnong River Frontage",
+            "areaHa": 26.86
+          },
+          {
+            "name": "MARIBYRNONG RIVER",
+            "areaHa": 26.4
+          },
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 17.86
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Lower Maribyrnong Parklands - Moonee Valley",
+            "areaHa": 60.53
+          },
+          {
+            "name": "Lower Maribyrnong Parklands",
+            "areaHa": 52.75
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 34.08
+          },
+          {
+            "name": "Maribyrnong River Frontage",
+            "areaHa": 26.86
+          },
+          {
+            "name": "MARIBYRNONG RIVER",
+            "areaHa": 26.4
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.5,
+        "componentSpread": 0.9,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "brighton-house",
+      "displayName": "Brighton",
+      "salSuburbs": [
+        "Brighton"
+      ],
+      "salCodes": [
+        "20337"
+      ],
+      "greenspace": 8.4195,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.6738,
+        "majorParkAccess": 8.6052,
+        "natureCorridorAccess": 7.505
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 82.4,
+        "representedPopulation": 23052,
+        "sampledMeshBlocks": 268
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 249,
+          "majorPark": 611,
+          "natureCorridor": 844
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Sandringham Beach Park Reserve",
+            "areaHa": 27.35
+          },
+          {
+            "name": "Elsternwick Park",
+            "areaHa": 22.81
+          },
+          {
+            "name": "Middle Brighton Pier and Breakwater",
+            "areaHa": 20.3
+          },
+          {
+            "name": "Elwood Park",
+            "areaHa": 14.4
+          },
+          {
+            "name": "FS10 Middle Brighton Beach",
+            "areaHa": 13.88
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Sandringham Beach Park Reserve",
+            "areaHa": 27.35
+          },
+          {
+            "name": "Middle Brighton Pier and Breakwater",
+            "areaHa": 20.3
+          },
+          {
+            "name": "FS10 Middle Brighton Beach",
+            "areaHa": 13.88
+          },
+          {
+            "name": "Brighton Foreshore Reserve",
+            "areaHa": 12.39
+          },
+          {
+            "name": "Sandringham Jetty and Breakwater",
+            "areaHa": 9.42
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.1,
+        "componentSpread": 1.2,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "upfield-corridor",
       "displayName": "Brunswick / Coburg",
       "salSuburbs": [
@@ -1218,6 +1482,182 @@
       }
     },
     {
+      "id": "bulleen-house",
+      "displayName": "Bulleen",
+      "salSuburbs": [
+        "Bulleen"
+      ],
+      "salCodes": [
+        "20386"
+      ],
+      "greenspace": 9.7257,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.2174,
+        "natureCorridorAccess": 9.8026
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 11223,
+        "sampledMeshBlocks": 110
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 142,
+          "majorPark": 467,
+          "natureCorridor": 243
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Yarra Valley Parklands - Banyule",
+            "areaHa": 223.44
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 76.35
+          },
+          {
+            "name": "Yarra Valley Parklands",
+            "areaHa": 49.55
+          },
+          {
+            "name": "Banyule Flats",
+            "areaHa": 46.66
+          },
+          {
+            "name": "Yarra Valley Parklands - Manningham",
+            "areaHa": 42.06
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Yarra Valley Parklands",
+            "areaHa": 412.83
+          },
+          {
+            "name": "Yarra Valley Parklands - Banyule",
+            "areaHa": 223.44
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 76.35
+          },
+          {
+            "name": "Yarra Valley Parklands - Manningham",
+            "areaHa": 42.06
+          },
+          {
+            "name": "Banyule Flats",
+            "areaHa": 41.31
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.0,
+        "componentSpread": 0.8,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "bundoora-house",
+      "displayName": "Bundoora",
+      "salSuburbs": [
+        "Bundoora"
+      ],
+      "salCodes": [
+        "20399"
+      ],
+      "greenspace": 9.9258,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.7806,
+        "natureCorridorAccess": 9.9582
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 27311,
+        "sampledMeshBlocks": 247
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 90,
+          "majorPark": 228,
+          "natureCorridor": 183
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Plenty Gorge Parklands - Nillumbik",
+            "areaHa": 217.73
+          },
+          {
+            "name": "Plenty Gorge Parklands",
+            "areaHa": 171.03
+          },
+          {
+            "name": "Bundoora Parkland",
+            "areaHa": 109.95
+          },
+          {
+            "name": "Plenty Gorge Parklands - Whittlesea",
+            "areaHa": 64.19
+          },
+          {
+            "name": "Gresswell Forest Wildlife Reserve",
+            "areaHa": 46.11
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Plenty Gorge Parklands",
+            "areaHa": 431.31
+          },
+          {
+            "name": "Plenty Gorge Parklands - Nillumbik",
+            "areaHa": 217.73
+          },
+          {
+            "name": "Plenty Gorge Parklands (COM)",
+            "areaHa": 212.31
+          },
+          {
+            "name": "Plenty Gorge Parklands - Whittlesea",
+            "areaHa": 64.19
+          },
+          {
+            "name": "Gresswell Forest (part b) Nature Conservation Reserve",
+            "areaHa": 58.61
+          }
+        ],
+        "residentialPopulationCoveragePct": 97.3,
+        "componentSpread": 0.2,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "burnley-2br",
       "displayName": "Burnley",
       "salSuburbs": [
@@ -1302,6 +1742,182 @@
         ],
         "residentialPopulationCoveragePct": 98.5,
         "componentSpread": 0.0,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "burwood-house",
+      "displayName": "Burwood",
+      "salSuburbs": [
+        "Burwood"
+      ],
+      "salCodes": [
+        "20426"
+      ],
+      "greenspace": 9.6365,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.0667,
+        "natureCorridorAccess": 9.5824
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 99.1,
+        "representedPopulation": 14890,
+        "sampledMeshBlocks": 137
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 111,
+          "majorPark": 453,
+          "natureCorridor": 394
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Wattle Park",
+            "areaHa": 38.46
+          },
+          {
+            "name": "Gardiners Creek Reserve (North)",
+            "areaHa": 18.91
+          },
+          {
+            "name": "Surrey Park",
+            "areaHa": 15.72
+          },
+          {
+            "name": "Jingella Reserve",
+            "areaHa": 14.71
+          },
+          {
+            "name": "Wurundjeri Walk",
+            "areaHa": 14.15
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Wattle Park",
+            "areaHa": 93.48
+          },
+          {
+            "name": "Gardiners Creek Reserve (North)",
+            "areaHa": 18.91
+          },
+          {
+            "name": "Wurundjeri Walk",
+            "areaHa": 13.97
+          },
+          {
+            "name": "Damper Creek Reserve",
+            "areaHa": 13.34
+          },
+          {
+            "name": "Markham Reserve",
+            "areaHa": 10.34
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.3,
+        "componentSpread": 0.9,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "camberwell-2br",
+      "displayName": "Camberwell",
+      "salSuburbs": [
+        "Camberwell"
+      ],
+      "salCodes": [
+        "20453"
+      ],
+      "greenspace": 9.2428,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.3391,
+        "majorParkAccess": 9.2354,
+        "natureCorridorAccess": 9.0133
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 88.7,
+        "representedPopulation": 21199,
+        "sampledMeshBlocks": 231
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 189,
+          "majorPark": 424,
+          "natureCorridor": 491
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Wattle Park",
+            "areaHa": 38.46
+          },
+          {
+            "name": "Gardiners Reserve",
+            "areaHa": 11.81
+          },
+          {
+            "name": "Lynden Park",
+            "areaHa": 8.01
+          },
+          {
+            "name": "Patterson Reserve",
+            "areaHa": 7.63
+          },
+          {
+            "name": "Back Creek Reserve",
+            "areaHa": 5.97
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Wattle Park",
+            "areaHa": 93.48
+          },
+          {
+            "name": "Back Creek Reserve",
+            "areaHa": 5.97
+          },
+          {
+            "name": "Outer Circle Linear Park",
+            "areaHa": 5.82
+          },
+          {
+            "name": "Nettleton Park Reserve",
+            "areaHa": 5.58
+          },
+          {
+            "name": "Gardiners Reserve",
+            "areaHa": 4.54
+          }
+        ],
+        "residentialPopulationCoveragePct": 96.5,
+        "componentSpread": 0.3,
         "reviewFlags": []
       }
     },
@@ -2354,6 +2970,258 @@
       }
     },
     {
+      "id": "elsternwick-2br",
+      "displayName": "Elsternwick",
+      "salSuburbs": [
+        "Elsternwick"
+      ],
+      "salCodes": [
+        "20864"
+      ],
+      "greenspace": 7.4873,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.7015,
+        "majorParkAccess": 7.3859,
+        "natureCorridorAccess": 4.6041
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 82.7,
+        "representedPopulation": 10631,
+        "sampledMeshBlocks": 128
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 264,
+          "majorPark": 936,
+          "natureCorridor": 1495
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Elsternwick Park",
+            "areaHa": 22.81
+          },
+          {
+            "name": "Elwood Park",
+            "areaHa": 14.4
+          },
+          {
+            "name": "Princes Park",
+            "areaHa": 12.4
+          },
+          {
+            "name": "Caulfield Park (Parkland)",
+            "areaHa": 7.24
+          },
+          {
+            "name": "Landcox Park",
+            "areaHa": 5.0
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Elwood Canal Linear Reserve",
+            "areaHa": 2.19
+          },
+          {
+            "name": "Elwood Canal",
+            "areaHa": 0.3
+          }
+        ],
+        "residentialPopulationCoveragePct": 97.6,
+        "componentSpread": 4.1,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "eltham-house",
+      "displayName": "Eltham",
+      "salSuburbs": [
+        "Eltham"
+      ],
+      "salCodes": [
+        "20865"
+      ],
+      "greenspace": 9.7635,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.2908,
+        "natureCorridorAccess": 9.8812
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 97.2,
+        "representedPopulation": 18375,
+        "sampledMeshBlocks": 172
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 121,
+          "majorPark": 399,
+          "natureCorridor": 253
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Yarra Valley Parklands - Manningham",
+            "areaHa": 347.37
+          },
+          {
+            "name": "Yarra Valley Parklands - Nillumbik",
+            "areaHa": 179.93
+          },
+          {
+            "name": "Westerfolds Park - YVParklands",
+            "areaHa": 126.95
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 107.09
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 32.66
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Yarra Valley Parklands",
+            "areaHa": 551.19
+          },
+          {
+            "name": "Yarra Valley Parklands - Manningham",
+            "areaHa": 347.37
+          },
+          {
+            "name": "Yarra Valley Parklands - Nillumbik",
+            "areaHa": 179.93
+          },
+          {
+            "name": "Yarra Valley Parklands (COM)",
+            "areaHa": 129.14
+          },
+          {
+            "name": "Westerfolds Park - YVParklands",
+            "areaHa": 126.95
+          }
+        ],
+        "residentialPopulationCoveragePct": 97.5,
+        "componentSpread": 0.7,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "eltham-north-house",
+      "displayName": "Eltham North",
+      "salSuburbs": [
+        "Eltham North"
+      ],
+      "salCodes": [
+        "20866"
+      ],
+      "greenspace": 9.7971,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.328,
+        "natureCorridorAccess": 9.9933
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 6777,
+        "sampledMeshBlocks": 56
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 94,
+          "majorPark": 472,
+          "natureCorridor": 169
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Eltham North Reserve",
+            "areaHa": 28.03
+          },
+          {
+            "name": "Diamond Creek Linear Reserve",
+            "areaHa": 21.96
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 20.82
+          },
+          {
+            "name": "Challenger Street Reserve",
+            "areaHa": 17.23
+          },
+          {
+            "name": "Anthony Beale Reserve",
+            "areaHa": 9.83
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Diamond Creek Linear Reserve",
+            "areaHa": 21.96
+          },
+          {
+            "name": "Eltham North Reserve",
+            "areaHa": 17.0
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 8.16
+          },
+          {
+            "name": "Andrew Yandell Habitat Reserve",
+            "areaHa": 6.01
+          },
+          {
+            "name": "Browns Nature Reserve",
+            "areaHa": 4.95
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.2,
+        "componentSpread": 0.7,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "elwood-2br",
       "displayName": "Elwood",
       "salSuburbs": [
@@ -2442,6 +3310,182 @@
       }
     },
     {
+      "id": "essendon-2br",
+      "displayName": "Essendon",
+      "salSuburbs": [
+        "Essendon"
+      ],
+      "salCodes": [
+        "20885"
+      ],
+      "greenspace": 8.5864,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.5501,
+        "majorParkAccess": 8.8088,
+        "natureCorridorAccess": 8.3437
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 81.2,
+        "representedPopulation": 20678,
+        "sampledMeshBlocks": 235
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 201,
+          "majorPark": 556,
+          "natureCorridor": 687
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Lower Maribyrnong Parklands - Moonee Valley",
+            "areaHa": 47.51
+          },
+          {
+            "name": "MARIBYRNONG RIVER",
+            "areaHa": 26.4
+          },
+          {
+            "name": "Afton Street Reserve",
+            "areaHa": 17.01
+          },
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 15.1
+          },
+          {
+            "name": "Aberfeldie Park",
+            "areaHa": 14.7
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Lower Maribyrnong Parklands",
+            "areaHa": 50.61
+          },
+          {
+            "name": "Lower Maribyrnong Parklands - Moonee Valley",
+            "areaHa": 47.51
+          },
+          {
+            "name": "MARIBYRNONG RIVER",
+            "areaHa": 26.4
+          },
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 15.1
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 7.83
+          }
+        ],
+        "residentialPopulationCoveragePct": 97.4,
+        "componentSpread": 0.5,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "essendon-west-house",
+      "displayName": "Essendon West",
+      "salSuburbs": [
+        "Essendon West"
+      ],
+      "salCodes": [
+        "20888"
+      ],
+      "greenspace": 9.9165,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.7511,
+        "natureCorridorAccess": 9.9558
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 1565,
+        "sampledMeshBlocks": 16
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 107,
+          "majorPark": 285,
+          "natureCorridor": 225
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Lower Maribyrnong Parklands - Moonee Valley",
+            "areaHa": 50.56
+          },
+          {
+            "name": "MARIBYRNONG RIVER",
+            "areaHa": 26.4
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 18.31
+          },
+          {
+            "name": "Afton Street Reserve",
+            "areaHa": 17.01
+          },
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 15.1
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Lower Maribyrnong Parklands",
+            "areaHa": 50.61
+          },
+          {
+            "name": "Lower Maribyrnong Parklands - Moonee Valley",
+            "areaHa": 50.56
+          },
+          {
+            "name": "MARIBYRNONG RIVER",
+            "areaHa": 26.4
+          },
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 15.1
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 7.99
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.4,
+        "componentSpread": 0.2,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "fairfield-house",
       "displayName": "Fairfield",
       "salSuburbs": [
@@ -2526,6 +3570,94 @@
         ],
         "residentialPopulationCoveragePct": 93.9,
         "componentSpread": 0.6,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "fawkner-house",
+      "displayName": "Fawkner",
+      "salSuburbs": [
+        "Fawkner"
+      ],
+      "salCodes": [
+        "20909"
+      ],
+      "greenspace": 9.6148,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.9527,
+        "majorParkAccess": 9.4144,
+        "natureCorridorAccess": 9.0708
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 94.6,
+        "representedPopulation": 14148,
+        "sampledMeshBlocks": 128
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 158,
+          "majorPark": 324,
+          "natureCorridor": 439
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Galada Tamboore, Merri Creek",
+            "areaHa": 66.31
+          },
+          {
+            "name": "Cooper Street Grasslands - Whittlesea",
+            "areaHa": 40.12
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 33.13
+          },
+          {
+            "name": "Edgars Creek Parkland",
+            "areaHa": 24.47
+          },
+          {
+            "name": "Northcorp Boulevard Reserve",
+            "areaHa": 23.56
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Galada Tamboore, Merri Creek",
+            "areaHa": 66.31
+          },
+          {
+            "name": "Cooper Street Grasslands - Whittlesea",
+            "areaHa": 40.12
+          },
+          {
+            "name": "maram baba (Merri Creek Park)",
+            "areaHa": 40.09
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 28.34
+          },
+          {
+            "name": "Edgars Creek Parkland",
+            "areaHa": 24.47
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.1,
+        "componentSpread": 0.9,
         "reviewFlags": []
       }
     },
@@ -2957,6 +4089,94 @@
           }
         ],
         "residentialPopulationCoveragePct": 95.1,
+        "componentSpread": 2.1,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "hawthorn-east-2br",
+      "displayName": "Hawthorn East",
+      "salSuburbs": [
+        "Hawthorn East"
+      ],
+      "salCodes": [
+        "21153"
+      ],
+      "greenspace": 8.52,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.3925,
+        "majorParkAccess": 7.2762,
+        "natureCorridorAccess": 8.2043
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 89.2,
+        "representedPopulation": 14288,
+        "sampledMeshBlocks": 159
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 202,
+          "majorPark": 962,
+          "natureCorridor": 746
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Kooyong Park",
+            "areaHa": 12.29
+          },
+          {
+            "name": "Patterson Reserve",
+            "areaHa": 7.63
+          },
+          {
+            "name": "Outer Circle Linear Park",
+            "areaHa": 6.26
+          },
+          {
+            "name": "Anderson Park",
+            "areaHa": 5.66
+          },
+          {
+            "name": "Nettleton Park Reserve",
+            "areaHa": 5.41
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Outer Circle Linear Park",
+            "areaHa": 6.26
+          },
+          {
+            "name": "Nettleton Park Reserve",
+            "areaHa": 5.41
+          },
+          {
+            "name": "Back Creek Reserve",
+            "areaHa": 1.96
+          },
+          {
+            "name": "Gardiners Creek Trail",
+            "areaHa": 1.69
+          },
+          {
+            "name": "Reservoir Reserve",
+            "areaHa": 1.63
+          }
+        ],
+        "residentialPopulationCoveragePct": 96.3,
         "componentSpread": 2.1,
         "reviewFlags": []
       }
@@ -3740,6 +4960,94 @@
       }
     },
     {
+      "id": "moonee-ponds-2br",
+      "displayName": "Moonee Ponds",
+      "salSuburbs": [
+        "Moonee Ponds"
+      ],
+      "salCodes": [
+        "21742"
+      ],
+      "greenspace": 8.4787,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.0141,
+        "majorParkAccess": 9.4632,
+        "natureCorridorAccess": 8.1636
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 76.1,
+        "representedPopulation": 14049,
+        "sampledMeshBlocks": 160
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 241,
+          "majorPark": 359,
+          "natureCorridor": 721
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "MARIBYRNONG RIVER",
+            "areaHa": 26.4
+          },
+          {
+            "name": "Fairbairn Park",
+            "areaHa": 24.5
+          },
+          {
+            "name": "Lower Maribyrnong Parklands - Maribyrnong",
+            "areaHa": 22.46
+          },
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 15.1
+          },
+          {
+            "name": "Aberfeldie Park",
+            "areaHa": 14.7
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "MARIBYRNONG RIVER",
+            "areaHa": 26.4
+          },
+          {
+            "name": "Pipemakers, Burndap and Footscay Park Parklands (COM)",
+            "areaHa": 23.98
+          },
+          {
+            "name": "Lower Maribyrnong Parklands - Maribyrnong",
+            "areaHa": 22.46
+          },
+          {
+            "name": "Maribyrnong River",
+            "areaHa": 15.1
+          },
+          {
+            "name": "Royal Park Wetlands and Bushland",
+            "areaHa": 7.67
+          }
+        ],
+        "residentialPopulationCoveragePct": 86.6,
+        "componentSpread": 1.4,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "frankston-middle-ring",
       "displayName": "Moorabbin / Cheltenham",
       "salSuburbs": [
@@ -4360,6 +5668,94 @@
         ],
         "residentialPopulationCoveragePct": 99.2,
         "componentSpread": 0.7,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "point-cook-house",
+      "displayName": "Point Cook",
+      "salSuburbs": [
+        "Point Cook"
+      ],
+      "salCodes": [
+        "22086"
+      ],
+      "greenspace": 9.5869,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 8.7962,
+        "natureCorridorAccess": 9.7404
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 96.7,
+        "representedPopulation": 66447,
+        "sampledMeshBlocks": 541
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 133,
+          "majorPark": 473,
+          "natureCorridor": 273
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Point Cook Coastal Park - Wyndham",
+            "areaHa": 719.71
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 183.42
+          },
+          {
+            "name": "Cheetham Wetlands",
+            "areaHa": 156.3
+          },
+          {
+            "name": "Truganina Coastal Park - Cheetham Wetlands",
+            "areaHa": 94.29
+          },
+          {
+            "name": "Truganina Park",
+            "areaHa": 63.89
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Point Cook Coastal Park",
+            "areaHa": 843.88
+          },
+          {
+            "name": "Point Cook Coastal Park - Wyndham",
+            "areaHa": 719.71
+          },
+          {
+            "name": "Cheetham Wetlands",
+            "areaHa": 156.3
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 133.16
+          },
+          {
+            "name": "Truganina Coastal Park - Cheetham Wetlands",
+            "areaHa": 94.29
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.5,
+        "componentSpread": 1.2,
         "reviewFlags": []
       }
     },
@@ -5338,6 +6734,172 @@
       }
     },
     {
+      "id": "st-kilda-east-2br",
+      "displayName": "St Kilda East",
+      "salSuburbs": [
+        "St Kilda East"
+      ],
+      "salCodes": [
+        "22344"
+      ],
+      "greenspace": 7.5156,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.5493,
+        "majorParkAccess": 7.8704,
+        "natureCorridorAccess": 1.8991
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 90.7,
+        "representedPopulation": 12541,
+        "sampledMeshBlocks": 165
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 262,
+          "majorPark": 866,
+          "natureCorridor": 2046
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Albert Park",
+            "areaHa": 58.97
+          },
+          {
+            "name": "Alma Park",
+            "areaHa": 9.15
+          },
+          {
+            "name": "Elsternwick Park",
+            "areaHa": 7.15
+          },
+          {
+            "name": "St Kilda Botanical Gardens",
+            "areaHa": 6.62
+          },
+          {
+            "name": "Orrong Romanis Park",
+            "areaHa": 3.96
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Elwood Canal Linear Reserve",
+            "areaHa": 2.04
+          },
+          {
+            "name": "Elwood Canal",
+            "areaHa": 0.3
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.8,
+        "componentSpread": 7.7,
+        "reviewFlags": [
+          "highComponentSpread"
+        ]
+      }
+    },
+    {
+      "id": "st-kilda-west-2br",
+      "displayName": "St Kilda West",
+      "salSuburbs": [
+        "St Kilda West"
+      ],
+      "salCodes": [
+        "22345"
+      ],
+      "greenspace": 9.9957,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 10.0,
+        "natureCorridorAccess": 9.9784
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 2947,
+        "sampledMeshBlocks": 53
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 93,
+          "majorPark": 114,
+          "natureCorridor": 211
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Albert Park",
+            "areaHa": 116.96
+          },
+          {
+            "name": "Albert Park Lake",
+            "areaHa": 48.92
+          },
+          {
+            "name": "St Kilda Pier and Breakwater",
+            "areaHa": 48.3
+          },
+          {
+            "name": "St Kilda Catani Gardens & Surrounding Foreshore",
+            "areaHa": 14.16
+          },
+          {
+            "name": "Port Melb, Albert & Middle Parks F/shore",
+            "areaHa": 11.29
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Albert Park Lake",
+            "areaHa": 48.92
+          },
+          {
+            "name": "St Kilda Pier and Breakwater",
+            "areaHa": 48.3
+          },
+          {
+            "name": "St Kilda Catani Gardens & Surrounding Foreshore",
+            "areaHa": 14.16
+          },
+          {
+            "name": "Port Melb, Albert & Middle Parks F/shore",
+            "areaHa": 11.29
+          },
+          {
+            "name": "St Kilda Marina & Surrounding Foreshore",
+            "areaHa": 11.23
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.9,
+        "componentSpread": 0.0,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "sunbury-house",
       "displayName": "Sunbury",
       "salSuburbs": [
@@ -5688,6 +7250,94 @@
       }
     },
     {
+      "id": "thomastown-house",
+      "displayName": "Thomastown",
+      "salSuburbs": [
+        "Thomastown"
+      ],
+      "salCodes": [
+        "22504"
+      ],
+      "greenspace": 9.5233,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.896,
+        "majorParkAccess": 8.9765,
+        "natureCorridorAccess": 9.4119
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 94.0,
+        "representedPopulation": 20123,
+        "sampledMeshBlocks": 193
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 167,
+          "majorPark": 479,
+          "natureCorridor": 390
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Galada Tamboore, Merri Creek",
+            "areaHa": 93.93
+          },
+          {
+            "name": "Bundoora Parkland",
+            "areaHa": 92.0
+          },
+          {
+            "name": "Cooper Street Grasslands - Whittlesea",
+            "areaHa": 63.06
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 25.0
+          },
+          {
+            "name": "Whittlesea Public Gardens",
+            "areaHa": 13.43
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Galada Tamboore, Merri Creek",
+            "areaHa": 93.93
+          },
+          {
+            "name": "Cooper Street Grasslands - Whittlesea",
+            "areaHa": 63.06
+          },
+          {
+            "name": "maram baba (Merri Creek Park)",
+            "areaHa": 58.25
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 21.9
+          },
+          {
+            "name": "Bababi Djinanang (Dukes Rd Grassland)",
+            "areaHa": 12.71
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.5,
+        "componentSpread": 0.9,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "thornbury-2br",
       "displayName": "Thornbury",
       "salSuburbs": [
@@ -5864,6 +7514,358 @@
       }
     },
     {
+      "id": "viewbank-house",
+      "displayName": "Viewbank",
+      "salSuburbs": [
+        "Viewbank"
+      ],
+      "salCodes": [
+        "22633"
+      ],
+      "greenspace": 9.9657,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.9618,
+        "natureCorridorAccess": 9.8859
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 7009,
+        "sampledMeshBlocks": 68
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 100,
+          "majorPark": 194,
+          "natureCorridor": 218
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Yarra Valley Parklands - Banyule",
+            "areaHa": 279.38
+          },
+          {
+            "name": "Yarra Valley Parklands",
+            "areaHa": 49.68
+          },
+          {
+            "name": "Banyule Flats",
+            "areaHa": 46.66
+          },
+          {
+            "name": "Warringal Parklands",
+            "areaHa": 32.27
+          },
+          {
+            "name": "Banksia Park - Yarra Valley Pklands",
+            "areaHa": 25.97
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Yarra Valley Parklands",
+            "areaHa": 413.35
+          },
+          {
+            "name": "Yarra Valley Parklands - Banyule",
+            "areaHa": 279.38
+          },
+          {
+            "name": "Banyule Flats",
+            "areaHa": 41.31
+          },
+          {
+            "name": "Banksia Park - Yarra Valley Pklands",
+            "areaHa": 25.97
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 22.93
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.7,
+        "componentSpread": 0.1,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "watsonia-house",
+      "displayName": "Watsonia",
+      "salSuburbs": [
+        "Watsonia"
+      ],
+      "salCodes": [
+        "22721"
+      ],
+      "greenspace": 9.6415,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.8559,
+        "natureCorridorAccess": 8.4236
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 97.6,
+        "representedPopulation": 5321,
+        "sampledMeshBlocks": 58
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 162,
+          "majorPark": 323,
+          "natureCorridor": 595
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Gresswell Forest Wildlife Reserve",
+            "areaHa": 46.11
+          },
+          {
+            "name": "Gresswell Habitat Link",
+            "areaHa": 16.56
+          },
+          {
+            "name": "Cherry Street Grasslands Reserve",
+            "areaHa": 13.63
+          },
+          {
+            "name": "Binnak Park",
+            "areaHa": 12.77
+          },
+          {
+            "name": "Western Ring Road Trail",
+            "areaHa": 11.04
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Gresswell Forest (part b) Nature Conservation Reserve",
+            "areaHa": 58.61
+          },
+          {
+            "name": "Gresswell Forest Wildlife Reserve",
+            "areaHa": 46.11
+          },
+          {
+            "name": "Gresswell Habitat Link",
+            "areaHa": 16.56
+          },
+          {
+            "name": "Cherry Street Grasslands Reserve",
+            "areaHa": 13.63
+          },
+          {
+            "name": "Binnak Park",
+            "areaHa": 12.77
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.4,
+        "componentSpread": 1.6,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "watsonia-north-house",
+      "displayName": "Watsonia North",
+      "salSuburbs": [
+        "Watsonia North"
+      ],
+      "salCodes": [
+        "22722"
+      ],
+      "greenspace": 9.9631,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.9691,
+        "natureCorridorAccess": 9.8617
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 3782,
+        "sampledMeshBlocks": 37
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 114,
+          "majorPark": 230,
+          "natureCorridor": 236
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Plenty Gorge Parklands",
+            "areaHa": 171.03
+          },
+          {
+            "name": "Plenty Gorge Parklands - Nillumbik",
+            "areaHa": 87.56
+          },
+          {
+            "name": "Gresswell Forest Wildlife Reserve",
+            "areaHa": 46.11
+          },
+          {
+            "name": "Western Ring Road Trail",
+            "areaHa": 13.16
+          },
+          {
+            "name": "Binnak Park",
+            "areaHa": 12.77
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Plenty Gorge Parklands",
+            "areaHa": 216.97
+          },
+          {
+            "name": "Plenty Gorge Parklands (COM)",
+            "areaHa": 212.31
+          },
+          {
+            "name": "Plenty Gorge Parklands - Nillumbik",
+            "areaHa": 87.56
+          },
+          {
+            "name": "Gresswell Forest (part b) Nature Conservation Reserve",
+            "areaHa": 58.45
+          },
+          {
+            "name": "Gresswell Forest Wildlife Reserve",
+            "areaHa": 46.11
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.6,
+        "componentSpread": 0.1,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "werribee-house",
+      "displayName": "Werribee",
+      "salSuburbs": [
+        "Werribee"
+      ],
+      "salCodes": [
+        "22750"
+      ],
+      "greenspace": 8.7545,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.5849,
+        "majorParkAccess": 8.7358,
+        "natureCorridorAccess": 9.2065
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 81.6,
+        "representedPopulation": 49442,
+        "sampledMeshBlocks": 502
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 147,
+          "majorPark": 460,
+          "natureCorridor": 398
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 159.2
+          },
+          {
+            "name": "Werribee River Regional Park",
+            "areaHa": 120.29
+          },
+          {
+            "name": "Presidents Park Recreational Reserve",
+            "areaHa": 71.81
+          },
+          {
+            "name": "Heathdale Glen Orden Recreational Reserve",
+            "areaHa": 40.92
+          },
+          {
+            "name": "Werribee River Frontage - Wyndham",
+            "areaHa": 39.03
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Werribee River Regional Park",
+            "areaHa": 395.03
+          },
+          {
+            "name": "Werribee Township Regional Park",
+            "areaHa": 176.97
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 105.44
+          },
+          {
+            "name": "Werribee River Frontage - Wyndham",
+            "areaHa": 39.03
+          },
+          {
+            "name": "Federation Trail Linear Reserve",
+            "areaHa": 34.11
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.8,
+        "componentSpread": 0.6,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "west-melbourne-2br",
       "displayName": "West Melbourne",
       "salSuburbs": [
@@ -5948,6 +7950,94 @@
         ],
         "residentialPopulationCoveragePct": 88.0,
         "componentSpread": 3.9,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "williamstown-house",
+      "displayName": "Williamstown",
+      "salSuburbs": [
+        "Williamstown"
+      ],
+      "salCodes": [
+        "22792"
+      ],
+      "greenspace": 9.8146,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.6169,
+        "natureCorridorAccess": 9.6476
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 97.2,
+        "representedPopulation": 14156,
+        "sampledMeshBlocks": 149
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 129,
+          "majorPark": 315,
+          "natureCorridor": 262
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Kororoit Creek Flood Plains, Cherry Lake",
+            "areaHa": 151.78
+          },
+          {
+            "name": "Altona Coastal Park",
+            "areaHa": 67.33
+          },
+          {
+            "name": "Jawbone Coastal Reserve",
+            "areaHa": 34.46
+          },
+          {
+            "name": "Riverside Park",
+            "areaHa": 23.29
+          },
+          {
+            "name": "Jawbone Flora and Fauna Reserve",
+            "areaHa": 20.72
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Kororoit Creek Flood Plains, Cherry Lake",
+            "areaHa": 151.78
+          },
+          {
+            "name": "Altona Coastal Park",
+            "areaHa": 67.33
+          },
+          {
+            "name": "Jawbone Flora and Fauna Reserve",
+            "areaHa": 41.42
+          },
+          {
+            "name": "Jawbone Coastal Reserve",
+            "areaHa": 34.46
+          },
+          {
+            "name": "Riverside Park",
+            "areaHa": 23.29
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.3,
+        "componentSpread": 0.4,
         "reviewFlags": []
       }
     },

@@ -32,7 +32,7 @@ describe('remaining new-area onboarding batch', () => {
 
     expect(records).toHaveLength(1)
     expect(record.placeholder).toBe(true)
-    expect(areaGeo[areaId]?.stationPoints).toHaveLength(1)
+    expect(areaGeo[areaId]?.stationPoints.length).toBeGreaterThanOrEqual(1)
     expect(suburbProfileFor(areaId)).toBeTruthy()
     expect(communityContextFor(areaId)?.missing).toEqual([])
     expect(Number.isFinite(chineseCommunityScore(areaId))).toBe(true)

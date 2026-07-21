@@ -8,7 +8,7 @@
 
 export const SCHOOL_CONTEXT_DATASET = {
   "zoneYear": "2027",
-  "generatedAt": "2026-07-19"
+  "generatedAt": "2026-07-16"
 }
 
 export const schoolContextByAreaId = {
@@ -253,6 +253,20 @@ export const schoolContextByAreaId = {
     "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
     "boundaryFlag": false
+  },
+  "essendon-2br": {
+    "zonedPrimary": "Essendon Primary School",
+    "zonedSecondary": "Buckley Park College",
+    "alsoInCatchmentPrimary": [
+      "Aberfeldie Primary School",
+      "Moonee Ponds West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Mount Alexander 7-12 College",
+      "Strathmore Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
   },
   "growth-corridor-stress-test": {
     "zonedPrimary": "Baden Powell P-9 College",
@@ -939,6 +953,298 @@ export const schoolContextByAreaId = {
       "Princes Hill Secondary College"
     ],
     "anchorSource": "locality-representative-point",
+    "boundaryFlag": false
+  },
+  "fawkner-house": {
+    "zonedPrimary": "Fawkner Primary School",
+    "zonedSecondary": "John Fawkner Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Belle Vue Park Primary School",
+      "Moomba Park Primary School",
+      "Pascoe Vale North Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "thomastown-house": {
+    "zonedPrimary": "Thomastown Primary School",
+    "zonedSecondary": "Thomastown Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Lalor Primary School",
+      "Thomastown East Primary School",
+      "Thomastown West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Lalor Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "bundoora-house": {
+    "zonedPrimary": "Bundoora Primary School",
+    "zonedSecondary": "Bundoora Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Norris Bank Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "viewbank-house": {
+    "zonedPrimary": "Viewbank Primary School",
+    "zonedSecondary": "Viewbank College",
+    "alsoInCatchmentPrimary": [
+      "Banyule Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "watsonia-house": {
+    "zonedPrimary": "Watsonia Primary School",
+    "zonedSecondary": "Greensborough Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Bundoora Primary School",
+      "Macleod College",
+      "Watsonia Heights Primary School",
+      "Watsonia North Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Bundoora Secondary College",
+      "Macleod College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "eltham-house": {
+    "zonedPrimary": "Eltham East Primary School",
+    "zonedSecondary": "Eltham High School",
+    "alsoInCatchmentPrimary": [
+      "Eltham North Primary School",
+      "Eltham Primary School",
+      "Sherbourne Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "williamstown-house": {
+    "zonedPrimary": "Williamstown Primary School",
+    "zonedSecondary": "Williamstown High School",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [
+      "Bayside P-12 College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "point-cook-house": {
+    "zonedPrimary": "Saltwater P-9 College",
+    "zonedSecondary": "Saltwater P-9 College",
+    "alsoInCatchmentPrimary": [
+      "Alamanda K-9 College",
+      "Carranballac P-9 College"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Alamanda K-9 College",
+      "Carranballac P-9 College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "werribee-house": {
+    "zonedPrimary": "Werribee Primary School",
+    "zonedSecondary": "Werribee Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Manorvale Primary School",
+      "Westgrove Primary School",
+      "Wyndham Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Wyndham Central Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "moonee-ponds-2br": {
+    "zonedPrimary": "Moonee Ponds West Primary School",
+    "zonedSecondary": "Mount Alexander 7-12 College",
+    "alsoInCatchmentPrimary": [
+      "Ascot Vale Primary School",
+      "Essendon Primary School",
+      "Moonee Ponds Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Buckley Park College",
+      "Maribyrnong Secondary College",
+      "Strathmore Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "eltham-north-house": {
+    "zonedPrimary": "Eltham North Primary School",
+    "zonedSecondary": "St Helena Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Glen Katherine Primary School",
+      "Sherbourne Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "essendon-west-house": {
+    "zonedPrimary": "Aberfeldie Primary School",
+    "zonedSecondary": "Rosehill Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Avondale Primary School",
+      "Keilor Heights Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Buckley Park College",
+      "Maribyrnong Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "watsonia-north-house": {
+    "zonedPrimary": "Watsonia North Primary School",
+    "zonedSecondary": "Greensborough Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Greensborough Primary School",
+      "Watsonia Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Bundoora Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "black-rock-house": {
+    "zonedPrimary": "Black Rock Primary School",
+    "zonedSecondary": "Beaumaris Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Beaumaris North Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Sandringham College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "braybrook-villa": {
+    "zonedPrimary": "Sunshine Harvester Primary School",
+    "zonedSecondary": "Braybrook College",
+    "alsoInCatchmentPrimary": [
+      "Avondale Primary School",
+      "Dinjerra Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "brighton-house": {
+    "zonedPrimary": "Brighton Beach Primary School",
+    "zonedSecondary": "Brighton Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Hampton Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "bulleen-house": {
+    "zonedPrimary": "Belle Vue Primary School",
+    "zonedSecondary": "Viewbank College",
+    "alsoInCatchmentPrimary": [
+      "Heidelberg Primary School",
+      "Templestowe Valley Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Kew High School",
+      "Templestowe College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "burwood-house": {
+    "zonedPrimary": "Essex Heights Primary School",
+    "zonedSecondary": "Ashwood High School",
+    "alsoInCatchmentPrimary": [
+      "Parkhill Primary School",
+      "Roberts McCubbin Primary School",
+      "Wattle Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Mount Waverley Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "camberwell-2br": {
+    "zonedPrimary": "Camberwell Primary School",
+    "zonedSecondary": "Camberwell High School",
+    "alsoInCatchmentPrimary": [
+      "Auburn Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Auburn High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "elsternwick-2br": {
+    "zonedPrimary": "Elsternwick Primary School",
+    "zonedSecondary": "Elwood College",
+    "alsoInCatchmentPrimary": [
+      "Caulfield Primary School",
+      "Elwood Primary School",
+      "Ripponlea Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "hawthorn-east-2br": {
+    "zonedPrimary": "Auburn Primary School",
+    "zonedSecondary": "Auburn High School",
+    "alsoInCatchmentPrimary": [
+      "Auburn South Primary School",
+      "Camberwell Primary School",
+      "Glenferrie Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Camberwell High School",
+      "Kew High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "st-kilda-east-2br": {
+    "zonedPrimary": "Ripponlea Primary School",
+    "zonedSecondary": "Elwood College",
+    "alsoInCatchmentPrimary": [
+      "Caulfield Junior College",
+      "St Kilda Primary School",
+      "Windsor Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "st-kilda-west-2br": {
+    "zonedPrimary": "St Kilda Park Primary School",
+    "zonedSecondary": "Albert Park College",
+    "alsoInCatchmentPrimary": [
+      "Middle Park Primary School",
+      "South Melbourne Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Elwood College",
+      "Prahran High School"
+    ],
+    "anchorSource": "station",
     "boundaryFlag": false
   }
 }
