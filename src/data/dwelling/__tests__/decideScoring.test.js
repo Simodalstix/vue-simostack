@@ -166,7 +166,11 @@ describe('score robustness', () => {
     const filters = { ...strategy.filters, includeStretch: true }
     const allOn = useAreaRanking(areaCorridors, filters, strategy.weights).value
     const statusById = Object.fromEntries(allOn.map((row) => [row.rec.id, row.status]))
-    expect(allOn.every((row) => Number.isFinite(row.weighted))).toBe(true)
+    // Pending-evidence records (scored: false) sit outside the ranking and
+    // carry no weighted score; the finiteness invariant covers scored rows.
+    expect(
+      allOn.filter((row) => row.rec.scored !== false).every((row) => Number.isFinite(row.weighted)),
+    ).toBe(true)
 
     for (const key of keys) {
       const toggled = useAreaRanking(areaCorridors, filters, {

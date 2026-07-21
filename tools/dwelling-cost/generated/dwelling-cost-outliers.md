@@ -13,7 +13,6 @@ Generated-score differences are review prompts for the source data and suburb ma
 | northern-rail-value | 5.27 | 8.00 | -2.73 |
 | inner-se-apartment-corridor | 8.04 | 6.00 | +2.04 |
 | inner-lowcar-benchmark | 9.39 | 4.00 | +5.39 |
-| growth-corridor-stress-test | 10.00 | 8.00 | +2.00 |
 | craigieburn-townhouse | 10.00 | 8.00 | +2.00 |
 | toorak-2br | 0.00 | 2.00 | -2.00 |
 | cremorne-2br | 6.67 | 4.00 | +2.67 |
