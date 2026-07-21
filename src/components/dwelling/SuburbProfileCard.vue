@@ -28,12 +28,25 @@
             <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
               <p class="text-[21px] font-bold leading-tight text-ob-text">{{ row.rec.suburb }}</p>
               <span
-                v-if="!unscored"
+                v-if="!unscored && !vetoed"
                 class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
                 :style="{ backgroundColor: bandBadgeFill(row), color: bandColor(row) }"
               >
                 <span class="text-[15px] font-extrabold leading-none">{{ scoreDisplay(row) }}</span>
                 <span class="text-[9px] uppercase tracking-[0.08em]">{{ bandLabel(row) }}</span>
+              </span>
+              <span
+                v-else-if="vetoed"
+                class="font-mono text-[15px] font-extrabold leading-none text-ob-dim"
+              >
+                {{ scoreDisplay(row) }}
+              </span>
+              <span
+                v-if="prestige"
+                class="inline-flex items-center rounded-full border border-ob-purple/45 bg-ob-purple/12 px-2 py-[3px] font-mono text-[9.5px] uppercase tracking-[0.08em] text-ob-purple"
+                title="Entry price is well above the current budget cap"
+              >
+                {{ PRESTIGE_LABEL }}
               </span>
             </div>
             <p
@@ -62,7 +75,11 @@
           </div>
           <div class="shrink-0 text-right">
             <p class="flex items-baseline justify-end gap-1 font-mono">
-              <template v-if="rankById[row.rec.id]">
+              <template v-if="vetoed">
+                <span class="text-[13px] font-bold leading-none text-ob-dim">Veto</span>
+                <span class="text-[10px] text-ob-faint">·</span>
+              </template>
+              <template v-else-if="rankById[row.rec.id]">
                 <span class="text-[15px] font-extrabold leading-none text-ob-sand"
                   >#{{ rankById[row.rec.id] }}</span
                 >
@@ -78,7 +95,7 @@
 
         <div class="space-y-2">
           <div
-            class="grid gap-x-5 gap-y-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[0.95fr_1fr_1.2fr_0.95fr_1.7fr]"
+            class="grid gap-x-5 gap-y-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[1.2fr_0.75fr_1.1fr_0.9fr_1.6fr]"
           >
             <div v-for="m in headerMetrics" :key="m.label" class="min-w-0">
               <p class="font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint">
@@ -354,7 +371,6 @@
 import { ref, computed, watch } from 'vue'
 import { fitBandBadgeFill, fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
 import { FEE_ESTIMATE_BY_RISK } from '@/data/dwelling/areaCorridors.js'
-import { localitiesForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLines, linesForArea } from '@/data/dwelling/trainLines.js'
 import { facilitiesForArea } from '@/data/dwelling/facilities.js'
 import { GIRLS_SPORT_CLUBS, girlsSportFor } from '@/data/dwelling/girlsSport.js'
@@ -367,8 +383,10 @@ import { costMetricForArea, formatCostMetric } from '@/data/dwelling/cost/costCo
 import { schoolContextByAreaId } from '@/data/dwelling/schools/dwelling-school-context.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import {
+  PRESTIGE_LABEL,
   UNSCORED_BANNER,
   fitLineForRow,
+  isPrestigeRow,
   isUnscoredRow,
   isVetoedRow,
 } from '@/data/dwelling/unscoredUx.js'
@@ -398,19 +416,15 @@ watch(
   },
 )
 
-const sharedNote = computed(() => {
-  const areaId = props.row.rec.id
-  if (!isGroupedArea(areaId)) return null
-  return `Grouped coverage: ${localitiesForArea(areaId).join(' + ')} market assumptions shared.`
-})
 const gateNote = computed(() => {
   if (!props.row.reasons.length) return null
+  // Vetoes are shown by the grey "Veto" marker, not a reason line.
+  if (isVetoedRow(props.row)) return null
   const lead = props.row.reasons[0]
   const suffix = props.row.reasons.length > 1 ? ` +${props.row.reasons.length - 1}` : ''
-  if (isVetoedRow(props.row)) return `${lead}${suffix}`
   return `${props.row.status === 'reject' ? 'Fails' : 'Conditional'}: ${lead}${suffix}`
 })
-const headerNote = computed(() => [sharedNote.value, gateNote.value].filter(Boolean).join(' · '))
+const headerNote = computed(() => gateNote.value)
 const headerMetrics = computed(() => [
   { label: 'Scored price', value: scoredPriceLabel.value },
   { label: 'Repayment estimate', value: monthlyLabel(props.row.rec), tone: 'text-ob-teal' },
@@ -418,14 +432,20 @@ const headerMetrics = computed(() => [
   { label: 'Owners-corp', value: ocLabel(props.row.rec), tone: 'text-ob-muted2' },
 ])
 const scoredPriceLabel = computed(() =>
-  formatCostMetric(costMetricForArea(props.row.rec.id, props.strategy, props.row.rec)),
+  formatCostMetric(costMetricForArea(props.row.rec.id, props.strategy, props.row.rec), {
+    terse: true,
+  }),
 )
 const unscored = computed(() => isUnscoredRow(props.row))
+const vetoed = computed(() => isVetoedRow(props.row))
+const prestige = computed(() => isPrestigeRow(props.row))
 const suburbProfile = computed(() => suburbProfileFor(props.row.rec.id))
 const girlsSport = computed(() => girlsSportFor(props.row.rec.id))
 const beachAccess = computed(() => beachAccessByAreaId[props.row.rec.id] || null)
 const headerChips = computed(() => differentiatingChipsFor(props.row, props.weights))
-const gateChip = computed(() => gateExceptionChipFor(props.row))
+// The owner-veto reason is long and already stated in the fit line; showing it
+// as a header chip too overflows the chip row and resizes the card on hover.
+const gateChip = computed(() => (isVetoedRow(props.row) ? null : gateExceptionChipFor(props.row)))
 const girlsSportPathways = computed(() =>
   GIRLS_SPORT_CLUBS.filter((sport) => girlsSport.value?.clubPresence?.[sport.key] === true),
 )

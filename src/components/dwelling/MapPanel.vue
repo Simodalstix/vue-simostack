@@ -173,6 +173,7 @@ import {
   scoreLegend,
 } from '@/data/dwelling/mapConfig.js'
 import { getFitBand } from '@/data/dwelling/fitBands.js'
+import { PRESTIGE_LABEL } from '@/data/dwelling/unscoredUx.js'
 import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { trainLineFeatures, linesForArea } from '@/data/dwelling/trainLines.js'
 import { schoolPoints } from '@/data/dwelling/schools/dwelling-school-points.js'
@@ -332,7 +333,10 @@ function popupHtml(payload) {
             const b = getFitBand(row.weighted)
             return `<strong>${esc(heading)}</strong><br>${shared}<span style="color:${mapFitBandColor(b)}">${row.weighted} · ${b.label}</span> · #${rankById.value[areaId]}`
           })()
-  return linesHtml ? `${base}<br>${linesHtml}` : base
+  const withPrestige = row.prestige
+    ? `${base}<br><span style="color:#9B82E5">${PRESTIGE_LABEL}</span>`
+    : base
+  return linesHtml ? `${withPrestige}<br>${linesHtml}` : withPrestige
 }
 function esc(s) {
   return String(s).replace(

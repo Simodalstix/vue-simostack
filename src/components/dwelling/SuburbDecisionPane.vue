@@ -82,15 +82,23 @@
             </span>
             <span
               v-else-if="isVetoedRow(previewRow)"
-              class="inline-flex rounded-full border border-ob-sand/20 bg-ob-sand/5 px-2 py-[3px] font-mono text-[10px] text-ob-faint"
+              class="inline-flex items-baseline gap-1.5 font-mono text-ob-dim"
             >
-              owner veto · score {{ previewRow.weighted }}
+              <span class="text-[12px] font-bold leading-none">Veto</span>
+              <span class="text-[10px] text-ob-faint">·</span>
+              <span class="text-[11px] font-extrabold leading-none">{{ previewRow.weighted }}</span>
             </span>
             <span
               v-else
               class="inline-flex rounded-full border border-ob-sand/30 bg-ob-sand/8 px-2 py-[3px] font-mono text-[11px] uppercase tracking-[0.06em] text-ob-sand"
             >
               unscored
+            </span>
+            <span
+              v-if="isPrestigeRow(previewRow)"
+              class="inline-flex rounded-full border border-ob-purple/45 bg-ob-purple/12 px-2 py-[3px] font-mono text-[10px] uppercase tracking-[0.06em] text-ob-purple"
+            >
+              {{ PRESTIGE_LABEL }}
             </span>
           </div>
         </div>
@@ -248,6 +256,12 @@
             <span class="min-w-0 flex-1 truncate text-[12px] font-semibold text-ob-muted2">
               {{ row.rec.suburb }}
             </span>
+            <span
+              v-if="isPrestigeRow(row)"
+              class="shrink-0 rounded-full border border-ob-purple/45 bg-ob-purple/12 px-1.5 py-[2px] font-mono text-[8.5px] uppercase tracking-[0.06em] text-ob-purple"
+            >
+              {{ PRESTIGE_LABEL }}
+            </span>
             <span class="shrink-0 font-mono text-[9.5px] text-ob-faint">
               {{ row.rec.region }}
             </span>
@@ -271,6 +285,8 @@ import { decideCriteria } from '@/data/dwelling/decideStrategies.js'
 import { fitBandBadgeFill, fitBandColor, getFitBand } from '@/data/dwelling/fitBands.js'
 import { suburbProfileFor } from '@/data/dwelling/suburbProfiles.js'
 import {
+  PRESTIGE_LABEL,
+  isPrestigeRow,
   isRankedRow,
   isUnscoredRow,
   isVetoedRow,
@@ -373,7 +389,7 @@ function bandColor(row) {
 }
 
 function bandLabel(row) {
-  if (isVetoedRow(row)) return `Owner judgment veto: ${row.reasons[0] || ''}`
+  if (isVetoedRow(row)) return 'Owner veto'
   if (row.status === 'reject') return `Gated: ${row.reasons[0] || 'hard requirement failed'}`
   return getFitBand(row.weighted).ariaLabel
 }
@@ -416,6 +432,9 @@ function rowBadges(row) {
 }
 
 function gateChip(row) {
+  // Vetoes read as a grey score plus the "Veto" marker; the reason chip is
+  // redundant clutter, so suppress it for veto rows.
+  if (isVetoedRow(row)) return null
   return gateExceptionChipFor(row)
 }
 
@@ -477,7 +496,7 @@ function breakdown(row) {
 
 function previewBadges(row) {
   const badges = []
-  const exception = gateExceptionChipFor(row)
+  const exception = isVetoedRow(row) ? null : gateExceptionChipFor(row)
   if (exception) badges.push(exception)
   badges.push(...rowBadges(row))
   return badges.map((badge) => ({

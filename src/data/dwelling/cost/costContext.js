@@ -39,12 +39,23 @@ export function costMetricForArea(areaId, strategy, rec = null) {
   return { ...fallback, propertyType, bedrooms, isBedroomProxy: bedrooms != null }
 }
 
-export function formatCostMetric(metric, { compact = false } = {}) {
+export function formatCostMetric(metric, { compact = false, terse = false } = {}) {
   if (!metric?.medianPrice) return 'n/a'
   const price = `$${Math.round(metric.medianPrice / 1000)}k`
   if (compact) return metric.isBedroomProxy ? `${price} ${metric.bedrooms}BR proxy` : price
 
   const dwelling = PROPERTY_TYPE_LABELS[metric.propertyType] || metric.propertyType
+  // Terse: price, basis and year only — no "settled median" clause. Keeps the
+  // scored-price header metric to two lines.
+  if (terse) {
+    const year = metric.evidence?.latestYear ? ` · ${metric.evidence.latestYear}` : ''
+    const basis = metric.isBedroomProxy
+      ? `${metric.bedrooms}BR proxy`
+      : metric.bedrooms == null
+        ? `all-${dwelling}`
+        : `${metric.bedrooms}BR ${dwelling}`
+    return `${price} ${basis}${year}`
+  }
   const market = metric.priceType === 'asking' ? 'asking median' : 'settled median'
   const sample = Number.isFinite(metric.sampleSize) ? ` · n=${metric.sampleSize}` : ''
   const latestYear = metric.evidence?.latestYear

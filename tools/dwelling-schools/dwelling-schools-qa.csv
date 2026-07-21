@@ -15,16 +15,30 @@ balwyn-north-2br,primary,Boroondara Park Primary School,,352.7,locality-represen
 balwyn-north-2br,secondary,Balwyn High School,,896.9,locality-representative-point
 bentleigh-house,primary,Bentleigh West Primary School,,334.7,station
 bentleigh-house,secondary,McKinnon Secondary College,,78.7,station
+black-rock-house,primary,Black Rock Primary School,,486.1,station
+black-rock-house,secondary,Beaumaris Secondary College,,448.0,station
 blackburn-house,primary,Blackburn Primary School,,264.2,station
 blackburn-house,secondary,Blackburn High School,,37.3,station
 bonbeach-2br,primary,Bonbeach Primary School,,121.2,station
 bonbeach-2br,secondary,Patterson River Secondary College,,390.1,station
 box-hill-2br,primary,Mont Albert Primary School,,86.9,station
 box-hill-2br,secondary,Box Hill High School,,228.1,station
+braybrook-villa,primary,Sunshine Harvester Primary School,,1.2,station
+braybrook-villa,secondary,Braybrook College,,894.2,station
+brighton-house,primary,Brighton Beach Primary School,,303.9,station
+brighton-house,secondary,Brighton Secondary College,,303.9,station
 brunswick-east-2br,primary,Brunswick East Primary School,,453.2,locality-representative-point
 brunswick-east-2br,secondary,Northcote High School,,465.0,locality-representative-point
+bulleen-house,primary,Belle Vue Primary School,,9.8,station
+bulleen-house,secondary,Viewbank College,,62.1,station
+bundoora-house,primary,Bundoora Primary School,,349.6,station
+bundoora-house,secondary,Bundoora Secondary College,,1456.4,station
 burnley-2br,primary,Richmond Primary School,,222.8,station
 burnley-2br,secondary,Richmond High School,,458.3,station
+burwood-house,primary,Essex Heights Primary School,,196.6,station
+burwood-house,secondary,Ashwood High School,,668.9,station
+camberwell-2br,primary,Camberwell Primary School,,193.0,station
+camberwell-2br,secondary,Camberwell High School,,357.9,station
 carlton-2br,primary,Carlton Gardens Primary School,,151.2,locality-representative-point
 carlton-2br,secondary,University High School,,319.0,locality-representative-point
 carlton-north-2br,primary,Carlton North Primary School,,76.9,locality-representative-point
@@ -45,12 +59,24 @@ donnybrook-house-land,primary,Gilgai Plains Primary School,,573.0,station
 donnybrook-house-land,secondary,Ngayuk College,,1970.0,station
 east-melbourne-2br,primary,Carlton Gardens Primary School,,506.2,station
 east-melbourne-2br,secondary,Collingwood College,,259.4,station
+elsternwick-2br,primary,Elsternwick Primary School,,184.2,station
+elsternwick-2br,secondary,Elwood College,,932.4,station
+eltham-house,primary,Eltham East Primary School,,367.0,station
+eltham-house,secondary,Eltham High School,,894.4,station
+eltham-north-house,primary,Eltham North Primary School,,67.2,station
+eltham-north-house,secondary,St Helena Secondary College,,886.2,station
 elwood-2br,primary,St Kilda Primary School,,448.5,station
 elwood-2br,secondary,Elwood College,,841.8,station
+essendon-2br,primary,Essendon Primary School,,525.8,station
+essendon-2br,secondary,Buckley Park College,,143.2,station
+essendon-west-house,primary,Aberfeldie Primary School,,704.2,station
+essendon-west-house,secondary,Rosehill Secondary College,,685.1,station
 established-western-value,primary,St Albans Primary School,,168.0,station
 established-western-value,secondary,St Albans Secondary College,,1089.1,station
 fairfield-house,primary,Fairfield Primary School,,372.2,station
 fairfield-house,secondary,Northcote High School,,109.7,station
+fawkner-house,primary,Fawkner Primary School,,25.9,station
+fawkner-house,secondary,John Fawkner Secondary College,,808.7,station
 fitzroy-2br,primary,Fitzroy Primary School,,309.5,locality-representative-point
 fitzroy-2br,secondary,Collingwood College,,549.4,locality-representative-point
 fitzroy-north-2br,primary,Fitzroy North Primary School,,283.1,locality-representative-point
@@ -65,6 +91,8 @@ growth-corridor-stress-test,primary,Baden Powell P-9 College,,4.6,station
 growth-corridor-stress-test,secondary,Baden Powell P-9 College,,3.8,station
 hawthorn-2br,primary,Hawthorn West Primary School,,254.0,station
 hawthorn-2br,secondary,Richmond High School,,470.3,station
+hawthorn-east-2br,primary,Auburn Primary School,,294.8,station
+hawthorn-east-2br,secondary,Auburn High School,,492.5,station
 heidelberg-3br-townhouse,primary,Heidelberg Primary School,,610.0,station
 heidelberg-3br-townhouse,secondary,Viewbank College,,136.3,station
 inner-abbotsford-2br,primary,Collingwood College,,111.3,station
@@ -95,6 +123,8 @@ mentone-2br,primary,Mentone Primary School,,831.4,station
 mentone-2br,secondary,Parkdale Secondary College,,122.7,station
 middle-park-2br,primary,Middle Park Primary School,,164.6,locality-representative-point
 middle-park-2br,secondary,Albert Park College,,658.4,locality-representative-point
+moonee-ponds-2br,primary,Moonee Ponds West Primary School,,126.0,station
+moonee-ponds-2br,secondary,Mount Alexander 7-12 College,,296.7,station
 mount-waverley-villa,primary,Mount Waverley Primary School,,339.0,station
 mount-waverley-villa,secondary,Mount Waverley Secondary College,,1072.1,station
 newport-house,primary,Newport Lakes Primary School,,513.5,station
@@ -109,6 +139,8 @@ northwest-villa-corridor,primary,Pascoe Vale Primary School,,630.9,station
 northwest-villa-corridor,secondary,Strathmore Secondary College,,921.8,station
 parkville-2br,primary,North Melbourne Primary School,,166.2,station
 parkville-2br,secondary,University High School,,1182.9,station
+point-cook-house,primary,Saltwater P-9 College,,351.7,station
+point-cook-house,secondary,Saltwater P-9 College,,351.7,station
 preston-villa,primary,Preston West Primary School,,397.7,station
 preston-villa,secondary,Preston High School,,948.2,station
 rosanna-house,primary,Rosanna Primary School,,95.5,station
@@ -123,19 +155,35 @@ spotswood-2br,primary,Spotswood Primary School,,557.9,station
 spotswood-2br,secondary,Footscray High School,,55.0,station
 st-kilda-2br,primary,St Kilda Park Primary School,,312.4,station
 st-kilda-2br,secondary,Albert Park College,,312.4,station
+st-kilda-east-2br,primary,Ripponlea Primary School,,528.3,station
+st-kilda-east-2br,secondary,Elwood College,,803.1,station
+st-kilda-west-2br,primary,St Kilda Park Primary School,,368.9,station
+st-kilda-west-2br,secondary,Albert Park College,,368.9,station
 sunbury-house,primary,Sunbury West Primary School,,160.2,station
 sunbury-house,secondary,Sunbury College,,845.1,station
 sunshine-station-2br,primary,Sunshine Primary School,,581.1,station
 sunshine-station-2br,secondary,Sunshine College,,94.9,station
 surrey-hills-house,primary,Surrey Hills Primary School,,342.6,station
 surrey-hills-house,secondary,Koonung Secondary College,,4.1,station
+thomastown-house,primary,Thomastown Primary School,,318.2,station
+thomastown-house,secondary,Thomastown Secondary College,,300.3,station
 thornbury-2br,primary,Thornbury Primary School,,243.1,station
 thornbury-2br,secondary,Northcote High School,,388.4,station
 toorak-2br,primary,Armadale Primary School,,179.4,station
 toorak-2br,secondary,Auburn High School,,173.4,station
 upfield-corridor,primary,Brunswick North Primary School,,97.7,station
 upfield-corridor,secondary,Brunswick Secondary College,,802.1,station
+viewbank-house,primary,Viewbank Primary School,,338.8,station
+viewbank-house,secondary,Viewbank College,,1557.1,station
+watsonia-house,primary,Watsonia Primary School,,632.2,station
+watsonia-house,secondary,Greensborough Secondary College,,582.5,station
+watsonia-north-house,primary,Watsonia North Primary School,,364.2,station
+watsonia-north-house,secondary,Greensborough Secondary College,,763.8,station
+werribee-house,primary,Werribee Primary School,,499.9,station
+werribee-house,secondary,Werribee Secondary College,,193.8,station
 west-melbourne-2br,primary,North Melbourne Primary School,,51.6,station
 west-melbourne-2br,secondary,University High School,,1085.9,station
+williamstown-house,primary,Williamstown Primary School,,424.3,station
+williamstown-house,secondary,Williamstown High School,,424.3,station
 yarraville-2br,primary,Yarraville West Primary School,,544.9,station
 yarraville-2br,secondary,Footscray High School,,1274.6,station

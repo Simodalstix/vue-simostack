@@ -5,6 +5,10 @@ Build retrieved at: `2026-07-16`
 
 ## Automated QA flags
 
+- `st-kilda-east-2br` (24-record batch, built 2026-07-21)
+  Status: accepted
+  Reason: `highComponentSpread` is structural, not a data bug. Local access is strong (`9.5493`, coverage `90.7%`) while nature-corridor access is `1.8991`: the nearest eligible corridor is the Elwood Canal reserve at a population-weighted median of `2,046 m`. St Kilda East is inland with no river, creek or foreshore corridor of its own, consistent with the same pattern accepted for `inner-windsor-prahran-2br` and `armadale-2br`.
+
 - `cremorne-2br`  
   Status: retained with a caveat  
   Reason: represented residential population is `1,540` versus target `2,158` (`71.4%`). Cremorne is a small mixed-use SAL and still has `17` residential mesh-block samples, so the score is usable but should not be treated as population-complete.

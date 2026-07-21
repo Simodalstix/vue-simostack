@@ -26,7 +26,11 @@ import { strategies } from './strategies.js'
 
 // Shorthand: coordinates cross-checked against a public gazetteer this pass.
 const V = '2026-07-13'
+const V2 = '2026-07-21'
 const OSM = 'OpenStreetMap'
+// Vicmap Transport rail_station points (tr_rail_infrastructure) and locality
+// polygons via the Vicmap open-data WFS; CC BY 4.0, (c) State of Victoria.
+const VICMAP = 'Vicmap'
 
 export const areaGeo = {
   // ---- Inner ---------------------------------------------------------------
@@ -395,11 +399,11 @@ export const areaGeo = {
       {
         id: 'essendon',
         name: 'Essendon',
-        // Same OSM-derived point the schematic Craigieburn line already uses
-        // in trainLines.js; re-verify against a public gazetteer next pass.
-        coordinates: [144.9095, -37.7561],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point; the earlier OSM-memory value
+        // was ~590 m west and has been corrected here and in trainLines.js.
+        coordinates: [144.9162, -37.756],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1005,10 +1009,10 @@ export const areaGeo = {
       {
         id: 'fawkner',
         name: 'Fawkner',
-        // OSM-derived this pass; re-verify against a public gazetteer next pass.
-        coordinates: [144.9601, -37.7147],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point.
+        coordinates: [144.9606, -37.7146],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1018,10 +1022,19 @@ export const areaGeo = {
       {
         id: 'thomastown',
         name: 'Thomastown',
-        // Same OSM-derived point the schematic map already uses in trainLines.js.
-        coordinates: [145.0128, -37.6811],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point; trainLines.js updated to match.
+        coordinates: [145.0143, -37.6803],
+        source: VICMAP,
+        verifiedAt: V2,
+      },
+      {
+        id: 'keon-park',
+        name: 'Keon Park',
+        // Second Mernda-line station serving Thomastown; commute is the
+        // average door-to-door across both stations. Vicmap Transport point.
+        coordinates: [145.0118, -37.6959],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1032,10 +1045,10 @@ export const areaGeo = {
       {
         id: 'bundoora-anchor',
         name: 'Bundoora (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [145.06, -37.7],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.0561, -37.7027],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1045,10 +1058,10 @@ export const areaGeo = {
       {
         id: 'viewbank-anchor',
         name: 'Viewbank (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [145.091, -37.74],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.0931, -37.7425],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1058,10 +1071,10 @@ export const areaGeo = {
       {
         id: 'watsonia',
         name: 'Watsonia',
-        // OSM-derived this pass; re-verify against a public gazetteer next pass.
-        coordinates: [145.0837, -37.711],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point.
+        coordinates: [145.0837, -37.7109],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1071,10 +1084,11 @@ export const areaGeo = {
       {
         id: 'eltham',
         name: 'Eltham',
-        // OSM-derived this pass; re-verify against a public gazetteer next pass.
-        coordinates: [145.1445, -37.7156],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point; the earlier OSM-memory value
+        // was ~380 m south-west.
+        coordinates: [145.1479, -37.7135],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1084,10 +1098,11 @@ export const areaGeo = {
       {
         id: 'williamstown',
         name: 'Williamstown',
-        // OSM-derived this pass; re-verify against a public gazetteer next pass.
-        coordinates: [144.897, -37.8687],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point (terminus); the earlier
+        // OSM-memory value was ~740 m west, nearer Williamstown Beach station.
+        coordinates: [144.9053, -37.8677],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1097,10 +1112,11 @@ export const areaGeo = {
       {
         id: 'point-cook-anchor',
         name: 'Point Cook (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [144.748, -37.889],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon. Large
+        // suburb; pocket choice may move this anchor later.
+        coordinates: [144.7568, -37.9046],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1110,10 +1126,10 @@ export const areaGeo = {
       {
         id: 'werribee',
         name: 'Werribee',
-        // Same OSM-derived point the schematic map already uses in trainLines.js.
-        coordinates: [144.66, -37.9],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point; trainLines.js updated to match.
+        coordinates: [144.6609, -37.8996],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1123,10 +1139,10 @@ export const areaGeo = {
       {
         id: 'moonee-ponds',
         name: 'Moonee Ponds',
-        // OSM-derived this pass; re-verify against a public gazetteer next pass.
-        coordinates: [144.9188, -37.766],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point.
+        coordinates: [144.9192, -37.7657],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1136,10 +1152,10 @@ export const areaGeo = {
       {
         id: 'eltham-north-anchor',
         name: 'Eltham North (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [145.15, -37.695],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.1428, -37.6976],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1149,10 +1165,10 @@ export const areaGeo = {
       {
         id: 'essendon-west-anchor',
         name: 'Essendon West (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [144.893, -37.755],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8837, -37.7549],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1162,10 +1178,10 @@ export const areaGeo = {
       {
         id: 'watsonia-north-anchor',
         name: 'Watsonia North (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [145.083, -37.7],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.0858, -37.6983],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1175,10 +1191,10 @@ export const areaGeo = {
       {
         id: 'black-rock-anchor',
         name: 'Black Rock (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [145.017, -37.9735],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.0234, -37.9717],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1188,10 +1204,10 @@ export const areaGeo = {
       {
         id: 'braybrook-anchor',
         name: 'Braybrook (locality anchor)',
-        // Representative point of the vendored locality polygon.
+        // Representative point of the vendored Vicmap locality polygon.
         coordinates: [144.8557, -37.7837],
-        source: OSM,
-        verifiedAt: null,
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1201,10 +1217,30 @@ export const areaGeo = {
       {
         id: 'brighton-beach',
         name: 'Brighton Beach',
-        // Same OSM-derived point the schematic map already uses in trainLines.js.
-        coordinates: [145.01, -37.9199],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point; the earlier OSM-memory value
+        // was ~2 km north-east and has been corrected here and in
+        // trainLines.js. Kept first as the schools anchor; commute is the
+        // average door-to-door across all three Brighton Sandringham-line
+        // stations. Owner may narrow this to the stations they would use.
+        coordinates: [144.9893, -37.9265],
+        source: VICMAP,
+        verifiedAt: V2,
+      },
+      {
+        id: 'middle-brighton',
+        name: 'Middle Brighton',
+        // Vicmap Transport rail_station point.
+        coordinates: [144.9963, -37.9151],
+        source: VICMAP,
+        verifiedAt: V2,
+      },
+      {
+        id: 'north-brighton',
+        name: 'North Brighton',
+        // Vicmap Transport rail_station point.
+        coordinates: [145.0026, -37.9049],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1214,10 +1250,10 @@ export const areaGeo = {
       {
         id: 'bulleen-anchor',
         name: 'Bulleen (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [145.085, -37.766],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.0887, -37.767],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1228,10 +1264,10 @@ export const areaGeo = {
       {
         id: 'burwood-anchor',
         name: 'Burwood (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [145.108, -37.8495],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.1141, -37.8507],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1241,10 +1277,10 @@ export const areaGeo = {
       {
         id: 'camberwell',
         name: 'Camberwell',
-        // OSM-derived this pass; re-verify against a public gazetteer next pass.
-        coordinates: [145.0587, -37.8265],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point.
+        coordinates: [145.0587, -37.8266],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1254,10 +1290,10 @@ export const areaGeo = {
       {
         id: 'elsternwick',
         name: 'Elsternwick',
-        // Same OSM-derived point the schematic map already uses in trainLines.js.
-        coordinates: [145.0037, -37.8853],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point; trainLines.js updated to match.
+        coordinates: [145.0009, -37.8847],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1267,10 +1303,10 @@ export const areaGeo = {
       {
         id: 'auburn',
         name: 'Auburn',
-        // OSM-derived this pass; re-verify against a public gazetteer next pass.
-        coordinates: [145.046, -37.8222],
-        source: OSM,
-        verifiedAt: null,
+        // Vicmap Transport rail_station point.
+        coordinates: [145.0458, -37.8224],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1281,10 +1317,10 @@ export const areaGeo = {
       {
         id: 'st-kilda-east-anchor',
         name: 'St Kilda East (locality anchor)',
-        // Representative point of the vendored locality polygon.
+        // Representative point of the vendored Vicmap locality polygon.
         coordinates: [145.0037, -37.8717],
-        source: OSM,
-        verifiedAt: null,
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },
@@ -1295,10 +1331,10 @@ export const areaGeo = {
       {
         id: 'st-kilda-west-anchor',
         name: 'St Kilda West (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored.
-        coordinates: [144.9705, -37.8598],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.9714, -37.8584],
+        source: VICMAP,
+        verifiedAt: V2,
       },
     ],
   },

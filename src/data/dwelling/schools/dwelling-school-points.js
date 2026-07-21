@@ -9,7 +9,7 @@
 export const SCHOOL_POINTS_DATASET = {
   "source": "School Locations CSV + School Zones (data.vic.gov.au)",
   "zoneYear": "2027",
-  "generatedAt": "2026-07-19"
+  "generatedAt": "2026-07-16"
 }
 
 export const schoolPoints = [
@@ -27,6 +27,23 @@ export const schoolPoints = [
       "inner-abbotsford-2br"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "aberfeldie-primary-school",
+    "schoolNo": "4220",
+    "name": "Aberfeldie Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.89477,
+      -37.75649
+    ],
+    "areaIds": [
+      "essendon-west-house"
+    ],
+    "zonedFor": [
+      "essendon-west-house"
+    ]
   },
   {
     "id": "aitken-creek-primary-school",
@@ -57,13 +74,15 @@ export const schoolPoints = [
       "albert-park-2br",
       "st-kilda-2br",
       "south-melbourne-2br",
-      "middle-park-2br"
+      "middle-park-2br",
+      "st-kilda-west-2br"
     ],
     "zonedFor": [
       "albert-park-2br",
       "st-kilda-2br",
       "south-melbourne-2br",
-      "middle-park-2br"
+      "middle-park-2br",
+      "st-kilda-west-2br"
     ]
   },
   {
@@ -147,10 +166,12 @@ export const schoolPoints = [
       -37.86453
     ],
     "areaIds": [
-      "ashburton-villa"
+      "ashburton-villa",
+      "burwood-house"
     ],
     "zonedFor": [
-      "ashburton-villa"
+      "ashburton-villa",
+      "burwood-house"
     ]
   },
   {
@@ -166,11 +187,30 @@ export const schoolPoints = [
     "areaIds": [
       "toorak-2br",
       "armadale-2br",
+      "hawthorn-east-2br",
       "hawthorn-2br"
     ],
     "zonedFor": [
       "toorak-2br",
-      "armadale-2br"
+      "armadale-2br",
+      "hawthorn-east-2br"
+    ]
+  },
+  {
+    "id": "auburn-primary-school",
+    "schoolNo": "2948",
+    "name": "Auburn Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.05048,
+      -37.82028
+    ],
+    "areaIds": [
+      "hawthorn-east-2br"
+    ],
+    "zonedFor": [
+      "hawthorn-east-2br"
     ]
   },
   {
@@ -259,6 +299,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "beaumaris-secondary-college",
+    "schoolNo": "7566",
+    "name": "Beaumaris Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.03408,
+      -37.9784
+    ],
+    "areaIds": [
+      "black-rock-house"
+    ],
+    "zonedFor": [
+      "black-rock-house"
+    ]
+  },
+  {
     "id": "bell-primary-school",
     "schoolNo": "4309",
     "name": "Bell Primary School",
@@ -272,6 +329,23 @@ export const schoolPoints = [
       "preston-villa"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "belle-vue-primary-school",
+    "schoolNo": "4733",
+    "name": "Belle Vue Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.07865,
+      -37.78252
+    ],
+    "areaIds": [
+      "bulleen-house"
+    ],
+    "zonedFor": [
+      "bulleen-house"
+    ]
   },
   {
     "id": "bentleigh-west-primary-school",
@@ -305,6 +379,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "doncaster-villa"
+    ]
+  },
+  {
+    "id": "black-rock-primary-school",
+    "schoolNo": "3631",
+    "name": "Black Rock Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.02165,
+      -37.96987
+    ],
+    "areaIds": [
+      "black-rock-house"
+    ],
+    "zonedFor": [
+      "black-rock-house"
     ]
   },
   {
@@ -408,6 +499,57 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "braybrook-college",
+    "schoolNo": "7645",
+    "name": "Braybrook College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.84754,
+      -37.77826
+    ],
+    "areaIds": [
+      "braybrook-villa"
+    ],
+    "zonedFor": [
+      "braybrook-villa"
+    ]
+  },
+  {
+    "id": "brighton-beach-primary-school",
+    "schoolNo": "2048",
+    "name": "Brighton Beach Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.99611,
+      -37.92211
+    ],
+    "areaIds": [
+      "brighton-house"
+    ],
+    "zonedFor": [
+      "brighton-house"
+    ]
+  },
+  {
+    "id": "brighton-secondary-college",
+    "schoolNo": "7650",
+    "name": "Brighton Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.01912,
+      -37.92016
+    ],
+    "areaIds": [
+      "brighton-house"
+    ],
+    "zonedFor": [
+      "brighton-house"
+    ]
+  },
+  {
     "id": "brunswick-east-primary-school",
     "schoolNo": "3179",
     "name": "Brunswick East Primary School",
@@ -471,6 +613,91 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "upfield-corridor"
+    ]
+  },
+  {
+    "id": "buckley-park-college",
+    "schoolNo": "7670",
+    "name": "Buckley Park College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.89775,
+      -37.74712
+    ],
+    "areaIds": [
+      "essendon-2br"
+    ],
+    "zonedFor": [
+      "essendon-2br"
+    ]
+  },
+  {
+    "id": "bundoora-primary-school",
+    "schoolNo": "4944",
+    "name": "Bundoora Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.06299,
+      -37.70734
+    ],
+    "areaIds": [
+      "bundoora-house"
+    ],
+    "zonedFor": [
+      "bundoora-house"
+    ]
+  },
+  {
+    "id": "bundoora-secondary-college",
+    "schoolNo": "7874",
+    "name": "Bundoora Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.06198,
+      -37.7075
+    ],
+    "areaIds": [
+      "bundoora-house"
+    ],
+    "zonedFor": [
+      "bundoora-house"
+    ]
+  },
+  {
+    "id": "camberwell-high-school",
+    "schoolNo": "7680",
+    "name": "Camberwell High School",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.07282,
+      -37.83015
+    ],
+    "areaIds": [
+      "camberwell-2br"
+    ],
+    "zonedFor": [
+      "camberwell-2br"
+    ]
+  },
+  {
+    "id": "camberwell-primary-school",
+    "schoolNo": "888",
+    "name": "Camberwell Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.05805,
+      -37.83268
+    ],
+    "areaIds": [
+      "camberwell-2br"
+    ],
+    "zonedFor": [
+      "camberwell-2br"
     ]
   },
   {
@@ -792,6 +1019,74 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "elsternwick-primary-school",
+    "schoolNo": "2870",
+    "name": "Elsternwick Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.99729,
+      -37.89142
+    ],
+    "areaIds": [
+      "elsternwick-2br"
+    ],
+    "zonedFor": [
+      "elsternwick-2br"
+    ]
+  },
+  {
+    "id": "eltham-east-primary-school",
+    "schoolNo": "4897",
+    "name": "Eltham East Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.15486,
+      -37.71143
+    ],
+    "areaIds": [
+      "eltham-house"
+    ],
+    "zonedFor": [
+      "eltham-house"
+    ]
+  },
+  {
+    "id": "eltham-high-school",
+    "schoolNo": "7805",
+    "name": "Eltham High School",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.14173,
+      -37.72444
+    ],
+    "areaIds": [
+      "eltham-house"
+    ],
+    "zonedFor": [
+      "eltham-house"
+    ]
+  },
+  {
+    "id": "eltham-north-primary-school",
+    "schoolNo": "4212",
+    "name": "Eltham North Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.15087,
+      -37.70011
+    ],
+    "areaIds": [
+      "eltham-north-house"
+    ],
+    "zonedFor": [
+      "eltham-north-house"
+    ]
+  },
+  {
     "id": "elwood-college",
     "schoolNo": "7810",
     "name": "Elwood College",
@@ -804,11 +1099,15 @@ export const schoolPoints = [
     "areaIds": [
       "balaclava-2br",
       "elwood-2br",
+      "elsternwick-2br",
+      "st-kilda-east-2br",
       "st-kilda-2br"
     ],
     "zonedFor": [
       "balaclava-2br",
-      "elwood-2br"
+      "elwood-2br",
+      "elsternwick-2br",
+      "st-kilda-east-2br"
     ]
   },
   {
@@ -827,6 +1126,40 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "essendon-primary-school",
+    "schoolNo": "483",
+    "name": "Essendon Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.92104,
+      -37.7531
+    ],
+    "areaIds": [
+      "essendon-2br"
+    ],
+    "zonedFor": [
+      "essendon-2br"
+    ]
+  },
+  {
+    "id": "essex-heights-primary-school",
+    "schoolNo": "4903",
+    "name": "Essex Heights Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.11563,
+      -37.86299
+    ],
+    "areaIds": [
+      "burwood-house"
+    ],
+    "zonedFor": [
+      "burwood-house"
+    ]
+  },
+  {
     "id": "fairfield-primary-school",
     "schoolNo": "2711",
     "name": "Fairfield Primary School",
@@ -841,6 +1174,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "fairfield-house"
+    ]
+  },
+  {
+    "id": "fawkner-primary-school",
+    "schoolNo": "3590",
+    "name": "Fawkner Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.97476,
+      -37.71523
+    ],
+    "areaIds": [
+      "fawkner-house"
+    ],
+    "zonedFor": [
+      "fawkner-house"
     ]
   },
   {
@@ -1084,6 +1434,25 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "greensborough-secondary-college",
+    "schoolNo": "8750",
+    "name": "Greensborough Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.09125,
+      -37.70849
+    ],
+    "areaIds": [
+      "watsonia-house",
+      "watsonia-north-house"
+    ],
+    "zonedFor": [
+      "watsonia-house",
+      "watsonia-north-house"
+    ]
+  },
+  {
     "id": "greythorn-primary-school",
     "schoolNo": "4694",
     "name": "Greythorn Primary School",
@@ -1162,6 +1531,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "ivanhoe-house"
+    ]
+  },
+  {
+    "id": "john-fawkner-secondary-college",
+    "schoolNo": "8894",
+    "name": "John Fawkner Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.97186,
+      -37.70271
+    ],
+    "areaIds": [
+      "fawkner-house"
+    ],
+    "zonedFor": [
+      "fawkner-house"
     ]
   },
   {
@@ -1443,6 +1829,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "moonee-ponds-west-primary-school",
+    "schoolNo": "2901",
+    "name": "Moonee Ponds West Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.90933,
+      -37.76895
+    ],
+    "areaIds": [
+      "moonee-ponds-2br"
+    ],
+    "zonedFor": [
+      "moonee-ponds-2br"
+    ]
+  },
+  {
     "id": "moorabbin-primary-school",
     "schoolNo": "1111",
     "name": "Moorabbin Primary School",
@@ -1471,11 +1874,13 @@ export const schoolPoints = [
     ],
     "areaIds": [
       "inner-lowcar-benchmark",
-      "ascot-vale-2br"
+      "ascot-vale-2br",
+      "moonee-ponds-2br"
     ],
     "zonedFor": [
       "inner-lowcar-benchmark",
-      "ascot-vale-2br"
+      "ascot-vale-2br",
+      "moonee-ponds-2br"
     ]
   },
   {
@@ -1888,6 +2293,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "ripponlea-primary-school",
+    "schoolNo": "4087",
+    "name": "Ripponlea Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.00505,
+      -37.87461
+    ],
+    "areaIds": [
+      "st-kilda-east-2br"
+    ],
+    "zonedFor": [
+      "st-kilda-east-2br"
+    ]
+  },
+  {
     "id": "rosanna-primary-school",
     "schoolNo": "4568",
     "name": "Rosanna Primary School",
@@ -1905,6 +2327,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "rosehill-secondary-college",
+    "schoolNo": "7275",
+    "name": "Rosehill Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.88618,
+      -37.74668
+    ],
+    "areaIds": [
+      "essendon-west-house"
+    ],
+    "zonedFor": [
+      "essendon-west-house"
+    ]
+  },
+  {
     "id": "salesian-college-sunbury",
     "schoolNo": "1299",
     "name": "Salesian College Sunbury",
@@ -1918,6 +2357,23 @@ export const schoolPoints = [
       "sunbury-house"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "saltwater-p-9-college",
+    "schoolNo": "8303",
+    "name": "Saltwater P-9 College",
+    "category": "combined",
+    "sector": "government",
+    "coordinates": [
+      144.77005,
+      -37.91054
+    ],
+    "areaIds": [
+      "point-cook-house"
+    ],
+    "zonedFor": [
+      "point-cook-house"
+    ]
   },
   {
     "id": "sandringham-college",
@@ -2067,6 +2523,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "st-helena-secondary-college",
+    "schoolNo": "8730",
+    "name": "St Helena Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.13991,
+      -37.68687
+    ],
+    "areaIds": [
+      "eltham-north-house"
+    ],
+    "zonedFor": [
+      "eltham-north-house"
+    ]
+  },
+  {
     "id": "st-kilda-park-primary-school",
     "schoolNo": "2460",
     "name": "St Kilda Park Primary School",
@@ -2077,10 +2550,12 @@ export const schoolPoints = [
       -37.85812
     ],
     "areaIds": [
-      "st-kilda-2br"
+      "st-kilda-2br",
+      "st-kilda-west-2br"
     ],
     "zonedFor": [
-      "st-kilda-2br"
+      "st-kilda-2br",
+      "st-kilda-west-2br"
     ]
   },
   {
@@ -2217,6 +2692,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "sunshine-harvester-primary-school",
+    "schoolNo": "5526",
+    "name": "Sunshine Harvester Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.84569,
+      -37.78293
+    ],
+    "areaIds": [
+      "braybrook-villa"
+    ],
+    "zonedFor": [
+      "braybrook-villa"
+    ]
+  },
+  {
     "id": "sunshine-heights-primary-school",
     "schoolNo": "4744",
     "name": "Sunshine Heights Primary School",
@@ -2294,6 +2786,40 @@ export const schoolPoints = [
       "growth-corridor-stress-test"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "thomastown-primary-school",
+    "schoolNo": "631",
+    "name": "Thomastown Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.01149,
+      -37.68227
+    ],
+    "areaIds": [
+      "thomastown-house"
+    ],
+    "zonedFor": [
+      "thomastown-house"
+    ]
+  },
+  {
+    "id": "thomastown-secondary-college",
+    "schoolNo": "8383",
+    "name": "Thomastown Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.00194,
+      -37.67872
+    ],
+    "areaIds": [
+      "thomastown-house"
+    ],
+    "zonedFor": [
+      "thomastown-house"
+    ]
   },
   {
     "id": "thornbury-high-school",
@@ -2386,10 +2912,31 @@ export const schoolPoints = [
       -37.7412
     ],
     "areaIds": [
-      "heidelberg-3br-townhouse"
+      "heidelberg-3br-townhouse",
+      "viewbank-house",
+      "bulleen-house"
     ],
     "zonedFor": [
-      "heidelberg-3br-townhouse"
+      "heidelberg-3br-townhouse",
+      "viewbank-house",
+      "bulleen-house"
+    ]
+  },
+  {
+    "id": "viewbank-primary-school",
+    "schoolNo": "4892",
+    "name": "Viewbank Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.08999,
+      -37.73473
+    ],
+    "areaIds": [
+      "viewbank-house"
+    ],
+    "zonedFor": [
+      "viewbank-house"
     ]
   },
   {
@@ -2406,6 +2953,74 @@ export const schoolPoints = [
       "thornbury-2br"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "watsonia-north-primary-school",
+    "schoolNo": "4988",
+    "name": "Watsonia North Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.08051,
+      -37.7004
+    ],
+    "areaIds": [
+      "watsonia-north-house"
+    ],
+    "zonedFor": [
+      "watsonia-north-house"
+    ]
+  },
+  {
+    "id": "watsonia-primary-school",
+    "schoolNo": "4838",
+    "name": "Watsonia Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.08692,
+      -37.70703
+    ],
+    "areaIds": [
+      "watsonia-house"
+    ],
+    "zonedFor": [
+      "watsonia-house"
+    ]
+  },
+  {
+    "id": "werribee-primary-school",
+    "schoolNo": "649",
+    "name": "Werribee Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.65874,
+      -37.90687
+    ],
+    "areaIds": [
+      "werribee-house"
+    ],
+    "zonedFor": [
+      "werribee-house"
+    ]
+  },
+  {
+    "id": "werribee-secondary-college",
+    "schoolNo": "8465",
+    "name": "Werribee Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.66874,
+      -37.90554
+    ],
+    "areaIds": [
+      "werribee-house"
+    ],
+    "zonedFor": [
+      "werribee-house"
+    ]
   },
   {
     "id": "westall-secondary-college",
@@ -2453,6 +3068,40 @@ export const schoolPoints = [
       "northern-rail-value"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "williamstown-high-school",
+    "schoolNo": "8475",
+    "name": "Williamstown High School",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.89502,
+      -37.86286
+    ],
+    "areaIds": [
+      "williamstown-house"
+    ],
+    "zonedFor": [
+      "williamstown-house"
+    ]
+  },
+  {
+    "id": "williamstown-primary-school",
+    "schoolNo": "1183",
+    "name": "Williamstown Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.90041,
+      -37.8638
+    ],
+    "areaIds": [
+      "williamstown-house"
+    ],
+    "zonedFor": [
+      "williamstown-house"
+    ]
   },
   {
     "id": "windsor-primary-school",

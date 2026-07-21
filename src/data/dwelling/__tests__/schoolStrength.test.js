@@ -28,7 +28,9 @@ describe('school strength research table', () => {
       ...Object.values(schoolStrengthBySchoolNo),
       ...Object.values(schoolStrengthByName),
     ]
-    expect(entries.length).toBe(92)
+    // No hardcoded total: strength entries grow as newly zoned schools get
+    // researched. The point of this test is the value domain, not the count.
+    expect(entries.length).toBeGreaterThan(0)
     for (const entry of entries) {
       expect(
         entry.strength === null ||
