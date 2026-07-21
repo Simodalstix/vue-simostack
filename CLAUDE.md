@@ -1,5 +1,9 @@
 # CLAUDE.md — Travel Timeline Map
 
+> **Working on Settle (`/tool/settle`), suburb data or the `tools/` pipelines?**
+> This file is not about that. Start at [`AGENTS.md`](./AGENTS.md), the
+> canonical entry point, and follow its decision tree.
+
 Context for any agent working on the travel-timeline feature of simostack.com. Read this before touching `TravelMap.vue`, `TravelTimelineView.vue`, or the data files under `src/data/`.
 
 ## What this is

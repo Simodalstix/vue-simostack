@@ -4,6 +4,11 @@ Use this pack whenever one to ten new suburbs need to become first-class
 Settle records at `/tool/settle`. This directory is the single onboarding contract and
 source of truth.
 
+The repository entry point for any agent session is the root `AGENTS.md`;
+confirm there that the task really is onboarding before starting. The
+canonical map of raw source locations, configs, build commands and generated
+outputs is [SOURCE-PIPELINE-MATRIX.md](./SOURCE-PIPELINE-MATRIX.md).
+
 ## The short version
 
 The owner can start an onboarding batch with only this:
