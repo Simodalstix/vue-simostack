@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-76",
-  "retrievedAt": "2026-07-21",
-  "recordCount": 76,
+  "version": "2021-gcp-sal-extension-81",
+  "retrievedAt": "2026-07-22",
+  "recordCount": 81,
   "records": [
     {
       "id": "yarraville-2br",
@@ -685,6 +685,51 @@
         {
           "suburb": "Tullamarine",
           "salCode": "22586"
+        }
+      ]
+    },
+    {
+      "id": "templestowe-house",
+      "salComponents": [
+        {
+          "suburb": "Templestowe",
+          "salCode": "22483"
+        }
+      ]
+    },
+    {
+      "id": "sydenham-house",
+      "salComponents": [
+        {
+          "suburb": "Sydenham",
+          "salCode": "22414"
+        }
+      ]
+    },
+    {
+      "id": "rockbank-house",
+      "salComponents": [
+        {
+          "suburb": "Rockbank",
+          "salCode": "22186"
+        }
+      ]
+    },
+    {
+      "id": "wollert-house",
+      "salComponents": [
+        {
+          "suburb": "Wollert",
+          "salCode": "22820"
+        }
+      ]
+    },
+    {
+      "id": "mernda-house",
+      "salComponents": [
+        {
+          "suburb": "Mernda",
+          "salCode": "21659"
         }
       ]
     }

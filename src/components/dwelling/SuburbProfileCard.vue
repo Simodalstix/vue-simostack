@@ -58,16 +58,16 @@
             <div v-if="headerChips.length || gateChip" class="flex flex-wrap gap-1.5">
               <span
                 v-if="gateChip"
-                class="rounded-full border px-2 py-[3px] font-mono text-[9.5px] leading-none"
-                :class="chipClass(gateChip)"
+                class="border px-2 py-[3px] font-mono text-[9.5px] leading-none"
+                :class="[chipClass(gateChip), chipShapeClass(gateChip)]"
               >
                 {{ gateChip.text }}
               </span>
               <span
                 v-for="chip in headerChips"
                 :key="chip.key"
-                class="rounded-full border px-2 py-[3px] font-mono text-[9.5px] leading-none"
-                :class="chipClass(chip)"
+                class="border px-2 py-[3px] font-mono text-[9.5px] leading-none"
+                :class="[chipClass(chip), chipShapeClass(chip)]"
               >
                 {{ chip.text }}
               </span>
@@ -494,12 +494,17 @@ function chipClass(chip) {
     green: 'border-emerald-600/50 text-emerald-300 bg-emerald-700/25',
     yellow: 'border-yellow-500/40 text-yellow-300 bg-yellow-500/10',
     train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
-    commute: 'border-ob-teal/25 text-ob-teal-bright bg-ob-teal/6',
+    commute: 'border-blue-500/45 text-blue-300 bg-blue-500/10',
     schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
     conditional: 'border-ob-sand/30 text-ob-sand bg-ob-sand/8',
     reject: 'border-red-400/35 text-red-300 bg-red-400/8',
     veto: 'border-ob-sand/20 text-ob-faint bg-ob-sand/5',
   }[chip.tone]
+}
+function chipShapeClass(chip) {
+  return ['friend', 'beach', 'commute', 'schools'].includes(chip.tone)
+    ? 'rounded-[4px]'
+    : 'rounded-full'
 }
 function bandColor(row) {
   if (isVetoedRow(row)) return '#7A8A99'

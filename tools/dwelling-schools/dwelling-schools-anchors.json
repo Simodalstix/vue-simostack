@@ -2861,6 +2861,106 @@
     ],
     "privateContext": []
    }
+  },
+  {
+   "id": "templestowe-house",
+   "suburb": "Templestowe",
+   "localityNames": [
+    "Templestowe"
+   ],
+   "anchors": [
+    {
+     "id": "templestowe-village",
+     "name": "Templestowe Village (route 905)",
+     "lng": 145.1288,
+     "lat": -37.7568
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "sydenham-house",
+   "suburb": "Sydenham",
+   "localityNames": [
+    "Sydenham"
+   ],
+   "anchors": [
+    {
+     "id": "watergardens-next-five",
+     "name": "Watergardens",
+     "lng": 144.7742,
+     "lat": -37.7011
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "rockbank-house",
+   "suburb": "Rockbank",
+   "localityNames": [
+    "Rockbank"
+   ],
+   "anchors": [
+    {
+     "id": "rockbank-next-five",
+     "name": "Rockbank",
+     "lng": 144.6506,
+     "lat": -37.7293
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "wollert-house",
+   "suburb": "Wollert",
+   "localityNames": [
+    "Wollert"
+   ],
+   "anchors": [
+    {
+     "id": "wollert-south-bus-anchor",
+     "name": "Epping Rd / Craigieburn Rd (routes 357 / 390)",
+     "lng": 145.0302,
+     "lat": -37.6083
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "mernda-house",
+   "suburb": "Mernda",
+   "localityNames": [
+    "Mernda"
+   ],
+   "anchors": [
+    {
+     "id": "mernda-next-five",
+     "name": "Mernda",
+     "lng": 145.101,
+     "lat": -37.6025
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [],
+    "publicSecondary": [],
+    "privateContext": []
+   }
   }
  ]
 }

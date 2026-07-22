@@ -1079,6 +1079,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "copperfield-college",
+    "schoolNo": "8799",
+    "name": "Copperfield College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.77243,
+      -37.71946
+    ],
+    "areaIds": [
+      "sydenham-house"
+    ],
+    "zonedFor": [
+      "sydenham-house"
+    ]
+  },
+  {
     "id": "craigieburn-primary-school",
     "schoolNo": "4770",
     "name": "Craigieburn Primary School",
@@ -2260,6 +2277,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "mernda-central-p-12-college",
+    "schoolNo": "8897",
+    "name": "Mernda Central P-12 College",
+    "category": "combined",
+    "sector": "government",
+    "coordinates": [
+      145.08833,
+      -37.60485
+    ],
+    "areaIds": [
+      "mernda-house"
+    ],
+    "zonedFor": [
+      "mernda-house"
+    ]
+  },
+  {
     "id": "merri-creek-primary-school",
     "schoolNo": "3110",
     "name": "Merri Creek Primary School",
@@ -2965,6 +2999,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "rockbank-primary-school",
+    "schoolNo": "919",
+    "name": "Rockbank Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.6619,
+      -37.73215
+    ],
+    "areaIds": [
+      "rockbank-house"
+    ],
+    "zonedFor": [
+      "rockbank-house"
+    ]
+  },
+  {
     "id": "rosanna-golf-links-primary-school",
     "schoolNo": "4753",
     "name": "Rosanna Golf Links Primary School",
@@ -3484,6 +3535,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "sydenham-hillside-primary-school",
+    "schoolNo": "3559",
+    "name": "Sydenham - Hillside Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.76233,
+      -37.70205
+    ],
+    "areaIds": [
+      "sydenham-house"
+    ],
+    "zonedFor": [
+      "sydenham-house"
+    ]
+  },
+  {
     "id": "syndal-south-primary-school",
     "schoolNo": "4924",
     "name": "Syndal South Primary School",
@@ -3527,6 +3595,40 @@ export const schoolPoints = [
       "growth-corridor-stress-test"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "templestowe-college",
+    "schoolNo": "8823",
+    "name": "Templestowe College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.12231,
+      -37.76743
+    ],
+    "areaIds": [
+      "templestowe-house"
+    ],
+    "zonedFor": [
+      "templestowe-house"
+    ]
+  },
+  {
+    "id": "templestowe-park-primary-school",
+    "schoolNo": "5129",
+    "name": "Templestowe Park Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.14326,
+      -37.75627
+    ],
+    "areaIds": [
+      "templestowe-house"
+    ],
+    "zonedFor": [
+      "templestowe-house"
+    ]
   },
   {
     "id": "thomastown-primary-school",
@@ -3928,6 +4030,57 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "inner-windsor-prahran-2br"
+    ]
+  },
+  {
+    "id": "wollert-primary-school",
+    "schoolNo": "5589",
+    "name": "Wollert Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.02711,
+      -37.61133
+    ],
+    "areaIds": [
+      "wollert-house"
+    ],
+    "zonedFor": [
+      "wollert-house"
+    ]
+  },
+  {
+    "id": "wollert-secondary-college",
+    "schoolNo": "8896",
+    "name": "Wollert Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.02524,
+      -37.60962
+    ],
+    "areaIds": [
+      "wollert-house"
+    ],
+    "zonedFor": [
+      "wollert-house"
+    ]
+  },
+  {
+    "id": "yarrabing-secondary-college",
+    "schoolNo": "7500",
+    "name": "Yarrabing Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.66479,
+      -37.71203
+    ],
+    "areaIds": [
+      "rockbank-house"
+    ],
+    "zonedFor": [
+      "rockbank-house"
     ]
   },
   {

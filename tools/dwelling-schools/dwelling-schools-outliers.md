@@ -1,6 +1,6 @@
 # dwelling-schools outliers — zone year 2027
 
-## Anchors within 150 m of a zone boundary (47)
+## Anchors within 150 m of a zone boundary (49)
 - inner-south-yarra-2br (primary): Toorak Primary School — 23.5 m. Street-level: the zone can flip within the catchment.
 - inner-richmond-2br (primary): Richmond Primary School — 51.9 m. Street-level: the zone can flip within the catchment.
 - inner-collingwood-2br (primary): Collingwood College — 111.3 m. Street-level: the zone can flip within the catchment.
@@ -31,6 +31,8 @@
 - coburg-north-house (primary): Pascoe Vale North Primary School — 108.7 m. Street-level: the zone can flip within the catchment.
 - maribyrnong-2br (primary): Footscray North Primary School — 2.1 m. Street-level: the zone can flip within the catchment.
 - sunshine-north-house (primary): Sunshine North Primary School — 133.7 m. Street-level: the zone can flip within the catchment.
+- templestowe-house (primary): Templestowe Park Primary School — 82.7 m. Street-level: the zone can flip within the catchment.
+- mernda-house (primary): Mernda Central P-12 College — 20.0 m. Street-level: the zone can flip within the catchment.
 - sunshine-station-2br (secondary): Sunshine College — 94.9 m. Street-level: the zone can flip within the catchment.
 - footscray-station-2br (secondary): Footscray High School — 123.9 m. Street-level: the zone can flip within the catchment.
 - northern-rail-value (secondary): Reservoir High School — 0.1 m. Street-level: the zone can flip within the catchment.
@@ -58,7 +60,7 @@
 - donnybrook-house-land: "new estate primaries opening in stages" (publicPrimary)
 - donnybrook-house-land: "none established — buses toward Craigieburn/Mount Ridley" (publicSecondary)
 - box-hill-2br: "zoned primaries vary street to street, check the exact address" (publicPrimary)
-- malvern-2br: "heavy nearby private sector" (privateContext)
+- malvern-2br: "heavy nearby private sector (De La Salle, Sacré Cœur and others)" (privateContext)
 - toorak-2br: "the highest private-school density in the city" (privateContext)
-- kew-2br: "dense private sector" (privateContext)
-- mentone-2br: "Dense private-school cluster shapes the suburb" (privateContext)
+- kew-2br: "dense private sector (Xavier, Trinity, Ruyton, MLC nearby)" (privateContext)
+- mentone-2br: "Dense private-school cluster (St Bede’s, Mentone Grammar) shapes the suburb" (privateContext)

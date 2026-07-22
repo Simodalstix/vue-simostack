@@ -5,6 +5,10 @@ Build retrieved at: `2026-07-16`
 
 ## Automated QA flags
 
+- `rockbank-house` (five-record batch, built 2026-07-22)
+  Status: accepted with a caveat
+  Reason: `highComponentSpread` is structural, not a data bug. Nature-corridor access is strong (`8.5158`) because of the Western Grasslands Nature Conservation Reserve, while major-park access is weak (`0.8159`) at a population-weighted median distance of `2,408 m`. The 2019 VPA base layer may also undercount newer local parks in this growth area, so the `4.6324` overall result is retained as a conservative estimate.
+
 - `gardenvale-house` (20-record Wednesday batch, built 2026-07-22)
   Status: accepted
   Reason: `highComponentSpread` is structural, not a data bug. Local access is maxed (`10.0`, coverage `100.0%`) while nature-corridor access is `2.8329`: the population-weighted median eligible nature-corridor distance is `1,842 m`. The very small Gardenvale SAL is inland from the foreshore and has no river or creek corridor, matching the accepted inland pattern for St Kilda East, Windsor/Prahran and Armadale.

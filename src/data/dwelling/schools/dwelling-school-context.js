@@ -1484,5 +1484,64 @@ export const schoolContextByAreaId = {
     ],
     "anchorSource": "station",
     "boundaryFlag": false
+  },
+  "templestowe-house": {
+    "zonedPrimary": "Templestowe Park Primary School",
+    "zonedSecondary": "Templestowe College",
+    "alsoInCatchmentPrimary": [
+      "Templestowe Heights Primary School",
+      "Templestowe Valley Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "sydenham-house": {
+    "zonedPrimary": "Sydenham Primary School",
+    "zonedSecondary": "Copperfield College",
+    "alsoInCatchmentPrimary": [
+      "Mackellar Primary School",
+      "Taylors Lakes Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Taylors Lakes Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "rockbank-house": {
+    "zonedPrimary": "Rockbank Primary School",
+    "zonedSecondary": "Yarrabing Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Aintree Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "wollert-house": {
+    "zonedPrimary": "Wollert Primary School",
+    "zonedSecondary": "Wollert Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Umarkoo Primary School",
+      "Wirrigirri Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "mernda-house": {
+    "zonedPrimary": "Mernda Central P-12 College",
+    "zonedSecondary": "Mernda Central P-12 College",
+    "alsoInCatchmentPrimary": [
+      "Hazel Glen College",
+      "Mernda Park Primary School",
+      "Mernda Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Hazel Glen College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
   }
 }

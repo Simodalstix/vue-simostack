@@ -1615,6 +1615,71 @@ export const areaGeo = {
       },
     ],
   },
+  'templestowe-house': {
+    localityNames: ['Templestowe'],
+    stationPoints: [
+      {
+        id: 'templestowe-village',
+        name: 'Templestowe Village (route 905)',
+        // Midpoint of the two Transport Victoria GTFS village stops.
+        coordinates: [145.1288, -37.7568],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
+      },
+    ],
+  },
+  'sydenham-house': {
+    localityNames: ['Sydenham'],
+    stationPoints: [
+      {
+        id: 'watergardens-next-five',
+        name: 'Watergardens',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [144.7742, -37.7011],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
+      },
+    ],
+  },
+  'rockbank-house': {
+    localityNames: ['Rockbank'],
+    stationPoints: [
+      {
+        id: 'rockbank-next-five',
+        name: 'Rockbank',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [144.6506, -37.7293],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
+      },
+    ],
+  },
+  'wollert-house': {
+    localityNames: ['Wollert'],
+    stationPoints: [
+      {
+        id: 'wollert-south-bus-anchor',
+        name: 'Epping Rd / Craigieburn Rd (routes 357 / 390)',
+        // Midpoint of the two Transport Victoria GTFS intersection stops.
+        coordinates: [145.0302, -37.6083],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
+      },
+    ],
+  },
+  'mernda-house': {
+    localityNames: ['Mernda'],
+    stationPoints: [
+      {
+        id: 'mernda-next-five',
+        name: 'Mernda',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [145.101, -37.6025],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
+      },
+    ],
+  },
 }
 
 export function localitiesForArea(areaId) {

@@ -3,10 +3,9 @@
 // ties, map the cohort minimum to 0 and maximum to 10, and exclude nulls.
 
 import { areaCorridors } from './areaCorridors.js'
-import { partnerPoolScore } from './partnerPool.js'
+import { partnerPoolPercentage, partnerPoolScore } from './partnerPool.js'
 
-export const SAFETY_PERCENTILE_BLEND = 1
-export const PARTNER_PERCENTILE_BLEND = 0.5
+export const PARTNER_PERCENTILE_BLEND = 1
 
 const scoredCohort = areaCorridors.filter((record) => record.scored !== false)
 
@@ -39,14 +38,14 @@ export function blendRawAndPercentile(rawScore, percentileScore, percentileBlend
   return rawScore * (1 - percentileBlend) + percentileScore * percentileBlend
 }
 
-function mappingFor(valueFor, percentileBlend) {
+function mappingFor(rawScoreFor, percentileBlend, percentileValueFor = rawScoreFor) {
   const rawScoreById = Object.fromEntries(
     scoredCohort.map((record) => {
-      const value = valueFor(record)
+      const value = rawScoreFor(record)
       return [record.id, Number.isFinite(value) ? value : null]
     }),
   )
-  const percentileScoreById = percentileRanksById(scoredCohort, valueFor)
+  const percentileScoreById = percentileRanksById(scoredCohort, percentileValueFor)
   const blendedScoreById = Object.fromEntries(
     scoredCohort.map((record) => [
       record.id,
@@ -61,11 +60,11 @@ function mappingFor(valueFor, percentileBlend) {
 }
 
 export const RELATIVE_SCORING_BY_CRITERION = {
-  safetyQuality: mappingFor(
-    (record) => (record.scores?.safety == null ? null : record.scores.safety * 2),
-    SAFETY_PERCENTILE_BLEND,
+  partnerPool: mappingFor(
+    (record) => partnerPoolScore(record.id),
+    PARTNER_PERCENTILE_BLEND,
+    (record) => partnerPoolPercentage(record.id),
   ),
-  partnerPool: mappingFor((record) => partnerPoolScore(record.id), PARTNER_PERCENTILE_BLEND),
 }
 
 export function relativeScoreFor(criterionKey, areaId) {

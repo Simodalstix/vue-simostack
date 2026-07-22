@@ -3,7 +3,7 @@
        carry contextOnly / excludeFromSuburbScore / scoreContribution: 0. Three
        named derived measures are scored: the opt-in Chinese-community lens,
        grouped other-communities lens, and the partner-pool criterion
-       (unpartnered 25-54, one-parent families). Combined lens labels render
+       (unpartnered 25-54 only). Combined lens labels render
        each component SAL suburb separately; percentages are never averaged
        and medians never blended. -->
   <div v-if="ctx" :class="rootClass">
@@ -65,31 +65,6 @@
             </p>
           </div>
         </div>
-
-        <div v-if="languages(c.record).length && !compact">
-          <p class="font-mono text-[9.5px] uppercase tracking-[0.06em] text-ob-faint mb-1">
-            Languages at home (besides English)
-          </p>
-          <div class="flex flex-wrap gap-1.5">
-            <span
-              v-for="l in languages(c.record)"
-              :key="l.name"
-              class="font-mono text-[10.5px] px-2 py-[2px] rounded-full bg-ob-purple/12 text-ob-purple"
-              >{{ l.name }} {{ fmtPct(l.percentage) }}</span
-            >
-          </div>
-          <p class="mt-1 font-mono text-[10px] text-ob-faint">
-            English only at home:
-            <span class="text-ob-teal">{{ englishOnly(c.record) }}</span>
-          </p>
-        </div>
-        <p v-else-if="languages(c.record).length" class="text-[10px] leading-snug text-ob-muted2">
-          <span class="font-mono uppercase tracking-[0.05em] text-[8.5px] text-ob-faint">
-            Languages
-          </span>
-          · {{ inlineList(languages(c.record)) }} <span class="text-ob-faint"> · English only </span
-          ><span class="text-ob-teal">{{ englishOnly(c.record) }}</span>
-        </p>
 
         <div v-if="birthplaces(c.record).length && !compact">
           <p class="font-mono text-[9.5px] uppercase tracking-[0.06em] text-ob-faint mb-1">
@@ -202,7 +177,7 @@ import {
 
 const props = defineProps({
   areaId: { type: String, required: true },
-  // how many list items (languages/birthplaces) to show per component
+  // how many birthplace list items to show per component
   listLimit: { type: Number, default: 5 },
   compact: { type: Boolean, default: false },
   showEvidenceDetails: { type: Boolean, default: false },
@@ -244,17 +219,6 @@ function coreMeasures(record) {
   ]
 }
 
-function languages(record) {
-  return (record.community?.topNonEnglishLanguagesSpokenAtHome || [])
-    .filter((l) => l.count != null && l.count > 0)
-    .slice(0, props.listLimit)
-}
-function englishOnly(record) {
-  const hit = (record.community?.topLanguagesSpokenAtHome || []).find(
-    (l) => l.name === 'English only',
-  )
-  return fmtPct(hit?.percentage)
-}
 function birthplaces(record) {
   return (record.community?.topOverseasCountriesOfBirth || [])
     .filter((b) => b.count != null && b.count > 0)
@@ -273,15 +237,8 @@ function religionLine(record) {
 function householdContext(record) {
   const a = record.additionalHouseholdContext || {}
   const rows = [
-    { label: 'Cantonese at home', m: a.cantoneseSpokenAtHome },
-    { label: 'Mandarin at home', m: a.mandarinSpokenAtHome },
     { label: 'Hong Kong-born', m: a.hongKongBornPopulation },
     { label: 'China-born', m: a.chinaBornPopulation },
-    { label: 'Filipino at home', m: a.filipinoSpokenAtHome },
-    { label: 'Tagalog at home', m: a.tagalogSpokenAtHome },
-    { label: 'Thai at home', m: a.thaiSpokenAtHome },
-    { label: 'Spanish at home', m: a.spanishSpokenAtHome },
-    { label: 'Portuguese at home', m: a.portugueseSpokenAtHome },
     { label: 'Unpartnered 25-54 (2021)', m: a.unpartnered2554 },
     { label: 'One-parent families (2021)', m: a.loneParentFamilies },
   ]

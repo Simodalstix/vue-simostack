@@ -33,10 +33,10 @@ import { decideCriteria } from '../decideStrategies.js'
 const src = (rel) => readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 'utf8')
 
 describe('dataset coverage and lookup', () => {
-  it('exposes the complete 124-record SAL dataset', () => {
-    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(124)
+  it('exposes the complete 129-record SAL dataset', () => {
+    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(129)
     expect(COMMUNITY_DATASET.title).toBe('Community Context · ABS Census 2021')
-    expect(COMMUNITY_DATASET.recordCount).toBe(124)
+    expect(COMMUNITY_DATASET.recordCount).toBe(129)
     expect(DWELLING_CENSUS_CONTEXT).toBe(DWELLING_COMMUNITY_CONTEXT)
   })
 
@@ -138,6 +138,15 @@ describe('default exclusion from scoring', () => {
 })
 
 describe('measure rendering', () => {
+  it('keeps family context while omitting language-at-home rows from the Census panel', () => {
+    const panel = src('../../../components/dwelling/CommunityContextSection.vue')
+    expect(panel).not.toContain('Languages at home')
+    expect(panel).not.toContain('Cantonese at home')
+    expect(panel).not.toContain('Mandarin at home')
+    expect(panel).toContain('Unpartnered 25-54 (2021)')
+    expect(panel).toContain('One-parent families (2021)')
+  })
+
   it('renders percentage measures as published, never recalculated', () => {
     const seddon = DWELLING_COMMUNITY_CONTEXT_BY_SUBURB['Seddon']
     // Tenure uses occupied private dwellings, not population (QA row: 58.8%).
