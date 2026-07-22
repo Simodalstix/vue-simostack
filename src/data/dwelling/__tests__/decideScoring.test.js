@@ -17,6 +17,7 @@ import {
   PARTNER_POOL_FULL_BONUS_SHARE,
   PARTNER_POOL_MIN_DENOMINATOR,
   partnerPoolFor,
+  partnerPoolPercentage,
   partnerPoolScore,
 } from '../partnerPool.js'
 import {
@@ -37,7 +38,6 @@ import {
 import {
   PARTNER_PERCENTILE_BLEND,
   RELATIVE_SCORING_BY_CRITERION,
-  SAFETY_PERCENTILE_BLEND,
   blendRawAndPercentile,
   percentileRanksById,
 } from '../relativeScoring.js'
@@ -57,7 +57,7 @@ function weightsFor(strategy, enabledKeys) {
   )
 }
 
-// Every non-empty subset of the ten criteria, plus the empty set (all off).
+// Every non-empty subset of the nine criteria, plus the empty set (all off).
 function allSubsets(keys) {
   const out = []
   for (let mask = 0; mask < 1 << keys.length; mask++) {
@@ -67,7 +67,7 @@ function allSubsets(keys) {
 }
 
 describe('preset weight vectors', () => {
-  it('ships the five strategies with 0-3 weights over exactly the ten criteria', () => {
+  it('ships the five strategies with weights over exactly the nine live criteria', () => {
     expect(decideStrategies.map((s) => s.id)).toEqual([
       'balanced2br',
       'bachelor1br',
@@ -76,7 +76,8 @@ describe('preset weight vectors', () => {
       'villaTownhouse',
     ])
     const keys = decideCriteria.map((c) => c.key).sort()
-    expect(keys).toHaveLength(10)
+    expect(keys).toHaveLength(9)
+    expect(keys).not.toContain('safetyQuality')
     for (const s of decideStrategies) {
       expect(Object.keys(s.weights).sort()).toEqual(keys)
       for (const w of Object.values(s.weights)) {
@@ -128,7 +129,6 @@ describe('preset weight vectors', () => {
       commute: 'blue',
       schools: 'purple',
       kidAmenity: 'purple',
-      safetyQuality: 'purple',
       beach: 'amber',
       personalNetwork: 'amber',
       partnerPool: 'pink',
@@ -484,13 +484,15 @@ describe('cohort-relative criteria', () => {
     expect(ranks.missing).toBeNull()
   })
 
-  it('exposes one blend constant and full mapping per relative criterion', () => {
-    expect(SAFETY_PERCENTILE_BLEND).toBe(1)
-    expect(PARTNER_PERCENTILE_BLEND).toBe(0.5)
-    expect(RELATIVE_SCORING_BY_CRITERION.safetyQuality.percentileBlend).toBe(1)
-    expect(RELATIVE_SCORING_BY_CRITERION.partnerPool.percentileBlend).toBe(0.5)
+  it('uses the pure Mingle percentile with no live Safety mapping', () => {
+    expect(PARTNER_PERCENTILE_BLEND).toBe(1)
+    expect(Object.keys(RELATIVE_SCORING_BY_CRITERION)).toEqual(['partnerPool'])
+    expect(RELATIVE_SCORING_BY_CRITERION.partnerPool.percentileBlend).toBe(1)
 
     const stKilda = RELATIVE_SCORING_BY_CRITERION.partnerPool
+    expect(stKilda.blendedScoreById['st-kilda-2br']).toBe(
+      stKilda.percentileScoreById['st-kilda-2br'],
+    )
     expect(stKilda.blendedScoreById['st-kilda-2br']).toBeCloseTo(
       blendRawAndPercentile(
         stKilda.rawScoreById['st-kilda-2br'],
@@ -500,15 +502,25 @@ describe('cohort-relative criteria', () => {
     )
   })
 
-  it('keeps null Safety and guarded Mingle values null and out of the cohort', () => {
-    const safety = RELATIVE_SCORING_BY_CRITERION.safetyQuality
+  it('percentile-ranks the uncapped share and keeps guarded Mingle values null', () => {
     const partners = RELATIVE_SCORING_BY_CRITERION.partnerPool
-    expect(safety.rawScoreById['melbourne-cbd-2br']).toBeNull()
-    expect(safety.percentileScoreById['melbourne-cbd-2br']).toBeNull()
-    expect(safety.blendedScoreById['melbourne-cbd-2br']).toBeNull()
     expect(partners.rawScoreById['burnley-2br']).toBeNull()
     expect(partners.percentileScoreById['burnley-2br']).toBeNull()
     expect(partners.blendedScoreById['burnley-2br']).toBeNull()
+
+    const capped = scoredRecords
+      .map((record) => ({
+        id: record.id,
+        percentage: partnerPoolPercentage(record.id),
+        rawScore: partnerPoolScore(record.id),
+      }))
+      .filter((record) => record.rawScore === 10)
+      .sort((a, b) => a.percentage - b.percentage)
+    expect(capped.length).toBeGreaterThan(1)
+    expect(capped.at(-1).percentage).toBeGreaterThan(capped[0].percentage)
+    expect(partners.percentileScoreById[capped.at(-1).id]).toBeGreaterThan(
+      partners.percentileScoreById[capped[0].id],
+    )
   })
 })
 

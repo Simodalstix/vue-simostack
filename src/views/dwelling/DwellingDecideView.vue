@@ -209,7 +209,7 @@ const listHoverId = ref(null)
 const deposit = personalPosition.calc.deposit
 const rate = personalPosition.calc.rate
 
-// The strategy is the single mode: a weight preset over the ten criteria plus
+// The strategy is the single mode: a weight preset over the nine criteria plus
 // the purchase proposition (dwelling types, bedrooms, price cap) expressed
 // through the same named filter gates as before.
 const activeStrategyId = ref(defaultStrategyId)
@@ -223,7 +223,6 @@ const allCriteria = [
   'soul',
   'schools',
   'kidAmenity',
-  'safetyQuality',
   'beach',
   'personalNetwork',
   'partnerPool',

@@ -138,6 +138,15 @@ describe('default exclusion from scoring', () => {
 })
 
 describe('measure rendering', () => {
+  it('keeps family context while omitting language-at-home rows from the Census panel', () => {
+    const panel = src('../../../components/dwelling/CommunityContextSection.vue')
+    expect(panel).not.toContain('Languages at home')
+    expect(panel).not.toContain('Cantonese at home')
+    expect(panel).not.toContain('Mandarin at home')
+    expect(panel).toContain('Unpartnered 25-54 (2021)')
+    expect(panel).toContain('One-parent families (2021)')
+  })
+
   it('renders percentage measures as published, never recalculated', () => {
     const seddon = DWELLING_COMMUNITY_CONTEXT_BY_SUBURB['Seddon']
     // Tenure uses occupied private dwellings, not population (QA row: 58.8%).

@@ -203,9 +203,10 @@ describe('cost scoring', () => {
   })
 
   it('keeps generated-data fallback available without inventing placeholder values', () => {
-    expect(decideCriteria).toHaveLength(10)
+    expect(decideCriteria).toHaveLength(9)
     for (const strategy of decideStrategies) {
       expect(strategy.weights).toHaveProperty('beach')
+      expect(strategy.weights).not.toHaveProperty('safetyQuality')
       expect(strategy.weights).not.toHaveProperty('greenspace')
     }
     for (const rec of areaCorridors.filter((record) => record.scored !== false)) {

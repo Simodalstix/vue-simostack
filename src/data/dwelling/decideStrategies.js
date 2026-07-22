@@ -2,7 +2,7 @@
 //
 // The Settle workspace's single control model: a STRATEGY is a weighting preset
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
-// tests. Selecting a strategy loads its weight vector over the ten suburb
+// tests. Selecting a strategy loads its weight vector over the nine suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
 // off (weight 0). Standard criteria renormalise over the enabled weights;
 // explicitly additive criteria such as Beach and Friends apply a small bounded premium
@@ -17,7 +17,7 @@
 
 // ---- criteria -------------------------------------------------------------
 //
-// Ten criteria, each scored 0-10 per suburb, derived from the existing
+// Nine criteria, each scored 0-10 per suburb, derived from the existing
 // record data (nothing new is fabricated here). `value(rec, commuteScore)`
 // returns 0-10 or null when the record carries no data for it; a null is
 // omitted rather than scored as zero. `scoringMode: 'additiveBonus'` keeps a
@@ -99,13 +99,6 @@ export const decideCriteria = [
     value: (rec) => beachScore(beachAccessByAreaId[rec.id]?.estMin ?? null),
   },
   {
-    key: 'safetyQuality',
-    label: 'Safety',
-    hint: 'Measured offence rates and street conditions, percentile-ranked across the currently scored cohort. Nulls remain unassessed.',
-    accent: 'purple',
-    value: (rec) => relativeScoreFor('safetyQuality', rec.id),
-  },
-  {
     key: 'personalNetwork',
     label: 'Friends',
     hint: 'Additive premium for practical access to the inner-circle anchor in South Yarra. Distant or unassessed records receive no bonus and are never penalised.',
@@ -137,7 +130,7 @@ export const decideCriteria = [
   {
     key: 'partnerPool',
     label: 'Mingle',
-    hint: 'Playful name, honest measure: the ABS 2021 Census share of adults aged 25–54 who were not in a registered or de facto marriage, blended 50/50 between raw score and cohort percentile. It does not infer availability, orientation or interest; nulls remain unassessed.',
+    hint: 'Playful name, honest measure: the pure cohort percentile of the ABS 2021 Census share of adults aged 25–54 who were not in a registered or de facto marriage. It does not infer availability, orientation or interest; nulls remain unassessed.',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
     accent: 'pink',
@@ -169,7 +162,6 @@ export const decideStrategies = [
       schools: 2,
       kidAmenity: 2,
       beach: 2,
-      safetyQuality: 1,
       personalNetwork: 2,
       chineseCommunity: 2,
       otherCommunities: 2,
@@ -192,7 +184,6 @@ export const decideStrategies = [
       schools: 1,
       kidAmenity: 1,
       beach: 1,
-      safetyQuality: 1,
       personalNetwork: 2,
       chineseCommunity: 2,
       otherCommunities: 2,
@@ -216,7 +207,6 @@ export const decideStrategies = [
       schools: 3,
       kidAmenity: 3,
       beach: 2,
-      safetyQuality: 2,
       personalNetwork: 3,
       chineseCommunity: 2,
       otherCommunities: 2,
@@ -236,7 +226,7 @@ export const decideStrategies = [
     bedrooms: 3,
     pricePropertyType: 'house',
     intent: 'house value first: cheap house medians lead, commute still counts',
-    // Cost is deliberately dominant here (6 of 11 standard weight ≈ 55%), so
+    // Cost is deliberately dominant here (6 of 10 standard weight = 60%), so
     // the map repaints by house price — expensive inner suburbs read red,
     // cheaper outer suburbs green — while commute still pulls as a real factor.
     weights: {
@@ -245,7 +235,6 @@ export const decideStrategies = [
       schools: 1,
       kidAmenity: 1,
       beach: 2,
-      safetyQuality: 1,
       personalNetwork: 1,
       chineseCommunity: 2,
       otherCommunities: 2,
@@ -268,7 +257,6 @@ export const decideStrategies = [
       schools: 3,
       kidAmenity: 2,
       beach: 2,
-      safetyQuality: 2,
       personalNetwork: 3,
       chineseCommunity: 2,
       otherCommunities: 2,

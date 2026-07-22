@@ -143,8 +143,8 @@
           <span
             v-for="badge in previewBadges(previewRow)"
             :key="badge.key"
-            class="rank-pill inline-flex items-center rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
-            :class="[badge.className, badge.title ? 'context-pill' : null]"
+            class="rank-pill inline-flex items-center border px-2 py-[3px] font-mono text-[10px] leading-none"
+            :class="[badge.className, chipShapeClass(badge), badge.title ? 'context-pill' : null]"
             :title="badge.title"
           >
             {{ badge.text }}
@@ -227,8 +227,12 @@
                     <span
                       v-for="chip in rowBadges(row)"
                       :key="chip.key"
-                      class="rank-pill rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                      :class="[chipClass(chip), chip.title ? 'context-pill' : null]"
+                      class="rank-pill border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                      :class="[
+                        chipClass(chip),
+                        chipShapeClass(chip),
+                        chip.title ? 'context-pill' : null,
+                      ]"
                       :title="chip.title"
                     >
                       {{ chip.text }}
@@ -448,12 +452,17 @@ function chipClass(chip) {
     yellow: 'border-yellow-500/40 text-yellow-300 bg-yellow-500/10',
     rainbow: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
     train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
-    commute: 'border-ob-teal/25 text-ob-teal-bright bg-ob-teal/6',
+    commute: 'border-blue-500/45 text-blue-300 bg-blue-500/10',
     schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
     conditional: 'border-ob-sand/30 text-ob-sand bg-ob-sand/8',
     reject: 'border-red-400/35 text-red-300 bg-red-400/8',
     veto: 'border-ob-sand/20 text-ob-faint bg-ob-sand/5',
   }[chip.tone]
+}
+function chipShapeClass(chip) {
+  return ['friend', 'beach', 'commute', 'schools'].includes(chip.tone)
+    ? 'rounded-[4px]'
+    : 'rounded-full'
 }
 
 // Per-criterion contributions for the preview card: the same value() calls and

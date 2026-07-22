@@ -9,7 +9,7 @@
 // counts are recombined, percentages never averaged. This does not claim that
 // every unpartnered adult is available, interested or a potential partner.
 //
-// The two constants:
+// The two constants retained for the standalone raw-score helper:
 // - PARTNER_POOL_FULL_BONUS_SHARE: a 40% unpartnered share among 25-54s earns
 //   10/10 on the primary component; higher shares stay capped.
 // - PARTNER_POOL_MIN_DENOMINATOR: below 800 persons aged 25-54 the rate is
@@ -53,11 +53,20 @@ export function partnerPoolFor(areaId) {
   }
 }
 
-// A 40% unpartnered share earns 10/10. The component stays capped, so at the
-// criterion's x1 preset this is at most +2 ranking points. Lone-parent family
-// counts remain available as neutral Census context but never enter this score.
-export function partnerPoolScore(areaId) {
+// Returns the uncapped source percentage after the denominator guard. The live
+// Mingle criterion percentile-ranks this value, so suburbs above 40% no longer
+// collapse into the same capped top score.
+export function partnerPoolPercentage(areaId) {
   const pool = partnerPoolFor(areaId)
   if (pool == null || pool.denominator < PARTNER_POOL_MIN_DENOMINATOR) return null
-  return Math.min(10, (pool.percentage / PARTNER_POOL_FULL_BONUS_SHARE) * 10)
+  return pool.percentage
+}
+
+// A 40% unpartnered share earns 10/10 in the retained raw-score helper.
+// Lone-parent family counts remain available as neutral Census context but
+// never enter Mingle: they are not evidence of dating-pool availability.
+export function partnerPoolScore(areaId) {
+  const percentage = partnerPoolPercentage(areaId)
+  if (percentage == null) return null
+  return Math.min(10, (percentage / PARTNER_POOL_FULL_BONUS_SHARE) * 10)
 }
