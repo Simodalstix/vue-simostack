@@ -2,7 +2,7 @@
   "dataset": "dwelling-greenspace-targets",
   "version": "v7-canonical-70-mixed-official-and-derived",
   "retrievedAt": "2026-07-19",
-  "recordCount": 94,
+  "recordCount": 114,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -1191,6 +1191,246 @@
         }
       ],
       "censusPopulation2021": 2951
+    },
+    {
+      "id": "aberfeldie-house",
+      "displayName": "Aberfeldie",
+      "salComponents": [
+        {
+          "suburb": "Aberfeldie",
+          "salCode": "20003",
+          "censusPopulation2021": 3925
+        }
+      ],
+      "censusPopulation2021": 3925
+    },
+    {
+      "id": "albion-house",
+      "displayName": "Albion",
+      "salComponents": [
+        {
+          "suburb": "Albion",
+          "salCode": "20021",
+          "censusPopulation2021": 4334
+        }
+      ],
+      "censusPopulation2021": 4334
+    },
+    {
+      "id": "blackburn-north-house",
+      "displayName": "Blackburn North",
+      "salComponents": [
+        {
+          "suburb": "Blackburn North",
+          "salCode": "20253",
+          "censusPopulation2021": 7627
+        }
+      ],
+      "censusPopulation2021": 7627
+    },
+    {
+      "id": "blackburn-south-house",
+      "displayName": "Blackburn South",
+      "salComponents": [
+        {
+          "suburb": "Blackburn South",
+          "salCode": "20254",
+          "censusPopulation2021": 10939
+        }
+      ],
+      "censusPopulation2021": 10939
+    },
+    {
+      "id": "box-hill-north-house",
+      "displayName": "Box Hill North",
+      "salComponents": [
+        {
+          "suburb": "Box Hill North",
+          "salCode": "20315",
+          "censusPopulation2021": 12337
+        }
+      ],
+      "censusPopulation2021": 12337
+    },
+    {
+      "id": "box-hill-south-house",
+      "displayName": "Box Hill South",
+      "salComponents": [
+        {
+          "suburb": "Box Hill South",
+          "salCode": "20316",
+          "censusPopulation2021": 8491
+        }
+      ],
+      "censusPopulation2021": 8491
+    },
+    {
+      "id": "brunswick-west-2br",
+      "displayName": "Brunswick West",
+      "salComponents": [
+        {
+          "suburb": "Brunswick West",
+          "salCode": "20363",
+          "censusPopulation2021": 14746
+        }
+      ],
+      "censusPopulation2021": 14746
+    },
+    {
+      "id": "coburg-north-house",
+      "displayName": "Coburg North",
+      "salComponents": [
+        {
+          "suburb": "Coburg North",
+          "salCode": "20597",
+          "censusPopulation2021": 8327
+        }
+      ],
+      "censusPopulation2021": 8327
+    },
+    {
+      "id": "gardenvale-house",
+      "displayName": "Gardenvale",
+      "salComponents": [
+        {
+          "suburb": "Gardenvale",
+          "salCode": "20965",
+          "censusPopulation2021": 1019
+        }
+      ],
+      "censusPopulation2021": 1019
+    },
+    {
+      "id": "heidelberg-west-house",
+      "displayName": "Heidelberg West",
+      "salComponents": [
+        {
+          "suburb": "Heidelberg West",
+          "salCode": "21169",
+          "censusPopulation2021": 5252
+        }
+      ],
+      "censusPopulation2021": 5252
+    },
+    {
+      "id": "keilor-house",
+      "displayName": "Keilor",
+      "salComponents": [
+        {
+          "suburb": "Keilor",
+          "salCode": "21314",
+          "censusPopulation2021": 5906
+        }
+      ],
+      "censusPopulation2021": 5906
+    },
+    {
+      "id": "keilor-downs-house",
+      "displayName": "Keilor Downs",
+      "salComponents": [
+        {
+          "suburb": "Keilor Downs",
+          "salCode": "21315",
+          "censusPopulation2021": 9857
+        }
+      ],
+      "censusPopulation2021": 9857
+    },
+    {
+      "id": "keilor-east-house",
+      "displayName": "Keilor East",
+      "salComponents": [
+        {
+          "suburb": "Keilor East",
+          "salCode": "21316",
+          "censusPopulation2021": 15078
+        }
+      ],
+      "censusPopulation2021": 15078
+    },
+    {
+      "id": "keysborough-house",
+      "displayName": "Keysborough",
+      "salComponents": [
+        {
+          "suburb": "Keysborough",
+          "salCode": "21339",
+          "censusPopulation2021": 30018
+        }
+      ],
+      "censusPopulation2021": 30018
+    },
+    {
+      "id": "maidstone-house",
+      "displayName": "Maidstone",
+      "salComponents": [
+        {
+          "suburb": "Maidstone",
+          "salCode": "21575",
+          "censusPopulation2021": 9389
+        }
+      ],
+      "censusPopulation2021": 9389
+    },
+    {
+      "id": "maribyrnong-2br",
+      "displayName": "Maribyrnong",
+      "salComponents": [
+        {
+          "suburb": "Maribyrnong",
+          "salCode": "21604",
+          "censusPopulation2021": 12573
+        }
+      ],
+      "censusPopulation2021": 12573
+    },
+    {
+      "id": "port-melbourne-2br",
+      "displayName": "Port Melbourne",
+      "salComponents": [
+        {
+          "suburb": "Port Melbourne",
+          "salCode": "22107",
+          "censusPopulation2021": 17633
+        }
+      ],
+      "censusPopulation2021": 17633
+    },
+    {
+      "id": "sunshine-north-house",
+      "displayName": "Sunshine North",
+      "salComponents": [
+        {
+          "suburb": "Sunshine North",
+          "salCode": "22396",
+          "censusPopulation2021": 12047
+        }
+      ],
+      "censusPopulation2021": 12047
+    },
+    {
+      "id": "sunshine-west-house",
+      "displayName": "Sunshine West",
+      "salComponents": [
+        {
+          "suburb": "Sunshine West",
+          "salCode": "22397",
+          "censusPopulation2021": 18552
+        }
+      ],
+      "censusPopulation2021": 18552
+    },
+    {
+      "id": "tullamarine-house",
+      "displayName": "Tullamarine",
+      "salComponents": [
+        {
+          "suburb": "Tullamarine",
+          "salCode": "22586",
+          "censusPopulation2021": 6733
+        }
+      ],
+      "censusPopulation2021": 6733
     }
   ]
 }

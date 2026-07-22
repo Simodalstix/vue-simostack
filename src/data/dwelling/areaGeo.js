@@ -1338,6 +1338,268 @@ export const areaGeo = {
       },
     ],
   },
+
+  'aberfeldie-house': {
+    localityNames: ['Aberfeldie'],
+    stationPoints: [
+      {
+        id: 'aberfeldie-anchor',
+        name: 'Aberfeldie (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.898, -37.759],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'albion-house': {
+    localityNames: ['Albion'],
+    stationPoints: [
+      {
+        id: 'albion-anchor',
+        name: 'Albion',
+        // Same OSM-derived point the schematic map already uses in trainLines.js.
+        coordinates: [144.8195, -37.7757],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'blackburn-north-house': {
+    localityNames: ['Blackburn North'],
+    stationPoints: [
+      {
+        id: 'blackburn-north-anchor',
+        name: 'Blackburn North (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [145.148, -37.807],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'blackburn-south-house': {
+    localityNames: ['Blackburn South'],
+    stationPoints: [
+      {
+        id: 'blackburn-south-anchor',
+        name: 'Blackburn South (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [145.151, -37.833],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'box-hill-north-house': {
+    localityNames: ['Box Hill North'],
+    stationPoints: [
+      {
+        id: 'box-hill-north-anchor',
+        name: 'Box Hill North (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [145.122, -37.805],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'box-hill-south-house': {
+    localityNames: ['Box Hill South'],
+    stationPoints: [
+      {
+        id: 'box-hill-south-anchor',
+        name: 'Box Hill South (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [145.126, -37.833],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'brunswick-west-2br': {
+    localityNames: ['Brunswick West'],
+    stationPoints: [
+      {
+        id: 'brunswick-west-anchor',
+        name: 'Brunswick West (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.947, -37.766],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'coburg-north-house': {
+    localityNames: ['Coburg North'],
+    stationPoints: [
+      {
+        id: 'coburg-north-anchor',
+        name: 'Coburg North (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.965, -37.727],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'gardenvale-house': {
+    localityNames: ['Gardenvale'],
+    stationPoints: [
+      {
+        id: 'gardenvale-anchor',
+        name: 'Gardenvale',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [145.0166, -37.8935],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'heidelberg-west-house': {
+    localityNames: ['Heidelberg West'],
+    stationPoints: [
+      {
+        id: 'heidelberg-west-anchor',
+        name: 'Heidelberg West (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [145.037, -37.746],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'keilor-house': {
+    localityNames: ['Keilor'],
+    stationPoints: [
+      {
+        id: 'keilor-anchor',
+        name: 'Keilor (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.828, -37.717],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'keilor-downs-house': {
+    localityNames: ['Keilor Downs'],
+    stationPoints: [
+      {
+        id: 'keilor-downs-anchor',
+        name: 'Keilor Downs (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.813, -37.728],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'keilor-east-house': {
+    localityNames: ['Keilor East'],
+    stationPoints: [
+      {
+        id: 'keilor-east-anchor',
+        name: 'Keilor East (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.867, -37.733],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'keysborough-house': {
+    localityNames: ['Keysborough'],
+    stationPoints: [
+      {
+        id: 'keysborough-anchor',
+        name: 'Keysborough (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [145.172, -37.992],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'maidstone-house': {
+    localityNames: ['Maidstone'],
+    stationPoints: [
+      {
+        id: 'maidstone-anchor',
+        name: 'Maidstone (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.873, -37.783],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'maribyrnong-2br': {
+    localityNames: ['Maribyrnong'],
+    stationPoints: [
+      {
+        id: 'maribyrnong-anchor',
+        name: 'Maribyrnong (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.888, -37.771],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'port-melbourne-2br': {
+    localityNames: ['Port Melbourne'],
+    tramOnly: true,
+    stationPoints: [
+      {
+        id: 'port-melbourne-anchor',
+        name: 'Port Melbourne (route 109 light rail)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.94, -37.835],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'sunshine-north-house': {
+    localityNames: ['Sunshine North'],
+    stationPoints: [
+      {
+        id: 'sunshine-north-anchor',
+        name: 'Sunshine North (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.832, -37.767],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'sunshine-west-house': {
+    localityNames: ['Sunshine West'],
+    stationPoints: [
+      {
+        id: 'sunshine-west-anchor',
+        name: 'Sunshine West (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.808, -37.797],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
+  'tullamarine-house': {
+    localityNames: ['Tullamarine'],
+    stationPoints: [
+      {
+        id: 'tullamarine-anchor',
+        name: 'Tullamarine (locality anchor)',
+        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
+        coordinates: [144.881, -37.702],
+        source: OSM,
+        verifiedAt: null,
+      },
+    ],
+  },
 }
 
 export function localitiesForArea(areaId) {

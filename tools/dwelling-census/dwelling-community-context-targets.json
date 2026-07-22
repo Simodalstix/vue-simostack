@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-56",
+  "version": "2021-gcp-sal-extension-76",
   "retrievedAt": "2026-07-21",
-  "recordCount": 56,
+  "recordCount": 76,
   "records": [
     {
       "id": "yarraville-2br",
@@ -505,6 +505,186 @@
         {
           "suburb": "St Kilda West",
           "salCode": "22345"
+        }
+      ]
+    },
+    {
+      "id": "aberfeldie-house",
+      "salComponents": [
+        {
+          "suburb": "Aberfeldie",
+          "salCode": "20003"
+        }
+      ]
+    },
+    {
+      "id": "albion-house",
+      "salComponents": [
+        {
+          "suburb": "Albion",
+          "salCode": "20021"
+        }
+      ]
+    },
+    {
+      "id": "blackburn-north-house",
+      "salComponents": [
+        {
+          "suburb": "Blackburn North",
+          "salCode": "20253"
+        }
+      ]
+    },
+    {
+      "id": "blackburn-south-house",
+      "salComponents": [
+        {
+          "suburb": "Blackburn South",
+          "salCode": "20254"
+        }
+      ]
+    },
+    {
+      "id": "box-hill-north-house",
+      "salComponents": [
+        {
+          "suburb": "Box Hill North",
+          "salCode": "20315"
+        }
+      ]
+    },
+    {
+      "id": "box-hill-south-house",
+      "salComponents": [
+        {
+          "suburb": "Box Hill South",
+          "salCode": "20316"
+        }
+      ]
+    },
+    {
+      "id": "brunswick-west-2br",
+      "salComponents": [
+        {
+          "suburb": "Brunswick West",
+          "salCode": "20363"
+        }
+      ]
+    },
+    {
+      "id": "coburg-north-house",
+      "salComponents": [
+        {
+          "suburb": "Coburg North",
+          "salCode": "20597"
+        }
+      ]
+    },
+    {
+      "id": "gardenvale-house",
+      "salComponents": [
+        {
+          "suburb": "Gardenvale",
+          "salCode": "20965"
+        }
+      ]
+    },
+    {
+      "id": "heidelberg-west-house",
+      "salComponents": [
+        {
+          "suburb": "Heidelberg West",
+          "salCode": "21169"
+        }
+      ]
+    },
+    {
+      "id": "keilor-house",
+      "salComponents": [
+        {
+          "suburb": "Keilor",
+          "salCode": "21314"
+        }
+      ]
+    },
+    {
+      "id": "keilor-downs-house",
+      "salComponents": [
+        {
+          "suburb": "Keilor Downs",
+          "salCode": "21315"
+        }
+      ]
+    },
+    {
+      "id": "keilor-east-house",
+      "salComponents": [
+        {
+          "suburb": "Keilor East",
+          "salCode": "21316"
+        }
+      ]
+    },
+    {
+      "id": "keysborough-house",
+      "salComponents": [
+        {
+          "suburb": "Keysborough",
+          "salCode": "21339"
+        }
+      ]
+    },
+    {
+      "id": "maidstone-house",
+      "salComponents": [
+        {
+          "suburb": "Maidstone",
+          "salCode": "21575"
+        }
+      ]
+    },
+    {
+      "id": "maribyrnong-2br",
+      "salComponents": [
+        {
+          "suburb": "Maribyrnong",
+          "salCode": "21604"
+        }
+      ]
+    },
+    {
+      "id": "port-melbourne-2br",
+      "salComponents": [
+        {
+          "suburb": "Port Melbourne",
+          "salCode": "22107"
+        }
+      ]
+    },
+    {
+      "id": "sunshine-north-house",
+      "salComponents": [
+        {
+          "suburb": "Sunshine North",
+          "salCode": "22396"
+        }
+      ]
+    },
+    {
+      "id": "sunshine-west-house",
+      "salComponents": [
+        {
+          "suburb": "Sunshine West",
+          "salCode": "22397"
+        }
+      ]
+    },
+    {
+      "id": "tullamarine-house",
+      "salComponents": [
+        {
+          "suburb": "Tullamarine",
+          "salCode": "22586"
         }
       ]
     }
