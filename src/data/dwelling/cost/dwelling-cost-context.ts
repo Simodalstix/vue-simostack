@@ -7,7 +7,7 @@
 export const DWELLING_COST_CONTEXT = {
   "dataset": "dwelling-cost-context",
   "methodVersion": "dwelling-cost-v2",
-  "generatedAt": "2026-07-21T06:58:14+00:00",
+  "generatedAt": "2026-07-22T03:45:21+00:00",
   "defaultMaxPrice": 900000,
   "records": [
     {
@@ -5188,6 +5188,1130 @@ export const DWELLING_COST_CONTEXT = {
               "bedroomSpecific": false,
               "componentSuburbs": [
                 "St Kilda West"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "aberfeldie-house",
+      "suburb": "Aberfeldie",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 595000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 7.6667,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Aberfeldie"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1850000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Aberfeldie"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "albion-house",
+      "suburb": "Albion",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 305000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 10.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Albion"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 782500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.7407,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Albion"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "blackburn-north-house",
+      "suburb": "Blackburn North",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 849500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.7481,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Blackburn North"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1412000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Blackburn North"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "blackburn-south-house",
+      "suburb": "Blackburn South",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 917500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Blackburn South"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1378000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Blackburn South"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "box-hill-north-house",
+      "suburb": "Box Hill North",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 928500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Box Hill North"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1400500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Box Hill North"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "box-hill-south-house",
+      "suburb": "Box Hill South",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 931000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Box Hill South"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1528000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Box Hill South"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "brunswick-west-house",
+      "suburb": "Brunswick West",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 511000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 9.6444,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Brunswick West"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1315000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Brunswick West"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "coburg-north-house",
+      "suburb": "Coburg North",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 710000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 3.8333,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Coburg North"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1107000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Coburg North"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gardenvale-house",
+      "suburb": "Gardenvale",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 520000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 9.4444,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Gardenvale"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 2155000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Gardenvale"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": {
+                "Gardenvale": "^"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "heidelberg-west-house",
+      "suburb": "Heidelberg West",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 705000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 4.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Heidelberg West"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 810000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.3333,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Heidelberg West"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "keilor-house",
+      "suburb": "Keilor",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 735500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 2.9833,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Keilor"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": {
+                "Keilor": "^"
+              }
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1135500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Keilor"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "keilor-downs-house",
+      "suburb": "Keilor Downs",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 613000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 7.0667,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Keilor Downs"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 868500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.4667,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Keilor Downs"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "keilor-east-house",
+      "suburb": "Keilor East",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 720000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 3.5,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Keilor East"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1027500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Keilor East"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "keysborough-house",
+      "suburb": "Keysborough",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 710000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 3.8333,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Keysborough"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 977000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Keysborough"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "maidstone-house",
+      "suburb": "Maidstone",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 625000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 6.6667,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Maidstone"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 870000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.4444,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Maidstone"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "maribyrnong-house",
+      "suburb": "Maribyrnong",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 488000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 10.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Maribyrnong"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1205500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Maribyrnong"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "port-melbourne-2br",
+      "suburb": "Port Melbourne",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 740000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 2.8333,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Port Melbourne"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1602500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Port Melbourne"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "sunshine-north-house",
+      "suburb": "Sunshine North",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 619500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 6.85,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Sunshine North"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 776000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.837,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Sunshine North"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "sunshine-west-house",
+      "suburb": "Sunshine West",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 600000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 7.5,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Sunshine West"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 744000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 2.7,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Sunshine West"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tullamarine-house",
+      "suburb": "Tullamarine",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 570000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 8.3333,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Tullamarine"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 800000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.4815,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Tullamarine"
               ],
               "sourceFiles": [
                 "houses-by-suburb-2015-2025.xlsx"
