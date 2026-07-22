@@ -7139,8 +7139,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'ptv'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'aberfeldie-house',
     suburb: 'Aberfeldie',
     municipality: 'Moonee Valley',
@@ -7148,7 +7148,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Essendon (Craigieburn line)',
     station: 'Aberfeldie (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Essendon or Moonee Ponds, then the Craigieburn line; route 406 provides a Footscray connection.',
     headline: 'established 3-bedroom house in Aberfeldie',
@@ -7209,8 +7208,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'albion-house',
     suburb: 'Albion',
     municipality: 'Brimbank',
@@ -7218,7 +7217,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Sunbury line',
     station: 'Albion',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Sunbury line direct to Southern Cross, with Sunshine providing interchange redundancy.',
     headline: 'established 3-bedroom house in Albion',
@@ -7279,8 +7277,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'blackburn-north-house',
     suburb: 'Blackburn North',
     municipality: 'Whitehorse',
@@ -7288,7 +7286,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Blackburn (Belgrave / Lilydale line)',
     station: 'Blackburn North (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute: 'Local bus to Blackburn or Box Hill, then the Belgrave / Lilydale line to the city.',
     headline: 'established 3-bedroom house in Blackburn North',
     dwelling: {
@@ -7348,8 +7345,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'blackburn-south-house',
     suburb: 'Blackburn South',
     municipality: 'Whitehorse',
@@ -7357,7 +7354,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Blackburn (Belgrave / Lilydale line)',
     station: 'Blackburn South (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Local bus to Blackburn or Box Hill for rail; tram 75 is the slower one-seat fallback.',
     headline: 'established 3-bedroom house in Blackburn South',
@@ -7418,8 +7414,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'box-hill-north-house',
     suburb: 'Box Hill North',
     municipality: 'Whitehorse',
@@ -7427,7 +7423,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Box Hill (Belgrave / Lilydale line)',
     station: 'Box Hill North (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Local bus to Box Hill, then express-capable Belgrave / Lilydale services; route 903 is the cross-suburban backup.',
     headline: 'established 3-bedroom house in Box Hill North',
@@ -7488,8 +7483,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'box-hill-south-house',
     suburb: 'Box Hill South',
     municipality: 'Whitehorse',
@@ -7497,7 +7492,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus / tram to Box Hill',
     station: 'Box Hill South (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Box Hill for rail, with tram 75 as a slower one-seat city fallback from the southern pocket.',
     headline: 'established 3-bedroom house in Box Hill South',
@@ -7558,8 +7552,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'brunswick-west-2br',
     suburb: 'Brunswick West',
     municipality: 'Merri-bek',
@@ -7567,7 +7561,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Tram 19 / Upfield line edge',
     station: 'Brunswick West (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Route 58 provides a one-seat CBD trip; buses to the Upfield line add rail redundancy.',
     headline: 'older 2br apartment in Brunswick West',
@@ -7628,8 +7621,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'coburg-north-house',
     suburb: 'Coburg North',
     municipality: 'Merri-bek',
@@ -7637,7 +7630,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Upfield line (Merlynston / Batman)',
     station: 'Merlynston / Batman',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Use Merlynston or Batman on the Upfield line; Sydney Road buses and tram 19 provide disruption alternatives.',
     headline: 'established 3-bedroom house in Coburg North',
@@ -7698,8 +7690,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'gardenvale-house',
     suburb: 'Gardenvale',
     municipality: 'Glen Eira / Bayside',
@@ -7707,7 +7699,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Sandringham line',
     station: 'Gardenvale',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Sandringham line direct to the city, with route 64 and Nepean Highway buses as backups.',
     headline: 'established 3-bedroom house in Gardenvale',
@@ -7768,8 +7759,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'heidelberg-west-house',
     suburb: 'Heidelberg West',
     municipality: 'Banyule',
@@ -7777,7 +7768,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Heidelberg (Hurstbridge line)',
     station: 'Heidelberg West (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Heidelberg for the Hurstbridge line; routes through Northland provide cross-suburban redundancy.',
     headline: 'established 3-bedroom house in Heidelberg West',
@@ -7838,8 +7828,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'keilor-house',
     suburb: 'Keilor',
     municipality: 'Brimbank',
@@ -7847,7 +7837,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus (Keilor village)',
     station: 'Keilor (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Watergardens or Essendon, then rail to the city; Calder Highway buses are the road-based fallback.',
     headline: 'established 3-bedroom house in Keilor',
@@ -7908,8 +7897,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'keilor-downs-house',
     suburb: 'Keilor Downs',
     municipality: 'Brimbank',
@@ -7917,7 +7906,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to St Albans (Sunbury line)',
     station: 'Keilor Downs (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute: 'Bus to Keilor Plains or Watergardens, then the Sunbury line to the city.',
     headline: 'established 3-bedroom house in Keilor Downs',
     dwelling: {
@@ -7977,8 +7965,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'keilor-east-house',
     suburb: 'Keilor East',
     municipality: 'Moonee Valley',
@@ -7986,7 +7974,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus (Keilor Park / Milleara)',
     station: 'Keilor East (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Essendon for the Craigieburn line; route 465 provides a Buckley Street corridor fallback.',
     headline: 'established 3-bedroom house in Keilor East',
@@ -8047,8 +8034,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'keysborough-house',
     suburb: 'Keysborough',
     municipality: 'Greater Dandenong',
@@ -8056,7 +8043,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus (no rail in locality)',
     station: 'Keysborough (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Noble Park or Dandenong, then Cranbourne / Pakenham services through the Metro Tunnel.',
     headline: 'established 3-bedroom house in Keysborough',
@@ -8117,8 +8103,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'maidstone-house',
     suburb: 'Maidstone',
     municipality: 'Maribyrnong',
@@ -8126,7 +8112,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Tottenham / Sunshine',
     station: 'Maidstone (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Footscray or West Footscray for frequent rail; tram 82 links to Footscray and Moonee Ponds.',
     headline: 'established 3-bedroom house in Maidstone',
@@ -8187,8 +8172,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'maribyrnong-2br',
     suburb: 'Maribyrnong',
     municipality: 'Maribyrnong',
@@ -8196,7 +8181,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Footscray',
     station: 'Maribyrnong (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus or tram 82 to Footscray for rail; tram 57 provides a slower one-seat CBD alternative.',
     headline: 'older 2br apartment in Maribyrnong',
@@ -8257,8 +8241,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'port-melbourne-2br',
     suburb: 'Port Melbourne',
     municipality: 'Port Phillip',
@@ -8266,7 +8250,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Route 109 light rail',
     station: 'North Port (route 109 light rail)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Route 109 light rail provides a one-seat trip to the Collins Street corridor; route 235 is the bus backup.',
     headline: 'older 2br apartment in Port Melbourne',
@@ -8327,8 +8310,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'sunshine-north-house',
     suburb: 'Sunshine North',
     municipality: 'Brimbank',
@@ -8336,7 +8319,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Sunshine (Sunbury / Metro line)',
     station: 'Sunshine North (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Sunshine, then frequent Sunbury / regional services; Albion is a secondary rail option for some pockets.',
     headline: 'established 3-bedroom house in Sunshine North',
@@ -8397,8 +8379,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'sunshine-west-house',
     suburb: 'Sunshine West',
     municipality: 'Brimbank',
@@ -8406,7 +8388,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus to Sunshine (Sunbury / Metro line)',
     station: 'Sunshine West (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Sunshine for frequent rail, with buses through Footscray as a slower fallback.',
     headline: 'established 3-bedroom house in Sunshine West',
@@ -8467,8 +8448,8 @@ const AREA_CORRIDOR_BASE = [
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
+    // Owner-approved record of the 2026-07-22 onboarding batch. Graduated on
+    // 2026-07-22; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'tullamarine-house',
     suburb: 'Tullamarine',
     municipality: 'Hume',
@@ -8476,7 +8457,6 @@ const AREA_CORRIDOR_BASE = [
     corridor: 'Bus (no rail in locality)',
     station: 'Tullamarine (locality anchor)',
     catchmentMetres: 800,
-    scored: false,
     altRoute:
       'Bus to Broadmeadows for Craigieburn-line rail; route 59 via Airport West is the tram-based fallback.',
     headline: 'established 3-bedroom house in Tullamarine',

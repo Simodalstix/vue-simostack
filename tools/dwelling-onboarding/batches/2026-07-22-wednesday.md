@@ -53,8 +53,8 @@ catchments proposed (but several are combination candidates, see below).
   VRQA evidence for the 23 newly zoned schools not already researched (16
   primary, seven secondary); Port Melbourne Secondary College remains an
   honest `strength: null` because it served only Years 7-10 in 2025 and had no
-  completing VCE cohort. These additions await owner review. Greenspace pytest
-  passed 10/10; the 20-target build used cached hash-matched ABS/VPA inputs and
+  completing VCE cohort. These additions were initially held for owner review.
+  Greenspace pytest passed 10/10; the 20-target build used cached hash-matched ABS/VPA inputs and
   a fresh 422-feature PARKRES pull, then integrated all records (app context
   now 114). Gardenvale's `highComponentSpread` flag was reviewed and accepted
   as structural (full local access, weak inland nature-corridor proximity).
@@ -74,8 +74,14 @@ catchments proposed (but several are combination candidates, see below).
   or converting a qualitative impression into evidence. School name hints,
   source IDs and profile caveats were synced to the completed passes. No
   record graduated from `scored: false`.
+- 2026-07-22 (owner-approved graduation): owner approved all 20 retained
+  records for scored release. Removed the explicit `scored: false` gate and
+  updated the batch coverage contract to require one finite ranked result per
+  record. Safety remains `null` and drops out of the renormalised weighted
+  mean; it is neither zero nor a qualitative hand-score. Port Melbourne
+  Secondary College's evidence-backed null is likewise retained.
 
-## Records (all scored: false pending)
+## Records (all owner-approved and scored)
 
 | ID                    | Suburb          | Region              | Product (assumption) | SAL   | Pop    | Anchor kind                 |
 | --------------------- | --------------- | ------------------- | -------------------- | ----- | ------ | --------------------------- |
@@ -122,8 +128,9 @@ catchments proposed (but several are combination candidates, see below).
 3. DONE (2026-07-22): schools anchors regenerated for the 114-record registry;
    official 2027 zone pipeline rerun for all 20 retained records. Seven
    anchors carry the expected exact-address boundary caveat. Strength research
-   added for all 23 newly zoned schools that lacked evidence; additions await
-   owner review, and Port Melbourne Secondary is an evidence-backed null.
+   added for all 23 newly zoned schools that lacked evidence; the owner
+   approved the batch for graduation, and Port Melbourne Secondary remains an
+   evidence-backed null.
 4. DONE (2026-07-22): greenspace built and integrated for all 20 retained
    targets. Gardenvale's sole QA flag was reviewed and accepted; no manual
    generated value was edited.
@@ -131,4 +138,5 @@ catchments proposed (but several are combination candidates, see below).
    bands entered for all 20 records. The current official CSA workbook was
    checked, but it lacks suburb geography; safety remains `null` under the
    missing-evidence rule rather than being inferred.
-6. Graduate to scored only on owner approval, per the previous batch pattern.
+6. DONE (2026-07-22): owner approved all 20 retained records for scored
+   release. Safety and Port Melbourne Secondary remain honest nulls.
