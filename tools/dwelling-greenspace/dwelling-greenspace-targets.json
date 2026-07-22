@@ -2,7 +2,7 @@
   "dataset": "dwelling-greenspace-targets",
   "version": "v7-canonical-70-mixed-official-and-derived",
   "retrievedAt": "2026-07-19",
-  "recordCount": 115,
+  "recordCount": 114,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -1217,18 +1217,6 @@
       "censusPopulation2021": 4334
     },
     {
-      "id": "bellfield-house",
-      "displayName": "Bellfield",
-      "salComponents": [
-        {
-          "suburb": "Bellfield",
-          "salCode": "20198",
-          "censusPopulation2021": 1996
-        }
-      ],
-      "censusPopulation2021": 1996
-    },
-    {
       "id": "blackburn-north-house",
       "displayName": "Blackburn North",
       "salComponents": [
@@ -1277,7 +1265,7 @@
       "censusPopulation2021": 8491
     },
     {
-      "id": "brunswick-west-house",
+      "id": "brunswick-west-2br",
       "displayName": "Brunswick West",
       "salComponents": [
         {
@@ -1385,7 +1373,7 @@
       "censusPopulation2021": 9389
     },
     {
-      "id": "maribyrnong-house",
+      "id": "maribyrnong-2br",
       "displayName": "Maribyrnong",
       "salComponents": [
         {

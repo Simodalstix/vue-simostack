@@ -27,6 +27,16 @@ catchments proposed (but several are combination candidates, see below).
   - New pending coverage test `wednesdayBatchOnboarding.test.js`; pinned
     counts updated (community 124, greenspace targets 115). Full suite
     225/225, build, lint, prettier (on touched files) all pass.
+- 2026-07-22 (owner decisions applied): (1) combination candidates kept as
+  separate records; (2) Brunswick West and Maribyrnong switched from 3BR
+  house to older 2BR apartment (`brunswick-west-2br`, `maribyrnong-2br`);
+  (3) Bellfield removed. Batch now 20 pending records. Shared targets and
+  cost regenerated to 114; greenspace test pin 114. NOTE: the Bellfield SAL
+  community-context record remains in the generated census dataset (still
+  124 records) as a harmless unused descriptive entry — the generated file
+  is never hand-edited and a full regen needs every workbook. It is removed
+  from the census-targets list so a future regen excludes it. Full suite
+  224/224, build, lint, prettier pass.
 
 ## Records (all scored: false pending)
 
@@ -34,12 +44,12 @@ catchments proposed (but several are combination candidates, see below).
 | --------------------- | --------------- | ------------------- | -------------------- | ----- | ------ | --------------------------- |
 | aberfeldie-house      | Aberfeldie      | North               | 3BR house            | 20003 | 3,925  | approx locality             |
 | albion-house          | Albion          | West                | 3BR house            | 20021 | 4,334  | Albion station (repo coord) |
-| bellfield-house       | Bellfield       | Middle north-east   | 3BR house            | 20198 | 1,996  | approx locality             |
+| ~~bellfield-house~~   | Bellfield       | REMOVED (owner)     | -                    | 20198 | 1,996  | -                           |
 | blackburn-north-house | Blackburn North | East and south-east | 3BR house            | 20253 | 7,627  | approx locality             |
 | blackburn-south-house | Blackburn South | East and south-east | 3BR house            | 20254 | 10,939 | approx locality             |
 | box-hill-north-house  | Box Hill North  | East and south-east | 3BR house            | 20315 | 12,337 | approx locality             |
 | box-hill-south-house  | Box Hill South  | East and south-east | 3BR house            | 20316 | 8,491  | approx locality             |
-| brunswick-west-house  | Brunswick West  | North               | 3BR house            | 20363 | 14,746 | approx locality             |
+| brunswick-west-2br    | Brunswick West  | North               | older 2BR apartment  | 20363 | 14,746 | approx locality             |
 | coburg-north-house    | Coburg North    | North               | 3BR house            | 20597 | 8,327  | approx locality             |
 | gardenvale-house      | Gardenvale      | South               | 3BR house            | 20965 | 1,019  | approx Sandringham line     |
 | heidelberg-west-house | Heidelberg West | Middle north-east   | 3BR house            | 21169 | 5,252  | approx locality             |
@@ -48,7 +58,7 @@ catchments proposed (but several are combination candidates, see below).
 | keilor-east-house     | Keilor East     | West                | 3BR house            | 21316 | 15,078 | approx locality             |
 | keysborough-house     | Keysborough     | East and south-east | 3BR house            | 21339 | 30,018 | approx locality             |
 | maidstone-house       | Maidstone       | West                | 3BR house            | 21575 | 9,389  | approx locality             |
-| maribyrnong-house     | Maribyrnong     | West                | 3BR house            | 21604 | 12,573 | approx locality             |
+| maribyrnong-2br       | Maribyrnong     | West                | older 2BR apartment  | 21604 | 12,573 | approx locality             |
 | port-melbourne-2br    | Port Melbourne  | Inner               | older 2BR apartment  | 22107 | 17,633 | approx route 109 light rail |
 | sunshine-north-house  | Sunshine North  | West                | 3BR house            | 22396 | 12,047 | approx locality             |
 | sunshine-west-house   | Sunshine West   | West                | 3BR house            | 22397 | 18,552 | approx locality             |

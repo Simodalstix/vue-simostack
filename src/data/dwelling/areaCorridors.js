@@ -7271,71 +7271,6 @@ const AREA_CORRIDOR_BASE = [
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
     // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
-    id: 'bellfield-house',
-    suburb: 'Bellfield',
-    municipality: 'Banyule',
-    region: 'Middle north-east',
-    corridor: 'Bus to Heidelberg (Hurstbridge line)',
-    station: 'Bellfield (locality anchor)',
-    catchmentMetres: 800,
-    scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Bellfield (pending evidence)',
-    dwelling: {
-      types: ['house'],
-      bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
-      parkingTypes: [],
-      suitableStock:
-        'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
-      expectedTransportCost:
-        'Use the existing Melbourne myki modelling assumption; no area-specific fare premium.',
-    },
-    stationWalkMin: null,
-    carDaily: null,
-    secondBedroom: true,
-    commute: null,
-    scores: {
-      housingValue: null,
-      coparenting: null,
-      lowCar: null,
-      recurringCosts: null,
-      walkability: null,
-      safety: null,
-      privacyWfh: null,
-      resale: null,
-      community: null,
-    },
-    childhood: {
-      schoolStrength: null,
-      teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
-      privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
-    },
-    caseFor: ['ABS 2021 Census context is integrated: 1,996 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
-    bestType:
-      'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
-    avoidType: 'Any purchase decision from this record before its evidence passes complete.',
-    oneCar: 'Not assessed yet.',
-    coparentingGeometry: 'Not assessed yet.',
-    risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
-      'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
-    ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
-    primaryWarning:
-      'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
-    verifiedAt: null,
-    placeholder: true,
-    sources: ['abs', 'ptv'],
-  },
-  {
-    // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
-    // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
     id: 'blackburn-north-house',
     suburb: 'Blackburn North',
     municipality: 'Whitehorse',
@@ -7596,7 +7531,7 @@ const AREA_CORRIDOR_BASE = [
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
     // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
-    id: 'brunswick-west-house',
+    id: 'brunswick-west-2br',
     suburb: 'Brunswick West',
     municipality: 'Merri-bek',
     region: 'North',
@@ -7605,15 +7540,15 @@ const AREA_CORRIDOR_BASE = [
     catchmentMetres: 800,
     scored: false,
     altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Brunswick West (pending evidence)',
+    headline: 'older 2br apartment in Brunswick West (pending evidence)',
     dwelling: {
-      types: ['house'],
-      bedrooms: 3,
+      types: ['older-apartment'],
+      bedrooms: 2,
       indicativePrice: null,
       annualOc: null,
       parkingTypes: [],
       suitableStock:
-        'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
+        'Older 2BR apartment within the record catchment; recurring-stock assumption pending listing evidence.',
       expectedTransportCost:
         'Use the existing Melbourne myki modelling assumption; no area-specific fare premium.',
     },
@@ -7643,7 +7578,7 @@ const AREA_CORRIDOR_BASE = [
     caseFor: ['ABS 2021 Census context is integrated: 14,746 residents.'],
     caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
     bestType:
-      'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
+      'Older 2BR apartment in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
@@ -8181,7 +8116,7 @@ const AREA_CORRIDOR_BASE = [
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
     // design; see tools/dwelling-onboarding/batches/2026-07-22-wednesday.md.
-    id: 'maribyrnong-house',
+    id: 'maribyrnong-2br',
     suburb: 'Maribyrnong',
     municipality: 'Maribyrnong',
     region: 'West',
@@ -8190,15 +8125,15 @@ const AREA_CORRIDOR_BASE = [
     catchmentMetres: 800,
     scored: false,
     altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Maribyrnong (pending evidence)',
+    headline: 'older 2br apartment in Maribyrnong (pending evidence)',
     dwelling: {
-      types: ['house'],
-      bedrooms: 3,
+      types: ['older-apartment'],
+      bedrooms: 2,
       indicativePrice: null,
       annualOc: null,
       parkingTypes: [],
       suitableStock:
-        'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
+        'Older 2BR apartment within the record catchment; recurring-stock assumption pending listing evidence.',
       expectedTransportCost:
         'Use the existing Melbourne myki modelling assumption; no area-specific fare premium.',
     },
@@ -8228,7 +8163,7 @@ const AREA_CORRIDOR_BASE = [
     caseFor: ['ABS 2021 Census context is integrated: 12,573 residents.'],
     caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
     bestType:
-      'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
+      'Older 2BR apartment in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',

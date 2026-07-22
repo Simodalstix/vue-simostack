@@ -7,7 +7,7 @@
 export const DWELLING_COST_CONTEXT = {
   "dataset": "dwelling-cost-context",
   "methodVersion": "dwelling-cost-v2",
-  "generatedAt": "2026-07-22T03:45:21+00:00",
+  "generatedAt": "2026-07-22T04:05:47+00:00",
   "defaultMaxPrice": 900000,
   "records": [
     {
@@ -5537,7 +5537,7 @@ export const DWELLING_COST_CONTEXT = {
       }
     },
     {
-      "id": "brunswick-west-house",
+      "id": "brunswick-west-2br",
       "suburb": "Brunswick West",
       "prices": {
         "unit": {
@@ -6045,7 +6045,7 @@ export const DWELLING_COST_CONTEXT = {
       }
     },
     {
-      "id": "maribyrnong-house",
+      "id": "maribyrnong-2br",
       "suburb": "Maribyrnong",
       "prices": {
         "unit": {

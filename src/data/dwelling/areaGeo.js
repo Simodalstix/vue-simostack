@@ -1365,19 +1365,6 @@ export const areaGeo = {
       },
     ],
   },
-  'bellfield-house': {
-    localityNames: ['Bellfield'],
-    stationPoints: [
-      {
-        id: 'bellfield-anchor',
-        name: 'Bellfield (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [145.043, -37.746],
-        source: OSM,
-        verifiedAt: null,
-      },
-    ],
-  },
   'blackburn-north-house': {
     localityNames: ['Blackburn North'],
     stationPoints: [
@@ -1430,7 +1417,7 @@ export const areaGeo = {
       },
     ],
   },
-  'brunswick-west-house': {
+  'brunswick-west-2br': {
     localityNames: ['Brunswick West'],
     stationPoints: [
       {
@@ -1547,7 +1534,7 @@ export const areaGeo = {
       },
     ],
   },
-  'maribyrnong-house': {
+  'maribyrnong-2br': {
     localityNames: ['Maribyrnong'],
     stationPoints: [
       {

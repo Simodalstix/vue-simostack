@@ -2261,27 +2261,7 @@ export const suburbProfiles = {
       mainRisk: 'Reading this placeholder as a scored recommendation.',
       pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
     },
-  },
-  // 'Bellfield' — pending-evidence record of the 2026-07-22 onboarding batch.
-  'bellfield-house': {
-    lives:
-      'Bellfield: ABS 2021 records 1,996 residents. Corridor: bus to heidelberg (hurstbridge line) (verification pending). Full lifestyle evidence pending.',
-    housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
-    fit: [
-      { text: 'Census community context is integrated and visible on the card.', tag: null },
-      {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
-        tag: 'tradeoff',
-      },
-    ],
-    decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
-    },
-  },
-  // 'Blackburn North' — pending-evidence record of the 2026-07-22 onboarding batch.
+  }, // 'Blackburn North' — pending-evidence record of the 2026-07-22 onboarding batch.
   'blackburn-north-house': {
     lives:
       'Blackburn North: ABS 2021 records 7,627 residents. Corridor: bus to blackburn (belgrave / lilydale line) (verification pending). Full lifestyle evidence pending.',
@@ -2358,11 +2338,11 @@ export const suburbProfiles = {
     },
   },
   // 'Brunswick West' — pending-evidence record of the 2026-07-22 onboarding batch.
-  'brunswick-west-house': {
+  'brunswick-west-2br': {
     lives:
       'Brunswick West: ABS 2021 records 14,746 residents. Corridor: tram 19 / upfield line edge (verification pending). Full lifestyle evidence pending.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
@@ -2529,11 +2509,11 @@ export const suburbProfiles = {
     },
   },
   // 'Maribyrnong' — pending-evidence record of the 2026-07-22 onboarding batch.
-  'maribyrnong-house': {
+  'maribyrnong-2br': {
     lives:
       'Maribyrnong: ABS 2021 records 12,573 residents. Corridor: bus to footscray (verification pending). Full lifestyle evidence pending.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {

@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-77",
+  "version": "2021-gcp-sal-extension-76",
   "retrievedAt": "2026-07-21",
-  "recordCount": 77,
+  "recordCount": 76,
   "records": [
     {
       "id": "yarraville-2br",
@@ -527,15 +527,6 @@
       ]
     },
     {
-      "id": "bellfield-house",
-      "salComponents": [
-        {
-          "suburb": "Bellfield",
-          "salCode": "20198"
-        }
-      ]
-    },
-    {
       "id": "blackburn-north-house",
       "salComponents": [
         {
@@ -572,7 +563,7 @@
       ]
     },
     {
-      "id": "brunswick-west-house",
+      "id": "brunswick-west-2br",
       "salComponents": [
         {
           "suburb": "Brunswick West",
@@ -653,7 +644,7 @@
       ]
     },
     {
-      "id": "maribyrnong-house",
+      "id": "maribyrnong-2br",
       "salComponents": [
         {
           "suburb": "Maribyrnong",
