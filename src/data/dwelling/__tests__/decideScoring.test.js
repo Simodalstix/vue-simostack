@@ -81,7 +81,9 @@ describe('preset weight vectors', () => {
       expect(Object.keys(s.weights).sort()).toEqual(keys)
       for (const w of Object.values(s.weights)) {
         expect(w).toBeGreaterThanOrEqual(0)
-        expect(w).toBeLessThanOrEqual(3)
+        // Most weights sit in 0-3; the House lens intentionally pushes Cost
+        // higher (6) so price dominates its map.
+        expect(w).toBeLessThanOrEqual(6)
       }
     }
   })
@@ -96,9 +98,11 @@ describe('preset weight vectors', () => {
       filters: {
         minBedrooms: 3,
         dwellingTypes: ['house'],
-        maxPrice: 900000,
       },
     })
+    // No price cap any more; Cost is the dominant weight in this lens.
+    expect(house.filters.maxPrice).toBeUndefined()
+    expect(house.weights.cost).toBeGreaterThan(house.weights.commute)
     expect(house.priceNote).toBeNull()
   })
 

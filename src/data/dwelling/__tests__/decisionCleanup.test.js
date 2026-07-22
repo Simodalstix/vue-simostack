@@ -183,22 +183,23 @@ describe('cost scoring', () => {
     expect(liquidityScore(80)).toBeGreaterThan(0)
   })
 
-  it('selects strategy property type and labels bedroom fallbacks honestly', () => {
+  it('reads the strategy product median with no bedroom proxy', () => {
     const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
     const family = decideStrategies.find((strategy) => strategy.id === 'family3br')
     const armadale = costMetricForArea('armadale-2br', balanced)
     const ivanhoe = costMetricForArea('ivanhoe-house', family)
-    const ivanhoeRec = areaCorridors.find((record) => record.id === 'ivanhoe-house')
-    const balancedIvanhoe = costMetricForArea('ivanhoe-house', balanced, ivanhoeRec)
 
-    expect(armadale).toMatchObject({ propertyType: 'unit', bedrooms: 2, isBedroomProxy: true })
-    expect(formatCostMetric(armadale)).toContain('2BR proxy')
-    expect(ivanhoe).toMatchObject({ propertyType: 'house', bedrooms: 3, isBedroomProxy: true })
-    expect(balancedIvanhoe).toMatchObject({
-      propertyType: 'house',
-      bedrooms: 3,
-      isBedroomProxy: true,
-    })
+    // Unit strategy reads the all-unit median; house strategy the all-house
+    // median. No bedrooms, no proxy flag — the VGV data has no bedroom split.
+    expect(armadale.propertyType).toBe('unit')
+    expect(armadale).not.toHaveProperty('isBedroomProxy')
+    expect(Number.isFinite(armadale.medianPrice)).toBe(true)
+    expect(formatCostMetric(armadale)).toContain('apartment')
+    expect(formatCostMetric(armadale)).not.toContain('proxy')
+    expect(formatCostMetric(armadale, { terse: true })).toContain('apartment median')
+
+    expect(ivanhoe.propertyType).toBe('house')
+    expect(formatCostMetric(ivanhoe, { terse: true })).toContain('house median')
   })
 
   it('keeps generated-data fallback available without inventing placeholder values', () => {

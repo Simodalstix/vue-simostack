@@ -461,11 +461,10 @@ function chipClass(chip) {
 // Null stays an honest n/a with an empty meter.
 function breakdown(row) {
   if (!row || isUnscoredRow(row)) return []
-  const maxPrice = props.strategy?.filters?.maxPrice
   return decideCriteria
     .filter((c) => (props.weights[c.key] ?? 0) > 0)
     .map((c) => {
-      const value = c.value(row.rec, row.commuteScore, { maxPrice, strategy: props.strategy })
+      const value = c.value(row.rec, row.commuteScore, { strategy: props.strategy })
       const bonus = c.scoringMode === 'additiveBonus'
       const display = value == null ? 'n/a' : (Math.round(value * 10) / 10).toFixed(1)
       return {

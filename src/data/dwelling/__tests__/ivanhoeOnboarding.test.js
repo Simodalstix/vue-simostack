@@ -30,7 +30,7 @@ describe('Ivanhoe onboarding pilot', () => {
     })
   })
 
-  it('flows through the existing ranking and price gates without special handling', () => {
+  it('flows through the existing ranking without special handling', () => {
     const strategy = decideStrategies[0]
     const ranked = useAreaRanking(
       areaCorridors,
@@ -40,7 +40,9 @@ describe('Ivanhoe onboarding pilot', () => {
     const rows = ranked.value.filter((row) => row.rec.id === AREA_ID)
 
     expect(rows).toHaveLength(1)
-    expect(['conditional', 'reject']).toContain(rows[0].status)
+    // No price/commute/dwelling reject gates any more: a scored record without
+    // a Soul veto is simply 'ok' and coloured by its weighted score.
+    expect(rows[0].status).toBe('ok')
     expect(Number.isFinite(rows[0].weighted)).toBe(true)
   })
 })

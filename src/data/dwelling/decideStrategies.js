@@ -9,9 +9,11 @@
 // outside the mean, so enabling a bonus can never lower a suburb.
 //
 // This supersedes the old purchase modes + criteria sliders + lens buttons
-// (all removed July 2026). Gates still run exactly as before: the strategy's
-// filters feed the same reject/conditional machinery in useAreaRanking, and
-// its dwelling/bedrooms drive the cost story the same way purchase modes did.
+// (all removed July 2026). Strategies are now pure SCORING LENSES: a weight
+// preset plus which median Cost reads (house vs unit). The price-cap and
+// dwelling/commute REJECT gates were removed (July 2026) so every suburb is
+// scored and coloured — the owner judges affordability, the tool does not hide
+// suburbs. Only the Soul veto still gates.
 
 // ---- criteria -------------------------------------------------------------
 //
@@ -27,7 +29,7 @@ import { girlsSportFor, sportAccessScore } from './girlsSport.js'
 import { chineseCommunityScore } from './chineseCommunity.js'
 import { otherCommunitiesScore } from './languageCommunities.js'
 import { relativeScoreFor } from './relativeScoring.js'
-import { costScoreFor } from './cost/costScoring.js'
+import { relativeCostScore } from './cost/costScoring.js'
 import { costMetricForArea } from './cost/costContext.js'
 
 const tenScale = (v) => (v == null ? null : v * 2) // existing 1-5 scores -> 2-10
@@ -51,12 +53,12 @@ export const decideCriteria = [
   {
     key: 'cost',
     label: 'Cost',
-    hint: 'Bedroom-matched affordability against the strategy cap. Lower cost never scores worse.',
+    hint: 'Relative affordability: the cheapest suburb for the chosen product scores best, the dearest worst. No price cap.',
     accent: 'blue',
     value: (rec, _commuteScore, context = {}) => {
-      const metric = costMetricForArea(rec.id, context.strategy, rec)
+      const metric = costMetricForArea(rec.id, context.strategy)
       if (!metric?.medianPrice) return tenScale(rec.scores?.housingValue)
-      return costScoreFor(metric.medianPrice, context.maxPrice ?? 900000)
+      return relativeCostScore(metric.medianPrice, metric.propertyType)
     },
   },
   {
@@ -147,10 +149,11 @@ export const decideCriterionByKey = Object.fromEntries(decideCriteria.map((c) =>
 
 // ---- strategies -----------------------------------------------------------
 //
-// weights are 0-3 per criterion. filters feed the same gate fields the old
-// purchase modes used (minBedrooms, dwellingTypes, maxPrice), so suburb
-// viability stays explainable through named gates. priceNote flags where the
-// recorded per-suburb bands do not directly price this dwelling.
+// weights are relative multipliers per criterion (0 = off). Most sit in 0-3;
+// the House lens deliberately pushes Cost to 6 so price dominates its map.
+// `filters` retains minBedrooms/dwellingTypes as descriptive metadata only —
+// they no longer reject suburbs (there are no price/commute/type gates now).
+// `pricePropertyType` chooses which VGV median (house/unit) Cost reads.
 export const decideStrategies = [
   {
     id: 'balanced2br',
@@ -172,7 +175,7 @@ export const decideStrategies = [
       otherCommunities: 2,
       partnerPool: 2,
     },
-    filters: { minBedrooms: 2, dwellingTypes: [], maxPrice: 900000 },
+    filters: { minBedrooms: 2, dwellingTypes: [] },
     priceNote: null,
   },
   {
@@ -195,7 +198,7 @@ export const decideStrategies = [
       otherCommunities: 2,
       partnerPool: 2,
     },
-    filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'], maxPrice: 550000 },
+    filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'] },
     priceNote:
       'Exact 1BR evidence is used where available; otherwise the UI identifies the all-unit proxy.',
   },
@@ -222,7 +225,6 @@ export const decideStrategies = [
     filters: {
       minBedrooms: 3,
       dwellingTypes: ['house', 'townhouse', 'villa-unit'],
-      maxPrice: 900000,
     },
     priceNote: null,
   },
@@ -233,11 +235,14 @@ export const decideStrategies = [
     dwelling: 'Established 3BR house',
     bedrooms: 3,
     pricePropertyType: 'house',
-    intent: 'a standalone established house, value first',
+    intent: 'house value first: cheap house medians lead, commute still counts',
+    // Cost is deliberately dominant here (6 of 11 standard weight ≈ 55%), so
+    // the map repaints by house price — expensive inner suburbs read red,
+    // cheaper outer suburbs green — while commute still pulls as a real factor.
     weights: {
-      cost: 3,
-      commute: 1,
-      schools: 2,
+      cost: 6,
+      commute: 2,
+      schools: 1,
       kidAmenity: 1,
       beach: 2,
       safetyQuality: 1,
@@ -246,7 +251,7 @@ export const decideStrategies = [
       otherCommunities: 2,
       partnerPool: 2,
     },
-    filters: { minBedrooms: 3, dwellingTypes: ['house'], maxPrice: 900000 },
+    filters: { minBedrooms: 3, dwellingTypes: ['house'] },
     priceNote: null,
   },
   {
@@ -269,7 +274,7 @@ export const decideStrategies = [
       otherCommunities: 2,
       partnerPool: 2,
     },
-    filters: { minBedrooms: 2, dwellingTypes: ['villa-unit', 'townhouse'], maxPrice: 800000 },
+    filters: { minBedrooms: 2, dwellingTypes: ['villa-unit', 'townhouse'] },
     priceNote: null,
   },
 ]

@@ -1,103 +1,46 @@
 // src/composables/useAreaRanking.js
 //
 // Ranks station-catchment records against the 555 Collins St commute anchor and
-// the active strategy. Two-stage, by design:
+// the active strategy. As of July 2026 there are NO price/commute/dwelling
+// REJECT gates: the tool never hides a suburb for being expensive, far or the
+// wrong product — the owner judges that. Every scored record is coloured by its
+// weighted score so the map reads as a landscape. The only gate left is the
+// owner's explicit Soul veto.
 //
-//   1. HARD GATES run first. The intrinsic non-negotiables (over ~65 min, >1
-//      transfer, no second bedroom) plus the strategy's own filter gates
-//      (dwelling types, minimum bedrooms, price cap) tag a record
-//      reject | conditional | ok. A cheap area must NOT out-rank a workable
-//      one on price alone, so gates precede scoring.
-//   2. SCORE over the ten Settle criteria (decideStrategies.js): standard
-//      criteria use sum(w * s) / sum(w), normalised to 0-100. Explicit bonus
-//      criteria add a small bounded premium after that mean. Missing data is
-//      never scored as zero, and the all-zero fallback prevents NaN. The
-//      demographic context is never read here directly; the opt-in
-//      Chinese-language lens, grouped other-communities lens and partner-pool
-//      criterion each supply one derived additive value.
+// SCORE over the ten Settle criteria (decideStrategies.js): standard criteria
+// use sum(w * s) / sum(w), normalised to 0-100. Explicit bonus criteria add a
+// small bounded premium after that mean. Missing data is never scored as zero,
+// and the all-zero fallback prevents NaN. The demographic context is never read
+// here directly; the opt-in Chinese-language lens, grouped other-communities
+// lens and partner-pool criterion each supply one derived additive value.
 //
-// Returns a computed list sorted ok > conditional > reject > unscored, then by
-// weighted score descending.
+// Returns a computed list sorted ok > veto > unscored, then by weighted score
+// descending.
 
 import { computed, unref } from 'vue'
 import { decideCriteria } from '@/data/dwelling/decideStrategies.js'
-import { costMetricForArea } from '@/data/dwelling/cost/costContext.js'
 import { ownerVetoFor } from '@/data/dwelling/ownerVetoes.js'
 import { commuteFor, scoreCommute, commuteBandLabel } from './useCommuteScoring.js'
 
 const STATUS_ORDER = { ok: 0, conditional: 1, reject: 2, veto: 3, unscored: 4 }
 
-function fmtPrice(n) {
-  return '$' + Math.round(n / 1000) + 'k'
-}
-
-function gate(rec, filters, commute) {
-  const reasons = []
-  let status = 'ok'
-  const reject = (msg) => {
-    reasons.push(msg)
-    status = 'reject'
-  }
-  const flag = (msg) => {
-    reasons.push(msg)
-    if (status === 'ok') status = 'conditional'
-  }
-
-  // Intrinsic non-negotiables. (The former car-dependence gate was removed
-  // from Settle July 2026; rec.carDaily is retained as data only.)
-  if (commute && commute.typical > 65) reject('Over ~65 min door-to-door at peak')
-  if (commute && commute.transfers > 1) reject('More than one routine transfer')
-  if ((filters.minBedrooms ?? 2) >= 2 && rec.secondBedroom === false)
-    reject('No viable second bedroom or path to one')
-
-  // Strategy filter gates.
-  const costMetric = costMetricForArea(rec.id, filters.strategy, rec)
-  const gatePrice =
-    filters.strategy && costMetric && !costMetric.isBedroomProxy
-      ? costMetric.medianPrice
-      : filters.minBedrooms !== 1
-        ? rec.dwelling?.indicativePrice?.[0]
-        : null
-  if (filters.maxPrice && gatePrice > filters.maxPrice)
-    reject(`Entry price above the ${fmtPrice(filters.maxPrice)} cap`)
-  if (filters.minBedrooms && rec.dwelling?.bedrooms < filters.minBedrooms)
-    reject('Fewer bedrooms than the strategy requires')
-  if (filters.maxCommute && commute && commute.typical > filters.maxCommute)
-    reject('Commute above your set maximum')
-  if (filters.maxStationWalk && rec.stationWalkMin > filters.maxStationWalk)
-    reject('Station walk above your set maximum')
-  if (
-    filters.dwellingTypes?.length &&
-    rec.dwelling?.types &&
-    !rec.dwelling.types.some((t) => filters.dwellingTypes.includes(t))
-  )
-    reject('No stock of the strategy dwelling types')
-
-  // Softer flags.
-  if (filters.maxOc && rec.dwelling?.annualOc?.[1] > filters.maxOc)
-    flag('Owners-corp fees may undermine the payoff strategy')
-
+// The only remaining gate: the owner's explicit Soul veto. Everything else is
+// scored, never rejected.
+function gate(rec, filters) {
   const ownerVeto = ownerVetoFor(rec.id)
   if (filters.soulEnabled !== false && ownerVeto) {
-    reasons.unshift(`${ownerVeto.basis}: ${ownerVeto.reason}`)
-    status = 'veto'
+    return { status: 'veto', reasons: [`${ownerVeto.basis}: ${ownerVeto.reason}`] }
   }
-
-  return { status, reasons }
+  return { status: 'ok', reasons: [] }
 }
 
-// A record is "Prestige" when its entry price sits well above the active
-// budget cap: genuinely out of reach rather than merely over the line. This is
-// presentation only (no scoring, weight or gate effect) and is what lets an
-// aspirational suburb read as premium instead of a plain over-cap rejection.
-// The multiple keeps a suburb that is just above the cap out of the tier.
+// Prestige was a price-cap presentation tier. With no cap it no longer fires;
+// the export is kept as an always-false stub so consuming components stay valid
+// without a coordinated change.
 export const PRESTIGE_CAP_MULTIPLE = 1.5
 
-export function prestigeFor(rec, filters) {
-  const cap = filters?.maxPrice
-  const entry = rec?.dwelling?.indicativePrice?.[0]
-  if (!cap || !Number.isFinite(entry)) return false
-  return entry >= cap * PRESTIGE_CAP_MULTIPLE
+export function prestigeFor() {
+  return false
 }
 
 // `weights` is the effective weight per criterion key from the Settle panel:
@@ -173,9 +116,8 @@ export function useAreaRanking(records, filtersRef, weightsRef) {
       }
       const commute = commuteFor(rec)
       const commuteScore = commute ? scoreCommute(commute.typical, commute.transfers) : null
-      const { status, reasons } = gate(rec, filters, commute)
+      const { status, reasons } = gate(rec, filters)
       const weighted = weightedScore(rec, commuteScore, weights, {
-        maxPrice: filters.maxPrice,
         strategy: filters.strategy,
       })
       return {
