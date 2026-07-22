@@ -1,6 +1,10 @@
 areaId,category,zonedSchool,schoolNo,boundaryDistanceM,anchorSource
+aberfeldie-house,primary,Aberfeldie Primary School,,620.7,station
+aberfeldie-house,secondary,Buckley Park College,,598.7,station
 albert-park-2br,primary,Albert Park Primary School,,286.2,locality-representative-point
 albert-park-2br,secondary,Albert Park College,,498.3,locality-representative-point
+albion-house,primary,Albion Primary School,,422.6,station
+albion-house,secondary,Sunshine College,,277.0,station
 armadale-2br,primary,Armadale Primary School,,414.2,station
 armadale-2br,secondary,Auburn High School,,557.5,station
 ascot-vale-2br,primary,Ascot Vale Primary School,,234.3,station
@@ -19,16 +23,26 @@ black-rock-house,primary,Black Rock Primary School,,486.1,station
 black-rock-house,secondary,Beaumaris Secondary College,,448.0,station
 blackburn-house,primary,Blackburn Primary School,,264.2,station
 blackburn-house,secondary,Blackburn High School,,37.3,station
+blackburn-north-house,primary,Old Orchard Primary School,,434.1,station
+blackburn-north-house,secondary,Blackburn High School,,1039.6,station
+blackburn-south-house,primary,Orchard Grove Primary School,,584.2,station
+blackburn-south-house,secondary,Forest Hill College,,154.4,station
 bonbeach-2br,primary,Bonbeach Primary School,,121.2,station
 bonbeach-2br,secondary,Patterson River Secondary College,,390.1,station
 box-hill-2br,primary,Mont Albert Primary School,,86.9,station
 box-hill-2br,secondary,Box Hill High School,,228.1,station
+box-hill-north-house,primary,Kerrimuir Primary School,,80.1,station
+box-hill-north-house,secondary,Koonung Secondary College,,362.8,station
+box-hill-south-house,primary,Roberts McCubbin Primary School,,836.8,station
+box-hill-south-house,secondary,Box Hill High School,,913.2,station
 braybrook-villa,primary,Sunshine Harvester Primary School,,1.2,station
 braybrook-villa,secondary,Braybrook College,,894.2,station
 brighton-house,primary,Brighton Beach Primary School,,303.9,station
 brighton-house,secondary,Brighton Secondary College,,303.9,station
 brunswick-east-2br,primary,Brunswick East Primary School,,453.2,locality-representative-point
 brunswick-east-2br,secondary,Northcote High School,,465.0,locality-representative-point
+brunswick-west-2br,primary,Brunswick South West Primary School,,87.1,station
+brunswick-west-2br,secondary,Brunswick Secondary College,,686.4,station
 bulleen-house,primary,Belle Vue Primary School,,9.8,station
 bulleen-house,secondary,Viewbank College,,62.1,station
 bundoora-house,primary,Bundoora Primary School,,349.6,station
@@ -47,6 +61,8 @@ chelsea-2br,primary,Chelsea Primary School,,451.7,station
 chelsea-2br,secondary,Patterson River Secondary College,,449.5,station
 clifton-hill-2br,primary,Clifton Hill Primary School,,50.4,station
 clifton-hill-2br,secondary,Fitzroy High School,,526.3,station
+coburg-north-house,primary,Pascoe Vale North Primary School,,108.7,station
+coburg-north-house,secondary,John Fawkner Secondary College,,108.5,station
 craigieburn-townhouse,primary,Craigieburn South Primary School,,782.9,station
 craigieburn-townhouse,secondary,Craigieburn Secondary College,,1213.7,station
 cremorne-2br,primary,Richmond Primary School,,51.9,station
@@ -85,6 +101,8 @@ footscray-station-2br,primary,Footscray City Primary School,,59.8,station
 footscray-station-2br,secondary,Footscray High School,,123.9,station
 frankston-middle-ring,primary,Moorabbin Primary School,,434.9,station
 frankston-middle-ring,secondary,Sandringham College,,78.1,station
+gardenvale-house,primary,Elsternwick Primary School,,228.2,station
+gardenvale-house,secondary,Elwood College,,306.6,station
 glen-waverley-2br,primary,Glen Waverley Primary School,,570.8,station
 glen-waverley-2br,secondary,Glen Waverley Secondary College,,919.8,station
 growth-corridor-stress-test,primary,Baden Powell P-9 College,,4.6,station
@@ -95,6 +113,8 @@ hawthorn-east-2br,primary,Auburn Primary School,,294.8,station
 hawthorn-east-2br,secondary,Auburn High School,,492.5,station
 heidelberg-3br-townhouse,primary,Heidelberg Primary School,,610.0,station
 heidelberg-3br-townhouse,secondary,Viewbank College,,136.3,station
+heidelberg-west-house,primary,Charles La Trobe P-12 College,,624.7,station
+heidelberg-west-house,secondary,Charles La Trobe P-12 College,,92.9,station
 inner-abbotsford-2br,primary,Collingwood College,,111.3,station
 inner-abbotsford-2br,secondary,Collingwood College,,530.5,station
 inner-collingwood-2br,primary,Collingwood College,,111.3,station
@@ -111,10 +131,22 @@ inner-windsor-prahran-2br,primary,Windsor Primary School,,504.3,station
 inner-windsor-prahran-2br,secondary,Prahran High School,,601.8,station
 ivanhoe-house,primary,Ivanhoe Primary School,,526.8,station
 ivanhoe-house,secondary,Thornbury High School,,558.9,station
+keilor-downs-house,primary,Keilor Views Primary School,,257.7,station
+keilor-downs-house,secondary,Keilor Downs Secondary College,,470.3,station
+keilor-east-house,primary,Keilor Heights Primary School,,993.5,station
+keilor-east-house,secondary,Essendon Keilor College,,1079.4,station
+keilor-house,primary,Keilor Primary School,,434.1,station
+keilor-house,secondary,Keilor Downs Secondary College,,1682.0,station
 kew-2br,primary,Kew Primary School,,125.5,locality-representative-point
 kew-2br,secondary,Kew High School,,848.2,locality-representative-point
+keysborough-house,primary,Keysborough Gardens Primary School,,1063.0,station
+keysborough-house,secondary,Keysborough Secondary College,,1824.2,station
+maidstone-house,primary,Footscray North Primary School,,342.7,station
+maidstone-house,secondary,Maribyrnong Secondary College,,602.9,station
 malvern-2br,primary,Caulfield Junior College,,117.8,station
 malvern-2br,secondary,Glen Eira College,,526.9,station
+maribyrnong-2br,primary,Footscray North Primary School,,2.1,station
+maribyrnong-2br,secondary,Maribyrnong Secondary College,,866.6,station
 mckinnon-villa,primary,Ormond Primary School,,63.8,station
 mckinnon-villa,secondary,McKinnon Secondary College,,405.1,station
 melbourne-cbd-2br,primary,Carlton Gardens Primary School,,363.4,station
@@ -141,6 +173,8 @@ parkville-2br,primary,North Melbourne Primary School,,166.2,station
 parkville-2br,secondary,University High School,,1182.9,station
 point-cook-house,primary,Saltwater P-9 College,,351.7,station
 point-cook-house,secondary,Saltwater P-9 College,,351.7,station
+port-melbourne-2br,primary,Port Melbourne Primary School,,368.8,station
+port-melbourne-2br,secondary,Port Melbourne Secondary College,,274.9,station
 preston-villa,primary,Preston West Primary School,,397.7,station
 preston-villa,secondary,Preston High School,,948.2,station
 rosanna-house,primary,Rosanna Primary School,,95.5,station
@@ -161,8 +195,12 @@ st-kilda-west-2br,primary,St Kilda Park Primary School,,368.9,station
 st-kilda-west-2br,secondary,Albert Park College,,368.9,station
 sunbury-house,primary,Sunbury West Primary School,,160.2,station
 sunbury-house,secondary,Sunbury College,,845.1,station
+sunshine-north-house,primary,Sunshine North Primary School,,133.7,station
+sunshine-north-house,secondary,Sunshine College,,986.1,station
 sunshine-station-2br,primary,Sunshine Primary School,,581.1,station
 sunshine-station-2br,secondary,Sunshine College,,94.9,station
+sunshine-west-house,primary,Glengala Primary School,,376.8,station
+sunshine-west-house,secondary,Sunshine College,,2536.9,station
 surrey-hills-house,primary,Surrey Hills Primary School,,342.6,station
 surrey-hills-house,secondary,Koonung Secondary College,,4.1,station
 thomastown-house,primary,Thomastown Primary School,,318.2,station
@@ -171,6 +209,8 @@ thornbury-2br,primary,Thornbury Primary School,,243.1,station
 thornbury-2br,secondary,Northcote High School,,388.4,station
 toorak-2br,primary,Armadale Primary School,,179.4,station
 toorak-2br,secondary,Auburn High School,,173.4,station
+tullamarine-house,primary,Tullamarine Primary School,,972.9,station
+tullamarine-house,secondary,Gladstone Park Secondary College,,658.8,station
 upfield-corridor,primary,Brunswick North Primary School,,97.7,station
 upfield-corridor,secondary,Brunswick Secondary College,,802.1,station
 viewbank-house,primary,Viewbank Primary School,,338.8,station

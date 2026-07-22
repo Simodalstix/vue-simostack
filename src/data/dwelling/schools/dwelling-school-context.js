@@ -8,7 +8,7 @@
 
 export const SCHOOL_CONTEXT_DATASET = {
   "zoneYear": "2027",
-  "generatedAt": "2026-07-16"
+  "generatedAt": "2026-07-22"
 }
 
 export const schoolContextByAreaId = {
@@ -1243,6 +1243,244 @@ export const schoolContextByAreaId = {
     "alsoInCatchmentSecondary": [
       "Elwood College",
       "Prahran High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "aberfeldie-house": {
+    "zonedPrimary": "Aberfeldie Primary School",
+    "zonedSecondary": "Buckley Park College",
+    "alsoInCatchmentPrimary": [
+      "Moonee Ponds West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Maribyrnong Secondary College",
+      "Rosehill Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "albion-house": {
+    "zonedPrimary": "Albion Primary School",
+    "zonedSecondary": "Sunshine College",
+    "alsoInCatchmentPrimary": [
+      "Albion North Primary School",
+      "Sunshine North Primary School",
+      "Sunshine Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Sunshine College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "blackburn-north-house": {
+    "zonedPrimary": "Old Orchard Primary School",
+    "zonedSecondary": "Blackburn High School",
+    "alsoInCatchmentPrimary": [
+      "Beverley Hills Primary School",
+      "Blackburn Primary School",
+      "Whitehorse Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "blackburn-south-house": {
+    "zonedPrimary": "Orchard Grove Primary School",
+    "zonedSecondary": "Forest Hill College",
+    "alsoInCatchmentPrimary": [
+      "Laburnum Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Box Hill High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "box-hill-north-house": {
+    "zonedPrimary": "Kerrimuir Primary School",
+    "zonedSecondary": "Koonung Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Box Hill North Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Blackburn High School",
+      "Box Hill High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "box-hill-south-house": {
+    "zonedPrimary": "Roberts McCubbin Primary School",
+    "zonedSecondary": "Box Hill High School",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "brunswick-west-2br": {
+    "zonedPrimary": "Brunswick South West Primary School",
+    "zonedSecondary": "Brunswick Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Brunswick North Primary School",
+      "Brunswick North West Primary School",
+      "Moonee Ponds Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Mount Alexander 7-12 College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "coburg-north-house": {
+    "zonedPrimary": "Pascoe Vale North Primary School",
+    "zonedSecondary": "John Fawkner Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Coburg North Primary School",
+      "Fawkner Primary School",
+      "Newlands Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Coburg High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "gardenvale-house": {
+    "zonedPrimary": "Elsternwick Primary School",
+    "zonedSecondary": "Elwood College",
+    "alsoInCatchmentPrimary": [
+      "Brighton Primary School",
+      "Caulfield Primary School",
+      "Gardenvale Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Brighton Secondary College",
+      "Glen Eira College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "heidelberg-west-house": {
+    "zonedPrimary": "Charles La Trobe P-12 College",
+    "zonedSecondary": "Charles La Trobe P-12 College",
+    "alsoInCatchmentPrimary": [
+      "Preston North East Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Reservoir High School",
+      "Thornbury High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "keilor-house": {
+    "zonedPrimary": "Keilor Primary School",
+    "zonedSecondary": "Keilor Downs Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Keilor Views Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "keilor-downs-house": {
+    "zonedPrimary": "Keilor Views Primary School",
+    "zonedSecondary": "Keilor Downs Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Monmia Primary School",
+      "St Albans North Primary School",
+      "Taylors Lakes Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Taylors Lakes Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "keilor-east-house": {
+    "zonedPrimary": "Keilor Heights Primary School",
+    "zonedSecondary": "Essendon Keilor College",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "keysborough-house": {
+    "zonedPrimary": "Keysborough Gardens Primary School",
+    "zonedSecondary": "Keysborough Secondary College",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "maidstone-house": {
+    "zonedPrimary": "Footscray North Primary School",
+    "zonedSecondary": "Maribyrnong Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Avondale Primary School",
+      "Dinjerra Primary School",
+      "Footscray West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Braybrook College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "maribyrnong-2br": {
+    "zonedPrimary": "Footscray North Primary School",
+    "zonedSecondary": "Maribyrnong Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Aberfeldie Primary School",
+      "Avondale Primary School",
+      "Moonee Ponds West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "port-melbourne-2br": {
+    "zonedPrimary": "Port Melbourne Primary School",
+    "zonedSecondary": "Port Melbourne Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Albert Park Primary School",
+      "South Melbourne Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Albert Park College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "sunshine-north-house": {
+    "zonedPrimary": "Sunshine North Primary School",
+    "zonedSecondary": "Sunshine College",
+    "alsoInCatchmentPrimary": [
+      "Albion North Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "sunshine-west-house": {
+    "zonedPrimary": "Glengala Primary School",
+    "zonedSecondary": "Sunshine College",
+    "alsoInCatchmentPrimary": [
+      "Ardeer South Primary School",
+      "Sunshine Heights Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "tullamarine-house": {
+    "zonedPrimary": "Tullamarine Primary School",
+    "zonedSecondary": "Gladstone Park Secondary College",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [
+      "Essendon Keilor College"
     ],
     "anchorSource": "station",
     "boundaryFlag": false

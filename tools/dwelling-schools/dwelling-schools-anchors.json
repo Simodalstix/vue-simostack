@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-21",
+ "generatedAt": "2026-07-22",
  "recipe": "Derived from areaGeo.js stationPoints + areaCorridors.js childhood name hints. Regenerate after adding records; never hand-edit.",
  "records": [
   {
@@ -27,10 +27,10 @@
      "South Yarra PS"
     ],
     "publicSecondary": [
-     "Prahran High"
+     "Prahran High (new 2019 vertical campus)"
     ],
     "privateContext": [
-     "Melbourne High"
+     "Melbourne High (selective-entry public — NOT zoned, exam entry)"
     ]
    }
   },
@@ -59,8 +59,8 @@
      "Richmond PS"
     ],
     "publicSecondary": [
-     "Richmond High",
-     "Melbourne Girls' College"
+     "Richmond High (2018)",
+     "Melbourne Girls' College (public single-sex, high-performing)"
     ],
     "privateContext": []
    }
@@ -87,10 +87,10 @@
    ],
    "nameHints": {
     "publicPrimary": [
-     "Collingwood College"
+     "Collingwood College (P-12, Steiner stream)"
     ],
     "publicSecondary": [
-     "Collingwood College"
+     "Collingwood College (P-12, Steiner stream)"
     ],
     "privateContext": []
    }
@@ -146,10 +146,10 @@
    ],
    "nameHints": {
     "publicPrimary": [
-     "Abbotsford PS"
+     "Abbotsford PS (Mandarin bilingual)"
     ],
     "publicSecondary": [
-     "Richmond High / Collingwood College"
+     "Richmond High / Collingwood College (zone-dependent)"
     ],
     "privateContext": []
    }
@@ -174,7 +174,7 @@
      "Sunshine Heights PS"
     ],
     "publicSecondary": [
-     "Sunshine College"
+     "Sunshine College (rebuild underway)"
     ],
     "privateContext": []
    }
@@ -195,7 +195,7 @@
    ],
    "nameHints": {
     "publicPrimary": [
-     "Footscray PS",
+     "Footscray PS (Vietnamese bilingual program)",
      "Footscray City PS"
     ],
     "publicSecondary": [
@@ -231,7 +231,7 @@
      "Footscray West PS"
     ],
     "publicSecondary": [
-     "Footscray High"
+     "Footscray High (multi-campus, rebuilt 2019+)"
     ],
     "privateContext": []
    }
@@ -255,7 +255,7 @@
      "Yarraville West PS"
     ],
     "publicSecondary": [
-     "Footscray High"
+     "Footscray High (Pilgrim campus)"
     ],
     "privateContext": []
    }
@@ -280,7 +280,7 @@
      "St Albans Heights PS"
     ],
     "publicSecondary": [
-     "St Albans Secondary College"
+     "St Albans Secondary College (strong improvement story)"
     ],
     "privateContext": []
    }
@@ -351,8 +351,8 @@
     ],
     "publicSecondary": [
      "Brunswick Secondary",
-     "Coburg High",
-     "Pascoe Vale Girls SC"
+     "Coburg High (reopened 2015)",
+     "Pascoe Vale Girls SC (public single-sex)"
     ],
     "privateContext": []
    }
@@ -419,7 +419,7 @@
    ],
    "nameHints": {
     "publicPrimary": [
-     "Carnegie PS"
+     "Carnegie PS (strong)"
     ],
     "publicSecondary": [
      "Glen Eira College"
@@ -499,7 +499,7 @@
      "Cheltenham PS"
     ],
     "publicSecondary": [
-     "Cheltenham Secondary"
+     "Cheltenham Secondary (solid, un-famous)"
     ],
     "privateContext": []
    }
@@ -530,7 +530,7 @@
      "Kensington PS"
     ],
     "publicSecondary": [
-     "Mount Alexander College"
+     "Mount Alexander College (progressive, improving)"
     ],
     "privateContext": []
    }
@@ -682,7 +682,7 @@
      "Northcote PS"
     ],
     "publicSecondary": [
-     "Northcote High"
+     "Northcote High (zoned, strong demand)"
     ],
     "privateContext": []
    }
@@ -708,7 +708,7 @@
     ],
     "publicSecondary": [
      "Thornbury High",
-     "Northcote High"
+     "Northcote High (zone edges, check address)"
     ],
     "privateContext": []
    }
@@ -739,7 +739,7 @@
      "Bell PS"
     ],
     "publicSecondary": [
-     "Preston High"
+     "Preston High (re-established 2019, growing)"
     ],
     "privateContext": []
    }
@@ -763,7 +763,7 @@
      "zoned primaries vary street to street, check the exact address"
     ],
     "publicSecondary": [
-     "Box Hill High",
+     "Box Hill High (zoned, strong)",
      "Box Hill Senior Secondary College"
     ],
     "privateContext": []
@@ -792,7 +792,7 @@
      "zoning splits toward Glen Eira College and Prahran High, check the address"
     ],
     "privateContext": [
-     "heavy nearby private sector"
+     "heavy nearby private sector (De La Salle, Sacré Cœur and others)"
     ]
    }
   },
@@ -834,10 +834,10 @@
      "Kew PS"
     ],
     "publicSecondary": [
-     "Kew High"
+     "Kew High (zoned)"
     ],
     "privateContext": [
-     "dense private sector"
+     "dense private sector (Xavier, Trinity, Ruyton, MLC nearby)"
     ]
    }
   },
@@ -853,7 +853,7 @@
      "Balwyn PS"
     ],
     "publicSecondary": [
-     "Balwyn High"
+     "Balwyn High (zoned; the benchmark school-zone premium)"
     ],
     "privateContext": []
    }
@@ -871,7 +871,7 @@
      "Middle Park PS"
     ],
     "publicSecondary": [
-     "Albert Park College"
+     "Albert Park College (zoned, high demand)"
     ],
     "privateContext": []
    }
@@ -896,7 +896,7 @@
      "St Kilda Park PS"
     ],
     "publicSecondary": [
-     "Albert Park College",
+     "Albert Park College (parts of the zone)",
      "Elwood College"
     ],
     "privateContext": []
@@ -918,7 +918,7 @@
    ],
    "nameHints": {
     "publicPrimary": [
-     "St Kilda PS"
+     "St Kilda PS (zoned for Balaclava; no Balaclava PS exists)"
     ],
     "publicSecondary": [
      "Elwood College"
@@ -1059,7 +1059,7 @@
      "North Melbourne PS"
     ],
     "publicSecondary": [
-     "University High"
+     "University High (Parkville, zoned)"
     ],
     "privateContext": []
    }
@@ -1088,7 +1088,7 @@
      "Sunbury Downs College"
     ],
     "privateContext": [
-     "Salesian College Sunbury"
+     "Salesian College Sunbury (Rupertswood campus)"
     ]
    }
   },
@@ -1150,7 +1150,7 @@
      "Armadale PS"
     ],
     "publicSecondary": [
-     "Prahran High"
+     "Prahran High (zone coverage varies; verify by address)"
     ],
     "privateContext": []
    }
@@ -1172,7 +1172,7 @@
    "nameHints": {
     "publicPrimary": [],
     "publicSecondary": [
-     "Melbourne Girls' College"
+     "Melbourne Girls' College (proximity; verify zone by address)"
     ],
     "privateContext": []
    }
@@ -1227,7 +1227,7 @@
      "McKinnon PS"
     ],
     "publicSecondary": [
-     "McKinnon SC"
+     "McKinnon SC (zoned; benchmark public secondary)"
     ],
     "privateContext": []
    }
@@ -1252,7 +1252,7 @@
      "Glen Waverley PS"
     ],
     "publicSecondary": [
-     "Glen Waverley SC"
+     "Glen Waverley SC (zoned; the east’s education magnet)"
     ],
     "privateContext": []
    }
@@ -1270,7 +1270,7 @@
      "Greythorn PS"
     ],
     "publicSecondary": [
-     "Balwyn High"
+     "Balwyn High (zoned; in-suburb)"
     ],
     "privateContext": []
    }
@@ -1311,10 +1311,10 @@
      "Mentone Park PS"
     ],
     "publicSecondary": [
-     "Mentone Girls' Secondary"
+     "Mentone Girls' Secondary (zoned)"
     ],
     "privateContext": [
-     "Dense private-school cluster shapes the suburb"
+     "Dense private-school cluster (St Bede’s, Mentone Grammar) shapes the suburb"
     ]
    }
   },
@@ -1338,8 +1338,8 @@
      "Spensley Street PS"
     ],
     "publicSecondary": [
-     "Fitzroy High",
-     "Collingwood College"
+     "Fitzroy High (verify zone)",
+     "Collingwood College (P-12)"
     ],
     "privateContext": []
    }
@@ -1365,7 +1365,7 @@
     ],
     "publicSecondary": [
      "Doncaster Secondary College",
-     "East Doncaster SC"
+     "East Doncaster SC (verify zone)"
     ],
     "privateContext": []
    }
@@ -1411,8 +1411,16 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Heidelberg Primary School",
+     "Ivanhoe East Primary School",
+     "Ivanhoe Primary School"
+    ],
+    "publicSecondary": [
+     "Viewbank College",
+     "Charles La Trobe P-12 College",
+     "Thornbury High School"
+    ],
     "privateContext": []
    }
   },
@@ -1431,8 +1439,17 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Rosanna Primary School",
+     "Banyule Primary School",
+     "Heidelberg Primary School",
+     "Rosanna Golf Links Primary School"
+    ],
+    "publicSecondary": [
+     "Charles La Trobe P-12 College",
+     "Macleod College",
+     "Viewbank College"
+    ],
     "privateContext": []
    }
   },
@@ -1451,8 +1468,17 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Fairfield Primary School",
+     "Alphington Primary School",
+     "Spensley Street Primary School",
+     "Westgarth Primary School"
+    ],
+    "publicSecondary": [
+     "Northcote High School",
+     "Fitzroy High School",
+     "Thornbury High School"
+    ],
     "privateContext": []
    }
   },
@@ -1471,8 +1497,16 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Surrey Hills Primary School",
+     "Chatham Primary School",
+     "Mont Albert Primary School"
+    ],
+    "publicSecondary": [
+     "Koonung Secondary College",
+     "Box Hill High School",
+     "Camberwell High School"
+    ],
     "privateContext": []
    }
   },
@@ -1491,8 +1525,16 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Blackburn Primary School",
+     "Blackburn Lake Primary School",
+     "Laburnum Primary School",
+     "Old Orchard Primary School"
+    ],
+    "publicSecondary": [
+     "Blackburn High School",
+     "Box Hill High School"
+    ],
     "privateContext": []
    }
   },
@@ -1511,8 +1553,15 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Mount Waverley Primary School",
+     "Essex Heights Primary School",
+     "Mount Waverley North Primary School",
+     "Syndal South Primary School"
+    ],
+    "publicSecondary": [
+     "Mount Waverley Secondary College"
+    ],
     "privateContext": []
    }
   },
@@ -1531,8 +1580,15 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Ashburton Primary School",
+     "Glen Iris Primary School",
+     "Hartwell Primary School",
+     "Solway Primary School"
+    ],
+    "publicSecondary": [
+     "Ashwood High School"
+    ],
     "privateContext": []
    }
   },
@@ -1551,8 +1607,18 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Bentleigh West Primary School",
+     "McKinnon Primary School",
+     "Ormond Primary School",
+     "Tucker Road Bentleigh Primary School",
+     "Valkstone Primary School"
+    ],
+    "publicSecondary": [
+     "McKinnon Secondary College",
+     "Bentleigh Secondary College",
+     "Brighton Secondary College"
+    ],
     "privateContext": []
    }
   },
@@ -1571,8 +1637,15 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Newport Lakes Primary School",
+     "Newport Gardens Primary School",
+     "Spotswood Primary School",
+     "Williamstown North Primary School"
+    ],
+    "publicSecondary": [
+     "Bayside P-12 College"
+    ],
     "privateContext": []
    }
   },
@@ -1591,8 +1664,15 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Carlton Gardens Primary School",
+     "Docklands Primary School",
+     "North Melbourne Primary School"
+    ],
+    "publicSecondary": [
+     "University High School",
+     "Collingwood College"
+    ],
     "privateContext": []
    }
   },
@@ -1611,8 +1691,16 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Carlton Gardens Primary School",
+     "Collingwood College",
+     "Fitzroy Primary School",
+     "Richmond West Primary School"
+    ],
+    "publicSecondary": [
+     "Collingwood College",
+     "University High School"
+    ],
     "privateContext": []
    }
   },
@@ -1631,8 +1719,13 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "North Melbourne Primary School",
+     "Docklands Primary School"
+    ],
+    "publicSecondary": [
+     "University High School"
+    ],
     "privateContext": []
    }
   },
@@ -1651,8 +1744,15 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Docklands Primary School",
+     "North Melbourne Primary School",
+     "South Melbourne Primary School"
+    ],
+    "publicSecondary": [
+     "University High School",
+     "Port Melbourne Secondary College"
+    ],
     "privateContext": []
    }
   },
@@ -1664,8 +1764,19 @@
    ],
    "anchors": [],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Carlton Gardens Primary School",
+     "Carlton North Primary School",
+     "Carlton Primary School",
+     "Fitzroy Primary School",
+     "North Melbourne Primary School"
+    ],
+    "publicSecondary": [
+     "University High School",
+     "Collingwood College",
+     "Fitzroy High School",
+     "Princes Hill Secondary College"
+    ],
     "privateContext": []
    }
   },
@@ -1677,8 +1788,20 @@
    ],
    "anchors": [],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Fitzroy Primary School",
+     "Carlton Gardens Primary School",
+     "Carlton North Primary School",
+     "Carlton Primary School",
+     "Clifton Hill Primary School",
+     "Collingwood College"
+    ],
+    "publicSecondary": [
+     "Collingwood College",
+     "Fitzroy High School",
+     "Princes Hill Secondary College",
+     "University High School"
+    ],
     "privateContext": []
    }
   },
@@ -1697,8 +1820,14 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "North Melbourne Primary School",
+     "Carlton Gardens Primary School",
+     "Carlton Primary School"
+    ],
+    "publicSecondary": [
+     "University High School"
+    ],
     "privateContext": []
    }
   },
@@ -1710,8 +1839,18 @@
    ],
    "anchors": [],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Carlton North Primary School",
+     "Brunswick South Primary School",
+     "Carlton Primary School",
+     "Fitzroy North Primary School",
+     "Princes Hill Primary School"
+    ],
+    "publicSecondary": [
+     "Princes Hill Secondary College",
+     "Fitzroy High School",
+     "University High School"
+    ],
     "privateContext": []
    }
   },
@@ -1723,8 +1862,18 @@
    ],
    "anchors": [],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Fitzroy North Primary School",
+     "Brunswick South Primary School",
+     "Carlton North Primary School",
+     "Clifton Hill Primary School",
+     "Merri Creek Primary School",
+     "Spensley Street Primary School"
+    ],
+    "publicSecondary": [
+     "Fitzroy High School",
+     "Northcote High School"
+    ],
     "privateContext": []
    }
   },
@@ -1736,8 +1885,16 @@
    ],
    "anchors": [],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Brunswick East Primary School",
+     "Brunswick South Primary School",
+     "Merri Creek Primary School"
+    ],
+    "publicSecondary": [
+     "Northcote High School",
+     "Brunswick Secondary College",
+     "Princes Hill Secondary College"
+    ],
     "privateContext": []
    }
   },
@@ -2216,6 +2373,492 @@
    "nameHints": {
     "publicPrimary": [],
     "publicSecondary": [],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "aberfeldie-house",
+   "suburb": "Aberfeldie",
+   "localityNames": [
+    "Aberfeldie"
+   ],
+   "anchors": [
+    {
+     "id": "aberfeldie-anchor",
+     "name": "Aberfeldie (locality anchor)",
+     "lng": 144.8981,
+     "lat": -37.758
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Aberfeldie Primary School"
+    ],
+    "publicSecondary": [
+     "Buckley Park College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "albion-house",
+   "suburb": "Albion",
+   "localityNames": [
+    "Albion"
+   ],
+   "anchors": [
+    {
+     "id": "albion",
+     "name": "Albion",
+     "lng": 144.8247,
+     "lat": -37.7777
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Albion Primary School"
+    ],
+    "publicSecondary": [
+     "Sunshine College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "blackburn-north-house",
+   "suburb": "Blackburn North",
+   "localityNames": [
+    "Blackburn North"
+   ],
+   "anchors": [
+    {
+     "id": "blackburn-north-anchor",
+     "name": "Blackburn North (locality anchor)",
+     "lng": 145.1548,
+     "lat": -37.806
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Old Orchard Primary School"
+    ],
+    "publicSecondary": [
+     "Blackburn High School"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "blackburn-south-house",
+   "suburb": "Blackburn South",
+   "localityNames": [
+    "Blackburn South"
+   ],
+   "anchors": [
+    {
+     "id": "blackburn-south-anchor",
+     "name": "Blackburn South (locality anchor)",
+     "lng": 145.1472,
+     "lat": -37.8379
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Orchard Grove Primary School"
+    ],
+    "publicSecondary": [
+     "Forest Hill College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "box-hill-north-house",
+   "suburb": "Box Hill North",
+   "localityNames": [
+    "Box Hill North"
+   ],
+   "anchors": [
+    {
+     "id": "box-hill-north-anchor",
+     "name": "Box Hill North (locality anchor)",
+     "lng": 145.1289,
+     "lat": -37.8057
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Kerrimuir Primary School"
+    ],
+    "publicSecondary": [
+     "Koonung Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "box-hill-south-house",
+   "suburb": "Box Hill South",
+   "localityNames": [
+    "Box Hill South"
+   ],
+   "anchors": [
+    {
+     "id": "box-hill-south-anchor",
+     "name": "Box Hill South (locality anchor)",
+     "lng": 145.1235,
+     "lat": -37.8342
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Roberts McCubbin Primary School"
+    ],
+    "publicSecondary": [
+     "Box Hill High School"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "brunswick-west-2br",
+   "suburb": "Brunswick West",
+   "localityNames": [
+    "Brunswick West"
+   ],
+   "anchors": [
+    {
+     "id": "brunswick-west-anchor",
+     "name": "Brunswick West (locality anchor)",
+     "lng": 144.9438,
+     "lat": -37.7648
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Brunswick South West Primary School"
+    ],
+    "publicSecondary": [
+     "Brunswick Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "coburg-north-house",
+   "suburb": "Coburg North",
+   "localityNames": [
+    "Coburg North"
+   ],
+   "anchors": [
+    {
+     "id": "merlynston",
+     "name": "Merlynston",
+     "lng": 144.9613,
+     "lat": -37.7209
+    },
+    {
+     "id": "batman-coburg-north",
+     "name": "Batman",
+     "lng": 144.9628,
+     "lat": -37.7335
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Pascoe Vale North Primary School"
+    ],
+    "publicSecondary": [
+     "John Fawkner Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "gardenvale-house",
+   "suburb": "Gardenvale",
+   "localityNames": [
+    "Gardenvale"
+   ],
+   "anchors": [
+    {
+     "id": "gardenvale-anchor",
+     "name": "Gardenvale",
+     "lng": 145.0042,
+     "lat": -37.8967
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Elsternwick Primary School"
+    ],
+    "publicSecondary": [
+     "Elwood College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "heidelberg-west-house",
+   "suburb": "Heidelberg West",
+   "localityNames": [
+    "Heidelberg West"
+   ],
+   "anchors": [
+    {
+     "id": "heidelberg-west-anchor",
+     "name": "Heidelberg West (locality anchor)",
+     "lng": 145.0408,
+     "lat": -37.7407
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Charles La Trobe P-12 College"
+    ],
+    "publicSecondary": [
+     "Charles La Trobe P-12 College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "keilor-house",
+   "suburb": "Keilor",
+   "localityNames": [
+    "Keilor"
+   ],
+   "anchors": [
+    {
+     "id": "keilor-anchor",
+     "name": "Keilor (locality anchor)",
+     "lng": 144.827,
+     "lat": -37.709
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Keilor Primary School"
+    ],
+    "publicSecondary": [
+     "Keilor Downs Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "keilor-downs-house",
+   "suburb": "Keilor Downs",
+   "localityNames": [
+    "Keilor Downs"
+   ],
+   "anchors": [
+    {
+     "id": "keilor-downs-anchor",
+     "name": "Keilor Downs (locality anchor)",
+     "lng": 144.8035,
+     "lat": -37.7187
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Keilor Views Primary School"
+    ],
+    "publicSecondary": [
+     "Keilor Downs Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "keilor-east-house",
+   "suburb": "Keilor East",
+   "localityNames": [
+    "Keilor East"
+   ],
+   "anchors": [
+    {
+     "id": "keilor-east-anchor",
+     "name": "Keilor East (locality anchor)",
+     "lng": 144.8564,
+     "lat": -37.7361
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Keilor Heights Primary School"
+    ],
+    "publicSecondary": [
+     "Essendon Keilor College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "keysborough-house",
+   "suburb": "Keysborough",
+   "localityNames": [
+    "Keysborough"
+   ],
+   "anchors": [
+    {
+     "id": "keysborough-anchor",
+     "name": "Keysborough (locality anchor)",
+     "lng": 145.1657,
+     "lat": -38.0101
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Keysborough Gardens Primary School"
+    ],
+    "publicSecondary": [
+     "Keysborough Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "maidstone-house",
+   "suburb": "Maidstone",
+   "localityNames": [
+    "Maidstone"
+   ],
+   "anchors": [
+    {
+     "id": "maidstone-anchor",
+     "name": "Maidstone (locality anchor)",
+     "lng": 144.8745,
+     "lat": -37.7837
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Footscray North Primary School"
+    ],
+    "publicSecondary": [
+     "Maribyrnong Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "maribyrnong-2br",
+   "suburb": "Maribyrnong",
+   "localityNames": [
+    "Maribyrnong"
+   ],
+   "anchors": [
+    {
+     "id": "maribyrnong-anchor",
+     "name": "Maribyrnong (locality anchor)",
+     "lng": 144.8859,
+     "lat": -37.7714
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Footscray North Primary School"
+    ],
+    "publicSecondary": [
+     "Maribyrnong Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "port-melbourne-2br",
+   "suburb": "Port Melbourne",
+   "localityNames": [
+    "Port Melbourne"
+   ],
+   "anchors": [
+    {
+     "id": "port-melbourne-anchor",
+     "name": "North Port (route 109 light rail)",
+     "lng": 144.9433,
+     "lat": -37.8334
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Port Melbourne Primary School"
+    ],
+    "publicSecondary": [
+     "Port Melbourne Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "sunshine-north-house",
+   "suburb": "Sunshine North",
+   "localityNames": [
+    "Sunshine North"
+   ],
+   "anchors": [
+    {
+     "id": "sunshine-north-anchor",
+     "name": "Sunshine North (locality anchor)",
+     "lng": 144.8362,
+     "lat": -37.7634
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Sunshine North Primary School"
+    ],
+    "publicSecondary": [
+     "Sunshine College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "sunshine-west-house",
+   "suburb": "Sunshine West",
+   "localityNames": [
+    "Sunshine West"
+   ],
+   "anchors": [
+    {
+     "id": "sunshine-west-anchor",
+     "name": "Sunshine West (locality anchor)",
+     "lng": 144.8061,
+     "lat": -37.7992
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Glengala Primary School"
+    ],
+    "publicSecondary": [
+     "Sunshine College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "tullamarine-house",
+   "suburb": "Tullamarine",
+   "localityNames": [
+    "Tullamarine"
+   ],
+   "anchors": [
+    {
+     "id": "tullamarine-anchor",
+     "name": "Tullamarine (locality anchor)",
+     "lng": 144.8796,
+     "lat": -37.703
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Tullamarine Primary School"
+    ],
+    "publicSecondary": [
+     "Gladstone Park Secondary College"
+    ],
     "privateContext": []
    }
   }

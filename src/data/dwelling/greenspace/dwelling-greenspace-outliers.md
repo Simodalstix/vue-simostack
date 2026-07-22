@@ -5,6 +5,10 @@ Build retrieved at: `2026-07-16`
 
 ## Automated QA flags
 
+- `gardenvale-house` (20-record Wednesday batch, built 2026-07-22)
+  Status: accepted
+  Reason: `highComponentSpread` is structural, not a data bug. Local access is maxed (`10.0`, coverage `100.0%`) while nature-corridor access is `2.8329`: the population-weighted median eligible nature-corridor distance is `1,842 m`. The very small Gardenvale SAL is inland from the foreshore and has no river or creek corridor, matching the accepted inland pattern for St Kilda East, Windsor/Prahran and Armadale.
+
 - `st-kilda-east-2br` (24-record batch, built 2026-07-21)
   Status: accepted
   Reason: `highComponentSpread` is structural, not a data bug. Local access is strong (`9.5493`, coverage `90.7%`) while nature-corridor access is `1.8991`: the nearest eligible corridor is the Elwood Canal reserve at a population-weighted median of `2,046 m`. St Kilda East is inland with no river, creek or foreshore corridor of its own, consistent with the same pattern accepted for `inner-windsor-prahran-2br` and `armadale-2br`.

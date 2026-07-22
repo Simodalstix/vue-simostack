@@ -2224,383 +2224,403 @@ export const suburbProfiles = {
         'After verifying the specific block, its owners-corp and the exact school zone at findmyschool.vic.gov.au.',
     },
   },
-  // 'Aberfeldie' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Aberfeldie' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'aberfeldie-house': {
     lives:
-      'Aberfeldie: ABS 2021 records 3,925 residents. Corridor: bus to essendon (craigieburn line) (verification pending). Full lifestyle evidence pending.',
+      'Aberfeldie: ABS 2021 records 3,925 residents. Corridor: bus to essendon (craigieburn line). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Albion' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Albion' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'albion-house': {
     lives:
-      'Albion: ABS 2021 records 4,334 residents. Corridor: sunbury line (verification pending). Full lifestyle evidence pending.',
+      'Albion: ABS 2021 records 4,334 residents. Corridor: sunbury line. Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
-  }, // 'Blackburn North' — pending-evidence record of the 2026-07-22 onboarding batch.
+  }, // 'Blackburn North' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'blackburn-north-house': {
     lives:
-      'Blackburn North: ABS 2021 records 7,627 residents. Corridor: bus to blackburn (belgrave / lilydale line) (verification pending). Full lifestyle evidence pending.',
+      'Blackburn North: ABS 2021 records 7,627 residents. Corridor: bus to blackburn (belgrave / lilydale line). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Blackburn South' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Blackburn South' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'blackburn-south-house': {
     lives:
-      'Blackburn South: ABS 2021 records 10,939 residents. Corridor: bus to blackburn (belgrave / lilydale line) (verification pending). Full lifestyle evidence pending.',
+      'Blackburn South: ABS 2021 records 10,939 residents. Corridor: bus to blackburn (belgrave / lilydale line). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Box Hill North' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Box Hill North' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'box-hill-north-house': {
     lives:
-      'Box Hill North: ABS 2021 records 12,337 residents. Corridor: bus to box hill (belgrave / lilydale line) (verification pending). Full lifestyle evidence pending.',
+      'Box Hill North: ABS 2021 records 12,337 residents. Corridor: bus to box hill (belgrave / lilydale line). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Box Hill South' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Box Hill South' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'box-hill-south-house': {
     lives:
-      'Box Hill South: ABS 2021 records 8,491 residents. Corridor: bus / tram to box hill (verification pending). Full lifestyle evidence pending.',
+      'Box Hill South: ABS 2021 records 8,491 residents. Corridor: bus / tram to box hill. Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Brunswick West' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Brunswick West' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'brunswick-west-2br': {
     lives:
-      'Brunswick West: ABS 2021 records 14,746 residents. Corridor: tram 19 / upfield line edge (verification pending). Full lifestyle evidence pending.',
+      'Brunswick West: ABS 2021 records 14,746 residents. Corridor: tram 19 / upfield line edge. Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Coburg North' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Coburg North' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'coburg-north-house': {
     lives:
-      'Coburg North: ABS 2021 records 8,327 residents. Corridor: upfield line (merlynston / batman) (verification pending). Full lifestyle evidence pending.',
+      'Coburg North: ABS 2021 records 8,327 residents. Corridor: upfield line (merlynston / batman). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Gardenvale' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Gardenvale' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'gardenvale-house': {
     lives:
-      'Gardenvale: ABS 2021 records 1,019 residents. Corridor: sandringham line (verification pending). Full lifestyle evidence pending.',
+      'Gardenvale: ABS 2021 records 1,019 residents. Corridor: sandringham line. Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Heidelberg West' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Heidelberg West' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'heidelberg-west-house': {
     lives:
-      'Heidelberg West: ABS 2021 records 5,252 residents. Corridor: bus to heidelberg (hurstbridge line) (verification pending). Full lifestyle evidence pending.',
+      'Heidelberg West: ABS 2021 records 5,252 residents. Corridor: bus to heidelberg (hurstbridge line). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Keilor' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Keilor' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'keilor-house': {
     lives:
-      'Keilor: ABS 2021 records 5,906 residents. Corridor: bus (keilor village) (verification pending). Full lifestyle evidence pending.',
+      'Keilor: ABS 2021 records 5,906 residents. Corridor: bus (keilor village). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Keilor Downs' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Keilor Downs' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'keilor-downs-house': {
     lives:
-      'Keilor Downs: ABS 2021 records 9,857 residents. Corridor: bus to st albans (sunbury line) (verification pending). Full lifestyle evidence pending.',
+      'Keilor Downs: ABS 2021 records 9,857 residents. Corridor: bus to st albans (sunbury line). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Keilor East' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Keilor East' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'keilor-east-house': {
     lives:
-      'Keilor East: ABS 2021 records 15,078 residents. Corridor: bus (keilor park / milleara) (verification pending). Full lifestyle evidence pending.',
+      'Keilor East: ABS 2021 records 15,078 residents. Corridor: bus (keilor park / milleara). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Keysborough' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Keysborough' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'keysborough-house': {
     lives:
-      'Keysborough: ABS 2021 records 30,018 residents. Corridor: bus (no rail in locality) (verification pending). Full lifestyle evidence pending.',
+      'Keysborough: ABS 2021 records 30,018 residents. Corridor: bus (no rail in locality). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Maidstone' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Maidstone' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'maidstone-house': {
     lives:
-      'Maidstone: ABS 2021 records 9,389 residents. Corridor: bus to tottenham / sunshine (verification pending). Full lifestyle evidence pending.',
+      'Maidstone: ABS 2021 records 9,389 residents. Corridor: bus to tottenham / sunshine. Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Maribyrnong' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Maribyrnong' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'maribyrnong-2br': {
     lives:
-      'Maribyrnong: ABS 2021 records 12,573 residents. Corridor: bus to footscray (verification pending). Full lifestyle evidence pending.',
+      'Maribyrnong: ABS 2021 records 12,573 residents. Corridor: bus to footscray. Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Port Melbourne' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Port Melbourne' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'port-melbourne-2br': {
     lives:
-      'Port Melbourne: ABS 2021 records 17,633 residents. Corridor: route 109 light rail (verification pending). Full lifestyle evidence pending.',
+      'Port Melbourne: ABS 2021 records 17,633 residents. Corridor: route 109 light rail. Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the older 2br apartment; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Sunshine North' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Sunshine North' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'sunshine-north-house': {
     lives:
-      'Sunshine North: ABS 2021 records 12,047 residents. Corridor: bus to sunshine (sunbury / metro line) (verification pending). Full lifestyle evidence pending.',
+      'Sunshine North: ABS 2021 records 12,047 residents. Corridor: bus to sunshine (sunbury / metro line). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Sunshine West' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Sunshine West' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'sunshine-west-house': {
     lives:
-      'Sunshine West: ABS 2021 records 18,552 residents. Corridor: bus to sunshine (sunbury / metro line) (verification pending). Full lifestyle evidence pending.',
+      'Sunshine West: ABS 2021 records 18,552 residents. Corridor: bus to sunshine (sunbury / metro line). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
-  // 'Tullamarine' — pending-evidence record of the 2026-07-22 onboarding batch.
+  // 'Tullamarine' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'tullamarine-house': {
     lives:
-      'Tullamarine: ABS 2021 records 6,733 residents. Corridor: bus (no rail in locality) (verification pending). Full lifestyle evidence pending.',
+      'Tullamarine: ABS 2021 records 6,733 residents. Corridor: bus (no rail in locality). Locality, schools and greenspace evidence is integrated.',
     housing:
-      'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are pending listing and VGV evidence.',
+      'Proposed product is the established 3-bedroom house; the price band frames the official 2025 VGV broad-property median; confirm recurring stock and building costs at listing level.',
     fit: [
       { text: 'Census community context is integrated and visible on the card.', tag: null },
       {
-        text: 'Commute, safety, schools, cost and greenspace evidence are all still pending.',
+        text: 'Commute and cost are provisional evidence estimates; safety stays null because the CSA download lacks suburb geography.',
         tag: 'tradeoff',
       },
     ],
     decision: {
-      bestFor: 'Nothing yet: this record is pending evidence and sits outside the ranking.',
-      mainRisk: 'Reading this placeholder as a scored recommendation.',
-      pursueWhen: 'The batch evidence passes complete and the record earns a scored release.',
+      bestFor: 'Evidence-backed comparison with source caveats visible on the card.',
+      mainRisk:
+        'Treating provisional commute, price or dwelling-product evidence as address-level certainty.',
+      pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
 }

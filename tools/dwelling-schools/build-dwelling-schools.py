@@ -84,6 +84,10 @@ def norm_name(name: str) -> str:
     }
     for pat, rep in replacements.items():
         s = re.sub(pat, rep, s)
+    # The 2027 zones source still names "Maribyrnong Secondary College"
+    # while the 2025 locations source uses its current "Maribyrnong College"
+    # name. Treat the generic word as optional so the official records join.
+    s = re.sub(r"\bsecondary college\b", "college", s)
     s = re.sub(r"[^a-z0-9 ]", " ", s)
     return re.sub(r"\s+", " ", s).strip()
 
