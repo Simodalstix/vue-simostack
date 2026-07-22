@@ -8516,6 +8516,374 @@ const AREA_CORRIDOR_BASE = [
     placeholder: true,
     sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
+  {
+    // Evidence-complete record from the 2026-07-22 next-five onboarding batch.
+    // Graduated after generated-source QA and batch coverage passed.
+    id: 'templestowe-house',
+    suburb: 'Templestowe',
+    municipality: 'Manningham',
+    region: 'Middle north-east',
+    corridor: 'DART route 905 (bus-only)',
+    station: 'Templestowe Village (route 905)',
+    catchmentMetres: 800,
+    altRoute:
+      'Route 905 runs direct to the CBD; route 281 connects to Box Hill for Belgrave / Lilydale rail.',
+    headline: 'established 3-bedroom house in Templestowe',
+    dwelling: {
+      types: ['house'],
+      bedrooms: 3,
+      indicativePrice: [1450000, 1800000],
+      annualOc: [0, 0],
+      parkingTypes: [],
+      suitableStock:
+        'Established 3-bedroom house near the Templestowe Village bus spine; confirm recurring stock at listing level.',
+      expectedTransportCost:
+        'Use the existing Melbourne myki modelling assumption; local daily life is likely to remain car-dependent.',
+    },
+    stationWalkMin: null,
+    carDaily: null,
+    secondBedroom: true,
+    commute: { typical: 55, stressed: 72, transfers: 0 },
+    scores: {
+      housingValue: null,
+      coparenting: null,
+      lowCar: null,
+      recurringCosts: null,
+      walkability: null,
+      safety: null,
+      privacyWfh: null,
+      resale: null,
+      community: null,
+    },
+    childhood: {
+      schoolStrength: null,
+      teenIndependence: null,
+      publicPrimary: ['Templestowe Park Primary School'],
+      publicSecondary: ['Templestowe College'],
+      privateContext: [],
+      note: 'Official 2027 zones at the verified anchor. The primary-zone boundary is about 83 m away, so verify the exact address before purchase.',
+    },
+    caseFor: [
+      'ABS 2021 Census context is integrated: 16,966 residents.',
+      'Route 905 provides a one-seat CBD service from the verified village anchor.',
+      'Generated greenspace access is very strong (9.8011), led by Yarra Valley Parklands and Westerfolds Park.',
+    ],
+    caseAgainst: [
+      'Safety and recreation remain unscored; the house product is expensive and locally car-dependent.',
+    ],
+    bestType: 'An established 3BR house within a practical walk of the route 905 spine.',
+    avoidType: 'A deep cul-de-sac pocket that turns every bus or daily-needs trip into a drive.',
+    oneCar: 'Not assessed yet.',
+    coparentingGeometry: 'Not assessed yet.',
+    risks: [
+      'Safety remains null pending a reproducible suburb-level method.',
+      'The price band uses the official broad house median, not a property valuation.',
+    ],
+    inspectionChecklist: [
+      'Time the route 905 trip and walk from the exact address in the weekday peak.',
+      'Verify title, school zone and recurring 3BR stock at the exact address.',
+    ],
+    primaryWarning:
+      'Safety and recreation remain unscored, and the primary zone is boundary-sensitive; verify the exact address.',
+    verifiedAt: '2026-07-22',
+    placeholder: true,
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
+  },
+  {
+    // Evidence-complete record from the 2026-07-22 next-five onboarding batch.
+    // Graduated after generated-source QA and batch coverage passed.
+    id: 'sydenham-house',
+    suburb: 'Sydenham',
+    municipality: 'Brimbank',
+    region: 'West',
+    corridor: 'Sunbury line',
+    station: 'Watergardens',
+    catchmentMetres: 800,
+    altRoute:
+      'Sunbury-line services run direct to Southern Cross; buses from Watergardens provide local redundancy.',
+    headline: 'established 3-bedroom house in Sydenham',
+    dwelling: {
+      types: ['house'],
+      bedrooms: 3,
+      indicativePrice: [660000, 825000],
+      annualOc: [0, 0],
+      parkingTypes: [],
+      suitableStock:
+        'Established 3-bedroom house within the Watergardens station catchment; confirm recurring stock at listing level.',
+      expectedTransportCost:
+        'Use the existing Melbourne myki modelling assumption; test whether one household car is practical for the exact pocket.',
+    },
+    stationWalkMin: null,
+    carDaily: null,
+    secondBedroom: true,
+    commute: { typical: 50, stressed: 65, transfers: 0 },
+    scores: {
+      housingValue: null,
+      coparenting: null,
+      lowCar: null,
+      recurringCosts: null,
+      walkability: null,
+      safety: null,
+      privacyWfh: null,
+      resale: null,
+      community: null,
+    },
+    childhood: {
+      schoolStrength: null,
+      teenIndependence: null,
+      publicPrimary: ['Sydenham Primary School'],
+      publicSecondary: ['Copperfield College'],
+      privateContext: [],
+      note: 'Official 2027 zones at the verified anchor; the locations source calls the primary school Sydenham - Hillside Primary School. Verify the exact address before purchase.',
+    },
+    caseFor: [
+      'ABS 2021 Census context is integrated: 10,578 residents.',
+      'Watergardens gives the suburb a verified one-seat Sunbury-line anchor.',
+      'Generated greenspace access is very strong (9.5105), with complete modelled local coverage within 400 m.',
+    ],
+    caseAgainst: [
+      'Safety and recreation remain unscored; station access varies sharply by pocket.',
+    ],
+    bestType: 'An established 3BR house within a genuine walking catchment of Watergardens.',
+    avoidType: 'A nominal Sydenham address that requires a drive and park for every train trip.',
+    oneCar: 'Not assessed yet.',
+    coparentingGeometry: 'Not assessed yet.',
+    risks: [
+      'Safety remains null pending a reproducible suburb-level method.',
+      'The price band uses the official broad house median, not a property valuation.',
+    ],
+    inspectionChecklist: [
+      'Walk the station route at peak and after dark from the exact property.',
+      'Verify title, school zone and recurring 3BR stock at the exact address.',
+    ],
+    primaryWarning:
+      'Safety and recreation remain unscored; station access and the school zone must be checked at the exact address.',
+    verifiedAt: '2026-07-22',
+    placeholder: true,
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
+  },
+  {
+    // Evidence-complete record from the 2026-07-22 next-five onboarding batch.
+    // Graduated after generated-source QA and batch coverage passed.
+    id: 'rockbank-house',
+    suburb: 'Rockbank',
+    municipality: 'Melton',
+    region: 'Outer growth areas',
+    corridor: 'Ballarat V/Line',
+    station: 'Rockbank',
+    catchmentMetres: 1200,
+    altRoute:
+      'Ballarat-line V/Line services run direct to Southern Cross; local buses serve the station but frequency remains the constraint.',
+    headline: 'established 3-bedroom house in Rockbank',
+    dwelling: {
+      types: ['house'],
+      bedrooms: 3,
+      indicativePrice: [560000, 700000],
+      annualOc: [0, 1500],
+      parkingTypes: [],
+      suitableStock:
+        'Recent 3-bedroom house in an established stage near Rockbank station; avoid treating an unbuilt house-and-land package as recurring stock.',
+      expectedTransportCost:
+        'Use the existing Melbourne myki modelling assumption plus realistic household-car costs for an outer-growth-area address.',
+    },
+    stationWalkMin: null,
+    carDaily: null,
+    secondBedroom: true,
+    commute: { typical: 48, stressed: 65, transfers: 0 },
+    scores: {
+      housingValue: null,
+      coparenting: null,
+      lowCar: null,
+      recurringCosts: null,
+      walkability: null,
+      safety: null,
+      privacyWfh: null,
+      resale: null,
+      community: null,
+    },
+    childhood: {
+      schoolStrength: null,
+      teenIndependence: null,
+      publicPrimary: ['Rockbank Primary School'],
+      publicSecondary: ['Yarrabing Secondary College'],
+      privateContext: [],
+      note: 'Official 2027 zones at the verified anchor. Yarrabing served only Years 7-8 in 2025, so no senior-secondary strength rating is inferred; verify the exact address.',
+    },
+    caseFor: [
+      'ABS 2021 Census context is integrated: 2,583 residents.',
+      'The verified Rockbank station gives a direct regional-rail path to Southern Cross.',
+      'The generated greenspace result preserves strong Western Grasslands nature access without masking weak major-park access.',
+    ],
+    caseAgainst: [
+      'Safety and recreation remain unscored; service frequency and car dependence reduce comparability with metro-rail suburbs.',
+    ],
+    bestType: 'A completed 3BR house in an established stage with a practical station connection.',
+    avoidType:
+      'An off-the-plan package whose transport and local services exist only in future plans.',
+    oneCar: 'Not assessed yet.',
+    coparentingGeometry: 'Not assessed yet.',
+    risks: [
+      'Safety remains null pending a reproducible suburb-level method.',
+      'The VGV median covers a fast-changing growth market and is not a valuation.',
+    ],
+    inspectionChecklist: [
+      'Check the actual V/Line frequency and last useful return service.',
+      'Verify completed local services, estate fees, title and school zone.',
+    ],
+    primaryWarning:
+      'Safety and recreation remain unscored; greenspace is conservative and the zoned secondary has no VCE cohort yet.',
+    verifiedAt: '2026-07-22',
+    placeholder: true,
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
+  },
+  {
+    // Evidence-complete record from the 2026-07-22 next-five onboarding batch.
+    // Graduated after generated-source QA and batch coverage passed.
+    id: 'wollert-house',
+    suburb: 'Wollert',
+    municipality: 'Whittlesea',
+    region: 'Outer growth areas',
+    corridor: 'Routes 357 / 390 to Mernda or Thomastown',
+    station: 'Epping Rd / Craigieburn Rd (bus anchor)',
+    catchmentMetres: 1000,
+    altRoute:
+      'Route 390 connects to Mernda and Craigieburn stations; route 357 connects the western pocket to Thomastown station.',
+    headline: 'established 3-bedroom house in Wollert',
+    dwelling: {
+      types: ['house'],
+      bedrooms: 3,
+      indicativePrice: [640000, 800000],
+      annualOc: [0, 1500],
+      parkingTypes: [],
+      suitableStock:
+        'Completed 3-bedroom house in an established southern Wollert stage near the verified bus spine.',
+      expectedTransportCost:
+        'Use the existing Melbourne myki modelling assumption plus realistic household-car costs for feeder-bus daily life.',
+    },
+    stationWalkMin: null,
+    carDaily: null,
+    secondBedroom: true,
+    commute: { typical: 70, stressed: 90, transfers: 1 },
+    scores: {
+      housingValue: null,
+      coparenting: null,
+      lowCar: null,
+      recurringCosts: null,
+      walkability: null,
+      safety: null,
+      privacyWfh: null,
+      resale: null,
+      community: null,
+    },
+    childhood: {
+      schoolStrength: null,
+      teenIndependence: null,
+      publicPrimary: ['Wollert Primary School'],
+      publicSecondary: ['Wollert Secondary College'],
+      privateContext: [],
+      note: 'Official 2027 zones at the verified southern-pocket anchor. Wollert Secondary served Years 7-10 in 2025, so no senior-secondary strength rating is inferred; verify the exact address.',
+    },
+    caseFor: [
+      'ABS 2021 Census context is integrated: 24,407 residents.',
+      'The chosen southern-pocket anchor is served by official routes 357 and 390.',
+      'Generated greenspace access is moderate (6.9773), with Craigieburn Grassland and Lyndarum Wetland providing nature context.',
+    ],
+    caseAgainst: [
+      'Safety and recreation remain unscored; the feeder-bus commute and growth-area service lag are material caveats.',
+    ],
+    bestType: 'A completed 3BR house near the established southern bus and school network.',
+    avoidType: 'A northern fringe stage with no practical all-day feeder service at settlement.',
+    oneCar: 'Not assessed yet.',
+    coparentingGeometry: 'Not assessed yet.',
+    risks: [
+      'Safety remains null pending a reproducible suburb-level method.',
+      'The VGV median covers a fast-changing growth market and is not a valuation.',
+    ],
+    inspectionChecklist: [
+      'Time the route 357 or 390 connection through to the city in the weekday peak.',
+      'Verify completed local services, estate fees, title and school zone.',
+    ],
+    primaryWarning:
+      'Safety and recreation remain unscored; the feeder-bus trip and secondary-school maturity are material caveats.',
+    verifiedAt: '2026-07-22',
+    placeholder: true,
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
+  },
+  {
+    // Evidence-complete record from the 2026-07-22 next-five onboarding batch.
+    // Graduated after generated-source QA and batch coverage passed.
+    id: 'mernda-house',
+    suburb: 'Mernda',
+    municipality: 'Whittlesea',
+    region: 'Outer growth areas',
+    corridor: 'Mernda line',
+    station: 'Mernda',
+    catchmentMetres: 1000,
+    altRoute:
+      'Mernda-line trains provide a one-seat city trip; route 390 links west toward Craigieburn as the cross-corridor backup.',
+    headline: 'established 3-bedroom house in Mernda',
+    dwelling: {
+      types: ['house'],
+      bedrooms: 3,
+      indicativePrice: [650000, 820000],
+      annualOc: [0, 1500],
+      parkingTypes: [],
+      suitableStock:
+        'Completed 3-bedroom house within the established Mernda station and town-centre catchment.',
+      expectedTransportCost:
+        'Use the existing Melbourne myki modelling assumption; verify whether the exact pocket can remain a one-car household.',
+    },
+    stationWalkMin: null,
+    carDaily: null,
+    secondBedroom: true,
+    commute: { typical: 60, stressed: 78, transfers: 0 },
+    scores: {
+      housingValue: null,
+      coparenting: null,
+      lowCar: null,
+      recurringCosts: null,
+      walkability: null,
+      safety: null,
+      privacyWfh: null,
+      resale: null,
+      community: null,
+    },
+    childhood: {
+      schoolStrength: null,
+      teenIndependence: null,
+      publicPrimary: ['Mernda Central P-12 College'],
+      publicSecondary: ['Mernda Central P-12 College'],
+      privateContext: [],
+      note: 'Official 2027 zones at the verified anchor. The primary-zone boundary is about 20 m away; the same P-12 school serves both roles, so verify the exact address.',
+    },
+    caseFor: [
+      'ABS 2021 Census context is integrated: 23,369 residents.',
+      'The verified Mernda terminus gives the suburb a one-seat metro-rail anchor.',
+      'Generated greenspace access is very strong (9.8079), led by Plenty Gorge and Quarry Hills.',
+    ],
+    caseAgainst: [
+      'Safety and recreation remain unscored; outer-suburban daily life remains pocket-dependent.',
+    ],
+    bestType:
+      'A completed 3BR house with a practical walk or short bus connection to Mernda station.',
+    avoidType:
+      'A fringe stage whose nominal suburb label hides a long drive to the station and services.',
+    oneCar: 'Not assessed yet.',
+    coparentingGeometry: 'Not assessed yet.',
+    risks: [
+      'Safety remains null pending a reproducible suburb-level method.',
+      'The VGV median covers a fast-changing growth market and is not a valuation.',
+    ],
+    inspectionChecklist: [
+      'Time the complete station trip from the exact address in the weekday peak.',
+      'Verify completed local services, estate fees, title and school zone.',
+    ],
+    primaryWarning:
+      'Safety and recreation remain unscored, and the primary zone is boundary-sensitive; verify the exact address.',
+    verifiedAt: '2026-07-22',
+    placeholder: true,
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
+  },
 ]
 
 export const areaCorridors = AREA_CORRIDOR_BASE.map((rec) => {

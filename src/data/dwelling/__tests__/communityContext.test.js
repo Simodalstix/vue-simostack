@@ -33,10 +33,10 @@ import { decideCriteria } from '../decideStrategies.js'
 const src = (rel) => readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 'utf8')
 
 describe('dataset coverage and lookup', () => {
-  it('exposes the complete 124-record SAL dataset', () => {
-    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(124)
+  it('exposes the complete 129-record SAL dataset', () => {
+    expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(129)
     expect(COMMUNITY_DATASET.title).toBe('Community Context · ABS Census 2021')
-    expect(COMMUNITY_DATASET.recordCount).toBe(124)
+    expect(COMMUNITY_DATASET.recordCount).toBe(129)
     expect(DWELLING_CENSUS_CONTEXT).toBe(DWELLING_COMMUNITY_CONTEXT)
   })
 

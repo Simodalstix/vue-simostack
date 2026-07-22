@@ -6266,6 +6266,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "mernda-house",
+      "displayName": "Mernda",
+      "salSuburbs": [
+        "Mernda"
+      ],
+      "salCodes": [
+        "21659"
+      ],
+      "greenspace": 9.8079,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.8667,
+        "majorParkAccess": 9.7058,
+        "natureCorridorAccess": 9.8142
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 93.7,
+        "representedPopulation": 23300,
+        "sampledMeshBlocks": 200
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 100,
+          "majorPark": 240,
+          "natureCorridor": 203
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Plenty Gorge Parklands - Whittlesea",
+            "areaHa": 425.26
+          },
+          {
+            "name": "Quarry Hills Park",
+            "areaHa": 154.71
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 39.91
+          },
+          {
+            "name": "Drainage Reserve",
+            "areaHa": 23.54
+          },
+          {
+            "name": "Mernda Regional Recreation Reserve",
+            "areaHa": 21.84
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Plenty Gorge Parklands",
+            "areaHa": 453.58
+          },
+          {
+            "name": "Plenty Gorge Parklands - Whittlesea",
+            "areaHa": 425.26
+          },
+          {
+            "name": "Quarry Hills Park",
+            "areaHa": 154.71
+          },
+          {
+            "name": "Yan Yean Reservoir Park",
+            "areaHa": 39.57
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 25.13
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.7,
+        "componentSpread": 0.2,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "middle-park-2br",
       "displayName": "Middle Park",
       "salSuburbs": [
@@ -7503,6 +7591,84 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         "residentialPopulationCoveragePct": 90.4,
         "componentSpread": 0.5,
         "reviewFlags": []
+      }
+    },
+    {
+      "id": "rockbank-house",
+      "displayName": "Rockbank",
+      "salSuburbs": [
+        "Rockbank"
+      ],
+      "salCodes": [
+        "22186"
+      ],
+      "greenspace": 4.6324,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 5.369,
+        "majorParkAccess": 0.8159,
+        "natureCorridorAccess": 8.5158
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 51.0,
+        "representedPopulation": 2586,
+        "sampledMeshBlocks": 35
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 381,
+          "majorPark": 2408,
+          "natureCorridor": 658
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Rockbank Primary School",
+            "areaHa": 3.5
+          },
+          {
+            "name": "Stewart Crescent Reserve",
+            "areaHa": 1.51
+          },
+          {
+            "name": "Ian Cowie Recreation Reserve",
+            "areaHa": 1.02
+          },
+          {
+            "name": "Leakes Road Drainage Reserve",
+            "areaHa": 0.45
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Western Grasslands Nature Conservation Reserve",
+            "areaHa": 40.66
+          },
+          {
+            "name": "Leakes Road Drainage Reserve",
+            "areaHa": 0.45
+          },
+          {
+            "name": "Ian Cowie Recreation Reserve",
+            "areaHa": 0.07
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.1,
+        "componentSpread": 7.7,
+        "reviewFlags": [
+          "highComponentSpread"
+        ]
       }
     },
     {
@@ -8818,6 +8984,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "sydenham-house",
+      "displayName": "Sydenham",
+      "salSuburbs": [
+        "Sydenham"
+      ],
+      "salCodes": [
+        "22414"
+      ],
+      "greenspace": 9.5105,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 8.4794,
+        "natureCorridorAccess": 9.8336
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 10429,
+        "sampledMeshBlocks": 89
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 119,
+          "majorPark": 713,
+          "natureCorridor": 253
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Organ Pipes National Park",
+            "areaHa": 79.39
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 27.92
+          },
+          {
+            "name": "Taylors Lakes SEC Easement (Sunshine Ave",
+            "areaHa": 15.58
+          },
+          {
+            "name": "Robertsons Road to proposed industrial e",
+            "areaHa": 13.58
+          },
+          {
+            "name": "18-24 ROBERTSONS ROAD TAYLORS LAKES 3038",
+            "areaHa": 9.13
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Organ Pipes National Park",
+            "areaHa": 212.24
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 24.65
+          },
+          {
+            "name": "Banchory Grove Grassland Nature Conservation Reserve",
+            "areaHa": 21.9
+          },
+          {
+            "name": "Taylors Lakes SEC Easement (Sunshine Ave",
+            "areaHa": 15.58
+          },
+          {
+            "name": "Robertsons Road to proposed industrial e",
+            "areaHa": 13.58
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.6,
+        "componentSpread": 1.5,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "growth-corridor-stress-test",
       "displayName": "Tarneit / Wyndham Vale",
       "salSuburbs": [
@@ -8904,6 +9158,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 99.9,
         "componentSpread": 1.1,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "templestowe-house",
+      "displayName": "Templestowe",
+      "salSuburbs": [
+        "Templestowe"
+      ],
+      "salCodes": [
+        "22483"
+      ],
+      "greenspace": 9.8011,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.5389,
+        "natureCorridorAccess": 9.6969
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 98.8,
+        "representedPopulation": 16872,
+        "sampledMeshBlocks": 156
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 120,
+          "majorPark": 344,
+          "natureCorridor": 279
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Yarra Valley Parklands - Manningham",
+            "areaHa": 276.08
+          },
+          {
+            "name": "Westerfolds Park - YVParklands",
+            "areaHa": 126.95
+          },
+          {
+            "name": "Yarra Valley Parklands - Banyule",
+            "areaHa": 98.58
+          },
+          {
+            "name": "Yarra Valley Parklands - Nillumbik",
+            "areaHa": 94.81
+          },
+          {
+            "name": "Yarra River",
+            "areaHa": 94.76
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Yarra Valley Parklands",
+            "areaHa": 484.24
+          },
+          {
+            "name": "Yarra Valley Parklands - Manningham",
+            "areaHa": 276.08
+          },
+          {
+            "name": "Westerfolds Park - YVParklands",
+            "areaHa": 126.95
+          },
+          {
+            "name": "Yarra Valley Parklands (COM)",
+            "areaHa": 124.59
+          },
+          {
+            "name": "Yarra Valley Parklands - Banyule",
+            "areaHa": 98.58
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.4,
+        "componentSpread": 0.5,
         "reviewFlags": []
       }
     },
@@ -9865,6 +10207,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         "reviewFlags": [
           "highComponentSpread"
         ]
+      }
+    },
+    {
+      "id": "wollert-house",
+      "displayName": "Wollert",
+      "salSuburbs": [
+        "Wollert"
+      ],
+      "salCodes": [
+        "22820"
+      ],
+      "greenspace": 6.9773,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 6.3267,
+        "majorParkAccess": 7.4628,
+        "natureCorridorAccess": 7.8756
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 60.1,
+        "representedPopulation": 24273,
+        "sampledMeshBlocks": 205
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 280,
+          "majorPark": 751,
+          "natureCorridor": 770
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Craigieburn Grassland",
+            "areaHa": 343.78
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 64.71
+          },
+          {
+            "name": "Regional Recreation Reserve",
+            "areaHa": 21.06
+          },
+          {
+            "name": "Lyndarum Wetland",
+            "areaHa": 15.32
+          },
+          {
+            "name": "Maserati Park",
+            "areaHa": 12.47
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "galgi ngarrk (Craigieburn Grassland Nature Conservation Reserve)",
+            "areaHa": 344.02
+          },
+          {
+            "name": "Craigieburn Grassland",
+            "areaHa": 343.78
+          },
+          {
+            "name": "Melbourne Strategic Assessment Reserve",
+            "areaHa": 113.28
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 44.29
+          },
+          {
+            "name": "Lyndarum Wetland",
+            "areaHa": 15.32
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.5,
+        "componentSpread": 1.5,
+        "reviewFlags": []
       }
     },
     {

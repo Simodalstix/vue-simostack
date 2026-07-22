@@ -1,5 +1,5 @@
 // Hand-generated from tools/dwelling-schools/school-strength-research.json.
-// Owner-reviewed through 2026-07-21; Wednesday-batch additions await owner review. Strengths are decision-tool research ratings,
+// Owner-reviewed through 2026-07-21; additional official-report evidence was researched on 2026-07-22. Strengths are decision-tool research ratings,
 // not official Department of Education, VCAA or ACARA ratings. Null means
 // the published evidence was insufficient and must never be coerced.
 
@@ -1402,11 +1402,95 @@ export const schoolStrengthBySchoolNo = {
       'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7858&Type=AnnualReport&requestFileType=Pdf',
     ],
   },
+  5129: {
+    strength: 4,
+    evidenceNote:
+      'The four published three-year NAPLAN proficiency averages averaged 85.6% for the school, +1.9 percentage points versus similar schools and +16.0 points versus the state, supporting a strength rating of 4.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5129&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  8823: {
+    strength: 3,
+    evidenceNote:
+      'The official 2025 report recorded a mean VCE study score of 28.6 and 98.6% VCE/VCE VM completion, supporting a strength rating of 3.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8823&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  3559: {
+    strength: 3,
+    evidenceNote:
+      'The four published three-year NAPLAN proficiency averages averaged 66.5% for the school, +2.2 percentage points versus similar schools and -3.1 points versus the state, supporting a strength rating of 3.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3559&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  8799: {
+    strength: 3,
+    evidenceNote:
+      'The official 2025 report recorded a mean VCE study score of 28.0 and 96.5% VCE/VCE VM completion, supporting a strength rating of 3.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8799&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  919: {
+    strength: 1,
+    evidenceNote:
+      'The four published three-year NAPLAN proficiency averages averaged 51.6% for the school, -11.5 percentage points versus similar schools and -18.0 points versus the state, supporting a strength rating of 1.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=919&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  7500: {
+    strength: null,
+    evidenceNote:
+      'The school served Years 7-8 in 2025 and had no completing VCE cohort, so there is insufficient senior-secondary evidence for a strength rating.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7500&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  5589: {
+    strength: 1,
+    evidenceNote:
+      'The four published three-year NAPLAN proficiency averages averaged 43.0% for the school, -18.4 percentage points versus similar schools and -26.6 points versus the state, supporting a strength rating of 1.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5589&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  8896: {
+    strength: null,
+    evidenceNote:
+      'The school served Years 7-10 in 2025 and had no completing VCE cohort, so there is insufficient senior-secondary evidence for a strength rating.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8896&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
+  8897: {
+    strength: 2,
+    evidenceNote:
+      'The official 2025 report recorded a mean VCE study score of 27.1 and 97.6% VCE/VCE VM completion, supporting a strength rating of 2.',
+    confidence: 'high',
+    sources: [
+      'https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8897&Type=AnnualReport&requestFileType=Pdf',
+    ],
+  },
 }
 
-// The 2027 zones source retains the former name while the locations source
-// and annual report use "Maribyrnong College" (school 8015).
-const schoolNoByZoneAlias = { 'Maribyrnong Secondary College': 8015 }
+// The 2027 zones source retains names that differ from the locations source
+// or annual report for these schools.
+const schoolNoByZoneAlias = {
+  'Maribyrnong Secondary College': 8015,
+  'Sydenham Primary School': 3559,
+}
 
 export const schoolStrengthByName = {}
 

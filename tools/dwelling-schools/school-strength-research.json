@@ -1008,6 +1008,91 @@
         "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7858&Type=AnnualReport&requestFileType=Pdf"
       ],
       "confidence": "high"
+    },
+    {
+      "name": "Templestowe College",
+      "schoolNo": "8823",
+      "meanVceStudyScore": 28.6,
+      "vceCompletionRate": 98.6,
+      "strength": 3,
+      "vceMedianStudyScore": null,
+      "vcePct40Plus": null,
+      "yearRange": "7-12",
+      "enrolmentTrend": null,
+      "structuralNotes": null,
+      "evidenceNote": "The official 2025 report recorded a mean VCE study score of 28.6 and 98.6% VCE/VCE VM completion, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8823&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Copperfield College",
+      "schoolNo": "8799",
+      "meanVceStudyScore": 28,
+      "vceCompletionRate": 96.5,
+      "strength": 3,
+      "vceMedianStudyScore": null,
+      "vcePct40Plus": null,
+      "yearRange": "7-12, multi-campus",
+      "enrolmentTrend": null,
+      "structuralNotes": "The college reports combined outcomes across its Delahey and Kings Park campuses.",
+      "evidenceNote": "The official 2025 report recorded a mean VCE study score of 28.0 and 96.5% VCE/VCE VM completion, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8799&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Yarrabing Secondary College",
+      "schoolNo": "7500",
+      "meanVceStudyScore": null,
+      "vceCompletionRate": null,
+      "strength": null,
+      "vceMedianStudyScore": null,
+      "vcePct40Plus": null,
+      "yearRange": "7-8 in 2025; growing to 7-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "The school opened in 2024 and served Years 7-8 in 2025, with no completing VCE cohort.",
+      "evidenceNote": "The school served Years 7-8 in 2025 and had no completing VCE cohort, so there is insufficient senior-secondary evidence for a strength rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=7500&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Wollert Secondary College",
+      "schoolNo": "8896",
+      "meanVceStudyScore": null,
+      "vceCompletionRate": null,
+      "strength": null,
+      "vceMedianStudyScore": null,
+      "vcePct40Plus": null,
+      "yearRange": "7-10 in 2025; growing to 7-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "The school opened in 2023 and served Years 7-10 in 2025, with no completing VCE cohort.",
+      "evidenceNote": "The school served Years 7-10 in 2025 and had no completing VCE cohort, so there is insufficient senior-secondary evidence for a strength rating.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8896&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Mernda Central P-12 College",
+      "schoolNo": "8897",
+      "meanVceStudyScore": 27.1,
+      "vceCompletionRate": 97.6,
+      "strength": 2,
+      "vceMedianStudyScore": null,
+      "vcePct40Plus": null,
+      "yearRange": "P-12",
+      "enrolmentTrend": "growing",
+      "structuralNotes": "The single P-12 school number covers both the primary and secondary zone roles; the strength rating uses its senior-secondary outcomes.",
+      "evidenceNote": "The official 2025 report recorded a mean VCE study score of 27.1 and 97.6% VCE/VCE VM completion, supporting a strength rating of 2.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=8897&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
     }
   ],
   "primary": [
@@ -4320,6 +4405,86 @@
       "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 78.6% for the school, +16.1 percentage points versus similar schools and +9.0 points versus the state, supporting a strength rating of 3.",
       "sources": [
         "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5572&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Templestowe Park Primary School",
+      "schoolNo": "5129",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": { "school": 85.2, "similarSchools": 82.9, "state": 69.3 },
+          "readingYear5": { "school": 89.3, "similarSchools": 87.1, "state": 74.6 },
+          "numeracyYear3": { "school": 83, "similarSchools": 81.5, "state": 66.4 },
+          "numeracyYear5": { "school": 84.7, "similarSchools": 83.2, "state": 68.1 }
+        }
+      },
+      "strength": 4,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 85.6% for the school, +1.9 percentage points versus similar schools and +16.0 points versus the state, supporting a strength rating of 4.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5129&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Sydenham - Hillside Primary School",
+      "schoolNo": "3559",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": { "school": 69.7, "similarSchools": 64.5, "state": 69.3 },
+          "readingYear5": { "school": 73.4, "similarSchools": 71, "state": 74.6 },
+          "numeracyYear3": { "school": 61.6, "similarSchools": 59.1, "state": 66.4 },
+          "numeracyYear5": { "school": 61.3, "similarSchools": 62.8, "state": 68.1 }
+        }
+      },
+      "strength": 3,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 66.5% for the school, +2.2 percentage points versus similar schools and -3.1 points versus the state, supporting a strength rating of 3.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=3559&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Rockbank Primary School",
+      "schoolNo": "919",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": { "school": 57.3, "similarSchools": 62.9, "state": 69.3 },
+          "readingYear5": { "school": 56.5, "similarSchools": 70, "state": 74.6 },
+          "numeracyYear3": { "school": 48.4, "similarSchools": 57.4, "state": 66.4 },
+          "numeracyYear5": { "school": 44.2, "similarSchools": 62.2, "state": 68.1 }
+        }
+      },
+      "strength": 1,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 51.6% for the school, -11.5 percentage points versus similar schools and -18.0 points versus the state, supporting a strength rating of 1.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=919&Type=AnnualReport&requestFileType=Pdf"
+      ],
+      "confidence": "high"
+    },
+    {
+      "name": "Wollert Primary School",
+      "schoolNo": "5589",
+      "publiclyReportedIndicators": {
+        "reportYear": 2025,
+        "measure": "Percentage of students in Strong or Exceeding NAPLAN proficiency levels",
+        "threeYearAverages": {
+          "readingYear3": { "school": 43.3, "similarSchools": 62, "state": 69.3 },
+          "readingYear5": { "school": 51.9, "similarSchools": 68.1, "state": 74.6 },
+          "numeracyYear3": { "school": 34.4, "similarSchools": 55.5, "state": 66.4 },
+          "numeracyYear5": { "school": 42.4, "similarSchools": 60.1, "state": 68.1 }
+        }
+      },
+      "strength": 1,
+      "evidenceNote": "The four published three-year NAPLAN proficiency averages averaged 43.0% for the school, -18.4 percentage points versus similar schools and -26.6 points versus the state, supporting a strength rating of 1.",
+      "sources": [
+        "https://www.vrqa.vic.gov.au/StateRegister/Provider.aspx/GetFile?EntityID=1&SchoolNumber=5589&Type=AnnualReport&requestFileType=Pdf"
       ],
       "confidence": "high"
     }

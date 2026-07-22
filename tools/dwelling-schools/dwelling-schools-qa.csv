@@ -153,6 +153,8 @@ melbourne-cbd-2br,primary,Carlton Gardens Primary School,,363.4,station
 melbourne-cbd-2br,secondary,University High School,,621.6,station
 mentone-2br,primary,Mentone Primary School,,831.4,station
 mentone-2br,secondary,Parkdale Secondary College,,122.7,station
+mernda-house,primary,Mernda Central P-12 College,,20.0,station
+mernda-house,secondary,Mernda Central P-12 College,,282.1,station
 middle-park-2br,primary,Middle Park Primary School,,164.6,locality-representative-point
 middle-park-2br,secondary,Albert Park College,,658.4,locality-representative-point
 moonee-ponds-2br,primary,Moonee Ponds West Primary School,,126.0,station
@@ -177,6 +179,8 @@ port-melbourne-2br,primary,Port Melbourne Primary School,,368.8,station
 port-melbourne-2br,secondary,Port Melbourne Secondary College,,274.9,station
 preston-villa,primary,Preston West Primary School,,397.7,station
 preston-villa,secondary,Preston High School,,948.2,station
+rockbank-house,primary,Rockbank Primary School,,572.8,station
+rockbank-house,secondary,Yarrabing Secondary College,,828.6,station
 rosanna-house,primary,Rosanna Primary School,,95.5,station
 rosanna-house,secondary,Charles La Trobe P-12 College,,79.4,station
 se-value-corridor,primary,Springvale Rise Primary School,,391.5,station
@@ -203,6 +207,10 @@ sunshine-west-house,primary,Glengala Primary School,,376.8,station
 sunshine-west-house,secondary,Sunshine College,,2536.9,station
 surrey-hills-house,primary,Surrey Hills Primary School,,342.6,station
 surrey-hills-house,secondary,Koonung Secondary College,,4.1,station
+sydenham-house,primary,Sydenham Primary School,,478.0,station
+sydenham-house,secondary,Copperfield College,,250.1,station
+templestowe-house,primary,Templestowe Park Primary School,,82.7,station
+templestowe-house,secondary,Templestowe College,,1231.0,station
 thomastown-house,primary,Thomastown Primary School,,318.2,station
 thomastown-house,secondary,Thomastown Secondary College,,300.3,station
 thornbury-2br,primary,Thornbury Primary School,,243.1,station
@@ -225,5 +233,7 @@ west-melbourne-2br,primary,North Melbourne Primary School,,51.6,station
 west-melbourne-2br,secondary,University High School,,1085.9,station
 williamstown-house,primary,Williamstown Primary School,,424.3,station
 williamstown-house,secondary,Williamstown High School,,424.3,station
+wollert-house,primary,Wollert Primary School,,347.2,station
+wollert-house,secondary,Wollert Secondary College,,1327.2,station
 yarraville-2br,primary,Yarraville West Primary School,,544.9,station
 yarraville-2br,secondary,Footscray High School,,1274.6,station

@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-greenspace-targets",
-  "version": "v7-canonical-70-mixed-official-and-derived",
-  "retrievedAt": "2026-07-19",
-  "recordCount": 114,
+  "version": "v8-canonical-119-mixed-official-and-derived",
+  "retrievedAt": "2026-07-22",
+  "recordCount": 119,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -1431,6 +1431,66 @@
         }
       ],
       "censusPopulation2021": 6733
+    },
+    {
+      "id": "templestowe-house",
+      "displayName": "Templestowe",
+      "salComponents": [
+        {
+          "suburb": "Templestowe",
+          "salCode": "22483",
+          "censusPopulation2021": 16966
+        }
+      ],
+      "censusPopulation2021": 16966
+    },
+    {
+      "id": "sydenham-house",
+      "displayName": "Sydenham",
+      "salComponents": [
+        {
+          "suburb": "Sydenham",
+          "salCode": "22414",
+          "censusPopulation2021": 10578
+        }
+      ],
+      "censusPopulation2021": 10578
+    },
+    {
+      "id": "rockbank-house",
+      "displayName": "Rockbank",
+      "salComponents": [
+        {
+          "suburb": "Rockbank",
+          "salCode": "22186",
+          "censusPopulation2021": 2583
+        }
+      ],
+      "censusPopulation2021": 2583
+    },
+    {
+      "id": "wollert-house",
+      "displayName": "Wollert",
+      "salComponents": [
+        {
+          "suburb": "Wollert",
+          "salCode": "22820",
+          "censusPopulation2021": 24407
+        }
+      ],
+      "censusPopulation2021": 24407
+    },
+    {
+      "id": "mernda-house",
+      "displayName": "Mernda",
+      "salComponents": [
+        {
+          "suburb": "Mernda",
+          "salCode": "21659",
+          "censusPopulation2021": 23369
+        }
+      ],
+      "censusPopulation2021": 23369
     }
   ]
 }

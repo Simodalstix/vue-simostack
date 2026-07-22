@@ -2623,6 +2623,126 @@ export const suburbProfiles = {
       pursueWhen: 'Before purchase, verify the exact address, title, commute and school zone.',
     },
   },
+  // 'Templestowe' — evidence-complete 2026-07-22 next-five onboarding batch.
+  'templestowe-house': {
+    lives:
+      'Templestowe is a low-density Manningham house market anchored here at Templestowe Village and the direct route 905 bus spine.',
+    housing:
+      'The proposed product is an established 3BR house; its official 2025 VGV house median is $1.605m, with address-level stock still to verify.',
+    fit: [
+      {
+        text: 'Census, locality, cost, schools and generated greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'The direct route 905 avoids a transfer, but deep residential pockets remain car-dependent.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'House space and a one-seat DART commute without pretending the suburb is low-car.',
+      mainRisk: 'High house cost and deep-pocket car dependence away from the village bus spine.',
+      pursueWhen:
+        'When the exact route 905 walk and boundary-sensitive primary zone both pass address-level checks.',
+    },
+  },
+  // 'Sydenham' — evidence-complete 2026-07-22 next-five onboarding batch.
+  'sydenham-house': {
+    lives:
+      'Sydenham is an established western house market centred on Watergardens station, shopping and the Sunbury rail corridor.',
+    housing:
+      'The proposed product is an established 3BR house; its official 2025 VGV house median is $740k.',
+    fit: [
+      {
+        text: 'Census, locality, cost, schools and generated greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'Watergardens offers one-seat rail, but station access varies substantially across the suburb.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'A mainstream house proposition with one-seat rail from the outer west.',
+      mainRisk: 'A suburb-wide label can hide a car trip to Watergardens.',
+      pursueWhen:
+        'When the exact station walk, school zone and after-dark route all pass address-level checks.',
+    },
+  },
+  // 'Rockbank' — evidence-complete 2026-07-22 next-five onboarding batch.
+  'rockbank-house': {
+    lives:
+      'Rockbank is a fast-changing Melton growth suburb with a rebuilt regional-rail station and substantial estate delivery still underway.',
+    housing:
+      'The proposed product is a completed 3BR house rather than an unbuilt package; the official 2025 VGV house median is $621k.',
+    fit: [
+      {
+        text: 'Census, locality, cost, schools and generated greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'Nature access is strong, but major-park access is weak and the new secondary has no senior cohort yet.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor:
+        'Testing whether low house cost plus direct regional rail offsets growth-area car dependence.',
+      mainRisk:
+        'Frequency, estate staging and service delivery vary more than the headline station proximity suggests.',
+      pursueWhen:
+        'When completed recurring stock, useful V/Line frequency and delivered local services are confirmed.',
+    },
+  },
+  // 'Wollert' — evidence-complete 2026-07-22 next-five onboarding batch.
+  'wollert-house': {
+    lives:
+      'Wollert is a large Whittlesea growth locality; this proposition deliberately uses the established southern bus pocket rather than the rural polygon centre.',
+    housing:
+      'The proposed product is a completed 3BR house; the official 2025 VGV house median is $710k.',
+    fit: [
+      {
+        text: 'Census, locality, cost, schools and generated greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'The proposition requires a feeder-bus transfer, and the new secondary has no senior cohort yet.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor:
+        'A transparent outer-growth comparison using a real occupied pocket and feeder-bus commute.',
+      mainRisk:
+        'Long transfers and future-stage service promises can overwhelm the purchase-price advantage.',
+      pursueWhen:
+        'When the exact feeder journey, completed services and recurring stock pass address-level checks.',
+    },
+  },
+  // 'Mernda' — evidence-complete 2026-07-22 next-five onboarding batch.
+  'mernda-house': {
+    lives:
+      'Mernda is an outer-north house market with a modern metro terminus and established town-centre services around the station.',
+    housing:
+      'The proposed product is a completed 3BR house; the official 2025 VGV house median is $730k.',
+    fit: [
+      {
+        text: 'Census, locality, cost, schools and generated greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'The terminus and strong greenspace improve the proposition, but many pockets remain car-dependent.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Outer-growth house value with a genuine one-seat metro anchor.',
+      mainRisk:
+        'The station improves the commute, but many pockets remain car-dependent for daily life.',
+      pursueWhen:
+        'When the exact station connection and boundary-sensitive primary zone pass address-level checks.',
+    },
+  },
 }
 
 export function suburbProfileFor(areaId) {

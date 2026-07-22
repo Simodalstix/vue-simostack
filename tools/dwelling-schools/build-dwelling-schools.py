@@ -89,7 +89,15 @@ def norm_name(name: str) -> str:
     # name. Treat the generic word as optional so the official records join.
     s = re.sub(r"\bsecondary college\b", "college", s)
     s = re.sub(r"[^a-z0-9 ]", " ", s)
-    return re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"\s+", " ", s).strip()
+    # The 2027 zone source shortens "Sydenham - Hillside Primary School" to
+    # "Sydenham Primary School". Both are official names for school 3559.
+    s = re.sub(
+        r"\bsydenham hillside primary school\b",
+        "sydenham primary school",
+        s,
+    )
+    return s
 
 
 def slugify(name: str) -> str:
