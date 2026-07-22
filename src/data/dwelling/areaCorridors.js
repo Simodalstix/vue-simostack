@@ -7149,13 +7149,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Aberfeldie (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Aberfeldie (pending evidence)',
+    altRoute:
+      'Bus to Essendon or Moonee Ponds, then the Craigieburn line; route 406 provides a Footscray connection.',
+    headline: 'established 3-bedroom house in Aberfeldie',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [1650000, 2050000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7165,7 +7166,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 28, stressed: 38, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7180,28 +7181,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Aberfeldie Primary School'],
+      publicSecondary: ['Buckley Park College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 3,925 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7214,13 +7219,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Albion',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Albion (pending evidence)',
+    altRoute:
+      'Sunbury line direct to Southern Cross, with Sunshine providing interchange redundancy.',
+    headline: 'established 3-bedroom house in Albion',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [700000, 875000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7230,7 +7236,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 34, stressed: 45, transfers: 0 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7245,28 +7251,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Albion Primary School'],
+      publicSecondary: ['Sunshine College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 4,334 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7279,13 +7289,13 @@ const AREA_CORRIDOR_BASE = [
     station: 'Blackburn North (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Blackburn North (pending evidence)',
+    altRoute: 'Local bus to Blackburn or Box Hill, then the Belgrave / Lilydale line to the city.',
+    headline: 'established 3-bedroom house in Blackburn North',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [1250000, 1550000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7295,7 +7305,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 50, stressed: 65, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7310,28 +7320,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Old Orchard Primary School'],
+      publicSecondary: ['Blackburn High School'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 7,627 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7344,13 +7358,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Blackburn South (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Blackburn South (pending evidence)',
+    altRoute:
+      'Local bus to Blackburn or Box Hill for rail; tram 75 is the slower one-seat fallback.',
+    headline: 'established 3-bedroom house in Blackburn South',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [1200000, 1550000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7360,7 +7375,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 52, stressed: 68, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7375,28 +7390,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Orchard Grove Primary School'],
+      publicSecondary: ['Forest Hill College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 10,939 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7409,13 +7428,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Box Hill North (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Box Hill North (pending evidence)',
+    altRoute:
+      'Local bus to Box Hill, then express-capable Belgrave / Lilydale services; route 903 is the cross-suburban backup.',
+    headline: 'established 3-bedroom house in Box Hill North',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [1250000, 1550000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7425,7 +7445,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 47, stressed: 62, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7440,28 +7460,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Kerrimuir Primary School'],
+      publicSecondary: ['Koonung Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; the anchor is close to a zone boundary, so verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 12,337 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7474,13 +7498,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Box Hill South (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Box Hill South (pending evidence)',
+    altRoute:
+      'Bus to Box Hill for rail, with tram 75 as a slower one-seat city fallback from the southern pocket.',
+    headline: 'established 3-bedroom house in Box Hill South',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [1350000, 1700000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7490,7 +7515,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 47, stressed: 62, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7505,28 +7530,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Roberts McCubbin Primary School'],
+      publicSecondary: ['Box Hill High School'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 8,491 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7539,13 +7568,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Brunswick West (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'older 2br apartment in Brunswick West (pending evidence)',
+    altRoute:
+      'Route 58 provides a one-seat CBD trip; buses to the Upfield line add rail redundancy.',
+    headline: 'older 2br apartment in Brunswick West',
     dwelling: {
       types: ['older-apartment'],
       bedrooms: 2,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [450000, 600000],
+      annualOc: [1500, 4500],
       parkingTypes: [],
       suitableStock:
         'Older 2BR apartment within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7555,7 +7585,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 38, stressed: 50, transfers: 0 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7570,28 +7600,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Brunswick South West Primary School'],
+      publicSecondary: ['Brunswick Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; the anchor is close to a zone boundary, so verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 14,746 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Older 2BR apartment in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7601,16 +7635,17 @@ const AREA_CORRIDOR_BASE = [
     municipality: 'Merri-bek',
     region: 'North',
     corridor: 'Upfield line (Merlynston / Batman)',
-    station: 'Coburg North (locality anchor)',
+    station: 'Merlynston / Batman',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Coburg North (pending evidence)',
+    altRoute:
+      'Use Merlynston or Batman on the Upfield line; Sydney Road buses and tram 19 provide disruption alternatives.',
+    headline: 'established 3-bedroom house in Coburg North',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [1000000, 1250000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7620,7 +7655,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 36, stressed: 48, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7635,28 +7670,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Pascoe Vale North Primary School'],
+      publicSecondary: ['John Fawkner Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; the anchor is close to a zone boundary, so verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 8,327 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7669,13 +7708,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Gardenvale',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Gardenvale (pending evidence)',
+    altRoute:
+      'Sandringham line direct to the city, with route 64 and Nepean Highway buses as backups.',
+    headline: 'established 3-bedroom house in Gardenvale',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [1900000, 2400000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7685,7 +7725,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 27, stressed: 37, transfers: 0 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7700,28 +7740,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Elsternwick Primary School'],
+      publicSecondary: ['Elwood College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 1,019 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7734,13 +7778,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Heidelberg West (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Heidelberg West (pending evidence)',
+    altRoute:
+      'Bus to Heidelberg for the Hurstbridge line; routes through Northland provide cross-suburban redundancy.',
+    headline: 'established 3-bedroom house in Heidelberg West',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [720000, 900000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7750,7 +7795,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 49, stressed: 64, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7765,28 +7810,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Charles La Trobe P-12 College'],
+      publicSecondary: ['Charles La Trobe P-12 College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; the anchor is close to a zone boundary, so verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 5,252 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7799,13 +7848,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Keilor (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Keilor (pending evidence)',
+    altRoute:
+      'Bus to Watergardens or Essendon, then rail to the city; Calder Highway buses are the road-based fallback.',
+    headline: 'established 3-bedroom house in Keilor',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [1000000, 1300000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7815,7 +7865,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 55, stressed: 72, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7830,28 +7880,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Keilor Primary School'],
+      publicSecondary: ['Keilor Downs Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 5,906 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7864,13 +7918,13 @@ const AREA_CORRIDOR_BASE = [
     station: 'Keilor Downs (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Keilor Downs (pending evidence)',
+    altRoute: 'Bus to Keilor Plains or Watergardens, then the Sunbury line to the city.',
+    headline: 'established 3-bedroom house in Keilor Downs',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [780000, 970000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7880,7 +7934,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 48, stressed: 63, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7895,28 +7949,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Keilor Views Primary School'],
+      publicSecondary: ['Keilor Downs Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 9,857 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7929,13 +7987,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Keilor East (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Keilor East (pending evidence)',
+    altRoute:
+      'Bus to Essendon for the Craigieburn line; route 465 provides a Buckley Street corridor fallback.',
+    headline: 'established 3-bedroom house in Keilor East',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [900000, 1150000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -7945,7 +8004,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 40, stressed: 54, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -7960,28 +8019,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Keilor Heights Primary School'],
+      publicSecondary: ['Essendon Keilor College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 15,078 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -7994,13 +8057,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Keysborough (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Keysborough (pending evidence)',
+    altRoute:
+      'Bus to Noble Park or Dandenong, then Cranbourne / Pakenham services through the Metro Tunnel.',
+    headline: 'established 3-bedroom house in Keysborough',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [875000, 1100000],
+      annualOc: [0, 1500],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -8010,7 +8074,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 62, stressed: 80, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -8025,28 +8089,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Keysborough Gardens Primary School'],
+      publicSecondary: ['Keysborough Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 30,018 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -8059,13 +8127,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Maidstone (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Maidstone (pending evidence)',
+    altRoute:
+      'Bus to Footscray or West Footscray for frequent rail; tram 82 links to Footscray and Moonee Ponds.',
+    headline: 'established 3-bedroom house in Maidstone',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [780000, 975000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -8075,7 +8144,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 38, stressed: 50, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -8090,28 +8159,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Footscray North Primary School'],
+      publicSecondary: ['Maribyrnong Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 9,389 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -8124,13 +8197,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Maribyrnong (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'older 2br apartment in Maribyrnong (pending evidence)',
+    altRoute:
+      'Bus or tram 82 to Footscray for rail; tram 57 provides a slower one-seat CBD alternative.',
+    headline: 'older 2br apartment in Maribyrnong',
     dwelling: {
       types: ['older-apartment'],
       bedrooms: 2,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [440000, 575000],
+      annualOc: [2000, 5500],
       parkingTypes: [],
       suitableStock:
         'Older 2BR apartment within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -8140,7 +8214,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 38, stressed: 50, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -8155,28 +8229,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Footscray North Primary School'],
+      publicSecondary: ['Maribyrnong Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; the anchor is close to a zone boundary, so verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 12,573 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Older 2BR apartment in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -8186,16 +8264,17 @@ const AREA_CORRIDOR_BASE = [
     municipality: 'Port Phillip',
     region: 'Inner',
     corridor: 'Route 109 light rail',
-    station: 'Port Melbourne (route 109 light rail)',
+    station: 'North Port (route 109 light rail)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'older 2br apartment in Port Melbourne (pending evidence)',
+    altRoute:
+      'Route 109 light rail provides a one-seat trip to the Collins Street corridor; route 235 is the bus backup.',
+    headline: 'older 2br apartment in Port Melbourne',
     dwelling: {
       types: ['older-apartment'],
       bedrooms: 2,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [650000, 850000],
+      annualOc: [2500, 6500],
       parkingTypes: [],
       suitableStock:
         'Older 2BR apartment within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -8205,7 +8284,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 24, stressed: 32, transfers: 0 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -8220,28 +8299,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Port Melbourne Primary School'],
+      publicSecondary: ['Port Melbourne Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 17,633 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Older 2BR apartment in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -8254,13 +8337,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Sunshine North (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Sunshine North (pending evidence)',
+    altRoute:
+      'Bus to Sunshine, then frequent Sunbury / regional services; Albion is a secondary rail option for some pockets.',
+    headline: 'established 3-bedroom house in Sunshine North',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [700000, 875000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -8270,7 +8354,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 45, stressed: 59, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -8285,28 +8369,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Sunshine North Primary School'],
+      publicSecondary: ['Sunshine College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; the anchor is close to a zone boundary, so verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 12,047 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -8319,13 +8407,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Sunshine West (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Sunshine West (pending evidence)',
+    altRoute:
+      'Bus to Sunshine for frequent rail, with buses through Footscray as a slower fallback.',
+    headline: 'established 3-bedroom house in Sunshine West',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [670000, 830000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -8335,7 +8424,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 45, stressed: 59, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -8350,28 +8439,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Glengala Primary School'],
+      publicSecondary: ['Sunshine College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 18,552 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
   {
     // Pending-evidence record of the 2026-07-22 onboarding batch. UNSCORED by
@@ -8384,13 +8477,14 @@ const AREA_CORRIDOR_BASE = [
     station: 'Tullamarine (locality anchor)',
     catchmentMetres: 800,
     scored: false,
-    altRoute: 'Route detail pending verification.',
-    headline: 'established 3-bedroom house in Tullamarine (pending evidence)',
+    altRoute:
+      'Bus to Broadmeadows for Craigieburn-line rail; route 59 via Airport West is the tram-based fallback.',
+    headline: 'established 3-bedroom house in Tullamarine',
     dwelling: {
       types: ['house'],
       bedrooms: 3,
-      indicativePrice: null,
-      annualOc: null,
+      indicativePrice: [720000, 900000],
+      annualOc: [0, 0],
       parkingTypes: [],
       suitableStock:
         'Established 3-bedroom house within the record catchment; recurring-stock assumption pending listing evidence.',
@@ -8400,7 +8494,7 @@ const AREA_CORRIDOR_BASE = [
     stationWalkMin: null,
     carDaily: null,
     secondBedroom: true,
-    commute: null,
+    commute: { typical: 55, stressed: 72, transfers: 1 },
     scores: {
       housingValue: null,
       coparenting: null,
@@ -8415,28 +8509,32 @@ const AREA_CORRIDOR_BASE = [
     childhood: {
       schoolStrength: null,
       teenIndependence: null,
-      publicPrimary: [],
-      publicSecondary: [],
+      publicPrimary: ['Tullamarine Primary School'],
+      publicSecondary: ['Gladstone Park Secondary College'],
       privateContext: [],
-      note: 'School zones and points pending the schools pipeline run for this record.',
+      note: 'Official 2027 zones at the verified anchor; verify the exact address before purchase.',
     },
     caseFor: ['ABS 2021 Census context is integrated: 6,733 residents.'],
-    caseAgainst: ['Every scoring criterion is pending evidence; no ranking claim is made yet.'],
+    caseAgainst: [
+      'Safety and recreation remain unscored; no ranking claim is made before owner review.',
+    ],
     bestType:
       'Established 3-bedroom house in the catchment; confirm the pocket once commute and price evidence land.',
     avoidType: 'Any purchase decision from this record before its evidence passes complete.',
     oneCar: 'Not assessed yet.',
     coparentingGeometry: 'Not assessed yet.',
     risks: [
-      'Commute, safety, price band, school zones and greenspace are all pending their evidence passes.',
+      'Safety remains unscored: the June 2026 CSA download lacks suburb geography, so no rating was inferred.',
       'Dwelling product is an agent assumption from the onboarding batch; confirm recurring stock.',
     ],
-    inspectionChecklist: ['Complete the evidence passes before any inspection planning.'],
+    inspectionChecklist: [
+      'Verify the commute, price band, school zone and title against the exact address.',
+    ],
     primaryWarning:
       'Pending-evidence record: visible for coverage, excluded from ranking until scored.',
     verifiedAt: null,
     placeholder: true,
-    sources: ['abs', 'ptv'],
+    sources: ['abs', 'vgv', 'csa', 'vicplan', 'ptv', 'detSchoolLocations', 'detSchoolZones2027'],
   },
 ]
 

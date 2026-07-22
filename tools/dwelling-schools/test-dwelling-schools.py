@@ -27,8 +27,9 @@ spec.loader.exec_module(mod)
     "raw,expected",
     [
         ("Clifton Hill PS", "clifton hill primary school"),
-        ("Doncaster Secondary College", "doncaster secondary college"),
-        ("East Doncaster SC (verify zone)", "east doncaster secondary college"),
+        ("Doncaster Secondary College", "doncaster college"),
+        ("East Doncaster SC (verify zone)", "east doncaster college"),
+        ("Maribyrnong Secondary College", "maribyrnong college"),
         ("Prahran High (new 2019 vertical campus)", "prahran high school"),
         ("Melbourne Girls' College", "melbourne girls college"),
         ("Balwyn High (zoned; in-suburb)", "balwyn high school"),

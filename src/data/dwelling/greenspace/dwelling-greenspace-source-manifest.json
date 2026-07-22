@@ -49,9 +49,9 @@
       "downloadUrl": "https://opendata.maps.vic.gov.au/geoserver/wfs?service=WFS&version=2.0.0&request=GetFeature&typeNames=open-data-platform:parkres&srsName=EPSG:4326&bbox=144.4,-38.15,145.25,-37.45,EPSG:4326&outputFormat=application/json",
       "filename": "PARKRES_metro_bbox.geojson",
       "sha256": "f0f369d58f187edc2e5684e436f30af65b06554fd84041c597442f7d9ce99b30",
-      "refreshedAt": "2026-07-21",
-      "refreshedSha256": "d675bb321b5def4d5bc2ff94039a4a0951d8dba14dba2311ca0b424f0b520eba",
-      "note": "Supplement used only for major-park and nature-corridor layers, never for local-access scoring, because public pedestrian access is not encoded consistently enough for local-park eligibility. The ten-record inner-core onboarding batch used a fresh bounded PARKRES pull on 2026-07-19, and the 24-record north-west/extended batch used another on 2026-07-21 (422 features); PARKRES is a live dataset, while the four primary sources remained hash-identical to this manifest on both dates."
+      "refreshedAt": "2026-07-22",
+      "refreshedSha256": "d11d0ba4ae99413158a9a3ce2f9c73f67689dcd81185815801d9198aec051103",
+      "note": "Supplement used only for major-park and nature-corridor layers, never for local-access scoring, because public pedestrian access is not encoded consistently enough for local-park eligibility. The ten-record inner-core onboarding batch used a fresh bounded PARKRES pull on 2026-07-19, the 24-record north-west/extended batch used another on 2026-07-21, and the 20-record Wednesday batch used another on 2026-07-22 (422 features each); PARKRES is a live dataset, while the four primary sources remained hash-identical to this manifest on all three dates."
     }
   ],
   "classificationReview": {

@@ -27,10 +27,15 @@ import { strategies } from './strategies.js'
 // Shorthand: coordinates cross-checked against a public gazetteer this pass.
 const V = '2026-07-13'
 const V2 = '2026-07-21'
+const V3 = '2026-07-22'
 const OSM = 'OpenStreetMap'
 // Vicmap Transport rail_station points (tr_rail_infrastructure) and locality
 // polygons via the Vicmap open-data WFS; CC BY 4.0, (c) State of Victoria.
 const VICMAP = 'Vicmap'
+// Transport Victoria GTFS feed (published 2026-07-17): named station/stop
+// parent points, or the midpoint of directional platforms where no parent
+// point is published.
+const TRANSPORT_VICTORIA = 'Transport Victoria GTFS'
 
 export const areaGeo = {
   // ---- Inner ---------------------------------------------------------------
@@ -1345,10 +1350,10 @@ export const areaGeo = {
       {
         id: 'aberfeldie-anchor',
         name: 'Aberfeldie (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.898, -37.759],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8981, -37.758],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1356,12 +1361,13 @@ export const areaGeo = {
     localityNames: ['Albion'],
     stationPoints: [
       {
-        id: 'albion-anchor',
+        id: 'albion',
         name: 'Albion',
-        // Same OSM-derived point the schematic map already uses in trainLines.js.
-        coordinates: [144.8195, -37.7757],
-        source: OSM,
-        verifiedAt: null,
+        // Transport Victoria GTFS named parent-station point; trainLines.js
+        // updated to match.
+        coordinates: [144.8247, -37.7777],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1371,10 +1377,10 @@ export const areaGeo = {
       {
         id: 'blackburn-north-anchor',
         name: 'Blackburn North (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [145.148, -37.807],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.1548, -37.806],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1384,10 +1390,10 @@ export const areaGeo = {
       {
         id: 'blackburn-south-anchor',
         name: 'Blackburn South (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [145.151, -37.833],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.1472, -37.8379],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1397,10 +1403,10 @@ export const areaGeo = {
       {
         id: 'box-hill-north-anchor',
         name: 'Box Hill North (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [145.122, -37.805],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.1289, -37.8057],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1410,10 +1416,10 @@ export const areaGeo = {
       {
         id: 'box-hill-south-anchor',
         name: 'Box Hill South (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [145.126, -37.833],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.1235, -37.8342],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1423,10 +1429,10 @@ export const areaGeo = {
       {
         id: 'brunswick-west-anchor',
         name: 'Brunswick West (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.947, -37.766],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.9438, -37.7648],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1434,12 +1440,21 @@ export const areaGeo = {
     localityNames: ['Coburg North'],
     stationPoints: [
       {
-        id: 'coburg-north-anchor',
-        name: 'Coburg North (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.965, -37.727],
-        source: OSM,
-        verifiedAt: null,
+        id: 'merlynston',
+        name: 'Merlynston',
+        // Transport Victoria GTFS named parent-station point. Both Upfield
+        // line stations serve the Coburg North locality catchment.
+        coordinates: [144.9613, -37.7209],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
+      },
+      {
+        id: 'batman-coburg-north',
+        name: 'Batman',
+        // Transport Victoria GTFS named parent-station point.
+        coordinates: [144.9628, -37.7335],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1449,10 +1464,10 @@ export const areaGeo = {
       {
         id: 'gardenvale-anchor',
         name: 'Gardenvale',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [145.0166, -37.8935],
-        source: OSM,
-        verifiedAt: null,
+        // Transport Victoria GTFS named parent-station point.
+        coordinates: [145.0042, -37.8967],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1462,10 +1477,10 @@ export const areaGeo = {
       {
         id: 'heidelberg-west-anchor',
         name: 'Heidelberg West (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [145.037, -37.746],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.0408, -37.7407],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1475,10 +1490,10 @@ export const areaGeo = {
       {
         id: 'keilor-anchor',
         name: 'Keilor (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.828, -37.717],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.827, -37.709],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1488,10 +1503,10 @@ export const areaGeo = {
       {
         id: 'keilor-downs-anchor',
         name: 'Keilor Downs (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.813, -37.728],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8035, -37.7187],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1501,10 +1516,10 @@ export const areaGeo = {
       {
         id: 'keilor-east-anchor',
         name: 'Keilor East (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.867, -37.733],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8564, -37.7361],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1514,10 +1529,10 @@ export const areaGeo = {
       {
         id: 'keysborough-anchor',
         name: 'Keysborough (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [145.172, -37.992],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [145.1657, -38.0101],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1527,10 +1542,10 @@ export const areaGeo = {
       {
         id: 'maidstone-anchor',
         name: 'Maidstone (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.873, -37.783],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8745, -37.7837],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1540,10 +1555,10 @@ export const areaGeo = {
       {
         id: 'maribyrnong-anchor',
         name: 'Maribyrnong (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.888, -37.771],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8859, -37.7714],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1553,11 +1568,11 @@ export const areaGeo = {
     stationPoints: [
       {
         id: 'port-melbourne-anchor',
-        name: 'Port Melbourne (route 109 light rail)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.94, -37.835],
-        source: OSM,
-        verifiedAt: null,
+        name: 'North Port (route 109 light rail)',
+        // Midpoint of the two Transport Victoria GTFS North Port platforms.
+        coordinates: [144.9433, -37.8334],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1567,10 +1582,10 @@ export const areaGeo = {
       {
         id: 'sunshine-north-anchor',
         name: 'Sunshine North (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.832, -37.767],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8362, -37.7634],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1580,10 +1595,10 @@ export const areaGeo = {
       {
         id: 'sunshine-west-anchor',
         name: 'Sunshine West (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.808, -37.797],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8061, -37.7992],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
@@ -1593,10 +1608,10 @@ export const areaGeo = {
       {
         id: 'tullamarine-anchor',
         name: 'Tullamarine (locality anchor)',
-        // PROVISIONAL locality anchor, low precision; replace with the polygon-derived point once the locality is vendored (local Vicmap session).
-        coordinates: [144.881, -37.702],
-        source: OSM,
-        verifiedAt: null,
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8796, -37.703],
+        source: VICMAP,
+        verifiedAt: V3,
       },
     ],
   },
