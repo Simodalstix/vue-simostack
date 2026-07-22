@@ -89,10 +89,6 @@ describe('fit colours', () => {
     })
     expect(state.color).not.toBe(MAP_THEME.unscoredFill)
     expect(state.color).not.toBe(mapFitBandColor(row.weighted))
-    expect(scoreLegend()).toContainEqual({
-      key: 'soul-veto',
-      label: 'Soul veto: excluded',
-      color: MAP_THEME.vetoFill,
-    })
+    expect(scoreLegend()).not.toContainEqual(expect.objectContaining({ key: 'soul-veto' }))
   })
 })

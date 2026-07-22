@@ -96,18 +96,12 @@ export function computeAreaState(rows, indexById) {
   return state
 }
 
-// Legend rows: the fixed fit bands plus the non-ranking Soul state.
+// Legend rows: the fixed fit bands only. Soul vetoes remain visually distinct
+// on the map, but do not need a separate Fit Score legend entry.
 export function scoreLegend() {
-  return [
-    ...FIT_BANDS.map((band) => ({
-      ...band,
-      color: mapFitBandColor(band),
-      label: `${band.label}: ${band.rangeLabel}`,
-    })),
-    {
-      key: 'soul-veto',
-      label: 'Soul veto: excluded',
-      color: MAP_THEME.vetoFill,
-    },
-  ]
+  return FIT_BANDS.map((band) => ({
+    ...band,
+    color: mapFitBandColor(band),
+    label: `${band.label}: ${band.rangeLabel}`,
+  }))
 }
