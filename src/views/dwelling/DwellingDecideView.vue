@@ -290,15 +290,11 @@ const effectiveWeights = computed(() =>
   ),
 )
 
-// Loose limits beyond the strategy's own: the map is for tuning, not hard
-// filtering. Intrinsic gates (over 65 min, >1 transfer, no second bedroom)
-// still apply inside useAreaRanking.
+// No price/commute/dwelling-type reject gates any more (July 2026): every
+// scored record is coloured by its weighted score. `strategy` selects the
+// weighting lens and which VGV median Cost reads; `soulEnabled` is the one
+// remaining gate, the owner's explicit veto.
 const areaFilters = computed(() => ({
-  maxPrice: activeStrategy.value.filters.maxPrice,
-  maxCommute: 90,
-  maxStationWalk: 20,
-  minBedrooms: activeStrategy.value.filters.minBedrooms,
-  dwellingTypes: activeStrategy.value.filters.dwellingTypes,
   strategy: activeStrategy.value,
   includeStretch: true,
   soulEnabled: soulEnabled.value,
@@ -314,8 +310,7 @@ const mapFeatures = {
 }
 
 // Deep-link the active suburb via ?area=. Read once on mount, then mirror
-// changes into the query. A rejected suburb stays selected (it is still in the
-// set, just gated) — we only clear an id that matches no record at all.
+// changes into the query. We only clear an id that matches no record at all.
 const route = useRoute()
 const router = useRouter()
 onMounted(() => {
