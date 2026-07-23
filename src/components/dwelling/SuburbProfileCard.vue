@@ -41,6 +41,16 @@
               >
                 {{ scoreDisplay(row) }}
               </span>
+              <span v-if="headerChips.length" class="inline-flex items-center gap-1.5">
+                <span
+                  v-for="chip in headerChips"
+                  :key="chip.key"
+                  class="inline-flex items-center"
+                  :title="chip.text"
+                >
+                  <DecisionSignalIcon :kind="chip.key" :label="chip.text" />
+                </span>
+              </span>
               <span
                 v-if="prestige"
                 class="inline-flex items-center rounded-full border border-ob-purple/45 bg-ob-purple/12 px-2 py-[3px] font-mono text-[9.5px] uppercase tracking-[0.08em] text-ob-purple"
@@ -55,22 +65,12 @@
             >
               {{ headerNote }}
             </p>
-            <div v-if="headerChips.length || gateChip" class="flex flex-wrap gap-1.5">
+            <div v-if="gateChip" class="flex flex-wrap gap-1.5">
               <span
-                v-if="gateChip"
                 class="border px-2 py-[3px] font-mono text-[9.5px] leading-none"
                 :class="[chipClass(gateChip), chipShapeClass(gateChip)]"
               >
                 {{ gateChip.text }}
-              </span>
-              <span
-                v-for="chip in headerChips"
-                :key="chip.key"
-                class="inline-flex items-center border p-1 font-mono leading-none"
-                :class="[chipClass(chip), chipShapeClass(chip)]"
-                :title="chip.text"
-              >
-                <DecisionSignalIcon :kind="chip.key" :label="chip.text" />
               </span>
             </div>
           </div>

@@ -64,39 +64,51 @@
             </p>
           </div>
           <div class="shrink-0 text-right">
-            <span
-              v-if="isRankedRow(previewRow)"
-              class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
-              :style="scoreBadgeStyle(previewRow)"
-              :title="bandLabel(previewRow)"
-            >
-              <span class="text-[12px] font-bold leading-none text-ob-sand"
-                >#{{ rankById[previewRow.rec.id] }}</span
-              >
-              <span class="text-[10px] text-ob-faint">·</span>
+            <div class="flex items-center justify-end gap-1.5">
               <span
-                class="text-[11px] font-extrabold leading-none"
-                :style="{ color: bandColor(previewRow) }"
-                >{{ scoreDisplay(previewRow) }}</span
+                v-if="isRankedRow(previewRow)"
+                class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
+                :style="scoreBadgeStyle(previewRow)"
+                :title="bandLabel(previewRow)"
               >
-            </span>
-            <span
-              v-else-if="isVetoedRow(previewRow)"
-              class="inline-flex items-baseline gap-1.5 font-mono text-ob-dim"
-            >
-              <span class="text-[12px] font-bold leading-none">Veto</span>
-              <span class="text-[10px] text-ob-faint">·</span>
-              <span class="text-[11px] font-extrabold leading-none">{{ previewRow.weighted }}</span>
-            </span>
-            <span
-              v-else
-              class="inline-flex rounded-full border border-ob-sand/30 bg-ob-sand/8 px-2 py-[3px] font-mono text-[11px] uppercase tracking-[0.06em] text-ob-sand"
-            >
-              unscored
-            </span>
+                <span class="text-[12px] font-bold leading-none text-ob-sand"
+                  >#{{ rankById[previewRow.rec.id] }}</span
+                >
+                <span class="text-[10px] text-ob-faint">·</span>
+                <span
+                  class="text-[11px] font-extrabold leading-none"
+                  :style="{ color: bandColor(previewRow) }"
+                  >{{ scoreDisplay(previewRow) }}</span
+                >
+              </span>
+              <span
+                v-else-if="isVetoedRow(previewRow)"
+                class="inline-flex items-baseline gap-1.5 font-mono text-ob-dim"
+              >
+                <span class="text-[12px] font-bold leading-none">Veto</span>
+                <span class="text-[10px] text-ob-faint">·</span>
+                <span class="text-[11px] font-extrabold leading-none">{{
+                  previewRow.weighted
+                }}</span>
+              </span>
+              <span
+                v-else
+                class="inline-flex rounded-full border border-ob-sand/30 bg-ob-sand/8 px-2 py-[3px] font-mono text-[11px] uppercase tracking-[0.06em] text-ob-sand"
+              >
+                unscored
+              </span>
+              <span
+                v-for="signal in rankSignals(previewRow)"
+                :key="signal.key"
+                class="inline-flex items-center"
+                :title="signal.text"
+              >
+                <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
+              </span>
+            </div>
             <span
               v-if="isPrestigeRow(previewRow)"
-              class="inline-flex rounded-full border border-ob-purple/45 bg-ob-purple/12 px-2 py-[3px] font-mono text-[10px] uppercase tracking-[0.06em] text-ob-purple"
+              class="mt-1 inline-flex rounded-full border border-ob-purple/45 bg-ob-purple/12 px-2 py-[3px] font-mono text-[10px] uppercase tracking-[0.06em] text-ob-purple"
             >
               {{ PRESTIGE_LABEL }}
             </span>
@@ -139,37 +151,13 @@
           </div>
         </div>
 
-        <div class="mt-auto flex items-end gap-3">
-          <div class="flex flex-wrap gap-1.5">
-            <span
-              v-if="gateChip(previewRow)"
-              class="rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
-              :class="chipClass(gateChip(previewRow))"
-            >
-              {{ gateChip(previewRow).text }}
-            </span>
-            <span
-              v-for="signal in rankSignals(previewRow)"
-              :key="signal.key"
-              class="rank-pill inline-flex items-center border p-1 font-mono leading-none"
-              :class="[chipClass(signal), chipShapeClass(signal)]"
-              :title="signal.text"
-            >
-              <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
-            </span>
-          </div>
-          <div class="ml-auto flex flex-wrap justify-end gap-1.5">
-            <span
-              v-for="badge in contextBadges(previewRow)"
-              :key="badge.key"
-              class="rank-pill context-pill inline-flex items-center rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
-              :class="chipClass(badge)"
-              :title="badge.title"
-            >
-              {{ badge.text }}
-            </span>
-          </div>
-        </div>
+        <span
+          v-if="gateChip(previewRow)"
+          class="mt-auto self-start rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
+          :class="chipClass(gateChip(previewRow))"
+        >
+          {{ gateChip(previewRow).text }}
+        </span>
       </button>
 
       <ul
@@ -214,13 +202,23 @@
                     <span class="flex-1 truncate text-[12.5px] font-semibold text-ob-text">
                       {{ row.rec.suburb }}
                     </span>
-                    <span
-                      class="shrink-0 font-mono text-[11px] font-extrabold leading-none"
-                      :style="{ color: bandColor(row) }"
-                      :title="bandLabel(row)"
-                    >
-                      {{ scoreDisplay(row) }}
-                    </span>
+                    <div class="flex shrink-0 items-center gap-1.5">
+                      <span
+                        v-for="signal in rankSignals(row)"
+                        :key="signal.key"
+                        class="inline-flex items-center text-ob-sand"
+                        :title="signal.text"
+                      >
+                        <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
+                      </span>
+                      <span
+                        class="ml-0.5 font-mono text-[12px] font-extrabold leading-none"
+                        :style="{ color: bandColor(row) }"
+                        :title="bandLabel(row)"
+                      >
+                        {{ scoreDisplay(row) }}
+                      </span>
+                    </div>
                   </div>
 
                   <p class="mt-0.5 text-[10.5px] leading-snug text-ob-muted2 preview-clamp-1">
@@ -232,40 +230,22 @@
                   >
                     <span>{{ costEvidence(row.rec, true) }}</span>
                     <span>Commute {{ commuteShort(row) }}</span>
-                  </div>
-                  <div
-                    v-if="gateChip(row) || rankSignals(row).length || contextBadges(row).length"
-                    class="mt-1 flex items-end gap-2"
-                  >
-                    <div class="flex flex-wrap gap-1">
-                      <span
-                        v-if="gateChip(row)"
-                        class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                        :class="chipClass(gateChip(row))"
-                      >
-                        {{ gateChip(row).text }}
-                      </span>
-                      <span
-                        v-for="signal in rankSignals(row)"
-                        :key="signal.key"
-                        class="rank-pill inline-flex items-center border p-1 font-mono leading-none"
-                        :class="[chipClass(signal), chipShapeClass(signal)]"
-                        :title="signal.text"
-                      >
-                        <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
-                      </span>
-                    </div>
-                    <div class="ml-auto flex flex-wrap justify-end gap-1">
-                      <span
-                        v-for="badge in contextBadges(row)"
-                        :key="badge.key"
-                        class="rank-pill context-pill inline-flex items-center rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                        :class="chipClass(badge)"
-                        :title="badge.title"
-                      >
-                        {{ badge.text }}
-                      </span>
-                    </div>
+                    <span
+                      v-if="gateChip(row)"
+                      class="rounded-full border px-1.5 py-[2px] text-[9px] leading-none"
+                      :class="chipClass(gateChip(row))"
+                    >
+                      {{ gateChip(row).text }}
+                    </span>
+                    <span
+                      v-for="badge in contextBadges(row)"
+                      :key="badge.key"
+                      class="rank-pill context-pill inline-flex items-center rounded-full border px-1.5 py-[2px] text-[9px] leading-none"
+                      :class="chipClass(badge)"
+                      :title="badge.title"
+                    >
+                      {{ badge.text }}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -464,7 +444,10 @@ function contextBadges(row) {
     key: fact.key,
     text: `${fact.label} ${fact.value}`,
     tone: fact.tone,
-    title: 'Descriptive context; does not affect rank',
+    title:
+      fact.basis === 'birthplace'
+        ? `${fact.label}: country of birth · descriptive context; does not affect rank`
+        : 'Language used at home · descriptive context; does not affect rank',
   }))
 }
 
@@ -483,6 +466,8 @@ function chipClass(chip) {
     pink: 'border-pink-500/35 text-pink-300 bg-pink-500/10',
     green: 'border-emerald-600/50 text-emerald-300 bg-emerald-700/25',
     yellow: 'border-yellow-500/40 text-yellow-300 bg-yellow-500/10',
+    amber: 'border-amber-500/40 text-amber-300 bg-amber-500/10',
+    white: 'border-white/30 text-white bg-white/5',
     rainbow: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
     train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
     commute: 'border-ob-sand/35 text-ob-sand bg-ob-sand/8',
@@ -491,11 +476,6 @@ function chipClass(chip) {
     reject: 'border-red-400/35 text-red-300 bg-red-400/8',
     veto: 'border-ob-sand/20 text-ob-faint bg-ob-sand/5',
   }[chip.tone]
-}
-function chipShapeClass(chip) {
-  return ['friend', 'beach', 'commute', 'schools'].includes(chip.tone)
-    ? 'rounded-[4px]'
-    : 'rounded-full'
 }
 
 // Per-criterion contributions for the preview card: the same value() calls and

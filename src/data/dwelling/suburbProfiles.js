@@ -1453,6 +1453,7 @@ export const suburbProfiles = {
 
   // 'Essendon' — graduated pilot of the 2026-07-21 onboarding batch.
   'essendon-2br': {
+    previewTagline: 'Established station-side apartment living in the inner north-west.',
     lives:
       'Established north-west suburb on the Craigieburn line, one stop pattern through the City Loop. ABS 2021: 21,240 residents, median age 39, a long-standing Italian-Australian community thread.',
     housing:
@@ -1927,6 +1928,7 @@ export const suburbProfiles = {
   },
   // 'Moonee Ponds' — graduated record of the 2026-07-21 onboarding batch.
   'moonee-ponds-2br': {
+    previewTagline: 'Central apartment living with a quick Craigieburn-line commute.',
     lives: 'Moonee Ponds: ABS 2021 records 16,224 residents. Corridor: craigieburn line.',
     housing:
       'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -2205,6 +2207,7 @@ export const suburbProfiles = {
   },
   // 'St Kilda West' — graduated record of the 2026-07-21 onboarding batch.
   'st-kilda-west-2br': {
+    previewTagline: 'Beachside apartment living with trams straight to the CBD.',
     lives: 'St Kilda West: ABS 2021 records 2,951 residents. Corridor: trams 12 / 96.',
     housing:
       'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',

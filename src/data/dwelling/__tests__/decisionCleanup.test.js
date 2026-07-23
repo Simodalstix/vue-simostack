@@ -137,7 +137,7 @@ describe('decision-card pills and context', () => {
     ).toEqual([])
   })
 
-  it('keeps only community percentages in descriptive context with stable colour tones', () => {
+  it('keeps only thresholded community percentages in rank-neutral descriptive context', () => {
     const facts = areaCorridors.flatMap((rec) =>
       decisionContextFor({ rec, commute: rec.commute, status: 'ok', reasons: [] }),
     )
@@ -146,6 +146,8 @@ describe('decision-card pills and context', () => {
     expect(facts.some((fact) => fact.key === 'chinese-community')).toBe(true)
     expect(facts.some((fact) => fact.key === 'vietnamese-community')).toBe(true)
     expect(facts.some((fact) => fact.key === 'south-american-community')).toBe(true)
+    expect(facts.some((fact) => fact.key === 'kiwi-community')).toBe(true)
+    expect(facts.some((fact) => fact.key === 'indian-community')).toBe(true)
     expect(facts.every((fact) => fact.text == null && fact.label && fact.value && fact.tone)).toBe(
       true,
     )
@@ -153,7 +155,23 @@ describe('decision-card pills and context', () => {
     expect(facts.find((fact) => fact.key === 'vietnamese-community')?.tone).toBe('yellow')
     expect(facts.find((fact) => fact.key === 'filipino-community')?.tone).toBe('pink')
     expect(facts.find((fact) => fact.key === 'thai-community')?.tone).toBe('pink')
-    expect(facts.find((fact) => fact.key === 'south-american-community')?.tone).toBe('green')
+    expect(facts.find((fact) => fact.key === 'south-american-community')?.tone).toBe('amber')
+    expect(facts.find((fact) => fact.key === 'kiwi-community')?.tone).toBe('white')
+    expect(facts.find((fact) => fact.key === 'indian-community')?.tone).toBe('yellow')
+    expect(
+      facts.filter((fact) => fact.key === 'thai-community').every((fact) => fact.percentage >= 0.5),
+    ).toBe(true)
+    expect(
+      facts
+        .filter((fact) => fact.key === 'south-american-community')
+        .every((fact) => fact.percentage >= 2.9),
+    ).toBe(true)
+    expect(
+      facts.filter((fact) => fact.key === 'kiwi-community').every((fact) => fact.percentage > 2),
+    ).toBe(true)
+    expect(
+      facts.filter((fact) => fact.key === 'indian-community').every((fact) => fact.percentage > 5),
+    ).toBe(true)
   })
 
   it('uses the first gate reason for reject and conditional exceptions', () => {

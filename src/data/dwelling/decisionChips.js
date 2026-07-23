@@ -6,19 +6,49 @@ import { beachAccessByAreaId } from './beachAccess.js'
 import { chineseLanguageCommunityFor } from './chineseCommunity.js'
 import {
   FILIPINO_COMMUNITY_FULL_BONUS_SHARE,
-  SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE,
-  THAI_COMMUNITY_FULL_BONUS_SHARE,
   VIETNAMESE_COMMUNITY_FULL_BONUS_SHARE,
   filipinoCommunityFor,
   southAmericanCommunityFor,
   thaiCommunityFor,
   vietnameseCommunityFor,
 } from './languageCommunities.js'
+import { communityContextFor } from './communityContext.js'
 import { friendContextFor } from './personalAnchors.js'
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
 
+const THAI_CONTEXT_MIN_SHARE = 0.5
+const SOUTH_AMERICAN_CONTEXT_MIN_SHARE = 2.9
+const KIWI_CONTEXT_MIN_SHARE = 2
+const INDIAN_CONTEXT_MIN_SHARE = 5
+
 function criterionIsActive(weights, key) {
   return weights == null || (weights[key] ?? 0) > 0
+}
+
+// Country-of-birth rows are a published top-country list. Combined areas only
+// surface a percentage when every component SAL includes the country, so a
+// partial list can never masquerade as a complete combined-area percentage.
+function listedBirthplaceShareFor(areaId, countryName) {
+  const context = communityContextFor(areaId)
+  if (!context?.components.length || context.missing.length) return null
+
+  let count = 0
+  let denominator = 0
+  for (const component of context.components) {
+    const measure = component.record.community?.topOverseasCountriesOfBirth?.find(
+      (item) => item.name === countryName,
+    )
+    if (
+      !Number.isFinite(measure?.count) ||
+      !Number.isFinite(measure?.denominator) ||
+      measure.denominator <= 0
+    )
+      return null
+    count += measure.count
+    denominator += measure.denominator
+  }
+
+  return denominator > 0 ? (count / denominator) * 100 : null
 }
 
 export function differentiatingChipsFor(row, weights = null) {
@@ -64,18 +94,20 @@ export function decisionContextFor(row) {
       key: 'chinese-community',
       label: 'Chinese',
       value: `${Math.round(chineseShare)}%`,
+      percentage: chineseShare,
       tone: 'chinese',
     })
   }
 
-  // Same quarter-of-full-bonus threshold as the former community pills, shown with one
-  // decimal because these community shares sit well under 10%.
+  // Context chips are deliberately selective: a percentage is displayed only
+  // where it differentiates the suburb rather than repeating regional noise.
   const vietnameseShare = vietnameseCommunityFor(areaId)?.percentage
   if (vietnameseShare >= VIETNAMESE_COMMUNITY_FULL_BONUS_SHARE / 4) {
     facts.push({
       key: 'vietnamese-community',
       label: 'Vietnamese',
       value: `${vietnameseShare.toFixed(1)}%`,
+      percentage: vietnameseShare,
       tone: 'yellow',
     })
   }
@@ -86,27 +118,54 @@ export function decisionContextFor(row) {
       key: 'filipino-community',
       label: 'Filipino',
       value: `${filipinoShare.toFixed(1)}%`,
+      percentage: filipinoShare,
       tone: 'pink',
     })
   }
 
   const thaiShare = thaiCommunityFor(areaId)?.percentage
-  if (thaiShare >= THAI_COMMUNITY_FULL_BONUS_SHARE / 4) {
+  if (thaiShare >= THAI_CONTEXT_MIN_SHARE) {
     facts.push({
       key: 'thai-community',
       label: 'Thai',
       value: `${thaiShare.toFixed(1)}%`,
+      percentage: thaiShare,
       tone: 'pink',
     })
   }
 
   const southAmericanShare = southAmericanCommunityFor(areaId)?.percentage
-  if (southAmericanShare >= SOUTH_AMERICAN_COMMUNITY_FULL_BONUS_SHARE / 4) {
+  if (southAmericanShare >= SOUTH_AMERICAN_CONTEXT_MIN_SHARE) {
     facts.push({
       key: 'south-american-community',
       label: 'Sth American',
       value: `${southAmericanShare.toFixed(1)}%`,
-      tone: 'green',
+      percentage: southAmericanShare,
+      tone: 'amber',
+    })
+  }
+
+  const kiwiShare = listedBirthplaceShareFor(areaId, 'New Zealand')
+  if (kiwiShare > KIWI_CONTEXT_MIN_SHARE) {
+    facts.push({
+      key: 'kiwi-community',
+      label: 'Kiwi',
+      value: `${kiwiShare.toFixed(1)}%`,
+      percentage: kiwiShare,
+      tone: 'white',
+      basis: 'birthplace',
+    })
+  }
+
+  const indianShare = listedBirthplaceShareFor(areaId, 'India')
+  if (indianShare > INDIAN_CONTEXT_MIN_SHARE) {
+    facts.push({
+      key: 'indian-community',
+      label: 'Indian',
+      value: `${indianShare.toFixed(1)}%`,
+      percentage: indianShare,
+      tone: 'yellow',
+      basis: 'birthplace',
     })
   }
 
