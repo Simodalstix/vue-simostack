@@ -7,7 +7,7 @@
 export const DWELLING_COST_CONTEXT = {
   "dataset": "dwelling-cost-context",
   "methodVersion": "dwelling-cost-v2",
-  "generatedAt": "2026-07-22T11:07:36+00:00",
+  "generatedAt": "2026-07-23T12:15:18+00:00",
   "defaultMaxPrice": 900000,
   "records": [
     {
@@ -6592,6 +6592,512 @@ export const DWELLING_COST_CONTEXT = {
               "bedroomSpecific": false,
               "componentSuburbs": [
                 "Mernda"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "altona-north-2br",
+      "suburb": "Altona North",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 735000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 3.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Altona North"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 960000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Altona North"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "broadmeadows-house",
+      "suburb": "Broadmeadows",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 495000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 10.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Broadmeadows"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 640000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 6.1667,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Broadmeadows"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cairnlea-house",
+      "suburb": "Cairnlea",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 405000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 10.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Cairnlea"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 922000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Cairnlea"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "campbellfield-house",
+      "suburb": "Campbellfield",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 505000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 9.7778,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Campbellfield"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": {
+                "Campbellfield": "^"
+              }
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 699500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 4.1833,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Campbellfield"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "deer-park-house",
+      "suburb": "Deer Park",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 550000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 8.7778,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Deer Park"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 692500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 4.4167,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Deer Park"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "epping-house",
+      "suburb": "Epping",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 515500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 9.5444,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Epping"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 724000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 3.3667,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Epping"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "greenvale-house",
+      "suburb": "Greenvale",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 650000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 5.8333,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Greenvale"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 874000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.3852,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Greenvale"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hoppers-crossing-house",
+      "suburb": "Hoppers Crossing",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 472500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 10.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Hoppers Crossing"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 670000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 5.1667,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Hoppers Crossing"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "roxburgh-park-house",
+      "suburb": "Roxburgh Park",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 501000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 9.8667,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Roxburgh Park"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 701000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 4.1333,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Roxburgh Park"
               ],
               "sourceFiles": [
                 "houses-by-suburb-2015-2025.xlsx"

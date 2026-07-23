@@ -9,7 +9,7 @@
 export const SCHOOL_POINTS_DATASET = {
   "source": "School Locations CSV + School Zones (data.vic.gov.au)",
   "zoneYear": "2027",
-  "generatedAt": "2026-07-22"
+  "generatedAt": "2026-07-23"
 }
 
 export const schoolPoints = [
@@ -341,9 +341,11 @@ export const schoolPoints = [
       -37.8577
     ],
     "areaIds": [
+      "altona-north-2br",
       "newport-house"
     ],
     "zonedFor": [
+      "altona-north-2br",
       "newport-house"
     ]
   },
@@ -636,6 +638,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "broadmeadows-valley-primary-school",
+    "schoolNo": "5098",
+    "name": "Broadmeadows Valley Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.9141,
+      -37.6814
+    ],
+    "areaIds": [
+      "broadmeadows-house"
+    ],
+    "zonedFor": [
+      "broadmeadows-house"
+    ]
+  },
+  {
     "id": "brunswick-east-primary-school",
     "schoolNo": "3179",
     "name": "Brunswick East Primary School",
@@ -789,6 +808,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "bundoora-house"
+    ]
+  },
+  {
+    "id": "cairnlea-park-primary-school",
+    "schoolNo": "1434",
+    "name": "Cairnlea Park Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.788,
+      -37.75885
+    ],
+    "areaIds": [
+      "cairnlea-house"
+    ],
+    "zonedFor": [
+      "cairnlea-house"
     ]
   },
   {
@@ -1145,6 +1181,40 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "dallas-brooks-community-primary-school",
+    "schoolNo": "5546",
+    "name": "Dallas Brooks Community Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.94185,
+      -37.6703
+    ],
+    "areaIds": [
+      "campbellfield-house"
+    ],
+    "zonedFor": [
+      "campbellfield-house"
+    ]
+  },
+  {
+    "id": "deer-park-west-primary-school",
+    "schoolNo": "5032",
+    "name": "Deer Park West Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.76444,
+      -37.772
+    ],
+    "areaIds": [
+      "deer-park-house"
+    ],
+    "zonedFor": [
+      "deer-park-house"
+    ]
+  },
+  {
     "id": "docklands-primary-school",
     "schoolNo": "5573",
     "name": "Docklands Primary School",
@@ -1318,6 +1388,40 @@ export const schoolPoints = [
       "elwood-2br"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "epping-primary-school",
+    "schoolNo": "5551",
+    "name": "Epping Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.02559,
+      -37.64485
+    ],
+    "areaIds": [
+      "epping-house"
+    ],
+    "zonedFor": [
+      "epping-house"
+    ]
+  },
+  {
+    "id": "epping-secondary-college",
+    "schoolNo": "7813",
+    "name": "Epping Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.03343,
+      -37.644
+    ],
+    "areaIds": [
+      "epping-house"
+    ],
+    "zonedFor": [
+      "epping-house"
+    ]
   },
   {
     "id": "essendon-keilor-college",
@@ -1757,6 +1861,40 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "greenvale-primary-school",
+    "schoolNo": "890",
+    "name": "Greenvale Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.88618,
+      -37.63983
+    ],
+    "areaIds": [
+      "greenvale-house"
+    ],
+    "zonedFor": [
+      "greenvale-house"
+    ]
+  },
+  {
+    "id": "greenvale-secondary-college",
+    "schoolNo": "8427",
+    "name": "Greenvale Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.88961,
+      -37.6503
+    ],
+    "areaIds": [
+      "greenvale-house"
+    ],
+    "zonedFor": [
+      "greenvale-house"
+    ]
+  },
+  {
     "id": "greythorn-primary-school",
     "schoolNo": "4694",
     "name": "Greythorn Primary School",
@@ -1819,6 +1957,42 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "heidelberg-3br-townhouse"
+    ]
+  },
+  {
+    "id": "hoppers-crossing-secondary-college",
+    "schoolNo": "8710",
+    "name": "Hoppers Crossing Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.69536,
+      -37.87122
+    ],
+    "areaIds": [
+      "hoppers-crossing-house"
+    ],
+    "zonedFor": [
+      "hoppers-crossing-house"
+    ]
+  },
+  {
+    "id": "hume-central-secondary-college",
+    "schoolNo": "8862",
+    "name": "Hume Central Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.91536,
+      -37.68044
+    ],
+    "areaIds": [
+      "broadmeadows-house",
+      "campbellfield-house"
+    ],
+    "zonedFor": [
+      "broadmeadows-house",
+      "campbellfield-house"
     ]
   },
   {
@@ -3065,6 +3239,40 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "roxburgh-college",
+    "schoolNo": "8407",
+    "name": "Roxburgh College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.93033,
+      -37.63041
+    ],
+    "areaIds": [
+      "roxburgh-park-house"
+    ],
+    "zonedFor": [
+      "roxburgh-park-house"
+    ]
+  },
+  {
+    "id": "roxburgh-park-primary-school",
+    "schoolNo": "5485",
+    "name": "Roxburgh Park Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.9314,
+      -37.63424
+    ],
+    "areaIds": [
+      "roxburgh-park-house"
+    ],
+    "zonedFor": [
+      "roxburgh-park-house"
+    ]
+  },
+  {
     "id": "salesian-college-sunbury",
     "schoolNo": "1299",
     "name": "Salesian College Sunbury",
@@ -3797,6 +4005,25 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "victoria-university-secondary-college",
+    "schoolNo": "8891",
+    "name": "Victoria University Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.79489,
+      -37.75552
+    ],
+    "areaIds": [
+      "cairnlea-house",
+      "deer-park-house"
+    ],
+    "zonedFor": [
+      "cairnlea-house",
+      "deer-park-house"
+    ]
+  },
+  {
     "id": "viewbank-college",
     "schoolNo": "8812",
     "name": "Viewbank College",
@@ -4064,6 +4291,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "wollert-house"
+    ]
+  },
+  {
+    "id": "woodville-primary-school",
+    "schoolNo": "5049",
+    "name": "Woodville Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.69123,
+      -37.88377
+    ],
+    "areaIds": [
+      "hoppers-crossing-house"
+    ],
+    "zonedFor": [
+      "hoppers-crossing-house"
     ]
   },
   {

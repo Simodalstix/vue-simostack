@@ -8,7 +8,7 @@
 
 export const SCHOOL_CONTEXT_DATASET = {
   "zoneYear": "2027",
-  "generatedAt": "2026-07-22"
+  "generatedAt": "2026-07-23"
 }
 
 export const schoolContextByAreaId = {
@@ -1543,5 +1543,107 @@ export const schoolContextByAreaId = {
     ],
     "anchorSource": "station",
     "boundaryFlag": true
+  },
+  "altona-north-2br": {
+    "zonedPrimary": "Bayside P-12 College",
+    "zonedSecondary": "Bayside P-12 College",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "broadmeadows-house": {
+    "zonedPrimary": "Broadmeadows Valley Primary School",
+    "zonedSecondary": "Hume Central Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Broadmeadows Primary School",
+      "Meadows Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Hume Central Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "cairnlea-house": {
+    "zonedPrimary": "Cairnlea Park Primary School",
+    "zonedSecondary": "Victoria University Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Deer Park North Primary School",
+      "University Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "St Albans Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "campbellfield-house": {
+    "zonedPrimary": "Dallas Brooks Community Primary School",
+    "zonedSecondary": "Hume Central Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Campbellfield Heights Primary School",
+      "Coolaroo South Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "deer-park-house": {
+    "zonedPrimary": "Deer Park West Primary School",
+    "zonedSecondary": "Victoria University Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Derrimut Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "epping-house": {
+    "zonedPrimary": "Epping Primary School",
+    "zonedSecondary": "Epping Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Epping Primary School",
+      "Lalor North Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Lalor North Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "greenvale-house": {
+    "zonedPrimary": "Greenvale Primary School",
+    "zonedSecondary": "Greenvale Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Keelonith Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "hoppers-crossing-house": {
+    "zonedPrimary": "Woodville Primary School",
+    "zonedSecondary": "Hoppers Crossing Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Bellbridge Primary School",
+      "Mossfiel Primary School",
+      "Point Cook Prep - Year 9 College"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Point Cook Prep - Year 9 College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "roxburgh-park-house": {
+    "zonedPrimary": "Roxburgh Park Primary School",
+    "zonedSecondary": "Roxburgh College",
+    "alsoInCatchmentPrimary": [
+      "Meadow Heights Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
   }
 }

@@ -1,6 +1,6 @@
 # dwelling-schools outliers — zone year 2027
 
-## Anchors within 150 m of a zone boundary (49)
+## Anchors within 150 m of a zone boundary (52)
 - inner-south-yarra-2br (primary): Toorak Primary School — 23.5 m. Street-level: the zone can flip within the catchment.
 - inner-richmond-2br (primary): Richmond Primary School — 51.9 m. Street-level: the zone can flip within the catchment.
 - inner-collingwood-2br (primary): Collingwood College — 111.3 m. Street-level: the zone can flip within the catchment.
@@ -33,6 +33,8 @@
 - sunshine-north-house (primary): Sunshine North Primary School — 133.7 m. Street-level: the zone can flip within the catchment.
 - templestowe-house (primary): Templestowe Park Primary School — 82.7 m. Street-level: the zone can flip within the catchment.
 - mernda-house (primary): Mernda Central P-12 College — 20.0 m. Street-level: the zone can flip within the catchment.
+- epping-house (primary): Epping Primary School — 25.5 m. Street-level: the zone can flip within the catchment.
+- greenvale-house (primary): Greenvale Primary School — 74.4 m. Street-level: the zone can flip within the catchment.
 - sunshine-station-2br (secondary): Sunshine College — 94.9 m. Street-level: the zone can flip within the catchment.
 - footscray-station-2br (secondary): Footscray High School — 123.9 m. Street-level: the zone can flip within the catchment.
 - northern-rail-value (secondary): Reservoir High School — 0.1 m. Street-level: the zone can flip within the catchment.
@@ -50,6 +52,7 @@
 - bulleen-house (secondary): Viewbank College — 62.1 m. Street-level: the zone can flip within the catchment.
 - coburg-north-house (secondary): John Fawkner Secondary College — 108.5 m. Street-level: the zone can flip within the catchment.
 - heidelberg-west-house (secondary): Charles La Trobe P-12 College — 92.9 m. Street-level: the zone can flip within the catchment.
+- epping-house (secondary): Epping Secondary College — 28.1 m. Street-level: the zone can flip within the catchment.
 
 ## Anchors with no containing zone (0)
 

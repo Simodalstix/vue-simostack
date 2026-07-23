@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-81",
-  "retrievedAt": "2026-07-22",
-  "recordCount": 81,
+  "version": "2021-gcp-sal-extension-90",
+  "retrievedAt": "2026-07-23",
+  "recordCount": 90,
   "records": [
     {
       "id": "yarraville-2br",
@@ -730,6 +730,87 @@
         {
           "suburb": "Mernda",
           "salCode": "21659"
+        }
+      ]
+    },
+    {
+      "id": "altona-north-2br",
+      "salComponents": [
+        {
+          "suburb": "Altona North",
+          "salCode": "20037"
+        }
+      ]
+    },
+    {
+      "id": "broadmeadows-house",
+      "salComponents": [
+        {
+          "suburb": "Broadmeadows",
+          "salCode": "20346"
+        }
+      ]
+    },
+    {
+      "id": "cairnlea-house",
+      "salComponents": [
+        {
+          "suburb": "Cairnlea",
+          "salCode": "20441"
+        }
+      ]
+    },
+    {
+      "id": "campbellfield-house",
+      "salComponents": [
+        {
+          "suburb": "Campbellfield",
+          "salCode": "20455"
+        }
+      ]
+    },
+    {
+      "id": "deer-park-house",
+      "salComponents": [
+        {
+          "suburb": "Deer Park",
+          "salCode": "20729"
+        }
+      ]
+    },
+    {
+      "id": "epping-house",
+      "salComponents": [
+        {
+          "suburb": "Epping",
+          "salCode": "20878"
+        }
+      ]
+    },
+    {
+      "id": "greenvale-house",
+      "salComponents": [
+        {
+          "suburb": "Greenvale",
+          "salCode": "21105"
+        }
+      ]
+    },
+    {
+      "id": "hoppers-crossing-house",
+      "salComponents": [
+        {
+          "suburb": "Hoppers Crossing",
+          "salCode": "21203"
+        }
+      ]
+    },
+    {
+      "id": "roxburgh-park-house",
+      "salComponents": [
+        {
+          "suburb": "Roxburgh Park",
+          "salCode": "22208"
         }
       ]
     }

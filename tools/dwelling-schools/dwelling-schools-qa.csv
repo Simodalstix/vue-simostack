@@ -5,6 +5,8 @@ albert-park-2br,primary,Albert Park Primary School,,286.2,locality-representativ
 albert-park-2br,secondary,Albert Park College,,498.3,locality-representative-point
 albion-house,primary,Albion Primary School,,422.6,station
 albion-house,secondary,Sunshine College,,277.0,station
+altona-north-2br,primary,Bayside P-12 College,,1076.5,station
+altona-north-2br,secondary,Bayside P-12 College,,1076.9,station
 armadale-2br,primary,Armadale Primary School,,414.2,station
 armadale-2br,secondary,Auburn High School,,557.5,station
 ascot-vale-2br,primary,Ascot Vale Primary School,,234.3,station
@@ -39,6 +41,8 @@ braybrook-villa,primary,Sunshine Harvester Primary School,,1.2,station
 braybrook-villa,secondary,Braybrook College,,894.2,station
 brighton-house,primary,Brighton Beach Primary School,,303.9,station
 brighton-house,secondary,Brighton Secondary College,,303.9,station
+broadmeadows-house,primary,Broadmeadows Valley Primary School,,174.3,station
+broadmeadows-house,secondary,Hume Central Secondary College,,165.6,station
 brunswick-east-2br,primary,Brunswick East Primary School,,453.2,locality-representative-point
 brunswick-east-2br,secondary,Northcote High School,,465.0,locality-representative-point
 brunswick-west-2br,primary,Brunswick South West Primary School,,87.1,station
@@ -51,8 +55,12 @@ burnley-2br,primary,Richmond Primary School,,222.8,station
 burnley-2br,secondary,Richmond High School,,458.3,station
 burwood-house,primary,Essex Heights Primary School,,196.6,station
 burwood-house,secondary,Ashwood High School,,668.9,station
+cairnlea-house,primary,Cairnlea Park Primary School,,523.0,station
+cairnlea-house,secondary,Victoria University Secondary College,,271.8,station
 camberwell-2br,primary,Camberwell Primary School,,193.0,station
 camberwell-2br,secondary,Camberwell High School,,357.9,station
+campbellfield-house,primary,Dallas Brooks Community Primary School,,654.9,station
+campbellfield-house,secondary,Hume Central Secondary College,,1202.5,station
 carlton-2br,primary,Carlton Gardens Primary School,,151.2,locality-representative-point
 carlton-2br,secondary,University High School,,319.0,locality-representative-point
 carlton-north-2br,primary,Carlton North Primary School,,76.9,locality-representative-point
@@ -67,6 +75,8 @@ craigieburn-townhouse,primary,Craigieburn South Primary School,,782.9,station
 craigieburn-townhouse,secondary,Craigieburn Secondary College,,1213.7,station
 cremorne-2br,primary,Richmond Primary School,,51.9,station
 cremorne-2br,secondary,Richmond High School,,644.3,station
+deer-park-house,primary,Deer Park West Primary School,,405.8,station
+deer-park-house,secondary,Victoria University Secondary College,,1153.8,station
 docklands-2br,primary,Docklands Primary School,,538.3,station
 docklands-2br,secondary,University High School,,544.9,station
 doncaster-villa,primary,Birralee Primary School,,266.8,station
@@ -83,6 +93,8 @@ eltham-north-house,primary,Eltham North Primary School,,67.2,station
 eltham-north-house,secondary,St Helena Secondary College,,886.2,station
 elwood-2br,primary,St Kilda Primary School,,448.5,station
 elwood-2br,secondary,Elwood College,,841.8,station
+epping-house,primary,Epping Primary School,,25.5,station
+epping-house,secondary,Epping Secondary College,,28.1,station
 essendon-2br,primary,Essendon Primary School,,525.8,station
 essendon-2br,secondary,Buckley Park College,,143.2,station
 essendon-west-house,primary,Aberfeldie Primary School,,704.2,station
@@ -105,6 +117,8 @@ gardenvale-house,primary,Elsternwick Primary School,,228.2,station
 gardenvale-house,secondary,Elwood College,,306.6,station
 glen-waverley-2br,primary,Glen Waverley Primary School,,570.8,station
 glen-waverley-2br,secondary,Glen Waverley Secondary College,,919.8,station
+greenvale-house,primary,Greenvale Primary School,,74.4,station
+greenvale-house,secondary,Greenvale Secondary College,,2523.2,station
 growth-corridor-stress-test,primary,Baden Powell P-9 College,,4.6,station
 growth-corridor-stress-test,secondary,Baden Powell P-9 College,,3.8,station
 hawthorn-2br,primary,Hawthorn West Primary School,,254.0,station
@@ -115,6 +129,8 @@ heidelberg-3br-townhouse,primary,Heidelberg Primary School,,610.0,station
 heidelberg-3br-townhouse,secondary,Viewbank College,,136.3,station
 heidelberg-west-house,primary,Charles La Trobe P-12 College,,624.7,station
 heidelberg-west-house,secondary,Charles La Trobe P-12 College,,92.9,station
+hoppers-crossing-house,primary,Woodville Primary School,,323.4,station
+hoppers-crossing-house,secondary,Hoppers Crossing Secondary College,,511.3,station
 inner-abbotsford-2br,primary,Collingwood College,,111.3,station
 inner-abbotsford-2br,secondary,Collingwood College,,530.5,station
 inner-collingwood-2br,primary,Collingwood College,,111.3,station
@@ -183,6 +199,8 @@ rockbank-house,primary,Rockbank Primary School,,572.8,station
 rockbank-house,secondary,Yarrabing Secondary College,,828.6,station
 rosanna-house,primary,Rosanna Primary School,,95.5,station
 rosanna-house,secondary,Charles La Trobe P-12 College,,79.4,station
+roxburgh-park-house,primary,Roxburgh Park Primary School,,668.6,station
+roxburgh-park-house,secondary,Roxburgh College,,1866.9,station
 se-value-corridor,primary,Springvale Rise Primary School,,391.5,station
 se-value-corridor,secondary,Westall Secondary College,,300.9,station
 seddon-westfootscray-villa,primary,Footscray City Primary School,,12.0,station

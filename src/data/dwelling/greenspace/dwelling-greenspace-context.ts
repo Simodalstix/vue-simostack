@@ -367,6 +367,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "altona-north-2br",
+      "displayName": "Altona North",
+      "salSuburbs": [
+        "Altona North"
+      ],
+      "salCodes": [
+        "20037"
+      ],
+      "greenspace": 8.9026,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.2855,
+        "majorParkAccess": 8.8012,
+        "natureCorridorAccess": 8.0977
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 88.2,
+        "representedPopulation": 12895,
+        "sampledMeshBlocks": 110
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 188,
+          "majorPark": 586,
+          "natureCorridor": 743
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Kororoit Creek Flood Plains, Cherry Lake",
+            "areaHa": 151.78
+          },
+          {
+            "name": "Altona Coastal Park",
+            "areaHa": 67.33
+          },
+          {
+            "name": "Laverton Grasslands Flora Reserve",
+            "areaHa": 48.56
+          },
+          {
+            "name": "Jawbone Coastal Reserve",
+            "areaHa": 34.46
+          },
+          {
+            "name": "Newport Lakes",
+            "areaHa": 33.43
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Kororoit Creek Flood Plains, Cherry Lake",
+            "areaHa": 151.78
+          },
+          {
+            "name": "Laverton Grasslands Flora Reserve",
+            "areaHa": 97.12
+          },
+          {
+            "name": "Altona Coastal Park",
+            "areaHa": 67.33
+          },
+          {
+            "name": "Jawbone Flora and Fauna Reserve",
+            "areaHa": 41.42
+          },
+          {
+            "name": "Jawbone Coastal Reserve",
+            "areaHa": 34.46
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.5,
+        "componentSpread": 1.2,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "armadale-2br",
       "displayName": "Armadale",
       "salSuburbs": [
@@ -1837,6 +1925,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "broadmeadows-house",
+      "displayName": "Broadmeadows",
+      "salSuburbs": [
+        "Broadmeadows"
+      ],
+      "salCodes": [
+        "20346"
+      ],
+      "greenspace": 9.3995,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.1196,
+        "majorParkAccess": 9.6246,
+        "natureCorridorAccess": 9.7614
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 86.6,
+        "representedPopulation": 12444,
+        "sampledMeshBlocks": 93
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 147,
+          "majorPark": 289,
+          "natureCorridor": 237
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Broadmeadows Valley Park",
+            "areaHa": 164.84
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 73.96
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland and Jacana Reserve",
+            "areaHa": 41.4
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland",
+            "areaHa": 32.85
+          },
+          {
+            "name": "Merlynston Creek Corridor",
+            "areaHa": 25.1
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Broadmeadows Valley Park",
+            "areaHa": 163.0
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 64.56
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland and Jacana Reserve",
+            "areaHa": 41.4
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland",
+            "areaHa": 32.85
+          },
+          {
+            "name": "Merlynston Creek Corridor",
+            "areaHa": 25.1
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.4,
+        "componentSpread": 0.6,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "upfield-corridor",
       "displayName": "Brunswick / Coburg",
       "salSuburbs": [
@@ -2455,6 +2631,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "cairnlea-house",
+      "displayName": "Cairnlea",
+      "salSuburbs": [
+        "Cairnlea"
+      ],
+      "salCodes": [
+        "20441"
+      ],
+      "greenspace": 9.9872,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.9664,
+        "natureCorridorAccess": 9.9865
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 10029,
+        "sampledMeshBlocks": 74
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 89,
+          "majorPark": 159,
+          "natureCorridor": 157
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 78.29
+          },
+          {
+            "name": "Iramoo Wildflower Grassland Reserve",
+            "areaHa": 32.44
+          },
+          {
+            "name": "Linear Park",
+            "areaHa": 17.9
+          },
+          {
+            "name": "Jones Creek Wetlands",
+            "areaHa": 17.63
+          },
+          {
+            "name": "Creek Area (Gurnung Drive South)",
+            "areaHa": 13.76
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Cairnlea Estate Nature Conservation Reserve",
+            "areaHa": 37.52
+          },
+          {
+            "name": "Iramoo Wildflower Grassland Reserve",
+            "areaHa": 32.44
+          },
+          {
+            "name": "Linear Park",
+            "areaHa": 17.9
+          },
+          {
+            "name": "Jones Creek Wetlands",
+            "areaHa": 17.63
+          },
+          {
+            "name": "Creek Area (Gurnung Drive South)",
+            "areaHa": 13.76
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.9,
+        "componentSpread": 0.0,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "camberwell-2br",
       "displayName": "Camberwell",
       "salSuburbs": [
@@ -2539,6 +2803,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 96.5,
         "componentSpread": 0.3,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "campbellfield-house",
+      "displayName": "Campbellfield",
+      "salSuburbs": [
+        "Campbellfield"
+      ],
+      "salCodes": [
+        "20455"
+      ],
+      "greenspace": 9.6956,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.3667,
+        "natureCorridorAccess": 9.4281
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 96.0,
+        "representedPopulation": 4928,
+        "sampledMeshBlocks": 43
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 166,
+          "majorPark": 456,
+          "natureCorridor": 454
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Galada Tamboore, Merri Creek",
+            "areaHa": 93.93
+          },
+          {
+            "name": "Cooper Street Grasslands - Whittlesea",
+            "areaHa": 63.06
+          },
+          {
+            "name": "Cooper Street Grasslands - Hume",
+            "areaHa": 53.71
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 40.42
+          },
+          {
+            "name": "Northcorp Boulevard Reserve",
+            "areaHa": 23.56
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Galada Tamboore, Merri Creek",
+            "areaHa": 93.93
+          },
+          {
+            "name": "Cooper Street Grasslands - Whittlesea",
+            "areaHa": 63.06
+          },
+          {
+            "name": "maram baba (Merri Creek Park)",
+            "areaHa": 59.3
+          },
+          {
+            "name": "Cooper Street Grasslands - Hume",
+            "areaHa": 53.71
+          },
+          {
+            "name": "bababi marning (Cooper St Grassland Nature Conservation Reserve)",
+            "areaHa": 52.08
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.0,
+        "componentSpread": 0.6,
         "reviewFlags": []
       }
     },
@@ -3331,6 +3683,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "deer-park-house",
+      "displayName": "Deer Park",
+      "salSuburbs": [
+        "Deer Park"
+      ],
+      "salCodes": [
+        "20729"
+      ],
+      "greenspace": 9.896,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.88,
+        "natureCorridorAccess": 9.6602
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 98.9,
+        "representedPopulation": 18124,
+        "sampledMeshBlocks": 161
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 124,
+          "majorPark": 265,
+          "natureCorridor": 370
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 145.58
+          },
+          {
+            "name": "Iramoo Wildflower Grassland Reserve",
+            "areaHa": 32.44
+          },
+          {
+            "name": "Mount Derrimut Nature Conservation Reserve",
+            "areaHa": 30.0
+          },
+          {
+            "name": "Linear Park",
+            "areaHa": 17.9
+          },
+          {
+            "name": "Jones Creek Wetlands",
+            "areaHa": 17.63
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 121.02
+          },
+          {
+            "name": "Ravenhall Nature Conservation Reserve",
+            "areaHa": 120.29
+          },
+          {
+            "name": "Mount Derrimut Nature Conservation Reserve",
+            "areaHa": 60.0
+          },
+          {
+            "name": "Cairnlea Estate Nature Conservation Reserve",
+            "areaHa": 37.52
+          },
+          {
+            "name": "Iramoo Wildflower Grassland Reserve",
+            "areaHa": 32.44
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.9,
+        "componentSpread": 0.3,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "docklands-2br",
       "displayName": "Docklands",
       "salSuburbs": [
@@ -4015,6 +4455,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 99.6,
         "componentSpread": 0.3,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "epping-house",
+      "displayName": "Epping",
+      "salSuburbs": [
+        "Epping"
+      ],
+      "salCodes": [
+        "20878"
+      ],
+      "greenspace": 9.9234,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.8376,
+        "natureCorridorAccess": 9.8604
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 99.2,
+        "representedPopulation": 33415,
+        "sampledMeshBlocks": 292
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 94,
+          "majorPark": 231,
+          "natureCorridor": 212
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Craigieburn Grassland",
+            "areaHa": 343.78
+          },
+          {
+            "name": "Quarry Hills Park",
+            "areaHa": 180.17
+          },
+          {
+            "name": "Galada Tamboore, Merri Creek",
+            "areaHa": 93.93
+          },
+          {
+            "name": "Cooper Street Grasslands - Whittlesea",
+            "areaHa": 63.06
+          },
+          {
+            "name": "Cooper Street Grasslands - Hume",
+            "areaHa": 53.71
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "galgi ngarrk (Craigieburn Grassland Nature Conservation Reserve)",
+            "areaHa": 344.02
+          },
+          {
+            "name": "Craigieburn Grassland",
+            "areaHa": 343.78
+          },
+          {
+            "name": "Quarry Hills Park",
+            "areaHa": 179.62
+          },
+          {
+            "name": "Galada Tamboore, Merri Creek",
+            "areaHa": 93.93
+          },
+          {
+            "name": "Cooper Street Grasslands - Whittlesea",
+            "areaHa": 63.06
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.8,
+        "componentSpread": 0.2,
         "reviewFlags": []
       }
     },
@@ -4784,6 +5312,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
       }
     },
     {
+      "id": "greenvale-house",
+      "displayName": "Greenvale",
+      "salSuburbs": [
+        "Greenvale"
+      ],
+      "salCodes": [
+        "21105"
+      ],
+      "greenspace": 9.0589,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.9427,
+        "majorParkAccess": 8.88,
+        "natureCorridorAccess": 9.6177
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 85.0,
+        "representedPopulation": 21164,
+        "sampledMeshBlocks": 169
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 141,
+          "majorPark": 349,
+          "natureCorridor": 202
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Woodlands Historic Park",
+            "areaHa": 820.65
+          },
+          {
+            "name": "Broadmeadows Valley Park",
+            "areaHa": 149.36
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 57.24
+          },
+          {
+            "name": "Greenvale Public Recreation Reserve",
+            "areaHa": 52.66
+          },
+          {
+            "name": "Greenvale Reservoir Park",
+            "areaHa": 52.26
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Woodlands Historic Park",
+            "areaHa": 1640.47
+          },
+          {
+            "name": "Broadmeadows Valley Park",
+            "areaHa": 148.14
+          },
+          {
+            "name": "Greenvale Reservoir Park",
+            "areaHa": 89.67
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland",
+            "areaHa": 35.61
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 35.21
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.5,
+        "componentSpread": 0.7,
+        "reviewFlags": []
+      }
+    },
+    {
       "id": "hawthorn-2br",
       "displayName": "Hawthorn",
       "salSuburbs": [
@@ -5132,6 +5748,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 99.9,
         "componentSpread": 0.6,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "hoppers-crossing-house",
+      "displayName": "Hoppers Crossing",
+      "salSuburbs": [
+        "Hoppers Crossing"
+      ],
+      "salCodes": [
+        "21203"
+      ],
+      "greenspace": 9.8862,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.7456,
+        "natureCorridorAccess": 9.8127
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 98.0,
+        "representedPopulation": 37157,
+        "sampledMeshBlocks": 356
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 117,
+          "majorPark": 297,
+          "natureCorridor": 250
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 73.07
+          },
+          {
+            "name": "Heathdale Glen Orden Recreational Reserve",
+            "areaHa": 40.92
+          },
+          {
+            "name": "Skeleton Creek Drainage Reserve",
+            "areaHa": 26.24
+          },
+          {
+            "name": "Skeleton Creek Linear Reserve",
+            "areaHa": 25.29
+          },
+          {
+            "name": "Federation Trail Linear Reserve",
+            "areaHa": 22.32
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 68.36
+          },
+          {
+            "name": "Skeleton Creek Drainage Reserve",
+            "areaHa": 26.24
+          },
+          {
+            "name": "Skeleton Creek Linear Reserve",
+            "areaHa": 25.29
+          },
+          {
+            "name": "Federation Trail Linear Reserve",
+            "areaHa": 22.32
+          },
+          {
+            "name": "Skeleton Creek Nature Reserve",
+            "areaHa": 16.11
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.8,
+        "componentSpread": 0.3,
         "reviewFlags": []
       }
     },
@@ -7756,6 +8460,94 @@ export const DWELLING_GREENSPACE_CONTEXT = {
         ],
         "residentialPopulationCoveragePct": 99.9,
         "componentSpread": 0.3,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "roxburgh-park-house",
+      "displayName": "Roxburgh Park",
+      "salSuburbs": [
+        "Roxburgh Park"
+      ],
+      "salCodes": [
+        "22208"
+      ],
+      "greenspace": 9.7518,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.1999,
+        "natureCorridorAccess": 9.959
+      },
+      "evidence": {
+        "localOpenSpaceCoveragePct": 98.7,
+        "representedPopulation": 24136,
+        "sampledMeshBlocks": 169
+      },
+      "sourceMetadata": {
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "retrievedAt": "2026-07-19",
+        "distanceMethod": "straight-line",
+        "majorParkThresholdHectares": 5
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 89,
+          "majorPark": 416,
+          "natureCorridor": 161
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Craigieburn Grassland",
+            "areaHa": 324.31
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 45.17
+          },
+          {
+            "name": "Greenvale Reservoir Park",
+            "areaHa": 25.66
+          },
+          {
+            "name": "Lakeside Drive Reserve",
+            "areaHa": 13.1
+          },
+          {
+            "name": "Yuroke Creek Reserve",
+            "areaHa": 12.66
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "galgi ngarrk (Craigieburn Grassland Nature Conservation Reserve)",
+            "areaHa": 344.02
+          },
+          {
+            "name": "Craigieburn Grassland",
+            "areaHa": 324.31
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 27.86
+          },
+          {
+            "name": "Greenvale Reservoir Park",
+            "areaHa": 25.66
+          },
+          {
+            "name": "Lakeside Drive Reserve",
+            "areaHa": 13.1
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.0,
+        "componentSpread": 0.8,
         "reviewFlags": []
       }
     },

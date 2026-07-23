@@ -28,6 +28,7 @@ import { strategies } from './strategies.js'
 const V = '2026-07-13'
 const V2 = '2026-07-21'
 const V3 = '2026-07-22'
+const V4 = '2026-07-23'
 const OSM = 'OpenStreetMap'
 // Vicmap Transport rail_station points (tr_rail_infrastructure) and locality
 // polygons via the Vicmap open-data WFS; CC BY 4.0, (c) State of Victoria.
@@ -1677,6 +1678,123 @@ export const areaGeo = {
         coordinates: [145.101, -37.6025],
         source: TRANSPORT_VICTORIA,
         verifiedAt: V3,
+      },
+    ],
+  },
+  'altona-north-2br': {
+    localityNames: ['Altona North'],
+    stationPoints: [
+      {
+        id: 'altona-north-anchor',
+        name: 'Altona North (locality anchor)',
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8335, -37.8368],
+        source: VICMAP,
+        verifiedAt: V4,
+      },
+    ],
+  },
+  'broadmeadows-house': {
+    localityNames: ['Broadmeadows'],
+    stationPoints: [
+      {
+        id: 'broadmeadows-thursday',
+        name: 'Broadmeadows',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [144.9196, -37.683],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V4,
+      },
+    ],
+  },
+  'cairnlea-house': {
+    localityNames: ['Cairnlea'],
+    stationPoints: [
+      {
+        id: 'cairnlea-anchor',
+        name: 'Cairnlea (locality anchor)',
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.787, -37.7579],
+        source: VICMAP,
+        verifiedAt: V4,
+      },
+    ],
+  },
+  'campbellfield-house': {
+    localityNames: ['Campbellfield'],
+    stationPoints: [
+      {
+        id: 'upfield-thursday',
+        name: 'Upfield',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [144.9467, -37.6661],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V4,
+      },
+    ],
+  },
+  'deer-park-house': {
+    localityNames: ['Deer Park'],
+    stationPoints: [
+      {
+        id: 'deer-park-thursday',
+        name: 'Deer Park',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [144.7711, -37.7773],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V4,
+      },
+    ],
+  },
+  'epping-house': {
+    localityNames: ['Epping'],
+    stationPoints: [
+      {
+        id: 'epping-thursday',
+        name: 'Epping',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [145.0311, -37.6522],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V4,
+      },
+    ],
+  },
+  'greenvale-house': {
+    localityNames: ['Greenvale'],
+    stationPoints: [
+      {
+        id: 'greenvale-anchor',
+        name: 'Greenvale (locality anchor)',
+        // Representative point of the vendored Vicmap locality polygon.
+        coordinates: [144.8733, -37.6348],
+        source: VICMAP,
+        verifiedAt: V4,
+      },
+    ],
+  },
+  'hoppers-crossing-house': {
+    localityNames: ['Hoppers Crossing'],
+    stationPoints: [
+      {
+        id: 'hoppers-crossing-thursday',
+        name: 'Hoppers Crossing',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [144.7007, -37.8834],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V4,
+      },
+    ],
+  },
+  'roxburgh-park-house': {
+    localityNames: ['Roxburgh Park'],
+    stationPoints: [
+      {
+        id: 'roxburgh-park-thursday',
+        name: 'Roxburgh Park',
+        // Transport Victoria GTFS parent station point.
+        coordinates: [144.9354, -37.6382],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V4,
       },
     ],
   },

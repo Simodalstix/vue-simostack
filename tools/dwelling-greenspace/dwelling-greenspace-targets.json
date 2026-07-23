@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-greenspace-targets",
-  "version": "v8-canonical-119-mixed-official-and-derived",
-  "retrievedAt": "2026-07-22",
-  "recordCount": 119,
+  "version": "v9-canonical-128-mixed-official-and-derived",
+  "retrievedAt": "2026-07-23",
+  "recordCount": 128,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -1491,6 +1491,114 @@
         }
       ],
       "censusPopulation2021": 23369
+    },
+    {
+      "id": "altona-north-2br",
+      "displayName": "Altona North",
+      "salComponents": [
+        {
+          "suburb": "Altona North",
+          "salCode": "20037",
+          "censusPopulation2021": 12962
+        }
+      ],
+      "censusPopulation2021": 12962
+    },
+    {
+      "id": "broadmeadows-house",
+      "displayName": "Broadmeadows",
+      "salComponents": [
+        {
+          "suburb": "Broadmeadows",
+          "salCode": "20346",
+          "censusPopulation2021": 12524
+        }
+      ],
+      "censusPopulation2021": 12524
+    },
+    {
+      "id": "cairnlea-house",
+      "displayName": "Cairnlea",
+      "salComponents": [
+        {
+          "suburb": "Cairnlea",
+          "salCode": "20441",
+          "censusPopulation2021": 10038
+        }
+      ],
+      "censusPopulation2021": 10038
+    },
+    {
+      "id": "campbellfield-house",
+      "displayName": "Campbellfield",
+      "salComponents": [
+        {
+          "suburb": "Campbellfield",
+          "salCode": "20455",
+          "censusPopulation2021": 4977
+        }
+      ],
+      "censusPopulation2021": 4977
+    },
+    {
+      "id": "deer-park-house",
+      "displayName": "Deer Park",
+      "salComponents": [
+        {
+          "suburb": "Deer Park",
+          "salCode": "20729",
+          "censusPopulation2021": 18145
+        }
+      ],
+      "censusPopulation2021": 18145
+    },
+    {
+      "id": "epping-house",
+      "displayName": "Epping",
+      "salComponents": [
+        {
+          "suburb": "Epping",
+          "salCode": "20878",
+          "censusPopulation2021": 33489
+        }
+      ],
+      "censusPopulation2021": 33489
+    },
+    {
+      "id": "greenvale-house",
+      "displayName": "Greenvale",
+      "salComponents": [
+        {
+          "suburb": "Greenvale",
+          "salCode": "21105",
+          "censusPopulation2021": 21274
+        }
+      ],
+      "censusPopulation2021": 21274
+    },
+    {
+      "id": "hoppers-crossing-house",
+      "displayName": "Hoppers Crossing",
+      "salComponents": [
+        {
+          "suburb": "Hoppers Crossing",
+          "salCode": "21203",
+          "censusPopulation2021": 37216
+        }
+      ],
+      "censusPopulation2021": 37216
+    },
+    {
+      "id": "roxburgh-park-house",
+      "displayName": "Roxburgh Park",
+      "salComponents": [
+        {
+          "suburb": "Roxburgh Park",
+          "salCode": "22208",
+          "censusPopulation2021": 24129
+        }
+      ],
+      "censusPopulation2021": 24129
     }
   ]
 }

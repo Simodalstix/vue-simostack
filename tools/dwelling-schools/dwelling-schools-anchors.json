@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-22",
+ "generatedAt": "2026-07-23",
  "recipe": "Derived from areaGeo.js stationPoints + areaCorridors.js childhood name hints. Regenerate after adding records; never hand-edit.",
  "records": [
   {
@@ -2877,8 +2877,12 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Templestowe Park Primary School"
+    ],
+    "publicSecondary": [
+     "Templestowe College"
+    ],
     "privateContext": []
    }
   },
@@ -2897,8 +2901,12 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Sydenham Primary School"
+    ],
+    "publicSecondary": [
+     "Copperfield College"
+    ],
     "privateContext": []
    }
   },
@@ -2917,8 +2925,12 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Rockbank Primary School"
+    ],
+    "publicSecondary": [
+     "Yarrabing Secondary College"
+    ],
     "privateContext": []
    }
   },
@@ -2937,8 +2949,12 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Wollert Primary School"
+    ],
+    "publicSecondary": [
+     "Wollert Secondary College"
+    ],
     "privateContext": []
    }
   },
@@ -2957,8 +2973,228 @@
     }
    ],
    "nameHints": {
-    "publicPrimary": [],
-    "publicSecondary": [],
+    "publicPrimary": [
+     "Mernda Central P-12 College"
+    ],
+    "publicSecondary": [
+     "Mernda Central P-12 College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "altona-north-2br",
+   "suburb": "Altona North",
+   "localityNames": [
+    "Altona North"
+   ],
+   "anchors": [
+    {
+     "id": "altona-north-anchor",
+     "name": "Altona North (locality anchor)",
+     "lng": 144.8335,
+     "lat": -37.8368
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Bayside P-12 College"
+    ],
+    "publicSecondary": [
+     "Bayside P-12 College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "broadmeadows-house",
+   "suburb": "Broadmeadows",
+   "localityNames": [
+    "Broadmeadows"
+   ],
+   "anchors": [
+    {
+     "id": "broadmeadows-thursday",
+     "name": "Broadmeadows",
+     "lng": 144.9196,
+     "lat": -37.683
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Broadmeadows Valley Primary School"
+    ],
+    "publicSecondary": [
+     "Hume Central Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "cairnlea-house",
+   "suburb": "Cairnlea",
+   "localityNames": [
+    "Cairnlea"
+   ],
+   "anchors": [
+    {
+     "id": "cairnlea-anchor",
+     "name": "Cairnlea (locality anchor)",
+     "lng": 144.787,
+     "lat": -37.7579
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Cairnlea Park Primary School"
+    ],
+    "publicSecondary": [
+     "Victoria University Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "campbellfield-house",
+   "suburb": "Campbellfield",
+   "localityNames": [
+    "Campbellfield"
+   ],
+   "anchors": [
+    {
+     "id": "upfield-thursday",
+     "name": "Upfield",
+     "lng": 144.9467,
+     "lat": -37.6661
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Dallas Brooks Community Primary School"
+    ],
+    "publicSecondary": [
+     "Hume Central Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "deer-park-house",
+   "suburb": "Deer Park",
+   "localityNames": [
+    "Deer Park"
+   ],
+   "anchors": [
+    {
+     "id": "deer-park-thursday",
+     "name": "Deer Park",
+     "lng": 144.7711,
+     "lat": -37.7773
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Deer Park West Primary School"
+    ],
+    "publicSecondary": [
+     "Victoria University Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "epping-house",
+   "suburb": "Epping",
+   "localityNames": [
+    "Epping"
+   ],
+   "anchors": [
+    {
+     "id": "epping-thursday",
+     "name": "Epping",
+     "lng": 145.0311,
+     "lat": -37.6522
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Epping Primary School"
+    ],
+    "publicSecondary": [
+     "Epping Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "greenvale-house",
+   "suburb": "Greenvale",
+   "localityNames": [
+    "Greenvale"
+   ],
+   "anchors": [
+    {
+     "id": "greenvale-anchor",
+     "name": "Greenvale (locality anchor)",
+     "lng": 144.8733,
+     "lat": -37.6348
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Greenvale Primary School"
+    ],
+    "publicSecondary": [
+     "Greenvale Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "hoppers-crossing-house",
+   "suburb": "Hoppers Crossing",
+   "localityNames": [
+    "Hoppers Crossing"
+   ],
+   "anchors": [
+    {
+     "id": "hoppers-crossing-thursday",
+     "name": "Hoppers Crossing",
+     "lng": 144.7007,
+     "lat": -37.8834
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Woodville Primary School"
+    ],
+    "publicSecondary": [
+     "Hoppers Crossing Secondary College"
+    ],
+    "privateContext": []
+   }
+  },
+  {
+   "id": "roxburgh-park-house",
+   "suburb": "Roxburgh Park",
+   "localityNames": [
+    "Roxburgh Park"
+   ],
+   "anchors": [
+    {
+     "id": "roxburgh-park-thursday",
+     "name": "Roxburgh Park",
+     "lng": 144.9354,
+     "lat": -37.6382
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Roxburgh Park Primary School"
+    ],
+    "publicSecondary": [
+     "Roxburgh College"
+    ],
     "privateContext": []
    }
   }

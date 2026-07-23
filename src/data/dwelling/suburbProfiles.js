@@ -2790,6 +2790,192 @@ export const suburbProfiles = {
         'When the exact station connection and boundary-sensitive primary zone pass address-level checks.',
     },
   },
+  'altona-north-2br': {
+    lives:
+      'Altona North is an established Hobsons Bay suburb represented by its central locality anchor and east-west bus network.',
+    housing:
+      'The proposed product is an established 2BR unit or villa; the official 2025 VGV broad-unit median is $735k.',
+    fit: [
+      {
+        text: 'Census, locality, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'Safety and recreation remain unscored; the bus-to-rail geometry is pocket-dependent.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Testing an inner-west unit proposition beyond the rail-station suburbs.',
+      mainRisk: 'Bus reliability, owners-corporation costs and pocket-level industrial exposure.',
+      pursueWhen: 'When the exact bus trip, title, school zone and low-fee stock all verify.',
+    },
+  },
+  'broadmeadows-house': {
+    lives:
+      'Broadmeadows is an established Hume activity centre with direct Craigieburn-line rail and regional-service context.',
+    housing:
+      'The proposed product is an established 3BR house; the official 2025 VGV broad-house median is $640k.',
+    fit: [
+      {
+        text: 'Census, locality, transport, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'Safety and recreation remain unscored; current school evidence is a material trade-off.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Low house entry cost with a genuine one-seat rail anchor.',
+      mainRisk: 'Street quality and the station walk matter more than the suburb-wide median.',
+      pursueWhen: 'When the exact station route, title, school zone and house condition verify.',
+    },
+  },
+  'cairnlea-house': {
+    lives:
+      'Cairnlea is an established Brimbank estate suburb represented by its central locality and feeder access to Sunbury-line stations.',
+    housing:
+      'The proposed product is an established 3BR house; the official 2025 VGV broad-house median is $922k.',
+    fit: [
+      {
+        text: 'Census, locality, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'The house median crosses the cap; safety and recreation remain unscored.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Testing established western house space against a feeder-bus commute.',
+      mainRisk: 'Above-cap house cost without a station inside the suburb.',
+      pursueWhen: 'When the exact feeder, title, school zone and house stock verify.',
+    },
+  },
+  'campbellfield-house': {
+    lives:
+      'Campbellfield mixes a northern residential pocket near Upfield station with substantial industrial and freight land.',
+    housing:
+      'The proposed product is an established 3BR house; the official 2025 VGV broad-house median is $699.5k.',
+    fit: [
+      {
+        text: 'Census, locality, transport, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'Industrial interfaces, safety and current school evidence are material trade-offs.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'House value with a one-seat Upfield-line option.',
+      mainRisk: 'Industrial exposure can overwhelm an attractive suburb median.',
+      pursueWhen: 'When the exact street, station walk, overlays and school zone verify.',
+    },
+  },
+  'deer-park-house': {
+    lives:
+      'Deer Park is an established Brimbank house market with a rebuilt regional-rail station on the western corridor.',
+    housing:
+      'The proposed product is an established 3BR house; the official 2025 VGV broad-house median is $692.5k.',
+    fit: [
+      {
+        text: 'Census, locality, transport, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      { text: 'Safety and recreation remain unscored.', tag: 'tradeoff' },
+    ],
+    decision: {
+      bestFor: 'Western house value with a direct regional-rail anchor.',
+      mainRisk: 'Regional frequency and arterial-edge street selection.',
+      pursueWhen: 'When the useful service pattern, title and exact school zone verify.',
+    },
+  },
+  'epping-house': {
+    lives:
+      'Epping is a large Whittlesea suburb; this proposition centres on the mature station and services pocket rather than the fringe.',
+    housing:
+      'The proposed product is an established 3BR house; the official 2025 VGV broad-house median is $724k.',
+    fit: [
+      {
+        text: 'Census, locality, transport, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'Both school zones are boundary-sensitive; safety and recreation remain unscored.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Mainstream northern house value with one-seat metro rail.',
+      mainRisk: 'A large suburb label can hide a long feeder trip.',
+      pursueWhen: 'When the exact station connection, title and school zone verify.',
+    },
+  },
+  'greenvale-house': {
+    lives:
+      'Greenvale is an established and growing Hume house market without rail inside the locality.',
+    housing:
+      'The proposed product is a completed 3BR house; the official 2025 VGV broad-house median is $874k.',
+    fit: [
+      {
+        text: 'Census, locality, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'The feeder commute, boundary-sensitive primary zone and unrated young secondary remain material.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Testing larger northern house stock against real feeder dependence.',
+      mainRisk: 'Car dependence and undelivered estate-service promises.',
+      pursueWhen: 'When the exact feeder, delivered services, title and school zone verify.',
+    },
+  },
+  'hoppers-crossing-house': {
+    lives:
+      'Hoppers Crossing is a large established Wyndham suburb with direct Werribee-line rail and broad local services.',
+    housing:
+      'The proposed product is an established 3BR house; the official 2025 VGV broad-house median is $670k.',
+    fit: [
+      {
+        text: 'Census, locality, transport, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'Safety and recreation remain unscored; station access varies sharply by pocket.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Established western house value with one-seat metro rail.',
+      mainRisk: 'The large locality makes station access highly pocket-dependent.',
+      pursueWhen: 'When the exact station connection, house condition and school zone verify.',
+    },
+  },
+  'roxburgh-park-house': {
+    lives:
+      'Roxburgh Park is an established Hume house suburb built around a direct Craigieburn-line station.',
+    housing:
+      'The proposed product is an established 3BR house; the official 2025 VGV broad-house median is $701k.',
+    fit: [
+      {
+        text: 'Census, locality, transport, cost, schools and greenspace evidence are integrated.',
+        tag: null,
+      },
+      {
+        text: 'Safety and recreation remain unscored; current school evidence is a material trade-off.',
+        tag: 'tradeoff',
+      },
+    ],
+    decision: {
+      bestFor: 'Northern house value with a genuine one-seat station anchor.',
+      mainRisk: 'Station access and title conditions vary across estate-era pockets.',
+      pursueWhen: 'When the exact station walk, title and school zone verify.',
+    },
+  },
 }
 
 export function suburbProfileFor(areaId) {
