@@ -13,8 +13,8 @@
         <div class="space-y-3 sm:space-y-4">
           <div class="max-w-3xl">
             <h1 class="text-[22px] sm:text-[24px] md:text-[30px] font-extrabold leading-tight">
-              One place to weigh it all:
-              <span class="text-ob-teal">strategy, location and cost.</span>
+              A place to settle down:
+              <span class="text-ob-teal">comparing Melbourne suburbs.</span>
             </h1>
           </div>
 
