@@ -29,6 +29,13 @@ describe('bonus-only criteria', () => {
     expect(decideCriterionByKey.beach.value(inland)).toBeNull()
   })
 
+  it('awards St Kilda West its direct foreshore access', () => {
+    expect(beachAccessByAreaId['st-kilda-west-2br']).toMatchObject({
+      estMin: 8,
+      mode: 'walk',
+    })
+  })
+
   it('falls back to teen independence when girls sport is unresearched', () => {
     const toorak = areaCorridors.find((record) => record.id === 'toorak-2br')
     expect(decideCriterionByKey.kidAmenity.value(toorak)).toBe(

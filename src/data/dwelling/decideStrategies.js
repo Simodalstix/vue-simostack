@@ -23,7 +23,7 @@
 // omitted rather than scored as zero. `scoringMode: 'additiveBonus'` keeps a
 // criterion outside the standard weighted-mean denominator.
 import { zonedSchoolEvidenceForArea } from './schools/schoolStrength.js'
-import { personalNetworkByAreaId, pnScore } from './personalNetwork.js'
+import { personalNetworkByAreaId } from './personalNetwork.js'
 import { beachAccessByAreaId, beachScore } from './beachAccess.js'
 import { girlsSportFor, sportAccessScore } from './girlsSport.js'
 import { chineseCommunityScore } from './chineseCommunity.js'
@@ -105,7 +105,7 @@ export const decideCriteria = [
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
     accent: 'amber',
-    value: (rec) => pnScore(personalNetworkByAreaId[rec.id]?.distanceKm ?? null),
+    value: (rec) => personalNetworkByAreaId[rec.id]?.score ?? null,
   },
   {
     key: 'chineseCommunity',

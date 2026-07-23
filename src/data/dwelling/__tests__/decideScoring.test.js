@@ -7,7 +7,11 @@ import { describe, it, expect } from 'vitest'
 
 import { decideStrategies, decideCriteria } from '../decideStrategies.js'
 import { areaCorridors } from '../areaCorridors.js'
-import { personalNetworkByAreaId, pnScore } from '../personalNetwork.js'
+import {
+  personalNetworkByAreaId,
+  PERSONAL_NETWORK_SCORE_OVERRIDES,
+  pnScore,
+} from '../personalNetwork.js'
 import {
   CHINESE_COMMUNITY_FULL_BONUS_SHARE,
   chineseCommunityScore,
@@ -259,6 +263,15 @@ describe('personal network data', () => {
       stationAnchorId: null,
       distanceKm: null,
       score: null,
+    })
+  })
+
+  it('does not award Parkville a straight-line bonus for an impractical cross-CBD trip', () => {
+    expect(PERSONAL_NETWORK_SCORE_OVERRIDES['parkville-2br']).toMatchObject({ score: null })
+    expect(personalNetworkByAreaId['parkville-2br']).toMatchObject({
+      distanceKm: expect.any(Number),
+      score: null,
+      scoreOverride: expect.stringContaining('transfer'),
     })
   })
 

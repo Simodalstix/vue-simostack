@@ -140,20 +140,6 @@
               {{ UNSCORED_BANNER }}
             </p>
           </div>
-          <div
-            v-else-if="strategy"
-            class="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-l-2 border-ob-teal/30 pl-2.5"
-          >
-            <p class="font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint">
-              Fit under {{ strategy.label }}
-            </p>
-            <p class="font-mono text-[10.5px] leading-snug" :class="fitClass(row)">
-              {{ fitLine(row) }}
-            </p>
-            <p v-if="strategy.priceNote" class="text-[10px] leading-snug text-ob-faint">
-              {{ strategy.priceNote }}
-            </p>
-          </div>
         </div>
 
         <div class="grid min-h-0 content-start gap-3">
@@ -385,7 +371,6 @@ import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStreng
 import {
   PRESTIGE_LABEL,
   UNSCORED_BANNER,
-  fitLineForRow,
   isPrestigeRow,
   isUnscoredRow,
   isVetoedRow,
@@ -591,17 +576,6 @@ function schoolChips(rec) {
 }
 function friendFor(areaId) {
   return friendContextFor(areaId)
-}
-function fitClass(row) {
-  return {
-    ok: 'text-ob-teal',
-    conditional: 'text-ob-muted',
-    reject: 'text-ob-sand',
-    veto: 'text-ob-faint',
-  }[row.status]
-}
-function fitLine(row) {
-  return fitLineForRow(row, props.strategy?.label)
 }
 </script>
 
