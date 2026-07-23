@@ -29,6 +29,13 @@ describe('bonus-only criteria', () => {
     expect(decideCriterionByKey.beach.value(inland)).toBeNull()
   })
 
+  it('awards St Kilda West its direct foreshore access', () => {
+    expect(beachAccessByAreaId['st-kilda-west-2br']).toMatchObject({
+      estMin: 8,
+      mode: 'walk',
+    })
+  })
+
   it('falls back to teen independence when girls sport is unresearched', () => {
     const toorak = areaCorridors.find((record) => record.id === 'toorak-2br')
     expect(decideCriterionByKey.kidAmenity.value(toorak)).toBe(
@@ -37,7 +44,7 @@ describe('bonus-only criteria', () => {
   })
 
   it('makes every bonus criterion monotonic for every record', () => {
-    const strategy = decideStrategies.find((item) => item.id === 'balanced2br')
+    const strategy = decideStrategies.find((item) => item.id === 'apartment')
     const bonusCriteria = decideCriteria.filter(
       (criterion) => criterion.scoringMode === 'additiveBonus',
     )
@@ -56,10 +63,9 @@ describe('bonus-only criteria', () => {
           rec,
           commute,
           { ...strategy.weights, [criterion.key]: 0 },
-          { maxPrice: strategy.filters.maxPrice, strategy },
+          { strategy },
         )
         const withBonus = weightedScore(rec, commute, strategy.weights, {
-          maxPrice: strategy.filters.maxPrice,
           strategy,
         })
         expect(
@@ -70,13 +76,12 @@ describe('bonus-only criteria', () => {
     }
   })
 
-  it("does not let Balaclava's lower beach bonus reverse Windsor under 2BR Balanced", () => {
-    const strategy = decideStrategies.find((item) => item.id === 'balanced2br')
+  it("does not let Balaclava's lower beach bonus reverse Windsor under Apartment", () => {
+    const strategy = decideStrategies.find((item) => item.id === 'apartment')
     const score = (id) => {
       const rec = areaCorridors.find((record) => record.id === id)
       const commute = scoreCommute(rec.commute?.typical, rec.commute?.transfers)
       return weightedScore(rec, commute, strategy.weights, {
-        maxPrice: strategy.filters.maxPrice,
         strategy,
       })
     }
@@ -84,12 +89,12 @@ describe('bonus-only criteria', () => {
     expect(score('inner-windsor-prahran-2br')).toBeGreaterThanOrEqual(score('balaclava-2br'))
   })
 
-  it('uses the owner-approved balanced 2BR weights and beach premiums', () => {
+  it('uses the owner-approved Apartment weights and beach premiums', () => {
     const beach = decideCriterionByKey.beach
     expect(beach.bonusPointsPerWeight).toBe(2)
-    const balanced = decideStrategies.find((item) => item.id === 'balanced2br')
-    expect(balanced.weights.beach).toBe(2)
-    expect(balanced.weights.commute).toBe(2)
+    const apartment = decideStrategies.find((item) => item.id === 'apartment')
+    expect(apartment.weights.beach).toBe(2)
+    expect(apartment.weights.commute).toBe(2)
     expect(2 * (10 / 10) * beach.bonusPointsPerWeight).toBe(4)
     expect(2 * (7 / 10) * beach.bonusPointsPerWeight).toBe(2.8)
     expect(2 * (4 / 10) * beach.bonusPointsPerWeight).toBe(1.6)
@@ -106,11 +111,11 @@ describe('decision-card pills and context', () => {
   })
 
   it('keeps only active rank inputs in pills', () => {
-    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const apartment = decideStrategies.find((strategy) => strategy.id === 'apartment')
     const chips = areaCorridors.flatMap((rec) =>
       differentiatingChipsFor(
         { rec, commute: rec.commute, status: 'ok', reasons: [] },
-        balanced.weights,
+        apartment.weights,
       ),
     )
     const texts = chips.map((chip) => chip.text)
@@ -184,10 +189,10 @@ describe('cost scoring', () => {
   })
 
   it('reads the strategy product median with no bedroom proxy', () => {
-    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
-    const family = decideStrategies.find((strategy) => strategy.id === 'family3br')
-    const armadale = costMetricForArea('armadale-2br', balanced)
-    const ivanhoe = costMetricForArea('ivanhoe-house', family)
+    const apartment = decideStrategies.find((strategy) => strategy.id === 'apartment')
+    const house = decideStrategies.find((strategy) => strategy.id === 'house')
+    const armadale = costMetricForArea('armadale-2br', apartment)
+    const ivanhoe = costMetricForArea('ivanhoe-house', house)
 
     // Unit strategy reads the all-unit median; house strategy the all-house
     // median. No bedrooms, no proxy flag — the VGV data has no bedroom split.

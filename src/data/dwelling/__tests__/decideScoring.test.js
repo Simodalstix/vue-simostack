@@ -7,7 +7,11 @@ import { describe, it, expect } from 'vitest'
 
 import { decideStrategies, decideCriteria } from '../decideStrategies.js'
 import { areaCorridors } from '../areaCorridors.js'
-import { personalNetworkByAreaId, pnScore } from '../personalNetwork.js'
+import {
+  personalNetworkByAreaId,
+  PERSONAL_NETWORK_SCORE_OVERRIDES,
+  pnScore,
+} from '../personalNetwork.js'
 import {
   CHINESE_COMMUNITY_FULL_BONUS_SHARE,
   chineseCommunityScore,
@@ -67,14 +71,8 @@ function allSubsets(keys) {
 }
 
 describe('preset weight vectors', () => {
-  it('ships the five strategies with weights over exactly the nine live criteria', () => {
-    expect(decideStrategies.map((s) => s.id)).toEqual([
-      'balanced2br',
-      'bachelor1br',
-      'family3br',
-      'house',
-      'villaTownhouse',
-    ])
+  it('ships the two source-backed product strategies with weights over exactly the nine live criteria', () => {
+    expect(decideStrategies.map((s) => s.id)).toEqual(['apartment', 'house'])
     const keys = decideCriteria.map((c) => c.key).sort()
     expect(keys).toHaveLength(9)
     expect(keys).not.toContain('safetyQuality')
@@ -89,22 +87,17 @@ describe('preset weight vectors', () => {
     }
   })
 
-  it('uses the standalone House preset for established three-bedroom stock', () => {
+  it('uses the House preset for the all-house product median', () => {
     const house = decideStrategies.find((strategy) => strategy.id === 'house')
     expect(house).toMatchObject({
       label: 'House',
-      dwelling: 'Established 3BR house',
-      bedrooms: 3,
+      dwelling: 'House',
       pricePropertyType: 'house',
-      filters: {
-        minBedrooms: 3,
-        dwellingTypes: ['house'],
-      },
     })
+    expect(house).not.toHaveProperty('bedrooms')
+    expect(house).not.toHaveProperty('filters')
     // No price cap any more; Cost is the dominant weight in this lens.
-    expect(house.filters.maxPrice).toBeUndefined()
     expect(house.weights.cost).toBeGreaterThan(house.weights.commute)
-    expect(house.priceNote).toBeNull()
   })
 
   it('keeps the community personal lenses off by default', () => {
@@ -166,8 +159,8 @@ describe('score robustness', () => {
   })
 
   it('keeps every gate status unchanged when any one criterion is toggled off', () => {
-    const strategy = decideStrategies.find((item) => item.id === 'balanced2br')
-    const filters = { ...strategy.filters, includeStretch: true }
+    const strategy = decideStrategies.find((item) => item.id === 'apartment')
+    const filters = { includeStretch: true, strategy }
     const allOn = useAreaRanking(areaCorridors, filters, strategy.weights).value
     const statusById = Object.fromEntries(allOn.map((row) => [row.rec.id, row.status]))
     // Pending-evidence records (scored: false) sit outside the ranking and
@@ -262,8 +255,17 @@ describe('personal network data', () => {
     })
   })
 
+  it('does not award Parkville a straight-line bonus for an impractical cross-CBD trip', () => {
+    expect(PERSONAL_NETWORK_SCORE_OVERRIDES['parkville-2br']).toMatchObject({ score: null })
+    expect(personalNetworkByAreaId['parkville-2br']).toMatchObject({
+      distanceKm: expect.any(Number),
+      score: null,
+      scoreOverride: expect.stringContaining('transfer'),
+    })
+  })
+
   it('changes scores without changing any gate status', () => {
-    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'apartment')
     const filters = {
       ...balanced.filters,
       maxCommute: 90,
@@ -316,7 +318,7 @@ describe('Chinese-language community personal lens', () => {
   })
 
   it('can only add points when enabled', () => {
-    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'apartment')
     const boxHill = areaCorridors.find((rec) => rec.id === 'box-hill-2br')
     const baseWeights = { ...balanced.weights, chineseCommunity: 0 }
     const enabledWeights = {
@@ -391,7 +393,7 @@ describe('grouped non-Chinese community personal lens', () => {
   })
 
   it('can only add points when enabled', () => {
-    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'apartment')
     const donnybrook = areaCorridors.find((rec) => rec.id === 'donnybrook-house-land')
     const baseWeights = {
       ...balanced.weights,
@@ -444,7 +446,7 @@ describe('Mingle criterion', () => {
   })
 
   it('drops the criterion for a guarded record without touching its base score', () => {
-    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'apartment')
     const burnley = areaCorridors.find((rec) => rec.id === 'burnley-2br')
     const baseWeights = { ...balanced.weights, partnerPool: 0 }
     const enabledWeights = { ...baseWeights, partnerPool: balanced.weights.partnerPool }
@@ -454,7 +456,7 @@ describe('Mingle criterion', () => {
   })
 
   it('can only add points when enabled, bounded by the x2 preset weight', () => {
-    const balanced = decideStrategies.find((strategy) => strategy.id === 'balanced2br')
+    const balanced = decideStrategies.find((strategy) => strategy.id === 'apartment')
     expect(decideStrategies.every((strategy) => strategy.weights.partnerPool === 2)).toBe(true)
     const stKilda = areaCorridors.find((rec) => rec.id === 'st-kilda-2br')
     const baseWeights = { ...balanced.weights, partnerPool: 0 }
@@ -535,18 +537,18 @@ describe('commute distortion fix', () => {
 
 describe('renormalisation semantics', () => {
   const keys = decideCriteria.map((c) => c.key)
-  const balanced = decideStrategies.find((s) => s.id === 'balanced2br')
+  const apartment = decideStrategies.find((s) => s.id === 'apartment')
 
   it('toggling cost off improves a premium suburb (Toorak), never degrades it', () => {
     const toorak = areaCorridors.find((r) => r.id === 'toorak-2br')
     expect(toorak).toBeTruthy()
     const cs = commuteScoreFor(toorak)
-    const withCost = weightedScore(toorak, cs, weightsFor(balanced, keys))
+    const withCost = weightedScore(toorak, cs, weightsFor(apartment, keys))
     const withoutCost = weightedScore(
       toorak,
       cs,
       weightsFor(
-        balanced,
+        apartment,
         keys.filter((k) => k !== 'cost'),
       ),
     )
@@ -554,12 +556,12 @@ describe('renormalisation semantics', () => {
   })
 
   it('switching strategy changes at least some suburb scores', () => {
-    const family = decideStrategies.find((s) => s.id === 'family3br')
+    const house = decideStrategies.find((s) => s.id === 'house')
     const changed = scoredRecords.some((rec) => {
       const cs = commuteScoreFor(rec)
       return (
-        weightedScore(rec, cs, weightsFor(balanced, keys)) !==
-        weightedScore(rec, cs, weightsFor(family, keys))
+        weightedScore(rec, cs, weightsFor(apartment, keys)) !==
+        weightedScore(rec, cs, weightsFor(house, keys))
       )
     })
     expect(changed).toBe(true)
