@@ -11,11 +11,9 @@
       stroke-width="1.8"
       aria-hidden="true"
     >
-      <path d="M4 19h16M7 15c3-1 5 1 8 0 2-.6 3-.5 4 0" />
-      <path d="M11 18c1-4 1-7 .5-10" />
-      <path
-        d="M11.5 8c-2-1.8-3.6-1.5-5-.2M11.5 8c1.4-2.1 3.3-2.4 5-1.2M11.5 8c.1-2.2-1-3.8-2.8-4.5"
-      />
+      <circle cx="7" cy="7" r="2.5" />
+      <path d="M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0" />
+      <path d="M3 19c2-2 4-2 6 0s4 2 6 0 4-2 6 0" />
     </svg>
     <svg
       v-else-if="kind === 'fast-commute'"
@@ -42,7 +40,7 @@
       />
     </svg>
     <svg
-      v-else
+      v-else-if="kind === 'schools'"
       class="h-3.5 w-3.5"
       viewBox="0 0 24 24"
       fill="none"
@@ -52,9 +50,8 @@
       stroke-width="1.8"
       aria-hidden="true"
     >
-      <path
-        d="M4 5.5A3.5 3.5 0 0 1 7.5 2H11v17H7.5A3.5 3.5 0 0 0 4 22V5.5ZM20 5.5A3.5 3.5 0 0 0 16.5 2H13v17h3.5A3.5 3.5 0 0 1 20 22V5.5Z"
-      />
+      <path d="m2.5 9.5 9.5-5 9.5 5-9.5 5-9.5-5Z" />
+      <path d="M6 11.5v4.25c3.5 2.5 8.5 2.5 12 0V11.5M21.5 9.5v6" />
     </svg>
   </span>
 </template>

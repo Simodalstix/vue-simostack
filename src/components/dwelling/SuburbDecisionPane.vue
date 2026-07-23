@@ -139,22 +139,36 @@
           </div>
         </div>
 
-        <div class="mt-auto flex flex-wrap gap-1.5">
-          <span
-            v-for="badge in previewBadges(previewRow)"
-            :key="badge.key"
-            class="rank-pill inline-flex items-center border font-mono text-[10px] leading-none"
-            :class="[
-              badge.className,
-              chipShapeClass(badge),
-              badge.title ? 'context-pill' : null,
-              badge.signal ? 'p-1' : 'px-2 py-[3px]',
-            ]"
-            :title="badge.title"
-          >
-            <DecisionSignalIcon v-if="badge.signal" :kind="badge.key" :label="badge.text" />
-            <template v-else>{{ badge.text }}</template>
-          </span>
+        <div class="mt-auto flex items-end gap-3">
+          <div class="flex flex-wrap gap-1.5">
+            <span
+              v-if="gateChip(previewRow)"
+              class="rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
+              :class="chipClass(gateChip(previewRow))"
+            >
+              {{ gateChip(previewRow).text }}
+            </span>
+            <span
+              v-for="signal in rankSignals(previewRow)"
+              :key="signal.key"
+              class="rank-pill inline-flex items-center border p-1 font-mono leading-none"
+              :class="[chipClass(signal), chipShapeClass(signal)]"
+              :title="signal.text"
+            >
+              <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
+            </span>
+          </div>
+          <div class="ml-auto flex flex-wrap justify-end gap-1.5">
+            <span
+              v-for="badge in contextBadges(previewRow)"
+              :key="badge.key"
+              class="rank-pill context-pill inline-flex items-center rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
+              :class="chipClass(badge)"
+              :title="badge.title"
+            >
+              {{ badge.text }}
+            </span>
+          </div>
         </div>
       </button>
 
@@ -220,31 +234,38 @@
                     <span>Commute {{ commuteShort(row) }}</span>
                   </div>
                   <div
-                    v-if="gateChip(row) || rowBadges(row).length"
-                    class="mt-1 flex flex-wrap gap-1"
+                    v-if="gateChip(row) || rankSignals(row).length || contextBadges(row).length"
+                    class="mt-1 flex items-end gap-2"
                   >
-                    <span
-                      v-if="gateChip(row)"
-                      class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                      :class="chipClass(gateChip(row))"
-                    >
-                      {{ gateChip(row).text }}
-                    </span>
-                    <span
-                      v-for="chip in rowBadges(row)"
-                      :key="chip.key"
-                      class="rank-pill inline-flex items-center border font-mono text-[9px] leading-none"
-                      :class="[
-                        chipClass(chip),
-                        chipShapeClass(chip),
-                        chip.title ? 'context-pill' : null,
-                        chip.signal ? 'p-1' : 'px-1.5 py-[2px]',
-                      ]"
-                      :title="chip.title"
-                    >
-                      <DecisionSignalIcon v-if="chip.signal" :kind="chip.key" :label="chip.text" />
-                      <template v-else>{{ chip.text }}</template>
-                    </span>
+                    <div class="flex flex-wrap gap-1">
+                      <span
+                        v-if="gateChip(row)"
+                        class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                        :class="chipClass(gateChip(row))"
+                      >
+                        {{ gateChip(row).text }}
+                      </span>
+                      <span
+                        v-for="signal in rankSignals(row)"
+                        :key="signal.key"
+                        class="rank-pill inline-flex items-center border p-1 font-mono leading-none"
+                        :class="[chipClass(signal), chipShapeClass(signal)]"
+                        :title="signal.text"
+                      >
+                        <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
+                      </span>
+                    </div>
+                    <div class="ml-auto flex flex-wrap justify-end gap-1">
+                      <span
+                        v-for="badge in contextBadges(row)"
+                        :key="badge.key"
+                        class="rank-pill context-pill inline-flex items-center rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                        :class="chipClass(badge)"
+                        :title="badge.title"
+                      >
+                        {{ badge.text }}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -431,21 +452,20 @@ function previewTagline(row) {
   )
 }
 
-function rowBadges(row) {
-  const rankBadges = differentiatingChipsFor(row, props.weights).map((badge) => ({
+function rankSignals(row) {
+  return differentiatingChipsFor(row, props.weights).map((badge) => ({
     ...badge,
-    signal: true,
     title: badge.text,
   }))
-  const contextBadges = decisionContextFor(row).map((fact) => ({
+}
+
+function contextBadges(row) {
+  return decisionContextFor(row).map((fact) => ({
     key: fact.key,
     text: `${fact.label} ${fact.value}`,
     tone: fact.tone,
     title: 'Descriptive context; does not affect rank',
   }))
-  const leadingRankBadges = rankBadges.filter((badge) => ['friend', 'beach'].includes(badge.key))
-  const trailingRankBadges = rankBadges.filter((badge) => !['friend', 'beach'].includes(badge.key))
-  return [...leadingRankBadges, ...contextBadges, ...trailingRankBadges]
 }
 
 function gateChip(row) {
@@ -457,16 +477,16 @@ function gateChip(row) {
 
 function chipClass(chip) {
   return {
-    friend: 'border-ob-gold-muted/35 text-ob-gold bg-ob-gold-dark/40',
-    beach: 'border-amber-500/35 text-amber-300 bg-amber-500/10',
+    friend: 'border-ob-sand/35 text-ob-sand bg-ob-sand/8',
+    beach: 'border-ob-sand/35 text-ob-sand bg-ob-sand/8',
     chinese: 'border-red-500/35 text-red-300 bg-red-500/10',
     pink: 'border-pink-500/35 text-pink-300 bg-pink-500/10',
     green: 'border-emerald-600/50 text-emerald-300 bg-emerald-700/25',
     yellow: 'border-yellow-500/40 text-yellow-300 bg-yellow-500/10',
     rainbow: 'border-purple-500/40 text-purple-300 bg-purple-500/10',
     train: 'border-ob-sand/20 text-ob-muted2 bg-ob-surface/60',
-    commute: 'border-blue-500/45 text-blue-300 bg-blue-500/10',
-    schools: 'border-ob-purple/30 text-ob-purple bg-ob-purple/8',
+    commute: 'border-ob-sand/35 text-ob-sand bg-ob-sand/8',
+    schools: 'border-ob-sand/35 text-ob-sand bg-ob-sand/8',
     conditional: 'border-ob-sand/30 text-ob-sand bg-ob-sand/8',
     reject: 'border-red-400/35 text-red-300 bg-red-400/8',
     veto: 'border-ob-sand/20 text-ob-faint bg-ob-sand/5',
@@ -513,17 +533,6 @@ function breakdown(row) {
             : `${c.label} ${display}/10 × weight ${props.weights[c.key]}${bonus ? ' · additive bonus' : ''}`,
       }
     })
-}
-
-function previewBadges(row) {
-  const badges = []
-  const exception = isVetoedRow(row) ? null : gateExceptionChipFor(row)
-  if (exception) badges.push(exception)
-  badges.push(...rowBadges(row))
-  return badges.map((badge) => ({
-    ...badge,
-    className: chipClass(badge),
-  }))
 }
 </script>
 
