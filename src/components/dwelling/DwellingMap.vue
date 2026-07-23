@@ -143,6 +143,7 @@ const prefersReducedMotion =
     ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
     : false
 const PERSONAL_LABEL_ZOOM = 11.7
+const DESTINATION_LABEL_ZOOM = 12.2
 
 function buildStyle() {
   return {
@@ -839,8 +840,8 @@ onMounted(() => {
   })
 })
 
-// The commute destination: a compact diamond with a one-word label; the full
-// destination name lives in the native tooltip and the pane, not on the map.
+// The commute destination stays as a compact diamond. Its label appears only
+// once the map is close enough that it no longer competes with suburb context.
 function addDestination() {
   if (!props.destination) return
   const el = document.createElement('div')
@@ -878,10 +879,12 @@ function syncAnchorMarkers() {
 
 function applyAnchorLabelVisibility() {
   if (!map) return
-  const showLabels = map.getZoom() >= PERSONAL_LABEL_ZOOM
+  const zoom = map.getZoom()
+  const showLabels = zoom >= PERSONAL_LABEL_ZOOM
   for (const marker of anchorMarkers) {
     marker.getElement().classList.toggle('labels-visible', showLabels)
   }
+  destinationMarker?.getElement().classList.toggle('labels-visible', zoom >= DESTINATION_LABEL_ZOOM)
 }
 
 onBeforeUnmount(() => {
@@ -1006,6 +1009,10 @@ defineExpose({
   padding: 1px 5px;
   border-radius: 3px;
   white-space: nowrap;
+  display: none;
+}
+.dwelling-map-anchor.labels-visible .lbl {
+  display: inline-block;
 }
 /* Personal network markers: gold, star for friends, pin-dot otherwise. */
 .dwelling-map-personal {
