@@ -428,7 +428,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'Strip life, transport redundancy and a solid school story in one package.',
+      bestFor: 'Lively strip life with rail-and-tram backup and a solid school story.',
       mainRisk: 'Overpaying in auctions driven by buyers wanting exactly what you want.',
       pursueWhen:
         'A quiet-street low-rise 2BR or Coburg villa unit lists off the main-road corridors.',
@@ -514,7 +514,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'Independent inner-city life with the best transport redundancy on the list.',
+      bestFor: 'Independent inner-city life with exceptional transport choice.',
       mainRisk: 'Paying a large location premium for a compromised apartment.',
       pursueWhen: 'A quiet low-rise 2BR with a real second bedroom and manageable OC fees appears.',
     },
@@ -595,7 +595,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'The best walk-up 2BR hunting on the south side, with network and hospital access.',
+      bestFor: 'Southside walk-up hunting with hospital and personal-network access.',
       mainRisk: 'Weekend noise bleed near Chapel St corners.',
       pursueWhen: 'A quiet-street art deco 2BR with a genuine second bedroom lists at fair money.',
     },
@@ -1176,7 +1176,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'A north-east family benchmark prioritising village life, rail and parklands.',
+      bestFor: 'Village, rail and parklands in a balanced north-east family benchmark.',
       mainRisk: 'The requested house product is likely to fail the current purchase-price gates.',
       pursueWhen:
         'Retain for comparison or inspect only if the budget changes or a materially discounted property appears.',
@@ -1203,8 +1203,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor:
-        'A household valuing rail access plus direct proximity to a major hospital employment precinct.',
+      bestFor: 'Rail-connected family living beside a major hospital employment hub.',
       mainRisk:
         'Suitable three-bedroom townhouse stock may be scarce or priced above the provisional band.',
       pursueWhen:
@@ -1231,7 +1230,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'A quieter Hurstbridge-line family option where space and local calm matter.',
+      bestFor: 'Quiet Hurstbridge-line family space with local calm.',
       mainRisk: 'Price remains high and school-zone coverage may not include the entire catchment.',
       pursueWhen:
         'Only where an exact-address check confirms the intended secondary zone and the price trade-off remains acceptable.',
@@ -1257,7 +1256,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'A closer-in compromise between inner-north amenity and north-east parkland access.',
+      bestFor: 'Inner-north amenity meeting north-east parklands and rail.',
       mainRisk: 'House prices are likely to trigger the strategy price gate.',
       pursueWhen:
         'Only when the requested stock falls materially below the prevailing suburb median.',
@@ -1283,8 +1282,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor:
-        'Testing the value of established eastern family amenity against a very high purchase price.',
+      bestFor: 'Established eastern family amenity at a benchmark premium.',
       mainRisk: 'The house product is incompatible with current price filters.',
       pursueWhen: 'Only after a substantial budget change or if the dwelling type is changed.',
     },
@@ -1309,8 +1307,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor:
-        'An eastern family benchmark balancing rail, greenery and somewhat lower prices than inner-east options.',
+      bestFor: 'Leafy eastern family living with rail below the inner-east premium.',
       mainRisk: 'Price and a longer door-to-door commute may outweigh the amenity advantage.',
       pursueWhen:
         'When verified commute and property evidence justify the above-cap purchase price.',
@@ -1336,7 +1333,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'A south-east villa option prioritising schools, community context and direct rail.',
+      bestFor: 'A school-focused villa option with direct south-east rail.',
       mainRisk:
         'Three-bedroom villas may still be too expensive while adding owners-corporation complexity.',
       pursueWhen:
@@ -1363,7 +1360,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'A compact eastern family option where village scale and open-space access matter.',
+      bestFor: 'Compact eastern family living near village shops and open space.',
       mainRisk:
         'There may not be enough suitable three-bedroom villa stock to justify a dedicated record.',
       pursueWhen: 'After a live-listing and settled-sales sample confirms recurring supply.',
@@ -1388,8 +1385,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor:
-        'Comparing a southern family-house and school-zone proposition against villa options.',
+      bestFor: 'A southern house-and-schools benchmark against nearby villa value.',
       mainRisk: 'Price remains severe, and McKinnon zoning applies only to part of the catchment.',
       pursueWhen:
         'Only where an exact-address check confirms McKinnon eligibility and the purchase-price gate is acceptable.',
@@ -1415,8 +1411,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor:
-        'A western family option combining rail, local nature and practical access to a swimming beach.',
+      bestFor: 'Rail-connected western family living near nature and the bay.',
       mainRisk:
         'House pricing remains above current caps, and environmental nuisance varies sharply by street.',
       pursueWhen:
@@ -1535,7 +1530,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'Villa strategies that want a courtyard without leaving the rail corridor.',
+      bestFor: 'Courtyard villa value without leaving the Mernda rail corridor.',
       mainRisk: 'The commute edge: 35 minutes typical becomes 46 stressed.',
       pursueWhen: "A villa unit near Preston or Bell station lists in the band's lower half.",
     },
@@ -1727,16 +1722,27 @@ export const suburbProfiles = {
     },
   },
 
-  // 'Collingwood/Abbotsford' (shared)
-  'inner-collingwood-2br': collingwoodAbbotsford,
-  // 'Collingwood/Abbotsford' (shared)
-  'inner-abbotsford-2br': collingwoodAbbotsford,
-  // 'Chelsea/Bonbeach' (shared)
-  'chelsea-2br': chelseaBonbeach,
-  // 'Chelsea/Bonbeach' (shared)
-  'bonbeach-2br': chelseaBonbeach,
+  // 'Collingwood/Abbotsford' share the full profile, with suburb-specific card copy.
+  'inner-collingwood-2br': {
+    ...collingwoodAbbotsford,
+    previewTagline: 'Smith Street energy and warehouse living with strong inner-city transport.',
+  },
+  'inner-abbotsford-2br': {
+    ...collingwoodAbbotsford,
+    previewTagline: 'Yarra trails and warehouse living with Victoria Park rail access.',
+  },
+  // 'Chelsea/Bonbeach' share the full profile, with suburb-specific card copy.
+  'chelsea-2br': {
+    ...chelseaBonbeach,
+    previewTagline: 'Beach-town value with Frankston-line rail and an easygoing centre.',
+  },
+  'bonbeach-2br': {
+    ...chelseaBonbeach,
+    previewTagline: 'Lower-cost bayside living with sand and rail close at hand.',
+  },
   // 'Fawkner' — graduated record of the 2026-07-21 onboarding batch.
   'fawkner-house': {
+    previewTagline: 'Upfield-line house value with an established northern-suburb feel.',
     lives: 'Fawkner: ABS 2021 records 14,274 residents. Corridor: upfield line.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -1758,6 +1764,7 @@ export const suburbProfiles = {
   },
   // 'Thomastown' — graduated record of the 2026-07-21 onboarding batch.
   'thomastown-house': {
+    previewTagline: 'Family-house space with a direct Mernda-line commute.',
     lives: 'Thomastown: ABS 2021 records 20,234 residents. Corridor: mernda line.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -1779,6 +1786,7 @@ export const suburbProfiles = {
   },
   // 'Bundoora' — graduated record of the 2026-07-21 onboarding batch.
   'bundoora-house': {
+    previewTagline: 'Family-house space anchored by tram 86 and northern parklands.',
     lives: 'Bundoora: ABS 2021 records 28,068 residents. Corridor: tram 86 / bus.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -1800,6 +1808,7 @@ export const suburbProfiles = {
   },
   // 'Viewbank' — graduated record of the 2026-07-21 onboarding batch.
   'viewbank-house': {
+    previewTagline: 'Quiet north-east house living with a feeder link to Heidelberg.',
     lives:
       'Viewbank: ABS 2021 records 7,030 residents. Corridor: bus to heidelberg (hurstbridge line).',
     housing:
@@ -1822,6 +1831,7 @@ export const suburbProfiles = {
   },
   // 'Watsonia' — graduated record of the 2026-07-21 onboarding batch.
   'watsonia-house': {
+    previewTagline: 'Rail-side family houses with Hurstbridge-line access and open space.',
     lives: 'Watsonia: ABS 2021 records 5,352 residents. Corridor: hurstbridge line.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -1843,6 +1853,7 @@ export const suburbProfiles = {
   },
   // 'Eltham' — graduated record of the 2026-07-21 onboarding batch.
   'eltham-house': {
+    previewTagline: 'Leafy village house living at the end of the Hurstbridge line.',
     lives: 'Eltham: ABS 2021 records 18,847 residents. Corridor: hurstbridge line.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -1864,6 +1875,7 @@ export const suburbProfiles = {
   },
   // 'Williamstown' — graduated record of the 2026-07-21 onboarding batch.
   'williamstown-house': {
+    previewTagline: 'Bayside family-house living with its own rail branch.',
     lives: 'Williamstown: ABS 2021 records 14,407 residents. Corridor: williamstown line.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -1885,6 +1897,7 @@ export const suburbProfiles = {
   },
   // 'Point Cook' — graduated record of the 2026-07-21 onboarding batch.
   'point-cook-house': {
+    previewTagline: 'Family-house scale with a feeder trip to Williams Landing.',
     lives:
       'Point Cook: ABS 2021 records 66,781 residents. Corridor: bus to williams landing (werribee line).',
     housing:
@@ -1907,6 +1920,7 @@ export const suburbProfiles = {
   },
   // 'Werribee' — graduated record of the 2026-07-21 onboarding batch.
   'werribee-house': {
+    previewTagline: 'Lower-cost house space with direct Werribee-line rail.',
     lives: 'Werribee: ABS 2021 records 50,027 residents. Corridor: werribee line.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -1950,6 +1964,7 @@ export const suburbProfiles = {
   },
   // 'Eltham North' — graduated record of the 2026-07-21 onboarding batch.
   'eltham-north-house': {
+    previewTagline: 'Leafy family-house space with a bus connection to Eltham rail.',
     lives:
       'Eltham North: ABS 2021 records 6,830 residents. Corridor: bus to eltham (hurstbridge line).',
     housing:
@@ -1972,6 +1987,7 @@ export const suburbProfiles = {
   },
   // 'Essendon West' — graduated record of the 2026-07-21 onboarding batch.
   'essendon-west-house': {
+    previewTagline: 'Quiet family-house living with Essendon rail reached by bus.',
     lives: 'Essendon West: ABS 2021 records 1,559 residents. Corridor: bus routes.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -1993,6 +2009,7 @@ export const suburbProfiles = {
   },
   // 'Watsonia North' — graduated record of the 2026-07-21 onboarding batch.
   'watsonia-north-house': {
+    previewTagline: 'Family-house calm with a short feeder trip to Watsonia rail.',
     lives:
       'Watsonia North: ABS 2021 records 3,799 residents. Corridor: bus to watsonia (hurstbridge line).',
     housing:
@@ -2015,6 +2032,7 @@ export const suburbProfiles = {
   },
   // 'Black Rock' — graduated record of the 2026-07-21 onboarding batch.
   'black-rock-house': {
+    previewTagline: 'Premium bayside house living with Sandringham rail reached by bus.',
     lives:
       'Black Rock: ABS 2021 records 6,389 residents. Corridor: bus to sandringham (sandringham line).',
     housing:
@@ -2037,6 +2055,7 @@ export const suburbProfiles = {
   },
   // 'Braybrook' — graduated record of the 2026-07-21 onboarding batch.
   'braybrook-villa': {
+    previewTagline: 'Inner-west villa value, trading direct rail for a bus connection.',
     lives: 'Braybrook: ABS 2021 records 9,682 residents. Corridor: bus / sunbury line edge.',
     housing:
       'Proposed product is the villa unit; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -2058,6 +2077,7 @@ export const suburbProfiles = {
   },
   // 'Brighton' — graduated record of the 2026-07-21 onboarding batch.
   'brighton-house': {
+    previewTagline: 'Premium beachside house living on the Sandringham line.',
     lives: 'Brighton: ABS 2021 records 23,252 residents. Corridor: sandringham line.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -2079,6 +2099,7 @@ export const suburbProfiles = {
   },
   // 'Bulleen' — graduated record of the 2026-07-21 onboarding batch.
   'bulleen-house': {
+    previewTagline: 'Family-house space with Manningham buses instead of rail.',
     lives: 'Bulleen: ABS 2021 records 11,219 residents. Corridor: bus (manningham corridor).',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -2100,6 +2121,7 @@ export const suburbProfiles = {
   },
   // 'Burwood' — graduated record of the 2026-07-21 onboarding batch.
   'burwood-house': {
+    previewTagline: 'Established eastern house living anchored by tram 75.',
     lives: 'Burwood: ABS 2021 records 15,147 residents. Corridor: tram 75.',
     housing:
       'Proposed product is the established 3-bedroom house; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -2121,6 +2143,7 @@ export const suburbProfiles = {
   },
   // 'Camberwell' — graduated record of the 2026-07-21 onboarding batch.
   'camberwell-2br': {
+    previewTagline: 'Older-apartment entry to Camberwell Junction and three rail branches.',
     lives:
       'Camberwell: ABS 2021 records 21,965 residents. Corridor: belgrave / lilydale / alamein junction.',
     housing:
@@ -2143,6 +2166,7 @@ export const suburbProfiles = {
   },
   // 'Elsternwick' — graduated record of the 2026-07-21 onboarding batch.
   'elsternwick-2br': {
+    previewTagline: 'Older-apartment living with a lively strip and Sandringham rail.',
     lives: 'Elsternwick: ABS 2021 records 10,887 residents. Corridor: sandringham line.',
     housing:
       'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -2164,6 +2188,7 @@ export const suburbProfiles = {
   },
   // 'Hawthorn East' — graduated record of the 2026-07-21 onboarding batch.
   'hawthorn-east-2br': {
+    previewTagline: 'Inner-east apartment living near Auburn and two rail branches.',
     lives:
       'Hawthorn East: ABS 2021 records 14,834 residents. Corridor: belgrave / lilydale (auburn edge).',
     housing:
@@ -2186,6 +2211,7 @@ export const suburbProfiles = {
   },
   // 'St Kilda East' — graduated record of the 2026-07-21 onboarding batch.
   'st-kilda-east-2br': {
+    previewTagline: 'Older walk-up value with three tram corridors but no local rail.',
     lives: 'St Kilda East: ABS 2021 records 12,571 residents. Corridor: trams 3 / 16 / 67.',
     housing:
       'Proposed product is the older 2br apartment; the recurring-stock assumption and price band are set from VGV medians and recurring listings.',
@@ -2229,6 +2255,7 @@ export const suburbProfiles = {
   },
   // 'Aberfeldie' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'aberfeldie-house': {
+    previewTagline: 'River-adjacent family houses with Essendon rail reached by bus.',
     lives:
       'Aberfeldie: ABS 2021 records 3,925 residents. Corridor: bus to essendon (craigieburn line). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2249,6 +2276,7 @@ export const suburbProfiles = {
   },
   // 'Albion' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'albion-house': {
+    previewTagline: 'Western house value with a direct Sunbury-line station.',
     lives:
       'Albion: ABS 2021 records 4,334 residents. Corridor: sunbury line. Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2268,6 +2296,7 @@ export const suburbProfiles = {
     },
   }, // 'Blackburn North' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'blackburn-north-house': {
+    previewTagline: 'Leafy family-house space with a feeder link to Blackburn rail.',
     lives:
       'Blackburn North: ABS 2021 records 7,627 residents. Corridor: bus to blackburn (belgrave / lilydale line). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2288,6 +2317,7 @@ export const suburbProfiles = {
   },
   // 'Blackburn South' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'blackburn-south-house': {
+    previewTagline: 'Eastern family houses between Blackburn rail and Burwood trams.',
     lives:
       'Blackburn South: ABS 2021 records 10,939 residents. Corridor: bus to blackburn (belgrave / lilydale line). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2308,6 +2338,7 @@ export const suburbProfiles = {
   },
   // 'Box Hill North' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'box-hill-north-house': {
+    previewTagline: 'Family-house space with a short bus trip to Box Hill’s rail hub.',
     lives:
       'Box Hill North: ABS 2021 records 12,337 residents. Corridor: bus to box hill (belgrave / lilydale line). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2328,6 +2359,7 @@ export const suburbProfiles = {
   },
   // 'Box Hill South' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'box-hill-south-house': {
+    previewTagline: 'Established house living near Box Hill amenity, connected by bus.',
     lives:
       'Box Hill South: ABS 2021 records 8,491 residents. Corridor: bus / tram to box hill. Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2348,6 +2380,7 @@ export const suburbProfiles = {
   },
   // 'Brunswick West' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'brunswick-west-2br': {
+    previewTagline: 'Inner-north-west apartment value with tram-led city access.',
     lives:
       'Brunswick West: ABS 2021 records 14,746 residents. Corridor: tram 19 / upfield line edge. Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2368,6 +2401,7 @@ export const suburbProfiles = {
   },
   // 'Coburg North' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'coburg-north-house': {
+    previewTagline: 'Family-house value on the quieter northern Upfield corridor.',
     lives:
       'Coburg North: ABS 2021 records 8,327 residents. Corridor: upfield line (merlynston / batman). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2388,6 +2422,7 @@ export const suburbProfiles = {
   },
   // 'Gardenvale' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'gardenvale-house': {
+    previewTagline: 'A tiny bayside house pocket with its own Sandringham-line station.',
     lives:
       'Gardenvale: ABS 2021 records 1,019 residents. Corridor: sandringham line. Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2408,6 +2443,7 @@ export const suburbProfiles = {
   },
   // 'Heidelberg West' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'heidelberg-west-house': {
+    previewTagline: 'Northern house value near the hospital precinct, linked by bus.',
     lives:
       'Heidelberg West: ABS 2021 records 5,252 residents. Corridor: bus to heidelberg (hurstbridge line). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2428,6 +2464,7 @@ export const suburbProfiles = {
   },
   // 'Keilor' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'keilor-house': {
+    previewTagline: 'Village-scale family houses in a green but bus-dependent pocket.',
     lives:
       'Keilor: ABS 2021 records 5,906 residents. Corridor: bus (keilor village). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2448,6 +2485,7 @@ export const suburbProfiles = {
   },
   // 'Keilor Downs' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'keilor-downs-house': {
+    previewTagline: 'Family-house value with a feeder bus to St Albans rail.',
     lives:
       'Keilor Downs: ABS 2021 records 9,857 residents. Corridor: bus to st albans (sunbury line). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2468,6 +2506,7 @@ export const suburbProfiles = {
   },
   // 'Keilor East' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'keilor-east-house': {
+    previewTagline: 'Established family-house space with bus-led transport.',
     lives:
       'Keilor East: ABS 2021 records 15,078 residents. Corridor: bus (keilor park / milleara). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2488,6 +2527,7 @@ export const suburbProfiles = {
   },
   // 'Keysborough' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'keysborough-house': {
+    previewTagline: 'South-east family-house space where daily life remains car-led.',
     lives:
       'Keysborough: ABS 2021 records 30,018 residents. Corridor: bus (no rail in locality). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2508,6 +2548,7 @@ export const suburbProfiles = {
   },
   // 'Maidstone' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'maidstone-house': {
+    previewTagline: 'Inner-west house value with feeder links to two rail hubs.',
     lives:
       'Maidstone: ABS 2021 records 9,389 residents. Corridor: bus to tottenham / sunshine. Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2528,6 +2569,7 @@ export const suburbProfiles = {
   },
   // 'Maribyrnong' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'maribyrnong-2br': {
+    previewTagline: 'Riverside apartment living with Footscray reached by bus.',
     lives:
       'Maribyrnong: ABS 2021 records 12,573 residents. Corridor: bus to footscray. Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2548,6 +2590,7 @@ export const suburbProfiles = {
   },
   // 'Port Melbourne' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'port-melbourne-2br': {
+    previewTagline: 'Bayside apartment living with light rail straight to the city.',
     lives:
       'Port Melbourne: ABS 2021 records 17,633 residents. Corridor: route 109 light rail. Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2568,6 +2611,7 @@ export const suburbProfiles = {
   },
   // 'Sunshine North' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'sunshine-north-house': {
+    previewTagline: 'Western house value with a bus connection to Sunshine rail.',
     lives:
       'Sunshine North: ABS 2021 records 12,047 residents. Corridor: bus to sunshine (sunbury / metro line). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2588,6 +2632,7 @@ export const suburbProfiles = {
   },
   // 'Sunshine West' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'sunshine-west-house': {
+    previewTagline: 'Family-house value using Sunshine as the nearest rail hub.',
     lives:
       'Sunshine West: ABS 2021 records 18,552 residents. Corridor: bus to sunshine (sunbury / metro line). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2608,6 +2653,7 @@ export const suburbProfiles = {
   },
   // 'Tullamarine' — owner-approved scored record of the 2026-07-22 onboarding batch.
   'tullamarine-house': {
+    previewTagline: 'Airport-side family-house value with bus-only city access.',
     lives:
       'Tullamarine: ABS 2021 records 6,733 residents. Corridor: bus (no rail in locality). Locality, schools and greenspace evidence is integrated.',
     housing:
@@ -2643,7 +2689,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor: 'House space and a one-seat DART commute without pretending the suburb is low-car.',
+      bestFor: 'House space with one-seat DART buses, while daily life stays car-led.',
       mainRisk: 'High house cost and deep-pocket car dependence away from the village bus spine.',
       pursueWhen:
         'When the exact route 905 walk and boundary-sensitive primary zone both pass address-level checks.',
@@ -2689,8 +2735,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor:
-        'Testing whether low house cost plus direct regional rail offsets growth-area car dependence.',
+      bestFor: 'Low-cost growth-area houses with direct regional rail.',
       mainRisk:
         'Frequency, estate staging and service delivery vary more than the headline station proximity suggests.',
       pursueWhen:
@@ -2714,8 +2759,7 @@ export const suburbProfiles = {
       },
     ],
     decision: {
-      bestFor:
-        'A transparent outer-growth comparison using a real occupied pocket and feeder-bus commute.',
+      bestFor: 'Outer-growth house value using an established feeder-bus pocket.',
       mainRisk:
         'Long transfers and future-stage service promises can overwhelm the purchase-price advantage.',
       pursueWhen:

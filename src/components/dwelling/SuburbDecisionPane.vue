@@ -58,13 +58,21 @@
       >
         <div class="decision-preview-heading flex items-start justify-between gap-3">
           <div class="min-w-0">
-            <p class="text-[15px] font-bold text-ob-text">{{ previewHeading }}</p>
+            <p class="truncate text-[15px] font-bold text-ob-text">{{ previewHeading }}</p>
             <p class="mt-1 text-[11.5px] leading-snug text-ob-muted2 preview-clamp-2">
               {{ previewTagline(previewRow) }}
             </p>
           </div>
           <div class="shrink-0 text-right">
             <div class="flex items-center justify-end gap-1.5">
+              <span
+                v-for="signal in rankSignals(previewRow)"
+                :key="signal.key"
+                class="inline-flex items-center"
+                :title="signal.text"
+              >
+                <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
+              </span>
               <span
                 v-if="isRankedRow(previewRow)"
                 class="inline-flex items-baseline gap-1.5 rounded-full px-2 py-[3px] font-mono"
@@ -96,14 +104,6 @@
                 class="inline-flex rounded-full border border-ob-sand/30 bg-ob-sand/8 px-2 py-[3px] font-mono text-[11px] uppercase tracking-[0.06em] text-ob-sand"
               >
                 unscored
-              </span>
-              <span
-                v-for="signal in rankSignals(previewRow)"
-                :key="signal.key"
-                class="inline-flex items-center"
-                :title="signal.text"
-              >
-                <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
               </span>
             </div>
             <span

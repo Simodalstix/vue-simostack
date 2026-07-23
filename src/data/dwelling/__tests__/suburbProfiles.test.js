@@ -33,9 +33,29 @@ describe('suburb profile copy', () => {
     }
   })
 
-  it('shares the combined-name profiles across both member records', () => {
-    expect(suburbProfileFor('inner-collingwood-2br')).toBe(suburbProfileFor('inner-abbotsford-2br'))
-    expect(suburbProfileFor('chelsea-2br')).toBe(suburbProfileFor('bonbeach-2br'))
+  it('shares the combined profile detail while keeping card taglines suburb-specific', () => {
+    const collingwood = suburbProfileFor('inner-collingwood-2br')
+    const abbotsford = suburbProfileFor('inner-abbotsford-2br')
+    const chelsea = suburbProfileFor('chelsea-2br')
+    const bonbeach = suburbProfileFor('bonbeach-2br')
+
+    expect(collingwood.lives).toBe(abbotsford.lives)
+    expect(collingwood.previewTagline).not.toBe(abbotsford.previewTagline)
+    expect(chelsea.lives).toBe(bonbeach.lives)
+    expect(chelsea.previewTagline).not.toBe(bonbeach.previewTagline)
+  })
+
+  it('keeps every ranking-card tagline concise and distinct', () => {
+    const seen = new Map()
+
+    for (const [id, p] of Object.entries(suburbProfiles)) {
+      const tagline = p.previewTagline || p.decision.bestFor
+      const normalised = tagline.trim().toLocaleLowerCase()
+
+      expect(tagline.length, `${id} tagline exceeds 80 characters`).toBeLessThanOrEqual(80)
+      expect(seen.has(normalised), `${id} duplicates ${seen.get(normalised)}`).toBe(false)
+      seen.set(normalised, id)
+    }
   })
 
   it('returns null for unknown ids (fallback path)', () => {
