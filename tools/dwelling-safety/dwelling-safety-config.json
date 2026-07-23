@@ -1,0 +1,80 @@
+{
+  "dataset": "dwelling-safety-audit",
+  "version": "csa-march-2026-candidate-v1",
+  "status": "audit-only",
+  "source": {
+    "publisher": "Crime Statistics Agency",
+    "officialFileName": "Data_Tables_LGA_Recorded_Offences_Year_Ending_March_2026.xlsx",
+    "officialDatasetUrl": "https://discover.data.vic.gov.au/dataset/data-tables-recorded-offences",
+    "officialDownloadUrl": "https://files.crimestatistics.vic.gov.au/2026-06/Data_Tables_LGA_Recorded_Offences_Year_Ending_March_2026.xlsx",
+    "releaseDate": "2026-06-18",
+    "referencePeriod": "Year ending March 2026",
+    "license": "CC BY 4.0",
+    "expectedSha256": "0841a888162d93fad9adbe53530a9322abb3786a779af17afdb3a9f8ad98592b",
+    "sheets": {
+      "lgaRates": "Table 01",
+      "suburbOffences": "Table 03"
+    }
+  },
+  "analysis": {
+    "years": [2024, 2025, 2026],
+    "populationBaseYear": 2021,
+    "rateScale": 100000,
+    "smoothingPriorPersonYears": 10000,
+    "primaryVariant": "lgaGrowthAdjustedSmoothed"
+  },
+  "baskets": [
+    {
+      "key": "person",
+      "label": "Person harm",
+      "weight": 0.5,
+      "includeDivisionPrefixes": ["A "],
+      "excludeSubdivisionPrefixes": ["A80 "],
+      "excludeSubgroupPrefixes": ["A22 "],
+      "rationale": "Person offences other than occupational assaults against police/emergency workers and dangerous/negligent acts such as dangerous driving."
+    },
+    {
+      "key": "burglary",
+      "label": "Residential burglary",
+      "weight": 0.3,
+      "includeSubgroupPrefixes": ["B311 ", "B321 "],
+      "rationale": "Residential aggravated and non-aggravated burglary only; commercial and unknown-location burglary are excluded."
+    },
+    {
+      "key": "vehicle",
+      "label": "Vehicle crime",
+      "weight": 0.15,
+      "includeSubgroupPrefixes": ["B41 ", "B42 "],
+      "rationale": "Motor vehicle theft and theft from a motor vehicle."
+    },
+    {
+      "key": "damage",
+      "label": "Property damage",
+      "weight": 0.05,
+      "includeSubgroupPrefixes": ["B21 "],
+      "rationale": "Criminal damage only; graffiti and other property damage categories are excluded."
+    }
+  ],
+  "excludedFromCandidateScore": [
+    "Retail theft",
+    "Fare evasion",
+    "Deception",
+    "Drug offences",
+    "Public-order offences",
+    "Justice-procedure offences",
+    "Commercial burglary",
+    "Dangerous driving",
+    "Assaults of police, emergency services or other authorised officers"
+  ],
+  "interpretation": {
+    "direction": "10 is the lowest relative recorded-offence risk; 0 is the highest.",
+    "scope": "Candidate comparative Safety score for owner review only. It is not a probability of victimisation and is not connected to live Settle ranking.",
+    "limitations": [
+      "The source measures offences recorded by Victoria Police, not all crime or personal experience of safety.",
+      "Suburb counts have no publisher-supplied suburb population rate.",
+      "Activity centres, hospitals, nightlife and transport hubs can attract offences committed by or against non-residents.",
+      "CSA replaces sensitive A10 and A30 counts of three or fewer with two when calculating totals.",
+      "Recorded data is extracted 18 days after the reference period and can move in later releases."
+    ]
+  }
+}

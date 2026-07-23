@@ -1,0 +1,88 @@
+{
+  "dataset": "dwelling-safety-audit",
+  "generatedAt": "2026-07-23",
+  "source": {
+    "publisher": "Crime Statistics Agency",
+    "officialFileName": "Data_Tables_LGA_Recorded_Offences_Year_Ending_March_2026.xlsx",
+    "officialDatasetUrl": "https://discover.data.vic.gov.au/dataset/data-tables-recorded-offences",
+    "officialDownloadUrl": "https://files.crimestatistics.vic.gov.au/2026-06/Data_Tables_LGA_Recorded_Offences_Year_Ending_March_2026.xlsx",
+    "releaseDate": "2026-06-18",
+    "referencePeriod": "Year ending March 2026",
+    "license": "CC BY 4.0",
+    "expectedSha256": "0841a888162d93fad9adbe53530a9322abb3786a779af17afdb3a9f8ad98592b",
+    "sheets": {
+      "lgaRates": "Table 01",
+      "suburbOffences": "Table 03"
+    },
+    "localFileName": "Data_Tables_LGA_Recorded_Offences_Year_Ending_March_2026_0.xlsx",
+    "sha256": "0841a888162d93fad9adbe53530a9322abb3786a779af17afdb3a9f8ad98592b",
+    "bytes": 19034120,
+    "retrievedAt": "2026-07-23",
+    "worksheets": [
+      "Contents",
+      "Footnotes",
+      "Table 01",
+      "Table 02",
+      "Table 03",
+      "Table 04",
+      "Table 05",
+      "Table 06"
+    ],
+    "sourceSchema": {
+      "lgaPopulationProxy": {
+        "table": "Table 01",
+        "fields": {
+          "year": "A",
+          "lga": "D",
+          "offenceCount": "E",
+          "ratePer100k": "F"
+        },
+        "derivation": "offence count / rate per 100,000 × 100,000"
+      },
+      "suburbOffences": {
+        "table": "Table 03",
+        "fields": {
+          "year": "A",
+          "lga": "C",
+          "suburb": "E",
+          "division": "F",
+          "subdivision": "G",
+          "subgroup": "H",
+          "count": "I"
+        }
+      }
+    },
+    "lgaRowsRead": 790,
+    "suburbOffenceRowsRead": 370502,
+    "availableYears": [
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "inputs": {
+    "targets": {
+      "path": "tools/dwelling-greenspace/dwelling-greenspace-targets.json",
+      "sha256": "90f756d54864001bc31ea9413a832eeef36a7c49c27486b33c33c9a16d63d21a",
+      "version": "v8-canonical-119-mixed-official-and-derived"
+    },
+    "config": {
+      "path": "tools/dwelling-safety/dwelling-safety-config.json",
+      "sha256": "69d1f604bb539b4cce2811028ef897d57c73e748569946262dfdf4b8622ab64f"
+    }
+  },
+  "notes": [
+    "The source measures offences recorded by Victoria Police, not all crime or personal experience of safety.",
+    "Suburb counts have no publisher-supplied suburb population rate.",
+    "Activity centres, hospitals, nightlife and transport hubs can attract offences committed by or against non-residents.",
+    "CSA replaces sensitive A10 and A30 counts of three or fewer with two when calculating totals.",
+    "Recorded data is extracted 18 days after the reference period and can move in later releases."
+  ]
+}
