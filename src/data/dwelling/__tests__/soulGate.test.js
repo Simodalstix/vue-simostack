@@ -6,7 +6,7 @@ import { decideStrategies } from '../decideStrategies.js'
 import { OWNER_VETOES_BY_AREA_ID, SOUL_GATE } from '../ownerVetoes.js'
 import { partitionDecisionRows } from '../unscoredUx.js'
 
-const strategy = decideStrategies.find((item) => item.id === 'balanced2br')
+const strategy = decideStrategies.find((item) => item.id === 'apartment')
 const filters = {
   ...strategy.filters,
   maxCommute: 90,

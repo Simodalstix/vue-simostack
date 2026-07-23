@@ -234,9 +234,9 @@ onMounted(async () => {
 })
 
 // Map overlay layers. Schools and facilities also appear contextually for the
-// hovered or selected suburb with the toggle off; anchors and the contextual
-// eligible-open-space layer default on.
-const layers = reactive({ anchors: true, schools: false, facilities: false, openSpace: true })
+// hovered or selected suburb with the toggle off; only the contextual
+// eligible-open-space layer defaults on.
+const layers = reactive({ anchors: false, schools: false, facilities: false, openSpace: true })
 const layerToggles = [
   { key: 'anchors', label: '★ personal', hint: 'Personal network anchors (gold)' },
   {

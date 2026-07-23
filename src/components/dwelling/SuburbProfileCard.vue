@@ -66,10 +66,11 @@
               <span
                 v-for="chip in headerChips"
                 :key="chip.key"
-                class="border px-2 py-[3px] font-mono text-[9.5px] leading-none"
+                class="inline-flex items-center border p-1 font-mono leading-none"
                 :class="[chipClass(chip), chipShapeClass(chip)]"
+                :title="chip.text"
               >
-                {{ chip.text }}
+                <DecisionSignalIcon :kind="chip.key" :label="chip.text" />
               </span>
             </div>
           </div>
@@ -138,20 +139,6 @@
           <div v-if="unscored" class="border-l-2 border-ob-sand/55 bg-ob-sand/5 px-2.5 py-1.5">
             <p class="font-mono text-[10.5px] leading-snug text-ob-sand">
               {{ UNSCORED_BANNER }}
-            </p>
-          </div>
-          <div
-            v-else-if="strategy"
-            class="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-l-2 border-ob-teal/30 pl-2.5"
-          >
-            <p class="font-mono text-[8.5px] uppercase tracking-[0.05em] text-ob-faint">
-              Fit under {{ strategy.label }}
-            </p>
-            <p class="font-mono text-[10.5px] leading-snug" :class="fitClass(row)">
-              {{ fitLine(row) }}
-            </p>
-            <p v-if="strategy.priceNote" class="text-[10px] leading-snug text-ob-faint">
-              {{ strategy.priceNote }}
             </p>
           </div>
         </div>
@@ -385,7 +372,6 @@ import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStreng
 import {
   PRESTIGE_LABEL,
   UNSCORED_BANNER,
-  fitLineForRow,
   isPrestigeRow,
   isUnscoredRow,
   isVetoedRow,
@@ -393,6 +379,7 @@ import {
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
 import CommunityContextSection from './CommunityContextSection.vue'
+import DecisionSignalIcon from './DecisionSignalIcon.vue'
 
 const props = defineProps({
   row: { type: Object, required: true },
@@ -591,17 +578,6 @@ function schoolChips(rec) {
 }
 function friendFor(areaId) {
   return friendContextFor(areaId)
-}
-function fitClass(row) {
-  return {
-    ok: 'text-ob-teal',
-    conditional: 'text-ob-muted',
-    reject: 'text-ob-sand',
-    veto: 'text-ob-faint',
-  }[row.status]
-}
-function fitLine(row) {
-  return fitLineForRow(row, props.strategy?.label)
 }
 </script>
 
