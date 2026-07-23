@@ -220,8 +220,8 @@
                     <span>Commute {{ commuteShort(row) }}</span>
                   </div>
                   <div
-                    v-if="gateChip(row) || rankSignals(row).length || contextBadges(row).length"
-                    class="mt-1 flex items-end justify-between gap-2"
+                    v-if="gateChip(row) || rowBadges(row).length"
+                    class="mt-1 flex flex-wrap gap-1"
                   >
                     <span
                       v-if="gateChip(row)"
@@ -443,6 +443,9 @@ function rowBadges(row) {
     tone: fact.tone,
     title: 'Descriptive context; does not affect rank',
   }))
+  const leadingRankBadges = rankBadges.filter((badge) => ['friend', 'beach'].includes(badge.key))
+  const trailingRankBadges = rankBadges.filter((badge) => !['friend', 'beach'].includes(badge.key))
+  return [...leadingRankBadges, ...contextBadges, ...trailingRankBadges]
 }
 
 function gateChip(row) {
@@ -510,6 +513,17 @@ function breakdown(row) {
             : `${c.label} ${display}/10 × weight ${props.weights[c.key]}${bonus ? ' · additive bonus' : ''}`,
       }
     })
+}
+
+function previewBadges(row) {
+  const badges = []
+  const exception = isVetoedRow(row) ? null : gateExceptionChipFor(row)
+  if (exception) badges.push(exception)
+  badges.push(...rowBadges(row))
+  return badges.map((badge) => ({
+    ...badge,
+    className: chipClass(badge),
+  }))
 }
 </script>
 
