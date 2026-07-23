@@ -143,11 +143,17 @@
           <span
             v-for="badge in previewBadges(previewRow)"
             :key="badge.key"
-            class="rank-pill inline-flex items-center border px-2 py-[3px] font-mono text-[10px] leading-none"
-            :class="[badge.className, chipShapeClass(badge), badge.title ? 'context-pill' : null]"
+            class="rank-pill inline-flex items-center border font-mono text-[10px] leading-none"
+            :class="[
+              badge.className,
+              chipShapeClass(badge),
+              badge.title ? 'context-pill' : null,
+              badge.signal ? 'p-1' : 'px-2 py-[3px]',
+            ]"
             :title="badge.title"
           >
-            {{ badge.text }}
+            <DecisionSignalIcon v-if="badge.signal" :kind="badge.key" :label="badge.text" />
+            <template v-else>{{ badge.text }}</template>
           </span>
         </div>
       </button>
@@ -227,15 +233,17 @@
                     <span
                       v-for="chip in rowBadges(row)"
                       :key="chip.key"
-                      class="rank-pill border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                      class="rank-pill inline-flex items-center border font-mono text-[9px] leading-none"
                       :class="[
                         chipClass(chip),
                         chipShapeClass(chip),
                         chip.title ? 'context-pill' : null,
+                        chip.signal ? 'p-1' : 'px-1.5 py-[2px]',
                       ]"
                       :title="chip.title"
                     >
-                      {{ chip.text }}
+                      <DecisionSignalIcon v-if="chip.signal" :kind="chip.key" :label="chip.text" />
+                      <template v-else>{{ chip.text }}</template>
                     </span>
                   </div>
                 </div>
@@ -303,6 +311,7 @@ import {
 } from '@/data/dwelling/decisionChips.js'
 import { costMetricForArea, formatCostMetric } from '@/data/dwelling/cost/costContext.js'
 import SuburbProfileCard from './SuburbProfileCard.vue'
+import DecisionSignalIcon from './DecisionSignalIcon.vue'
 
 const props = defineProps({
   rows: { type: Array, required: true },
@@ -423,7 +432,11 @@ function previewTagline(row) {
 }
 
 function rowBadges(row) {
-  const rankBadges = differentiatingChipsFor(row, props.weights)
+  const rankBadges = differentiatingChipsFor(row, props.weights).map((badge) => ({
+    ...badge,
+    signal: true,
+    title: badge.text,
+  }))
   const contextBadges = decisionContextFor(row).map((fact) => ({
     key: fact.key,
     text: `${fact.label} ${fact.value}`,

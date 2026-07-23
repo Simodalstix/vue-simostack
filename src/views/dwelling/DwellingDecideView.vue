@@ -11,7 +11,7 @@
       <!-- LEFT column: intro + map -->
       <div class="space-y-4 lg:space-y-5 min-w-0 lg:col-start-1 lg:row-start-1">
         <div class="space-y-3 sm:space-y-4">
-          <div class="max-w-3xl">
+          <div class="max-w-none">
             <h1 class="text-[22px] sm:text-[24px] md:text-[30px] font-extrabold leading-tight">
               A place to settle down:
               <span class="text-ob-teal">comparing Melbourne suburbs.</span>

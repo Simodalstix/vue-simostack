@@ -66,10 +66,11 @@
               <span
                 v-for="chip in headerChips"
                 :key="chip.key"
-                class="border px-2 py-[3px] font-mono text-[9.5px] leading-none"
+                class="inline-flex items-center border p-1 font-mono leading-none"
                 :class="[chipClass(chip), chipShapeClass(chip)]"
+                :title="chip.text"
               >
-                {{ chip.text }}
+                <DecisionSignalIcon :kind="chip.key" :label="chip.text" />
               </span>
             </div>
           </div>
@@ -378,6 +379,7 @@ import {
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
 import CommunityContextSection from './CommunityContextSection.vue'
+import DecisionSignalIcon from './DecisionSignalIcon.vue'
 
 const props = defineProps({
   row: { type: Object, required: true },
