@@ -139,36 +139,22 @@
           </div>
         </div>
 
-        <div class="mt-auto flex items-end justify-between gap-3">
-          <div class="flex flex-wrap gap-1.5">
-            <span
-              v-if="gateChip(previewRow)"
-              class="rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
-              :class="chipClass(gateChip(previewRow))"
-            >
-              {{ gateChip(previewRow).text }}
-            </span>
-            <span
-              v-for="signal in rankSignals(previewRow)"
-              :key="signal.key"
-              class="rank-pill inline-flex items-center border p-1 font-mono leading-none"
-              :class="[chipClass(signal), chipShapeClass(signal)]"
-              :title="signal.text"
-            >
-              <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
-            </span>
-          </div>
-          <div class="flex flex-wrap justify-end gap-1.5">
-            <span
-              v-for="badge in contextBadges(previewRow)"
-              :key="badge.key"
-              class="rank-pill context-pill inline-flex items-center rounded-full border px-2 py-[3px] font-mono text-[10px] leading-none"
-              :class="chipClass(badge)"
-              :title="badge.title"
-            >
-              {{ badge.text }}
-            </span>
-          </div>
+        <div class="mt-auto flex flex-wrap gap-1.5">
+          <span
+            v-for="badge in previewBadges(previewRow)"
+            :key="badge.key"
+            class="rank-pill inline-flex items-center border font-mono text-[10px] leading-none"
+            :class="[
+              badge.className,
+              chipShapeClass(badge),
+              badge.title ? 'context-pill' : null,
+              badge.signal ? 'p-1' : 'px-2 py-[3px]',
+            ]"
+            :title="badge.title"
+          >
+            <DecisionSignalIcon v-if="badge.signal" :kind="badge.key" :label="badge.text" />
+            <template v-else>{{ badge.text }}</template>
+          </span>
         </div>
       </button>
 
@@ -237,35 +223,28 @@
                     v-if="gateChip(row) || rankSignals(row).length || contextBadges(row).length"
                     class="mt-1 flex items-end justify-between gap-2"
                   >
-                    <div class="flex flex-wrap gap-1">
-                      <span
-                        v-if="gateChip(row)"
-                        class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                        :class="chipClass(gateChip(row))"
-                      >
-                        {{ gateChip(row).text }}
-                      </span>
-                      <span
-                        v-for="signal in rankSignals(row)"
-                        :key="signal.key"
-                        class="rank-pill inline-flex items-center border p-1 font-mono leading-none"
-                        :class="[chipClass(signal), chipShapeClass(signal)]"
-                        :title="signal.text"
-                      >
-                        <DecisionSignalIcon :kind="signal.key" :label="signal.text" />
-                      </span>
-                    </div>
-                    <div class="flex flex-wrap justify-end gap-1">
-                      <span
-                        v-for="badge in contextBadges(row)"
-                        :key="badge.key"
-                        class="rank-pill context-pill inline-flex items-center rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
-                        :class="chipClass(badge)"
-                        :title="badge.title"
-                      >
-                        {{ badge.text }}
-                      </span>
-                    </div>
+                    <span
+                      v-if="gateChip(row)"
+                      class="rounded-full border px-1.5 py-[2px] font-mono text-[9px] leading-none"
+                      :class="chipClass(gateChip(row))"
+                    >
+                      {{ gateChip(row).text }}
+                    </span>
+                    <span
+                      v-for="chip in rowBadges(row)"
+                      :key="chip.key"
+                      class="rank-pill inline-flex items-center border font-mono text-[9px] leading-none"
+                      :class="[
+                        chipClass(chip),
+                        chipShapeClass(chip),
+                        chip.title ? 'context-pill' : null,
+                        chip.signal ? 'p-1' : 'px-1.5 py-[2px]',
+                      ]"
+                      :title="chip.title"
+                    >
+                      <DecisionSignalIcon v-if="chip.signal" :kind="chip.key" :label="chip.text" />
+                      <template v-else>{{ chip.text }}</template>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -452,15 +431,13 @@ function previewTagline(row) {
   )
 }
 
-function rankSignals(row) {
-  return differentiatingChipsFor(row, props.weights).map((badge) => ({
+function rowBadges(row) {
+  const rankBadges = differentiatingChipsFor(row, props.weights).map((badge) => ({
     ...badge,
+    signal: true,
     title: badge.text,
   }))
-}
-
-function contextBadges(row) {
-  return decisionContextFor(row).map((fact) => ({
+  const contextBadges = decisionContextFor(row).map((fact) => ({
     key: fact.key,
     text: `${fact.label} ${fact.value}`,
     tone: fact.tone,
