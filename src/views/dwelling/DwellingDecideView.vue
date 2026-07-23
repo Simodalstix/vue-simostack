@@ -3,8 +3,8 @@
     class="max-w-[1680px] mx-auto px-3 sm:px-6 lg:px-10 py-5 sm:py-8 lg:py-10 space-y-5 lg:space-y-8"
   >
     <!-- THE WORKSPACE: map and suburb decision pane as equal stars. Themed
-         weighting rows lead the compact control card above the map; the five
-         purchase strategies sit beneath them as a quieter one-line selector. -->
+         weighting rows lead the compact control card above the map; the two
+         product strategies sit beneath them as a quieter one-line selector. -->
     <div
       class="grid lg:grid-cols-[1.5fr_1fr] xl:grid-cols-[minmax(0,1.35fr)_minmax(570px,1fr)] gap-6 items-start"
     >
@@ -18,9 +18,8 @@
             </h1>
           </div>
 
-          <!-- Phone controls: the ranking is primarily a 2BR tool, with one
-               compact escape hatch for the 1BR strategy. The full weighting
-               workspace remains available from md upward. -->
+          <!-- Phone controls expose the same two source-backed products as
+               desktop: all-unit apartments and all-house properties. -->
           <div
             class="md:hidden bg-ob-surface2 border border-ob-sand/10 rounded-[8px] p-2.5"
             aria-label="Mobile ranking strategy"
@@ -67,83 +66,77 @@
           </div>
 
           <div
-            class="hidden md:block bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-3.5"
+            class="hidden md:grid grid-cols-[minmax(0,1fr)_132px] gap-3 bg-ob-surface2 border border-ob-sand/8 rounded-[8px] p-3.5"
             aria-label="Ranking controls"
           >
-            <div class="flex items-center flex-wrap gap-x-4 gap-y-2">
-              <div class="min-w-0">
+            <div class="min-w-0">
+              <div class="flex items-center flex-wrap gap-x-4 gap-y-2">
                 <h2 class="font-mono text-[11px] tracking-[0.14em] uppercase text-ob-soft">
                   Weightings · {{ activeStrategy.label }} preset
                 </h2>
-              </div>
 
-              <div class="flex items-center gap-2 ml-auto">
-                <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-faint">
-                  payoff
-                </span>
-                <div
-                  class="grid grid-cols-3 rounded-[6px] border border-ob-sand/14 overflow-hidden"
-                >
-                  <button
-                    v-for="y in [15, 20, 30]"
-                    :key="y"
-                    @click="payoffYears = y"
-                    class="px-2 py-[4px] font-mono text-[10.5px] transition-colors border-r border-ob-sand/14 last:border-r-0"
-                    :class="
-                      payoffYears === y
-                        ? 'bg-ob-teal/15 text-ob-teal'
-                        : 'text-ob-faint hover:text-ob-muted'
-                    "
+                <div class="flex items-center gap-2 ml-auto">
+                  <span class="font-mono text-[10px] uppercase tracking-[0.08em] text-ob-faint">
+                    payoff
+                  </span>
+                  <div
+                    class="grid grid-cols-3 rounded-[6px] border border-ob-sand/14 overflow-hidden"
                   >
-                    {{ y }}yr
+                    <button
+                      v-for="y in [15, 20, 30]"
+                      :key="y"
+                      @click="payoffYears = y"
+                      class="px-2 py-[4px] font-mono text-[10.5px] transition-colors border-r border-ob-sand/14 last:border-r-0"
+                      :class="
+                        payoffYears === y
+                          ? 'bg-ob-teal/15 text-ob-teal'
+                          : 'text-ob-faint hover:text-ob-muted'
+                      "
+                    >
+                      {{ y }}yr
+                    </button>
+                  </div>
+                  <button
+                    @click="resetToggles"
+                    class="font-mono text-[10.5px] text-ob-faint hover:text-ob-teal transition-colors"
+                  >
+                    reset
                   </button>
                 </div>
+              </div>
+
+              <div class="mt-2.5 flex flex-wrap gap-1.5" aria-label="Weighting themes">
                 <button
-                  @click="resetToggles"
-                  class="font-mono text-[10.5px] text-ob-faint hover:text-ob-teal transition-colors"
+                  v-for="c in allCriteria"
+                  :key="c.key"
+                  @click="toggleControl(c)"
+                  :disabled="c.scoringRole !== 'gate' && enabled[c.key] && enabledCount === 1"
+                  :aria-pressed="controlEnabled(c)"
+                  :title="c.hint"
+                  class="inline-flex items-center justify-between gap-2 font-mono text-[11px] px-2 py-[5px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
+                  :class="criterionButtonClass(c)"
                 >
-                  reset
+                  <span>{{ c.label }}</span>
                 </button>
               </div>
             </div>
 
-            <div class="mt-2.5 flex flex-wrap gap-1.5" aria-label="Weighting themes">
+            <div class="grid grid-rows-2 gap-1.5" aria-label="Ranking product">
               <button
-                v-for="c in allCriteria"
-                :key="c.key"
-                @click="toggleControl(c)"
-                :disabled="c.scoringRole !== 'gate' && enabled[c.key] && enabledCount === 1"
-                :aria-pressed="controlEnabled(c)"
-                :title="c.hint"
-                class="inline-flex items-center justify-between gap-2 font-mono text-[11px] px-2 py-[5px] rounded-[6px] border transition-colors disabled:cursor-not-allowed"
-                :class="criterionButtonClass(c)"
+                v-for="s in decideStrategies"
+                :key="s.id"
+                @click="activeStrategyId = s.id"
+                :aria-pressed="activeStrategyId === s.id"
+                :title="`${s.dwelling} · ${s.intent}`"
+                class="min-w-0 rounded-[5px] border px-2 py-[5px] font-mono text-[10px] transition-colors"
+                :class="
+                  activeStrategyId === s.id
+                    ? 'border-ob-teal/35 bg-ob-teal/8 text-ob-teal'
+                    : 'border-ob-sand/12 text-ob-faint hover:border-ob-sand/25 hover:text-ob-muted'
+                "
               >
-                <span>{{ c.label }}</span>
+                {{ s.shortLabel }}
               </button>
-            </div>
-
-            <div class="mt-2.5 pt-2.5 border-t border-ob-sand/8 flex items-center gap-3 min-w-0">
-              <span
-                class="shrink-0 font-mono text-[9.5px] uppercase tracking-[0.1em] text-ob-faint"
-              >
-                Strategy
-              </span>
-              <div class="min-w-0 flex-1 grid grid-cols-2 sm:grid-cols-5 gap-1.5">
-                <button
-                  v-for="s in decideStrategies"
-                  :key="s.id"
-                  @click="activeStrategyId = s.id"
-                  :title="`${s.dwelling} · ${s.intent}`"
-                  class="min-w-0 truncate rounded-[5px] border px-2 py-[5px] font-mono text-[10px] transition-colors"
-                  :class="
-                    activeStrategyId === s.id
-                      ? 'border-ob-teal/35 bg-ob-teal/8 text-ob-teal'
-                      : 'border-ob-sand/12 text-ob-faint hover:border-ob-sand/25 hover:text-ob-muted'
-                  "
-                >
-                  {{ s.shortLabel }}
-                </button>
-              </div>
             </div>
           </div>
         </div>
@@ -209,14 +202,11 @@ const listHoverId = ref(null)
 const deposit = personalPosition.calc.deposit
 const rate = personalPosition.calc.rate
 
-// The strategy is the single mode: a weight preset over the nine criteria plus
-// the purchase proposition (dwelling types, bedrooms, price cap) expressed
-// through the same named filter gates as before.
+// The strategy selects one of the two source-backed product medians and its
+// corresponding preset weights. There are no bedroom, price or type gates.
 const activeStrategyId = ref(defaultStrategyId)
 const activeStrategy = computed(() => strategyById(activeStrategyId.value))
-const mobileStrategies = decideStrategies.filter((strategy) =>
-  ['balanced2br', 'bachelor1br'].includes(strategy.id),
-)
+const mobileStrategies = decideStrategies
 const allCriteria = [
   'cost',
   'commute',

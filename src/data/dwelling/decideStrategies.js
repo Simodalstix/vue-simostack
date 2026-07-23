@@ -142,18 +142,17 @@ export const decideCriterionByKey = Object.fromEntries(decideCriteria.map((c) =>
 
 // ---- strategies -----------------------------------------------------------
 //
-// weights are relative multipliers per criterion (0 = off). Most sit in 0-3;
-// the House lens deliberately pushes Cost to 6 so price dominates its map.
-// `filters` retains minBedrooms/dwellingTypes as descriptive metadata only —
-// they no longer reject suburbs (there are no price/commute/type gates now).
-// `pricePropertyType` chooses which VGV median (house/unit) Cost reads.
+// The two strategies match the two VGV product medians available to the app:
+// all-unit (Apartment) and all-house (House). They never claim a bedroom-level
+// price distinction that the source data cannot support. Weights are relative
+// multipliers per criterion (0 = off); the House lens deliberately pushes Cost
+// to 6 so price dominates its map.
 export const decideStrategies = [
   {
-    id: 'balanced2br',
-    label: '2BR Balanced',
-    shortLabel: '2 Bedroom',
-    dwelling: 'Older 2BR apartment or villa unit',
-    bedrooms: 2,
+    id: 'apartment',
+    label: 'Apartment',
+    shortLabel: 'Apartment',
+    dwelling: 'Apartment',
     pricePropertyType: 'unit',
     intent: 'commute, cost and Lulu in balance',
     weights: {
@@ -167,63 +166,12 @@ export const decideStrategies = [
       otherCommunities: 2,
       partnerPool: 2,
     },
-    filters: { minBedrooms: 2, dwellingTypes: [] },
-    priceNote: null,
-  },
-  {
-    id: 'bachelor1br',
-    label: '1BR Bachelor',
-    shortLabel: '1 Bedroom',
-    dwelling: 'Older 1BR walk-up',
-    bedrooms: 1,
-    pricePropertyType: 'unit',
-    intent: 'cheapest honest ownership, commute first',
-    weights: {
-      cost: 2,
-      commute: 3,
-      schools: 1,
-      kidAmenity: 1,
-      beach: 1,
-      personalNetwork: 2,
-      chineseCommunity: 2,
-      otherCommunities: 2,
-      partnerPool: 2,
-    },
-    filters: { minBedrooms: 1, dwellingTypes: ['older-apartment'] },
-    priceNote:
-      'Exact 1BR evidence is used where available; otherwise the UI identifies the all-unit proxy.',
-  },
-  {
-    id: 'family3br',
-    label: '3BR Family',
-    shortLabel: '3 Bedroom',
-    dwelling: '3BR house, townhouse or large villa unit',
-    bedrooms: 3,
-    pricePropertyType: 'house',
-    intent: 'three real bedrooms with schools leading',
-    weights: {
-      cost: 3,
-      commute: 2,
-      schools: 3,
-      kidAmenity: 3,
-      beach: 2,
-      personalNetwork: 3,
-      chineseCommunity: 2,
-      otherCommunities: 2,
-      partnerPool: 2,
-    },
-    filters: {
-      minBedrooms: 3,
-      dwellingTypes: ['house', 'townhouse', 'villa-unit'],
-    },
-    priceNote: null,
   },
   {
     id: 'house',
     label: 'House',
     shortLabel: 'House',
-    dwelling: 'Established 3BR house',
-    bedrooms: 3,
+    dwelling: 'House',
     pricePropertyType: 'house',
     intent: 'house value first: cheap house medians lead, commute still counts',
     // Cost is deliberately dominant here (6 of 10 standard weight = 60%), so
@@ -240,34 +188,10 @@ export const decideStrategies = [
       otherCommunities: 2,
       partnerPool: 2,
     },
-    filters: { minBedrooms: 3, dwellingTypes: ['house'] },
-    priceNote: null,
-  },
-  {
-    id: 'villaTownhouse',
-    label: 'Villa / Townhouse',
-    shortLabel: 'Villa / Townhouse',
-    dwelling: '2-3BR villa unit or townhouse',
-    bedrooms: 2,
-    pricePropertyType: 'unit',
-    intent: 'courtyard living with strong schools',
-    weights: {
-      cost: 2,
-      commute: 2,
-      schools: 3,
-      kidAmenity: 2,
-      beach: 2,
-      personalNetwork: 3,
-      chineseCommunity: 2,
-      otherCommunities: 2,
-      partnerPool: 2,
-    },
-    filters: { minBedrooms: 2, dwellingTypes: ['villa-unit', 'townhouse'] },
-    priceNote: null,
   },
 ]
 
-export const defaultStrategyId = 'balanced2br'
+export const defaultStrategyId = 'apartment'
 
 export function strategyById(id) {
   return decideStrategies.find((s) => s.id === id) || decideStrategies[0]
