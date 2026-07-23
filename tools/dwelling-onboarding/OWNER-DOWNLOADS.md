@@ -24,6 +24,25 @@ asking the owner to fetch anything manually.
 
 ## What you will usually need to supply
 
+### CSA recorded offences — deliberate Safety audit/refresh only
+
+The audit-only safety pipeline uses the official Crime Statistics Agency
+`Recorded offences by LGA` workbook. It is not an onboarding prerequisite and
+must not be downloaded as a side effect of UI or suburb work.
+
+For the March 2026 audit, the owner supplied:
+
+```text
+Data_Tables_LGA_Recorded_Offences_Year_Ending_March_2026_0.xlsx
+SHA-256: 0841a888162d93fad9adbe53530a9322abb3786a779af17afdb3a9f8ad98592b
+```
+
+The `_0` suffix is local browser naming; the manifest retains the publisher's
+official filename separately. Keep the workbook outside the repository and
+pass its absolute path to `tools/dwelling-safety/build-dwelling-safety.py`.
+The builder records the local filename, official URL, retrieval date, byte
+size and SHA-256.
+
 ### 1. School locations and zones — reusable pair already present
 
 The school pipeline uses these under the gitignored
