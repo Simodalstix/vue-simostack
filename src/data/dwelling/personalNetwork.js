@@ -18,6 +18,17 @@ export const PERSONAL_NETWORK_DISTANCE_BANDS = [
   { maxKm: 6, score: 6 },
 ]
 
+// Point-to-point distance is only a rough proxy for a usable trip. The owner
+// has explicitly ruled out Parkville: reaching the South Yarra anchor requires
+// an inconvenient cross-CBD journey and transfer, so it must not receive the
+// proximity bonus that its straight-line distance would otherwise produce.
+export const PERSONAL_NETWORK_SCORE_OVERRIDES = {
+  'parkville-2br': {
+    score: null,
+    rationale: 'Cross-CBD trip to South Yarra requires a transfer; no practical-access bonus.',
+  },
+}
+
 export const PERSONAL_NETWORK_DATASET = {
   anchor: 'South Yarra public reference point (personalAnchors.js)',
   method: 'Haversine distance from reference point to the first declared area station anchor',
@@ -70,6 +81,7 @@ function personalNetworkFor(record) {
   const distanceKm = stationAnchor
     ? anchorDistanceKm(referenceCoordinates, stationAnchor.coordinates)
     : null
+  const override = PERSONAL_NETWORK_SCORE_OVERRIDES[record.id]
 
   return {
     referenceAnchorId: referenceAnchor?.id ?? null,
@@ -78,7 +90,8 @@ function personalNetworkFor(record) {
     stationAnchorName: stationAnchor?.name ?? null,
     stationAnchorCoordinates: stationAnchor?.coordinates ?? null,
     distanceKm,
-    score: pnScore(distanceKm),
+    score: override ? override.score : pnScore(distanceKm),
+    scoreOverride: override?.rationale ?? null,
     method: PERSONAL_NETWORK_DATASET.method,
   }
 }

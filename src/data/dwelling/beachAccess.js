@@ -40,6 +40,13 @@ export const beachAccessByAreaId = {
     placeholder: true,
     rationale: 'St Kilda foreshore is part of everyday neighbourhood access.',
   },
+  'st-kilda-west-2br': {
+    estMin: 8,
+    mode: 'walk',
+    confidence: 'medium',
+    placeholder: true,
+    rationale: 'St Kilda West directly fronts the St Kilda foreshore.',
+  },
   'balaclava-2br': {
     estMin: 20,
     mode: 'walk',
