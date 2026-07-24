@@ -22,40 +22,16 @@
         >
         <span class="text-[11.5px] text-ob-muted2">{{ band }}</span>
       </div>
-      <p
-        :class="
-          compact
-            ? 'mt-1.5 text-[10px] leading-snug text-ob-muted2'
-            : 'mt-2 text-[11.5px] leading-relaxed text-ob-muted2'
-        "
-      >
-        10 = lower relative recorded-offence risk. This is not a prediction of personal safety or
-        victimisation.
+      <p :class="compact ? 'mt-1.5 text-[11px] text-ob-muted2' : 'mt-2 text-[12px] text-ob-muted2'">
+        10 = lower recorded-offence risk.
       </p>
-      <div
-        :class="
-          compact
-            ? 'mt-2 grid grid-cols-2 gap-x-2 gap-y-1'
-            : 'mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5'
-        "
-      >
+      <div :class="compact ? 'mt-2 space-y-1' : 'mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5'">
         <div v-for="basket in safetyContext.baskets" :key="basket.key" class="min-w-0">
-          <p
-            :class="
-              compact
-                ? 'font-mono text-[8px] uppercase tracking-[0.05em] text-ob-faint'
-                : 'font-mono text-[9.5px] uppercase tracking-[0.05em] text-ob-faint'
-            "
-          >
-            {{ basket.label }} · {{ Math.round(basket.weight * 100) }}%
-          </p>
-          <p
-            :class="[
-              compact ? 'font-mono text-[10px]' : 'font-mono text-[11px]',
-              riskClass(safety.baskets[basket.key]?.riskPercentile),
-            ]"
-          >
-            {{ riskLabel(safety.baskets[basket.key]?.riskPercentile) }}
+          <p :class="compact ? 'text-[11px] leading-snug' : 'text-[12px] leading-relaxed'">
+            <span class="text-ob-soft">{{ basket.label }}</span>
+            <span :class="riskClass(safety.baskets[basket.key]?.riskPercentile)">
+              · {{ riskLabel(safety.baskets[basket.key]?.riskPercentile) }}
+            </span>
           </p>
         </div>
       </div>
@@ -77,10 +53,11 @@
       </details>
     </template>
     <p
+      v-else
       :class="
         compact
-          ? 'mt-1.5 text-[10px] italic text-ob-faint'
-          : 'mt-2 text-[11.5px] italic text-ob-faint'
+          ? 'mt-1.5 text-[11px] italic text-ob-faint'
+          : 'mt-2 text-[12px] italic text-ob-faint'
       "
     >
       Safety data is not yet available for this recently added record.
@@ -109,7 +86,7 @@ function riskLabel(percentile) {
 function riskClass(percentile) {
   if (percentile == null) return 'text-ob-faint'
   if (percentile <= 1 / 3) return 'text-ob-teal'
-  if (percentile <= 2 / 3) return 'text-ob-sand'
-  return 'text-ob-bright'
+  if (percentile <= 2 / 3) return 'text-amber-300'
+  return 'text-red-300'
 }
 </script>

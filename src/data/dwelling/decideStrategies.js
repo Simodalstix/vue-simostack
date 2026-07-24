@@ -72,7 +72,8 @@ export const decideCriteria = [
   {
     key: 'safety',
     label: 'Safety',
-    hint: 'Comparative CSA recorded-offence indicator. 10 means lower relative recorded-offence risk; turn it off to explore a gentrification-first view.',
+    hint: 'Optional CSA recorded-offence context. 10 means lower relative recorded-offence risk; enable it for a risk-aware comparison.',
+    defaultEnabled: false,
     accent: 'teal',
     value: (rec) => safetyScoreFor(rec.id),
   },
@@ -166,7 +167,7 @@ export const decideStrategies = [
     weights: {
       cost: 2,
       commute: 2,
-      safety: 2,
+      safety: 1,
       schools: 2,
       kidAmenity: 2,
       beach: 2,
@@ -189,7 +190,7 @@ export const decideStrategies = [
     weights: {
       cost: 6,
       commute: 2,
-      safety: 2,
+      safety: 1,
       schools: 1,
       kidAmenity: 1,
       beach: 2,

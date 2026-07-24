@@ -101,14 +101,15 @@ describe('preset weight vectors', () => {
     expect(house.weights.cost).toBeGreaterThan(house.weights.commute)
   })
 
-  it('keeps the community personal lenses off by default', () => {
-    const lensKeys = ['chineseCommunity', 'otherCommunities']
+  it('keeps optional personal lenses and Safety off by default', () => {
+    const lensKeys = ['safety', 'chineseCommunity', 'otherCommunities']
     expect(
       decideCriteria.filter((item) => item.defaultEnabled === false).map((c) => c.key),
     ).toEqual(lensKeys)
-    for (const key of lensKeys) {
+    for (const key of lensKeys.filter((key) => key !== 'safety')) {
       expect(decideStrategies.every((strategy) => strategy.weights[key] === 2)).toBe(true)
     }
+    expect(decideStrategies.every((strategy) => strategy.weights.safety === 1)).toBe(true)
     for (const strategy of decideStrategies) {
       expect(strategy.weights).not.toHaveProperty('filipinoCommunity')
       expect(strategy.weights).not.toHaveProperty('thaiCommunity')
