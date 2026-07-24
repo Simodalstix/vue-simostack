@@ -49,7 +49,7 @@ The core suburb facts. Every factual claim cites a source ID from
 Formulas, weights, presets, bands and gates. Onboarding and UI tasks must
 not modify these.
 
-- `decideStrategies.js` — the nine live criteria and strategy presets (weight
+- `decideStrategies.js` — the ten live criteria and strategy presets (weight
   vectors plus purchase proposition). Additive-bonus criteria sit outside
   the weighted mean.
 - `../../composables/useAreaRanking.js` — hard gates first, then
@@ -57,7 +57,9 @@ not modify these.
 - `../../composables/useCommuteScoring.js` — commute scoring against the
   555 Collins St anchor.
 - `relativeScoring.js` — cohort-percentile scoring for Mingle. Safety is kept
-  as raw record context only and has no live ranking weight.
+  in the generated CSA runtime context and is an opt-in live ranking criterion.
+- `safety/safetyContext.js` — the Safety adapter over the generated CSA context;
+  missing audit coverage stays null and drops from the weighted mean.
 - `cost/costScoring.js`, `cost/costContext.js` — cost criterion adapter.
 - `schools/schoolStrength.js` — schools criterion evidence.
 - `chineseCommunity.js`, `languageCommunities.js`, `partnerPool.js` — the
