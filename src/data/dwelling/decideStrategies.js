@@ -2,7 +2,7 @@
 //
 // The Settle workspace's single control model: a STRATEGY is a weighting preset
 // plus the purchase proposition (dwelling type, bedrooms, price cap) it
-// tests. Selecting a strategy loads its weight vector over the nine suburb
+// tests. Selecting a strategy loads its weight vector over the ten suburb
 // criteria; each criterion is then a binary toggle: on (preset weight) or
 // off (weight 0). Standard criteria renormalise over the enabled weights;
 // explicitly additive criteria such as Beach and Friends apply a small bounded premium
@@ -17,7 +17,7 @@
 
 // ---- criteria -------------------------------------------------------------
 //
-// Nine criteria, each scored 0-10 per suburb, derived from the existing
+// Ten criteria, each scored 0-10 per suburb, derived from the existing
 // record data (nothing new is fabricated here). `value(rec, commuteScore)`
 // returns 0-10 or null when the record carries no data for it; a null is
 // omitted rather than scored as zero. `scoringMode: 'additiveBonus'` keeps a
@@ -31,6 +31,7 @@ import { otherCommunitiesScore } from './languageCommunities.js'
 import { relativeScoreFor } from './relativeScoring.js'
 import { relativeCostScore } from './cost/costScoring.js'
 import { costMetricForArea } from './cost/costContext.js'
+import { safetyScoreFor } from './safety/safetyContext.js'
 
 const tenScale = (v) => (v == null ? null : v * 2) // existing 1-5 scores -> 2-10
 
@@ -67,6 +68,14 @@ export const decideCriteria = [
     hint: 'Door-to-door to 555 Collins St, transfer-penalised.',
     accent: 'blue',
     value: (rec, commuteScore) => tenScale(commuteScore),
+  },
+  {
+    key: 'safety',
+    label: 'Safety',
+    hint: 'Optional CSA recorded-offence context. 10 means lower relative recorded-offence risk; enable it for a risk-aware comparison.',
+    defaultEnabled: false,
+    accent: 'teal',
+    value: (rec) => safetyScoreFor(rec.id),
   },
   {
     key: 'schools',
@@ -158,6 +167,7 @@ export const decideStrategies = [
     weights: {
       cost: 2,
       commute: 2,
+      safety: 1,
       schools: 2,
       kidAmenity: 2,
       beach: 2,
@@ -180,6 +190,7 @@ export const decideStrategies = [
     weights: {
       cost: 6,
       commute: 2,
+      safety: 1,
       schools: 1,
       kidAmenity: 1,
       beach: 2,

@@ -210,6 +210,7 @@ const mobileStrategies = decideStrategies
 const allCriteria = [
   'cost',
   'commute',
+  'safety',
   'soul',
   'schools',
   'kidAmenity',

@@ -326,27 +326,6 @@
         <p v-else class="text-[12px] text-ob-faint italic">not assessed</p>
       </div>
 
-      <!-- crime profile -->
-      <div>
-        <p class="font-mono text-[10.5px] uppercase tracking-[0.06em] text-ob-faint mb-1.5">
-          Crime profile
-          <span v-if="enrich.crime.geography" class="text-ob-dim normal-case"
-            >· {{ enrich.crime.geography
-            }}<span v-if="enrich.crime.asOf">, {{ enrich.crime.asOf }}</span></span
-          >
-        </p>
-        <div v-if="hasCrime" class="flex flex-wrap gap-3">
-          <span v-for="c in crimeRows" :key="c.key" class="font-mono text-[11.5px]">
-            <span class="text-ob-soft">{{ c.label }}:</span>
-            <span :class="crimeClass(enrich.crime[c.key])"> {{ enrich.crime[c.key] }}</span>
-          </span>
-        </div>
-        <p v-else class="text-[12px] text-ob-faint italic">not assessed</p>
-        <p v-if="enrich.crime.note" class="mt-1.5 text-[12px] leading-relaxed text-ob-muted2">
-          {{ enrich.crime.note }}
-        </p>
-      </div>
-
       <!-- broad-area environmental / noise flags -->
       <div v-if="enrich.broadRiskFlags.length">
         <p class="font-mono text-[10.5px] uppercase tracking-[0.06em] text-ob-faint mb-1.5">
@@ -364,7 +343,10 @@
       </div>
     </div>
 
-    <CommunityContextSection :area-id="rec.id" :list-limit="5" show-evidence-details />
+    <div class="grid gap-5 lg:grid-cols-2 lg:items-start">
+      <CommunityContextSection :area-id="rec.id" :list-limit="5" show-evidence-details />
+      <SafetyProfileSection :area-id="rec.id" />
+    </div>
 
     <!-- risks + inspection -->
     <div class="grid md:grid-cols-2 gap-x-10 gap-y-5">
@@ -436,6 +418,7 @@ import { coverageLabelForArea, isGroupedArea } from '@/data/dwelling/areaGeo.js'
 import { zonedSchoolEvidenceForArea } from '@/data/dwelling/schools/schoolStrength.js'
 import CommuteBreakdown from './CommuteBreakdown.vue'
 import CommunityContextSection from './CommunityContextSection.vue'
+import SafetyProfileSection from './SafetyProfileSection.vue'
 
 const props = defineProps({
   row: { type: Object, required: true },
@@ -464,24 +447,6 @@ const activityGroups = [
 const hasActivity = computed(() =>
   activityGroups.some((g) => enrich.value.kidActivity[g.key]?.length),
 )
-
-const crimeRows = [
-  { key: 'person', label: 'Against person' },
-  { key: 'burglary', label: 'Burglary' },
-  { key: 'vehicle', label: 'Vehicle' },
-  { key: 'damage', label: 'Property damage' },
-]
-const hasCrime = computed(() => crimeRows.some((c) => enrich.value.crime[c.key] != null))
-function crimeClass(band) {
-  return (
-    {
-      low: 'text-ob-teal',
-      moderate: 'text-ob-sand',
-      elevated: 'text-ob-sand',
-      high: 'text-ob-bright',
-    }[band] || 'text-ob-dim'
-  )
-}
 
 const SCHOOL_FALLBACK_CAVEAT =
   'School zones are street-level. Verify any address at findmyschool.vic.gov.au. The listed schools are legacy research pending generated zone context.'

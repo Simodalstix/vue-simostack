@@ -47,6 +47,7 @@ import {
 } from '../relativeScoring.js'
 import { useAreaRanking, weightedScore } from '../../../composables/useAreaRanking.js'
 import { commuteFor, scoreCommute } from '../../../composables/useCommuteScoring.js'
+import { safetyContext, safetyScoreFor } from '../safety/safetyContext.js'
 
 const scoredRecords = areaCorridors.filter((r) => r.scored !== false)
 
@@ -61,7 +62,7 @@ function weightsFor(strategy, enabledKeys) {
   )
 }
 
-// Every non-empty subset of the nine criteria, plus the empty set (all off).
+// Every non-empty subset of the ten criteria, plus the empty set (all off).
 function allSubsets(keys) {
   const out = []
   for (let mask = 0; mask < 1 << keys.length; mask++) {
@@ -71,11 +72,11 @@ function allSubsets(keys) {
 }
 
 describe('preset weight vectors', () => {
-  it('ships the two source-backed product strategies with weights over exactly the nine live criteria', () => {
+  it('ships the two source-backed product strategies with weights over exactly the ten live criteria', () => {
     expect(decideStrategies.map((s) => s.id)).toEqual(['apartment', 'house'])
     const keys = decideCriteria.map((c) => c.key).sort()
-    expect(keys).toHaveLength(9)
-    expect(keys).not.toContain('safetyQuality')
+    expect(keys).toHaveLength(10)
+    expect(keys).toContain('safety')
     for (const s of decideStrategies) {
       expect(Object.keys(s.weights).sort()).toEqual(keys)
       for (const w of Object.values(s.weights)) {
@@ -100,14 +101,15 @@ describe('preset weight vectors', () => {
     expect(house.weights.cost).toBeGreaterThan(house.weights.commute)
   })
 
-  it('keeps the community personal lenses off by default', () => {
-    const lensKeys = ['chineseCommunity', 'otherCommunities']
+  it('keeps optional personal lenses and Safety off by default', () => {
+    const lensKeys = ['safety', 'chineseCommunity', 'otherCommunities']
     expect(
       decideCriteria.filter((item) => item.defaultEnabled === false).map((c) => c.key),
     ).toEqual(lensKeys)
-    for (const key of lensKeys) {
+    for (const key of lensKeys.filter((key) => key !== 'safety')) {
       expect(decideStrategies.every((strategy) => strategy.weights[key] === 2)).toBe(true)
     }
+    expect(decideStrategies.every((strategy) => strategy.weights.safety === 1)).toBe(true)
     for (const strategy of decideStrategies) {
       expect(strategy.weights).not.toHaveProperty('filipinoCommunity')
       expect(strategy.weights).not.toHaveProperty('thaiCommunity')
@@ -120,12 +122,25 @@ describe('preset weight vectors', () => {
     expect(accents).toMatchObject({
       cost: 'blue',
       commute: 'blue',
+      safety: 'teal',
       schools: 'purple',
       kidAmenity: 'purple',
       beach: 'amber',
       personalNetwork: 'amber',
       partnerPool: 'pink',
     })
+  })
+
+  it('uses the CSA Safety context as an opt-in standard criterion', () => {
+    const safety = decideCriteria.find((criterion) => criterion.key === 'safety')
+    const stKilda = areaCorridors.find((rec) => rec.id === 'st-kilda-2br')
+    const northcote = areaCorridors.find((rec) => rec.id === 'northcote-2br')
+
+    expect(safetyContext.status).toBe('approved-runtime-context')
+    expect(safetyContext.source.sha256).toMatch(/^[a-f0-9]{64}$/)
+    expect(safety.value(stKilda)).toBe(safetyScoreFor(stKilda.id))
+    expect(safety.value(northcote)).toBeGreaterThan(safety.value(stKilda))
+    expect(safety.value({ id: 'not-in-audit' })).toBeNull()
   })
 })
 
