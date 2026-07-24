@@ -101,7 +101,9 @@ import { useRoute } from 'vue-router'
 import { MAIN_NAV_LINKS } from '@/router/routes.js'
 
 const route = useRoute()
-const isPrep = computed(() => route.path.startsWith('/prep') || route.path.startsWith('/clearance'))
+const isPrep = computed(
+  () => route.path.startsWith('/prep') || (import.meta.env.DEV && route.path.startsWith('/clearance')),
+)
 const mainNavLinks = MAIN_NAV_LINKS
 
 const isMobileMenuOpen = ref(false)

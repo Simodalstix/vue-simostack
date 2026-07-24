@@ -54,12 +54,20 @@ export const appRoutes = [
     component: () => import('../views/PrepView.vue'),
     meta: { title: 'Prep · Simon Parker' },
   },
-  {
-    path: '/clearance',
-    name: 'Clearance',
-    component: () => import('../views/ClearanceView.vue'),
-    meta: { title: 'Clearance · Simon Parker' },
-  },
+  // The private travel-timeline / PV-prep tool. It carries sensitive personal
+  // history and must never ship to the public site. Gating on import.meta.env.DEV
+  // means the route, the ClearanceView chunk and its data are tree-shaken out of
+  // the production build entirely; it renders only under `vite dev` (localhost).
+  ...(import.meta.env.DEV
+    ? [
+        {
+          path: '/clearance',
+          name: 'Clearance',
+          component: () => import('../views/ClearanceView.vue'),
+          meta: { title: 'Clearance · Simon Parker' },
+        },
+      ]
+    : []),
   {
     path: SETTLE_PATHS.root,
     component: () => import('../views/dwelling/DwellingShell.vue'),

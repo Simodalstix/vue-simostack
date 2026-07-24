@@ -1,31 +1,81 @@
-# Simostack — Vue Edition
+# simostack.com
 
-A modular, single-page portfolio site built with **Vue.js**, designed to showcase professional projects and hands-on experience with modern web and cloud technologies.
+A Vue 3 single-page site that started as a portfolio and has become the shell
+for **Settle**, a data-backed tool for deciding where to buy a house in
+Melbourne. The portfolio still exists; the interesting engineering is the data
+pipeline behind Settle.
 
-## Overview
+- **Live:** [simostack.com](https://simostack.com)
+- **Stack:** Vue 3, Vite, Vue Router, Tailwind, MapLibre GL. Statically built,
+  deployed to AWS S3 + CloudFront via GitHub Actions.
+- **Agent/contributor entry point:** [`AGENTS.md`](./AGENTS.md).
 
-This site is statically deployed and uses Vue Router for client-side navigation. Blog content is pulled dynamically from a lightweight API hosted on a Raspberry Pi, with a serverless visitor counter powered by AWS Lambda and DynamoDB.
+## Settle
 
-## Highlights
+`/tool/settle` ranks around 120 Melbourne suburbs against ten weighted criteria
+(cost, commute, safety, schools, recreation, beach access, friends nearby, two
+community-fit measures, and a partner-pool "Mingle" score). You pick a strategy
+preset or tune the weights; it ranks and explains.
 
-- **Vue 3 + Vite** frontend with modular components (e.g. `BaseModal`, `ProjectCard`)
-- **Vue Router** for clean SPA routing
-- **Self-hosted Blog API** delivering dynamic content from a Raspberry Pi
-- **CI/CD via GitHub Actions**, deployed to AWS S3 + CloudFront
-- **Serverless backend** (Lambda, API Gateway, DynamoDB) for lightweight telemetry
+The point of the tool is not the ranking widget, it is that every number is
+traceable back to an official source. The data moves in one direction:
 
-## Tools namespace
+```
+official publisher files          Python builders            runtime data layer            UI
+(VGV sales, ABS 2021 Census,  ->  (tools/, offline,      ->  (src/data/dwelling/,      ->  Vue +
+ school points/zones, mesh-        SHA-256 verified,          generated datasets +          MapLibre
+ block population + open            QA + provenance)          cited records + scoring)
+ space, CSA offences)
+```
 
-- **Settle** is the Melbourne suburb strategy tool at `/tool/settle`.
-- `/tool/gauge` is reserved for a future property-listing benchmarking tool. It has no route or implementation yet.
-- Legacy `/dwelling`, `/dwelling/overview` and `/dwelling/decide` links redirect to their Settle equivalents.
+### How raw data becomes a score
 
-## Purpose
+1. **Sources are official and pinned.** Raw workbooks (Valuer-General sales
+   medians, ABS Census GCP, school zones, mesh-block open-space) are validated
+   by SHA-256 before anything reads them. Nothing is fetched at site build or
+   runtime.
+2. **Offline pipelines do the transform.** The Python builders under
+   [`tools/`](./tools/README.md) extract, compute, and emit generated
+   TypeScript/JSON datasets plus QA, outlier, and source-manifest artifacts.
+   Generated datasets are never hand-edited; you change the source or config and
+   rerun the builder.
+3. **The runtime layer carries provenance.** Hand-maintained suburb records in
+   `src/data/dwelling/` cite a source ID from a central registry; generated
+   records carry source table, cell, hash, and retrieval date.
+4. **Scoring is a protected layer.** `useAreaRanking.js` applies hard gates
+   first, then a weighted mean across the ten criteria. Missing evidence stays
+   `null` and drops out of the mean; it is never coerced to zero or guessed.
+   Strategy presets are weight vectors; some criteria (safety, Mingle) use
+   cohort-percentile scoring rather than absolute bands.
 
-This project serves as a personal sandbox to grow deeper with Vue and full-stack integrations. Every element — from component structure to deployment pipeline — reflects an emphasis on modularity, maintainability, and real-world readiness.
+The disciplines that keep it honest: **one source many views, provenance
+mandatory, generated files regenerated not edited, missing evidence is null not
+zero, and scoring changes are their own reviewed change class** (separate from
+UI work and from adding a suburb). The full contract is in
+[`AGENTS.md`](./AGENTS.md) and the per-layer READMEs under `tools/` and
+`src/data/dwelling/`.
+
+## The rest of the site
+
+- **Portfolio** (`/`, `/about`, `/projects`): the original purpose.
+- **Blog** (`/blog`): content served from a self-hosted API on a Raspberry Pi.
+  A serverless visitor counter runs on Lambda + API Gateway + DynamoDB.
+- **Prep** (`/prep`): private interview-prep reference pages.
+
+## Develop
+
+```bash
+npm install
+npm run dev      # vite dev server
+npm run test     # vitest: data-layer + router tests
+npm run build    # production build
+npm run lint     # eslint --fix
+```
+
+Python pipeline tests live beside each builder under `tools/` (see
+[`tools/README.md`](./tools/README.md)).
 
 ## Author
 
-**Simon Parker**  
-[simostack.com](https://simostack.com)  
+**Simon Parker** · [simostack.com](https://simostack.com) ·
 [github.com/Simodalstix](https://github.com/Simodalstix)

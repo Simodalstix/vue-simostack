@@ -207,7 +207,7 @@ export const personalPosition = {
       label: 'New role',
       value: 'New infrastructure role',
       detail:
-        'Starts in about 2.5 months, around October 2026. Positive Vetting clearance is in progress and required before you can commence. This housing plan and the /clearance PV prep are two halves of the same transition.',
+        'Starts in about 2.5 months, around October 2026. Positive Vetting clearance is in progress and required before you can commence. This housing plan and the clearance preparation are two halves of the same transition.',
     },
     {
       label: 'Income',
