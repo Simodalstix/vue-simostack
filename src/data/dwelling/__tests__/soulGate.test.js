@@ -28,6 +28,7 @@ describe('Soul owner-veto gate', () => {
         basis: 'Owner judgment',
       },
       'south-melbourne-2br': { reason: 'Motorway', basis: 'Owner judgment' },
+      'southbank-2br': { reason: 'Current home base', basis: 'Owner judgment' },
     })
     expect(OWNER_VETOES_BY_AREA_ID).not.toHaveProperty('docklands-2br')
     expect(OWNER_VETOES_BY_AREA_ID).not.toHaveProperty('parkville-2br')

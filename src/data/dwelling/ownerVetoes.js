@@ -23,6 +23,10 @@ export const OWNER_VETOES_BY_AREA_ID = {
     reason: 'Motorway',
     basis: 'Owner judgment',
   },
+  'southbank-2br': {
+    reason: 'Current home base',
+    basis: 'Owner judgment',
+  },
 }
 
 export function ownerVetoFor(areaId) {
