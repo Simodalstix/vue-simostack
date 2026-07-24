@@ -9,7 +9,7 @@
 export const SCHOOL_POINTS_DATASET = {
   "source": "School Locations CSV + School Zones (data.vic.gov.au)",
   "zoneYear": "2027",
-  "generatedAt": "2026-07-23"
+  "generatedAt": "2026-07-24"
 }
 
 export const schoolPoints = [
@@ -61,6 +61,23 @@ export const schoolPoints = [
       "craigieburn-townhouse"
     ],
     "zonedFor": []
+  },
+  {
+    "id": "albanvale-primary-school",
+    "schoolNo": "5179",
+    "name": "Albanvale Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.77442,
+      -37.74402
+    ],
+    "areaIds": [
+      "albanvale-house"
+    ],
+    "zonedFor": [
+      "albanvale-house"
+    ]
   },
   {
     "id": "albert-park-college",
@@ -399,6 +416,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "bemin-secondary-college",
+    "schoolNo": "8396",
+    "name": "Bemin Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.70975,
+      -37.82641
+    ],
+    "areaIds": [
+      "truganina-house"
+    ],
+    "zonedFor": [
+      "truganina-house"
+    ]
+  },
+  {
     "id": "bentleigh-secondary-college",
     "schoolNo": "7255",
     "name": "Bentleigh Secondary College",
@@ -655,6 +689,25 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "brookside-p-9-college",
+    "schoolNo": "8908",
+    "name": "Brookside P-9 College",
+    "category": "combined",
+    "sector": "government",
+    "coordinates": [
+      144.73722,
+      -37.74634
+    ],
+    "areaIds": [
+      "caroline-springs-house",
+      "burnside-house"
+    ],
+    "zonedFor": [
+      "caroline-springs-house",
+      "burnside-house"
+    ]
+  },
+  {
     "id": "brunswick-east-primary-school",
     "schoolNo": "3179",
     "name": "Brunswick East Primary School",
@@ -811,6 +864,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "burnside-primary-school",
+    "schoolNo": "5502",
+    "name": "Burnside Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.75289,
+      -37.74566
+    ],
+    "areaIds": [
+      "burnside-house"
+    ],
+    "zonedFor": [
+      "burnside-house"
+    ]
+  },
+  {
     "id": "cairnlea-park-primary-school",
     "schoolNo": "1434",
     "name": "Cairnlea Park Primary School",
@@ -941,6 +1011,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "carranballac-p-9-college",
+    "schoolNo": "5486",
+    "name": "Carranballac P-9 College",
+    "category": "combined",
+    "sector": "government",
+    "coordinates": [
+      144.74313,
+      -37.88474
+    ],
+    "areaIds": [
+      "williams-landing-house"
+    ],
+    "zonedFor": [
+      "williams-landing-house"
+    ]
+  },
+  {
     "id": "caulfield-junior-college",
     "schoolNo": "3820",
     "name": "Caulfield Junior College",
@@ -951,10 +1038,29 @@ export const schoolPoints = [
       -37.87211
     ],
     "areaIds": [
-      "malvern-2br"
+      "malvern-2br",
+      "caulfield-north-2br"
     ],
     "zonedFor": [
-      "malvern-2br"
+      "malvern-2br",
+      "caulfield-north-2br"
+    ]
+  },
+  {
+    "id": "caulfield-south-primary-school",
+    "schoolNo": "4315",
+    "name": "Caulfield South Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.0308,
+      -37.89525
+    ],
+    "areaIds": [
+      "caulfield-south-2br"
+    ],
+    "zonedFor": [
+      "caulfield-south-2br"
     ]
   },
   {
@@ -1125,10 +1231,18 @@ export const schoolPoints = [
       -37.71946
     ],
     "areaIds": [
-      "sydenham-house"
+      "sydenham-house",
+      "albanvale-house",
+      "hillside-house",
+      "kings-park-house",
+      "taylors-lakes-house"
     ],
     "zonedFor": [
-      "sydenham-house"
+      "sydenham-house",
+      "albanvale-house",
+      "hillside-house",
+      "kings-park-house",
+      "taylors-lakes-house"
     ]
   },
   {
@@ -1198,6 +1312,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "deanside-primary-school",
+    "schoolNo": "5578",
+    "name": "Deanside Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.69701,
+      -37.72176
+    ],
+    "areaIds": [
+      "deanside-house"
+    ],
+    "zonedFor": [
+      "deanside-house"
+    ]
+  },
+  {
     "id": "deer-park-west-primary-school",
     "schoolNo": "5032",
     "name": "Deer Park West Primary School",
@@ -1212,6 +1343,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "deer-park-house"
+    ]
+  },
+  {
+    "id": "derrimut-primary-school",
+    "schoolNo": "5512",
+    "name": "Derrimut Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.7632,
+      -37.78927
+    ],
+    "areaIds": [
+      "derrimut-house"
+    ],
+    "zonedFor": [
+      "derrimut-house"
     ]
   },
   {
@@ -1678,6 +1826,40 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "frankston-high-school",
+    "schoolNo": "7850",
+    "name": "Frankston High School",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.12895,
+      -38.16219
+    ],
+    "areaIds": [
+      "frankston-2br"
+    ],
+    "zonedFor": [
+      "frankston-2br"
+    ]
+  },
+  {
+    "id": "frankston-primary-school",
+    "schoolNo": "1464",
+    "name": "Frankston Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.12403,
+      -38.14756
+    ],
+    "areaIds": [
+      "frankston-2br"
+    ],
+    "zonedFor": [
+      "frankston-2br"
+    ]
+  },
+  {
     "id": "gilgai-plains-primary-school",
     "schoolNo": "5584",
     "name": "Gilgai Plains Primary School",
@@ -1723,11 +1905,36 @@ export const schoolPoints = [
     ],
     "areaIds": [
       "inner-se-apartment-corridor",
-      "malvern-2br"
+      "malvern-2br",
+      "caulfield-2br",
+      "caulfield-north-2br",
+      "caulfield-south-2br",
+      "glen-huntly-2br"
     ],
     "zonedFor": [
       "inner-se-apartment-corridor",
-      "malvern-2br"
+      "malvern-2br",
+      "caulfield-2br",
+      "caulfield-north-2br",
+      "caulfield-south-2br",
+      "glen-huntly-2br"
+    ]
+  },
+  {
+    "id": "glen-huntly-primary-school",
+    "schoolNo": "3703",
+    "name": "Glen Huntly Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.04623,
+      -37.89377
+    ],
+    "areaIds": [
+      "glen-huntly-2br"
+    ],
+    "zonedFor": [
+      "glen-huntly-2br"
     ]
   },
   {
@@ -1837,9 +2044,29 @@ export const schoolPoints = [
       -37.7047
     ],
     "areaIds": [
+      "jacana-house",
       "northwest-villa-corridor"
     ],
-    "zonedFor": []
+    "zonedFor": [
+      "jacana-house"
+    ]
+  },
+  {
+    "id": "glenroy-west-primary-school",
+    "schoolNo": "4809",
+    "name": "Glenroy West Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.90829,
+      -37.70496
+    ],
+    "areaIds": [
+      "jacana-house"
+    ],
+    "zonedFor": [
+      "jacana-house"
+    ]
   },
   {
     "id": "greensborough-secondary-college",
@@ -2223,6 +2450,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "kings-park-primary-school",
+    "schoolNo": "5236",
+    "name": "Kings Park Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.76754,
+      -37.73315
+    ],
+    "areaIds": [
+      "kings-park-house"
+    ],
+    "zonedFor": [
+      "kings-park-house"
+    ]
+  },
+  {
     "id": "kingsville-primary-school",
     "schoolNo": "3988",
     "name": "Kingsville Primary School",
@@ -2314,9 +2558,12 @@ export const schoolPoints = [
       -37.87159
     ],
     "areaIds": [
+      "caulfield-2br",
       "malvern-2br"
     ],
-    "zonedFor": []
+    "zonedFor": [
+      "caulfield-2br"
+    ]
   },
   {
     "id": "maribyrnong-college",
@@ -2370,6 +2617,23 @@ export const schoolPoints = [
     "zonedFor": [
       "mckinnon-villa",
       "bentleigh-house"
+    ]
+  },
+  {
+    "id": "meadowglen-primary-school",
+    "schoolNo": "5286",
+    "name": "Meadowglen Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      145.05309,
+      -37.64275
+    ],
+    "areaIds": [
+      "mill-park-house"
+    ],
+    "zonedFor": [
+      "mill-park-house"
     ]
   },
   {
@@ -2484,6 +2748,23 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "mickleham-secondary-college",
+    "schoolNo": "8041",
+    "name": "Mickleham Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.90194,
+      -37.52738
+    ],
+    "areaIds": [
+      "mickleham-house"
+    ],
+    "zonedFor": [
+      "mickleham-house"
+    ]
+  },
+  {
     "id": "middle-park-primary-school",
     "schoolNo": "2815",
     "name": "Middle Park Primary School",
@@ -2499,6 +2780,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "middle-park-2br"
+    ]
+  },
+  {
+    "id": "mill-park-secondary-college",
+    "schoolNo": "8775",
+    "name": "Mill Park Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      145.06341,
+      -37.66416
+    ],
+    "areaIds": [
+      "mill-park-house"
+    ],
+    "zonedFor": [
+      "mill-park-house"
     ]
   },
   {
@@ -2918,10 +3216,12 @@ export const schoolPoints = [
     ],
     "areaIds": [
       "port-melbourne-2br",
+      "southbank-2br",
       "docklands-2br"
     ],
     "zonedFor": [
-      "port-melbourne-2br"
+      "port-melbourne-2br",
+      "southbank-2br"
     ]
   },
   {
@@ -3322,6 +3622,23 @@ export const schoolPoints = [
     ]
   },
   {
+    "id": "seabrook-primary-school",
+    "schoolNo": "5337",
+    "name": "Seabrook Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.7579,
+      -37.87884
+    ],
+    "areaIds": [
+      "williams-landing-house"
+    ],
+    "zonedFor": [
+      "williams-landing-house"
+    ]
+  },
+  {
     "id": "solway-primary-school",
     "schoolNo": "4641",
     "name": "Solway Primary School",
@@ -3364,9 +3681,12 @@ export const schoolPoints = [
       -37.82935
     ],
     "areaIds": [
+      "southbank-2br",
       "docklands-2br"
     ],
-    "zonedFor": []
+    "zonedFor": [
+      "southbank-2br"
+    ]
   },
   {
     "id": "south-yarra-primary-school",
@@ -3416,6 +3736,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "spotswood-2br"
+    ]
+  },
+  {
+    "id": "springside-west-secondary-college",
+    "schoolNo": "8784",
+    "name": "Springside West Secondary College",
+    "category": "secondary",
+    "sector": "government",
+    "coordinates": [
+      144.72787,
+      -37.71569
+    ],
+    "areaIds": [
+      "deanside-house"
+    ],
+    "zonedFor": [
+      "deanside-house"
     ]
   },
   {
@@ -3650,13 +3987,15 @@ export const schoolPoints = [
       "sunshine-station-2br",
       "albion-house",
       "sunshine-north-house",
-      "sunshine-west-house"
+      "sunshine-west-house",
+      "derrimut-house"
     ],
     "zonedFor": [
       "sunshine-station-2br",
       "albion-house",
       "sunshine-north-house",
-      "sunshine-west-house"
+      "sunshine-west-house",
+      "derrimut-house"
     ]
   },
   {
@@ -3753,10 +4092,12 @@ export const schoolPoints = [
       -37.70205
     ],
     "areaIds": [
-      "sydenham-house"
+      "sydenham-house",
+      "taylors-lakes-house"
     ],
     "zonedFor": [
-      "sydenham-house"
+      "sydenham-house",
+      "taylors-lakes-house"
     ]
   },
   {
@@ -4078,6 +4419,23 @@ export const schoolPoints = [
     "zonedFor": []
   },
   {
+    "id": "warreen-primary-school",
+    "schoolNo": "5607",
+    "name": "Warreen Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.71529,
+      -37.81622
+    ],
+    "areaIds": [
+      "truganina-house"
+    ],
+    "zonedFor": [
+      "truganina-house"
+    ]
+  },
+  {
     "id": "watsonia-north-primary-school",
     "schoolNo": "4988",
     "name": "Watsonia North Primary School",
@@ -4342,6 +4700,23 @@ export const schoolPoints = [
     ],
     "zonedFor": [
       "yarraville-2br"
+    ]
+  },
+  {
+    "id": "yubup-primary-school",
+    "schoolNo": "5576",
+    "name": "Yubup Primary School",
+    "category": "primary",
+    "sector": "government",
+    "coordinates": [
+      144.89382,
+      -37.54299
+    ],
+    "areaIds": [
+      "mickleham-house"
+    ],
+    "zonedFor": [
+      "mickleham-house"
     ]
   }
 ]

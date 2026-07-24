@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-community-context-targets",
-  "version": "2021-gcp-sal-extension-90",
-  "retrievedAt": "2026-07-23",
-  "recordCount": 90,
+  "version": "2021-gcp-sal-extension-112",
+  "retrievedAt": "2026-07-24",
+  "recordCount": 112,
   "records": [
     {
       "id": "yarraville-2br",
@@ -811,6 +811,204 @@
         {
           "suburb": "Roxburgh Park",
           "salCode": "22208"
+        }
+      ]
+    },
+    {
+      "id": "albanvale-house",
+      "salComponents": [
+        {
+          "suburb": "Albanvale",
+          "salCode": "20017"
+        }
+      ]
+    },
+    {
+      "id": "burnside-house",
+      "salComponents": [
+        {
+          "suburb": "Burnside (Vic.)",
+          "salCode": "20419"
+        }
+      ]
+    },
+    {
+      "id": "caroline-springs-house",
+      "salComponents": [
+        {
+          "suburb": "Caroline Springs",
+          "salCode": "20500"
+        }
+      ]
+    },
+    {
+      "id": "caulfield-2br",
+      "salComponents": [
+        {
+          "suburb": "Caulfield",
+          "salCode": "20521"
+        }
+      ]
+    },
+    {
+      "id": "caulfield-north-2br",
+      "salComponents": [
+        {
+          "suburb": "Caulfield North",
+          "salCode": "20523"
+        }
+      ]
+    },
+    {
+      "id": "caulfield-south-2br",
+      "salComponents": [
+        {
+          "suburb": "Caulfield South",
+          "salCode": "20524"
+        }
+      ]
+    },
+    {
+      "id": "dandenong-south-census",
+      "salComponents": [
+        {
+          "suburb": "Dandenong South",
+          "salCode": "20709"
+        }
+      ]
+    },
+    {
+      "id": "deanside-house",
+      "salComponents": [
+        {
+          "suburb": "Deanside",
+          "salCode": "20724"
+        }
+      ]
+    },
+    {
+      "id": "derrimut-house",
+      "salComponents": [
+        {
+          "suburb": "Derrimut",
+          "salCode": "20743"
+        }
+      ]
+    },
+    {
+      "id": "frankston-2br",
+      "salComponents": [
+        {
+          "suburb": "Frankston",
+          "salCode": "20947"
+        }
+      ]
+    },
+    {
+      "id": "glen-huntly-2br",
+      "salComponents": [
+        {
+          "suburb": "Glen Huntly",
+          "salCode": "21009"
+        }
+      ]
+    },
+    {
+      "id": "hillside-house",
+      "salComponents": [
+        {
+          "suburb": "Hillside (Melton - Vic.)",
+          "salCode": "21193"
+        }
+      ]
+    },
+    {
+      "id": "jacana-house",
+      "salComponents": [
+        {
+          "suburb": "Jacana",
+          "salCode": "21248"
+        }
+      ]
+    },
+    {
+      "id": "kings-park-house",
+      "salComponents": [
+        {
+          "suburb": "Kings Park (Vic.)",
+          "salCode": "21362"
+        }
+      ]
+    },
+    {
+      "id": "laverton-north-census",
+      "salComponents": [
+        {
+          "suburb": "Laverton North",
+          "salCode": "21477"
+        }
+      ]
+    },
+    {
+      "id": "mickleham-house",
+      "salComponents": [
+        {
+          "suburb": "Mickleham",
+          "salCode": "21675"
+        }
+      ]
+    },
+    {
+      "id": "mill-park-house",
+      "salComponents": [
+        {
+          "suburb": "Mill Park",
+          "salCode": "21683"
+        }
+      ]
+    },
+    {
+      "id": "ravenhall-census",
+      "salComponents": [
+        {
+          "suburb": "Ravenhall",
+          "salCode": "22141"
+        }
+      ]
+    },
+    {
+      "id": "southbank-2br",
+      "salComponents": [
+        {
+          "suburb": "Southbank",
+          "salCode": "22315"
+        }
+      ]
+    },
+    {
+      "id": "taylors-lakes-house",
+      "salComponents": [
+        {
+          "suburb": "Taylors Lakes",
+          "salCode": "22474"
+        }
+      ]
+    },
+    {
+      "id": "truganina-house",
+      "salComponents": [
+        {
+          "suburb": "Truganina",
+          "salCode": "22582"
+        }
+      ]
+    },
+    {
+      "id": "williams-landing-house",
+      "salComponents": [
+        {
+          "suburb": "Williams Landing",
+          "salCode": "22791"
         }
       ]
     }

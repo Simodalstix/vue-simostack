@@ -7,7 +7,7 @@
 export const DWELLING_COST_CONTEXT = {
   "dataset": "dwelling-cost-context",
   "methodVersion": "dwelling-cost-v2",
-  "generatedAt": "2026-07-23T12:15:18+00:00",
+  "generatedAt": "2026-07-24T10:10:39+00:00",
   "defaultMaxPrice": 900000,
   "records": [
     {
@@ -7098,6 +7098,947 @@ export const DWELLING_COST_CONTEXT = {
               "bedroomSpecific": false,
               "componentSuburbs": [
                 "Roxburgh Park"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "albanvale-house",
+      "suburb": "Albanvale",
+      "prices": {
+        "house": {
+          "all": {
+            "medianPrice": 655500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 5.65,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Albanvale"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "burnside-house",
+      "suburb": "Burnside",
+      "prices": {
+        "house": {
+          "all": {
+            "medianPrice": 822500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.1481,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Burnside"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "caroline-springs-house",
+      "suburb": "Caroline Springs",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 510000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 9.6667,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Caroline Springs"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 789000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.6444,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Caroline Springs"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "caulfield-2br",
+      "suburb": "Caulfield",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 790000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.6296,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Caulfield"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1930000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Caulfield"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "caulfield-north-2br",
+      "suburb": "Caulfield North",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 635000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 6.3333,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Caulfield North"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 2462500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Caulfield North"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "caulfield-south-2br",
+      "suburb": "Caulfield South",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 977500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Caulfield South"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 2037500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Caulfield South"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "deanside-house",
+      "suburb": "Deanside",
+      "prices": {
+        "house": {
+          "all": {
+            "medianPrice": 690000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 4.5,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Deanside"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "derrimut-house",
+      "suburb": "Derrimut",
+      "prices": {
+        "house": {
+          "all": {
+            "medianPrice": 809500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.3407,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Derrimut"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "frankston-2br",
+      "suburb": "Frankston",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 570000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 8.3333,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Frankston"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 827000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.0815,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Frankston"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "glen-huntly-2br",
+      "suburb": "Glen Huntly",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 630000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 6.5,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Glen Huntly"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 1907000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Glen Huntly"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hillside-house",
+      "suburb": "Hillside",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 577000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 8.1778,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Hillside (Melton)"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 820000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 1.1852,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Hillside (Melton)"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "jacana-house",
+      "suburb": "Jacana",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 575500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 8.2111,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Jacana"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 648000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 5.9,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Jacana"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "kings-park-house",
+      "suburb": "Kings Park",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 465000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 10.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Kings Park"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": {
+                "Kings Park": "^"
+              }
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 650000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 5.8333,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Kings Park"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "mickleham-house",
+      "suburb": "Mickleham",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 617500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 6.9167,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Mickleham"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 700000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 4.1667,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Mickleham"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "mill-park-house",
+      "suburb": "Mill Park",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 571000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 8.3111,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Mill Park"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 840500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.8815,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Mill Park"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "southbank-2br",
+      "suburb": "Southbank",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 580000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 8.1111,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Southbank"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "taylors-lakes-house",
+      "suburb": "Taylors Lakes",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 554500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 8.6778,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Taylors Lakes"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 960000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.0,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Taylors Lakes"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "truganina-house",
+      "suburb": "Truganina",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 532500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 9.1667,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Truganina"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 670000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 5.1667,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Truganina"
+              ],
+              "sourceFiles": [
+                "houses-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "williams-landing-house",
+      "suburb": "Williams Landing",
+      "prices": {
+        "unit": {
+          "all": {
+            "medianPrice": 432500,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 10.0,
+            "evidence": {
+              "propertyType": "unit",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Williams Landing"
+              ],
+              "sourceFiles": [
+                "units-by-suburb-2015-2025.xlsx"
+              ],
+              "latestYear": 2025,
+              "groupedMedianMethod": "reported suburb median",
+              "lowSampleMarkers": null
+            }
+          }
+        },
+        "house": {
+          "all": {
+            "medianPrice": 855000,
+            "priceType": "settled",
+            "bedrooms": null,
+            "sampleSize": null,
+            "salesPerYear": null,
+            "listingCount": null,
+            "availabilityScore": null,
+            "defaultAffordabilityScore": 0.6667,
+            "evidence": {
+              "propertyType": "house",
+              "bedroomSpecific": false,
+              "componentSuburbs": [
+                "Williams Landing"
               ],
               "sourceFiles": [
                 "houses-by-suburb-2015-2025.xlsx"

@@ -79,6 +79,73 @@ const chelseaBonbeach = {
   },
 }
 
+const fridayNightProfiles = Object.fromEntries(
+  [
+    ['albanvale-house', 'Albanvale', 'an established 3BR house', 'a bus-to-rail western commute'],
+    ['burnside-house', 'Burnside', 'an established 3BR house', 'a feeder trip to regional rail'],
+    [
+      'caroline-springs-house',
+      'Caroline Springs',
+      'an established 3BR house',
+      'Caroline Springs regional rail',
+    ],
+    ['caulfield-2br', 'Caulfield', 'an older 2BR unit', 'the Caulfield rail interchange'],
+    ['caulfield-north-2br', 'Caulfield North', 'an older 2BR apartment', 'tram and rail access'],
+    [
+      'caulfield-south-2br',
+      'Caulfield South',
+      'an older 2BR unit or villa',
+      'tram and feeder access',
+    ],
+    ['deanside-house', 'Deanside', 'a completed 3BR house', 'a developing feeder network'],
+    ['derrimut-house', 'Derrimut', 'an established 3BR house', 'bus access to western rail'],
+    ['frankston-2br', 'Frankston', 'an older 2BR unit', 'direct Frankston-line rail'],
+    ['glen-huntly-2br', 'Glen Huntly', 'an older 2BR apartment', 'rail and tram access'],
+    ['hillside-house', 'Hillside', 'an established 3BR house', 'a feeder trip to Watergardens'],
+    ['jacana-house', 'Jacana', 'an established 3BR house', 'direct Craigieburn-line rail'],
+    ['kings-park-house', 'Kings Park', 'an established 3BR house', 'a bus-to-rail commute'],
+    ['mickleham-house', 'Mickleham', 'a completed 3BR house', 'a long Craigieburn feeder'],
+    ['mill-park-house', 'Mill Park', 'an established 3BR house', 'South Morang rail access'],
+    ['southbank-2br', 'Southbank', 'a 2BR apartment', 'a walk-and-tram CBD commute'],
+    [
+      'taylors-lakes-house',
+      'Taylors Lakes',
+      'an established 3BR house',
+      'Watergardens rail access',
+    ],
+    ['truganina-house', 'Truganina', 'a completed 3BR house', 'a Williams Landing feeder'],
+    [
+      'williams-landing-house',
+      'Williams Landing',
+      'an established 3BR house',
+      'direct Werribee-line rail',
+    ],
+  ].map(([id, suburb, product, transport]) => [
+    id,
+    {
+      previewTagline: `${suburb}: ${product}`,
+      lives: `${suburb} is tested here as a specific residential proposition anchored to ${transport}, not as a claim that every pocket performs alike.`,
+      housing: `The product is ${product}; the checked-in VGV series supplies the suburb-wide settled-price context.`,
+      fit: [
+        {
+          text: 'Census, official locality, cost and 2027 school-zone evidence are integrated.',
+          tag: null,
+        },
+        {
+          text: 'Safety and recreation remain unscored; address-level transport and school checks still matter.',
+          tag: 'tradeoff',
+        },
+      ],
+      decision: {
+        bestFor: `Comparing ${suburb} on recurring housing evidence rather than suburb reputation.`,
+        mainRisk: 'A suburb-wide median can hide street, building, feeder and title variation.',
+        pursueWhen:
+          'When the exact transport trip, property condition, title and school zone verify.',
+      },
+    },
+  ]),
+)
+
 export const suburbProfiles = {
   'melbourne-cbd-2br': {
     lives:
@@ -2976,6 +3043,7 @@ export const suburbProfiles = {
       pursueWhen: 'When the exact station walk, title and school zone verify.',
     },
   },
+  ...fridayNightProfiles,
 }
 
 export function suburbProfileFor(areaId) {

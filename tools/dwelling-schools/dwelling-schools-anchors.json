@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-07-23",
+ "generatedAt": "2026-07-24",
  "recipe": "Derived from areaGeo.js stationPoints + areaCorridors.js childhood name hints. Regenerate after adding records; never hand-edit.",
  "records": [
   {
@@ -32,7 +32,8 @@
     "privateContext": [
      "Melbourne High (selective-entry public — NOT zoned, exam entry)"
     ]
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "inner-richmond-2br",
@@ -63,7 +64,8 @@
      "Melbourne Girls' College (public single-sex, high-performing)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "inner-collingwood-2br",
@@ -93,7 +95,8 @@
      "Collingwood College (P-12, Steiner stream)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "inner-windsor-prahran-2br",
@@ -122,7 +125,8 @@
      "Prahran High"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "inner-abbotsford-2br",
@@ -152,7 +156,8 @@
      "Richmond High / Collingwood College (zone-dependent)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "sunshine-station-2br",
@@ -177,7 +182,8 @@
      "Sunshine College (rebuild underway)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "footscray-station-2br",
@@ -202,7 +208,8 @@
      "Footscray High"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 900
   },
   {
    "id": "seddon-westfootscray-villa",
@@ -234,7 +241,8 @@
      "Footscray High (multi-campus, rebuilt 2019+)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 700
   },
   {
    "id": "yarraville-2br",
@@ -258,7 +266,8 @@
      "Footscray High (Pilgrim campus)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "established-western-value",
@@ -283,7 +292,8 @@
      "St Albans Secondary College (strong improvement story)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "northwest-villa-corridor",
@@ -315,7 +325,8 @@
      "Glenroy College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 900
   },
   {
    "id": "upfield-corridor",
@@ -355,7 +366,8 @@
      "Pascoe Vale Girls SC (public single-sex)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "northern-rail-value",
@@ -387,7 +399,8 @@
      "William Ruthven SC"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 900
   },
   {
    "id": "inner-se-apartment-corridor",
@@ -425,7 +438,8 @@
      "Glen Eira College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "se-value-corridor",
@@ -464,7 +478,8 @@
      "Noble Park SC"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 900
   },
   {
    "id": "frankston-middle-ring",
@@ -502,7 +517,8 @@
      "Cheltenham Secondary (solid, un-famous)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "inner-lowcar-benchmark",
@@ -533,7 +549,8 @@
      "Mount Alexander College (progressive, improving)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 700
   },
   {
    "id": "ascot-vale-2br",
@@ -553,7 +570,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "essendon-2br",
@@ -573,7 +591,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "growth-corridor-stress-test",
@@ -604,7 +623,8 @@
      "Tarneit Senior College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1500
   },
   {
    "id": "craigieburn-townhouse",
@@ -630,7 +650,8 @@
      "Mount Ridley P-12"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1200
   },
   {
    "id": "donnybrook-house-land",
@@ -654,7 +675,8 @@
      "none established — buses toward Craigieburn/Mount Ridley"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1500
   },
   {
    "id": "northcote-2br",
@@ -685,7 +707,8 @@
      "Northcote High (zoned, strong demand)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "thornbury-2br",
@@ -711,7 +734,8 @@
      "Northcote High (zone edges, check address)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "preston-villa",
@@ -742,7 +766,8 @@
      "Preston High (re-established 2019, growing)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 900
   },
   {
    "id": "box-hill-2br",
@@ -767,7 +792,8 @@
      "Box Hill Senior Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 900
   },
   {
    "id": "malvern-2br",
@@ -794,7 +820,8 @@
     "privateContext": [
      "heavy nearby private sector (De La Salle, Sacré Cœur and others)"
     ]
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "toorak-2br",
@@ -820,7 +847,8 @@
     "privateContext": [
      "the highest private-school density in the city"
     ]
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "kew-2br",
@@ -839,7 +867,8 @@
     "privateContext": [
      "dense private sector (Xavier, Trinity, Ruyton, MLC nearby)"
     ]
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "balwyn-2br",
@@ -856,7 +885,8 @@
      "Balwyn High (zoned; the benchmark school-zone premium)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "albert-park-2br",
@@ -874,7 +904,8 @@
      "Albert Park College (zoned, high demand)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "st-kilda-2br",
@@ -900,7 +931,8 @@
      "Elwood College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "balaclava-2br",
@@ -924,7 +956,8 @@
      "Elwood College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 750
   },
   {
    "id": "elwood-2br",
@@ -954,7 +987,8 @@
      "Elwood College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 900
   },
   {
    "id": "cremorne-2br",
@@ -984,7 +1018,8 @@
      "Richmond High"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 650
   },
   {
    "id": "chelsea-2br",
@@ -1008,7 +1043,8 @@
      "Patterson River Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 850
   },
   {
    "id": "bonbeach-2br",
@@ -1032,7 +1068,8 @@
      "Patterson River Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 850
   },
   {
    "id": "north-melbourne-2br",
@@ -1062,7 +1099,8 @@
      "University High (Parkville, zoned)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "sunbury-house",
@@ -1090,7 +1128,8 @@
     "privateContext": [
      "Salesian College Sunbury (Rupertswood campus)"
     ]
-   }
+   },
+   "catchmentMetres": 1200
   },
   {
    "id": "spotswood-2br",
@@ -1112,7 +1151,8 @@
     ],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "south-melbourne-2br",
@@ -1129,7 +1169,8 @@
      "Albert Park College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "armadale-2br",
@@ -1153,7 +1194,8 @@
      "Prahran High (zone coverage varies; verify by address)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "burnley-2br",
@@ -1175,7 +1217,8 @@
      "Melbourne Girls' College (proximity; verify zone by address)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 700
   },
   {
    "id": "hawthorn-2br",
@@ -1206,7 +1249,8 @@
      "Auburn High"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "mckinnon-villa",
@@ -1230,7 +1274,8 @@
      "McKinnon SC (zoned; benchmark public secondary)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "glen-waverley-2br",
@@ -1255,7 +1300,8 @@
      "Glen Waverley SC (zoned; the east’s education magnet)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "balwyn-north-2br",
@@ -1273,7 +1319,8 @@
      "Balwyn High (zoned; in-suburb)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "middle-park-2br",
@@ -1290,7 +1337,8 @@
      "Albert Park College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "mentone-2br",
@@ -1316,7 +1364,8 @@
     "privateContext": [
      "Dense private-school cluster (St Bede’s, Mentone Grammar) shapes the suburb"
     ]
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "clifton-hill-2br",
@@ -1342,7 +1391,8 @@
      "Collingwood College (P-12)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "doncaster-villa",
@@ -1368,7 +1418,8 @@
      "East Doncaster SC (verify zone)"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "ivanhoe-house",
@@ -1394,7 +1445,8 @@
      "Kew High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "heidelberg-3br-townhouse",
@@ -1422,7 +1474,8 @@
      "Thornbury High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "rosanna-house",
@@ -1451,7 +1504,8 @@
      "Viewbank College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "fairfield-house",
@@ -1480,7 +1534,8 @@
      "Thornbury High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "surrey-hills-house",
@@ -1508,7 +1563,8 @@
      "Camberwell High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "blackburn-house",
@@ -1536,7 +1592,8 @@
      "Box Hill High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "mount-waverley-villa",
@@ -1563,7 +1620,8 @@
      "Mount Waverley Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "ashburton-villa",
@@ -1590,7 +1648,8 @@
      "Ashwood High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "bentleigh-house",
@@ -1620,7 +1679,8 @@
      "Brighton Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "newport-house",
@@ -1647,7 +1707,8 @@
      "Bayside P-12 College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "melbourne-cbd-2br",
@@ -1674,7 +1735,8 @@
      "Collingwood College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "east-melbourne-2br",
@@ -1702,7 +1764,8 @@
      "University High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "west-melbourne-2br",
@@ -1727,7 +1790,8 @@
      "University High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "docklands-2br",
@@ -1754,7 +1818,8 @@
      "Port Melbourne Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "carlton-2br",
@@ -1778,7 +1843,8 @@
      "Princes Hill Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "fitzroy-2br",
@@ -1803,7 +1869,8 @@
      "University High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "parkville-2br",
@@ -1829,7 +1896,8 @@
      "University High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "carlton-north-2br",
@@ -1852,7 +1920,8 @@
      "University High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "fitzroy-north-2br",
@@ -1875,7 +1944,8 @@
      "Northcote High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "brunswick-east-2br",
@@ -1896,7 +1966,8 @@
      "Princes Hill Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "fawkner-house",
@@ -1916,7 +1987,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "thomastown-house",
@@ -1942,7 +2014,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "bundoora-house",
@@ -1962,7 +2035,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "viewbank-house",
@@ -1982,7 +2056,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "watsonia-house",
@@ -2002,7 +2077,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "eltham-house",
@@ -2022,7 +2098,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "williamstown-house",
@@ -2042,7 +2119,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "point-cook-house",
@@ -2062,7 +2140,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "werribee-house",
@@ -2082,7 +2161,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "moonee-ponds-2br",
@@ -2102,7 +2182,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "eltham-north-house",
@@ -2122,7 +2203,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "essendon-west-house",
@@ -2142,7 +2224,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "watsonia-north-house",
@@ -2162,7 +2245,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "black-rock-house",
@@ -2182,7 +2266,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "braybrook-villa",
@@ -2202,7 +2287,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "brighton-house",
@@ -2234,7 +2320,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "bulleen-house",
@@ -2254,7 +2341,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "burwood-house",
@@ -2274,7 +2362,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "camberwell-2br",
@@ -2294,7 +2383,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "elsternwick-2br",
@@ -2314,7 +2404,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "hawthorn-east-2br",
@@ -2334,7 +2425,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "st-kilda-east-2br",
@@ -2354,7 +2446,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "st-kilda-west-2br",
@@ -2374,7 +2467,8 @@
     "publicPrimary": [],
     "publicSecondary": [],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "aberfeldie-house",
@@ -2398,7 +2492,8 @@
      "Buckley Park College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "albion-house",
@@ -2422,7 +2517,8 @@
      "Sunshine College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "blackburn-north-house",
@@ -2446,7 +2542,8 @@
      "Blackburn High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "blackburn-south-house",
@@ -2470,7 +2567,8 @@
      "Forest Hill College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "box-hill-north-house",
@@ -2494,7 +2592,8 @@
      "Koonung Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "box-hill-south-house",
@@ -2518,7 +2617,8 @@
      "Box Hill High School"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "brunswick-west-2br",
@@ -2542,7 +2642,8 @@
      "Brunswick Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "coburg-north-house",
@@ -2572,7 +2673,8 @@
      "John Fawkner Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "gardenvale-house",
@@ -2596,7 +2698,8 @@
      "Elwood College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "heidelberg-west-house",
@@ -2620,7 +2723,8 @@
      "Charles La Trobe P-12 College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "keilor-house",
@@ -2644,7 +2748,8 @@
      "Keilor Downs Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "keilor-downs-house",
@@ -2668,7 +2773,8 @@
      "Keilor Downs Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "keilor-east-house",
@@ -2692,7 +2798,8 @@
      "Essendon Keilor College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "keysborough-house",
@@ -2716,7 +2823,8 @@
      "Keysborough Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "maidstone-house",
@@ -2740,7 +2848,8 @@
      "Maribyrnong Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "maribyrnong-2br",
@@ -2764,7 +2873,8 @@
      "Maribyrnong Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "port-melbourne-2br",
@@ -2788,7 +2898,8 @@
      "Port Melbourne Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "sunshine-north-house",
@@ -2812,7 +2923,8 @@
      "Sunshine College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "sunshine-west-house",
@@ -2836,7 +2948,8 @@
      "Sunshine College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "tullamarine-house",
@@ -2860,7 +2973,8 @@
      "Gladstone Park Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "templestowe-house",
@@ -2884,7 +2998,8 @@
      "Templestowe College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "sydenham-house",
@@ -2908,7 +3023,8 @@
      "Copperfield College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "rockbank-house",
@@ -2932,7 +3048,8 @@
      "Yarrabing Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1200
   },
   {
    "id": "wollert-house",
@@ -2956,7 +3073,8 @@
      "Wollert Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "mernda-house",
@@ -2980,7 +3098,8 @@
      "Mernda Central P-12 College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "altona-north-2br",
@@ -3004,7 +3123,8 @@
      "Bayside P-12 College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 800
   },
   {
    "id": "broadmeadows-house",
@@ -3028,7 +3148,8 @@
      "Hume Central Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "cairnlea-house",
@@ -3052,7 +3173,8 @@
      "Victoria University Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 900
   },
   {
    "id": "campbellfield-house",
@@ -3076,7 +3198,8 @@
      "Hume Central Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "deer-park-house",
@@ -3100,7 +3223,8 @@
      "Victoria University Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "epping-house",
@@ -3124,7 +3248,8 @@
      "Epping Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "greenvale-house",
@@ -3148,7 +3273,8 @@
      "Greenvale Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "hoppers-crossing-house",
@@ -3172,7 +3298,8 @@
      "Hoppers Crossing Secondary College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
   },
   {
    "id": "roxburgh-park-house",
@@ -3196,7 +3323,483 @@
      "Roxburgh College"
     ],
     "privateContext": []
-   }
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "albanvale-house",
+   "suburb": "Albanvale",
+   "localityNames": [
+    "Albanvale"
+   ],
+   "anchors": [
+    {
+     "id": "albanvale-anchor",
+     "name": "Albanvale (locality anchor)",
+     "lng": 144.7693,
+     "lat": -37.7443
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Albanvale Primary School"
+    ],
+    "publicSecondary": [
+     "Copperfield College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "burnside-house",
+   "suburb": "Burnside",
+   "localityNames": [
+    "Burnside"
+   ],
+   "anchors": [
+    {
+     "id": "burnside-anchor",
+     "name": "Burnside (locality anchor)",
+     "lng": 144.7502,
+     "lat": -37.7485
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Burnside Primary School"
+    ],
+    "publicSecondary": [
+     "Brookside P-9 College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "caroline-springs-house",
+   "suburb": "Caroline Springs",
+   "localityNames": [
+    "Caroline Springs"
+   ],
+   "anchors": [
+    {
+     "id": "caroline-springs-friday",
+     "name": "Caroline Springs",
+     "lng": 144.73573715,
+     "lat": -37.76612649
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Brookside P-9 College"
+    ],
+    "publicSecondary": [
+     "Brookside P-9 College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "caulfield-2br",
+   "suburb": "Caulfield",
+   "localityNames": [
+    "Caulfield"
+   ],
+   "anchors": [
+    {
+     "id": "caulfield-friday",
+     "name": "Caulfield",
+     "lng": 145.04252478,
+     "lat": -37.87745946
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Malvern Primary School"
+    ],
+    "publicSecondary": [
+     "Glen Eira College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "caulfield-north-2br",
+   "suburb": "Caulfield North",
+   "localityNames": [
+    "Caulfield North"
+   ],
+   "anchors": [
+    {
+     "id": "caulfield-north-anchor",
+     "name": "Caulfield North (locality anchor)",
+     "lng": 145.0219,
+     "lat": -37.8707
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Caulfield Junior College"
+    ],
+    "publicSecondary": [
+     "Glen Eira College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "caulfield-south-2br",
+   "suburb": "Caulfield South",
+   "localityNames": [
+    "Caulfield South"
+   ],
+   "anchors": [
+    {
+     "id": "caulfield-south-anchor",
+     "name": "Caulfield South (locality anchor)",
+     "lng": 145.0253,
+     "lat": -37.8928
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Caulfield South Primary School"
+    ],
+    "publicSecondary": [
+     "Glen Eira College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "deanside-house",
+   "suburb": "Deanside",
+   "localityNames": [
+    "Deanside"
+   ],
+   "anchors": [
+    {
+     "id": "deanside-anchor",
+     "name": "Deanside (locality anchor)",
+     "lng": 144.705,
+     "lat": -37.7276
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Deanside Primary School"
+    ],
+    "publicSecondary": [
+     "Springside West Secondary College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "derrimut-house",
+   "suburb": "Derrimut",
+   "localityNames": [
+    "Derrimut"
+   ],
+   "anchors": [
+    {
+     "id": "derrimut-anchor",
+     "name": "Derrimut (locality anchor)",
+     "lng": 144.7712,
+     "lat": -37.7983
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Derrimut Primary School"
+    ],
+    "publicSecondary": [
+     "Sunshine College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "frankston-2br",
+   "suburb": "Frankston",
+   "localityNames": [
+    "Frankston"
+   ],
+   "anchors": [
+    {
+     "id": "frankston-friday",
+     "name": "Frankston",
+     "lng": 145.12616228,
+     "lat": -38.14299007
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Frankston Primary School"
+    ],
+    "publicSecondary": [
+     "Frankston High School"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "glen-huntly-2br",
+   "suburb": "Glen Huntly",
+   "localityNames": [
+    "Glen Huntly"
+   ],
+   "anchors": [
+    {
+     "id": "glen-huntly-friday",
+     "name": "Glen Huntly",
+     "lng": 145.04222285,
+     "lat": -37.88971946
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Glen Huntly Primary School"
+    ],
+    "publicSecondary": [
+     "Glen Eira College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "hillside-house",
+   "suburb": "Hillside",
+   "localityNames": [
+    "Hillside"
+   ],
+   "anchors": [
+    {
+     "id": "hillside-anchor",
+     "name": "Hillside (locality anchor)",
+     "lng": 144.7413,
+     "lat": -37.6914
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Hillside Primary School"
+    ],
+    "publicSecondary": [
+     "Copperfield College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "jacana-house",
+   "suburb": "Jacana",
+   "localityNames": [
+    "Jacana"
+   ],
+   "anchors": [
+    {
+     "id": "jacana-friday",
+     "name": "Jacana",
+     "lng": 144.91585052,
+     "lat": -37.69513079
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Glenroy West Primary School"
+    ],
+    "publicSecondary": [
+     "Glenroy Secondary College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "kings-park-house",
+   "suburb": "Kings Park",
+   "localityNames": [
+    "Kings Park"
+   ],
+   "anchors": [
+    {
+     "id": "kings-park-anchor",
+     "name": "Kings Park (locality anchor)",
+     "lng": 144.7721,
+     "lat": -37.7329
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Kings Park Primary School"
+    ],
+    "publicSecondary": [
+     "Copperfield College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "mickleham-house",
+   "suburb": "Mickleham",
+   "localityNames": [
+    "Mickleham"
+   ],
+   "anchors": [
+    {
+     "id": "mickleham-anchor",
+     "name": "Mickleham (locality anchor)",
+     "lng": 144.8989,
+     "lat": -37.5469
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Yubup Primary School"
+    ],
+    "publicSecondary": [
+     "Mickleham Secondary College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "mill-park-house",
+   "suburb": "Mill Park",
+   "localityNames": [
+    "Mill Park"
+   ],
+   "anchors": [
+    {
+     "id": "south-morang-friday",
+     "name": "South Morang",
+     "lng": 145.06701257,
+     "lat": -37.64905033
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Meadowglen Primary School"
+    ],
+    "publicSecondary": [
+     "Mill Park Secondary College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "southbank-2br",
+   "suburb": "Southbank",
+   "localityNames": [
+    "Southbank"
+   ],
+   "anchors": [
+    {
+     "id": "southbank-anchor",
+     "name": "Southbank (locality anchor)",
+     "lng": 144.9644,
+     "lat": -37.8253
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "South Melbourne Primary School"
+    ],
+    "publicSecondary": [
+     "Port Melbourne Secondary College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "taylors-lakes-house",
+   "suburb": "Taylors Lakes",
+   "localityNames": [
+    "Taylors Lakes"
+   ],
+   "anchors": [
+    {
+     "id": "watergardens-friday",
+     "name": "Watergardens",
+     "lng": 144.77418099,
+     "lat": -37.70111071
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Sydenham Primary School"
+    ],
+    "publicSecondary": [
+     "Copperfield College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "truganina-house",
+   "suburb": "Truganina",
+   "localityNames": [
+    "Truganina"
+   ],
+   "anchors": [
+    {
+     "id": "truganina-anchor",
+     "name": "Truganina (locality anchor)",
+     "lng": 144.7179,
+     "lat": -37.8039
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Warreen Primary School"
+    ],
+    "publicSecondary": [
+     "Bemin Secondary College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
+  },
+  {
+   "id": "williams-landing-house",
+   "suburb": "Williams Landing",
+   "localityNames": [
+    "Williams Landing"
+   ],
+   "anchors": [
+    {
+     "id": "williams-landing-friday",
+     "name": "Williams Landing",
+     "lng": 144.74744472,
+     "lat": -37.86986533
+    }
+   ],
+   "nameHints": {
+    "publicPrimary": [
+     "Seabrook Primary School"
+    ],
+    "publicSecondary": [
+     "Carranballac P-9 College"
+    ],
+    "privateContext": []
+   },
+   "catchmentMetres": 1000
   }
  ]
 }

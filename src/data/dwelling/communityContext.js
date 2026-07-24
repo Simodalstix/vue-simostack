@@ -48,6 +48,9 @@ const corridorById = Object.fromEntries(areaCorridors.map((r) => [r.id, r]))
 // Presentation labels that intentionally differ from the official ABS SAL name.
 const salNamesByAreaId = {
   'melbourne-cbd-2br': ['Melbourne'],
+  'burnside-house': ['Burnside (Vic.)'],
+  'hillside-house': ['Hillside (Melton - Vic.)'],
+  'kings-park-house': ['Kings Park (Vic.)'],
 }
 
 // "Windsor / Prahran" and "Windsor/Prahran" are the same label.

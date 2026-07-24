@@ -1,7 +1,7 @@
 {
   "dataset": "dwelling-greenspace-source-manifest",
   "methodologyVersion": "greenspace-access-v1",
-  "retrievedAt": "2026-07-19",
+  "retrievedAt": "2026-07-24",
   "sources": [
     {
       "name": "Victorian Planning Authority Open Space",
@@ -30,7 +30,10 @@
       "metadataUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files",
       "downloadUrl": "https://www.abs.gov.au/statistics/standards/australian-statistical-geography-standard-asgs/edition-3-july-2021-june-2026/access-and-downloads/digital-boundary-files/MB_2021_AUST_SHP_GDA2020.zip",
       "filename": "MB_2021_AUST_SHP_GDA2020.zip",
-      "sha256": "d855af24e898d355610cba930df7291f29d2d29eab83245e962c49dcf15a1895"
+      "sha256": "d855af24e898d355610cba930df7291f29d2d29eab83245e962c49dcf15a1895",
+      "fridayNightSubsetFile": "friday-mesh-blocks.geojson",
+      "fridayNightSubsetSha256": "be286c64ec61e9d37f926038c3f0c71995d8cb92fe9a88bacb3d9358f4f876e1",
+      "fridayNightSubsetRetrievedAt": "2026-07-24"
     },
     {
       "name": "ABS Census Mesh Block Counts",
@@ -51,7 +54,9 @@
       "sha256": "f0f369d58f187edc2e5684e436f30af65b06554fd84041c597442f7d9ce99b30",
       "refreshedAt": "2026-07-23",
       "refreshedSha256": "ecd1a5d174d9fb28d2758e366c63d56cb3d4c5596e3a922ccbb6587c3e18636d",
-      "note": "Supplement used only for major-park and nature-corridor layers, never for local-access scoring, because public pedestrian access is not encoded consistently enough for local-park eligibility. The ten-record inner-core onboarding batch used a fresh bounded PARKRES pull on 2026-07-19, the 24-record north-west/extended batch used another on 2026-07-21, the 20-record Wednesday batch plus the subsequent five-record batch used another on 2026-07-22, and the nine-record Thursday-night batch used another on 2026-07-23 (422 features each); PARKRES is a live dataset, while the four primary sources remained hash-identical to this manifest on all four dates."
+      "fridayNightRefreshedAt": "2026-07-24",
+      "fridayNightRefreshedSha256": "c0dc43e07c44685fc70033e3797c73a96b4286976b4a06a4a1814a57776c70a1",
+      "note": "Supplement used only for major-park and nature-corridor layers, never for local-access scoring, because public pedestrian access is not encoded consistently enough for local-park eligibility. The ten-record inner-core onboarding batch used a fresh bounded PARKRES pull on 2026-07-19, the 24-record north-west/extended batch used another on 2026-07-21, the 20-record Wednesday batch plus the subsequent five-record batch used another on 2026-07-22, the nine-record Thursday-night batch used another on 2026-07-23, and the 19-record Friday-night batch used another on 2026-07-24; PARKRES is a live dataset, while the stable VPA, SAL and Mesh Block Counts sources remained hash-identical."
     }
   ],
   "classificationReview": {

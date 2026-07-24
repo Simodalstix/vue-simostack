@@ -1,8 +1,8 @@
 {
   "dataset": "dwelling-greenspace-targets",
-  "version": "v9-canonical-128-mixed-official-and-derived",
-  "retrievedAt": "2026-07-23",
-  "recordCount": 128,
+  "version": "v10-canonical-147-mixed-official-and-derived",
+  "retrievedAt": "2026-07-24",
+  "recordCount": 147,
   "records": [
     {
       "id": "inner-south-yarra-2br",
@@ -1599,6 +1599,234 @@
         }
       ],
       "censusPopulation2021": 24129
+    },
+    {
+      "id": "albanvale-house",
+      "displayName": "Albanvale",
+      "salComponents": [
+        {
+          "suburb": "Albanvale",
+          "salCode": "20017",
+          "censusPopulation2021": 5641
+        }
+      ],
+      "censusPopulation2021": 5641
+    },
+    {
+      "id": "burnside-house",
+      "displayName": "Burnside",
+      "salComponents": [
+        {
+          "suburb": "Burnside",
+          "salCode": "20419",
+          "censusPopulation2021": 5800
+        }
+      ],
+      "censusPopulation2021": 5800
+    },
+    {
+      "id": "caroline-springs-house",
+      "displayName": "Caroline Springs",
+      "salComponents": [
+        {
+          "suburb": "Caroline Springs",
+          "salCode": "20500",
+          "censusPopulation2021": 24488
+        }
+      ],
+      "censusPopulation2021": 24488
+    },
+    {
+      "id": "caulfield-2br",
+      "displayName": "Caulfield",
+      "salComponents": [
+        {
+          "suburb": "Caulfield",
+          "salCode": "20521",
+          "censusPopulation2021": 5748
+        }
+      ],
+      "censusPopulation2021": 5748
+    },
+    {
+      "id": "caulfield-north-2br",
+      "displayName": "Caulfield North",
+      "salComponents": [
+        {
+          "suburb": "Caulfield North",
+          "salCode": "20523",
+          "censusPopulation2021": 16903
+        }
+      ],
+      "censusPopulation2021": 16903
+    },
+    {
+      "id": "caulfield-south-2br",
+      "displayName": "Caulfield South",
+      "salComponents": [
+        {
+          "suburb": "Caulfield South",
+          "salCode": "20524",
+          "censusPopulation2021": 12328
+        }
+      ],
+      "censusPopulation2021": 12328
+    },
+    {
+      "id": "deanside-house",
+      "displayName": "Deanside",
+      "salComponents": [
+        {
+          "suburb": "Deanside",
+          "salCode": "20724",
+          "censusPopulation2021": 654
+        }
+      ],
+      "censusPopulation2021": 654
+    },
+    {
+      "id": "derrimut-house",
+      "displayName": "Derrimut",
+      "salComponents": [
+        {
+          "suburb": "Derrimut",
+          "salCode": "20743",
+          "censusPopulation2021": 8651
+        }
+      ],
+      "censusPopulation2021": 8651
+    },
+    {
+      "id": "frankston-2br",
+      "displayName": "Frankston",
+      "salComponents": [
+        {
+          "suburb": "Frankston",
+          "salCode": "20947",
+          "censusPopulation2021": 37331
+        }
+      ],
+      "censusPopulation2021": 37331
+    },
+    {
+      "id": "glen-huntly-2br",
+      "displayName": "Glen Huntly",
+      "salComponents": [
+        {
+          "suburb": "Glen Huntly",
+          "salCode": "21009",
+          "censusPopulation2021": 4905
+        }
+      ],
+      "censusPopulation2021": 4905
+    },
+    {
+      "id": "hillside-house",
+      "displayName": "Hillside",
+      "salComponents": [
+        {
+          "suburb": "Hillside (Melton)",
+          "salCode": "21193",
+          "censusPopulation2021": 17331
+        }
+      ],
+      "censusPopulation2021": 17331
+    },
+    {
+      "id": "jacana-house",
+      "displayName": "Jacana",
+      "salComponents": [
+        {
+          "suburb": "Jacana",
+          "salCode": "21248",
+          "censusPopulation2021": 2187
+        }
+      ],
+      "censusPopulation2021": 2187
+    },
+    {
+      "id": "kings-park-house",
+      "displayName": "Kings Park",
+      "salComponents": [
+        {
+          "suburb": "Kings Park",
+          "salCode": "21362",
+          "censusPopulation2021": 8203
+        }
+      ],
+      "censusPopulation2021": 8203
+    },
+    {
+      "id": "mickleham-house",
+      "displayName": "Mickleham",
+      "salComponents": [
+        {
+          "suburb": "Mickleham",
+          "salCode": "21675",
+          "censusPopulation2021": 17452
+        }
+      ],
+      "censusPopulation2021": 17452
+    },
+    {
+      "id": "mill-park-house",
+      "displayName": "Mill Park",
+      "salComponents": [
+        {
+          "suburb": "Mill Park",
+          "salCode": "21683",
+          "censusPopulation2021": 28712
+        }
+      ],
+      "censusPopulation2021": 28712
+    },
+    {
+      "id": "southbank-2br",
+      "displayName": "Southbank",
+      "salComponents": [
+        {
+          "suburb": "Southbank",
+          "salCode": "22315",
+          "censusPopulation2021": 22631
+        }
+      ],
+      "censusPopulation2021": 22631
+    },
+    {
+      "id": "taylors-lakes-house",
+      "displayName": "Taylors Lakes",
+      "salComponents": [
+        {
+          "suburb": "Taylors Lakes",
+          "salCode": "22474",
+          "censusPopulation2021": 15174
+        }
+      ],
+      "censusPopulation2021": 15174
+    },
+    {
+      "id": "truganina-house",
+      "displayName": "Truganina",
+      "salComponents": [
+        {
+          "suburb": "Truganina",
+          "salCode": "22582",
+          "censusPopulation2021": 36305
+        }
+      ],
+      "censusPopulation2021": 36305
+    },
+    {
+      "id": "williams-landing-house",
+      "displayName": "Williams Landing",
+      "salComponents": [
+        {
+          "suburb": "Williams Landing",
+          "salCode": "22791",
+          "censusPopulation2021": 9448
+        }
+      ],
+      "censusPopulation2021": 9448
     }
   ]
 }

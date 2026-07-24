@@ -1,5 +1,5 @@
 {
-  "featureCountInTargetEnvelope": 21337,
+  "featureCountInTargetEnvelope": 20662,
   "fields": [
     "COASTAL",
     "DATA_SOURC",
@@ -26,46 +26,46 @@
     "geometry"
   ],
   "categoryCounts": {
-    "Parks and gardens": 5746,
-    "Natural and semi-natural open space": 4855,
-    "Transport reservations": 2922,
-    "Recreation corridor": 2255,
-    "Sportsfields and organised recreation": 2076,
-    "Government schools": 1108,
-    "Services and utilities reserves": 785,
-    "Non-government schools": 700,
-    "Tertiary institutions": 622,
-    "Conservation reserves": 118,
+    "Parks and gardens": 5463,
+    "Natural and semi-natural open space": 4737,
+    "Transport reservations": 2722,
+    "Recreation corridor": 2177,
+    "Sportsfields and organised recreation": 2091,
+    "Government schools": 1072,
+    "Services and utilities reserves": 782,
+    "Tertiary institutions": 689,
+    "Non-government schools": 669,
+    "Conservation reserves": 112,
     "Civic squares and promenades": 73,
-    "Cemeteries": 71,
+    "Cemeteries": 69,
     "Public housing reserves": 6
   },
   "subcategoryCounts": {
-    "Not applicable": 13621,
-    "Local link": 2646,
-    "Green buffer": 2380,
-    "Neighbourhood link": 714,
-    "Regional link": 537,
-    "Golf course": 464,
-    "Metropolitan link": 370,
-    "Median park": 280,
-    "Parks and gardens": 135,
-    "Natural and semi-natural open space": 93,
-    "Race course": 40,
-    "Conservation reserves": 30,
-    "Sportsfields and organised recreation": 16,
+    "Not applicable": 13270,
+    "Local link": 2546,
+    "Green buffer": 2228,
+    "Neighbourhood link": 682,
+    "Regional link": 554,
+    "Golf course": 495,
+    "Metropolitan link": 334,
+    "Median park": 264,
+    "Parks and gardens": 136,
+    "Natural and semi-natural open space": 86,
+    "Race course": 38,
+    "Sportsfields and organised recreation": 14,
     "Civic squares and promenades": 8,
-    "Recreation corridor": 3
+    "Conservation reserves": 6,
+    "Recreation corridor": 1
   },
   "accessCounts": {
-    "Open": 17574,
-    "Closed": 2205,
-    "Highly Limited": 809,
-    "Limited": 749
+    "Open": 16919,
+    "Closed": 2098,
+    "Highly Limited": 834,
+    "Limited": 811
   },
   "typeCounts": {
-    "Public open space": 14378,
-    "Restricted public land": 5786,
-    "Private open space": 1173
+    "Public open space": 13867,
+    "Restricted public land": 5597,
+    "Private open space": 1198
   }
 }

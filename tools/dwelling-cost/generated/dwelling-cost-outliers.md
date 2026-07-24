@@ -4,7 +4,6 @@ Generated-score differences are review prompts for the source data and suburb ma
 
 | Record | Generated | Hand | Difference |
 |---|---:|---:|---:|
-| inner-south-yarra-2br | 8.00 | 4.00 | +4.00 |
 | inner-richmond-2br | 8.00 | 6.00 | +2.00 |
 | inner-abbotsford-2br | 9.03 | 6.00 | +3.03 |
 | footscray-station-2br | 10.00 | 8.00 | +2.00 |

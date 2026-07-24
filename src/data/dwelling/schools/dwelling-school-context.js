@@ -8,7 +8,7 @@
 
 export const SCHOOL_CONTEXT_DATASET = {
   "zoneYear": "2027",
-  "generatedAt": "2026-07-23"
+  "generatedAt": "2026-07-24"
 }
 
 export const schoolContextByAreaId = {
@@ -113,7 +113,6 @@ export const schoolContextByAreaId = {
     "zonedSecondary": "Footscray High School",
     "alsoInCatchmentPrimary": [
       "Footscray Primary School",
-      "Kingsville Primary School",
       "Yarraville West Primary School"
     ],
     "alsoInCatchmentSecondary": [
@@ -202,6 +201,7 @@ export const schoolContextByAreaId = {
     "zonedPrimary": "Springvale Rise Primary School",
     "zonedSecondary": "Westall Secondary College",
     "alsoInCatchmentPrimary": [
+      "Spring Parks Primary School",
       "Springvale Rise Primary School",
       "Westall Primary School"
     ],
@@ -232,8 +232,7 @@ export const schoolContextByAreaId = {
     "zonedPrimary": "Kensington Primary School",
     "zonedSecondary": "Mount Alexander 7-12 College",
     "alsoInCatchmentPrimary": [
-      "Debney Meadows Primary School",
-      "North Melbourne Primary School"
+      "Debney Meadows Primary School"
     ],
     "alsoInCatchmentSecondary": [
       "University High School"
@@ -272,12 +271,16 @@ export const schoolContextByAreaId = {
     "zonedPrimary": "Baden Powell P-9 College",
     "zonedSecondary": "Baden Powell P-9 College",
     "alsoInCatchmentPrimary": [
+      "Garrang Wilam Primary School",
       "Nearnung Primary School",
-      "Tarneit P-9 College"
+      "Tarneit P-9 College",
+      "Truganina P-9 College",
+      "Warreen Primary School"
     ],
     "alsoInCatchmentSecondary": [
       "Bemin Secondary College",
-      "Tarneit P-9 College"
+      "Tarneit P-9 College",
+      "Truganina P-9 College"
     ],
     "anchorSource": "station",
     "boundaryFlag": true
@@ -286,7 +289,8 @@ export const schoolContextByAreaId = {
     "zonedPrimary": "Craigieburn South Primary School",
     "zonedSecondary": "Craigieburn Secondary College",
     "alsoInCatchmentPrimary": [
-      "Craigieburn Primary School"
+      "Craigieburn Primary School",
+      "Willmott Park Primary School"
     ],
     "alsoInCatchmentSecondary": [],
     "anchorSource": "station",
@@ -457,7 +461,9 @@ export const schoolContextByAreaId = {
       "Ripponlea Primary School",
       "Windsor Primary School"
     ],
-    "alsoInCatchmentSecondary": [],
+    "alsoInCatchmentSecondary": [
+      "Prahran High School"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
@@ -465,9 +471,7 @@ export const schoolContextByAreaId = {
     "zonedPrimary": "Richmond Primary School",
     "zonedSecondary": "Richmond High School",
     "alsoInCatchmentPrimary": [
-      "Richmond West Primary School",
-      "South Melbourne Park Primary School",
-      "South Yarra Primary School"
+      "Richmond West Primary School"
     ],
     "alsoInCatchmentSecondary": [
       "Prahran High School"
@@ -513,9 +517,12 @@ export const schoolContextByAreaId = {
     "alsoInCatchmentPrimary": [
       "Goonawarra Primary School",
       "Kismet Park Primary School",
+      "Sunbury Heights Primary School",
       "Sunbury Primary School"
     ],
-    "alsoInCatchmentSecondary": [],
+    "alsoInCatchmentSecondary": [
+      "Sunbury Downs Secondary College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
@@ -566,7 +573,6 @@ export const schoolContextByAreaId = {
     "zonedSecondary": "Richmond High School",
     "alsoInCatchmentPrimary": [
       "Hawthorn West Primary School",
-      "Toorak Primary School",
       "Yarra Primary School"
     ],
     "alsoInCatchmentSecondary": [
@@ -672,7 +678,8 @@ export const schoolContextByAreaId = {
       "Greythorn Primary School"
     ],
     "alsoInCatchmentSecondary": [
-      "Balwyn High School"
+      "Balwyn High School",
+      "Templestowe College"
     ],
     "anchorSource": "station",
     "boundaryFlag": false
@@ -1513,9 +1520,12 @@ export const schoolContextByAreaId = {
     "zonedPrimary": "Rockbank Primary School",
     "zonedSecondary": "Yarrabing Secondary College",
     "alsoInCatchmentPrimary": [
-      "Aintree Primary School"
+      "Aintree Primary School",
+      "Thornhill Park Primary School"
     ],
-    "alsoInCatchmentSecondary": [],
+    "alsoInCatchmentSecondary": [
+      "Kolorer College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   },
@@ -1560,6 +1570,7 @@ export const schoolContextByAreaId = {
       "Meadows Primary School"
     ],
     "alsoInCatchmentSecondary": [
+      "Glenroy Secondary College",
       "Hume Central Secondary College"
     ],
     "anchorSource": "station",
@@ -1593,6 +1604,7 @@ export const schoolContextByAreaId = {
     "zonedPrimary": "Deer Park West Primary School",
     "zonedSecondary": "Victoria University Secondary College",
     "alsoInCatchmentPrimary": [
+      "Ardeer Primary School",
       "Derrimut Primary School"
     ],
     "alsoInCatchmentSecondary": [],
@@ -1643,6 +1655,261 @@ export const schoolContextByAreaId = {
       "Meadow Heights Primary School"
     ],
     "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "albanvale-house": {
+    "zonedPrimary": "Albanvale Primary School",
+    "zonedSecondary": "Copperfield College",
+    "alsoInCatchmentPrimary": [
+      "Burnside Primary School",
+      "Deer Park North Primary School",
+      "Kings Park Primary School",
+      "Movelle Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Brookside P-9 College",
+      "Victoria University Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "burnside-house": {
+    "zonedPrimary": "Burnside Primary School",
+    "zonedSecondary": "Brookside P-9 College",
+    "alsoInCatchmentPrimary": [
+      "Brookside P-9 College",
+      "Creekside K-9 College",
+      "Kororoit Creek Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Copperfield College",
+      "Creekside K-9 College",
+      "Victoria University Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "caroline-springs-house": {
+    "zonedPrimary": "Brookside P-9 College",
+    "zonedSecondary": "Brookside P-9 College",
+    "alsoInCatchmentPrimary": [
+      "Deer Park West Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Victoria University Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "caulfield-2br": {
+    "zonedPrimary": "Malvern Primary School",
+    "zonedSecondary": "Glen Eira College",
+    "alsoInCatchmentPrimary": [
+      "Carnegie Primary School",
+      "Caulfield Primary School",
+      "Caulfield South Primary School",
+      "Glen Huntly Primary School",
+      "Lloyd Street Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "caulfield-north-2br": {
+    "zonedPrimary": "Caulfield Junior College",
+    "zonedSecondary": "Glen Eira College",
+    "alsoInCatchmentPrimary": [
+      "Armadale Primary School",
+      "Malvern Central School",
+      "Malvern Primary School",
+      "Ripponlea Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Elwood College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "caulfield-south-2br": {
+    "zonedPrimary": "Caulfield South Primary School",
+    "zonedSecondary": "Glen Eira College",
+    "alsoInCatchmentPrimary": [
+      "Caulfield Primary School",
+      "Gardenvale Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Brighton Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "deanside-house": {
+    "zonedPrimary": "Deanside Primary School",
+    "zonedSecondary": "Springside West Secondary College",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [
+      "Creekside K-9 College",
+      "Yarrabing Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "derrimut-house": {
+    "zonedPrimary": "Derrimut Primary School",
+    "zonedSecondary": "Sunshine College",
+    "alsoInCatchmentPrimary": [
+      "Ardeer South Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Victoria University Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "frankston-2br": {
+    "zonedPrimary": "Frankston Primary School",
+    "zonedSecondary": "Frankston High School",
+    "alsoInCatchmentPrimary": [
+      "Frankston East Primary School",
+      "Kananook Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "McClelland Secondary College",
+      "Monterey Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "glen-huntly-2br": {
+    "zonedPrimary": "Glen Huntly Primary School",
+    "zonedSecondary": "Glen Eira College",
+    "alsoInCatchmentPrimary": [
+      "Carnegie Primary School",
+      "Caulfield Primary School",
+      "Caulfield South Primary School",
+      "Malvern Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "hillside-house": {
+    "zonedPrimary": "Hillside Primary School",
+    "zonedSecondary": "Copperfield College",
+    "alsoInCatchmentPrimary": [
+      "Parkwood Green Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Springside West Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "jacana-house": {
+    "zonedPrimary": "Glenroy West Primary School",
+    "zonedSecondary": "Glenroy Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Broadmeadows Valley Primary School",
+      "Gladstone Views Primary School",
+      "Glenroy Central Primary School",
+      "Meadows Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Gladstone Park Secondary College",
+      "Hume Central Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "kings-park-house": {
+    "zonedPrimary": "Kings Park Primary School",
+    "zonedSecondary": "Copperfield College",
+    "alsoInCatchmentPrimary": [
+      "Albanvale Primary School",
+      "Kororoit Creek Primary School",
+      "Mackellar Primary School",
+      "Movelle Primary School",
+      "Stevensville Primary School"
+    ],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "mickleham-house": {
+    "zonedPrimary": "Yubup Primary School",
+    "zonedSecondary": "Mickleham Secondary College",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "mill-park-house": {
+    "zonedPrimary": "Meadowglen Primary School",
+    "zonedSecondary": "Mill Park Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Mill Park Heights Primary School",
+      "Morang South Primary School",
+      "Plenty Parklands Primary School",
+      "The Lakes South Morang College"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Epping Secondary College",
+      "The Lakes South Morang College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": true
+  },
+  "southbank-2br": {
+    "zonedPrimary": "South Melbourne Primary School",
+    "zonedSecondary": "Port Melbourne Secondary College",
+    "alsoInCatchmentPrimary": [
+      "Carlton Gardens Primary School",
+      "Docklands Primary School",
+      "South Melbourne Park Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Albert Park College",
+      "Collingwood College",
+      "Prahran High School",
+      "University High School"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "taylors-lakes-house": {
+    "zonedPrimary": "Sydenham Primary School",
+    "zonedSecondary": "Copperfield College",
+    "alsoInCatchmentPrimary": [
+      "Mackellar Primary School",
+      "Taylors Lakes Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Taylors Lakes Secondary College"
+    ],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "truganina-house": {
+    "zonedPrimary": "Warreen Primary School",
+    "zonedSecondary": "Bemin Secondary College",
+    "alsoInCatchmentPrimary": [],
+    "alsoInCatchmentSecondary": [],
+    "anchorSource": "station",
+    "boundaryFlag": false
+  },
+  "williams-landing-house": {
+    "zonedPrimary": "Seabrook Primary School",
+    "zonedSecondary": "Carranballac P-9 College",
+    "alsoInCatchmentPrimary": [
+      "Carranballac P-9 College",
+      "Laverton P-12 College",
+      "Truganina South Primary School"
+    ],
+    "alsoInCatchmentSecondary": [
+      "Dohertys Creek P-9 College",
+      "Laverton P-12 College"
+    ],
     "anchorSource": "station",
     "boundaryFlag": false
   }

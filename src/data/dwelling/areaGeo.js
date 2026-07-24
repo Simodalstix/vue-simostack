@@ -29,6 +29,7 @@ const V = '2026-07-13'
 const V2 = '2026-07-21'
 const V3 = '2026-07-22'
 const V4 = '2026-07-23'
+const V5 = '2026-07-24'
 const OSM = 'OpenStreetMap'
 // Vicmap Transport rail_station points (tr_rail_infrastructure) and locality
 // polygons via the Vicmap open-data WFS; CC BY 4.0, (c) State of Victoria.
@@ -1795,6 +1796,235 @@ export const areaGeo = {
         coordinates: [144.9354, -37.6382],
         source: TRANSPORT_VICTORIA,
         verifiedAt: V4,
+      },
+    ],
+  },
+  'albanvale-house': {
+    localityNames: ['Albanvale'],
+    stationPoints: [
+      {
+        id: 'albanvale-anchor',
+        name: 'Albanvale (locality anchor)',
+        coordinates: [144.7693, -37.7443],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'burnside-house': {
+    localityNames: ['Burnside'],
+    stationPoints: [
+      {
+        id: 'burnside-anchor',
+        name: 'Burnside (locality anchor)',
+        coordinates: [144.7502, -37.7485],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'caroline-springs-house': {
+    localityNames: ['Caroline Springs'],
+    stationPoints: [
+      {
+        id: 'caroline-springs-friday',
+        name: 'Caroline Springs',
+        coordinates: [144.73573715, -37.76612649],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'caulfield-2br': {
+    localityNames: ['Caulfield'],
+    stationPoints: [
+      {
+        id: 'caulfield-friday',
+        name: 'Caulfield',
+        coordinates: [145.04252478, -37.87745946],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'caulfield-north-2br': {
+    localityNames: ['Caulfield North'],
+    stationPoints: [
+      {
+        id: 'caulfield-north-anchor',
+        name: 'Caulfield North (locality anchor)',
+        coordinates: [145.0219, -37.8707],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'caulfield-south-2br': {
+    localityNames: ['Caulfield South'],
+    stationPoints: [
+      {
+        id: 'caulfield-south-anchor',
+        name: 'Caulfield South (locality anchor)',
+        coordinates: [145.0253, -37.8928],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'deanside-house': {
+    localityNames: ['Deanside'],
+    stationPoints: [
+      {
+        id: 'deanside-anchor',
+        name: 'Deanside (locality anchor)',
+        coordinates: [144.705, -37.7276],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'derrimut-house': {
+    localityNames: ['Derrimut'],
+    stationPoints: [
+      {
+        id: 'derrimut-anchor',
+        name: 'Derrimut (locality anchor)',
+        coordinates: [144.7712, -37.7983],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'frankston-2br': {
+    localityNames: ['Frankston'],
+    stationPoints: [
+      {
+        id: 'frankston-friday',
+        name: 'Frankston',
+        coordinates: [145.12616228, -38.14299007],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'glen-huntly-2br': {
+    localityNames: ['Glen Huntly'],
+    stationPoints: [
+      {
+        id: 'glen-huntly-friday',
+        name: 'Glen Huntly',
+        coordinates: [145.04222285, -37.88971946],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'hillside-house': {
+    localityNames: ['Hillside'],
+    stationPoints: [
+      {
+        id: 'hillside-anchor',
+        name: 'Hillside (locality anchor)',
+        coordinates: [144.7413, -37.6914],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'jacana-house': {
+    localityNames: ['Jacana'],
+    stationPoints: [
+      {
+        id: 'jacana-friday',
+        name: 'Jacana',
+        coordinates: [144.91585052, -37.69513079],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'kings-park-house': {
+    localityNames: ['Kings Park'],
+    stationPoints: [
+      {
+        id: 'kings-park-anchor',
+        name: 'Kings Park (locality anchor)',
+        coordinates: [144.7721, -37.7329],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'mickleham-house': {
+    localityNames: ['Mickleham'],
+    stationPoints: [
+      {
+        id: 'mickleham-anchor',
+        name: 'Mickleham (locality anchor)',
+        coordinates: [144.8989, -37.5469],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'mill-park-house': {
+    localityNames: ['Mill Park'],
+    stationPoints: [
+      {
+        id: 'south-morang-friday',
+        name: 'South Morang',
+        coordinates: [145.06701257, -37.64905033],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'southbank-2br': {
+    localityNames: ['Southbank'],
+    tramOnly: true,
+    stationPoints: [
+      {
+        id: 'southbank-anchor',
+        name: 'Southbank (locality anchor)',
+        coordinates: [144.9644, -37.8253],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'taylors-lakes-house': {
+    localityNames: ['Taylors Lakes'],
+    stationPoints: [
+      {
+        id: 'watergardens-friday',
+        name: 'Watergardens',
+        coordinates: [144.77418099, -37.70111071],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'truganina-house': {
+    localityNames: ['Truganina'],
+    stationPoints: [
+      {
+        id: 'truganina-anchor',
+        name: 'Truganina (locality anchor)',
+        coordinates: [144.7179, -37.8039],
+        source: VICMAP,
+        verifiedAt: V5,
+      },
+    ],
+  },
+  'williams-landing-house': {
+    localityNames: ['Williams Landing'],
+    stationPoints: [
+      {
+        id: 'williams-landing-friday',
+        name: 'Williams Landing',
+        coordinates: [144.74744472, -37.86986533],
+        source: TRANSPORT_VICTORIA,
+        verifiedAt: V5,
       },
     ],
   },

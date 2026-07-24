@@ -1,7 +1,7 @@
 {
   "dataset": "dwelling-greenspace-context",
   "methodologyVersion": "greenspace-access-v1",
-  "retrievedAt": "2026-07-16",
+  "retrievedAt": "2026-07-24",
   "usage": {
     "criterion": "greenspace",
     "scoreScale": "0-10",
@@ -11169,6 +11169,1678 @@
         ],
         "residentialPopulationCoveragePct": 99.1,
         "componentSpread": 0.9,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "albanvale-house",
+      "salSuburbs": [
+        "Albanvale"
+      ],
+      "salCodes": [
+        "20017"
+      ],
+      "greenspace": 9.928,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.8943,
+        "natureCorridorAccess": 9.7987
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Albanvale",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 96.5,
+        "representedPopulation": 5654,
+        "sampledMeshBlocks": 46
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 153.0,
+          "majorPark": 290.0,
+          "natureCorridor": 295.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Iramoo Wildflower Grassland Reserve",
+            "areaHa": 32.44
+          },
+          {
+            "name": "Burnside Heights Recreation Reserve",
+            "areaHa": 22.28
+          },
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 16.71
+          },
+          {
+            "name": "Jones Creek Wetlands",
+            "areaHa": 16.03
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 12.43
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Iramoo Wildflower Grassland Reserve",
+            "areaHa": 32.44
+          },
+          {
+            "name": "Cairnlea Estate Nature Conservation Reserve",
+            "areaHa": 32.43
+          },
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 16.71
+          },
+          {
+            "name": "Jones Creek Wetlands",
+            "areaHa": 16.03
+          },
+          {
+            "name": "Burnside Heights Recreation Reserve",
+            "areaHa": 14.13
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.2,
+        "componentSpread": 0.2,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "burnside-house",
+      "salSuburbs": [
+        "Burnside"
+      ],
+      "salCodes": [
+        "20419"
+      ],
+      "greenspace": 9.8918,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.6873,
+        "natureCorridorAccess": 9.9279
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Burnside",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 5796,
+        "sampledMeshBlocks": 40
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 126.0,
+          "majorPark": 367.0,
+          "natureCorridor": 273.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Burnside Heights Recreation Reserve",
+            "areaHa": 22.28
+          },
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 22.11
+          },
+          {
+            "name": "Ravenhall Nature Conservation Reserve",
+            "areaHa": 19.59
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 14.46
+          },
+          {
+            "name": "Bon Thomas Reserve",
+            "areaHa": 13.07
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Ravenhall Nature Conservation Reserve",
+            "areaHa": 39.19
+          },
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 22.11
+          },
+          {
+            "name": "Burnside Heights Recreation Reserve",
+            "areaHa": 14.13
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 12.64
+          },
+          {
+            "name": "Kororoit Creek (NS Station - Billingham)",
+            "areaHa": 8.99
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.9,
+        "componentSpread": 0.3,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "caroline-springs-house",
+      "salSuburbs": [
+        "Caroline Springs"
+      ],
+      "salCodes": [
+        "20500"
+      ],
+      "greenspace": 9.9381,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.7958,
+        "natureCorridorAccess": 9.9966
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Caroline Springs",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 24283,
+        "sampledMeshBlocks": 196
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 74.0,
+          "majorPark": 274.0,
+          "natureCorridor": 96.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 24.96
+          },
+          {
+            "name": "Burnside Heights Recreation Reserve",
+            "areaHa": 22.28
+          },
+          {
+            "name": "Ravenhall Nature Conservation Reserve",
+            "areaHa": 19.59
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 15.75
+          },
+          {
+            "name": "The Grove Linear Reserve - Kororoit Creek to Hunts Cross Way Bridge",
+            "areaHa": 13.51
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Kororoit Creek Regional Park",
+            "areaHa": 99.44
+          },
+          {
+            "name": "Kororoit Creek CA2 Nature Conservation Reserve",
+            "areaHa": 46.38
+          },
+          {
+            "name": "Ravenhall Nature Conservation Reserve",
+            "areaHa": 39.19
+          },
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 24.96
+          },
+          {
+            "name": "Clarke Road Streamside Reserve",
+            "areaHa": 14.82
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.2,
+        "componentSpread": 0.2,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "caulfield-2br",
+      "salSuburbs": [
+        "Caulfield"
+      ],
+      "salCodes": [
+        "20521"
+      ],
+      "greenspace": 2.9683,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 1.4929,
+        "majorParkAccess": 7.3545,
+        "natureCorridorAccess": 0.0777
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": true,
+        "reviewFlags": [
+          "highComponentSpread"
+        ],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Caulfield",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 14.2,
+        "representedPopulation": 5415,
+        "sampledMeshBlocks": 64
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 707.0,
+          "majorPark": 947.0,
+          "natureCorridor": 2786.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Caulfield Park (Recreation)",
+            "areaHa": 18.73
+          },
+          {
+            "name": "Princes Park",
+            "areaHa": 12.4
+          },
+          {
+            "name": "Caulfield Park (Parkland)",
+            "areaHa": 7.24
+          },
+          {
+            "name": "EE Gunn Reserve",
+            "areaHa": 6.07
+          },
+          {
+            "name": "Lord Reserve",
+            "areaHa": 5.08
+          }
+        ],
+        "nearbyNatureCorridors": [],
+        "residentialPopulationCoveragePct": 94.2,
+        "componentSpread": 7.3,
+        "reviewFlags": [
+          "highComponentSpread"
+        ]
+      }
+    },
+    {
+      "id": "caulfield-north-2br",
+      "salSuburbs": [
+        "Caulfield North"
+      ],
+      "salCodes": [
+        "20523"
+      ],
+      "greenspace": 5.6444,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 6.1413,
+        "majorParkAccess": 8.4742,
+        "natureCorridorAccess": 0.1576
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": true,
+        "reviewFlags": [
+          "highComponentSpread"
+        ],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Caulfield North",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 58.3,
+        "representedPopulation": 16537,
+        "sampledMeshBlocks": 175
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 375.0,
+          "majorPark": 554.0,
+          "natureCorridor": 2806.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Caulfield Park (Recreation)",
+            "areaHa": 18.73
+          },
+          {
+            "name": "Central Park",
+            "areaHa": 7.47
+          },
+          {
+            "name": "Caulfield Park (Parkland)",
+            "areaHa": 7.24
+          },
+          {
+            "name": "Elsternwick Park",
+            "areaHa": 7.15
+          },
+          {
+            "name": "East Caulfield Reserve",
+            "areaHa": 4.26
+          }
+        ],
+        "nearbyNatureCorridors": [],
+        "residentialPopulationCoveragePct": 97.8,
+        "componentSpread": 8.3,
+        "reviewFlags": [
+          "highComponentSpread"
+        ]
+      }
+    },
+    {
+      "id": "caulfield-south-2br",
+      "salSuburbs": [
+        "Caulfield South"
+      ],
+      "salCodes": [
+        "20524"
+      ],
+      "greenspace": 6.2287,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 5.6445,
+        "majorParkAccess": 9.5747,
+        "natureCorridorAccess": 2.6704
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": true,
+        "reviewFlags": [
+          "highComponentSpread"
+        ],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Caulfield South",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 53.6,
+        "representedPopulation": 12213,
+        "sampledMeshBlocks": 132
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 377.0,
+          "majorPark": 416.0,
+          "natureCorridor": 1941.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Princes Park",
+            "areaHa": 12.4
+          },
+          {
+            "name": "EE Gunn Reserve",
+            "areaHa": 6.07
+          },
+          {
+            "name": "Hurlingham Park",
+            "areaHa": 6.05
+          },
+          {
+            "name": "Lord Reserve",
+            "areaHa": 5.08
+          },
+          {
+            "name": "Landcox Park",
+            "areaHa": 5.0
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Elster Creek Trail",
+            "areaHa": 0.88
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.1,
+        "componentSpread": 6.9,
+        "reviewFlags": [
+          "highComponentSpread"
+        ]
+      }
+    },
+    {
+      "id": "deanside-house",
+      "salSuburbs": [
+        "Deanside"
+      ],
+      "salCodes": [
+        "20724"
+      ],
+      "greenspace": 4.9726,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 0.0,
+        "majorParkAccess": 9.9149,
+        "natureCorridorAccess": 9.9907
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": true,
+        "reviewFlags": [
+          "lowResidentialSampleCount",
+          "highComponentSpread"
+        ],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Deanside",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 0.0,
+        "representedPopulation": 594,
+        "sampledMeshBlocks": 2
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 805.0,
+          "majorPark": 11.0,
+          "natureCorridor": 11.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 30.06
+          },
+          {
+            "name": "The Grove Linear Reserve - Kororoit Creek to Hunts Cross Way Bridge",
+            "areaHa": 13.51
+          },
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 11.51
+          },
+          {
+            "name": "Springlake Village Park",
+            "areaHa": 7.78
+          },
+          {
+            "name": "Clarke Road Streamside Reserve",
+            "areaHa": 7.53
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Kororoit Creek Regional Park",
+            "areaHa": 99.44
+          },
+          {
+            "name": "Kororoit Creek CA2 Nature Conservation Reserve",
+            "areaHa": 46.38
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 20.49
+          },
+          {
+            "name": "Clarke Road Streamside Reserve",
+            "areaHa": 14.82
+          },
+          {
+            "name": "The Grove Linear Reserve - Kororoit Creek to Hunts Cross Way Bridge",
+            "areaHa": 13.51
+          }
+        ],
+        "residentialPopulationCoveragePct": 90.8,
+        "componentSpread": 10.0,
+        "reviewFlags": [
+          "lowResidentialSampleCount",
+          "highComponentSpread"
+        ]
+      }
+    },
+    {
+      "id": "derrimut-house",
+      "salSuburbs": [
+        "Derrimut"
+      ],
+      "salCodes": [
+        "20743"
+      ],
+      "greenspace": 9.9994,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.9979,
+        "natureCorridorAccess": 10.0
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Derrimut",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 8652,
+        "sampledMeshBlocks": 57
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 103.0,
+          "majorPark": 176.0,
+          "natureCorridor": 136.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Derrimut Grasslands",
+            "areaHa": 164.96
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 120.74
+          },
+          {
+            "name": "Mount Derrimut Nature Conservation Reserve",
+            "areaHa": 30.0
+          },
+          {
+            "name": "Retarding Basin",
+            "areaHa": 26.81
+          },
+          {
+            "name": "William Angliss Native Grassland Reserve",
+            "areaHa": 22.36
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Derrimut Grasslands",
+            "areaHa": 164.96
+          },
+          {
+            "name": "Derrimut Grassland Nature Conservation Reserve",
+            "areaHa": 164.21
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 119.18
+          },
+          {
+            "name": "Ravenhall Nature Conservation Reserve",
+            "areaHa": 95.1
+          },
+          {
+            "name": "Mount Derrimut Nature Conservation Reserve",
+            "areaHa": 60.0
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.0,
+        "componentSpread": 0.0,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "frankston-2br",
+      "salSuburbs": [
+        "Frankston"
+      ],
+      "salCodes": [
+        "20947"
+      ],
+      "greenspace": 9.6207,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.1692,
+        "natureCorridorAccess": 9.3495
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Frankston",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 97.6,
+        "representedPopulation": 36856,
+        "sampledMeshBlocks": 466
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 122.0,
+          "majorPark": 374.0,
+          "natureCorridor": 386.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Langwarrin Flora and Fauna Reserve",
+            "areaHa": 215.43
+          },
+          {
+            "name": "The Pines Flora and Fauna Reserve",
+            "areaHa": 124.82
+          },
+          {
+            "name": "Frankston (Reservoir) Natural Features Reserve",
+            "areaHa": 90.63
+          },
+          {
+            "name": "Seaford Foreshore",
+            "areaHa": 57.36
+          },
+          {
+            "name": "Ballam Park",
+            "areaHa": 29.67
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Langwarrin Flora and Fauna Reserve",
+            "areaHa": 215.43
+          },
+          {
+            "name": "The Pines Flora and Fauna Reserve",
+            "areaHa": 124.82
+          },
+          {
+            "name": "Frankston (Reservoir) Natural Features Reserve",
+            "areaHa": 90.63
+          },
+          {
+            "name": "Frankston Nature Conservation Reserve",
+            "areaHa": 90.54
+          },
+          {
+            "name": "Seaford Foreshore",
+            "areaHa": 57.36
+          }
+        ],
+        "residentialPopulationCoveragePct": 98.7,
+        "componentSpread": 0.8,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "glen-huntly-2br",
+      "salSuburbs": [
+        "Glen Huntly"
+      ],
+      "salCodes": [
+        "21009"
+      ],
+      "greenspace": 7.7674,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.1211,
+        "majorParkAccess": 9.4068,
+        "natureCorridorAccess": 1.9239
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": true,
+        "reviewFlags": [
+          "highComponentSpread"
+        ],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Glen Huntly",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 86.7,
+        "representedPopulation": 4914,
+        "sampledMeshBlocks": 61
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 244.0,
+          "majorPark": 412.0,
+          "natureCorridor": 2067.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Princes Park",
+            "areaHa": 12.27
+          },
+          {
+            "name": "Packer Park",
+            "areaHa": 7.74
+          },
+          {
+            "name": "EE Gunn Reserve",
+            "areaHa": 6.07
+          },
+          {
+            "name": "Lord Reserve",
+            "areaHa": 5.08
+          },
+          {
+            "name": "East Caulfield Reserve",
+            "areaHa": 4.26
+          }
+        ],
+        "nearbyNatureCorridors": [],
+        "residentialPopulationCoveragePct": 100.2,
+        "componentSpread": 7.5,
+        "reviewFlags": [
+          "highComponentSpread"
+        ]
+      }
+    },
+    {
+      "id": "hillside-house",
+      "salSuburbs": [
+        "Hillside (Melton)"
+      ],
+      "salCodes": [
+        "21193"
+      ],
+      "greenspace": 9.744,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.2822,
+        "natureCorridorAccess": 9.7967
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Hillside",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 17342,
+        "sampledMeshBlocks": 158
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 121.0,
+          "majorPark": 426.0,
+          "natureCorridor": 268.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Organ Pipes National Park",
+            "areaHa": 79.39
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 45.17
+          },
+          {
+            "name": "Stony Hill Creek Linear Reserve - Melton Highway to Boronia Drive",
+            "areaHa": 10.46
+          },
+          {
+            "name": "Robertsons Road to proposed industrial e",
+            "areaHa": 9.62
+          },
+          {
+            "name": "Boronia Drive Reserve",
+            "areaHa": 8.69
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Organ Pipes National Park",
+            "areaHa": 212.24
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 33.05
+          },
+          {
+            "name": "Banchory Grove Grassland Nature Conservation Reserve",
+            "areaHa": 21.9
+          },
+          {
+            "name": "Stony Hill Creek Linear Reserve - Melton Highway to Boronia Drive",
+            "areaHa": 10.46
+          },
+          {
+            "name": "Robertsons Road to proposed industrial e",
+            "areaHa": 9.62
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.1,
+        "componentSpread": 0.7,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "jacana-house",
+      "salSuburbs": [
+        "Jacana"
+      ],
+      "salCodes": [
+        "21248"
+      ],
+      "greenspace": 9.9147,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 9.8502,
+        "majorParkAccess": 9.9682,
+        "natureCorridorAccess": 9.9958
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Jacana",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 93.6,
+        "representedPopulation": 2133,
+        "sampledMeshBlocks": 18
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 132.0,
+          "majorPark": 146.0,
+          "natureCorridor": 132.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Broadmeadows Valley Park",
+            "areaHa": 163.7
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 42.62
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland and Jacana Reserve",
+            "areaHa": 41.4
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland",
+            "areaHa": 32.07
+          },
+          {
+            "name": "Gowanbrae Retarding Basin",
+            "areaHa": 20.62
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Broadmeadows Valley Park",
+            "areaHa": 161.86
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland and Jacana Reserve",
+            "areaHa": 41.4
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 37.65
+          },
+          {
+            "name": "Moonee Ponds Creek Parkland",
+            "areaHa": 32.07
+          },
+          {
+            "name": "Gowanbrae Retarding Basin",
+            "areaHa": 19.68
+          }
+        ],
+        "residentialPopulationCoveragePct": 97.5,
+        "componentSpread": 0.1,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "kings-park-house",
+      "salSuburbs": [
+        "Kings Park"
+      ],
+      "salCodes": [
+        "21362"
+      ],
+      "greenspace": 9.9267,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.9238,
+        "natureCorridorAccess": 9.7479
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Kings Park",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 8222,
+        "sampledMeshBlocks": 72
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 108.0,
+          "majorPark": 236.0,
+          "natureCorridor": 259.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Iramoo Wildflower Grassland Reserve",
+            "areaHa": 32.44
+          },
+          {
+            "name": "Burnside Heights Recreation Reserve",
+            "areaHa": 22.28
+          },
+          {
+            "name": "Jones Creek Wetlands",
+            "areaHa": 16.03
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 12.68
+          },
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 11.12
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Iramoo Wildflower Grassland Reserve",
+            "areaHa": 32.44
+          },
+          {
+            "name": "Cairnlea Estate Nature Conservation Reserve",
+            "areaHa": 32.43
+          },
+          {
+            "name": "Jones Creek Wetlands",
+            "areaHa": 16.03
+          },
+          {
+            "name": "Burnside Heights Recreation Reserve",
+            "areaHa": 14.13
+          },
+          {
+            "name": "Kororoit Creek Water Frontage",
+            "areaHa": 11.12
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.2,
+        "componentSpread": 0.3,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "mickleham-house",
+      "salSuburbs": [
+        "Mickleham"
+      ],
+      "salCodes": [
+        "21675"
+      ],
+      "greenspace": 4.6784,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 2.2746,
+        "majorParkAccess": 6.9922,
+        "natureCorridorAccess": 7.217
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Mickleham",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 21.6,
+        "representedPopulation": 16433,
+        "sampledMeshBlocks": 177
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 1381.0,
+          "majorPark": 972.0,
+          "natureCorridor": 906.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Mount Ridley Grasslands",
+            "areaHa": 142.54
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 48.83
+          },
+          {
+            "name": "Malcolm Creek Linear Park",
+            "areaHa": 38.8
+          },
+          {
+            "name": "Deep Creek Frontage - Hume",
+            "areaHa": 12.17
+          },
+          {
+            "name": "Highgate Reserve",
+            "areaHa": 9.85
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Mount Ridley Grasslands",
+            "areaHa": 142.54
+          },
+          {
+            "name": "Mount Ridley Nature Conservation Reserve",
+            "areaHa": 132.29
+          },
+          {
+            "name": "Malcolm Creek Linear Park",
+            "areaHa": 38.8
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 27.14
+          },
+          {
+            "name": "marram baba Merri Creek Regional Parklands (Melbourne Water)",
+            "areaHa": 19.11
+          }
+        ],
+        "residentialPopulationCoveragePct": 94.2,
+        "componentSpread": 4.9,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "mill-park-house",
+      "salSuburbs": [
+        "Mill Park"
+      ],
+      "salCodes": [
+        "21683"
+      ],
+      "greenspace": 9.8308,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.5865,
+        "natureCorridorAccess": 9.7745
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Mill Park",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 100.0,
+        "representedPopulation": 28687,
+        "sampledMeshBlocks": 284
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 124.0,
+          "majorPark": 332.0,
+          "natureCorridor": 257.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Plenty Gorge Parklands - Nillumbik",
+            "areaHa": 227.7
+          },
+          {
+            "name": "Plenty Gorge Parklands",
+            "areaHa": 163.02
+          },
+          {
+            "name": "Plenty Gorge Parklands - Whittlesea",
+            "areaHa": 112.61
+          },
+          {
+            "name": "Middle Gorge Park",
+            "areaHa": 34.09
+          },
+          {
+            "name": "Quarry Hills Park",
+            "areaHa": 31.5
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Plenty Gorge Parklands",
+            "areaHa": 539.09
+          },
+          {
+            "name": "Plenty Gorge Parklands - Nillumbik",
+            "areaHa": 227.7
+          },
+          {
+            "name": "Plenty Gorge Parklands (COM)",
+            "areaHa": 212.31
+          },
+          {
+            "name": "Plenty Gorge Parklands - Whittlesea",
+            "areaHa": 112.61
+          },
+          {
+            "name": "Middle Gorge Park",
+            "areaHa": 34.09
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.9,
+        "componentSpread": 0.4,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "southbank-2br",
+      "salSuburbs": [
+        "Southbank"
+      ],
+      "salCodes": [
+        "22315"
+      ],
+      "greenspace": 8.1774,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 7.9694,
+        "majorParkAccess": 8.5774,
+        "natureCorridorAccess": 8.0976
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Southbank",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 75.7,
+        "representedPopulation": 22568,
+        "sampledMeshBlocks": 65
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 299.0,
+          "majorPark": 652.0,
+          "natureCorridor": 785.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Albert Park",
+            "areaHa": 105.89
+          },
+          {
+            "name": "Albert Park Lake",
+            "areaHa": 48.92
+          },
+          {
+            "name": "Fawkner Park",
+            "areaHa": 41.19
+          },
+          {
+            "name": "Royal Botanic Gardens - Melbourne",
+            "areaHa": 37.96
+          },
+          {
+            "name": "Fitzroy Gardens",
+            "areaHa": 26.28
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Albert Park Lake",
+            "areaHa": 48.92
+          },
+          {
+            "name": "Lagoon Reserve",
+            "areaHa": 2.28
+          },
+          {
+            "name": "River Esplanade",
+            "areaHa": 1.2
+          },
+          {
+            "name": "Stapely Parade Reserve",
+            "areaHa": 0.57
+          },
+          {
+            "name": "Yarra River Frontage",
+            "areaHa": 0.17
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.7,
+        "componentSpread": 0.6,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "taylors-lakes-house",
+      "salSuburbs": [
+        "Taylors Lakes"
+      ],
+      "salCodes": [
+        "22474"
+      ],
+      "greenspace": 9.7714,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.3447,
+        "natureCorridorAccess": 9.8401
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Taylors Lakes",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 99.1,
+        "representedPopulation": 15166,
+        "sampledMeshBlocks": 127
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 100.0,
+          "majorPark": 349.0,
+          "natureCorridor": 192.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Green Gully Reserve",
+            "areaHa": 122.62
+          },
+          {
+            "name": "Organ Pipes National Park",
+            "areaHa": 100.18
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 53.05
+          },
+          {
+            "name": "Organ Pipes National Park - Hume",
+            "areaHa": 52.9
+          },
+          {
+            "name": "Taylors Lakes SEC Easement (Sunshine Ave",
+            "areaHa": 15.66
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Organ Pipes National Park",
+            "areaHa": 253.9
+          },
+          {
+            "name": "Green Gully Reserve",
+            "areaHa": 56.13
+          },
+          {
+            "name": "Organ Pipes National Park - Hume",
+            "areaHa": 52.9
+          },
+          {
+            "name": "Unnamed open space",
+            "areaHa": 45.75
+          },
+          {
+            "name": "Banchory Grove Grassland Nature Conservation Reserve",
+            "areaHa": 21.9
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.9,
+        "componentSpread": 0.7,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "truganina-house",
+      "salSuburbs": [
+        "Truganina"
+      ],
+      "salCodes": [
+        "22582"
+      ],
+      "greenspace": 8.7712,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 8.2372,
+        "majorParkAccess": 9.1982,
+        "natureCorridorAccess": 9.4656
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Truganina",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 78.3,
+        "representedPopulation": 36135,
+        "sampledMeshBlocks": 274
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 197.0,
+          "majorPark": 273.0,
+          "natureCorridor": 240.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 266.54
+          },
+          {
+            "name": "Lawrie Emmins Reserve",
+            "areaHa": 71.61
+          },
+          {
+            "name": "Federation Trail Linear Reserve",
+            "areaHa": 34.36
+          },
+          {
+            "name": "Melbourne Water Retarding Basin",
+            "areaHa": 32.98
+          },
+          {
+            "name": "Skeleton Creek Drainage Reserve",
+            "areaHa": 26.24
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 261.79
+          },
+          {
+            "name": "Kororoit Creek Regional Park",
+            "areaHa": 99.44
+          },
+          {
+            "name": "Ravenhall Nature Conservation Reserve",
+            "areaHa": 95.1
+          },
+          {
+            "name": "Western Grasslands Nature Conservation Reserve",
+            "areaHa": 55.31
+          },
+          {
+            "name": "Mount Cottrell Nature Conservation Reserve",
+            "areaHa": 44.32
+          }
+        ],
+        "residentialPopulationCoveragePct": 99.5,
+        "componentSpread": 1.2,
+        "reviewFlags": []
+      }
+    },
+    {
+      "id": "williams-landing-house",
+      "salSuburbs": [
+        "Williams Landing"
+      ],
+      "salCodes": [
+        "22791"
+      ],
+      "greenspace": 9.9489,
+      "greenspaceComponents": {
+        "localOpenSpaceAccess": 10.0,
+        "majorParkAccess": 9.9947,
+        "natureCorridorAccess": 9.7527
+      },
+      "sourceMetadata": {
+        "retrievedAt": "2026-07-24",
+        "distanceMethod": "Straight-line distance from population-weighted residential ABS 2021 Mesh Block representative points",
+        "analysisCrs": "EPSG:7855",
+        "reviewRequired": false,
+        "reviewFlags": [],
+        "methodologyVersion": "greenspace-access-v1",
+        "sourceYears": {
+          "absSal": 2021,
+          "absMeshBlocks": 2021,
+          "absMeshBlockCounts": 2021,
+          "vpaOpenSpace": 2019,
+          "parkresSupplement": 2026
+        },
+        "majorParkThresholdHectares": 5
+      },
+      "displayName": "Williams Landing",
+      "evidence": {
+        "localOpenSpaceCoveragePct": 98.2,
+        "representedPopulation": 9453,
+        "sampledMeshBlocks": 75
+      },
+      "audit": {
+        "populationWeightedMedianDistanceM": {
+          "localOpenSpace": 102.0,
+          "majorPark": 138.0,
+          "natureCorridor": 152.0
+        },
+        "nearbyOpenSpaces": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 83.26
+          },
+          {
+            "name": "Lawrie Emmins Reserve",
+            "areaHa": 71.33
+          },
+          {
+            "name": "Skeleton Creek Linear Parkland",
+            "areaHa": 31.0
+          },
+          {
+            "name": "Skeleton Creek Linear Reserve",
+            "areaHa": 21.86
+          },
+          {
+            "name": "Federation Trail Linear Reserve",
+            "areaHa": 19.92
+          }
+        ],
+        "nearbyNatureCorridors": [
+          {
+            "name": "Unnamed open space",
+            "areaHa": 82.14
+          },
+          {
+            "name": "Truganina South Nature Conservation Reserve",
+            "areaHa": 38.04
+          },
+          {
+            "name": "Skeleton Creek Linear Parkland",
+            "areaHa": 31.0
+          },
+          {
+            "name": "Skeleton Creek Linear Reserve",
+            "areaHa": 21.86
+          },
+          {
+            "name": "Federation Trail Linear Reserve",
+            "areaHa": 19.92
+          }
+        ],
+        "residentialPopulationCoveragePct": 100.1,
+        "componentSpread": 0.2,
         "reviewFlags": []
       }
     }
