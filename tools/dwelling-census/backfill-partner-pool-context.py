@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """Backfill Mingle and neutral family-context measures into the SAL dataset.
 
-Adds two measures to additionalHouseholdContext on EVERY dataset record,
+Adds three measures to additionalHouseholdContext on EVERY dataset record,
 sourced from the same official ABS GCP workbooks as the rest of the record:
 
 - unpartnered2554: persons aged 25-54 not in a registered or de facto
   marriage, over all persons aged 25-54 (G06, social marital status).
-  G06 publishes 10-year bands (25-34 / 35-44 / 45-54), so 25-54 is the
-  closest available cover of the requested 30-49 range; the band note is
-  recorded on the measure itself.
+- unpartnered3544: the exact 35-44 band from the same table. This is the
+  age-matched measure used by Mingle; the broader 25-54 measure remains
+  descriptive context.
 - loneParentFamilies: neutral descriptive context only: one-parent families
   over all families in occupied private dwellings (G29, family composition;
   place of enumeration). This measure must never enter the Mingle score.
@@ -33,6 +33,7 @@ import openpyxl
 # G06 persons rows for the 25-34 / 35-44 / 45-54 bands, with the labels the
 # workbook must carry for the read to be considered aligned.
 G06_ROWS = [(42, "25-34 years"), (43, "35-44 years"), (44, "45-54 years")]
+G06_MINGLE_ROW = 43
 # G29: one-parent-family total row and all-families total row.
 G29_ONE_PARENT_ROW = 43
 G29_TOTAL_ROW = 47
@@ -101,6 +102,8 @@ def assert_layout(workbook: Any, workbook_name: str) -> None:
 def build_measures(workbook: Any) -> dict[str, dict[str, Any]]:
     unpartnered = sum(number(workbook, "G06", f"D{row}") for row, _ in G06_ROWS)
     persons_25_54 = sum(number(workbook, "G06", f"E{row}") for row, _ in G06_ROWS)
+    unpartnered_35_44 = number(workbook, "G06", f"D{G06_MINGLE_ROW}")
+    persons_35_44 = number(workbook, "G06", f"E{G06_MINGLE_ROW}")
     one_parent = number(workbook, "G29", f"B{G29_ONE_PARENT_ROW}")
     families = number(workbook, "G29", f"B{G29_TOTAL_ROW}")
     return {
@@ -117,8 +120,24 @@ def build_measures(workbook: Any) -> dict[str, dict[str, Any]]:
             },
             "basis": "Place of usual residence",
             "note": (
-                "G06 publishes 10-year age bands (25-34, 35-44, 45-54); "
-                "25-54 is the closest available cover of the requested 30-49 range."
+                "Broader three-band context retained for comparison; "
+                "the age-matched Mingle criterion uses the exact 35-44 measure."
+            ),
+        },
+        "unpartnered3544": {
+            "count": unpartnered_35_44,
+            "denominator": persons_35_44,
+            "percentage": percentage(unpartnered_35_44, persons_35_44),
+            "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+            "denominatorLabel": "All persons aged 35-44 in G06",
+            "sourceTable": "G06",
+            "sourceCells": {
+                "numerator": [f"D{G06_MINGLE_ROW}"],
+                "denominator": [f"E{G06_MINGLE_ROW}"],
+            },
+            "basis": "Place of usual residence",
+            "note": (
+                "Exact 10-year Census age band used by the age-matched Mingle criterion."
             ),
         },
         "loneParentFamilies": {
@@ -147,14 +166,25 @@ def qa_row(record: dict[str, Any]) -> dict[str, Any]:
         + tenure["otherTenure"]["count"]
         + tenure["notStated"]["count"]
     )
-    unpartnered = additional.get("unpartnered2554", {})
+    unpartnered_25_54 = additional.get("unpartnered2554", {})
+    unpartnered_35_44 = additional.get("unpartnered3544", {})
     lone_parent = additional.get("loneParentFamilies", {})
+    language_measures = [
+        additional[key]
+        for key in (
+            "filipinoSpokenAtHome",
+            "tagalogSpokenAtHome",
+            "thaiSpokenAtHome",
+            "spanishSpokenAtHome",
+            "portugueseSpokenAtHome",
+        )
+    ]
 
     checks = [
         community["totalPopulation"]["count"] > 0,
         tenure["denominator"] > 0,
     ]
-    for measure in (unpartnered, lone_parent):
+    for measure in (*language_measures, unpartnered_25_54, unpartnered_35_44, lone_parent):
         count = measure.get("count")
         denominator = measure.get("denominator")
         checks.append(
@@ -178,15 +208,23 @@ def qa_row(record: dict[str, Any]) -> dict[str, Any]:
         "mandarinPct": additional["mandarinSpokenAtHome"]["percentage"],
         "hongKongBornPct": additional["hongKongBornPopulation"]["percentage"],
         "chinaBornPct": additional["chinaBornPopulation"]["percentage"],
+        "filipinoPct": additional["filipinoSpokenAtHome"]["percentage"],
+        "tagalogPct": additional["tagalogSpokenAtHome"]["percentage"],
+        "thaiPct": additional["thaiSpokenAtHome"]["percentage"],
+        "spanishPct": additional["spanishSpokenAtHome"]["percentage"],
+        "portuguesePct": additional["portugueseSpokenAtHome"]["percentage"],
         "topBirthplacesCount": len(community["topOverseasCountriesOfBirth"]),
         "topLanguagesCount": len(community["topLanguagesSpokenAtHome"]),
         "topNonEnglishLanguagesCount": len(community["topNonEnglishLanguagesSpokenAtHome"]),
         "tenureDenominator": tenure["denominator"],
         "tenureComponentsSum": components_sum,
         "tenureRandomisationDifference": tenure["denominator"] - components_sum,
-        "unpartnered2554Count": unpartnered.get("count"),
-        "unpartnered2554Denominator": unpartnered.get("denominator"),
-        "unpartnered2554Pct": unpartnered.get("percentage"),
+        "unpartnered2554Count": unpartnered_25_54.get("count"),
+        "unpartnered2554Denominator": unpartnered_25_54.get("denominator"),
+        "unpartnered2554Pct": unpartnered_25_54.get("percentage"),
+        "unpartnered3544Count": unpartnered_35_44.get("count"),
+        "unpartnered3544Denominator": unpartnered_35_44.get("denominator"),
+        "unpartnered3544Pct": unpartnered_35_44.get("percentage"),
         "loneParentFamiliesCount": lone_parent.get("count"),
         "loneParentFamiliesDenominator": lone_parent.get("denominator"),
         "loneParentFamiliesPct": lone_parent.get("percentage"),
@@ -220,23 +258,24 @@ def main() -> int:
         record["additionalHouseholdContext"].update(build_measures(workbook))
 
     dataset["generatedAt"] = args.generated_at
-    dataset["version"] = "2021-gcp-sal-v3"
+    dataset["version"] = "2021-gcp-sal-v4"
     dataset["usage"]["implementationRule"] = (
         "Do not connect this dataset to default ranking or filtering beyond the named "
         "derived measures. The exceptions are the off-by-default Chinese-language "
         "community personal lens (Cantonese and Mandarin language-at-home counts), the "
         "grouped other-language-communities lens (Filipino/Tagalog, Thai, "
         "Spanish/Portuguese and source-listed Vietnamese), and the Mingle criterion "
-        "(unpartnered adults aged 25-54). One-parent-family counts are descriptive "
-        "context only and never enter Mingle. Compatible counts are recombined over a "
-        "common denominator; percentages are never averaged."
+        "(unpartnered adults aged 35-44). The broader unpartnered 25-54 measure and "
+        "one-parent-family counts are descriptive context only and never enter Mingle. "
+        "Compatible counts are recombined over a common denominator; percentages are "
+        "never averaged."
     )
     body = json.dumps(dataset, indent=2, ensure_ascii=False)
     args.out.write_text(source[:start] + body + source[end:], encoding="utf-8")
 
     rows = [qa_row(record) for record in dataset["records"]]
     with args.qa_out.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0].keys()), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

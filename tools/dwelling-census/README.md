@@ -7,15 +7,14 @@ named derived fields (the Chinese-language lens, grouped other-language
 communities lens, and Mingle criterion); everything else remains
 descriptive.
 
-`backfill-partner-pool-context.py` adds the Census measures used by Mingle and
-nearby neutral context (`unpartnered2554` from G06, `loneParentFamilies` from G29) to every record
-of the checked-in dataset and regenerates
-`dwelling-community-context-qa.csv`. It verifies each workbook against the
-SHA-256 recorded on its record and asserts the G06/G29 row labels before
-reading any cell. Note: G06 publishes 10-year age bands, so 25-54 is the
-closest available cover of the intended 30-49 range. Only that compatible
-unpartnered-adult measure feeds Mingle. G29 counts are descriptive context on
-a place-of-enumeration basis and never enter the Mingle score.
+`backfill-partner-pool-context.py` adds the exact 35-44 Census measure used by
+Mingle plus nearby neutral context (`unpartnered2554` from G06 and
+`loneParentFamilies` from G29) to every record of the checked-in dataset and
+regenerates `dwelling-community-context-qa.csv`. It verifies each workbook
+against the SHA-256 recorded on its record and asserts the G06/G29 row labels
+before reading any cell. Mingle uses only `unpartnered3544`, the exact G06 age
+band matching the owner's near-40 preference. The broader 25-54 measure and
+G29 one-parent-family counts remain descriptive and never enter Mingle.
 
 Requires Python 3.10+ and `openpyxl>=3.1`.
 

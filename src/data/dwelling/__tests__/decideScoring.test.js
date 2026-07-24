@@ -427,26 +427,28 @@ describe('grouped non-Chinese community personal lens', () => {
 })
 
 describe('Mingle criterion', () => {
-  it('recombines unpartnered counts over the common G06 denominator', () => {
+  it('uses the exact 35-44 G06 band and recombines its common denominator', () => {
     const pool = partnerPoolFor('st-kilda-2br')
+    const criterion = decideCriteria.find((entry) => entry.key === 'partnerPool')
     expect(pool.count).toBeGreaterThan(0)
     expect(pool.denominator).toBeGreaterThan(pool.count)
     expect(pool.percentage).toBeCloseTo((pool.count / pool.denominator) * 100)
     expect(pool).not.toHaveProperty('loneParentPercentage')
+    expect(criterion.hint).toContain('35–44')
   })
 
   it('aggregates combined suburb records by counts, never averaged percentages', () => {
-    // Hand-verified against the QA report: Seddon 839/2639 + West Footscray
-    // 2131/5827 recombine to 2970/8466 = 35.08%. A naive percentage average
-    // would read 34.2%.
+    // Hand-verified against the QA report: Seddon 220/983 + West Footscray
+    // 538/2039 recombine to 758/3022 = 25.08%. A naive percentage average
+    // would read 24.4%.
     const combined = partnerPoolFor('seddon-westfootscray-villa')
-    expect(combined.count).toBe(2970)
-    expect(combined.denominator).toBe(8466)
-    expect(combined.percentage).toBeCloseTo(35.08, 1)
+    expect(combined.count).toBe(758)
+    expect(combined.denominator).toBe(3022)
+    expect(combined.percentage).toBeCloseTo(25.08, 1)
   })
 
   it('nulls a record under the minimum denominator instead of trusting a noisy rate', () => {
-    expect(PARTNER_POOL_MIN_DENOMINATOR).toBe(800)
+    expect(PARTNER_POOL_MIN_DENOMINATOR).toBe(300)
     const burnley = partnerPoolFor('burnley-2br')
     expect(burnley.denominator).toBeLessThan(PARTNER_POOL_MIN_DENOMINATOR)
     expect(partnerPoolScore('burnley-2br')).toBeNull()

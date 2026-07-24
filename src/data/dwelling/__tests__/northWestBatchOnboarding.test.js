@@ -63,10 +63,9 @@ describe('north/west batch: graduated coverage', () => {
     expect(context.components[0].record.community.totalPopulation.count).toBeGreaterThan(0)
 
     expect(Number.isFinite(chineseCommunityScore(areaId))).toBe(true)
-    // Essendon West (ABS SAL20888) lacks the partner-pool measures in the
-    // census dataset and its GCP workbook is not retained, so partnerPool is
-    // an honest null that drops out of the weighted mean. Every other batch
-    // record carries the measure.
+    // Essendon West's 35-44 denominator is below Mingle's reliability guard,
+    // so partnerPool is an honest null that drops out of the weighted mean.
+    // Every other batch record has a sufficiently large cohort.
     if (areaId === 'essendon-west-house') {
       expect(partnerPoolScore(areaId)).toBeNull()
     } else {

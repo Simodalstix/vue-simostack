@@ -4,15 +4,15 @@
  * Static, source-attributed community context for every suburb used by Settle.
  * Descriptive by default. The scoring exceptions are the explicitly named
  * derived measures: the off-by-default Chinese-language community personal
- * lens and the Mingle criterion (unpartnered adults aged 25-54). One-parent
- * families remain descriptive context only.
+ * lens and the Mingle criterion (unpartnered adults aged 35-44). The broader
+ * 25-54 measure and one-parent families remain descriptive context only.
  */
 
 export const DWELLING_COMMUNITY_CONTEXT = {
   "dataset": "dwelling-community-context",
-  "version": "2021-gcp-sal-v3",
+  "version": "2021-gcp-sal-v4",
   "title": "Community Context · ABS Census 2021",
-  "generatedAt": "2026-07-23",
+  "generatedAt": "2026-07-24",
   "usage": {
     "purpose": "Reusable descriptive community context for every suburb used by Settle",
     "contextOnly": true,
@@ -30,7 +30,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
       "Better ethnicity score.",
       "Preferred demographic."
     ],
-    "implementationRule": "Do not connect this dataset to default ranking or filtering beyond the named derived measures. The exceptions are the off-by-default Chinese-language community personal lens (Cantonese and Mandarin language-at-home counts), the grouped other-language-communities lens (Filipino/Tagalog, Thai, Spanish/Portuguese and source-listed Vietnamese), and the Mingle criterion (unpartnered adults aged 25-54). One-parent-family counts are descriptive context only and never enter Mingle. Compatible counts are recombined over a common denominator; percentages are never averaged."
+    "implementationRule": "Do not connect this dataset to default ranking or filtering beyond the named derived measures. The exceptions are the off-by-default Chinese-language community personal lens (Cantonese and Mandarin language-at-home counts), the grouped other-language-communities lens (Filipino/Tagalog, Thai, Spanish/Portuguese and source-listed Vietnamese), and the Mingle criterion (unpartnered adults aged 35-44). The broader unpartnered 25-54 measure and one-parent-family counts are descriptive context only and never enter Mingle. Compatible counts are recombined over a common denominator; percentages are never averaged."
   },
   "coverage": {
     "recordCount": 138,
@@ -709,7 +709,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 163,
@@ -802,6 +802,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 220,
+          "denominator": 983,
+          "percentage": 22.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -1228,7 +1246,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 433,
@@ -1321,6 +1339,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 538,
+          "denominator": 2039,
+          "percentage": 26.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -1747,7 +1783,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 598,
@@ -1840,6 +1876,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1105,
+          "denominator": 2828,
+          "percentage": 39.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -2266,7 +2320,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 471,
@@ -2359,6 +2413,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 500,
+          "denominator": 1402,
+          "percentage": 35.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -2785,7 +2857,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 2315,
@@ -2878,6 +2950,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1791,
+          "denominator": 4395,
+          "percentage": 40.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -3304,7 +3394,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 653,
@@ -3397,6 +3487,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1529,
+          "denominator": 4135,
+          "percentage": 37.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -3823,7 +3931,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 967,
@@ -3916,6 +4024,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1205,
+          "denominator": 4187,
+          "percentage": 28.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -4342,7 +4468,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 717,
@@ -4435,6 +4561,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 723,
+          "denominator": 2954,
+          "percentage": 24.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -4861,7 +5005,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1008,
@@ -4954,6 +5098,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 952,
+          "denominator": 3445,
+          "percentage": 27.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -5380,7 +5542,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 358,
@@ -5473,6 +5635,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 631,
+          "denominator": 1982,
+          "percentage": 31.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -5899,7 +6079,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 339,
@@ -5992,6 +6172,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 401,
+          "denominator": 1005,
+          "percentage": 39.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -6418,7 +6616,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 2316,
@@ -6511,6 +6709,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 2303,
+          "denominator": 7536,
+          "percentage": 30.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -6937,7 +7153,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 523,
@@ -7030,6 +7246,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 727,
+          "denominator": 2734,
+          "percentage": 26.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -7456,7 +7690,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 312,
@@ -7549,6 +7783,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 265,
+          "denominator": 1089,
+          "percentage": 24.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -7975,7 +8227,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1068,
@@ -8068,6 +8320,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1070,
+          "denominator": 2815,
+          "percentage": 38.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -8494,7 +8764,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1639,
@@ -8587,6 +8857,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1535,
+          "denominator": 4380,
+          "percentage": 35.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -9013,7 +9301,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 263,
@@ -9106,6 +9394,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 195,
+          "denominator": 1000,
+          "percentage": 19.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -9532,7 +9838,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1039,
@@ -9625,6 +9931,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 745,
+          "denominator": 3616,
+          "percentage": 20.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -10051,7 +10375,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 29,
@@ -10144,6 +10468,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 128,
+          "denominator": 351,
+          "percentage": 36.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -10570,7 +10912,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 865,
@@ -10663,6 +11005,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1717,
+          "denominator": 4289,
+          "percentage": 40.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -11089,7 +11449,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 315,
@@ -11182,6 +11542,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 748,
+          "denominator": 1575,
+          "percentage": 47.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -11608,7 +11986,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 185,
@@ -11701,6 +12079,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 665,
+          "denominator": 1620,
+          "percentage": 41.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -12127,7 +12523,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 592,
@@ -12220,6 +12616,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1755,
+          "denominator": 3736,
+          "percentage": 47.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -12646,7 +13060,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 169,
@@ -12739,6 +13153,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 492,
+          "denominator": 1097,
+          "percentage": 44.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -13165,7 +13597,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 278,
@@ -13258,6 +13690,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 821,
+          "denominator": 2004,
+          "percentage": 41.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -13684,7 +14134,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 443,
@@ -13777,6 +14227,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1578,
+          "denominator": 3330,
+          "percentage": 47.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -14203,7 +14671,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 141,
@@ -14296,6 +14764,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 320,
+          "denominator": 888,
+          "percentage": 36.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -14722,7 +15208,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 308,
@@ -14815,6 +15301,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 729,
+          "denominator": 1992,
+          "percentage": 36.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -15241,7 +15745,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 483,
@@ -15334,6 +15838,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1024,
+          "denominator": 2539,
+          "percentage": 40.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -15760,7 +16282,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 127,
@@ -15853,6 +16375,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 116,
+          "denominator": 503,
+          "percentage": 23.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -16279,7 +16819,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 589,
@@ -16372,6 +16912,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 469,
+          "denominator": 1819,
+          "percentage": 25.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -16798,7 +17356,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 397,
@@ -16891,6 +17449,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 349,
+          "denominator": 1237,
+          "percentage": 28.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -17317,7 +17893,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 277,
@@ -17410,6 +17986,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 238,
+          "denominator": 1015,
+          "percentage": 23.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -17836,7 +18430,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1519,
@@ -17929,6 +18523,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1449,
+          "denominator": 11533,
+          "percentage": 12.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -18355,7 +18967,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1113,
@@ -18448,6 +19060,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 725,
+          "denominator": 3415,
+          "percentage": 21.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -18874,7 +19504,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 2531,
@@ -18967,6 +19597,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1920,
+          "denominator": 11321,
+          "percentage": 17.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -19393,7 +20041,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 47,
@@ -19486,6 +20134,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 37,
+          "denominator": 374,
+          "percentage": 9.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -19912,7 +20578,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 863,
@@ -20005,6 +20671,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 646,
+          "denominator": 2653,
+          "percentage": 24.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -20431,7 +21115,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 306,
@@ -20524,6 +21208,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 283,
+          "denominator": 1097,
+          "percentage": 25.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -20950,7 +21652,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 374,
@@ -21043,6 +21745,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 408,
+          "denominator": 1238,
+          "percentage": 33.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -21469,7 +22189,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 558,
@@ -21562,6 +22282,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 715,
+          "denominator": 1753,
+          "percentage": 40.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -21988,7 +22726,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 609,
@@ -22081,6 +22819,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 366,
+          "denominator": 1598,
+          "percentage": 22.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -22507,7 +23263,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 682,
@@ -22600,6 +23356,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 996,
+          "denominator": 3158,
+          "percentage": 31.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -23026,7 +23800,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1360,
@@ -23119,6 +23893,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1790,
+          "denominator": 5564,
+          "percentage": 32.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -23545,7 +24337,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 784,
@@ -23638,6 +24430,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1132,
+          "denominator": 3735,
+          "percentage": 30.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -24064,7 +24874,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 201,
@@ -24157,6 +24967,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 164,
+          "denominator": 753,
+          "percentage": 21.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -24583,7 +25411,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 530,
@@ -24676,6 +25504,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 782,
+          "denominator": 2060,
+          "percentage": 38.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -25102,7 +25948,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1861,
@@ -25195,6 +26041,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1146,
+          "denominator": 4960,
+          "percentage": 23.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -25621,7 +26485,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 310,
@@ -25714,6 +26578,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 458,
+          "denominator": 1285,
+          "percentage": 35.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -26140,7 +27022,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 540,
@@ -26233,6 +27115,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 575,
+          "denominator": 2334,
+          "percentage": 24.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -26659,7 +27559,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 830,
@@ -26752,6 +27652,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 401,
+          "denominator": 2216,
+          "percentage": 18.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -27178,7 +28096,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 19,
@@ -27271,6 +28189,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 29,
+          "denominator": 127,
+          "percentage": 22.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -27697,7 +28633,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 173,
@@ -27790,6 +28726,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 259,
+          "denominator": 1089,
+          "percentage": 23.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -28216,7 +29170,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1116,
@@ -28309,6 +29263,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 992,
+          "denominator": 3299,
+          "percentage": 30.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -28735,7 +29707,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1595,
@@ -28828,6 +29800,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1082,
+          "denominator": 5631,
+          "percentage": 19.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -29254,7 +30244,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 527,
@@ -29347,6 +30337,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1046,
+          "denominator": 2929,
+          "percentage": 35.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -29773,7 +30781,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 304,
@@ -29866,6 +30874,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 148,
+          "denominator": 916,
+          "percentage": 16.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -30292,7 +31318,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 386,
@@ -30385,6 +31411,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 695,
+          "denominator": 1854,
+          "percentage": 37.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -30811,7 +31855,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 101,
@@ -30904,6 +31948,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 92,
+          "denominator": 520,
+          "percentage": 17.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -31330,7 +32392,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 522,
@@ -31423,6 +32485,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 541,
+          "denominator": 2760,
+          "percentage": 19.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -31849,7 +32929,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 460,
@@ -31942,6 +33022,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 456,
+          "denominator": 1769,
+          "percentage": 25.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -32368,7 +33466,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 265,
@@ -32461,6 +33559,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 152,
+          "denominator": 989,
+          "percentage": 15.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -32887,7 +34003,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 737,
@@ -32980,6 +34096,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 490,
+          "denominator": 2521,
+          "percentage": 19.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -33406,7 +34540,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 490,
@@ -33499,6 +34633,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 414,
+          "denominator": 1876,
+          "percentage": 22.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -33925,7 +35077,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 191,
@@ -34018,6 +35170,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 320,
+          "denominator": 973,
+          "percentage": 32.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -34444,7 +35614,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 253,
@@ -34537,6 +35707,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 277,
+          "denominator": 1122,
+          "percentage": 24.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -34963,7 +36151,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1322,
@@ -35056,6 +36244,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 795,
+          "denominator": 4643,
+          "percentage": 17.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -35482,7 +36688,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 503,
@@ -35575,6 +36781,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 344,
+          "denominator": 2370,
+          "percentage": 14.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -36001,7 +37225,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 286,
@@ -36094,6 +37318,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 204,
+          "denominator": 1251,
+          "percentage": 16.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -36520,7 +37762,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 431,
@@ -36613,6 +37855,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 285,
+          "denominator": 1513,
+          "percentage": 18.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -37039,7 +38299,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 371,
@@ -37132,6 +38392,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1012,
+          "denominator": 2463,
+          "percentage": 41.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -37558,7 +38836,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 350,
@@ -37651,6 +38929,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 746,
+          "denominator": 1488,
+          "percentage": 50.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -38077,7 +39373,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 162,
@@ -38170,6 +39466,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 255,
+          "denominator": 793,
+          "percentage": 32.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -38596,7 +39910,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 286,
@@ -38689,6 +40003,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 910,
+          "denominator": 2584,
+          "percentage": 35.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -39115,7 +40447,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 84,
@@ -39208,6 +40540,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 306,
+          "denominator": 688,
+          "percentage": 44.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -39634,7 +40984,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 364,
@@ -39727,6 +41077,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 654,
+          "denominator": 1591,
+          "percentage": 41.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -40153,7 +41521,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 352,
@@ -40246,6 +41614,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 640,
+          "denominator": 1803,
+          "percentage": 35.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -40672,7 +42058,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 856,
@@ -40765,6 +42151,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 3494,
+          "denominator": 6874,
+          "percentage": 50.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -41191,7 +42595,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 123,
@@ -41284,6 +42688,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 269,
+          "denominator": 621,
+          "percentage": 43.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -41710,7 +43132,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 155,
@@ -41803,6 +43225,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 448,
+          "denominator": 1217,
+          "percentage": 36.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -42229,7 +43669,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1148,
@@ -42322,6 +43762,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 951,
+          "denominator": 3232,
+          "percentage": 29.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -42748,7 +44206,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 686,
@@ -42841,6 +44299,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 368,
+          "denominator": 2265,
+          "percentage": 16.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -43267,7 +44743,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 655,
@@ -43360,6 +44836,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 748,
+          "denominator": 2783,
+          "percentage": 26.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -43786,7 +45280,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 603,
@@ -43879,6 +45373,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 427,
+          "denominator": 1965,
+          "percentage": 21.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -44305,7 +45817,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 462,
@@ -44398,6 +45910,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 678,
+          "denominator": 2311,
+          "percentage": 29.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -44824,7 +46354,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 2197,
@@ -44917,6 +46447,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1790,
+          "denominator": 14305,
+          "percentage": 12.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -45343,7 +46891,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1120,
@@ -45436,6 +46984,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 881,
+          "denominator": 2514,
+          "percentage": 35.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -45862,7 +47428,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 272,
@@ -45955,6 +47521,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 131,
+          "denominator": 942,
+          "percentage": 13.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -46381,7 +47965,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 262,
@@ -46474,6 +48058,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 159,
+          "denominator": 824,
+          "percentage": 19.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -46900,7 +48502,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 2531,
@@ -46993,6 +48595,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1821,
+          "denominator": 7043,
+          "percentage": 25.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -47419,7 +49039,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 499,
@@ -47512,6 +49132,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 275,
+          "denominator": 1629,
+          "percentage": 16.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -47938,7 +49576,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 195,
@@ -48031,6 +49669,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 90,
+          "denominator": 597,
+          "percentage": 15.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -48457,7 +50113,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 589,
@@ -48550,6 +50206,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 514,
+          "denominator": 1309,
+          "percentage": 39.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -48976,7 +50650,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 776,
@@ -49069,6 +50743,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 484,
+          "denominator": 2280,
+          "percentage": 21.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -49495,7 +51187,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 487,
@@ -49588,6 +51280,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 318,
+          "denominator": 1295,
+          "percentage": 24.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -50014,7 +51724,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 572,
@@ -50107,6 +51817,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 437,
+          "denominator": 1674,
+          "percentage": 26.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -50533,7 +52261,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 682,
@@ -50626,6 +52354,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 466,
+          "denominator": 2353,
+          "percentage": 19.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -51052,7 +52798,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 340,
@@ -51145,6 +52891,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 382,
+          "denominator": 1466,
+          "percentage": 26.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -51571,7 +53335,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 185,
@@ -51664,6 +53428,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 86,
+          "denominator": 796,
+          "percentage": 10.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -52090,7 +53872,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 60,
@@ -52183,6 +53965,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 33,
+          "denominator": 197,
+          "percentage": 16.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -52609,7 +54409,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 438,
@@ -52702,6 +54502,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 565,
+          "denominator": 2006,
+          "percentage": 28.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -53128,7 +54946,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 64,
@@ -53221,6 +55039,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 182,
+          "denominator": 462,
+          "percentage": 39.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -53647,7 +55483,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 157,
@@ -53740,6 +55576,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 99,
+          "denominator": 524,
+          "percentage": 18.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -54166,7 +56020,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 146,
@@ -54259,6 +56113,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 97,
+          "denominator": 438,
+          "percentage": 22.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -54685,7 +56557,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 197,
@@ -54778,6 +56650,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 237,
+          "denominator": 656,
+          "percentage": 36.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -55204,7 +57094,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 102,
@@ -55297,6 +57187,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 89,
+          "denominator": 309,
+          "percentage": 28.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -55723,7 +57631,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 273,
@@ -55816,6 +57724,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 203,
+          "denominator": 1152,
+          "percentage": 17.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -56242,7 +58168,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 407,
@@ -56335,6 +58261,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 259,
+          "denominator": 1395,
+          "percentage": 18.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -56761,7 +58705,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 548,
@@ -56854,6 +58798,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 429,
+          "denominator": 1660,
+          "percentage": 25.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -57280,7 +59242,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 334,
@@ -57373,6 +59335,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 250,
+          "denominator": 1112,
+          "percentage": 22.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -57799,7 +59779,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 460,
@@ -57892,6 +59872,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 861,
+          "denominator": 2351,
+          "percentage": 36.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -58318,7 +60316,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 359,
@@ -58411,6 +60409,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 284,
+          "denominator": 1364,
+          "percentage": 20.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -58837,7 +60853,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 29,
@@ -58930,6 +60946,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 56,
+          "denominator": 164,
+          "percentage": 34.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -59356,7 +61390,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 322,
@@ -59449,6 +61483,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 251,
+          "denominator": 660,
+          "percentage": 38.0,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -59875,7 +61927,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 228,
@@ -59968,6 +62020,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 119,
+          "denominator": 613,
+          "percentage": 19.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -60394,7 +62464,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 527,
@@ -60487,6 +62557,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 358,
+          "denominator": 1079,
+          "percentage": 33.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -60913,7 +63001,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 680,
@@ -61006,6 +63094,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 398,
+          "denominator": 1869,
+          "percentage": 21.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -61432,7 +63538,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1288,
@@ -61525,6 +63631,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1025,
+          "denominator": 4567,
+          "percentage": 22.4,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -61951,7 +64075,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 435,
@@ -62044,6 +64168,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 478,
+          "denominator": 1537,
+          "percentage": 31.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -62470,7 +64612,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 454,
@@ -62563,6 +64705,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 632,
+          "denominator": 1991,
+          "percentage": 31.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -62989,7 +65149,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 660,
@@ -63082,6 +65242,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 922,
+          "denominator": 2825,
+          "percentage": 32.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -63508,7 +65686,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 710,
@@ -63601,6 +65779,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 538,
+          "denominator": 1413,
+          "percentage": 38.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -64027,7 +66223,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1101,
@@ -64120,6 +66316,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 860,
+          "denominator": 2410,
+          "percentage": 35.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -64546,7 +66760,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 361,
@@ -64639,6 +66853,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 282,
+          "denominator": 907,
+          "percentage": 31.1,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -65065,7 +67297,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1074,
@@ -65158,6 +67390,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 762,
+          "denominator": 4612,
+          "percentage": 16.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -65584,7 +67834,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 86,
@@ -65677,6 +67927,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 70,
+          "denominator": 415,
+          "percentage": 16.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -66103,7 +68371,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 560,
@@ -66196,6 +68464,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 394,
+          "denominator": 1303,
+          "percentage": 30.2,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -66622,7 +68908,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 549,
@@ -66715,6 +69001,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 387,
+          "denominator": 1910,
+          "percentage": 20.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -67141,7 +69445,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 763,
@@ -67234,6 +69538,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 648,
+          "denominator": 5081,
+          "percentage": 12.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -67660,7 +69982,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 617,
@@ -67753,6 +70075,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 447,
+          "denominator": 1951,
+          "percentage": 22.9,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -68179,7 +70519,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 699,
@@ -68272,6 +70612,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 536,
+          "denominator": 1545,
+          "percentage": 34.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -68698,7 +71056,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 470,
@@ -68791,6 +71149,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 381,
+          "denominator": 1371,
+          "percentage": 27.8,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -69217,7 +71593,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 246,
@@ -69310,6 +71686,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 205,
+          "denominator": 574,
+          "percentage": 35.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -69736,7 +72130,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 977,
@@ -69829,6 +72223,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 776,
+          "denominator": 2610,
+          "percentage": 29.7,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -70255,7 +72667,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1621,
@@ -70348,6 +72760,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1290,
+          "denominator": 5106,
+          "percentage": 25.3,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -70774,7 +73204,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 712,
@@ -70867,6 +73297,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 511,
+          "denominator": 2923,
+          "percentage": 17.5,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -71293,7 +73741,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 1823,
@@ -71386,6 +73834,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 1306,
+          "denominator": 4733,
+          "percentage": 27.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     },
@@ -71812,7 +74278,7 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             ]
           },
           "basis": "Place of usual residence",
-          "note": "G06 publishes 10-year age bands (25-34, 35-44, 45-54); 25-54 is the closest available cover of the requested 30-49 range."
+          "note": "Broader three-band context retained for comparison; the age-matched Mingle criterion uses the exact 35-44 measure."
         },
         "loneParentFamilies": {
           "count": 991,
@@ -71905,6 +74371,24 @@ export const DWELLING_COMMUNITY_CONTEXT = {
             "denominator": "G65"
           },
           "basis": "Place of usual residence"
+        },
+        "unpartnered3544": {
+          "count": 716,
+          "denominator": 3031,
+          "percentage": 23.6,
+          "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+          "denominatorLabel": "All persons aged 35-44 in G06",
+          "sourceTable": "G06",
+          "sourceCells": {
+            "numerator": [
+              "D43"
+            ],
+            "denominator": [
+              "E43"
+            ]
+          },
+          "basis": "Place of usual residence",
+          "note": "Exact 10-year Census age band used by the age-matched Mingle criterion."
         }
       }
     }

@@ -139,7 +139,7 @@ export const decideCriteria = [
   {
     key: 'partnerPool',
     label: 'Mingle',
-    hint: 'Playful name, honest measure: the pure cohort percentile of the ABS 2021 Census share of adults aged 25–54 who were not in a registered or de facto marriage. It does not infer availability, orientation or interest; nulls remain unassessed.',
+    hint: 'Playful name, age-matched measure: the pure cohort percentile of the ABS 2021 Census share of adults aged 35–44 who were not in a registered or de facto marriage. It does not infer availability, orientation or interest; nulls remain unassessed.',
     scoringMode: 'additiveBonus',
     bonusPointsPerWeight: 2,
     accent: 'pink',

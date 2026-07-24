@@ -35,9 +35,26 @@ const src = (rel) => readFileSync(fileURLToPath(new URL(rel, import.meta.url)), 
 describe('dataset coverage and lookup', () => {
   it('exposes the complete 138-record SAL dataset', () => {
     expect(DWELLING_COMMUNITY_CONTEXT.records).toHaveLength(138)
+    expect(DWELLING_COMMUNITY_CONTEXT.version).toBe('2021-gcp-sal-v4')
     expect(COMMUNITY_DATASET.title).toBe('Community Context · ABS Census 2021')
     expect(COMMUNITY_DATASET.recordCount).toBe(138)
     expect(DWELLING_CENSUS_CONTEXT).toBe(DWELLING_COMMUNITY_CONTEXT)
+  })
+
+  it('carries the exact 35-44 Mingle measure with source cells and neutral context separate', () => {
+    for (const record of DWELLING_COMMUNITY_CONTEXT.records) {
+      const measures = record.additionalHouseholdContext
+      expect(measures.unpartnered3544.sourceCells).toEqual({
+        numerator: ['D43'],
+        denominator: ['E43'],
+      })
+      expect(measures.unpartnered3544.percentage).toBe(
+        Math.round((measures.unpartnered3544.count / measures.unpartnered3544.denominator) * 1000) /
+          10,
+      )
+      expect(measures.unpartnered2554).toBeDefined()
+      expect(measures.loneParentFamilies).toBeDefined()
+    }
   })
 
   it('resolves an original lens suburb to an individual SAL record', () => {
@@ -143,7 +160,7 @@ describe('measure rendering', () => {
     expect(panel).not.toContain('Languages at home')
     expect(panel).not.toContain('Cantonese at home')
     expect(panel).not.toContain('Mandarin at home')
-    expect(panel).toContain('Unpartnered 25-54 (2021)')
+    expect(panel).toContain('Unpartnered 35-44 (2021)')
     expect(panel).toContain('One-parent families (2021)')
   })
 

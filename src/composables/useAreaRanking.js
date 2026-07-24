@@ -7,7 +7,7 @@
 // weighted score so the map reads as a landscape. The only gate left is the
 // owner's explicit Soul veto.
 //
-// SCORE over the nine Settle criteria (decideStrategies.js): standard criteria
+// SCORE over the ten Settle criteria (decideStrategies.js): standard criteria
 // use sum(w * s) / sum(w), normalised to 0-100. Explicit bonus criteria add a
 // small bounded premium after that mean. Missing data is never scored as zero,
 // and the all-zero fallback prevents NaN. The demographic context is never read

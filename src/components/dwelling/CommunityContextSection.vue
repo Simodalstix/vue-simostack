@@ -3,7 +3,7 @@
        carry contextOnly / excludeFromSuburbScore / scoreContribution: 0. Three
        named derived measures are scored: the opt-in Chinese-community lens,
        grouped other-communities lens, and the partner-pool criterion
-       (unpartnered 25-54 only). Combined lens labels render
+       (unpartnered 35-44 only). Combined lens labels render
        each component SAL suburb separately; percentages are never averaged
        and medians never blended. -->
   <div v-if="ctx" :class="rootClass">
@@ -239,7 +239,7 @@ function householdContext(record) {
   const rows = [
     { label: 'Hong Kong-born', m: a.hongKongBornPopulation },
     { label: 'China-born', m: a.chinaBornPopulation },
-    { label: 'Unpartnered 25-54 (2021)', m: a.unpartnered2554 },
+    { label: 'Unpartnered 35-44 (2021)', m: a.unpartnered3544 },
     { label: 'One-parent families (2021)', m: a.loneParentFamilies },
   ]
   return rows

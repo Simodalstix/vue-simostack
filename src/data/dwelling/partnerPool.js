@@ -1,20 +1,21 @@
 // Personal lens derived from the ABS Census 2021 SAL community data.
 //
-// Measures the share of people aged 25-54 not in a registered or de facto
+// Measures the share of people aged 35-44 not in a registered or de facto
 // marriage (G06 social marital status — NOT G05 registered status, which
-// miscounts de facto couples as single). G06 publishes 10-year age bands, so
-// 25-54 is the closest available cover of the intended 30-49 range; the
-// dataset records this on the measure itself. Combined ranking areas aggregate
-// component SAL counts over the common denominator, chineseCommunity-style:
-// counts are recombined, percentages never averaged. This does not claim that
-// every unpartnered adult is available, interested or a potential partner.
+// miscounts de facto couples as single). This exact Census age band matches the
+// owner's near-40 preference without using whole-suburb median age as a proxy.
+// Combined ranking areas aggregate component SAL counts over the common
+// denominator, chineseCommunity-style: counts are recombined, percentages never
+// averaged. This does not claim that every unpartnered adult is available,
+// interested or a potential partner.
 //
 // The two constants retained for the standalone raw-score helper:
-// - PARTNER_POOL_FULL_BONUS_SHARE: a 40% unpartnered share among 25-54s earns
+// - PARTNER_POOL_FULL_BONUS_SHARE: a 40% unpartnered share among 35-44s earns
 //   10/10 on the primary component; higher shares stay capped.
-// - PARTNER_POOL_MIN_DENOMINATOR: below 800 persons aged 25-54 the rate is
+// - PARTNER_POOL_MIN_DENOMINATOR: below 300 persons aged 35-44 the rate is
 //   noise, so the suburb scores null (not assessed) — never a confident 10.
-//   The guard replaces any volume-weighting.
+//   This scales the former 800-person, three-band guard to the single 35-44
+//   band and replaces any volume-weighting.
 //
 // 2021 Census; relative signal — suburb demographic profiles are sticky, but
 // absolute figures are dated. Refresh when the 2026 Census publishes.
@@ -22,7 +23,7 @@
 import { communityContextFor } from './communityContext.js'
 
 export const PARTNER_POOL_FULL_BONUS_SHARE = 40
-export const PARTNER_POOL_MIN_DENOMINATOR = 800
+export const PARTNER_POOL_MIN_DENOMINATOR = 300
 
 export function partnerPoolFor(areaId) {
   const context = communityContextFor(areaId)
@@ -32,7 +33,7 @@ export function partnerPoolFor(areaId) {
   let denominator = 0
   for (const component of context.components) {
     const household = component.record.additionalHouseholdContext
-    const unpartnered = household?.unpartnered2554
+    const unpartnered = household?.unpartnered3544
     if (
       !Number.isFinite(unpartnered?.count) ||
       !Number.isFinite(unpartnered?.denominator) ||

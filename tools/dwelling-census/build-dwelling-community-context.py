@@ -64,6 +64,7 @@ RELIGION_ROWS = [
     ("Religious affiliation not stated", 44),
 ]
 G06_PARTNER_POOL_ROWS = [(42, "25-34 years"), (43, "35-44 years"), (44, "45-54 years")]
+G06_MINGLE_ROW = 43
 G29_ONE_PARENT_ROW = 43
 G29_TOTAL_ROW = 47
 
@@ -137,6 +138,8 @@ def partner_pool_measures(workbook: Any, workbook_name: str) -> dict[str, dict[s
 
     unpartnered = sum(number(workbook, "G06", f"D{row}") for row, _ in G06_PARTNER_POOL_ROWS)
     persons_25_54 = sum(number(workbook, "G06", f"E{row}") for row, _ in G06_PARTNER_POOL_ROWS)
+    unpartnered_35_44 = number(workbook, "G06", f"D{G06_MINGLE_ROW}")
+    persons_35_44 = number(workbook, "G06", f"E{G06_MINGLE_ROW}")
     one_parent = number(workbook, "G29", f"B{G29_ONE_PARENT_ROW}")
     families = number(workbook, "G29", f"B{G29_TOTAL_ROW}")
     return {
@@ -153,8 +156,24 @@ def partner_pool_measures(workbook: Any, workbook_name: str) -> dict[str, dict[s
             },
             "basis": "Place of usual residence",
             "note": (
-                "G06 publishes 10-year age bands (25-34, 35-44, 45-54); "
-                "25-54 is the closest available cover of the requested 30-49 range."
+                "Broader three-band context retained for comparison; "
+                "the age-matched Mingle criterion uses the exact 35-44 measure."
+            ),
+        },
+        "unpartnered3544": {
+            "count": unpartnered_35_44,
+            "denominator": persons_35_44,
+            "percentage": percentage(unpartnered_35_44, persons_35_44),
+            "numeratorLabel": "Persons aged 35-44 not in a registered or de facto marriage",
+            "denominatorLabel": "All persons aged 35-44 in G06",
+            "sourceTable": "G06",
+            "sourceCells": {
+                "numerator": [f"D{G06_MINGLE_ROW}"],
+                "denominator": [f"E{G06_MINGLE_ROW}"],
+            },
+            "basis": "Place of usual residence",
+            "note": (
+                "Exact 10-year Census age band used by the age-matched Mingle criterion."
             ),
         },
         "loneParentFamilies": {

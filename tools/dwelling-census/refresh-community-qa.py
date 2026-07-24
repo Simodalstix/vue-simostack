@@ -35,7 +35,8 @@ def qa_row(record: dict) -> dict:
         tenure[key]["count"]
         for key in ("ownerOccupied", "renting", "otherTenure", "notStated")
     )
-    unpartnered = additional["unpartnered2554"]
+    unpartnered_25_54 = additional["unpartnered2554"]
+    unpartnered_35_44 = additional["unpartnered3544"]
     lone_parent = additional["loneParentFamilies"]
     language_measures = [
         additional[key]
@@ -55,9 +56,12 @@ def qa_row(record: dict) -> dict:
             and measure["percentage"] == percentage(measure["count"], measure["denominator"])
             for measure in language_measures
         ),
-        0 <= unpartnered["count"] <= unpartnered["denominator"],
-        unpartnered["percentage"]
-        == percentage(unpartnered["count"], unpartnered["denominator"]),
+        0 <= unpartnered_25_54["count"] <= unpartnered_25_54["denominator"],
+        unpartnered_25_54["percentage"]
+        == percentage(unpartnered_25_54["count"], unpartnered_25_54["denominator"]),
+        0 <= unpartnered_35_44["count"] <= unpartnered_35_44["denominator"],
+        unpartnered_35_44["percentage"]
+        == percentage(unpartnered_35_44["count"], unpartnered_35_44["denominator"]),
         0 <= lone_parent["count"] <= lone_parent["denominator"],
         lone_parent["percentage"]
         == percentage(lone_parent["count"], lone_parent["denominator"]),
@@ -89,9 +93,12 @@ def qa_row(record: dict) -> dict:
         "tenureDenominator": tenure["denominator"],
         "tenureComponentsSum": components_sum,
         "tenureRandomisationDifference": tenure["denominator"] - components_sum,
-        "unpartnered2554Count": unpartnered["count"],
-        "unpartnered2554Denominator": unpartnered["denominator"],
-        "unpartnered2554Pct": unpartnered["percentage"],
+        "unpartnered2554Count": unpartnered_25_54["count"],
+        "unpartnered2554Denominator": unpartnered_25_54["denominator"],
+        "unpartnered2554Pct": unpartnered_25_54["percentage"],
+        "unpartnered3544Count": unpartnered_35_44["count"],
+        "unpartnered3544Denominator": unpartnered_35_44["denominator"],
+        "unpartnered3544Pct": unpartnered_35_44["percentage"],
         "loneParentFamiliesCount": lone_parent["count"],
         "loneParentFamiliesDenominator": lone_parent["denominator"],
         "loneParentFamiliesPct": lone_parent["percentage"],
@@ -102,9 +109,9 @@ def qa_row(record: dict) -> dict:
 def main() -> int:
     args = parse_args()
     dataset = parse_dataset(args.dataset.read_text(encoding="utf-8"))
-    rows = sorted((qa_row(record) for record in dataset["records"]), key=lambda row: row["suburb"])
+    rows = [qa_row(record) for record in dataset["records"]]
     with args.out.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=rows[0].keys())
+        writer = csv.DictWriter(handle, fieldnames=rows[0].keys(), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     failed = [row["suburb"] for row in rows if row["status"] != "PASS"]
