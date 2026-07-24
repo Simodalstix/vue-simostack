@@ -1,9 +1,9 @@
 # Settle safety audit pipeline — start here
 
 This pipeline reads the Crime Statistics Agency (CSA) LGA recorded-offences
-workbook and produces an **audit-only** candidate Safety model. It does not
-write a runtime dataset, add a criterion, change a preset or affect live Settle
-ranking.
+workbook and produces an audit candidate Safety model. After explicit owner
+approval, its checked-in audit can be promoted into the compact runtime context
+used by the Settle Safety criterion.
 
 ## Source
 
@@ -67,6 +67,19 @@ Generated, tracked review artifacts:
 Review `dwelling-safety-outliers.md` and the largest rank deltas in the QA CSV
 before considering any runtime adapter.
 
+## Promote the reviewed audit
+
+After the owner has approved the candidate model, generate the browser runtime
+context from the checked-in audit and source manifest:
+
+```bash
+python3 tools/dwelling-safety/promote-safety-context.py
+```
+
+This is intentionally a projection, not a second scoring formula: it preserves
+the audit score, basket percentiles, source period and SHA-256 provenance while
+omitting the large row-level evidence lists from the web bundle.
+
 ## Test
 
 ```bash
@@ -80,11 +93,12 @@ audit coverage.
 ## Promotion boundary
 
 Promoting this audit into live Settle scoring is a separate owner-approved
-scoring-layer change. That later change would need:
+scoring-layer change. It needs:
 
 1. explicit approval of basket definitions, weights, smoothing and population
    adjustment;
-2. a generated runtime context dataset and score adapter;
+2. a generated runtime context dataset and score adapter (now supplied by the
+   promotion script above);
 3. `decideStrategies.js` and preset changes;
 4. UI copy that says `Safety`, explains that 10 means lower relative recorded
    risk, and does not present the score as a probability of victimisation;

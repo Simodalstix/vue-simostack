@@ -335,7 +335,15 @@
             </section>
           </div>
 
-          <CommunityContextSection :area-id="row.rec.id" :list-limit="4" compact />
+          <!-- Keep the two comparative evidence blocks together in the visible
+               profile summary. The full evidence drawer repeats them at a
+               larger scale, but this is the panel most users actually see. -->
+          <div
+            class="grid items-start gap-3 border-t border-ob-sand/8 pt-2 sm:grid-cols-[minmax(0,1.35fr)_minmax(210px,0.9fr)]"
+          >
+            <CommunityContextSection :area-id="row.rec.id" :list-limit="4" compact />
+            <SafetyProfileSection :area-id="row.rec.id" compact />
+          </div>
         </div>
 
         <div class="flex items-center gap-3 border-t border-ob-sand/8 pt-2">
@@ -379,6 +387,7 @@ import {
 import { allInMonthly } from '@/composables/useRepayment.js'
 import AreaDetailDrawer from './AreaDetailDrawer.vue'
 import CommunityContextSection from './CommunityContextSection.vue'
+import SafetyProfileSection from './SafetyProfileSection.vue'
 import DecisionSignalIcon from './DecisionSignalIcon.vue'
 
 const props = defineProps({
